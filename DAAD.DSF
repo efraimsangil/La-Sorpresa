@@ -1786,7 +1786,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO fMoverAlambique ; Ha movido el alambique
+                ZERO    fMoverAlambique ; Ha movido el alambique
                 XMESSAGE "La trampilla se encuentra bajo un alambique, no se puede abrir."
                 DONE
 
@@ -2187,9 +2187,9 @@ BAJAR   lBath2
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo.#n#k"
                 XMESSAGE "#n Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza#n#n. El impacto contra la pared te parte la columna y ahora no puedes moverte...Es tan solo cuestión de horas..."
-                INK      4
+                INK     4
                 XMESSAGE "Has muerto."
-                INK      15
+                INK     15
                 END
 
 > USAR      GRIFO
@@ -2204,9 +2204,9 @@ BAJAR   lBath2
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo y comienza a salir agua a presión. No CONECTASTE la manguera y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k"
                 XMESSAGE "#n#n El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia cerebral.#n#k"
-                INK      4
+                INK     4
                 XMESSAGE "Has muerto."
-                INK      15
+                INK     15
                 END                
 
 > USAR      GRIFO
