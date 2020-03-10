@@ -1684,7 +1684,7 @@ BAJAR   lBath2
 
 ; Si hemos movido el alambique y No hemos usado el aceite, nos recomienda engrasar el candado. 
 > USAR      CANDADO
-> ABRIR     CANDADO AT lBodega
+> ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1696,7 +1696,7 @@ BAJAR   lBath2
                 DONE 
 ; Hemos movido el alambique y hemos engrasado el candado, pero no tenemos la combinación
 > USAR      CANDADO
-> ABRIR     CANDADO AT lBodega
+> ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1709,7 +1709,7 @@ BAJAR   lBath2
                 DONE
 ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación, el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
 > USAR      CANDADO
-> ABRIR     CANDADO AT lBodega
+> ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1836,7 +1836,7 @@ BAJAR   lBath2
 ; NOTA: MIRAR--> Describimos que la criada está sobre la camilla y hacemos una descripción de que alguien la está torturando pero no se ve a nadie.
 ; damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
 ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMINAR en términos absolutos, nos lleva a morir.
-; Para escapar es necesario quedarse sin turnos de cerilla, (estar a oscuras) para que la criada no le vea y pueda salir)
+; Para escapar es necesario quedarse sin turnos de cerilla o apagar la cerilla, (estar a oscuras) para que la criada no le vea y pueda salir.
 
 > MIRAR     _           AT lGabinete
                 INK     9               ; Color del narrador
@@ -1862,9 +1862,9 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ."
-                INK 4
+                INK     4
                 XMESSAGE "Estás muerto"
-                INK 15
+                INK     15
                 DONE
 
 > EXAMINA   CADENAS     AT lGabinete
@@ -1887,9 +1887,9 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n"
-                INK 4   
+                INK     4   
                 MESSAGE "Estás muerto"
-                INK 15
+                INK     15
                 DONE
 
 > EXAMINA   MESA        AT lGabinete
@@ -1911,11 +1911,11 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a la mesa.#k#n Notas un crujido metálico y ves que algo que se mueve delante de ti te clava un objeto punzante en el pecho.#k#n Son unas tijeras.#k#n"
-                INK 15 
+                INK     15 
                 XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas."
-                INK 4
+                INK     4
                 XMESSAGE "Has muerto"
-                INK 15
+                INK     15
                 DONE
 
 > EXAMINA   SUELO       AT lGabinete
@@ -1937,9 +1937,9 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n"
-                INK 4
+                INK     4
                 XMESSAGE "Has muerto"
-                INK 15
+                INK     15
                 DONE
 ; Aqui tenemos que estar a oscuras para salir, si no es así, el juego se termina.
 > N        _            AT lGabinete
@@ -1964,9 +1964,9 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti.#k#n"
-                INK 4
+                INK     4
                 XMESSAGE "Has muerto"
-                INK 15
+                INK     15
                 DONE
 
 ; Estamos en locExtCochera
@@ -2287,7 +2287,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Salimos de la cochera.#k"
                 INK     15
-                CLS  ; Limpiamos la pantalla
+                CLS     ; Limpiamos la pantalla
                 GOTO    lExteriorCochera
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -2671,9 +2671,7 @@ BAJAR   lBath2
                 XMESSAGE "#nLas cuchillas te mutilan los dedos de la mano y notas enseguida como una fuerza de succión muy fuerte tira de tu brazo hacia adentro, mientras escuchas el crujido de tus huesos contra las paredes metálicas del fregadero.#k"
                 XMESSAGE "#nHay sangre por todas partes.#k"
                 INK     4
-                ;XMESSAGE "#nHas muerto.#n"
-                XMESSAGE "#n#$% &'()*+"
-                XMESSAGE "[][][][][]#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15              ; Color del sistema
                 END
 
