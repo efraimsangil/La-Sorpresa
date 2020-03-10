@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trizbort version="1.7.0.0">
+	<info />
+	<map>
+		<room id="1" name="Comienzo" subtitle="" x="-576" y="-32" w="96" h="64" region="NoRegion" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez &lt;Invértigo&gt;#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero &lt;Oniric Factor&gt;#n&lt;Gráficos&gt;#n#nMiguel Angel &lt;Mortimer&gt;#n&lt;Hardware del cartucho&gt;#n#nNatalia Pujol &lt;NatyPC&gt;#n&lt;Adaptación de msx2daad para este juego&gt;#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="2" name="lMadrid" subtitle="" x="-384" y="-32" w="96" h="64" region="NoRegion" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Burgos.#n#n      10 de Enero de 1987.#k#b Marcos es un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrado a asumir todo lo que se le venga encima con tal de mantener su estatus laboral. Con los años, esta incapacidad de gestionar conflictos le ha arrastrado inevitablemente a la misantropía más absoluta, haciendo de él un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#n#nMarcos suele hablar mucho consigo mismo y tiene una conciencia muy desarrollada, puesto que en pocas ocasiones puede hacer gala de sus habilidades sociales, ya que la gente que se acerca ocasionalmente a él, huye despavorida en cuanto se preocupan en conocerle....#n#nHoy es Sábado y nuestro protagonista no tiene planes, excepto disfrutar de sus 48h de libertad condicional; así denomina el a los fines de semana.#k#bSon las 12:30PM#n#nEs un frío día de invierno y aún sigue en la cama medio despierto, remoloneando. Los madrugones de la semana le pesan cada día más y se siente incapaz de salir de su nido calentito bajo la manta de franela.#n#nEstá decidido... Se gira en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla; alguien decidió por él que debe despertarse definitivamente.#n#nTiene a su lado la mesilla de noche." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="3" name="" description="">
+			<dock index="0" id="1" port="e" />
+			<dock index="1" id="2" port="w" />
+		</line>
+		<room id="4" name="lCoche" subtitle="" x="-192" y="-32" w="96" h="64" region="NoRegion" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Marcos sale de casa y coge su coche rumbo a la Sierra del Caurel; es una excursión, pero a Marcos le gusta conducir. La carretera le concentra porque es de las pocas cosas que le evita pensar en sus responsabilidades.#n#nPasadas unas horas de cristales empañados y carreteras mal asfaltadas, Marcos reconoce el paso del cruce que conduce al pueblo donde sus padres tienen la casa.#k#b Queda poco para llegar y el agotamiento comienza a resentir a Marcos, que empieza a acusar el entumecimiento de sus músculos tras el largo viaje.#k#bCon el ánimo lastimero, de repente percibe una distracción;#k el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de tunel sobrecogedor que siempre le dió respeto cuando era un niño.#n#nCuando se levantaba niebla, el paraje le resultaba inquietante y su imaginación le jugaba malas pasadas... La santa compaña, los aires de difunto... Una profunda sugestión desde niño le permite imaginar la silueta del can de Urco de entre la bruma.#n#n Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en su personalidad." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="5" name="" description="">
+			<dock index="0" id="2" port="e" />
+			<dock index="1" id="4" port="w" />
+		</line>
+	</map>
+	<settings>
+		<colors>
+			<canvas>White</canvas>
+			<border>MidnightBlue</border>
+			<line>MidnightBlue</line>
+			<selectedLine>Gold</selectedLine>
+			<hoverLine>DarkOrange</hoverLine>
+			<subTitle>MidnightBlue</subTitle>
+			<smallText>MidnightBlue</smallText>
+			<lineText>MidnightBlue</lineText>
+			<grid>#F5F5F5</grid>
+			<startRoom>GreenYellow</startRoom>
+			<endRoom>Red</endRoom>
+		</colors>
+		<regions>
+			<NoRegion Name="NoRegion" TextColor="Blue">White</NoRegion>
+		</regions>
+		<fonts>
+			<room size="13">Arial</room>
+			<object size="11">Arial</object>
+			<subTitle size="9">Arial</subTitle>
+			<line size="9">Arial</line>
+		</fonts>
+		<grid>
+			<snapTo>yes</snapTo>
+			<visible>yes</visible>
+			<showOrigin>yes</showOrigin>
+			<size>32</size>
+		</grid>
+		<lines>
+			<width>2</width>
+			<arrowSize>12</arrowSize>
+			<textOffset>4</textOffset>
+		</lines>
+		<rooms>
+			<darknessStripeSize>24</darknessStripeSize>
+			<objectListOffset>4</objectListOffset>
+			<connectionStalkLength>32</connectionStalkLength>
+			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
+			<defaultRoomName>Cave</defaultRoomName>
+			<defaultRoomShape>0</defaultRoomShape>
+		</rooms>
+		<ui>
+			<handleSize>12</handleSize>
+			<snapToElementSize>16</snapToElementSize>
+		</ui>
+		<margins>
+			<documentSpecific>no</documentSpecific>
+			<horizontal>0</horizontal>
+			<vertical>0</vertical>
+		</margins>
+		<keypadNavigation>
+			<creationModifier>control</creationModifier>
+			<unexploredModifier>alt</unexploredModifier>
+		</keypadNavigation>
+	</settings>
+</trizbort>
