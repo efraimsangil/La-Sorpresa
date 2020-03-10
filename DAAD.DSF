@@ -2363,7 +2363,7 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA   CHAMIZO
-> MIRAR     _           AT lChamizo                 ; Cogemos las llaves del coche
+> MIRAR     _           AT lChamizo     ; Cogemos las llaves del coche
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
