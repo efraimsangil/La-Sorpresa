@@ -98,7 +98,6 @@
 #define fCodigoDiario       105     ; Código necesario para abrir la trampilla de lBodega
 #define fQuitarMancha       106     
 #define fCombinacion        107
-#define fApagarCerilla      108
 
 ;                               Localizaciones
 #define lIntro              0
@@ -153,7 +152,7 @@
 #define oPelota             17      ; lCochera
 #define oPaleta             18      ; lRetrete
 #define oHacha              19      ; lBath2
-#define oLlaveBodega        20      ; lCriada
+#define oLlaveBodega        20      ; No se usa
 #define oLlaveCoche         21      ; lChamizo
 #define oLataDeAceite       22      ; lBath1
 #define oManguera           23      ; lCochera
@@ -494,17 +493,17 @@ LUEGO           2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "una linterna"           ; No se usa
+/0 "una linterna"
 /1 "llave del chamizo"
-/2 "llave de la cochera"    ; No se usa
-/3 "una batería de coche"   ; No se usa
-/4 "una pala"
+/2 "llave de la cochera"
+/3 "una batería de coche"
+/4 "unas pinzas de coche"
 /5 "una llave de la entrada principal"
 /6 "un felpudo"
 /7 "una maceta"
 /8 "un Gnomo"
 /9 "una caja de cerillas"
-/10 "una llave dorada"     ; No se usa 
+/10 "una llave dorada"
 /11 "una tarjeta de seguridad"
 /12 "llave de una caja pequeña"
 /13 "un diario"
@@ -514,7 +513,7 @@ LUEGO           2       conjugation
 /17 "una pelota"
 /18 "una paleta"
 /19 "un hacha"
-/20 "llave de la bodega" 
+/20 "llave de la bodega"
 /21 "llaves del coche"
 /22 "una lata de aceite"
 /23 "una manguera"
@@ -547,8 +546,8 @@ LUEGO           2       conjugation
 /23 "Sin duda estamos en el dormitorio principal, hay una cama muy grande con cabecero de madera y al sur está el baño. Una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la ténue luz que proyecta la cerilla, apenas puedes discenir de que se trata."
 /24 "Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n En este momento y por alguna razón desconocida, está llena de agua hasta el borde."
 ;NOTA /25 El gabinete es el lugar donde de forma clandestina fueron los dos partos de la criada y además era el lugar donde el terrateniente bajaba a la criada para castigarla y torturarla cuando esta quería escapar (todo esto sucede antes de tener al primer hijo, luego con amenazar con matar al hijo era suficiente para mantenerla callada) En esta estancia se puedes ver a la madre postrada sobre la camilla, desnuda y encadenada sufriendo laceraciones en la piel sin que haya nadie que la manipule... Si en ese momento Marcos se acerca, la madre rompe una cadena con la mano y mata a Marcos. luego lo que tiene que hacer es esperar a que se terminen los turnos de cerilla para poder continuar y agacharse para pasar por debajo de la camilla, justo la puerta está atrancada por la PALA (por eso la ve a oscuras), la coge y sale de allí)
-/25 "Has entrado en lo que parece ser un gabinete. No terminas de explicarte qué hace este habitáculo aquí, pero te pone los pelos de punta.#n#nPuedes ver una camilla médica de la que cuelgan unas cadenas,también hay una mesa con instrumental quirúrgico oxidado. El suelo está ensangrentado.#n#n La trampilla por la que has entrado se cierra."
-;Nota /26 Ex recoveco/escondrijo: "puedes encontrar un buen montón de ramitas apiladas"
+/25 "Has entrado en lo que parece ser un gabinete. No terminas de explicarte qué hace este habitáculo aquí, pero te pone los pelos de punta.#n#nPuedes encontrar una camilla médica de la que cuelgan unas cadenas, una mesa con instrumental quirúrgico oxidado y el suelo completamente ensangrentado. "
+;NOTA /26 Ex recoveco/escondrijo: "puedes encontrar un buen montón de ramitas apiladas"
 /26 "El niño te descubre un escondrijo entre los cipreses y el muro#k#n#n. Se trata de un recoveco que parece estar construido para respetar el crecimiento natural de los cipreses, pero que con los años el arbol que crece en ese lugar no ha ocupado todo el espacio previsto, dejando un entrante detrás de el que impide que se vea lo que hay en el interior."
 ;NOTA /27 ex puerta-->tiene un candado puesto. Ex musgo --> HABLA MARCOS -->si me pilla un mes antes hubiera hecho un belén precioso.
 /27 "Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardan los utensilios de jardinería oxidados y algunas herramientas. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable .#n#nAl fondo del chamizo puedes observar un armario metálico."
@@ -628,8 +627,8 @@ S       lPasillo3
 N       lBath3
 /24                     ; lBath3
 S       lRoom3
-/25                     ; lGabinete
-N       lChamizo      
+/25
+
 /26
 
 /27                     ; lExteriorChamizo
@@ -772,8 +771,6 @@ BAJAR   lBath2
                 LT      38 30           ; Si la localización es menor de 30
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
                 SET     fDarkF          ; Activamos la oscuridad
-                INK     15
-                XMESSAGE "#n#n"
                 XMESSAGE "Estamos a oscuras."
 
 ;------------------------------------------------------------------------------
@@ -1687,7 +1684,7 @@ BAJAR   lBath2
 
 ; Si hemos movido el alambique y No hemos usado el aceite, nos recomienda engrasar el candado. 
 > USAR      CANDADO
-> ABRIR     CANDADO AT lBodega
+> ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1699,7 +1696,7 @@ BAJAR   lBath2
                 DONE 
 ; Hemos movido el alambique y hemos engrasado el candado, pero no tenemos la combinación
 > USAR      CANDADO
-> ABRIR     CANDADO AT lBodega
+> ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1712,7 +1709,7 @@ BAJAR   lBath2
                 DONE
 ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación, el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
 > USAR      CANDADO
-> ABRIR     CANDADO AT lBodega
+> ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1721,7 +1718,6 @@ BAJAR   lBath2
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
-                CLS
                 GOTO    lGabinete
                 LET     fVasAMorir 0
                 RESTART
@@ -1790,7 +1786,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO fMoverAlambique ; Ha movido el alambique
+                ZERO    fMoverAlambique ; Ha movido el alambique
                 XMESSAGE "La trampilla se encuentra bajo un alambique, no se puede abrir."
                 DONE
 
@@ -1803,7 +1799,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 ZERO    fUsarAceite
-                XMESSAGE "No puedes abrir la trampilla porque hay un candado puesto.#k"
+                XMESSAGE "No puedes abrir la trampilla porque hay un candado atascado.#k"
                 DONE
 
 ; el Alambique se ha movido, pero no se ha usado el aceite y no tenemos la combinación
@@ -1840,7 +1836,7 @@ BAJAR   lBath2
 ; NOTA: MIRAR--> Describimos que la criada está sobre la camilla y hacemos una descripción de que alguien la está torturando pero no se ve a nadie.
 ; damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
 ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMINAR en términos absolutos, nos lleva a morir.
-; Para escapar es necesario quedarse sin turnos de cerilla, (estar a oscuras) para que la criada no le vea y pueda salir)
+; Para escapar es necesario quedarse sin turnos de cerilla o apagar la cerilla, (estar a oscuras) para que la criada no le vea y pueda salir.
 
 > MIRAR     _           AT lGabinete
                 INK     9               ; Color del narrador
@@ -1866,9 +1862,9 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ."
-                INK 4
+                INK     4
                 XMESSAGE "Estás muerto"
-                INK 15
+                INK     15
                 DONE
 
 > EXAMINA   CADENAS     AT lGabinete
@@ -1891,9 +1887,9 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n"
-                INK 4   
+                INK     4   
                 MESSAGE "Estás muerto"
-                INK 15
+                INK     15
                 DONE
 
 > EXAMINA   MESA        AT lGabinete
@@ -1915,11 +1911,11 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a la mesa.#k#n Notas un crujido metálico y ves que algo que se mueve delante de ti te clava un objeto punzante en el pecho.#k#n Son unas tijeras.#k#n"
-                INK 15 
+                INK     15 
                 XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas."
-                INK 4
+                INK     4
                 XMESSAGE "Has muerto"
-                INK 15
+                INK     15
                 DONE
 
 > EXAMINA   SUELO       AT lGabinete
@@ -1941,39 +1937,36 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n"
-                INK 4
+                INK     4
                 XMESSAGE "Has muerto"
-                INK 15
+                INK     15
                 DONE
 ; Aqui tenemos que estar a oscuras para salir, si no es así, el juego se termina.
 > N        _            AT lGabinete
-                ZERO    fControlLuz     ; esto estaba en NOTZERO fControlLuz
+                ZERO    fControlLuz ; esto estaba en NOTZERO fControlLuz
                 ZERO    fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Gracias a que estas a oscuras consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema, abres la puerta y sales de este horrible lugar.#k#n"
-                INK     15
                 ISAT    oPala 252
                 CREATE  oPala
                 GET     oPala
-                XMESSAGE "#k"
                 CLS
-                INK     9
                 GOTO    lChamizo
                 RESTART
                 DONE
 
 > N        _            AT lGabinete
-                NOTZERO    fControlLuz     ; esto estaba en NOTZERO fControlLuz
+                NOTZERO    fControlLuz ; esto estaba en NOTZERO fControlLuz
                 NOTZERO    fTurnosConLuz
-                CARRIED    oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR      fDarkF          ; Desactivamos la oscuridad
-                INK     9                  ; Color del narrador
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     9               ; Color del narrador
                 XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti.#k#n"
-                INK 4
+                INK     4
                 XMESSAGE "Has muerto"
-                INK 15
+                INK     15
                 DONE
 
 ; Estamos en locExtCochera
@@ -2194,9 +2187,9 @@ BAJAR   lBath2
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo.#n#k"
                 XMESSAGE "#n Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza#n#n. El impacto contra la pared te parte la columna y ahora no puedes moverte...Es tan solo cuestión de horas..."
-                INK      4
+                INK     4
                 XMESSAGE "Has muerto."
-                INK      15
+                INK     15
                 END
 
 > USAR      GRIFO
@@ -2211,9 +2204,9 @@ BAJAR   lBath2
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo y comienza a salir agua a presión. No CONECTASTE la manguera y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k"
                 XMESSAGE "#n#n El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia cerebral.#n#k"
-                INK      4
+                INK     4
                 XMESSAGE "Has muerto."
-                INK      15
+                INK     15
                 END                
 
 > USAR      GRIFO
@@ -2294,7 +2287,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Salimos de la cochera.#k"
                 INK     15
-                CLS  ; Limpiamos la pantalla
+                CLS     ; Limpiamos la pantalla
                 GOTO    lExteriorCochera
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -2329,19 +2322,10 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-; Estamos en locChamizo
+; Estamos dentro del Chamizo
 ; NOTA: Desarrollar esto.
 ; SUELO     HERRAMIENTAS    TIERRA  ARMARIO
-; NOTA Aquí el comportamiento del MIRAR es errático... 
-> R         _           AT lChamizo
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     9               ; Color del narrador
-                XMESSAGE "Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardan los utensilios de jardinería oxidados y algunas herramientas. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable .#n#nAl fondo del chamizo puedes observar un armario metálico."
-                DONE
-                
+
 > EXAMINA   SUELO       AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2379,7 +2363,7 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA   CHAMIZO
-> MIRAR     _           AT lChamizo                 ; Cogemos las llaves del coche
+> MIRAR     _           AT lChamizo     ; Cogemos las llaves del coche
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2687,9 +2671,7 @@ BAJAR   lBath2
                 XMESSAGE "#nLas cuchillas te mutilan los dedos de la mano y notas enseguida como una fuerza de succión muy fuerte tira de tu brazo hacia adentro, mientras escuchas el crujido de tus huesos contra las paredes metálicas del fregadero.#k"
                 XMESSAGE "#nHay sangre por todas partes.#k"
                 INK     4
-                ;XMESSAGE "#nHas muerto.#n"
-                XMESSAGE "#n#$% &'()*+"
-                XMESSAGE "[][][][][]#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15              ; Color del sistema
                 END
 
@@ -4873,10 +4855,6 @@ BAJAR   lBath2
                 ISAT    oPaleta  252
                 CREATE  oPaleta
                 GET     oPaleta
-                ISAT    oLataDeAceite 252
-                CREATE  oLataDeAceite
-                GET     oLataDeAceite
-                SET     fCombinacion 
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -4932,24 +4910,10 @@ BAJAR   lBath2
                 GET     oLlaveBodega
                 GET     oLlaveCoche
                 DONE
-; NOTA desarrollar APAGAR CERILLA
-> APAGAR    CERILLA
-                CARRIED oCerillas
-                NOTZERO fUsarCerilla
-                LET     fUsarCerilla 0
-                ZERO    fApagarCerilla
-                SET     fApagarCerilla
-                LET     fTurnosConLuz 0
-                SET     fDarkF
-                LET     fControlLuz 0
-                INK 9
-                XMESSAGE "Has apagado la cerilla. "
-                DONE
 
 > PRENDER   CERILLA
 > USAR 		CERILLA                
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                LET     fApagarCerilla 0
 				ZERO    fUsarCerilla
                 SET     fUsarCerilla
                 LET     fTurnosConLuz 99         ; Numero de turnos hasta que te quedas sin luz
@@ -4963,7 +4927,6 @@ BAJAR   lBath2
 > PRENDER   CERILLA
 > USAR      CERILLA
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-
                 NOTZERO fUsarCerilla
                 INK     15              ; Color del sistema
                 XMESSAGE "Ya tienes una cerilla encendida."
@@ -4975,12 +4938,6 @@ BAJAR   lBath2
                 XMESSAGE "No puedes ver nada. Está muy oscuro."
                 DONE       
 
-> APAGAR    CERILLA
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fApagarCerilla
-                INK     9              ; Color del sistema
-                XMESSAGE "Ya has apagado la cerilla."
-                DONE
 ;> AYUDA     _
 ;                INK     15              ; Color del sistema
 ;                XMESSAGE "Guía de referencia rápida."
