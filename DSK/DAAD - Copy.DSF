@@ -3232,7 +3232,6 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una habitación lúgubre y cerrada... Si alguien ha vivido aquí, lo ha hecho sin duda en unas condiciones inhumanas.#n#n Miras a tu alrededor y descubres que el suelo tiene marcas de haberse movido algún mueble.#k#n Parece que algo se mueve encima del colchón."
-
                 DONE
 
 > ABRIR     BANCO
@@ -3329,14 +3328,14 @@ BAJAR   lBath2
 
                 XMESSAGE "25 de Febrero de 1950.#n El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojala pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#n#k"
 
-                XMESSAGE "16 de Marzo de 1950.#n  El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con el en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#n#k"
+                XMESSAGE "16 de Marzo de 1950.#n  El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos, y me ha obligado a acostarme con el en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#n#k"
 
                 XMESSAGE "10 de Abril de 1950.#n Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#n#k"
 
-                XMESSAGE "2 de Mayo de 1950.#n Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero 
-                conozco la casa perfectamente; he bajado muchas escaleras.#n Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable. Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar.; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#n#k"
+                XMESSAGE "2 de Mayo de 1950.#n Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente; he bajado muchas escaleras.#n Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n"
+                XMESSAGE "He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable. Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar.; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#n#k"
 
-                XMESSAGE "25  de Junio de 1950.#n  Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#n#k"
+                XMESSAGE "25  de Junio de 1950.#n Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#n#k"
 
                 XMESSAGE "5 de Agosto de 1950.#n ¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener nauseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#n#k"
 
@@ -3344,21 +3343,14 @@ BAJAR   lBath2
 
                 XMESSAGE "6 de Octubre de 1950.#n Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#n#k"
 
-                XMESSAGE "23 de Febrero de 1951.#n. Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#n#k"
+                XMESSAGE "23 de Febrero de 1951.#n. Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado él.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#n#k"
 
                 XMESSAGE "9 de Marzo de 1951.#n. El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego por que alguien lo encuentre algún día y se haga justicia.#n#k."
+
                 ; El resto de la historia, de cuando el niño ya con seis años escapa de la casa y le pilla el terrateniente en el pueblo, lo narrará el niño en el garaje.
                 ; la historia continua cuando el terrateniente descubre al niño intentando escapar, lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y con la ayuda de este, le da
                 ; un hacha y le pide que le ayude a trocear los cuerpos y le obliga a llevarlos al chamizo, cavar un hoyo grande y a continuación, después de depositar los restos en el hoyo, mata al niño
                 ; de un palazo en la cabeza y lo deja caer al hoyo.
-
-
-
-
-                
-
-
-
 
 
                 
