@@ -77,8 +77,8 @@
 #define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche
 #define fPatio              84      ; Control para jugar con el crío en lPatio
 #define fGnomoRoto          85      ; Control para cuando rompes el Gnomo en lPorche
-#define fRecibidor          86      ; No se usa
-#define fUsarPanel          87      ; No se usa
+#define fInsistePuerta      86      ; Control para abrir la puerta de la cochera en ExteriorCochera
+#define fInsisteMuchoPuerta 87      ; Control para abrir la puerta de la cochera en ExteriorCochera
 #define fUsarTarjeta        88      ; Control de USAR TARJETA en la VITRINA en lSalon
 #define fVasAMorir          89      ; Control para matar al jugador en lGabinete
 #define fUsarCerilla        90      ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado
@@ -99,6 +99,7 @@
 #define fQuitarMancha       106     
 #define fCombinacion        107
 #define fApagarCerilla      108
+
 
 ;                               Localizaciones
 #define lIntro              0
@@ -1448,21 +1449,17 @@ BAJAR   lBath2
 > O         _           AT lRecibidor
                 NOTZERO fJugar          ; Has jugado con el crío del patio
                 INK     14
-                XMESSAGE "Ya tienes la puerta abierta, pero necesito tu ayuda."
+                XMESSAGE "No podemos salir por aquí porque mi hermana ha cerrado la puerta.#n"
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿Qué te ocurre, niño?"
+                XMESSAGE "¿Qué te ocurre, niño?#n#k"
                 INK     14
-                XMESSAGE "A mi me gustaria irme también, pero no puedo, necesito hacer ALGO antes."
+                XMESSAGE "A mi me gustaria irme también, pero no puedo, necesito hacer ALGO antes.#n"
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿Qué necesitas hacer?"
+                XMESSAGE "¿Qué necesitas hacer?#n#k"
                 INK     14
-                XMESSAGE "Necesito encontrar a mi madre... Me siento muy solo sin mi madre."
-                INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "Puedes irte o ayudar al crío a resolver el turrón."
+                XMESSAGE "Cuando llegue el momento te lo explicaré, vámonos de aquí.#n"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                GOTO    lExtcasa
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 > O         _           AT lRecibidor
@@ -1759,6 +1756,7 @@ BAJAR   lBath2
                 XMESSAGE "No tengo recuerdo alguno de esta puerta. Además, no tiene cerradura, luego seguro que se puede abrir."
                 DONE
 
+;NOTA: Por aquí entramos la primera vez sin jugar con el crío para coger la pelota.
 > USAR      PUERTA
 > ABRIR 	PUERTA      AT lBodega
                 NOTZERO fControlLuz
@@ -1766,12 +1764,68 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
+                ZERO    fJugar
                 INK     9               ; Color del narrador
                 XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lCochera
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                DONE
+
+; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el crío en lugar de salir por la entrada ppal.
+> USAR      PUERTA
+> ABRIR 	PUERTA      AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fQuitarMancha
+                NOTZERO fJugar
+                INK     9               ; Color del narrador
+                XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k"
+                CLS                     ; Limpiamos la pantalla
+                INK     9               ; Color del narrador
+                GOTO    lCochera
+                ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                XMESSAGE "Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil.#n#k#b"
+                INK     14
+                XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#n#k"
+                INK     3
+                XMESSAGE "¿Has venido siguiéndome?#n#k"
+                INK     14 
+                XMESSAGE "!Sí! Te has portado bien conmigo y yo te acompaño para ayudarte.#n#k"
+                INK     3
+                XMESSAGE "Me has dicho que aquí ha ocurrido algo. ¿A qué te refieres?#n#k"
+                INK     14 
+                XMESSAGE "Un día yo escapé de la casa en busca de ayuda, porque el señor nos pegaba a mi madre a mi hermana y a mi, pero el señor me descubrió camino del pueblo y me trajo aquí. #n#k"
+                INK     3
+                XMESSAGE "¿Y qué pasó entonces?#n#k"
+                INK     14 
+                XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El me hizo a mirar mientras los cortaba con un hacha y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#n#k"
+                INK     3
+                XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#n#k"
+                INK     14 
+                XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. Hoy hace treinta años que pasó todo y como nadie ha descubierto nunca lo que ha ocurrido, cada treinta años pasamos una noche en la casa hasta que se descubran los cuerpos.#n#k"
+                INK     3
+                XMESSAGE "¿Has dicho que llevásteis los cuerpos al chamizo?.#n#k"
+                INK     14 
+                XMESSAGE "Si. Allí los enterramos con una pala y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#n#k"
+                INK    9
+                XMESSAGE "Observas como el niño se dirige hacia la puerta del garaje, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#n#k"
+                INK 15
+                ISAT   oLlaveChamizo 252
+                CREATE oLlaveChamizo
+                GET    oLlaveChamizo
+                INK     14
+                XMESSAGE "#nAquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala para poder desenterrarnos.#n#k"
+                INK     2
+                XMESSAGE "¡Entendido! Hay que buscar una pala.#n#k"
+                INK     3
+                XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#n#k"
+                INK     14
+                XMESSAGE "Te acompaño.#n#k"
+                INK     9
                 DONE
 
 > USAR      PUERTA
@@ -1981,25 +2035,60 @@ BAJAR   lBath2
 ; Estamos en locExtCochera
 ; NOTA: Desarrollar
 
-> ABRIR     PUERTA      AT lExteriorCochera
-                CARRIED oLlaveCochera
-                ZERO    fPuertaCochera
-                XMESSAGE "Entramos en la cochera.#k"
-                CLS                     ; Limpiamos la pantalla
-                GOTO    lCochera
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+> MIRAR     _           AT lExteriorCochera
+                INK    9
+                XMESSAGE "Estás en el exterior de la cochera, la puerta está cerrada.#n"
                 DONE
 
+> EXAMINA   PUERTA
 > ABRIR     PUERTA      AT lExteriorCochera
-                NOTCARR oLlaveCochera
-                XMESSAGE "No puedes entrar sin las llaves."            
-                DONE
-
-> ABRIR     PUERTA      AT lExteriorCochera
-                CARRIED oLlaveCochera
-                NOTZERO fPuertaCochera
+                ZERO fInsistePuerta
+                SET  fInsistePuerta
+                INK     9
                 XMESSAGE "No puedes entrar, la puerta esta bloqueada."            
-                DONE                
+                DONE   
+                 
+> EXAMINA   PUERTA
+> ABRIR     PUERTA      AT lExteriorCochera
+                NOTZERO fInsistePuerta
+                ZERO    fInsisteMuchoPuerta
+                SET     fInsisteMuchoPuerta
+                INK     2 ; Voz de la conciencia
+                XMESSAGE "La puerta está cerrada.... No insistas más"             
+                DONE  
+
+> EXAMINA   PUERTA
+> ABRIR     PUERTA      AT lExteriorCochera
+                NOTZERO fInsistePuerta
+                NOTZERO fInsisteMuchoPuerta
+                ZERO    fJugar
+                INK     2 ; Voz de la conciencia
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
+                INK     9
+                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que te un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
+                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano."
+                INK    4
+                XMESSAGE "Estás muerto"
+                DONE  
+
+> MIRAR     PUERTA
+> EXAMINA   PUERTA
+> ABRIR     PUERTA      AT lExteriorCochera
+                NOTZERO fInsistePuerta
+                NOTZERO fInsisteMuchoPuerta
+                NOTZERO fJugar
+                INK     2 ; Voz de la conciencia
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
+                INK     9
+                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que te un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
+                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#k"
+                INK 14
+                XMESSAGE "¿Pero tu no se supone que ibas a ayudarme, cacho inutil?, ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
+                INK    4
+                XMESSAGE "Estás muerto."
+                DONE  
+
+
 
 ; Estamos en locCochera
 ; NOTA: Desarrollar
@@ -2044,23 +2133,6 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fJugar
-                ISAT    oLlaveChamizo 252
-                CREATE  oLlaveChamizo
-                INK     14
-                XMESSAGE " ¡Mira! ¡Aún están aquí! Seguro que podemos entrar con ellas."
-                INK     9               ; Color del narrador
-                XMESSAGE "Coges las llaves del chamizo.#n"
-                INK     15
-                GET     oLlaveChamizo
-                DONE
-
-> EXAMINA   PUERTA      AT lCochera
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fJugar
                 INK     9               ; Color del narrador
                 XMESSAGE "Se trata de una puerta de garaje abatible. Es de chapa.#n"                
                 DONE
@@ -2291,10 +2363,8 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fCerrarGrifo
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fPuertaCochera  
-                SET     fPuertaCochera
                 INK     9               ; Color del narrador
-                XMESSAGE "Salimos de la cochera.#k"
+                XMESSAGE "Salimos de la cochera y la puerta se cierra tras nosotros.#k"
                 INK     15
                 CLS  ; Limpiamos la pantalla
                 GOTO    lExteriorCochera
@@ -2302,6 +2372,29 @@ BAJAR   lBath2
                 DONE
 
 > O         _           AT lCochera
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                ZERO    fCerrarGrifo
+                CLEAR   fDarkF          ; Desactivamos la oscuridad                
+                INK     9               ; Color del narrador
+                XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
+                DONE
+
+> E         _           AT lCochera ; Si salimos por la puerta, la puerta se bloquea con un flag y no podemos volver a entrar.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                NOTZERO fCerrarGrifo
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     9               ; Color del narrador
+                XMESSAGE "Volvemos a la bodega.#k"
+                CLS  ; Limpiamos la pantalla
+                GOTO    lBodega
+                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                DONE
+
+> E         _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3412,7 +3505,7 @@ BAJAR   lBath2
                 DONE      
 
 
-; Estamos en lPatio
+; Estamos en locPatio
 ; NOTA: Probar toda la mecánica de esta localización
 
 > O         _           AT lPatio
@@ -3516,13 +3609,13 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Le das la pelota que llevas contigo al crío y se le dibuja una sonrisa en la cara.#n"
                 INK     14
-                XMESSAGE "No necesito a mis padres, te tengo a tí. ¿Podemos irnos yá?#n"
+                XMESSAGE "Muchas gracias por devolverme mi pelota, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
-                INK     14
-                XMESSAGE "Ya no. Vámonos de aquí, por favor.#n"
-                INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "Lo vamos a seguir, pero cagao me tiene#n"
+                INK     14  ; Color del niño
+                XMESSAGE "Mi hermana no abrirá la puerta; está muy enfadada, aun así, no es la única salida de la casa.#n"
+                INK     3               ; Color de la conciencia de Marcos
+                XMESSAGE "De acuerdo, pues vámonos.#n"
                 DONE
 
 > JUGAR     _           AT lPatio
@@ -4949,8 +5042,15 @@ BAJAR   lBath2
                 ISAT    oSecretKey1 252
                 CREATE  oSecretKey1
                 GET     oSecretKey1
+                ISAT    oPaleta 252
+                CREATE  oPaleta
+                GET     opaleta
+                ISAT    oLlaveBodega 252
+                CREATE  oLlaveBodega
+                GET     oLlaveBodega
+                SET     fJugar
                 CLS                     ; Limpiamos la pantalla
-                GOTO    lSalon
+                GOTO    lRecibidor
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 

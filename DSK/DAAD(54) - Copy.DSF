@@ -77,8 +77,8 @@
 #define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche
 #define fPatio              84      ; Control para jugar con el crío en lPatio
 #define fGnomoRoto          85      ; Control para cuando rompes el Gnomo en lPorche
-#define fRecibidor          86      ; No se usa
-#define fUsarPanel          87      ; No se usa
+#define fInsistePuerta      86      ; Control para abrir la puerta de la cochera en ExteriorCochera
+#define fInsisteMuchoPuerta 87      ; Control para abrir la puerta de la cochera en ExteriorCochera
 #define fUsarTarjeta        88      ; Control de USAR TARJETA en la VITRINA en lSalon
 #define fVasAMorir          89      ; Control para matar al jugador en lGabinete
 #define fUsarCerilla        90      ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado
@@ -99,6 +99,7 @@
 #define fQuitarMancha       106     
 #define fCombinacion        107
 #define fApagarCerilla      108
+
 
 ;                               Localizaciones
 #define lIntro              0
@@ -813,7 +814,7 @@ BAJAR   lBath2
 ; NOTA: Poner sistema de claves para continuar la aventura desde algún punto determinado
 
 ; Aquí comienza la aventura
-> USAR      MUEBLE      AT lMadrid
+> USAR      MUEBLE      
                 INK     1
                 XMESSAGE "INK 1"
                 INK     2               ; Color de la conciencia de Marcos
@@ -1448,21 +1449,17 @@ BAJAR   lBath2
 > O         _           AT lRecibidor
                 NOTZERO fJugar          ; Has jugado con el crío del patio
                 INK     14
-                XMESSAGE "Ya tienes la puerta abierta, pero necesito tu ayuda."
+                XMESSAGE "No podemos salir por aquí porque mi hermana ha cerrado la puerta.#n"
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿Qué te ocurre, niño?"
+                XMESSAGE "¿Qué te ocurre, niño?#n#k"
                 INK     14
-                XMESSAGE "A mi me gustaria irme también, pero no puedo, necesito hacer ALGO antes."
+                XMESSAGE "A mi me gustaria irme también, pero no puedo, necesito hacer ALGO antes.#n"
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿Qué necesitas hacer?"
+                XMESSAGE "¿Qué necesitas hacer?#n#k"
                 INK     14
-                XMESSAGE "Necesito encontrar a mi madre... Me siento muy solo sin mi madre."
-                INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "Puedes irte o ayudar al crío a resolver el turrón."
+                XMESSAGE "Cuando llegue el momento te lo explicaré, vámonos de aquí.#n"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                GOTO    lExtcasa
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 > O         _           AT lRecibidor
@@ -1759,6 +1756,7 @@ BAJAR   lBath2
                 XMESSAGE "No tengo recuerdo alguno de esta puerta. Además, no tiene cerradura, luego seguro que se puede abrir."
                 DONE
 
+;NOTA: Por aquí entramos la primera vez sin jugar con el crío para coger la pelota.
 > USAR      PUERTA
 > ABRIR 	PUERTA      AT lBodega
                 NOTZERO fControlLuz
@@ -1766,12 +1764,68 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
+                ZERO    fJugar
                 INK     9               ; Color del narrador
                 XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lCochera
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                DONE
+
+; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el crío en lugar de salir por la entrada ppal.
+> USAR      PUERTA
+> ABRIR 	PUERTA      AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fQuitarMancha
+                NOTZERO fJugar
+                INK     9               ; Color del narrador
+                XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k"
+                CLS                     ; Limpiamos la pantalla
+                INK     9               ; Color del narrador
+                GOTO    lCochera
+                ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                XMESSAGE "Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil.#n#k#b"
+                INK     14
+                XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#n#k"
+                INK     3
+                XMESSAGE "¿Has venido siguiéndome?#n#k"
+                INK     14 
+                XMESSAGE "!Sí! Te has portado bien conmigo y yo te acompaño para ayudarte.#n#k"
+                INK     3
+                XMESSAGE "Me has dicho que aquí ha ocurrido algo. ¿A qué te refieres?#n#k"
+                INK     14 
+                XMESSAGE "Un día yo escapé de la casa en busca de ayuda, porque el señor nos pegaba a mi madre a mi hermana y a mi, pero el señor me descubrió camino del pueblo y me trajo aquí. #n#k"
+                INK     3
+                XMESSAGE "¿Y qué pasó entonces?#n#k"
+                INK     14 
+                XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El me hizo a mirar mientras los cortaba con un hacha y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#n#k"
+                INK     3
+                XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#n#k"
+                INK     14 
+                XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. Hoy hace treinta años que pasó todo y como nadie ha descubierto nunca lo que ha ocurrido, cada treinta años pasamos una noche en la casa hasta que se descubran los cuerpos.#n#k"
+                INK     3
+                XMESSAGE "¿Has dicho que llevásteis los cuerpos al chamizo?.#n#k"
+                INK     14 
+                XMESSAGE "Si. Allí los enterramos con una pala y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#n#k"
+                INK    9
+                XMESSAGE "Observas como el niño se dirige hacia la puerta del garaje, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#n#k"
+                INK 15
+                ISAT   oLlaveChamizo 252
+                CREATE oLlaveChamizo
+                GET    oLlaveChamizo
+                INK     14
+                XMESSAGE "#nAquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala para poder desenterrarnos.#n#k"
+                INK     2
+                XMESSAGE "¡Entendido! Hay que buscar una pala.#n#k"
+                INK     3
+                XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#n#k"
+                INK     14
+                XMESSAGE "Te acompaño.#n#k"
+                INK     9
                 DONE
 
 > USAR      PUERTA
@@ -1981,25 +2035,60 @@ BAJAR   lBath2
 ; Estamos en locExtCochera
 ; NOTA: Desarrollar
 
-> ABRIR     PUERTA      AT lExteriorCochera
-                CARRIED oLlaveCochera
-                ZERO    fPuertaCochera
-                XMESSAGE "Entramos en la cochera.#k"
-                CLS                     ; Limpiamos la pantalla
-                GOTO    lCochera
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+> MIRAR     _           AT lExteriorCochera
+                INK    9
+                XMESSAGE "Estás en el exterior de la cochera, la puerta está cerrada.#n"
                 DONE
 
+> EXAMINA   PUERTA
 > ABRIR     PUERTA      AT lExteriorCochera
-                NOTCARR oLlaveCochera
-                XMESSAGE "No puedes entrar sin las llaves."            
-                DONE
-
-> ABRIR     PUERTA      AT lExteriorCochera
-                CARRIED oLlaveCochera
-                NOTZERO fPuertaCochera
+                ZERO fInsistePuerta
+                SET  fInsistePuerta
+                INK     9
                 XMESSAGE "No puedes entrar, la puerta esta bloqueada."            
-                DONE                
+                DONE   
+                 
+> EXAMINA   PUERTA
+> ABRIR     PUERTA      AT lExteriorCochera
+                NOTZERO fInsistePuerta
+                ZERO    fInsisteMuchoPuerta
+                SET     fInsisteMuchoPuerta
+                INK     2 ; Voz de la conciencia
+                XMESSAGE "La puerta está cerrada.... No insistas más"             
+                DONE  
+
+> EXAMINA   PUERTA
+> ABRIR     PUERTA      AT lExteriorCochera
+                NOTZERO fInsistePuerta
+                NOTZERO fInsisteMuchoPuerta
+                ZERO    fJugar
+                INK     2 ; Voz de la conciencia
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
+                INK     9
+                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que te un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
+                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano."
+                INK    4
+                XMESSAGE "Estás muerto"
+                DONE  
+
+> MIRAR     PUERTA
+> EXAMINA   PUERTA
+> ABRIR     PUERTA      AT lExteriorCochera
+                NOTZERO fInsistePuerta
+                NOTZERO fInsisteMuchoPuerta
+                NOTZERO fJugar
+                INK     2 ; Voz de la conciencia
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
+                INK     9
+                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que te un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
+                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#k"
+                INK 14
+                XMESSAGE "¿Pero tu no se supone que ibas a ayudarme, cacho inutil?, ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
+                INK    4
+                XMESSAGE "Estás muerto."
+                DONE  
+
+
 
 ; Estamos en locCochera
 ; NOTA: Desarrollar
@@ -2044,23 +2133,6 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fJugar
-                ISAT    oLlaveChamizo 252
-                CREATE  oLlaveChamizo
-                INK     14
-                XMESSAGE " ¡Mira! ¡Aún están aquí! Seguro que podemos entrar con ellas."
-                INK     9               ; Color del narrador
-                XMESSAGE "Coges las llaves del chamizo.#n"
-                INK     15
-                GET     oLlaveChamizo
-                DONE
-
-> EXAMINA   PUERTA      AT lCochera
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fJugar
                 INK     9               ; Color del narrador
                 XMESSAGE "Se trata de una puerta de garaje abatible. Es de chapa.#n"                
                 DONE
@@ -2291,10 +2363,8 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fCerrarGrifo
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fPuertaCochera  
-                SET     fPuertaCochera
                 INK     9               ; Color del narrador
-                XMESSAGE "Salimos de la cochera.#k"
+                XMESSAGE "Salimos de la cochera y la puerta se cierra tras nosotros.#k"
                 INK     15
                 CLS  ; Limpiamos la pantalla
                 GOTO    lExteriorCochera
@@ -2302,6 +2372,29 @@ BAJAR   lBath2
                 DONE
 
 > O         _           AT lCochera
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                ZERO    fCerrarGrifo
+                CLEAR   fDarkF          ; Desactivamos la oscuridad                
+                INK     9               ; Color del narrador
+                XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
+                DONE
+
+> E         _           AT lCochera ; Si salimos por la puerta, la puerta se bloquea con un flag y no podemos volver a entrar.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                NOTZERO fCerrarGrifo
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     9               ; Color del narrador
+                XMESSAGE "Volvemos a la bodega.#k"
+                CLS  ; Limpiamos la pantalla
+                GOTO    lBodega
+                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                DONE
+
+> E         _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3232,6 +3325,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una habitación lúgubre y cerrada... Si alguien ha vivido aquí, lo ha hecho sin duda en unas condiciones inhumanas.#n#n Miras a tu alrededor y descubres que el suelo tiene marcas de haberse movido algún mueble.#k#n Parece que algo se mueve encima del colchón."
+
                 DONE
 
 > ABRIR     BANCO
@@ -3252,7 +3346,7 @@ BAJAR   lBath2
                 DONE
 
 > ABRIR     COLCHON
-> EXAMINAR  COLCHON     AT lCriada
+> EXAMINA  COLCHON     AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3263,6 +3357,15 @@ BAJAR   lBath2
                 XMESSAGE "Cuando crees haberlo visto todo...#n¡Llega la CUCARAÑA!"
                 ; MP3 con la canción de la cucaracha.
                 DONE
+
+> EXAMINA  SUELO       AT lCriada
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     9               ; Color del narrador
+                XMESSAGE "En el suelo ves unas marcas. Parece que han arrastrado un mueble.#n"   
+                DONE      
 
 > EMPUJAR   BANCO
 > MOVER     BANCO       AT lCriada
@@ -3317,44 +3420,68 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     13
+                XMESSAGE "9 de Agosto de 1949.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "9 de Agosto de 1949.#n Hoy comienzo a trabajar en esta casa. Estoy ilusionada porque ya no voy a pasar más calamidades. El señor me ha dicho que va a ayudar a mis padres dándoles dinero para mantener sus tierras a cambio de mi estancia aquí. Durante el día hay más servicio trabajando, pero parece ser que voy a ser la única interna.#n#k"
-
-                XMESSAGE "20 de Septiembre de 1949.#n El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mi y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#n#k"
-                
-                XMESSAGE "17 de Octubre de 1949.#n Noto al señor muy interesado en mi, últimamente me requiere  para que le haga compañia y le de conversación, empiezo a pensar que me pretende.#n#k"
-
-                XMESSAGE "1 de Enero 1950.#n Anoche el señor me hizo tocamientos... Estaba bebido y se puso violento. Hoy ha venido a mis aposentos a pedirme disculpas. Me ha dejado usar la terma para darme un baño como muestra de conciliación. Me siento muy incómoda, pero comprendo que el alcohol transforma a las personas. Tengo un poco de miedo.#n#k"
-
-                XMESSAGE "25 de Febrero de 1950.#n El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojala pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#n#k"
-
-                XMESSAGE "16 de Marzo de 1950.#n  El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos, y me ha obligado a acostarme con el en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#n#k"
-
-                XMESSAGE "10 de Abril de 1950.#n Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#n#k"
-
-                XMESSAGE "2 de Mayo de 1950.#n Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente; he bajado muchas escaleras.#n Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n"
-                XMESSAGE "He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable. Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar.; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#n#k"
-
-                XMESSAGE "25  de Junio de 1950.#n Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#n#k"
-
-                XMESSAGE "5 de Agosto de 1950.#n ¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener nauseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#n#k"
-
-                XMESSAGE "10 de Septiembre de 1950.#n El señor se ha dado cuenta del tamaño de mi tripa y me ha escondido en una habitación que no conocía. Está oculta tras una vitrina en el salón de la casa. Me ha dicho que nadie debe verme y que tengo que esconderme aquí cuando vengan visitas.#n#k"
-
-                XMESSAGE "6 de Octubre de 1950.#n Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#n#k"
-
-                XMESSAGE "23 de Febrero de 1951.#n. Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado él.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#n#k"
-
-                XMESSAGE "9 de Marzo de 1951.#n. El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego por que alguien lo encuentre algún día y se haga justicia.#n#k."
-
+                XMESSAGE "Hoy comienzo a trabajar en esta casa. Estoy ilusionada porque ya no voy a pasar más calamidades. El señor me ha dicho que va a ayudar a mis padres dándoles dinero para mantener sus tierras a cambio de mi estancia aquí. Durante el día hay más servicio trabajando, pero parece ser que voy a ser la única interna.#n#k"
+                INK    13
+                XMESSAGE "20 de Septiembre de 1949.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE "El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mi y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#n#k"
+                INK    13            
+                XMESSAGE "17 de Octubre de 1949.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE "Noto al señor muy interesado en mi, últimamente me requiere  para que le haga compañia y le de conversación, empiezo a pensar que me pretende.#n#k"
+                INK    13                
+                XMESSAGE "1 de Enero 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE "Anoche el señor me hizo tocamientos... Estaba bebido y se puso violento. Hoy ha venido a mis aposentos a pedirme disculpas. Me ha dejado usar la terma para darme un baño como muestra de conciliación. Me siento muy incómoda, pero comprendo que el alcohol transforma a las personas. Tengo un poco de miedo.#n#k"
+                INK    13
+                XMESSAGE "25 de Febrero de 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE "El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojala pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#n#k"
+                INK    13
+                XMESSAGE "16 de Marzo de 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE " El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con el en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#n#k"
+                INK    13                
+                XMESSAGE "10 de Abril de 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE " Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#n#k"
+                INK    13
+                XMESSAGE "4 de Mayo de 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#n#k"
+                XMESSAGE "Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#n#k"
+                XMESSAGE "Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#n#k"
+                INK    13                
+                XMESSAGE "25  de Junio de 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE " Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#n#k"
+                INK     13
+                XMESSAGE "5 de Agosto de 1950.#n "
+                INK     9               ; Color del narrador
+                XMESSAGE "¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener nauseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#n#k"
+                INK     13
+                XMESSAGE "10 de Septiembre de 1950.#n "
+                INK     9               ; Color del narrador
+                XMESSAGE "El señor se ha dado cuenta del tamaño de mi tripa y me ha escondido en una habitación que no conocía. Está oculta tras una vitrina en el salón de la casa. Me ha dicho que nadie debe verme y que tengo que esconderme aquí cuando vengan visitas.#n#k"
+                INK     13
+                XMESSAGE "6 de Octubre de 1950.#n"
+                INK     9               ; Color del narrador
+                XMESSAGE " Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#n#k"
+                 INK    13               
+                XMESSAGE "23 de Febrero de 1951.#n."
+                INK     9               ; Color del narrador
+                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#n#k"
+                INK    13               
+                XMESSAGE "9 de Marzo de 1951.#n."
+                INK     9               ; Color del narrador
+                XMESSAGE " El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego por que alguien lo encuentre algún día y se haga justicia.#n#k"
                 ; El resto de la historia, de cuando el niño ya con seis años escapa de la casa y le pilla el terrateniente en el pueblo, lo narrará el niño en el garaje.
                 ; la historia continua cuando el terrateniente descubre al niño intentando escapar, lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y con la ayuda de este, le da
                 ; un hacha y le pide que le ayude a trocear los cuerpos y le obliga a llevarlos al chamizo, cavar un hoyo grande y a continuación, después de depositar los restos en el hoyo, mata al niño
                 ; de un palazo en la cabeza y lo deja caer al hoyo.
-
-
-                
-
                 DONE
 
 > N         _           AT lCriada
@@ -3378,7 +3505,7 @@ BAJAR   lBath2
                 DONE      
 
 
-; Estamos en lPatio
+; Estamos en locPatio
 ; NOTA: Probar toda la mecánica de esta localización
 
 > O         _           AT lPatio
@@ -3482,13 +3609,13 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Le das la pelota que llevas contigo al crío y se le dibuja una sonrisa en la cara.#n"
                 INK     14
-                XMESSAGE "No necesito a mis padres, te tengo a tí. ¿Podemos irnos yá?#n"
+                XMESSAGE "Muchas gracias por devolverme mi pelota, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
-                INK     14
-                XMESSAGE "Ya no. Vámonos de aquí, por favor.#n"
-                INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "Lo vamos a seguir, pero cagao me tiene#n"
+                INK     14  ; Color del niño
+                XMESSAGE "Mi hermana no abrirá la puerta; está muy enfadada, aun así, no es la única salida de la casa.#n"
+                INK     3               ; Color de la conciencia de Marcos
+                XMESSAGE "De acuerdo, pues vámonos.#n"
                 DONE
 
 > JUGAR     _           AT lPatio
@@ -4915,8 +5042,15 @@ BAJAR   lBath2
                 ISAT    oSecretKey1 252
                 CREATE  oSecretKey1
                 GET     oSecretKey1
+                ISAT    oPaleta 252
+                CREATE  oPaleta
+                GET     opaleta
+                ISAT    oLlaveBodega 252
+                CREATE  oLlaveBodega
+                GET     oLlaveBodega
+                SET     fJugar
                 CLS                     ; Limpiamos la pantalla
-                GOTO    lSalon
+                GOTO    lRecibidor
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
