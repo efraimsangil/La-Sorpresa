@@ -3793,7 +3793,7 @@ BAJAR   lBath2
                 DONE
 
 > ABRIR     COLCHON
-> EXAMINA  COLCHON     AT lCriada
+> EXAMINA   COLCHON     AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3805,7 +3805,7 @@ BAJAR   lBath2
                 ; MP3 con la canción de la cucaracha.
                 DONE
 
-> EXAMINA  SUELO       AT lCriada
+> EXAMINA   SUELO       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3975,7 +3975,7 @@ BAJAR   lBath2
                 XMESSAGE "Jugando al pilla pilla. Pero nos gustaría jugar a la pelota. ¡Juega conmigo!"               
                 DONE
 
-> LANZAR      PELOTA    AT lPatio
+> LANZAR    PELOTA
 > JUGAR     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -4011,7 +4011,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE " La luna es un globo que se le escapó a un niño bobo.#n"
+                XMESSAGE "La luna es un globo que se le escapó a un niño bobo.#n"
                 DONE
 
 ; Estamos en locRoom1
@@ -4468,7 +4468,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fAbrirCisterna                
+                NOTZERO fAbrirCisterna
                 CARRIED oPaleta
                 INK     9               ; Color del narrador
                 XMESSAGE "Ya tienes la paleta. Aquí no hay nada más que ver."
@@ -4717,7 +4717,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n En este momento y por alguna razón desconocida, está llena de agua hasta el borde."
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#nYo examinaría con determinación esa terma."              
+                XMESSAGE "#nYo examinaría con determinación esa terma."
                 DONE
 
 > EXAMINA   AGUA        AT lBath3
@@ -4995,9 +4995,9 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                EQ      fNenaMala 255; Hemos entrado en Room3
-                ZERO    fFotoPeluche ;no hemos visto la foto
-                CARRIED oPeluche ; llevamos el peluche encima
+                EQ      fNenaMala 255   ; Hemos entrado en Room3
+                ZERO    fFotoPeluche    ; no hemos visto la foto
+                CARRIED oPeluche        ; llevamos el peluche encima
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "¡Hay una niña en el pasillo!#k"
                 INK     6
@@ -5133,10 +5133,10 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fFotoPeluche ; Hemos visto la foto
-                CARRIED oPeluche ; Tenemos el peluche
-                ZERO    fAceite ; no tenemos el aceite
-                EQ      fNenaMala 255 ;hemos entrado en ROOM3
+                NOTZERO fFotoPeluche    ; Hemos visto la foto
+                CARRIED oPeluche        ; Tenemos el peluche
+                ZERO    fAceite         ; no tenemos el aceite
+                EQ      fNenaMala 255   ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6

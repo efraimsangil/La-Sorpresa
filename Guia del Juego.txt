@@ -1,0 +1,59 @@
+lRecibidor
+	- ABRIR CAJON
+		- oCerillas
+lCocina
+	- EX SUMIDERO
+		- oLlavePatio
+		
+lBath1
+	- ABRIR RESPIRADERO
+		- oLataDeAceite
+lRoom1
+	- EX CAMA
+	- EX OBJETO
+		- Flag fFotoPeluche
+	
+lBath2
+	- SUBIR RETRETE
+		- lRetrete
+			- EX CISTERNA
+				- oPaleta
+	- EX RETRETE
+		- oHacha
+
+lRoom3
+	- MIRAR
+		- Flag fFlashBack
+		- EX CAMA
+			- oPeluche
+			
+lBath3
+	- EX TERMA (DOS VECES)
+		- oLlaveCaja
+
+Cuando vuelves desde lPasillo3
+
+lPasillo2
+	- Depende de los flags fFotoPeluche y tener el objeto oPeluche
+	
+lEscaleras
+	- MOVER TABLON
+	- ABRIR CAJA
+		- oSecretKey1
+	- PONER TABLON
+	
+lSalon
+	- USAR TARJETA
+	- MOVER VITRINA
+	
+lCriada
+	- EX BANCO
+		- oLlaveBodega
+	- MOVER LOSETA
+		- oDiario
+		
+lPatio
+	- JUGAR
+		- Flag fJugar
+	
+	

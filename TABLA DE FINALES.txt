@@ -1,0 +1,56 @@
+FINAL PEOR: Te vas solo, has salido por el gabinete y no has jugado 
+con el niño y no has desenterrado los cadáveres.
+
+- oCerillas
+- oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja
+- ZERO fJugar
+- oLatadeAceite
+- oHacha
+- oPala *La pala la cogemos necesariamente al salir de LocGabinete, pero no vamos a usarla.
+- oLlaveCoche
+- fCombinacion = oPeluche + fFotoPeluche
+
+FINAL MALO: Te vas con el niño, que ha sido quien te saca al exterior de la cochera cuando abres la puerta oculta que ha en la bodega. Vas al chamizo a por las llaves del coche y te marchas al coche. No usas la pala.
+
+- oCerillas
+- oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja
+- NOTZERO fJugar
+- fCombinacion = oPeluche + fFotoPeluche o sólo oPeluche
+- oPaleta - De este modo la usamos en la pared y abrimos la puerta que descubrimos
+- oLlaveChamizo
+- oLlaveCoche
+
+FINAL CASI MEJOR: Desde la bodega y con el niño, pasas por el gabinete, usas la pala y rompes el travesaño para salir al exterior pero no has leído el diario.
+
+- oCerillas
+- oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja
+- NOTZERO fJugar
+- ZERO    fLeerDiario
+- fCombinacion = oPeluche + fFotoPeluche o sólo oPeluche
+- oHacha
+- oPala *La pala la cogemos necesariamente al salir de LocGabinete, pero no vamos a usarla.
+- oLlaveChamizo
+- oLlaveCoche
+
+FINAL MEJOR: hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante es el mejor final, porque además hemos leído el diario de la criada.
+- oCerillas
+- oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja
+- NOTZERO fJugar
+- NOTZERO fLeerDiario
+- fCombinacion = oPeluche + fFotoPeluche o sólo oPeluche
+- oHacha
+- oPala *La pala la cogemos necesariamente al salir de LocGabinete, pero no vamos a usarla.
+- oLlaveChamizo
+- oLlaveCoche
+
+
+lBodega
+	lGabinete
+	lCochera
+
+lBodega	
+	NOTZERO fQuitarMancha
+	NOTZERO fJugar
+	ABRIR PUERTA: Vamos a lCochera y el niño nos da oLlaveChamizo y nos lleva a lExteriorCochera
+	Vamos al chamizo y recogemos las llaves del coche y nos vamos al coche
+	
