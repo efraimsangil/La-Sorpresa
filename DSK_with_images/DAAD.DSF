@@ -2052,16 +2052,6 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locGabinete
-; Si llegamos a lGabinete, es porque hemos conseguido:
-
-;oLataDeAceite
-;fCombinacion
-;oLlaveBodega
-;oSecretKey1
-;oLlaveCaja
-
-
-
 ; Damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
 ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMINAR en términos absolutos, nos lleva a morir.
 ; Para escapar es necesario quedarse sin turnos de cerilla, o apagar la cerilla (estar a oscuras) para que la criada no le vea y pueda salir
