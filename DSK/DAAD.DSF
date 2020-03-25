@@ -5398,50 +5398,58 @@ BAJAR   lBath2
                 DONE
 
 ; Uso general
-> USAR      COJONES     
+;> USAR      COJONES     
                 ;SET     fJugar
                 ;GOTO lCochera
-                GOTO	lRecibidor
-                RESTART
-                DONE
+                ;GOTO	lRecibidor
+                ;RESTART
+                ;DONE
 
 > USAR      CHUPETE     AT lMadrid
                 INK     9               ; Color del narrador
-                XMESSAGE "Eres un tramposo o tienes muchas prisas. Venga, te llevaré directamente al recibidor de la casa.#k"
+                XMESSAGE "Eres un tramposo o tienes muchas prisas.#nVenga, te llevaré directamente al recibidor de la casa.#k"
                 CLS                     ; Limpiamos la pantalla
-                ISAT   oLlaveBodega 252
-                CREATE oLlaveBodega
-                GET    oLlaveBodega
-                ISAT   oCerillas 252
-                CREATE oCerillas
-                GET    oCerillas
-                ISAT   oLataDeAceite 252
-                CREATE oLataDeAceite 
-                GET    oLataDeAceite 
-                ISAT   oHacha 252
-                CREATE oHacha
-                GET    oHacha
+                ;ISAT   oLlaveBodega 252
+                ;CREATE oLlaveBodega
+                ;GET    oLlaveBodega
+                ;ISAT   oCerillas 252
+                ;CREATE oCerillas
+                ;GET    oCerillas
+                ;ISAT   oLataDeAceite 252
+                ;CREATE oLataDeAceite 
+                ;GET    oLataDeAceite 
+                ;ISAT   oHacha 252
+                ;CREATE oHacha
+                ;GET    oHacha
                 ;ISAT   oPaleta 252
                 ;CREATE oPaleta
                 ;GET    oPaleta
-                SET    fCombinacion     ; Tenemos la combinación del candado
-                SET    fJugar           ; Hemos jugado con el crío
-                SET    fLeerDiario
-                GOTO   lBodega
+                ;SET    fCombinacion     ; Tenemos la combinación del candado
+                ;SET    fJugar           ; Hemos jugado con el crío
+                ;SET    fLeerDiario
+                GOTO    lRecibidor
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
+;> AYUDA     _
+;                INK     15              ; Color del sistema
+;                XMESSAGE "Guía de referencia rápida."
+;                XMESSAGE "Bienvenido a esta aventura de ficción interactiva.#n#nDadas las prestaciones de nuestros vetustos micro ordenadores, el programa interpreta un rango reducido de acciones.#n#nRecomendamos, pues, que construyas tus frases en infinitivo. Algunas de las acciones más comunes son:#n#n    > Ayuda#n    > Inventario[I]#n    > Describir localización[R]#n    > Examinar[EX]#n    > Norte[N], Sur[S], Este[E], Oeste[O]#n    > Bajar[AB], Subir[AR]#n    > Entrar[EN], Salir[SA]#n    > Coger#n    > Usar#n    > Empujar, Tirar, Mover#n    > Abrir, Cerrar#n    > Poner, Quitar#n    > Mover#n    > Encender, Prender#n#nConforme cumplas determinados hitos en tu aventura, desbloquearás algunos passwords.#n#nBasta con escribir 'pass' seguido de un espacio y la palabra clave en la sala de recarga energética, para continuar donde lo dejaste."
+;                DONE
+
 > AYUDA     _
-                XMESSAGE "fControlLuz"
-                PRINT   73
-                XMESSAGE "#nfUsarCerilla"
-                PRINT   90
-                XMESSAGE "#nfTurnosConLuz"
-                PRINT   72
-                XMESSAGE "#nfVasAMorir"
-                PRINT   89
-                XMESSAGE "#nfDarkF"
-                PRINT   28
+                INK     9
+                XMESSAGE "Siempre que uses MIRAR, se te dan pistas, para saber lo que debes hacer en dicha localización, lee atentamente."
+                ;XMESSAGE "fControlLuz"
+                ;PRINT   73
+                ;XMESSAGE "#nfUsarCerilla"
+                ;PRINT   90
+                ;XMESSAGE "#nfTurnosConLuz"
+                ;PRINT   72
+                ;XMESSAGE "#nfVasAMorir"
+                ;PRINT   89
+                ;XMESSAGE "#nfDarkF"
+                ;PRINT   28
                 DONE
 
 > USAR      MAGIA
@@ -5493,7 +5501,7 @@ BAJAR   lBath2
                 LET     fApagarCerilla 0
 				ZERO    fUsarCerilla
                 SET     fUsarCerilla
-                LET     fTurnosConLuz 8         ; Numero de turnos hasta que te quedas sin luz
+                LET     fTurnosConLuz 8 ; Numero de turnos hasta que te quedas sin luz
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fVasAMorir
                 SET     fControlLuz     ; Ponemos a 255 el flag
@@ -5608,12 +5616,6 @@ BAJAR   lBath2
                 ; un hacha y le pide que le ayude a trocear los cuerpos y le obliga a llevarlos al chamizo, cavar un hoyo grande y a continuación, después de depositar los restos en el hoyo, mata al niño
                 ; de un palazo en la cabeza y lo deja caer al hoyo.
                 DONE
-
-;> AYUDA     _
-;                INK     15              ; Color del sistema
-;                XMESSAGE "Guía de referencia rápida."
-;                XMESSAGE "Bienvenido a esta aventura de ficción interactiva.#n#nDadas las prestaciones de nuestros vetustos micro ordenadores, el programa interpreta un rango reducido de acciones.#n#nRecomendamos, pues, que construyas tus frases en infinitivo. Algunas de las acciones más comunes son:#n#n    > Ayuda#n    > Inventario[I]#n    > Describir localización[R]#n    > Examinar[EX]#n    > Norte[N], Sur[S], Este[E], Oeste[O]#n    > Bajar[AB], Subir[AR]#n    > Entrar[EN], Salir[SA]#n    > Coger, Dejar#n    > Usar#n    > Empujar, Tirar#n    > Abrir, Cerrar#n    > Poner, Quitar#n    > Poner#n    > Mover#n    > Encender, Prender#n#nConforme cumplas determinados hitos en tu aventura, desbloquearás algunos passwords.#n#nBasta con escribir 'pass' seguido de un espacio y la palabra clave en la sala de recarga energética, para continuar donde lo dejaste"
-;                DONE
 
 > SALID     _   INK     9               ; Color del narrador
                 PROCESS 7
