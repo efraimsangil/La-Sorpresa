@@ -395,11 +395,11 @@ CUIDAd          5       adverb
 A               2       preposition
 DE              3       preposition
 EN              4       preposition
-POR             5       preposition
+;POR             5       preposition
 ;TRAVES          5       preposition
-BAJO            7       preposition
-JUNTO           8       preposition
-MENOS           13      preposition
+;BAJO            7       preposition
+;JUNTO           8       preposition
+;MENOS           13      preposition
 
 ;                               Pronombres
 ;                               Conjunciones
@@ -526,14 +526,14 @@ LUEGO           2       conjugation
 /LTX                            ;Location Texts
 ; \k\b #k#b
 /0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
-/1 "Burgos.#n#n      10 de Enero de 1987.#k#b Marcos es un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrado a asumir todo lo que se le venga encima con tal de mantener su estatus laboral. Con los años, esta incapacidad de gestionar conflictos le ha arrastrado inevitablemente a la misantropía más absoluta, haciendo de él un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#n#nMarcos suele hablar mucho consigo mismo y tiene una conciencia muy desarrollada, puesto que en pocas ocasiones puede hacer gala de sus habilidades sociales, ya que la gente que se acerca ocasionalmente a él, huye despavorida en cuanto se preocupan en conocerle....#n#nHoy es Sábado y nuestro protagonista no tiene planes, excepto disfrutar de sus 48h de libertad condicional; así denomina el a los fines de semana.#k#bSon las 12:30PM#n#nEs un frío día de invierno y aún sigue en la cama medio despierto, remoloneando. Los madrugones de la semana le pesan cada día más y se siente incapaz de salir de su nido calentito bajo la manta de franela.#n#nEstá decidido... Se gira en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla; alguien decidió por él que debe despertarse definitivamente.#n#nTiene a su lado la mesilla de noche."
-/2 "Marcos sale de casa y coge su coche rumbo a la Sierra del Caurel; es una excursión, pero a Marcos le gusta conducir. La carretera le concentra porque es de las pocas cosas que le evita pensar en sus responsabilidades.#n#nPasadas unas horas de cristales empañados y carreteras mal asfaltadas, Marcos reconoce el paso del cruce que conduce al pueblo donde sus padres tienen la casa.#k#b Queda poco para llegar y el agotamiento comienza a resentir a Marcos, que empieza a acusar el entumecimiento de sus músculos tras el largo viaje.#k#bCon el ánimo lastimero, de repente percibe una distracción;#k el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de tunel sobrecogedor que siempre le dió respeto cuando era un niño.#n#nCuando se levantaba niebla, el paraje le resultaba inquietante y su imaginación le jugaba malas pasadas... La santa compaña, los aires de difunto... Una profunda sugestión desde niño le permite imaginar la silueta del can de Urco de entre la bruma.#n#n Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en su personalidad."
-/3 "Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#n#nLa casa dispone de dos plantas y desde aquí puedes divisar al norte el viejo chamizo, al sur la cochera y al este se encuentra el porche; la entrada principal de la casa."
+/1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Marcos es un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrado a asumir todo lo que se le venga encima con tal de mantener su estatus laboral. Con los años, esta incapacidad de gestionar conflictos le ha arrastrado inevitablemente a la misantropía más absoluta, haciendo de él un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b Marcos suele hablar mucho consigo mismo y tiene una conciencia muy desarrollada, puesto que en pocas ocasiones puede hacer gala de sus habilidades sociales, ya que la gente que se acerca ocasionalmente a él, huye despavorida en cuanto se preocupan en conocerle....#k#b Hoy es Sábado y nuestro protagonista no tiene planes, excepto disfrutar de sus 48h de libertad condicional; así denomina el a los fines de semana.#k#bSon las 12:30PM#n#nEs un frío día de invierno y aún sigue en la cama medio despierto, remoloneando. Los madrugones de la semana le pesan cada día más y se siente incapaz de salir de su nido calentito bajo la manta de franela.#k#b Está decidido... Se gira en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla; alguien decidió por él que debe despertarse definitivamente.#n#nTiene a su lado la mesilla de noche."
+/2 " Marcos sale de casa y coge su coche rumbo a la Sierra del Caurel; es una excursión, pero a Marcos le gusta conducir. La carretera le concentra porque es de las pocas cosas que le evita pensar en sus responsabilidades.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, Marcos reconoce el paso del cruce que conduce al pueblo donde sus padres tienen la casa.#k#b Queda poco para llegar y el agotamiento comienza a resentir a Marcos, que empieza a acusar el entumecimiento de sus músculos tras el largo viaje.#k#b Con el ánimo lastimero, de repente percibe una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de tunel sobrecogedor que siempre le dió respeto cuando era un niño.#k#b Cuando se levantaba niebla, el paraje le resultaba inquietante y su imaginación le jugaba malas pasadas... La santa compaña, los aires de difunto... Una profunda sugestión desde niño le permite imaginar la silueta del can de Urco de entre la bruma.#k#b Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en su personalidad."
+/3 "Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b La casa dispone de dos plantas y desde aquí puedes divisar al norte el viejo chamizo, al sur la cochera y al este se encuentra el porche; la entrada principal de la casa."
 /4 "La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
-/5 "Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#nLas paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad; solo de pensarlo, se te entumecen todos los huesos.#n#nEl chamizo tiene una puerta muy vieja, hecha listones de madera pintada de verde que está completamente descascarillada y ajada por la temperie."
+/5 "Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#nLas paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad; solo de pensarlo, se te entumecen todos los huesos.#n#nEl chamizo tiene una puerta muy vieja, hecha de listones de madera pintada de verde que está completamente descascarillada y ajada por la temperie."
 /6 "Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano y era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#nFrente a ti, está la puerta principal de la casa."
 /7 "El recibidor. Despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior, es desalentador y no invita a entrar en sus dependencias.#n#nPuedes ver las escaleras que dan paso a la planta superior, el aseo al norte, la cocina al sur, al este el salón y por supuesto, la consola con la que has tropezado.#n#nParece no haber nadie en la casa."
-/8 "En el aseo el ambiente está cargado, espeso, tanto es así que la llama de la cerilla ha cambiado de color a un verde azulado y comienza a producir un centelleo titilante...#n#nSientes que no quieres estar aquí y notas que comienzas a sentirte angustiado.#n#nLa frágil lumbre te permite descubrir un interruptor en la pared derecha."
+/8 "En el aseo el ambiente está cargado, espeso, tanto es así que la llama de la cerilla ha cambiado de color a un verde azulado y comienza a producir un centelleo titilante...#n#nSientes que no quieres estar aquí y notas que comienzas a sentirte angustiado.#n#nLa frágil lumbre te permite descubrir un interruptor en la pared."
 /9 "La bodega. Un lugar angosto y húmedo que despide un aroma a tierra excavada profundo y penetrante.#n#nEn una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo." 
 /10 "Estás en la cocina. Donde ayer era un lugar acogedor que proporcionaba esa sensación tan cálida de hogar, hoy te invade una sensación de frío desalentadora que proviene de la humedad que contienen las paredes.#n#nPuedes ver el fregadero, un aparador con una portezuela, una despensa para la comida al este y como no, la vieja lavadora Balay, que con más de 20 años, aún sigue dando servicio." 
 /11 "La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#nLa estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque esta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#nPuedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#nDesde aquí se accede a un amplio patio trasero al este."
@@ -881,7 +881,7 @@ BAJAR   lBath2
 ; NOTA: Enciendo el LED
 > ENCENDER  LAMPARA     AT lMadrid
                 INK     9               ; Color del narrador
-                XMESSAGE "Enciendes la lámpara (LED) ."
+                XMESSAGE "Enciendes la lámpara (LED)"
                 DONE
 
 ; NOTA: Enciendo el LED
@@ -912,7 +912,7 @@ BAJAR   lBath2
                 INK     12  ; Color del padre de Marcos hablando
                 XMESSAGE "Buenos días hijo. ¿Qué tal estás?.#n"
                 INK     3               ; Color del protagonista, Marcos   ; Color de Marcos hablando
-                XMESSAGE "Hola padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n"
+                XMESSAGE "Hola padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n#n"
                 INK     12
                 XMESSAGE "Dile a Morfeo que espere un momento y escucha: vente a la Sierra a pasar el día con nosotros, tenemos algo que contarte.#n"
                 INK     3               ; Color del protagonista, Marcos
@@ -930,7 +930,7 @@ BAJAR   lBath2
 > COGER		TELEFONO    AT lMadrid      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al este."
+                XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al ESTE."
                 DONE
 
 ; Controlamos la accion dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
@@ -938,7 +938,7 @@ BAJAR   lBath2
 > MIRAR		_			AT lMadrid    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono, ¡vago!.#n#n¿No piensas cogerlo?#n#n¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
+                XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono, ¡vago!.#n#n¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
                 DONE
 
 > EXAMINA   HABITACION
@@ -977,7 +977,7 @@ BAJAR   lBath2
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     9               ; Color del narrador
-                XMESSAGE "Marcos es un tío listo. Nada en este mundo va a romper su momento de paz y tranquilidad. Además, ya tenía ;planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compró en el Continente.#n"
+                XMESSAGE "Marcos es un tío listo. Nada en este mundo va a romper su momento de paz y tranquilidad. Además, ya tenía planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compró en el Continente.#n"
                 INK     15
                 END
 
@@ -1076,7 +1076,7 @@ BAJAR   lBath2
 > O         _           AT lExtCasa
                 NOTCARR oLlaveCoche     ; NO lleva en el inventario las llaves del coche
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿Acabas de llegar y ya te quieres ir? ¡Ni de broma!"
+                XMESSAGE "¿Acabas de llegar y ya te quieres ir?#n#n¡Ni de broma!"
                 DONE
 
 ; FINAL PEOR: Te vas solo, has salido por el gabinete y no has jugado con el niño y no has desenterrado los cadáveres. El juego termina cuando coges las llaves del coche en el chamizo y te vas de la casa.
@@ -1153,7 +1153,8 @@ BAJAR   lBath2
 
 > MIRAR     _           AT lExtCasa
                 INK     9               ; Color del narrador
-                MESSAGE "La casa es espectacular; está hecha por completo de piedra de las canteras de Folgoso do Courel, que tuvo que transportar a mano la vila plana sufriendo muchas 'baixas de persoal'...#k#n#nO puede ser que tus padres ya la compraran construida y no tuviesen la más remota idea de como se construyó #n#nLa casa tiene una gran lareira que en invierno no deja de funcionar quemando la leña que recogen tu padres del bosque.#n#n Tiene un buen porche, al que solías salir en verano a comer o cenar. La notas un poco descuidada, es como si llevara un buen tiempo sin recibir visita alguna."
+                XMESSAGE "La casa es espectacular; está hecha por completo de piedra de las canteras de Folgoso do Courel, que tuvo que transportar a mano la vila plana sufriendo muchas 'baixas de persoal'...#k#n#nO puede ser que tus padres ya la compraran construida y no tuviesen la más remota idea de como se construyó.#n#nLa casa tiene una gran lareira que en invierno no tiene tregua, quemando la leña que recogen tu padres del bosque.#k#bTiene un buen porche, al que solías salir en verano a comer o cenar."
+                XMESSAGE "La notas un poco descuidada, es como si llevara un buen tiempo sin recibir visita alguna."
                 DONE
 
 ; Estamos en locPorche
@@ -1285,6 +1286,7 @@ BAJAR   lBath2
                 XMESSAGE "#n¡Sublime!. Y además, ¡está intacta!. ¿De qué estará hecha?#n#n"
                 INK     15              ; Color del sistema
                 DROP    oMaceta
+                XMESSAGE "#n"
                 DONE
 
 > DEJAR 	MACETA      AT lPorche
@@ -1295,11 +1297,6 @@ BAJAR   lBath2
                 XMESSAGE "#nQue buen hijo eres, si te viera tu madre, estaría orgullosa de su retoño. Y ahora al grano, ¿vas a conseguir entrar en la casa o llamamos a los bomberos?#n#n"
                 INK     15              ; Color del sistema
                 DROP    oMaceta         ; Soltamos el objeto, podríamos cogerlo de nuevo
-                DONE
-
-> LLAMAR    BOMBERO
-                INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
                 DONE
 
 > COGER 	GNOMO
@@ -1373,7 +1370,7 @@ BAJAR   lBath2
 
 > EXAMINA	PUERTA		AT lPorche
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, tiene una cerradura para introducir una llave.#n#n Ahora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quien estaba en la puerta."
+                XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, se abre con una llave.#n#nAhora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quien estaba en la puerta."
                 DONE
 
 > LLAMAR    TIMBRE
@@ -1385,7 +1382,7 @@ BAJAR   lBath2
 
 > GOLPEAR	PUERTA		AT lPorche
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "Nadie responde a tu llamada. Prueba otra cosa. Como por ejemplo, encontrar la llave."
+                XMESSAGE "Nadie responde a tu llamada."
                 DONE
 
 > USAR 		PUERTA
@@ -1448,20 +1445,6 @@ BAJAR   lBath2
 ; Esas frases te las suelta la accion de abrir la puerta 
 
 ; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, luego si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
-> EXAMINA	FOTOGRAFIA  AT lRecibidor
-                NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
-                INK     9               ; Color del narrador
-				XMESSAGE "Parece ser una fotografía familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?"
-                INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "#n¿De dónde habrá salido esta fotografía y quienes son?.#k#b"
-                INK     9               ; Color del narrador
-                XMESSAGE "#nUn manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas."
-                INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "#n¿Qué cojones está pasando?"
-                INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#n¡Eso digo yo!"
-				DESTROY oFotografia1
-				DONE
 
 > SUBIR     _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
@@ -1572,6 +1555,7 @@ BAJAR   lBath2
                 XMESSAGE "La puerta está bloqueada, no se puede abrir."
                 DONE
 
+; MP3 de Intro del Super Mario
 > JUGAR     CONSOLA     AT lRecibidor
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "Espera que voy a por el Super Mario Bros..."
@@ -1580,7 +1564,7 @@ BAJAR   lBath2
 > EXAMINAR  RECIBIDOR
 > MIRAR     _           AT lRecibidor
                 INK     9               ; Color del narrador
-                XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al norte, al este contemplas el salon, al sur tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado, tiene un cajón."
+                XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al norte, al este contemplas el salon, al sur tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado; tiene un cajón."
                 DONE
 
 ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón. Siempre usamos flags para esto. Además, tenemos un flag para controlar si abrió el cajón y otro para la consola.
@@ -1588,7 +1572,7 @@ BAJAR   lBath2
                 ZERO    fConsola        ; Es la primera vez que ejecuta dicha acción
                 SET     fConsola        ; Activo un flag
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una preciosa consola de madera con patas forjadas de hierro. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
+                XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
                 DONE
 
 > EXAMINA	CONSOLA     AT lRecibidor
@@ -1597,7 +1581,8 @@ BAJAR   lBath2
                 XMESSAGE "La consola sigue siendo preciosa. ¿Abres el cajón y seguimos?"
                 DONE
 
-> EXAMINA  CAJON        AT lRecibidor
+> EXAMINA   CAJON        AT lRecibidor
+                ZERO    fCajon
                 INK     9               ; Color del narrador
                 XMESSAGE "El cajón está semi abierto."
                 INK     2               ; Color de la conciencia de Marcos
@@ -1618,20 +1603,14 @@ BAJAR   lBath2
 
 > ABRIR		CAJON 		AT lRecibidor
                 NOTZERO fCajon
-                INK     2               ; Color de la conciencia de Marcos
+                INK     9               ; Color de la conciencia de Marcos
                 XMESSAGE "Ya no hay nada interesante en la consola."
                 DONE
 
 > EXAMINA   CAJON       AT lRecibidor
                 NOTZERO fCajon          ; El cajón ya lo abrimos
-                INK     2               ; Color de la conciencia de Marcos
+                INK     9               ; Color de la conciencia de Marcos
                 XMESSAGE "Ya no hay nada interesante en el cajón."
-                DONE
-
-> EXAMINA   CERILLAS    AT lRecibidor
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                INK     9               ; Color del narrador
-                XMESSAGE "Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas."
                 DONE
 
 > BAJAR         _       AT lRecibidor
@@ -2240,7 +2219,7 @@ BAJAR   lBath2
 
 > MIRAR     _           AT lExteriorCochera
                 INK    9
-                XMESSAGE "Estás en el exterior de la cochera, la puerta está cerrada.#n"
+                XMESSAGE "Estás en el exterior de la cochera,frente a ti tienes la puerta.#n"
                 DONE
 
 > EXAMINA   PUERTA
@@ -2257,7 +2236,7 @@ BAJAR   lBath2
                 ZERO    fInsisteMuchoPuerta
                 SET     fInsisteMuchoPuerta
                 INK     2 ; Voz de la conciencia
-                XMESSAGE "La puerta está cerrada.... No insistas más"             
+                XMESSAGE "La puerta está cerrada.... No insistas más."             
                 DONE  
 
 > EXAMINA   PUERTA
@@ -2268,28 +2247,27 @@ BAJAR   lBath2
                 INK     2               ; Voz de la conciencia
                 XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
                 INK     9
-                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que te un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
-                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano."
+                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
+                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#n"
                 INK     4
-                XMESSAGE "Estás muerto"
-                DONE  
+                XMESSAGE "#nHas muerto.#n"
+                END  
 
-> MIRAR     PUERTA
 > EXAMINA   PUERTA
 > ABRIR     PUERTA      AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 NOTZERO fJugar
                 INK     2               ; Voz de la conciencia
-                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!.#n#n"   
                 INK     9
-                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que te un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
-                XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#k"
+                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
+                XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#n"
                 INK     14
                 XMESSAGE "¿Pero tu no se supone que ibas a ayudarme, cacho inutil?, ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
                 INK     4
-                XMESSAGE "Estás muerto."
-                DONE  
+                XMESSAGE "#nHas muerto.#n"
+                END  
 
 > N        _            AT lExteriorCochera
                 INK     9               ; Color del narrador
@@ -2620,6 +2598,12 @@ BAJAR   lBath2
 
 ; Estamos en locExtChamizo
 
+
+> EXAMINA   PUERTA      AT lExteriorChamizo             
+                INK     9               ; Color del narrador
+                XMESSAGE "El chamizo tiene una puerta muy vieja, hecha de listones de madera pintada de verde que está completamente descascarillada y ajada por la temperie."
+                DONE
+
 > ENTRAR    _
 > ABRIR     PUERTA      AT lExteriorChamizo
                 NOTZERO fControlLuz
@@ -2628,7 +2612,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta está cerrada.#n"
+                XMESSAGE "La puerta está cerrada."
                 DONE
 
 > ENTRAR    _
@@ -3028,9 +3012,8 @@ BAJAR   lBath2
 > EXAMINA   ASEO
 > MIRAR     _           AT lAseo
                 INK     9               ; Color del narrador
-                XMESSAGE "Sigues en el aseo.#n"
-                INK     2
-                XMESSAGE "Salgamos de aquí."
+                XMESSAGE "Hay un interruptor en la pared.#n"
+             
                 DONE
 
 > S         _           AT lAseo
@@ -5408,12 +5391,38 @@ BAJAR   lBath2
                 DONE
 
 ; Uso general
-;> USAR      COJONES     
+;> USAR      COJONES
                 ;SET     fJugar
                 ;GOTO lCochera
                 ;GOTO	lRecibidor
                 ;RESTART
                 ;DONE
+
+> EXAMINA	FOTOGRAFIA
+                NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
+                INK     9               ; Color del narrador
+				XMESSAGE "Parece ser una fotografía familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?"
+                INK     3               ; Color del protagonista, Marcos
+                XMESSAGE "#n¿De dónde habrá salido esta fotografía y quienes son?.#k#b"
+                INK     9               ; Color del narrador
+                XMESSAGE "#nUn manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas."
+                INK     3               ; Color del protagonista, Marcos
+                XMESSAGE "#n¿Qué cojones está pasando?"
+                INK     2               ; Color de la conciencia de Marcos
+                XMESSAGE "#n¡Eso digo yo!"
+				DESTROY oFotografia1
+				DONE
+
+> EXAMINA   CERILLAS
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                INK     9               ; Color del narrador
+                XMESSAGE "Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas."
+                DONE
+
+> LLAMAR    BOMBERO
+                INK     2               ; Color de la conciencia de Marcos
+                XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
+                DONE
 
 > USAR      CHUPETE     AT lMadrid
                 INK     9               ; Color del narrador
@@ -5524,8 +5533,8 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fVasAMorir
                 INK     9               ; Color del narrador
-                XMESSAGE "No debiste hacer eso. Lo que pareció ser un niño antaño, te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza."
-                XMESSAGE "#nCaes al suelo como un muñeco. Lo último que pasa por tu mente es el sonido de tu sangre gorgotear."
+                XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza."
+                XMESSAGE "#nCaes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear."
                 INK     4
                 XMESSAGE "#nHas muerto.#n"
                 INK     15              ; Color del sistema

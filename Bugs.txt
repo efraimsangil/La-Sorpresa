@@ -1,0 +1,9 @@
+- Revisar todos los LTX y poner sangría
+
+Comprobar
+
+> MIRAR     _           AT lExtCasa
+                INK     9               ; Color del narrador
+                XMESSAGE "La casa es espectacular; está hecha por completo de piedra de las canteras de Folgoso do Courel, que tuvo que transportar a mano la vila plana sufriendo muchas 'baixas de persoal'...#k#n#nO puede ser que tus padres ya la compraran construida y no tuviesen la más remota idea de como se construyó.#n#nLa casa tiene una gran lareira que en invierno no tiene tregua, quemando la leña que recogen tu padres del bosque.#k#bTiene un buen porche, al que solías salir en verano a comer o cenar."
+                XMESSAGE "La notas un poco descuidada, es como si llevara un buen tiempo sin recibir visita alguna."
+                DONE
