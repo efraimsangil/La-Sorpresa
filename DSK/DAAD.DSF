@@ -71,7 +71,7 @@
 #define fTablon             77      ; Control del TABLON suelto de lEscaleras
 #define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo
 #define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama
-#define fRoom3              80      ; No se usa
+#define fUsarPala           80      ; Control para que no usemos la pala dos veces
 #define fJugar              81      ; Control para saber si se jugó con el niño en lPatio (Crucial para uno de los finales)
 #define fTriturador         82      ; Control para matar al jugador si decide EXAMINAR por segunda vez el TRITURADOR en lCocina
 #define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche
@@ -1085,7 +1085,7 @@ BAJAR   lBath2
 
 ;- oCerillas
 ;- oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja
-;- ZERO fJUGAR
+;- ZERO fJugar
 ;- oLatadeAceite
 ;- oHacha
 ;- oPala *La pala la cogemos necesariamente al salir de LocGabinete, pero no vamos a usarla.
@@ -1094,7 +1094,7 @@ BAJAR   lBath2
 
 > O         _           AT lExtCasa
                 CARRIED oLlaveCoche     ; Llevas en el inventario las llaves del coche
-                ZERO    fJugar
+                ZERO    fJugar          ; No llegaste a jugar con el crío el patio
                 INK     9               ; Color de la conciencia de Marcos
                 XMESSAGE "Arrancas el coche y sales de la hacienda y te detienes justo antes de salir del pueblo.#n#k"
                 INK     3
@@ -1103,10 +1103,11 @@ BAJAR   lBath2
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni acercarte...#n#k"
                 INK     15
                 END
+
 ; FINAL MALO: Te vas con el niño, da igual por donde hayamos salido, si por la cochera o por el gabinete
 > O         _           AT lExtCasa
                 CARRIED oLlaveCoche     ; Llevas en el inventario las llaves del coche
-                NOTZERO fJugar
+                NOTZERO fJugar          ; Llevaste la pelota al crío del patio y jugaste con el
                 CLS
                 INK     9              ; Color de la conciencia de Marcos
                 XMESSAGE "Arrancas el coche y justo cuando vas salir de hacienda, el niño se manifiesta:#n#k"
@@ -1114,20 +1115,22 @@ BAJAR   lBath2
                 XMESSAGE "Aquí me despido de ti. No puedo acompañarte porque no puedo abandonar a mi familia.#n#k"
                 INK     3
                 XMESSAGE "Yo voy a localizar a mis padres para explicarles lo que ha ocurrido. También necesito saber que se encuentran bien.#n#k"
+                INK     9 
+                XMESSAGE "Aparece la niña...#n#k"
                 INK     6
-                XMESSAGE "TUS PADRES YA ESTÁN CON NOSOTROS.#n#k"
+                XMESSAGE "TUS PADRES YA ESTáN CON NOSOTROS.#n#k"
                 INK     14
                 XMESSAGE "Quería decírtelo, pero me has caido tan bien... Hemos tenido un accidente con ellos... con un cuchillo...#n#k"
                 INK     6
                 XMESSAGE "¡HE SIDO YO!. Hace treinta años les dije que no viniesen nunca más por aquí.#n#k"
                 INK     14 
-                XMESSAGE " ¡CORRE! ¡SAL DE AQUí! ¡RáPIDO!#n#k"
+                XMESSAGE " ¡CORRE! ¡SAL DE AQUí! ¡RáPIDO!#n#k#b"
                 INK     9
-                XMESSAGE "Marcos arranca el coche a toda velocidad y sale de la finca derrapando.#n Una vez sale de la casa, detiene el coche.#n#k"
-                INK     2 
-                XMESSAGE "Han matado a tus padres... Tu casa está llena de fantasmas sádicos... No tienes ni idea de qué pintan ahí... Has salido vivo de milagro...#n#k"
-                INK     3
-                XMESSAGE "Nunca me perdonaré lo que les ha pasado a mis padres, ¡NUNCA!#n#k"
+                XMESSAGE "Marcos arranca el coche a toda velocidad y sale de la finca derrapando.#n#nUna vez sale de la casa, detiene el coche.#n#k"
+                INK     3 
+                XMESSAGE "Han matado a mis padres... La casa está llena de fantasmas sádicos... No tengo ni idea de qué pintan ahí... He salido vivo de milagro...#n#k"
+                INK     2
+                XMESSAGE "Nunca te perdonarás lo que les ha pasado a tus padres, ¡NUNCA!#n#k"
                 INK     9
                 XMESSAGE "Retomas tu camino hacia la salida del pueblo y se te cruza un coche conocido que toca el claxon.#n#k"
                 INK     12
@@ -1136,15 +1139,15 @@ BAJAR   lBath2
                 XMESSAGE "¡PAPA! ¡No me jodas! ¡Estás VIVO! Cuando te cuente lo que ha ocurrido no te lo vas a creer.#n#k"
                 INK     12
                 XMESSAGE "Se lo que ha pasado, no te preocupes... Has conocido a la familia que aparece cada treinta años en la casa, ¿verdad?... Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele...#n#k"
-                XMESSAGE"La verdad es que pensando a posteriori, parecía que tenían algún asunto pendiente de resolver, pero tu madre me sacó de allí del brazo y me dijo que ni se me ocurriese ir, por eso te he llamado esta mañana, pero no me ha dado tiempo a contarte más, porque has tardado una barbaridad en venir...hijo mío... qué culpa tendrás de que la A6 sea la Nacional con más puticlubs del país...  ¡Cacho golfo!#n#k"
-                INK 9
-                XMESSAGE "Pero.... Los niños me dijeron que habíais muerto!#n#k"
-                INK 12
-                XMESSAGE "¿En serío? ¡Que cabrones! Eso es que les debió sentar fatal que nos fuesemos de alli corriendo... Bueno qué... ¿Una cerveza o qué carallo?#n#k"
-                INK 2
+                XMESSAGE"La verdad es que pensando a posteriori, parecía que tenían algún asunto pendiente de resolver, pero tu madre me sacó de allí del brazo y me dijo que ni se me ocurriese ir, por eso te he llamado esta mañana, pero no me ha dado tiempo a contarte más, porque has tardado una barbaridad en venir... hijo mío... qué culpa tendrás de que la A6 sea la Nacional con más puticlubs del país...  ¡Cacho golfo!#n#k"
+                INK     3
+                XMESSAGE "¡Pero que estás diciendo! A ver, ¡los niños me dijeron que habíais muerto!#n#k"
+                INK     12
+                XMESSAGE "¿En serío? ¡Que cabrones! Eso es que les debió sentar fatal que nos fuesemos de allí corriendo... Bueno qué... ¿Una cerveza o qué carallo?#n#k"
+                INK     3
                 XMESSAGE "Una o siete.#n#k"
-                INK 9
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Chapucero.#n#n De todos los posibles finales, este es el peor de todos. Has salido de la casa sin enterarte de nada."
+                INK     9
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Chapucero.#n#n De todos los posibles finales, este es el peor de todos. Has salido de la casa sin enterarte de nada de la historia.#n"
                 INK 15
                 END
 
@@ -2001,10 +2004,7 @@ BAJAR   lBath2
 
 ; NOTA: A partir de aquí, con Fjugar, el niño debería interactuar con nosotros y debería darnos la pista de apagar la cerilla en el gabinete. También tiene que contarnos parte de la historia, ya que pasando por aquí, vamos a resolver el juego sin pasar por el garaje, por tanto no nos enteraríamos de la historia del juego.
 
-
 ; Aquí llevamos al crío con nosotros pero no hemos leido el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
-
-; DESARROLLAR
 
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA   AT lBodega
@@ -2018,12 +2018,13 @@ BAJAR   lBath2
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion
                 INK     9
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
+                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#n#k"
                 INK     14              ;Voz del crío
-                XMESSAGE "Presiento que mi madre está aquí dentro... Lo mejor es procurar que no nos vea y no debemos entretenernos#n#k."
+                XMESSAGE "Presiento que mi madre está aquí dentro... Lo mejor es procurar que no nos vea y no debemos entretenernos.#n#k"
                 INK     2
-                XMESSAGE "Debemos ser cautelosos.#n#k"
+                XMESSAGE "Debemos ser cautelosos.#n#k"                
                 CLS
+                INK     9
                 GOTO    lGabinete
                 LET     fVasAMorir 0
                 RESTART
@@ -2031,7 +2032,6 @@ BAJAR   lBath2
 
 ; Aquí llevamos al crío con nosotros y hemos leido el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
-; DESARROLLAR
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
@@ -2199,17 +2199,17 @@ BAJAR   lBath2
                 INK     9
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable .#n#nAl fondo del chamizo puedes observar un armario metálico.#n#k"
                 INK     14 ;Color del crío
-                XMESSAGE "Tengo algo importante que decir#n#k"
+                XMESSAGE "Tengo algo importante que decir.#n#k"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Dime, ¿que te ocurre?#n#k"
+                XMESSAGE "Dime, ¿que te ocurre?.#n#k"
                 INK     14 ;Color del crío
                 XMESSAGE "Bajo este suelo están nuestros cuerpos.#n#k Un día yo me escapé de la casa en busca de ayuda y el señor mató a mi madre y a mi hermana, más tarde me encontró en mitad del camino y me trajo a casa.#n#k El señor me obligó a traer aquí los cuerpos de mi madre y de mi hermana, cavó un agujero en este suelo y cuando terminó, me mató a mi también y aún estamos enterrados aquí.#n"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Tengo que dar con la forma de descubrir los cuerpos y de avisar a las autoridades#n#k"
+                XMESSAGE "Tengo que dar con la forma de descubrir los cuerpos y de avisar a las autoridades.#n#k"
                 INK     14 ;Color del crío
                 XMESSAGE "Muchas gracias, realmente necesito que se nos de descanso, porque estamos atrapados en esta casa.#n#k"        
                 INK     3 ;Color del protagonista
-                XMESSAGE "De acuerdo, haré cuanto esté en mi mano#n#k"
+                XMESSAGE "De acuerdo, haré cuanto esté en mi mano.#n#k"
                 GOTO    lChamizo
                 DONE
 
@@ -2226,7 +2226,6 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locExtCochera
-; NOTA: Desarrollar
 
 > MIRAR     _           AT lExteriorCochera
                 INK    9
@@ -2289,8 +2288,6 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locCochera
-; NOTA: Desarrollar
-; Poner el control de N, S, etc y anunciar con un mensaje, que has usado la llave de la cochera para salir al exterior de la casa.
 
 ; CONECTAR MANGUERA de modo que le ponemos en el GRIFO
 ; ABRIR GRIFO
@@ -2611,7 +2608,6 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locExtChamizo
-; NOTA: Desarrollar esto
 
 > ENTRAR    _
 > ABRIR     PUERTA      AT lExteriorChamizo
@@ -2630,21 +2626,21 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO  fJugar
+                NOTZERO fJugar
                 XMESSAGE "Abres la puerta del chamizo y entras.#k"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lChamizo
                 INK     14
                 XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala y me temo que ya no podemos entrar en la casa para cogerla.#n"
                 INK     3
-                XMESSAGE "#nVaya, cuánto lo siento.#n"
+                XMESSAGE "Vaya, cuánto lo siento.#n"
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 > ENTRAR        _         
 > ABRIR     PUERTA   AT lExteriorChamizo
-                ZERO fControlLuz
+                ZERO    fControlLuz
                 INK     9               ; Color del narrador
                 XMESSAGE "El chamizo está a oscuras, necesitamos luz para poder entrar."
                 DONE
@@ -2657,9 +2653,10 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locChamizo
-; NOTA: Desarrollar esto.
 ; SUELO     HERRAMIENTAS    TIERRA  ARMARIO
-; NOTA Aquí el comportamiento del MIRAR es errático... 
+; NOTA Aquí el comportamiento del MIRAR te lleva a la muerte si lo haces dos veces.
+
+; Controlar que una vez usas pala, no la uses de nuevo
 
 > MIRAR        _        AT lChamizo
                 NOTZERO fControlLuz
@@ -2729,25 +2726,38 @@ BAJAR   lBath2
 ; Aquí justo activamos el flag para el FINAL MEJOR, que es la comprobación de haber desenterrado a los cadáveres.
 
 > USAR      PALA        AT lChamizo
-                CLS                     ; Limpiamos la pantalla                
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                CARRIED oPala
+                NOTZERO fUsarPala
+                INK     9
+                XMESSAGE "Ya has desenterrado los cadáveres."
+                DONE
+
+> USAR      PALA        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPala
                 NOTZERO fJugar
+                ZERO    fUsarPala
+                SET     fUsarPala
                 INK     9               ; Color del narrador
                 XMESSAGE "Comienzas a cavar y enseguida encuentras tres bolsas negras que contienen restos humanos en su interior.#n"       
                 INK     14
-                XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz."
+                XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz.#n"
                 INK     3
+                ; CAGADA
                 XMESSAGE "En cuanto pueda salir avisaré a mis padres y a la policía, aunque se que me van a hacer est"  
                 ZERO fDesenterrar
                 SET  fDesenterrar
                 DONE
 
 ; CHEATING: Desenterramos los cadáveres y no llevamos al crío con nosotros. ES MUY IMPROBABLE QUE OCURRA
-; ya que el crío no está para darnos pistas sobre dónde están los cadaveres, así que será casualidad el
+; ya que el crío no está para darnos pistas sobre dónde están los cadáveres, así que será casualidad el
 ; desenterrarlos. Como castigo, le vamos a poner en la bodega otra vez.
 
 
@@ -2759,6 +2769,8 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPala
                 ZERO    fJugar
+                ZERO    fUsarPala
+                SET     fUsarPala
                 INK     9               ; Color del narrador
                 XMESSAGE "Tramposo, tramposo, tramposo....#n#n Tienes demasiada información o mucha suerte. Se supone que no deberías saber donde se usa la pala sin que hayan#n transcurrido ciertos acontecimientos, así que el equipo de desarrollo de esta aventura ha decidido amonestarte, quitándote algunos objetos que van a impedir que termines el juego de una determinada manera.#n"
                 DESTROY oPala
@@ -2784,7 +2796,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveChamizo
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta está abierta. Sales hacia afuera#n#k"
+                XMESSAGE "La puerta está abierta. Sales al exterior del chamizo.#n#k"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -2846,38 +2858,36 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#n#k"
                 INK     14 
-                XMESSAGE "Te espero aquí#n#k"
+                XMESSAGE "Te espero aquí.#n#k"
                 CLS
                 INK     9
                 XMESSAGE "Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#n#k"
                 CLS
                 INK     12  
-                XMESSAGE "Marcos, que ha ocurrido aquí?#n#k"
-                INK 9 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que no descansaban en paz hasta que no he encontrado sus cuerpos aquí en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que de testimonio del levantamiento de los cadáveres.#n#k"
+                XMESSAGE "Marcos, ¿qué ha ocurrido aquí?#n#k"
+                INK     3 
+                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanse hasta que no se descubrieran sus cuerpos aquí, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que de testimonio del levantamiento de los cadáveres.#n#k"
                 XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar a los padres de ella económicamente, abusó de ella y tuvo un par de gemelos fruto de ese abuso; la cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#n#k"
                 XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario escrito de puño y letra por la criada, que voy a dar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurre el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!.#n#k"
                 INK     12
                 XMESSAGE "Me dejas helado, hijo... El caso es que...#n#k Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de la casa. El caso es que conforme salíamos de la casa por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría, por eso te he llamado...#n#k"
-                XMESSAGE "Mi intención es que estuvieras aquí, pero comprendo que el viaje se te ha hecho muy largo, nos ha entrado el miedo y al ver que caía la noche, nos hemos ido a casa de tu hermana. Supondríamos que al ver que no estabamos en la casa, vendrías a casa de tu hermana para preguntar, pero en el fondo también confiabamos en que si era cierto que esta noche iban a manifestarse las presencias, a ti no te harían nada, porque no te conocen y no huiste de ellos#k#n"
+                XMESSAGE "Mi intención es que estuvieras aquí, pero comprendo que el viaje se te ha hecho muy largo, nos ha entrado el miedo y al ver que caía la noche, nos hemos ido a casa de tu hermana. Supondríamos que al ver que no estabamos en la casa, vendrías a casa de tu hermana para preguntar, pero en el fondo también confiabamos en que si era cierto que esta noche iban a manifestarse las presencias, a ti no te harían nada, porque no te conocen y no sabías nada del tema.#k#n"
                 INK     3
                 XMESSAGE "¿De verdad me estás diciendo que me habéis abandonado a mi suerte sabiendo que me iba a encontrar con este problema?#n#k"
                 INK     12
-                XMESSAGE "Sabes que tu padre es una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
-                INK    3
+                XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
+                INK     3
                 XMESSAGE "Lo más probable, aun así, te digo... que he estado a un pelo de que me lleven por delante, así que como ahora no te estires con unas jarras de cerveza, vamos a tener un problema.#n#k"
-                INK    12
+                INK     12
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo.#n#k"
-                INK    2
-                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello#n#k"
+                INK     2
+                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k"
                 CLS
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: SUBLIME!.#n#n  Has terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k Deja ya de jugar con videojuegos de otra época y sal a la calle a que te el aire y ¡ventila la habitación! Que huele a choto, que parece que crían cabras ahí...#n#k"
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: SUBLIME!.#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k Deja ya de jugar con videojuegos de otra época y sal a la calle a que te el aire y ¡ventila la habitación! ¡Que huele a choto!#n#k"
                 INK 15
                 END
 
 ; FINAL CASI MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante NO es el mejor final, porque NO hemos leído el diario de la criada y no podemos contar la historia al padre, solo sabemos lo que el niño nos cuenta a la entrada del gabinete (o a la entrada por la trampilla).
-
-; NOTA DESARROLLAR
 
 > USAR      HACHA 
 > ROMPER    TRAVESA     AT lChamizo
@@ -2890,13 +2900,13 @@ BAJAR   lBath2
                 CARRIED oHacha
                 CARRIED oLlaveCoche
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                ZERO fLeerDiario
+                ZERO    fLeerDiario     ; No hemos leido el diario de la criada
                 INK     9
                 XMESSAGE "Rompes el travesaño de la puerta con el hacha y sales al exterior de la casa.#n#k"
                 INK     3
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#n#k"
                 INK     14 
-                XMESSAGE "Te espero aquí#n#k"
+                XMESSAGE "Te espero aquí.#n#k"
                 CLS
                 INK     9
                 XMESSAGE "Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#n#k"
@@ -2904,24 +2914,25 @@ BAJAR   lBath2
                 INK     12  
                 XMESSAGE "Marcos, que ha ocurrido aquí?#n#k"
                 INK 9 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que no descansaban en paz hasta que no he encontrado sus cuerpos aquí en el chamizo... Habíais comprado una casa donde ocurren cosas muy raras. La policía está esperando al forense para que de testimonio del levantamiento de los cadáveres.#n#k"
-                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa; ha sido el quien me ha revelado el paradero de los cuerpos.#n#k"
+                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanse hasta que no se descubrieran sus cuerpos aquí, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que de testimonio del levantamiento de los cadáveres.#n#k"
+                XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa; ha sido el quien me ha revelado el paradero de los cuerpos.#n#k"
                 INK     12
                 XMESSAGE "Me dejas helado, hijo... El caso es que...#n#k Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de la casa. El caso es que conforme salíamos de la casa por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría, por eso te he llamado...#n#k"
-                XMESSAGE "Mi intención es que estuvieras aquí, pero comprendo que el viaje se te ha hecho muy largo, nos ha entrado el miedo y al ver que caía la noche, nos hemos ido a casa de tu hermana. Supondríamos que al ver que no estabamos en la casa, vendrías a casa de tu hermana para preguntar, pero en el fondo también confiabamos en que si era cierto que esta noche iban a manifestarse las presencias, a ti no te harían nada, porque no te conocen y no huiste de ellos#k#n"
+                XMESSAGE "Mi intención es que estuvieras aquí, pero comprendo que el viaje se te ha hecho muy largo, nos ha entrado el miedo y al ver que caía la noche, nos hemos ido a casa de tu hermana. Supondríamos que al ver que no estabamos en la casa, vendrías a casa de tu hermana para preguntar, pero en el fondo también confiabamos en que si era cierto que esta noche iban a manifestarse las presencias, a ti no te harían nada, porque no te conocen y no sabías nada del tema.#k#n"
                 INK     3
                 XMESSAGE "¿De verdad me estás diciendo que me habéis abandonado a mi suerte sabiendo que me iba a encontrar con este problema?#n#k"
                 INK     12
-                XMESSAGE "Sabes que tu padre es una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
+                XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
                 INK    3
                 XMESSAGE "Lo más probable, aun así, te digo... que he estado a un pelo de que me lleven por delante, así que como ahora no te estires con unas jarras de cerveza, vamos a tener un problema.#n#k"
                 INK    12
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo.#n#k"
                 INK    2
-                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello#n#k"
+                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k"
                 CLS
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: BUENA.#n#n  Has terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k"
-                XMESSAGE " Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de titulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO,Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#n#k"
+                INK    9
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k"
+                XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de titulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#n#k"
                 INK   15
                 END
 
@@ -2939,7 +2950,7 @@ BAJAR   lBath2
                 NOTCARR oLlaveCoche
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 INK     2
-                XMESSAGE "Si pretender ir corriendo a llamar a la policía...Antes de romper nada...Tengo la sensación de que no vamos a llegar muy lejos sin algo que nos hace falta para poder salir de esta casa.#n#k"
+                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... Antes de romper nada... Tengo la sensación de que no vamos a llegar muy lejos sin algo que nos hace falta para poder salir de esta casa. ¡Brrrum! ¡Brrrum!#n#k"
                 DONE
 
 ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
@@ -3349,8 +3360,7 @@ BAJAR   lBath2
                 XMESSAGE "#nHay un tablón que parece tener cierta holgura y se mueve un poco. Echemos un vistazo al tablón."
                 DONE
 
-; NOTA: Desarrollar
-; Con flags, controlar que cuando mueves el tablon y lo quitas del escalón
+; Con flags, controlamos si se ha movido el tablón o se pone de nuevo en su sitio
 
 > EXAMINA	TABLON      AT lEscaleras                
                 NOTZERO fControlLuz
@@ -4457,9 +4467,6 @@ BAJAR   lBath2
                 DONE 
 
 ; Estamos en locRoom3
-; NOTA: Desarrollar
-; CAMA  ALFOMBRA  MESITA  LAMPARA  SUELO  PARED
-
 ; Se activa un flag en este room3 de modo que debes resolver el puzzle con la niña
 
 > R         _           AT lRoom3
@@ -4693,7 +4700,6 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locBath3
-; NOTA: Desarrollar
 
 > MIRAR     _           AT lBath3
                 NOTZERO fControlLuz
@@ -5417,8 +5423,13 @@ BAJAR   lBath2
                 ISAT   oHacha 252
                 CREATE oHacha
                 GET    oHacha
-                SET    fCombinacion
-                GOTO   lChamizo
+                ;ISAT   oPaleta 252
+                ;CREATE oPaleta
+                ;GET    oPaleta
+                SET    fCombinacion     ; Tenemos la combinación del candado
+                SET    fJugar           ; Hemos jugado con el crío
+                SET    fLeerDiario
+                GOTO   lBodega
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
@@ -5464,7 +5475,7 @@ BAJAR   lBath2
                 GET     oLlaveBodega
                 GET     oLlaveCoche
                 DONE
-; NOTA desarrollar APAGAR CERILLA
+
 > APAGAR    CERILLA
                 CARRIED oCerillas
                 NOTZERO fUsarCerilla
