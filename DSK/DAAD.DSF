@@ -1175,7 +1175,7 @@ BAJAR   lBath2
                 XMESSAGE "#nTe fries las retinas y caes insconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre emana a borbotones de la brecha.#k"
                 INK     4
                 XMESSAGE "#nHas muerto.#n"
-                INK     9               ; Color del narrador
+                INK     15               ; Color del narrador
                 END                
 
 > O         _           AT lPorche                
@@ -2132,9 +2132,9 @@ BAJAR   lBath2
                 INK     15 
                 XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas."
                 INK     4
-                XMESSAGE "Has muerto"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
-                DONE
+                END
 
 > EXAMINA   SUELO       AT lGabinete
                 NOTZERO fControlLuz
@@ -2156,9 +2156,10 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n"
                 INK     4
-                XMESSAGE "Has muerto"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
-                DONE
+                END
+
 ; Aquí tenemos que estar a oscuras para salir, si no es así, el juego se termina.
 ; NOTA: Aquí controlamos fJugar y dependiendo de si llevamos al crío o no, el crío nos revela que ahí están sus restos mortales.
 ; Recordamos que en todo caso, el juego termina al romper el travesaño.
@@ -2221,9 +2222,9 @@ BAJAR   lBath2
                 INK     9                  ; Color del narrador
                 XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti.#k#n"
                 INK     4
-                XMESSAGE "Has muerto"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
-                DONE
+                END
 
 ; Estamos en locExtCochera
 
@@ -2472,7 +2473,7 @@ BAJAR   lBath2
                 XMESSAGE "Abres el grifo.#n#k"
                 XMESSAGE "#n Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza#n#n. El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas..."
                 INK     4
-                XMESSAGE "Has muerto."
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -2489,7 +2490,7 @@ BAJAR   lBath2
                 XMESSAGE "Abres el grifo y comienza a salir agua a presión. No CONECTASTE la manguera y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k"
                 XMESSAGE "#n#n El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia fatal.#n#k"
                 INK     4
-                XMESSAGE "Has muerto."
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END                
 
@@ -2511,7 +2512,7 @@ BAJAR   lBath2
                 INK     15
                 GET     oPelota
                 INK     4
-                XMESSAGE "#nHas muerto."
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END 
 
@@ -2527,7 +2528,7 @@ BAJAR   lBath2
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad. Tratas de escapar y te resulta imposible.#n#k"
                 INK     4
-                XMESSAGE "Has muerto."
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END 
 
@@ -2858,8 +2859,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#n#k"
                 INK     14 
-                XMESSAGE "Te espero aquí.#n#k"
-                CLS
+                XMESSAGE "Te espero aquí.#n#k#b"
                 INK     9
                 XMESSAGE "Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#n#k"
                 CLS
@@ -2881,8 +2881,8 @@ BAJAR   lBath2
                 INK     12
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo.#n#k"
                 INK     2
-                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k"
-                CLS
+                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k#b"
+                INK     9
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: SUBLIME!.#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k Deja ya de jugar con videojuegos de otra época y sal a la calle a que te el aire y ¡ventila la habitación! ¡Que huele a choto!#n#k"
                 INK 15
                 END
@@ -2906,14 +2906,12 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#n#k"
                 INK     14 
-                XMESSAGE "Te espero aquí.#n#k"
-                CLS
+                XMESSAGE "Te espero aquí.#n#k#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#n#k"
-                CLS
+                XMESSAGE "Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#n#k#b"
                 INK     12  
                 XMESSAGE "Marcos, que ha ocurrido aquí?#n#k"
-                INK 9 
+                INK     3 
                 XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanse hasta que no se descubrieran sus cuerpos aquí, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que de testimonio del levantamiento de los cadáveres.#n#k"
                 XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa; ha sido el quien me ha revelado el paradero de los cuerpos.#n#k"
                 INK     12
@@ -2923,17 +2921,16 @@ BAJAR   lBath2
                 XMESSAGE "¿De verdad me estás diciendo que me habéis abandonado a mi suerte sabiendo que me iba a encontrar con este problema?#n#k"
                 INK     12
                 XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
-                INK    3
+                INK     3
                 XMESSAGE "Lo más probable, aun así, te digo... que he estado a un pelo de que me lleven por delante, así que como ahora no te estires con unas jarras de cerveza, vamos a tener un problema.#n#k"
-                INK    12
+                INK     12
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo.#n#k"
-                INK    2
-                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k"
-                CLS
-                INK    9
+                INK     2
+                XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k#b"
+                INK     9
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k"
                 XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de titulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#n#k"
-                INK   15
+                INK     15
                 END
 
 ; No dejamos salir a Marcos sin las llaves del coche
@@ -2981,7 +2978,7 @@ BAJAR   lBath2
                 INK     9
                 XMESSAGE "Pones todo tu empeño en separar el armario metálico de la pared...#n#k"
                 INK     2
-                XMESSAGE "Venga, que hasta ahí vas bien, campeón."
+                XMESSAGE "Venga, que hasta ahí vas bien, campeón.#n#k"
                 INK     9
                 XMESSAGE "Consigues arrastrar el armario dos metros y lo colocas justo enfrente de la puerta.#n#k"
                 INK     2
@@ -2993,7 +2990,8 @@ BAJAR   lBath2
                 INK     9
                 XMESSAGE "Con toda tu energía corres a embestir el armario y te pegas de lleno con el, el armario es arrastrado a toda velocidad hacia la puerta y el impacto es tremendo, no obstante un armario de chapa galvanizada poco puede hacer ante una puerta maciza, lo que si ocurre es que la chapa se deforma y el estante superior atraviesa la chapa trasera del armario y te cercena la cabeza como quien corta una barra de mantequilla.#k#n"
                 INK     4
-                XMESSAGE "Estás muerto."          
+                XMESSAGE "Estás muerto."
+                INK     15
                 END
 
 > ROMPER    TRAVESA     AT lChamizo
@@ -3535,7 +3533,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello."
                 INK     4
-                XMESSAGE "#nHas muerto."
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
