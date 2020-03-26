@@ -5464,9 +5464,9 @@ BAJAR   lBath2
 ;                XMESSAGE "Bienvenido a esta aventura de ficción interactiva.#n#nDadas las prestaciones de nuestros vetustos micro ordenadores, el programa interpreta un rango reducido de acciones.#n#nRecomendamos, pues, que construyas tus frases en infinitivo. Algunas de las acciones más comunes son:#n#n    > Ayuda#n    > Inventario[I]#n    > Describir localización[R]#n    > Examinar[EX]#n    > Norte[N], Sur[S], Este[E], Oeste[O]#n    > Bajar[AB], Subir[AR]#n    > Entrar[EN], Salir[SA]#n    > Coger#n    > Usar#n    > Empujar, Tirar, Mover#n    > Abrir, Cerrar#n    > Poner, Quitar#n    > Mover#n    > Encender, Prender#n#nConforme cumplas determinados hitos en tu aventura, desbloquearás algunos passwords.#n#nBasta con escribir 'pass' seguido de un espacio y la palabra clave en la sala de recarga energética, para continuar donde lo dejaste."
 ;                DONE
 
-> AYUDA     _
-                INK     9
-                XMESSAGE "Siempre que uses MIRAR, se te dan pistas, para saber lo que debes hacer en dicha localización, lee atentamente."
+;> AYUDA     _
+                ;INK     9
+                ;XMESSAGE "Siempre que uses MIRAR, se te dan pistas, para saber lo que debes hacer en dicha localización, lee atentamente."
                 ;XMESSAGE "fControlLuz"
                 ;PRINT   73
                 ;XMESSAGE "#nfUsarCerilla"
@@ -5477,7 +5477,7 @@ BAJAR   lBath2
                 ;PRINT   89
                 ;XMESSAGE "#nfDarkF"
                 ;PRINT   28
-                DONE
+               ; DONE
 
 > USAR      MAGIA
                 ISAT    oCerillas       252
