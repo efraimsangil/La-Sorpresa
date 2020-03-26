@@ -134,7 +134,7 @@
 #define lRetrete            29
 
 ;                               Objetos
-#define oLinterna           0       ; No se usa
+#define oRopa               0       ; Ropa
 #define oLlaveChamizo       1       ; lCochera
 #define oLlaveCochera       2       ; No se usa
 #define oCableTelefono      3       ; No se usa
@@ -218,7 +218,7 @@ TARJETA         119    noun     ; lSalon
 LLAV3           120    noun     ; Es un objeto
 SKEY1           121    noun     ; Es un objeto
 KCAJA           122    noun     ; Es un objeto
-LINTERNA        123    noun     ; Es un objeto
+ROPA            123    noun     ; Es un objeto
 MUEBLE          124    noun     ; lSalon
 FREGADERO       125    noun     ; lCocina
 LAVADORA        126    noun     ; lCocina
@@ -498,7 +498,7 @@ LUEGO           2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "una linterna"           ; No se usa
+/0 "ropa de calle"           ; No se usa
 /1 "llave del chamizo"
 /2 "llave de la cochera"    ; No se usa
 /3 "una batería de coche"   ; No se usa
@@ -650,7 +650,7 @@ BAJAR   lBath2
 /OBJ                            ;Objetos
 ;obj  starts  weight    c w  5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0    noun   adjective
 ;num    at
-/0      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LINTERNA    _
+/0      252     1       _ Y  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    ROPA        _
 /1      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV1       _
 /2      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV2       _
 /3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV3       _
@@ -854,6 +854,15 @@ BAJAR   lBath2
 ; Estamos en locMadrid
 
 ; Comienza la historia
+
+> EXAMINA   ARMARIO     AT lMadrid
+            ISAT    oRopa 252
+            CREATE  oRopa
+            GET     oRopa
+            XMESSAGE "#n"
+            WEAR    oRopa
+            DONE
+
 > EXAMINA 	CAMA		AT lMadrid
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una cama grande y aparentemente cómoda."
@@ -988,6 +997,9 @@ BAJAR   lBath2
                 DONE          
 
 ; Control de movimiento para salir de la localización. Sólo se puede salir hacia el Este, pero es obligatorio haber cogido el teléfono.
+
+
+
 > E			_			AT lMadrid      ; Si no ha usado el teléfono, no le dejamos ir al Este
                 ZERO    fUsarTelefono   ; No ha usado el teléfono
                 INK     2               ; Color de la conciencia de Marcos
@@ -995,6 +1007,14 @@ BAJAR   lBath2
                 DONE
 
 > E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
+                HASNAT  oRopa
+                NOTZERO fUsarTelefono   ; Ha usado el teléfono
+                INK     9               ; Color del narrador
+                XMESSAGE "No puedes salir de casa en pelotas. Debes vestirte antes."
+                DONE
+
+> E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
+                HASAT   oRopa
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "Te duchas y te vistes con rapidez, sabes que a tu padre no le gusta que le hagan esperar.#k#n#nCoges las llaves del coche, cierras la puerta de casa y vas directo al garaje del edificio.#k"
@@ -3092,7 +3112,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "#n#nAl cogerla has sentido como si algo muy frío te tocara la mano. Se te han puesto los pelos como escarpias y tu corazón se desboca."
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#nPodrías encender algo para iluminarte y ver que te ha tocado, o igual no es buena idea. ¿Nos vamos?."
+                XMESSAGE "#nPodrías encender algo para iluminarte y ver qué te ha tocado, o igual no es buena idea. ¿Nos vamos?."
                 ZERO    fVasAMorir
                 SET     fVasAMorir
                 DONE
