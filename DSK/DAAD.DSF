@@ -498,7 +498,7 @@ LUEGO           2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "ropa de calle"           ; No se usa
+/0 "Ropa de calle"           ; No se usa
 /1 "llave del chamizo"
 /2 "llave de la cochera"    ; No se usa
 /3 "una batería de coche"   ; No se usa
@@ -867,11 +867,13 @@ BAJAR   lBath2
 
 > ABRIR     ARMARIO 
 > EXAMINA   ARMARIO     AT lMadrid
+            INK     15
             ISAT    oRopa 252
             CREATE  oRopa
             GET     oRopa
             XMESSAGE "#n"
             WEAR    oRopa
+            INK     9
             DONE
 
 > EXAMINA 	CAMA		AT lMadrid
@@ -956,14 +958,14 @@ BAJAR   lBath2
 > EXAMINA   HABITACION
 > MIRAR		_			AT lMadrid    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
-                INK     2               ; Color de la conciencia de Marcos
+                INK     9               ; Color de la conciencia de Marcos
                 XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono, ¡vago!#n#n¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
                 DONE
 
 > EXAMINA   HABITACION
 > MIRAR		_			AT lMadrid 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
-                INK     2               ; Color de la conciencia de Marcos
+                INK     9               ; Color de la conciencia de Marcos
                 XMESSAGE "Tu habitación es grande, pero la decoración es minimalista; Una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible."
                 DONE
 
@@ -981,7 +983,7 @@ BAJAR   lBath2
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "¿En serio quieres seguir durmiendo?"             
+                XMESSAGE "¿En serio quieres seguir durmiendo?"    
                 DONE
 
 > DORMIR	_			AT lMadrid
@@ -3401,6 +3403,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fEscalon
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "Efectivamente el escalón está un poco suelto. Prueba a moverlo."
                 DONE
