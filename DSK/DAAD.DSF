@@ -772,14 +772,16 @@ BAJAR   lBath2
                 LISTOBJ
 
 ; Este es un control de luz de las localizaciones comprendidas entre 9 y 29
-> _         _
-                GT      38 8            ; Si la localización es mayor de 8
-                LT      38 30           ; Si la localización es menor de 30
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
-                SET     fDarkF          ; Activamos la oscuridad
-                INK     15
-                XMESSAGE "#n#n"
-                XMESSAGE "Estamos a oscuras."
+;> _         _
+;                GT      38 8            ; Si la localización es mayor de 8
+;                LT      38 30           ; Si la localización es menor de 30
+;                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
+;                SET     fDarkF          ; Activamos la oscuridad
+;                CLEAR   fTurnosConLuz
+;                CLEAR   fControlLuz
+;                INK     15
+;                XMESSAGE "#n#n"
+;                XMESSAGE "Estamos a oscuras."
 
 ;------------------------------------------------------------------------------
 /PRO 4 ; Antiguo proceso 2 del PAW
@@ -789,16 +791,28 @@ BAJAR   lBath2
                 GT      fTurnosConLuz 0
                 MINUS   fTurnosConLuz 1
 
+;> _         _
+;                GT      38 8            ; Si la localización es mayor de 8
+;                LT      38 30           ; Si la localización es menor de 30
+;                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
+;                SET     fDarkF          ; Activamos la oscuridad
+;                CLEAR   fTurnosConLuz
+;                CLEAR   fControlLuz
+;                INK     15
+;                XMESSAGE "#n#n"
+;                XMESSAGE "Estamos a oscuras."
+
 ; Si los turnos de luz es igual a 1, activamos la oscuridad y mostramos el mensaje de que se consumió la cerilla.
 > _         _
-                EQ      fTurnosConLuz 1
+                LT      fTurnosConLuz 1
                 GT      38 8
                 LT      38 30
                 SET     fDarkF
                 CLEAR   fTurnosConLuz
                 CLEAR   fControlLuz
+                CLEAR   fUsarCerilla
                 MESSAGE "#n"
-                XMESSAGE "La cerilla se ha consumido."
+                XMESSAGE "La cerilla se ha consumido. Estamos a oscuras."
                 CLEAR   fUsarCerilla
                 
 /PRO 5 ; Interpretamos los comandos como en la antigua tabla de respuestas
@@ -3044,8 +3058,8 @@ BAJAR   lBath2
                 DONE
 
 > S         _           AT lAseo
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                CARRIED oCerillas
+                CLEAR   fDarkF
                 CLEAR   fVasAMorir
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
@@ -3150,6 +3164,8 @@ BAJAR   lBath2
                 DONE
 
 > N         _           AT lCocina 
+                CARRIED oCerillas                
+                CLEAR   fDarkF
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lRecibidor                
@@ -3309,6 +3325,10 @@ BAJAR   lBath2
 
 > EXAMINA   DESPENSA
 > MIRAR     _           AT lDespensa
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás en la despensa. Aquí se encuentra la ALACENA que usaban tus padres para guardar latas de comida. Tu solías EMPUJARLA para ver si caía alguna galleta desde arriba."
                 DONE
@@ -3354,12 +3374,12 @@ BAJAR   lBath2
                 DONE
 
 > O         _           AT lDespensa
-                CLS                     ; Limpiamos la pantalla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
+                CLS
                 GOTO    lCocina
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -3532,10 +3552,8 @@ BAJAR   lBath2
                 DONE
 
 > BAJAR     _           AT lEscaleras
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                CARRIED oCerillas                
+                CLEAR   fDarkF
                 ZERO    fTablon
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
@@ -3544,10 +3562,8 @@ BAJAR   lBath2
                 DONE 
 
 > BAJAR     _          AT lEscaleras
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad 
+                CARRIED oCerillas                
+                CLEAR   fDarkF
                 CLS                     ; Limpiamos la pantalla     
                 NOTZERO fTablon
                 INK     9               ; Color del narrador
@@ -3765,9 +3781,10 @@ BAJAR   lBath2
                 XMESSAGE "El patio está muy oscura. Sin luz no se puede entrar."
                 DONE
 
-> O         _           AT lSalon                
+> O         _           AT lSalon   
+                CARRIED oCerillas                
+                CLEAR   fDarkF   
                 CLS                     ; Limpiamos la pantalla
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -5483,20 +5500,18 @@ BAJAR   lBath2
 ;                XMESSAGE "Bienvenido a esta aventura de ficción interactiva.#n#nDadas las prestaciones de nuestros vetustos micro ordenadores, el programa interpreta un rango reducido de acciones.#n#nRecomendamos, pues, que construyas tus frases en infinitivo. Algunas de las acciones más comunes son:#n#n    > Ayuda#n    > Inventario[I]#n    > Describir localización[R]#n    > Examinar[EX]#n    > Norte[N], Sur[S], Este[E], Oeste[O]#n    > Bajar[AB], Subir[AR]#n    > Entrar[EN], Salir[SA]#n    > Coger#n    > Usar#n    > Empujar, Tirar, Mover#n    > Abrir, Cerrar#n    > Poner, Quitar#n    > Mover#n    > Encender, Prender#n#nConforme cumplas determinados hitos en tu aventura, desbloquearás algunos passwords.#n#nBasta con escribir 'pass' seguido de un espacio y la palabra clave en la sala de recarga energética, para continuar donde lo dejaste."
 ;                DONE
 
-;> AYUDA     _
-                ;INK     9
-                ;XMESSAGE "Siempre que uses MIRAR, se te dan pistas, para saber lo que debes hacer en dicha localización, lee atentamente."
-                ;XMESSAGE "fControlLuz"
-                ;PRINT   73
-                ;XMESSAGE "#nfUsarCerilla"
-                ;PRINT   90
-                ;XMESSAGE "#nfTurnosConLuz"
-                ;PRINT   72
-                ;XMESSAGE "#nfVasAMorir"
-                ;PRINT   89
-                ;XMESSAGE "#nfDarkF"
-                ;PRINT   28
-               ; DONE
+> AYUDA     OSITO                
+                XMESSAGE "fControlLuz"
+                PRINT   73
+                XMESSAGE "#nfUsarCerilla"
+                PRINT   90
+                XMESSAGE "#nfTurnosConLuz"
+                PRINT   72
+                XMESSAGE "#nfVasAMorir"
+                PRINT   89
+                XMESSAGE "#nfDarkF"
+                PRINT   28
+                DONE
 
 > USAR      MAGIA
                 ISAT    oCerillas       252
