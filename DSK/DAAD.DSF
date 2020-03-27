@@ -68,7 +68,7 @@
 #define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces
 #define fCajon              75      ; Control para el cajón de la consola en lRecibidor
 #define fConsola            76      ; Control para EXAMINAR CONSOLA en lRecibidor y mostrar varios mensajes
-#define fTablon             77      ; Control del TABLON suelto de lEscaleras
+#define fEscalon             77      ; Control del TABLON suelto de lEscaleras
 #define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo
 #define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama
 #define fUsarPala           80      ; Control para que no usemos la pala dos veces
@@ -526,7 +526,7 @@ LUEGO           2       conjugation
 /LTX                            ;Location Texts
 ; \k\b #k#b
 /0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
-/1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Marcos es un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrado a asumir todo lo que se le venga encima con tal de mantener su estatus laboral. Con los años, esta incapacidad de gestionar conflictos le ha arrastrado inevitablemente a la misantropía más absoluta, haciendo de él un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Marcos suele hablar mucho consigo mismo y tiene una conciencia muy desarrollada, puesto que en pocas ocasiones puede hacer gala de sus habilidades sociales, ya que la gente que se acerca ocasionalmente, huye despavorida en cuanto se preocupan en conocerle....#k#b  Hoy es Sábado y nuestro protagonista no tiene planes, excepto disfrutar de sus 48h de libertad condicional; así denomina Marcos a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigue en la cama medio despierto, remoloneando. Los madrugones de la semana le pesan cada día más y se siente incapaz de salir de su nido calentito bajo la manta de franela.#k#b  Está decidido... Se gira en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla; alguien decidió por él que debe despertarse definitivamente.#n#nTiene a su lado la mesilla de noche."
+/1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Marcos es un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrado a asumir todo lo que se le venga encima con tal de mantener su estatus laboral. Con los años, esta incapacidad de gestionar conflictos le ha arrastrado inevitablemente a la misantropía más absoluta, haciendo de él un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Marcos suele hablar mucho consigo mismo y tiene una conciencia muy desarrollada, puesto que en pocas ocasiones puede hacer gala de sus habilidades sociales, ya que la gente que se acerca ocasionalmente, huye despavorida en cuanto se preocupan en conocerle....#k#b  Hoy es Sábado y nuestro protagonista no tiene planes, excepto disfrutar de sus 48h de libertad condicional; así denomina Marcos a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigue en la cama medio despierto, remoloneando. Los madrugones de la semana le pesan cada día más y se siente incapaz de salir de su nido calentito bajo la manta de franela.#k#b  Está decidido... Se gira en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla; alguien decidió por él que debe despertarse definitivamente.#n#n Tiene a su lado la mesilla de noche."
 /2 " Marcos sale de casa y coge su coche rumbo a la Sierra del Caurel; es una excursión, pero a Marcos le gusta conducir. La carretera le concentra porque es de las pocas cosas que le evita pensar en sus responsabilidades.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, Marcos reconoce el paso del cruce que conduce al pueblo donde sus padres tienen la casa.#k#b  Queda poco para llegar y el agotamiento comienza a resentir a Marcos, que empieza a acusar el entumecimiento de sus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibe una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de tunel sobrecogedor que siempre le dió respeto cuando era un niño.#k#b  Cuando se levantaba niebla, el paraje le resultaba inquietante y su imaginación le jugaba malas pasadas... La santa compaña, los aires de difunto... Una profunda sugestión desde niño le permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en su personalidad."
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
@@ -540,15 +540,15 @@ LUEGO           2       conjugation
 /12 " Las escaleras que regentan la casa; son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#nNotas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 /13 " Estás en la despensa. Aquí se encuentra la alacena que usaban tus padres para guardar latas de comida y algún que otro utensilio de cocina."
 /14 " La luna llena gobierna la noche y su claridad se refleja sobre el extenso muro gris del patio, que se erige imponente como el adarve protector de la hacienda; inexpugnable."
-/15 " ¡Inconcebible!. ¿Qué son estas dependencias? Has entrado en lo que parece un dormitorio antiguo sin ventilación ni iluminación, aunque hay muestras de que ha sido habitado, pues hay una cama de paja, un banco antiguo de madera que parece de otro siglo y también descubres un orinal de porcelana."
+/15 " ¡Inconcebible! ¿Qué son estas dependencias? Has entrado en lo que parece un dormitorio antiguo sin ventilación ni iluminación, aunque hay muestras de que ha sido habitado, pues hay una cama de paja, un banco antiguo de madera que parece de otro siglo y también descubres un orinal de porcelana."
 /16 " Te encuentras en la planta superior, donde un espacioso corredor conduce a las alcobas de la casa.#n#nHay una puerta situada al NORTE y el pasillo continúa al ESTE."
 /17 " Estás en el centro del corredor; una puerta se ubica en el SUR y el corredor continúa del ESTE a OESTE."
 /18 " Te encuentras al final del corredor, la alcoba se encuentra al NORTE o puedes volver por el pasillo al OESTE."
 /19 " Es una alcoba grande y austera, sin decoración ni ornamento, puedes ver una cama grande de hierro en el centro de la estancia y al SUR está el baño.#nLevantas un poco la cerilla y descubres un objeto encima de la cama."
 /20 " Estás en el baño; este tiene un pequeño respiradero en el techo. Además de una tina majestuosa, que te lleva a recordar con nostalgia esos baños tan divertidos que tenías de pequeño. Tu madre te obligaba a hacerlo porque venías de la calle siempre lleno de barro."
-/21 " Estás en la segunda alcoba, esta es más pequeña que la primera y tiene una cama de servidumbre muy sobria. Al NORTE está el baño. La falta de ornamento es un poco inquietante."
+/21 " Estás en la segunda alcoba, esta es más pequeña que la primera y tiene una cama de servidumbre muy sobria. Al SUR está el baño. La falta de ornamento es un poco inquietante."
 /22 " Estás en el cuarto de baño. Es pequeño pero completo, dispone de una tina antigua, una pila y un retrete.#n#nSientes haber viajado en el tiempo, este lugar es anacrónico."
-/23 " Sin duda estamos en el dormitorio principal, hay una cama muy grande con cabecero de madera y al SUR está el baño. Una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la ténue luz que proyecta la cerilla, apenas puedes discenir de que se trata."
+/23 " Sin duda estamos en el dormitorio principal, hay una cama muy grande con cabecero de madera y al NORTE está el baño. Una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la ténue luz que proyecta la cerilla, apenas puedes discenir de que se trata."
 /24 " Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n En este momento y por alguna razón desconocida, está llena de agua hasta el borde."
 ;NOTA /25 El gabinete es el lugar donde de forma clandestina fueron los dos partos de la criada y además era el lugar donde el terrateniente bajaba a la criada para castigarla y torturarla cuando esta quería escapar (todo esto sucede antes de tener al primer hijo, luego con amenazar con matar al hijo era suficiente para mantenerla callada) En esta estancia se puedes ver a la madre postrada sobre la camilla, desnuda y encadenada sufriendo laceraciones en la piel sin que haya nadie que la manipule... Si en ese momento Marcos se acerca, la madre rompe una cadena con la mano y mata a Marcos. luego lo que tiene que hacer es esperar a que se terminen los turnos de cerilla para poder continuar y agacharse para pasar por debajo de la camilla, justo la puerta está atrancada por la PALA (por eso la ve a oscuras), la coge y sale de allí)
 /25 " Has entrado en lo que parece ser un gabinete. No terminas de explicarte qué hace este habitáculo aquí, pero te pone los pelos de punta.#n#nPuedes ver una camilla médica de la que cuelgan unas cadenas,también hay una mesa con instrumental quirúrgico oxidado. El suelo está ensangrentado.#n#n La trampilla por la que has entrado se cierra."
@@ -772,16 +772,14 @@ BAJAR   lBath2
                 LISTOBJ
 
 ; Este es un control de luz de las localizaciones comprendidas entre 9 y 29
-;> _         _
-;                GT      38 8            ; Si la localización es mayor de 8
-;                LT      38 30           ; Si la localización es menor de 30
-;                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
-;                SET     fDarkF          ; Activamos la oscuridad
-;                CLEAR   fTurnosConLuz
-;                CLEAR   fControlLuz
-;                INK     15
-;                XMESSAGE "#n#n"
-;                XMESSAGE "Estamos a oscuras."
+> _         _
+                GT      38 8            ; Si la localización es mayor de 8
+                LT      38 30           ; Si la localización es menor de 30
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
+                SET     fDarkF          ; Activamos la oscuridad
+                INK     15
+                XMESSAGE "#n#n"
+                XMESSAGE "Estamos a oscuras."
 
 ;------------------------------------------------------------------------------
 /PRO 4 ; Antiguo proceso 2 del PAW
@@ -791,30 +789,28 @@ BAJAR   lBath2
                 GT      fTurnosConLuz 0
                 MINUS   fTurnosConLuz 1
 
-;> _         _
-;                GT      38 8            ; Si la localización es mayor de 8
-;                LT      38 30           ; Si la localización es menor de 30
-;                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
-;                SET     fDarkF          ; Activamos la oscuridad
-;                CLEAR   fTurnosConLuz
-;                CLEAR   fControlLuz
-;                INK     15
-;                XMESSAGE "#n#n"
-;                XMESSAGE "Estamos a oscuras."
-
 ; Si los turnos de luz es igual a 1, activamos la oscuridad y mostramos el mensaje de que se consumió la cerilla.
 > _         _
-                LT      fTurnosConLuz 1
+                
                 GT      38 8
                 LT      38 30
+                LT      fTurnosConLuz 1
                 SET     fDarkF
                 CLEAR   fTurnosConLuz
                 CLEAR   fControlLuz
-                CLEAR   fUsarCerilla
                 MESSAGE "#n"
-                XMESSAGE "La cerilla se ha consumido. Estamos a oscuras."
                 CLEAR   fUsarCerilla
                 
+> _         _
+                
+                GT     38 0
+                LT     38 8
+                LT      fTurnosConLuz 1
+                CLEAR   fDarkF
+                CLEAR   fTurnosConLuz
+                CLEAR   fControlLuz
+                MESSAGE "#n"
+                CLEAR   fUsarCerilla
 /PRO 5 ; Interpretamos los comandos como en la antigua tabla de respuestas
 
 ; Colores del juego
@@ -869,6 +865,7 @@ BAJAR   lBath2
 
 ; Comienza la historia
 
+> ABRIR     ARMARIO 
 > EXAMINA   ARMARIO     AT lMadrid
             ISAT    oRopa 252
             CREATE  oRopa
@@ -932,7 +929,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del teléfono, no obstante, tanteas con las manos en la mesilla y descuelgas.#n"
                 INK     12  ; Color del padre de Marcos hablando
-                XMESSAGE "Buenos días hijo. ¿Qué tal estás?.#n"
+                XMESSAGE "Buenos días hijo. ¿Qué tal estás?#n"
                 INK     3               ; Color del protagonista, Marcos   ; Color de Marcos hablando
                 XMESSAGE "Hola padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n#n"
                 INK     12
@@ -960,14 +957,14 @@ BAJAR   lBath2
 > MIRAR		_			AT lMadrid    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono, ¡vago!.#n#n¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
+                XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono, ¡vago!#n#n¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
                 DONE
 
 > EXAMINA   HABITACION
 > MIRAR		_			AT lMadrid 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "Aquí ya no tienes nada que hacer, así que vete tirando para el coche (Este)."
+                XMESSAGE "Tu habitación es grande, pero la decoración es minimalista; Una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
@@ -1021,14 +1018,14 @@ BAJAR   lBath2
                 DONE
 
 > E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
-                HASNAT  oRopa
+                NOTWORN oRopa
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes salir de casa en pelotas. Debes vestirte antes."
                 DONE
 
 > E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
-                HASAT   oRopa
+                WORN     oRopa
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "Te duchas y te vistes con rapidez, sabes que a tu padre no le gusta que le hagan esperar.#k#n#nCoges las llaves del coche, cierras la puerta de casa y vas directo al garaje del edificio.#k"
@@ -1131,7 +1128,7 @@ BAJAR   lBath2
                 INK     9               ; Color de la conciencia de Marcos
                 XMESSAGE "Arrancas el coche y sales de la hacienda y te detienes justo antes de salir del pueblo.#n#k"
                 INK     3
-                XMESSAGE "Te has quedado como las vacas que ven pasar el tren, ¿eh?... Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada.#n"
+                XMESSAGE "Te has quedado como las vacas que ven pasar el tren, ¿eh? Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada.#n"
                 INK     9
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni acercarte...#n#k"
                 INK     15
@@ -1155,7 +1152,7 @@ BAJAR   lBath2
                 INK     14
                 XMESSAGE "Quería decírtelo, pero me has caido tan bien... Hemos tenido un accidente con ellos... con un cuchillo...#n#k"
                 INK     6
-                XMESSAGE "¡HE SIDO YO!. Hace treinta años les dije que no viniesen nunca más por aquí.#n#k"
+                XMESSAGE "¡HE SIDO YO! Hace treinta años les dije que no viniesen nunca más por aquí.#n#k"
                 INK     14 
                 XMESSAGE " ¡CORRE! ¡SAL DE AQUí! ¡RáPIDO!#n#k#b"
                 INK     9
@@ -1171,8 +1168,8 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡PAPA! ¡No me jodas! ¡Estás VIVO! Cuando te cuente lo que ha ocurrido no te lo vas a creer.#n#k"
                 INK     12
-                XMESSAGE "Se lo que ha pasado, no te preocupes... Has conocido a la familia que aparece cada treinta años en la casa, ¿verdad?... Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele...#n#k"
-                XMESSAGE"La verdad es que pensando a posteriori, parecía que tenían algún asunto pendiente de resolver, pero tu madre me sacó de allí del brazo y me dijo que ni se me ocurriese ir, por eso te he llamado esta mañana, pero no me ha dado tiempo a contarte más, porque has tardado una barbaridad en venir... hijo mío... qué culpa tendrás de que la A6 sea la Nacional con más puticlubs del país...  ¡Cacho golfo!#n#k"
+                XMESSAGE "Se lo que ha pasado, no te preocupes... Has conocido a la familia que aparece cada treinta años en la casa, ¿verdad? Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele...#n#k"
+                XMESSAGE"La verdad es que pensando a posteriori, parecían tenían tener asuntos pendientes que resolver, pero tu madre me sacó de allí del brazo y me dijo que ni se me ocurriese ir, por eso te he llamado esta mañana, pero no me ha dado tiempo a contarte más, porque has tardado una barbaridad en venir... hijo mío... qué culpa tendrás de que la A6 sea la Nacional con más puticlubs del país...  ¡Cacho golfo!#n#k"
                 INK     3
                 XMESSAGE "¡Pero que estás diciendo! A ver, ¡los niños me dijeron que habíais muerto!#n#k"
                 INK     12
@@ -1316,7 +1313,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
 	            XMESSAGE "No es propio de ti, pero tiras la maceta contra el suelo y después de varios rebotes, se coloca justo donde estaba."
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#n¡Sublime!. Y además, ¡está intacta!. ¿De qué estará hecha?#n#n"
+                XMESSAGE "#n¡Sublime! Y además, ¡está intacta! ¿De qué estará hecha?#n#n"
                 INK     15              ; Color del sistema
                 DROP    oMaceta
                 XMESSAGE "#n"
@@ -1366,7 +1363,7 @@ BAJAR   lBath2
                 INK     15              ; Color del sistema
                 GET     oLlavePorche    ; Cogemos el objeto
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#n#nAhora bien, cuando sepa tu madre que has roto el gnomo... ¡¡¡vas a flipar!!!."
+                XMESSAGE "#n#nAhora bien, cuando sepa tu madre que has roto el gnomo... ¡¡¡vas a flipar!!!"
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "#nMi madre apreciaba mucho el gnomo."
                 DESTROY oGnomo          ; Destruimos el objeto
@@ -1403,14 +1400,14 @@ BAJAR   lBath2
 
 > EXAMINA	PUERTA		AT lPorche
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, se abre con una llave.#n#nAhora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quien estaba en la puerta."
+                XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, se abre con una llave.#n#nAhora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quién estaba en la puerta."
                 DONE
 
 > LLAMAR    TIMBRE
 > USAR      TIMBRE
 > EXAMINA   TIMBRE      AT lPorche
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?."
+                XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?"
                 DONE
 
 > GOLPEAR	PUERTA		AT lPorche
@@ -1445,7 +1442,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#nJajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda!#k#n"
+                XMESSAGE "#nJajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche, so melón?, porque no las siento encima.#k#n"
+                INK     3
+                XMESSAGE "#n ¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche!#n#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
@@ -1460,7 +1459,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor."
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "#n¿Hola? Hay alguien en casa?#nNo quiero bromitas porque sino me voy a cabrear... ¡Y lo sabéis!"
+                XMESSAGE "#n¿Hola?. Hay alguien en casa?#nNo quiero bromitas porque sino me voy a cabrear... ¡Y lo sabéis!"
                 INK     9               ; Color del narrador
                 XMESSAGE "#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado."
                 INK     2               ; Color de la conciencia de Marcos
@@ -1592,6 +1591,7 @@ BAJAR   lBath2
 > JUGAR     CONSOLA     AT lRecibidor
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "Espera que voy a por el Super Mario Bros..."
+            
                 DONE
 
 > EXAMINAR  RECIBIDOR
@@ -1625,7 +1625,7 @@ BAJAR   lBath2
 > EXAMINA   CAJON        AT lRecibidor
                 ZERO    fCajon
                 INK     9               ; Color del narrador
-                XMESSAGE "El cajón está semi abierto."
+                XMESSAGE "Es un cajón de madera con un tirador de hierro."
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "#nSi cierras los ojos y lo deseas con mucha fuerza, igual se abre sólo."
                 DONE
@@ -1753,7 +1753,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "La mancha parece ser de yeso"
                 INK     3
-                XMESSAGE "Igual tengo algo que me sirva para quitarlo y comprobar que hay detrás."
+                XMESSAGE "Igual tengo algo que me sirva para quitarlo y comprobar qué hay detrás."
                 DONE
 
 > EXAMINA   TRAMPILLA   AT lBodega
@@ -1867,7 +1867,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una puerta metálica que comunica la Bodega con otro lugar"
+                XMESSAGE "Es una puerta metálica que comunica la Bodega con otro lugar."
                 INK     3
                 XMESSAGE "No tengo recuerdo alguno de esta puerta. Además, no tiene cerradura, luego seguro que se puede abrir."
                 DONE
@@ -1924,11 +1924,11 @@ BAJAR   lBath2
                 INK     14 
                 XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. Hoy hace treinta años que pasó todo y como nadie ha descubierto nunca lo que ha ocurrido, cada treinta años pasamos una noche en la casa hasta que se descubran los cuerpos.#n#k"
                 INK     3
-                XMESSAGE "¿Has dicho que llevásteis los cuerpos al chamizo?.#n#k"
+                XMESSAGE "¿Has dicho que llevásteis los cuerpos al chamizo?#n#k"
                 INK     14 
                 XMESSAGE "Si. Allí los enterramos con una pala y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#n#k"
                 INK     9
-                XMESSAGE "Observas como el niño se dirige hacia la puerta del garaje, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#n#k"
+                XMESSAGE "Observas como el niño se dirige hacia la puerta de la cochera, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#n#k"
                 INK     15
                 ISAT   oLlaveChamizo 252
                 CREATE oLlaveChamizo
@@ -2136,7 +2136,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n"
                 INK     4   
-                MESSAGE "Estás muerto"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 DONE
 
@@ -2201,7 +2201,7 @@ BAJAR   lBath2
                 SET   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK     9               ; Color del narrador
-                XMESSAGE "Gracias a que estas a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema, abres la puerta y sales de este horrible lugar.#k#n"
+                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 INK     15
                 ISAT    oPala 252
                 CREATE  oPala
@@ -2209,7 +2209,7 @@ BAJAR   lBath2
                 XMESSAGE "#k"
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico."
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#n Al fondo del chamizo puedes observar un armario metálico."
                 GOTO    lChamizo
                 DONE
 
@@ -2220,25 +2220,24 @@ BAJAR   lBath2
                 SET   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar       ; El crío nos va a revelar que en el chamizo están sus restos.
                 INK     9               ; Color del narrador
-                XMESSAGE "Gracias a que estas a oscuras consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema, abres la puerta y sales de este horrible lugar.#k#n"
-                INK     15
+                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 ISAT    oPala 252
                 CREATE  oPala
                 GET     oPala
                 XMESSAGE "#k"
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable .#n#nAl fondo del chamizo puedes observar un armario metálico.#n#k"
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable .#n#nAl fondo del chamizo puedes observar un armario metálico.#n#k"
                 INK     14 ;Color del crío
                 XMESSAGE "Tengo algo importante que decir.#n#k"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Dime, ¿que te ocurre?.#n#k"
+                XMESSAGE "Dime, ¿que te ocurre?#n#k"
                 INK     14 ;Color del crío
                 XMESSAGE "Bajo este suelo están nuestros cuerpos.#n#k Un día yo me escapé de la casa en busca de ayuda y el señor mató a mi madre y a mi hermana, más tarde me encontró en mitad del camino y me trajo a casa.#n#k El señor me obligó a traer aquí los cuerpos de mi madre y de mi hermana, cavó un agujero en este suelo y cuando terminó, me mató a mi también y aún estamos enterrados aquí.#n"
                 INK     3 ;Color del protagonista
                 XMESSAGE "Tengo que dar con la forma de descubrir los cuerpos y de avisar a las autoridades.#n#k"
                 INK     14 ;Color del crío
-                XMESSAGE "Muchas gracias, realmente necesito que se nos de descanso, porque estamos atrapados en esta casa.#n#k"        
+                XMESSAGE "Muchas gracias, realmente necesito que se nos dé descanso, porque estamos atrapados en esta casa.#n#k"        
                 INK     3 ;Color del protagonista
                 XMESSAGE "De acuerdo, haré cuanto esté en mi mano.#n#k"
                 GOTO    lChamizo
@@ -2286,7 +2285,7 @@ BAJAR   lBath2
                 NOTZERO fInsisteMuchoPuerta
                 ZERO    fJugar
                 INK     2               ; Voz de la conciencia
-                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!."   
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!"   
                 INK     9
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
                 XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#n"
@@ -2300,7 +2299,7 @@ BAJAR   lBath2
                 NOTZERO fInsisteMuchoPuerta
                 NOTZERO fJugar
                 INK     2               ; Voz de la conciencia
-                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!.#n#n"   
+                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE TOCAR LOS HUEVOS!#n#n"   
                 INK     9
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#n#k"
                 XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#n"
@@ -2330,7 +2329,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK     9
-                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua, tiene la rejilla abierta y una manguera tirada en el suelo que está conectada al grifo.#n"
+                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera tirada en el suelo que está conectada al grifo.#n"
                 INK     3
                 XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
                 INK     9
@@ -2523,6 +2522,7 @@ BAJAR   lBath2
                 INK     15
                 END                
 
+
 > USAR      GRIFO
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
@@ -2539,6 +2539,8 @@ BAJAR   lBath2
                 INK     2
                 XMESSAGE "..."
                 INK     15
+                ISAT    oPelota 252
+                CREATE  oPelota
                 GET     oPelota
                 INK     4
                 XMESSAGE "#nHas muerto.#n"
@@ -2555,7 +2557,7 @@ BAJAR   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manguera en la rejila
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad. Tratas de escapar y te resulta imposible.#n#k"
+                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en contínua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#n"
                 INK     4
                 XMESSAGE "#nHas muerto.#n"
                 INK     15
@@ -2619,7 +2621,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fCerrarGrifo
+                ZERO fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "Volvemos a la bodega.#k"
                 CLS  ; Limpiamos la pantalla
@@ -2632,7 +2634,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
-                ZERO    fCerrarGrifo
+                NOTZERO    fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
                 DONE
@@ -2730,7 +2732,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche."
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE"#n¿Pero como han llegado hasta aquí?."
+                XMESSAGE"#n¿Pero, cómo han llegado hasta aquí?"
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "#n¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja#n"
                 INK     15
@@ -2787,7 +2789,7 @@ BAJAR   lBath2
                 XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz.#n"
                 INK     3
                 ; CAGADA
-                XMESSAGE "En cuanto pueda salir avisaré a mis padres y a la policía, aunque se que me van a hacer est"  
+                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque se que me van a hacer montones de preguntas, estoy seguro."  
                 ZERO fDesenterrar
                 SET  fDesenterrar
                 DONE
@@ -2901,16 +2903,16 @@ BAJAR   lBath2
                 INK     12  
                 XMESSAGE "Marcos, ¿qué ha ocurrido aquí?#n#k"
                 INK     3 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanse hasta que no se descubrieran sus cuerpos aquí, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que de testimonio del levantamiento de los cadáveres.#n#k"
-                XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar a los padres de ella económicamente, abusó de ella y tuvo un par de gemelos fruto de ese abuso; la cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#n#k"
-                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario escrito de puño y letra por la criada, que voy a dar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurre el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!.#n#k"
+                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanse hasta que no se descubrieran sus cuerpos aquí, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#n#k"
+                XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#n#k"
+                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario escrito de puño y letra por la criada, que voy a dar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurre el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!#n#k"
                 INK     12
-                XMESSAGE "Me dejas helado, hijo... El caso es que...#n#k Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de la casa. El caso es que conforme salíamos de la casa por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría, por eso te he llamado...#n#k"
-                XMESSAGE "Mi intención es que estuvieras aquí, pero comprendo que el viaje se te ha hecho muy largo, nos ha entrado el miedo y al ver que caía la noche, nos hemos ido a casa de tu hermana. Supondríamos que al ver que no estabamos en la casa, vendrías a casa de tu hermana para preguntar, pero en el fondo también confiabamos en que si era cierto que esta noche iban a manifestarse las presencias, a ti no te harían nada, porque no te conocen y no sabías nada del tema.#k#n"
+                XMESSAGE "Me dejas helado, hijo... El caso es que...#n#k Hace justo treinta años, una noche tal como ésta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de la casa. El caso es que conforme salíamos de la casa por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría; por eso te he llamado...#n#k"
+                XMESSAGE "Mi intención es que estuvieras aquí, pero comprendo que el viaje se te ha hecho muy largo. Nos ha entrado el miedo y al ver que caía la noche, nos fuimos a casa de tu hermana. Supondríamos que al ver que no estabamos en la casa, te acercarías a preguntarle a tu hermana, pero en el fondo también confiabamos en que si era cierto que esta noche iban a manifestarse las presencias, a ti no te harían nada, porque no te conocen y no sabías nada del tema.#k#n"
                 INK     3
                 XMESSAGE "¿De verdad me estás diciendo que me habéis abandonado a mi suerte sabiendo que me iba a encontrar con este problema?#n#k"
                 INK     12
-                XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
+                XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiese quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a ocurrir nada... Y si te hubiese contado lo que pasaba, hubieras querido ir igualmente, ya que la curiosidad habría podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
                 INK     3
                 XMESSAGE "Lo más probable, aun así, te digo... que he estado a un pelo de que me lleven por delante, así que como ahora no te estires con unas jarras de cerveza, vamos a tener un problema.#n#k"
                 INK     12
@@ -2918,7 +2920,7 @@ BAJAR   lBath2
                 INK     2
                 XMESSAGE "Más lo va a sentir el hígado, estoy seguro de ello.#n#k#b"
                 INK     9
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: SUBLIME!.#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k Deja ya de jugar con videojuegos de otra época y sal a la calle a que te el aire y ¡ventila la habitación! ¡Que huele a choto!#n#k"
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#n#k Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#n#k"
                 INK 15
                 END
 
@@ -2955,7 +2957,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¿De verdad me estás diciendo que me habéis abandonado a mi suerte sabiendo que me iba a encontrar con este problema?#n#k"
                 INK     12
-                XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiera quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a pasar nada... Y si te hubiera contado lo que pasaba, hubieras querido ir igual, ya que la curiosidad hubiera podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
+                XMESSAGE "Sabes que soy una persona intuitiva... Yo mismo me hubiese quedado si tu madre no me lo hubiera prohibido terminantemente, pero confiaba en que a ti no te iba a ocurrir nada... Y si te hubiese contado lo que pasaba, hubieras querido ir igualmente, ya que la curiosidad habría podido contigo, como ha podido conmigo y eres sangre de mi sangre, hijo.#n#k"
                 INK     3
                 XMESSAGE "Lo más probable, aun así, te digo... que he estado a un pelo de que me lleven por delante, así que como ahora no te estires con unas jarras de cerveza, vamos a tener un problema.#n#k"
                 INK     12
@@ -2969,7 +2971,6 @@ BAJAR   lBath2
                 END
 
 ; No dejamos salir a Marcos sin las llaves del coche
-
 > USAR      HACHA 
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
@@ -3019,7 +3020,7 @@ BAJAR   lBath2
                 INK     2
                 XMESSAGE "Bien bien... Cuánto esmero, estoy sorprendido.#n#k"
                 INK     9
-                XMESSAGE "Te dispones a coger impulso echándote hacia atras unos pasos...#n#k"
+                XMESSAGE "Te dispones a coger impulso echándote hacia atrás unos pasos...#n#k"
                 INK     2
                 XMESSAGE "Venga, coge impulso que la puerta es maciza de narices.#n#k"
                 INK     9
@@ -3058,8 +3059,8 @@ BAJAR   lBath2
                 DONE
 
 > S         _           AT lAseo
-                CARRIED oCerillas
-                CLEAR   fDarkF
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLEAR   fVasAMorir
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
@@ -3083,7 +3084,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                XMESSAGE "El suelo esta lleno de cristales."
+                XMESSAGE "El suelo está lleno de cristales."
                 DONE
 
 > EXAMINA   INTERRUPTOR AT lAseo
@@ -3109,9 +3110,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Pulsas el interruptor y ves una fotografía en el suelo, pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires."
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "#n¡Argggg! ¡Santa madre de la hostia puta! ¡Está todo lleno de cristales!."
+                XMESSAGE "#n¡Argggg! ¡Santa madre de la hostia puta! ¡Está todo lleno de cristales!"
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#n¡Dios! ¡Casi me cago encima!... otra como esta y me quedo muñeco... me pregunto si habrá un puto desfibrilador en esta santa casa."
+                XMESSAGE "#n¡Dios! ¡Casi me cago encima! Otra como ésta y me quedo muñeco... me pregunto si habrá un puto desfibrilador en esta santa casa."
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -3126,7 +3127,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "#n#nAl cogerla has sentido como si algo muy frío te tocara la mano. Se te han puesto los pelos como escarpias y tu corazón se desboca."
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#nPodrías encender algo para iluminarte y ver qué te ha tocado, o igual no es buena idea. ¿Nos vamos?."
+                XMESSAGE "#nPodrías encender algo para iluminarte y ver qué te ha tocado, o igual no es buena idea. ¿Nos vamos?"
                 ZERO    fVasAMorir
                 SET     fVasAMorir
                 DONE
@@ -3164,8 +3165,6 @@ BAJAR   lBath2
                 DONE
 
 > N         _           AT lCocina 
-                CARRIED oCerillas                
-                CLEAR   fDarkF
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lRecibidor                
@@ -3325,10 +3324,6 @@ BAJAR   lBath2
 
 > EXAMINA   DESPENSA
 > MIRAR     _           AT lDespensa
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás en la despensa. Aquí se encuentra la ALACENA que usaban tus padres para guardar latas de comida. Tu solías EMPUJARLA para ver si caía alguna galleta desde arriba."
                 DONE
@@ -3347,6 +3342,7 @@ BAJAR   lBath2
                 XMESSAGE "#n Me reiría mucho si encontrase alguna galleta escondida arriba del todo."
                 DONE
 
+; NOTA: Estaría bien que cada vez que se empuja la alacena cayese una galleta y según cae, se la come, así no necesitamos contemplarla como objeto, hasta N galletas (poner contador?) y llegado un número de galletas, decirle al jugador que ya le tenemos domesticado
 > TIRAR     ALACENA
 > EMPUJAR   ALACENA     AT lDespensa
                 NOTZERO fControlLuz
@@ -3374,19 +3370,18 @@ BAJAR   lBath2
                 DONE
 
 > O         _           AT lDespensa
+                CLS                     ; Limpiamos la pantalla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                CLS
                 GOTO    lCocina
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 ; Estamos en locEscaleras
 
-> EXAMINA   ESCALON
 > EXAMINA	ESCALERAS   AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3395,55 +3390,52 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "#nLo cierto es que siento curiosidad. Si esto cruje será por algo."
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#nHay un tablón que parece tener cierta holgura y se mueve un poco. Echemos un vistazo al tablón."
+                XMESSAGE "#nHay un escalón que parece tener cierta holgura y se mueve un poco. Echemos un vistazo."
                 DONE
 
 ; Con flags, controlamos si se ha movido el tablón o se pone de nuevo en su sitio
 
-> EXAMINA	TABLON      AT lEscaleras                
+
+> EXAMINA   ESCALON     AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "Efectivamente el tablón está un poco suelto. Prueba a moverlo."
+                XMESSAGE "Efectivamente el escalón está un poco suelto. Prueba a moverlo."
                 DONE
 
-> EXAMINA	TABLON      AT lEscaleras                
+> EXAMINA   ESCALON      AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "El escalón está abierto, no has puesto el tablón en su sitio. Eso podría ser una trampa mortal."
+                XMESSAGE "Has quitado el escalón y ahora hay un hueco. Eso podría ser una trampa mortal."
                 DONE
 
 > QUITAR    ESCALON
-> MOVER     ESCALON
-> QUITAR    TABLON
-> MOVER		TABLON      AT lEscaleras
+> MOVER		ESCALON      AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fTablon
-                SET     fTablon
+                ZERO    fEscalon
+                SET     fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Mueves el tablón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro. Has dejado el escalón abierto y eso no es muy seguro."
+                XMESSAGE "Mueves el escalón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro. Has dejado el hueco abierto y eso no es muy seguro."
                 DONE
 
 > QUITAR    ESCALON
-> MOVER     ESCALON
-> QUITAR    TABLON
-> MOVER		TABLON      AT lEscaleras
+> MOVER		ESCALON     AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "El tablón no se mueve más."
+                XMESSAGE "El escalón no se mueve más."
                 DONE
 
 > EXAMINA   CANDADO
@@ -3451,7 +3443,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "La caja tiene un candado de seguridad. Necesitas una llave pequeña."
@@ -3461,7 +3453,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "La caja está anclada dentro del hueco del escalón, no se puede coger."
@@ -3471,7 +3463,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "¿No te sientes lo suficientemente culpable con haber roto el gnomo de tu madre, verdad?"
@@ -3481,7 +3473,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveCaja
                 INK     9               ; Color del narrador
@@ -3492,7 +3484,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveCaja
                 ISAT    oSecretKey1 252
@@ -3515,26 +3507,24 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás en las escaleras. Hay un tablón apoyado en la barandilla y en el hueco, puedes ver una caja metálica."
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "#nCuanto más lo escucho más me gusta. ¡¡¡Grupazo!!! En mi casa conservo aún el vaso de... AND BEER FOR ALL."
                 DONE
 
-> COLOCAR   ESCALON
-> PONER     ESCALON
-> COLOCAR	TABLON
-> PONER		TABLON      AT lEscaleras
+> COLOCAR	ESCALON
+> PONER		ESCALON      AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
-                NOTZERO fTablon
-                CLEAR   fTablon
-                ZERO    fTablon
+                NOTZERO fEscalon
+                CLEAR   fEscalon
+                ZERO    fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Has puesto el tablón en su sitio.#n"
+                XMESSAGE "Has puesto el escalón en su sitio.#n"
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "Me ha parecido una buena decisión, porque seguro que si no lo hago, me parto el cuello cayendo por las escaleras.#n"
                 INK     2               ; Color de la conciencia de Marcos
@@ -3552,9 +3542,11 @@ BAJAR   lBath2
                 DONE
 
 > BAJAR     _           AT lEscaleras
-                CARRIED oCerillas                
-                CLEAR   fDarkF
-                ZERO    fTablon
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fEscalon
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lRecibidor                
@@ -3562,10 +3554,12 @@ BAJAR   lBath2
                 DONE 
 
 > BAJAR     _          AT lEscaleras
-                CARRIED oCerillas                
-                CLEAR   fDarkF
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad 
                 CLS                     ; Limpiamos la pantalla     
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 INK     9               ; Color del narrador
                 XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello."
                 INK     4
@@ -3579,7 +3573,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario             
-                NOTZERO fTablon
+                NOTZERO fEscalon
                 INK     9               ; Color del narrador
                 XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello."
                 INK     4
@@ -3599,7 +3593,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fTablon                
+                ZERO    fEscalon                
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lPasillo1                
@@ -3723,7 +3717,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Desplazas la vitrina apenas un metro con enorme facilidad. Ese pestillo era como una especia de fijación del mueble para que se no se pudiera desplazar."
                 INK     2               ; Color de la conciencia de Marcos
-                XMESSAGE "#nJoder... Marcos, ¡no conoces la casa de tus padres!#n¡Alucina con lo que tienes delante!. ¡Es un acceso a una habitación que desconocías que existiera!... Definitivamente, no conoces la casa de tus padres...#n"
+                XMESSAGE "#nJoder... Marcos, ¡no conoces la casa de tus padres!#n¡Alucina con lo que tienes delante! ¡Es un acceso a una habitación que desconocías que existiera! Definitivamente, no conoces la casa de tus padres...#n"
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "Pues ya veo que no.#n"
                 INK     9               ; Color del narrador
@@ -3781,10 +3775,9 @@ BAJAR   lBath2
                 XMESSAGE "El patio está muy oscura. Sin luz no se puede entrar."
                 DONE
 
-> O         _           AT lSalon   
-                CARRIED oCerillas                
-                CLEAR   fDarkF   
+> O         _           AT lSalon                
                 CLS                     ; Limpiamos la pantalla
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -3960,7 +3953,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Escuchas como si estuvieran unos críos jugando.#n"
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "¡Qué cojones! ¡Veo unos críos jugando!.#n"
+                XMESSAGE "¡Qué cojones! ¡Veo unos críos jugando!#n"
                 INK     9               ; Color del narrador
                 XMESSAGE "Uno de ellos para en seco, gira la cabeza y te mira. Se acerca despacio y te quedas inmovilizado; no sabes cómo reaccionar."
                 XMESSAGE "#nSe aproxima a ti y se detiene enfrente tuya.#n"
@@ -4076,7 +4069,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "#n#nUna fuerte corriente de aire helado apaga tu cerilla.#n#nSúbitamente, una voz aguda chirriante y furiosa te grita:#n"
                 INK     4
-                XMESSAGE "¡No toques eso!.#k#b"
+                XMESSAGE "¡No toques eso!#k#b"
                 INK     9               ; Color del narrador
                 XMESSAGE "La foto salta con violencia de tu manos para caer de nuevo en la cama. Notas como una fuerza sobrenatural te arrastra fuera de la habitación. Tras de ti, la puerta se cierra de un portazo contundente.#k#n"
                 CLS                     ; Limpiamos la pantalla
@@ -4609,7 +4602,7 @@ BAJAR   lBath2
                 EQ      fNenaMala 5
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "#nQuieres otro peluche,¿eh?. ¡A la feria a disparar palillos!"
+                XMESSAGE "#nQuieres otro peluche,¿eh? ¡A la feria a disparar palillos!"
                 DONE
 ; Hemos visto la foto, por tanto el peluche está limpio
 > EXAMINA   CAMA        AT lRoom3
@@ -4755,7 +4748,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas con curiosidad hacia el agua y la acaricias con la punta de los dedos. Te llevas los dedos hacia la boca."
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "#nNo me lo puedo creer, ¡el agua es salada!.#n"
+                XMESSAGE "#nNo me lo puedo creer, ¡el agua es salada!#n"
                 DONE     
 
 > EXAMINA   MOSAICO     AT lBath3
@@ -5095,7 +5088,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
                 XMESSAGE "¿Tienes lo que me pertenece?#k#n"
-                XMESSAGE "¿No tienes nada para mi?...#k#n"
+                XMESSAGE "¿No tienes nada para mi?#k#n"
                 XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
                 INK     9
                 XMESSAGE "La niña desaparece...#k#n#n"
@@ -5117,7 +5110,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
                 XMESSAGE "¿Tienes lo que me pertenece?#k#n"
-                XMESSAGE "¿No tienes nada para mi?...#k#n"
+                XMESSAGE "¿No tienes nada para mi?#k#n"
                 XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
                 INK     9
                 XMESSAGE "La niña desaparece...#k#n#n"
@@ -5139,7 +5132,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
                 XMESSAGE "¿Tienes lo que me pertenece?#k#n"
-                XMESSAGE "¿No tienes nada para mi?...#k#n"
+                XMESSAGE "¿No tienes nada para mi?#k#n"
                 XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
                 INK     9
                 XMESSAGE "La niña desaparece...#k#n#n"
@@ -5447,7 +5440,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
 				XMESSAGE "Parece ser una fotografía familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?"
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "#n¿De dónde habrá salido esta fotografía y quienes son?.#k#b"
+                XMESSAGE "#n¿De dónde habrá salido esta fotografía y quienes son?#k#b"
                 INK     9               ; Color del narrador
                 XMESSAGE "#nUn manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas."
                 INK     3               ; Color del protagonista, Marcos
@@ -5500,6 +5493,21 @@ BAJAR   lBath2
 ;                XMESSAGE "Bienvenido a esta aventura de ficción interactiva.#n#nDadas las prestaciones de nuestros vetustos micro ordenadores, el programa interpreta un rango reducido de acciones.#n#nRecomendamos, pues, que construyas tus frases en infinitivo. Algunas de las acciones más comunes son:#n#n    > Ayuda#n    > Inventario[I]#n    > Describir localización[R]#n    > Examinar[EX]#n    > Norte[N], Sur[S], Este[E], Oeste[O]#n    > Bajar[AB], Subir[AR]#n    > Entrar[EN], Salir[SA]#n    > Coger#n    > Usar#n    > Empujar, Tirar, Mover#n    > Abrir, Cerrar#n    > Poner, Quitar#n    > Mover#n    > Encender, Prender#n#nConforme cumplas determinados hitos en tu aventura, desbloquearás algunos passwords.#n#nBasta con escribir 'pass' seguido de un espacio y la palabra clave en la sala de recarga energética, para continuar donde lo dejaste."
 ;                DONE
 
+;> AYUDA     _
+                ;INK     9
+                ;XMESSAGE "Siempre que uses MIRAR, se te dan pistas, para saber lo que debes hacer en dicha localización, lee atentamente."
+                ;XMESSAGE "fControlLuz"
+                ;PRINT   73
+                ;XMESSAGE "#nfUsarCerilla"
+                ;PRINT   90
+                ;XMESSAGE "#nfTurnosConLuz"
+                ;PRINT   72
+                ;XMESSAGE "#nfVasAMorir"
+                ;PRINT   89
+                ;XMESSAGE "#nfDarkF"
+                ;PRINT   28
+               ; DONE
+
 > AYUDA     OSITO                
                 XMESSAGE "fControlLuz"
                 PRINT   73
@@ -5512,7 +5520,7 @@ BAJAR   lBath2
                 XMESSAGE "#nfDarkF"
                 PRINT   28
                 DONE
-
+                
 > USAR      MAGIA
                 ISAT    oCerillas       252
                 ISAT    oLlaveChamizo   252
