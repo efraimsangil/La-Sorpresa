@@ -310,6 +310,7 @@ GENERADOR       211    noun     ; lCochera
 LAREIRA         212    noun     ; lSalon
 COLCHON         213    noun     ; lCriada
 LUNA            214    noun     ; lPatio
+BARANDILLA      215    noun     ; lEscaleras
 
 ;                               Verbos
 COGER           20      verb
@@ -335,7 +336,7 @@ DECIR           31      verb
 PREGUNT         31      verb
 HABLAR          31      verb
 JUGAR           32      verb
-
+BEBER           33      verb
 
 ;verbos jugador
 USAR            33      verb
@@ -368,6 +369,7 @@ AYUDA           58      verb
 COLGAR          59      verb
 LLAMAR          60      verb
 CERRAR          61      verb
+CAGAR           62      verb
 
 ;                               Adjetivos
 PEQUE           2       adjective
@@ -3522,6 +3524,16 @@ BAJAR   lBath2
                 XMESSAGE "Nada nada, sigue jugando."
                 DONE                
 
+> BAJAR     BARANDILLA  AT lEscaleras
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad                
+                CLS                     ; Limpiamos la pantalla
+                INK     3               ; Color del narrador
+                XMESSAGE "No pienso subir mi culo a la barandilla y desplazarme hacia abajo."
+                DONE 
+
 > BAJAR     _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA                
                 INK     9               ; Color del narrador
@@ -4333,6 +4345,16 @@ BAJAR   lBath2
                 XMESSAGE "No sé por qué, pero tengo ganas de usarlo."
                 DONE
 
+> CAGAR     _           AT lBath2
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fBajarRetrete
+                INK     3               
+                XMESSAGE "¿En serio? ¿Ahora? No creo que sea el momento."
+                DONE
+
 > SUBIR     _
 > SUBIR     RETRETE     AT lBath2
                 NOTZERO fControlLuz
@@ -4368,6 +4390,16 @@ BAJAR   lBath2
                 XMESSAGE "Un fluido viscoso y rojo inunda las paredes del retrete. La cisterna deja de funcionar, pues ya no escuchas el ruido de llenado del depósito.#n#n"
                 INK     3               ; Color del protagonista, Marcos
                 XMESSAGE "¡HUELE A SANGRE!"
+                DONE
+
+
+> BEBER     SANGRE     AT lBath2
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     3               ; Color del narrador
+                XMESSAGE "Eso lo haría si fuera otra clase de juego, si. En este no lo veo adecuado."                
                 DONE
 
 > EXAMINA   FLUIDO
