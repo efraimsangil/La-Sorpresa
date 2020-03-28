@@ -29279,11 +29279,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,

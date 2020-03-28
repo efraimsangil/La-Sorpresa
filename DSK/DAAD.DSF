@@ -3529,7 +3529,6 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
-                CLS                     ; Limpiamos la pantalla
                 INK     3               ; Color del narrador
                 XMESSAGE "No pienso subir mi culo a la barandilla y desplazarme hacia abajo."
                 DONE 
