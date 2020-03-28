@@ -866,9 +866,10 @@ BAJAR   lBath2
                 XMESSAGE "INK 15"
                 DONE
 
+; Comienza la historia
+
 ; Estamos en locMadrid
 
-; Comienza la historia
 
 > ABRIR     ARMARIO 
 > EXAMINA   ARMARIO     AT lMadrid
@@ -1756,7 +1757,10 @@ BAJAR   lBath2
                 SET     fUsarAceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación."
+                XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación.#n"
+                INK     9
+                XMESSAGE "Se ha vaciado la lata de aceite y la tiras."
+                DESTROY oLataDeAceite
                 DONE
 
 > ENGRASAR  CANDADO     AT lBodega
@@ -1825,7 +1829,19 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Rascas la mancha con la paleta y descubres un contorno en la pared.#n"
                 INK     3               ; Color del protagonista, Marcos
-                XMESSAGE "¡Es una puerta!"
+                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta. ¡Qué burro eres!"
+                DESTROY oPaleta
+                DONE
+
+> USAR      PALETA      AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                ;CARRIED oPaleta         ; Llevamos el objeto en nuestro inventario
+                NOTZERO fQuitarMancha
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     9               ; Color del narrador
+                XMESSAGE "Has roto la paleta. Pero la puerta está visibe. La puedes usar.#n"
                 DONE
 
 ;ALTERNATIVAS: dependiendo de la puerta que hayamos abierto, la respuesta será diferente: podemos quitar la mancha de la pared y abrir la puerta de la cochera o bien retirar el alambique y descubrir la trampilla.
@@ -2428,6 +2444,7 @@ BAJAR   lBath2
                 SET     fMangueraRejilla
                 INK     9               ; Color del narrador
                 XMESSAGE "Pones la manguera en la rejilla."
+                DESTROY oManguera
                 DONE
 
 > USAR      MANGUERA    AT lCochera
@@ -2597,7 +2614,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO fCerrarGrifo
+                NOTZERO fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "Volvemos a la bodega.#k"
                 CLS  ; Limpiamos la pantalla
@@ -2610,7 +2627,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
-                NOTZERO    fCerrarGrifo
+                ZERO    fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
                 DONE
@@ -2647,7 +2664,8 @@ BAJAR   lBath2
                 INK     14
                 XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala y me temo que ya no podemos entrar en la casa para cogerla.#n"
                 INK     3
-                XMESSAGE "Vaya, cuánto lo siento."
+                XMESSAGE "Vaya, cuánto lo siento.#k"
+                CLS
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -3661,6 +3679,11 @@ BAJAR   lBath2
                 XMESSAGE "Parece que un mecanismo ha liberado la vitrina.#n"
                 INK     2               ; Color de la conciencia de Marcos
                 XMESSAGE "Quizás podrías intentar moverla."
+                INK     3
+                XMESSAGE "¡Joder! ¡La tarjeta se ha atascado!"
+                INK     2
+                XMESSAGE "¡Olvida la tarjeta! Que la den por...!"
+                DESTROY oSecretKey1
                 DONE
 
 > EXAMINA   RANURA      AT lSalon
@@ -5559,7 +5582,7 @@ BAJAR   lBath2
                 ISAT    oPelota         252
                 ISAT    oPaleta         252
                 ISAT    oLlaveBodega    252
-                ISAT    oLlaveCoche     252
+                ;ISAT    oLlaveCoche     252
                 CREATE  oCerillas
                 CREATE  oLlaveChamizo
                 CREATE  oLlavePorche
@@ -5568,7 +5591,7 @@ BAJAR   lBath2
                 CREATE  oPelota
                 CREATE  oPaleta
                 CREATE  oLlaveBodega
-                CREATE  oLlaveCoche
+                ;CREATE  oLlaveCoche
                 GET     oCerillas
                 GET     oLlaveChamizo
                 GET     oLlavePorche
@@ -5577,7 +5600,9 @@ BAJAR   lBath2
                 GET     oPelota
                 GET     oPaleta
                 GET     oLlaveBodega
-                GET     oLlaveCoche
+                ;GET     oLlaveCoche
+                GOTO    lBodega
+                RESTART
                 DONE
 
 > APAGAR    CERILLA
@@ -5801,7 +5826,7 @@ BAJAR   lBath2
 
 > _         _   RESET                   ; Objetos a su loc. inicial / Flag 1
                 LET     fStrength 10
-                LET     fMaxCarr  10     ; Num de objetos que puedes llevar encima
+                LET     fMaxCarr  10    ; Num de objetos que puedes llevar encima
                 SET     fCPronounNoun
                 SET     fCPronounAdject
                 GOTO    1               ; Primera localidad del juego
