@@ -211,6 +211,7 @@
 		{"symbol":"_VOC_I", "Value":15},
 		{"symbol":"_VOC_SALIR", "Value":14},
 		{"symbol":"_VOC_ENTRA", "Value":13},
+		{"symbol":"_VOC_X", "Value":12},
 		{"symbol":"_VOC_SALID", "Value":12},
 		{"symbol":"_VOC_BAJAR", "Value":11},
 		{"symbol":"_VOC_ABAJO", "Value":11},
@@ -598,6 +599,7 @@
 		{"VocWord":"VIEJA", "Value":4,"VocType":3 },
 		{"VocWord":"VIEJO", "Value":4,"VocType":3 },
 		{"VocWord":"VITRI", "Value":156,"VocType":2 },
+		{"VocWord":"X", "Value":12,"VocType":0 },
 		{"VocWord":"Y", "Value":2,"VocType":5 }
 	],
 "object_data":
@@ -1441,15 +1443,15 @@
 	},
 	{
 		"Value":1,
-		"Text":"Burgos.#n#n      10 de Enero de 1987.#k#b  Marcos es un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrado a asumir todo lo que se le venga encima con tal de mantener su estatus laboral. Con los años, esta incapacidad de gestionar conflictos le ha arrastrado inevitablemente a la misantropía más absoluta, haciendo de él un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Marcos suele hablar mucho consigo mismo y tiene una conciencia muy desarrollada, puesto que en pocas ocasiones puede hacer gala de sus habilidades sociales, ya que la gente que se acerca ocasionalmente, huye despavorida en cuanto se preocupan en conocerle....#k#b  Hoy es Sábado y nuestro protagonista no tiene planes, excepto disfrutar de sus 48h de libertad condicional; así denomina Marcos a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigue en la cama medio despierto, remoloneando. Los madrugones de la semana le pesan cada día más y se siente incapaz de salir de su nido calentito bajo la manta de franela.#k#b  Está decidido... Se gira en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla; alguien decidió por él que debe despertarse definitivamente.#n#n Tiene a su lado la mesilla de noche."
+		"Text":"Burgos.#n#n      10 de Enero de 1987.#k#b  Eres un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de tí un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Está decidido... Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por tí que debes despertarse definitivamente."
 	},
 	{
 		"Value":2,
-		"Text":" Marcos sale de casa y coge su coche rumbo a la Sierra del Caurel; es una excursión, pero a Marcos le gusta conducir. La carretera le concentra porque es de las pocas cosas que le evita pensar en sus responsabilidades.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, Marcos reconoce el paso del cruce que conduce al pueblo donde sus padres tienen la casa.#k#b  Queda poco para llegar y el agotamiento comienza a resentir a Marcos, que empieza a acusar el entumecimiento de sus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibe una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de tunel sobrecogedor que siempre le dió respeto cuando era un niño.#k#b  Cuando se levantaba niebla, el paraje le resultaba inquietante y su imaginación le jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño le permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en su personalidad."
+		"Text":" Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dió respeto cuando eras un niño.#k#b  Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
 	},
 	{
 		"Value":3,
-		"Text":" Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
+		"Text":" Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 	},
 	{
 		"Value":4,
@@ -1457,27 +1459,27 @@
 	},
 	{
 		"Value":5,
-		"Text":" Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad; solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera pintada de verde que está completamente descascarillada y ajada por la temperie."
+		"Text":" Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
 	},
 	{
 		"Value":6,
-		"Text":" Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano y era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
+		"Text":" Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
 	},
 	{
 		"Value":7,
-		"Text":" El recibidor. Despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior. Es desalentador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que dan paso a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y por supuesto, la consola con la que has tropezado.#n#n  Parece no haber nadie en la casa."
+		"Text":" Te encuentras en el recibidor, despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior. Es desalentador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que dan paso a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado.#n#n  Parece no haber nadie en la casa."
 	},
 	{
 		"Value":8,
-		"Text":" En el aseo el ambiente está cargado, espeso, tanto es así que la llama de la cerilla ha cambiado de color a un verde azulado y comienza a producir un centelleo titilante...#n#nSientes que no quieres estar aquí y notas que comienzas a sentirte angustiado.#n#nLa frágil lumbre te permite descubrir un interruptor en la pared."
+		"Text":" En el aseo el ambiente está cargado, espeso, tanto es así que la llama de la cerilla ha cambiado de color a un verde azulado y comienza a producir un centelleo titilante...#n#nSientes que no quieres estar aquí y comienzas a sentirte angustiado.#n#nLa frágil lumbre te permite descubrir un interruptor en la pared."
 	},
 	{
 		"Value":9,
-		"Text":" La bodega. Un lugar angosto y húmedo que despide un aroma a tierra excavada profundo y penetrante.#n#n  En una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo."
+		"Text":" La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo."
 	},
 	{
 		"Value":10,
-		"Text":" Estás en la cocina. Donde ayer era un lugar acogedor que proporcionaba esa sensación tan cálida de hogar, hoy te invade una sensación de frío desalentadora que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con una portezuela, una alacena para la comida al ESTE y como no, la vieja lavadora Balay, que con más de 20 años, aún sigue dando servicio."
+		"Text":" Estás en la cocina. Donde ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una sensación de frío desalentadora que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con una portezuela, una alacena para la comida al ESTE y como no, la vieja lavadora, que con más de 20 años, aún sigue dando servicio."
 	},
 	{
 		"Value":11,
@@ -1485,7 +1487,7 @@
 	},
 	{
 		"Value":12,
-		"Text":" Las escaleras que regentan la casa; son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
+		"Text":" Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 	},
 	{
 		"Value":13,
@@ -1497,7 +1499,7 @@
 	},
 	{
 		"Value":15,
-		"Text":" ¡Inconcebible! ¿Qué son estas dependencias? Has entrado en lo que parece un dormitorio antiguo sin ventilación ni iluminación, aunque hay muestras de que ha sido habitado, pues hay una cama de paja, un banco antiguo de madera que parece de otro siglo y también descubres un orinal de porcelana."
+		"Text":" Has entrado en lo que parece ser un dormitorio antiguo sin ventilación ni iluminación, aunque hay muestras de haber sido habitado, pues hay una cama de paja, un banco antiguo de madera que parece de otro siglo y un orinal de porcelana."
 	},
 	{
 		"Value":16,
@@ -1505,7 +1507,7 @@
 	},
 	{
 		"Value":17,
-		"Text":" Estás en el centro del corredor; una puerta se ubica en el SUR y el corredor continúa del ESTE a OESTE."
+		"Text":" Estás en el centro del corredor; hay una puerta en el SUR y el corredor continúa de ESTE a OESTE."
 	},
 	{
 		"Value":18,
@@ -1513,11 +1515,11 @@
 	},
 	{
 		"Value":19,
-		"Text":" Es una alcoba grande y austera, sin decoración ni ornamento, puedes ver una cama grande de hierro en el centro de la estancia y al NORTE está el baño.#n#n  Levantas un poco la cerilla y descubres un objeto encima de la cama."
+		"Text":" Es una alcoba grande y austera, sin decoración ni ornamento. Puedes ver una cama grande de hierro en el centro de la estancia y la puerta del baño que se encuentra al NORTE.#n#n  Levantas un poco la cerilla y descubres un objeto encima de la cama."
 	},
 	{
 		"Value":20,
-		"Text":" Estás en el baño; este tiene un pequeño respiradero en el techo. Además de una tina majestuosa, que te lleva a recordar con nostalgia esos baños tan divertidos que tenías de pequeño. Tu madre te obligaba a hacerlo porque venías de la calle siempre lleno de barro."
+		"Text":" Estás en el baño; tiene un pequeño respiradero en el techo, además de una tina majestuosa, que te lleva a recordar con nostalgia esos baños tan divertidos que tenías de pequeño. Tu madre te obligaba a hacerlo porque venías de la calle siempre lleno de barro."
 	},
 	{
 		"Value":21,
@@ -1525,19 +1527,19 @@
 	},
 	{
 		"Value":22,
-		"Text":" Estás en el cuarto de baño. Es pequeño pero completo, dispone de una tina antigua, una pila y un retrete.#n#n  Sientes haber viajado en el tiempo, este lugar es anacrónico."
+		"Text":" Estás en el cuarto de baño. Es pequeño pero completo, dispone de una tina antigua, una pila y un retrete.#n#n  Sientes como si hubieras viajado en el tiempo. Este lugar es anacrónico."
 	},
 	{
 		"Value":23,
-		"Text":" Sin duda estamos en el dormitorio principal, hay una cama muy grande con cabecero de madera y al NORTE está el baño. Una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la ténue luz que proyecta la cerilla, apenas puedes discenir de que se trata."
+		"Text":" Sin duda estamos en el dormitorio principal; hay una cama muy grande con cabecero de madera y al NORTE está el baño. En la estancia hay una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la ténue luz que proyecta la cerilla, apenas puedes discenir de que se trata."
 	},
 	{
 		"Value":24,
-		"Text":" Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas. La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde."
+		"Text":" Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; hoy día, no deja de sorprenderte cada vez que la contemplas. La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón que desconoces, está llena de agua hasta el borde."
 	},
 	{
 		"Value":25,
-		"Text":" Has entrado en lo que parece ser un gabinete. No terminas de explicarte qué hace este habitáculo aquí, pero te pone los pelos de punta.#n#n  Puedes ver una camilla médica de la que cuelgan unas cadenas,también hay una mesa con instrumental quirúrgico oxidado. El suelo está ensangrentado.#n#n  La trampilla por la que has entrado se cierra."
+		"Text":" Has entrado en lo que parece ser un gabinete. No terminas de explicarte qué hace este habitáculo aquí, pero te pone los pelos de punta.#n#n  Puedes ver una camilla médica de la que cuelgan unas cadenas y también hay una mesa con instrumental quirúrgico oxidado. El suelo tiene una gran mancha oscura que posiblemente sea sangre seca.#n#n  La trampilla por la que has entrado se cierra y ya no podrás regresar por ella."
 	},
 	{
 		"Value":26,
@@ -1545,15 +1547,15 @@
 	},
 	{
 		"Value":27,
-		"Text":" Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#n  Al fondo del chamizo puedes observar un armario metálico."
+		"Text":" Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio. En este lugar hay un olor a humedad y a cerrado muy desagradable.#n#n  Al fondo del chamizo puedes observar un armario metálico."
 	},
 	{
 		"Value":28,
-		"Text":" Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil."
+		"Text":" Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en el centro. En la pared, pese a la reducida visibilidad,  puedes contemplar un grifo y también hay un generador de gasoil."
 	},
 	{
 		"Value":29,
-		"Text":" Estás encima del retrete. Desde aquí accedes a la cisterna."
+		"Text":" Estás encima del retrete. Desde aquí puedes acceder a la cisterna."
 	}
 	],
 "objects":
@@ -1743,7 +1745,7 @@
 	},
 	{
 		"Value":21,
-		"Text":"Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la podemos mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos; Marcos es un tipo cuidadoso.#n#n"
+		"Text":"Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n#n"
 	},
 	{
 		"Value":22,
@@ -1751,35 +1753,35 @@
 	},
 	{
 		"Value":23,
-		"Text":"Enciendes la lámpara (LED)#n"
+		"Text":"Enciendes la lámpara.#n"
 	},
 	{
 		"Value":24,
-		"Text":"Apagas la lámpara (LED)#n"
+		"Text":"Apagas la lámpara.#n"
 	},
 	{
 		"Value":25,
-		"Text":"Se trata de una lámpara con una pantalla especialmente pequeña.#n"
+		"Text":"Es una lámpara con una pantalla especialmente pequeña.#n"
 	},
 	{
 		"Value":26,
-		"Text":"Venga tío, nadie EXAMINA el teléfono, lo coge, lo descuelga, contesta, pero jamás lo examina. ¡No eres un Doctor!#n"
+		"Text":"¡Venga ya!, nadie EXAMINA el teléfono. Lo coge, lo descuelga, contesta, pero jamás lo examina. ¡No eres un Doctor!#n"
 	},
 	{
 		"Value":27,
-		"Text":"Estás muy adormilado como para saber de dónde viene el sonido del teléfono, no obstante, tanteas con las manos en la mesilla y descuelgas.#n#n"
+		"Text":"Estás muy adormilado como para saber de dónde viene el sonido del teléfono; no obstante, tanteas con las manos en la mesilla y descuelgas.#n#n"
 	},
 	{
 		"Value":28,
-		"Text":"Buenos días hijo. ¿Qué tal estás?#n#n"
+		"Text":"Buenos días, hijo. ¿Qué tal estás?#n#n"
 	},
 	{
 		"Value":29,
-		"Text":"Hola padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n#n#n"
+		"Text":"Hola, padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n#n#n"
 	},
 	{
 		"Value":30,
-		"Text":"Dile a Morfeo que espere un momento y escucha: Recuerda que hoy habíamos quedado aquí en la sierra. Tenemos algo muy importante que contarte, así que espabila y ve saliendo de casa, que sino, se te va a hacer muy tarde.#n#n"
+		"Text":"Dile a Morfeo que espere un momento y escucha: Recuerda que hoy habíamos quedado aquí, en la sierra. Tenemos algo muy importante que contarte, así que espabila y ve saliendo de casa, que sino, se te va a hacer muy tarde.#n#n"
 	},
 	{
 		"Value":31,
@@ -1791,7 +1793,7 @@
 	},
 	{
 		"Value":33,
-		"Text":"Hasta luego padre.#n"
+		"Text":"Hasta luego, padre.#n"
 	},
 	{
 		"Value":34,
@@ -1803,7 +1805,7 @@
 	},
 	{
 		"Value":36,
-		"Text":"Tu habitación es grande, pero la decoración es minimalista; Una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible.#n"
+		"Text":"Tu habitación es grande, pero la decoración es minimalista; una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible.#n"
 	},
 	{
 		"Value":37,
@@ -1815,7 +1817,7 @@
 	},
 	{
 		"Value":39,
-		"Text":"Marcos es un tío listo. Nada en este mundo va a romper su momento de paz y tranquilidad. Además, ya tenía planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compró en el Continente.#n#n"
+		"Text":"Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en el Continente.#n#n"
 	},
 	{
 		"Value":40,
@@ -1831,11 +1833,11 @@
 	},
 	{
 		"Value":43,
-		"Text":"Te duchas y te vistes con rapidez, sabes que a tu padre no le gusta que le hagan esperar.#k#n#nCoges las llaves del coche, cierras la puerta de casa y vas directo al garaje del edificio.#k#n"
+		"Text":"Te duchas y te vistes con rapidez: sabes que a tu padre no le gusta que le hagan esperar.#k#n#nCoges las llaves del coche, cierras la puerta de casa y vas directo al garaje del edificio.#k#n"
 	},
 	{
 		"Value":44,
-		"Text":"Creo que me he confundido de música, perdón... sigue al Este y olvidemos este asunto.#n"
+		"Text":"Creo que me he confundido de música, perdón... sigue al ESTE y olvidemos este asunto.#n"
 	},
 	{
 		"Value":45,
@@ -1843,7 +1845,7 @@
 	},
 	{
 		"Value":46,
-		"Text":"El cielo está nublado y apenas se intuye el sol. Son de esos días que parece ser de noche todo el rato, pero a Marcos le da igual; para él no deja de ser un día más de mierda y encima tiene que hacer algo que le desagrada enormemente, sociabilizar, aún a pesar de que sea con su propia familia.#n"
+		"Text":"Te encanta la paz y tranquilidad del paisaje que discurre mientras conduces. Es un viaje largo, pero tiene cierto encanto.#n"
 	},
 	{
 		"Value":47,
@@ -1863,11 +1865,11 @@
 	},
 	{
 		"Value":51,
-		"Text":"Te has quedado como las vacas que ven pasar el tren, ¿eh? Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada.#n#n"
+		"Text":"Te has quedado como las vacas que ven pasar el tren, ¿eh?. Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada de la historia.#n#n"
 	},
 	{
 		"Value":52,
-		"Text":"HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni acercarte...#k#n Te recomendamos encarecidamente que le des otra oportunidad al juego y valores un poco nuestro trabajo.#k#n"
+		"Text":"HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni te has acercado.#k#n Te recomendamos encarecidamente que le des otra oportunidad al juego y le dediques un poco más de atención.#k#n"
 	},
 	{
 		"Value":53,
@@ -1903,7 +1905,7 @@
 	},
 	{
 		"Value":61,
-		"Text":"Marcos arranca el coche a toda velocidad y sale de la finca derrapando.#nUna vez sale de la casa, detiene el coche.#k#n#n"
+		"Text":"Arrancas el coche a toda velocidad y sale de la finca derrapando.#nUna vez sale de la casa, detiene el coche.#k#n#n"
 	},
 	{
 		"Value":62,
@@ -1919,7 +1921,7 @@
 	},
 	{
 		"Value":65,
-		"Text":"¡Marcos! ¡Marcos, hijo! ¡Qué alegría verte! Sospechaba que aún estarías por aquí.#k#n#n"
+		"Text":"¡Hijo! ¡Hijo! ¡Qué alegría verte! Sospechaba que aún estarías por aquí.#k#n#n"
 	},
 	{
 		"Value":66,
@@ -2779,7 +2781,7 @@
 	},
 	{
 		"Value":280,
-		"Text":"Marcos, a quíen se le ocurre... En fin, creo que podremos apañarnoslas para salir de aquí.#k#n#n"
+		"Text":"Tío, a quíen se le ocurre... En fin, creo que podremos apañarnoslas para salir de aquí.#k#n#n"
 	},
 	{
 		"Value":281,
@@ -2811,11 +2813,11 @@
 	},
 	{
 		"Value":288,
-		"Text":"Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n#n"
+		"Text":"Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n#n"
 	},
 	{
 		"Value":289,
-		"Text":"Marcos, ¿qué ha ocurrido aquí?#k#n#n"
+		"Text":"Hijo, ¿qué ha ocurrido aquí?#k#n#n"
 	},
 	{
 		"Value":290,
@@ -2883,11 +2885,11 @@
 	},
 	{
 		"Value":306,
-		"Text":"Transcurrida una hora, Marcos regresa a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n#b#n"
+		"Text":"Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n#b#n"
 	},
 	{
 		"Value":307,
-		"Text":"Marcos, que ha ocurrido aquí?#k#n#n"
+		"Text":"Hijo, que ha ocurrido aquí?#k#n#n"
 	},
 	{
 		"Value":308,
@@ -3315,7 +3317,7 @@
 	},
 	{
 		"Value":414,
-		"Text":"Joder... Marcos, ¡alucina con lo que tienes delante!#n#n¡Es un acceso a una habitación que desconocías que existiera! ¡no conoces la casa de tus padres!#n#n"
+		"Text":"Joder... ¡alucina con lo que tienes delante!#n#n¡Es un acceso a una habitación que desconocías que existiera! ¡no conoces la casa de tus padres!#n#n"
 	},
 	{
 		"Value":415,
@@ -3439,7 +3441,7 @@
 	},
 	{
 		"Value":445,
-		"Text":"Joder Marcos, ¿este crío es real? Ya no veo al otro crío.#k#n#n"
+		"Text":"¡Joder!, ¿este crío es real? Ya no veo al otro crío.#k#n#n"
 	},
 	{
 		"Value":446,
@@ -5444,6 +5446,13 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":21,
 						"NumParams":1
 					},
 					{
