@@ -285,6 +285,7 @@
 		{"symbol":"LCOCHE", "Value":2},
 		{"symbol":"LMADRID", "Value":1},
 		{"symbol":"LINTRO", "Value":0},
+		{"symbol":"FVASAPALMAR", "Value":109},
 		{"symbol":"FAPAGARCERILLA", "Value":108},
 		{"symbol":"FCOMBINACION", "Value":107},
 		{"symbol":"FQUITARMANCHA", "Value":106},
@@ -1494,7 +1495,7 @@
 	},
 	{
 		"Value":12,
-		"Text":" Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
+		"Text":" Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n   Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 	},
 	{
 		"Value":13,
@@ -24956,7 +24957,7 @@
 						"Opcode":48,
 						"Condact":"CLEAR",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -25428,14 +25429,14 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
 						"Opcode":47,
 						"Condact":"SET",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -25683,14 +25684,14 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
 						"Opcode":47,
 						"Condact":"SET",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -25938,14 +25939,14 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
 						"Opcode":47,
 						"Condact":"SET",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -41877,13 +41878,6 @@
 						"NumParams":0
 					},
 					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":12,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -41895,6 +41889,13 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":556,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":12,
 						"NumParams":1
 					},
 					{
@@ -45828,6 +45829,28 @@
 						"Opcode":55,
 						"Condact":"ISAT",
 						"Indirection1":0,
+						"Param1":20,
+						"Param2":252,
+						"NumParams":2
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":20,
+						"NumParams":1
+					},
+					{
+						"Opcode":40,
+						"Condact":"GET",
+						"Indirection1":0,
+						"Param1":20,
+						"NumParams":1
+					},
+					{
+						"Opcode":55,
+						"Condact":"ISAT",
+						"Indirection1":0,
 						"Param1":9,
 						"Param2":252,
 						"NumParams":2
@@ -45850,7 +45873,7 @@
 						"Opcode":55,
 						"Condact":"ISAT",
 						"Indirection1":0,
-						"Param1":18,
+						"Param1":22,
 						"Param2":252,
 						"NumParams":2
 					},
@@ -45858,14 +45881,35 @@
 						"Opcode":44,
 						"Condact":"CREATE",
 						"Indirection1":0,
-						"Param1":18,
+						"Param1":22,
 						"NumParams":1
 					},
 					{
 						"Opcode":40,
 						"Condact":"GET",
 						"Indirection1":0,
-						"Param1":18,
+						"Param1":22,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":107,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":81,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":64,
 						"NumParams":1
 					},
 					{
@@ -46339,7 +46383,7 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -46424,7 +46468,7 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -46470,7 +46514,7 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{
@@ -46537,7 +46581,7 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":89,
+						"Param1":109,
 						"NumParams":1
 					},
 					{

@@ -108,6 +108,7 @@
 #define fQuitarMancha       106     
 #define fCombinacion        107
 #define fApagarCerilla      108
+#define fVasAPalmar         109
 
 
 ;                               Localizaciones
@@ -550,7 +551,7 @@ LUEGO           2       conjugation
 /9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo." 
 /10 " Estás en la cocina. Donde ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una sensación de frío desalentadora que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con una portezuela, una alacena para la comida al ESTE y como no, la vieja lavadora, que con más de 20 años, aún sigue dando servicio." 
 /11 " La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#n  La estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque ésta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#n  Puedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#n  Desde aquí se accede a un amplio patio trasero al ESTE."
-/12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
+/12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n   Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 /13 " Estás en la despensa. Aquí se encuentra la alacena que usaban tus padres para guardar latas de comida y algún que otro utensilio de cocina."
 /14 " La luna llena gobierna la noche y su claridad se refleja sobre el extenso muro gris del patio, que se erige imponente como el adarve protector de la hacienda; inexpugnable."
 /15 " Has entrado en lo que parece ser un dormitorio antiguo sin ventilación ni iluminación, aunque hay muestras de haber sido habitado, pues hay una cama de paja, un banco antiguo de madera que parece de otro siglo y un orinal de porcelana."
@@ -2091,8 +2092,8 @@ BAJAR   lBath2
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Una mujer está postrada boca arriba retorciendose de dolor encima de la camilla, desnuda y encadenada de pies y manos como si de un potro se tratase. Sus muñecas y tobillos tienen unas escaras profundas y el tejido cambia de color y comienza a ulcerarse. #n#nLa piel de la mujer sufre laceraciones y ves la carne a través de los cortes."
-                XMESSAGE " No hay sangre, los desgarros son límpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
+                XMESSAGE "Una mujer está postrada boca arriba retorciendose de dolor encima de la camilla, desnuda y encadenada de pies y manos como si de un potro se tratase. Sus muñecas y tobillos tienen unas escaras profundas y el tejido cambia de color y comienza a ulcerarse.#n#nLa piel de la mujer sufre laceraciones y ves la carne a través de los cortes.#n"
+                XMESSAGE "No hay sangre, los desgarros son límpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
                 DONE
 
 > EXAMINA   CAMILLA     AT lGabinete
@@ -3080,7 +3081,7 @@ BAJAR   lBath2
 > S         _           AT lAseo
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                CLEAR   fVasAMorir
+                CLEAR   fVasAPalmar
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lRecibidor
@@ -3151,8 +3152,8 @@ BAJAR   lBath2
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Podrías encender algo para iluminarte y ver qué te ha tocado, o igual no es buena idea. ¿Nos vamos?"
                 INK     9
-                ZERO    fVasAMorir
-                SET     fVasAMorir
+                ZERO    fVasAPalmar
+                SET     fVasAPalmar
                 DONE
 
 > PULSAR    INTERRUPTOR
@@ -4939,10 +4940,10 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                CLS                     ; Limpiamos la pantalla
-                GOTO    lEscaleras
+                CLS                     ; Limpiamos la pantalla                
                 INK     9               ; Color del narrador
                 XMESSAGE "Notas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
+                GOTO    lEscaleras
                 DONE
 
 > E     	_           AT lPasillo1 
@@ -5554,27 +5555,27 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Eres un tramposo o tienes muchas prisas.#nVenga, te llevaré directamente al recibidor de la casa.#k"
                 CLS                     ; Limpiamos la pantalla
-                ;ISAT   oLlaveBodega 252
-                ;CREATE oLlaveBodega
-                ;GET    oLlaveBodega
+                ISAT    oLlaveBodega 252
+                CREATE  oLlaveBodega
+                GET     oLlaveBodega
                 ;ISAT   oSecretKey1 252
                 ;CREATE oSecretKey1
                 ;GET    oSecretKey1
-                ISAT   oCerillas 252
-                CREATE oCerillas
-                GET    oCerillas
-                ;ISAT   oLataDeAceite 252
-                ;CREATE oLataDeAceite 
-                ;GET    oLataDeAceite 
+                ISAT    oCerillas 252
+                CREATE  oCerillas
+                GET     oCerillas
+                ISAT    oLataDeAceite 252
+                CREATE  oLataDeAceite 
+                GET     oLataDeAceite 
                 ;ISAT   oHacha 252
                 ;CREATE oHacha
                 ;GET    oHacha
-                ISAT   oPaleta 252
-                CREATE oPaleta
-                GET    oPaleta
-                ;SET    fCombinacion     ; Tenemos la combinación del candado
-                ;SET    fJugar           ; Hemos jugado con el crío
-                ;SET    fLeerDiario
+                ;ISAT   oPaleta 252
+                ;CREATE oPaleta
+                ;GET    oPaleta
+                SET     fCombinacion     ; Tenemos la combinación del candado
+                SET     fJugar           ; Hemos jugado con el crío
+                SET     fLeerDiario
                 GOTO    lBodega
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5670,7 +5671,7 @@ BAJAR   lBath2
                 SET     fUsarCerilla
                 LET     fTurnosConLuz 8 ; Numero de turnos hasta que te quedas sin luz
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fVasAMorir
+                ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
                 INK     9               ; Color del narrador
                 XMESSAGE "Enciendes una cerilla y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
@@ -5679,7 +5680,7 @@ BAJAR   lBath2
 > PRENDER   CERILLA     
 > USAR		CERILLA 
                 CLS                     ; Limpiamos la pantalla                
-                NOTZERO fVasAMorir
+                NOTZERO fVasAPalmar
                 INK     9               ; Color del narrador
                 XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
                 XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n"
@@ -5883,32 +5884,25 @@ BAJAR   lBath2
 ; Listado automático de salidas
 ; ¡OJO!, gasta los flags 100 y 101
 
->
-_           _   INK     5
+>_          _   INK     5
                 MES     0
                 CLEAR   101
                 LET     33 2
-                ;XMESSAGE "#n"
 
->
-_           _   COPYFF  38 100
+>_          _   COPYFF  38 100
                 MOVE    100
                 INK     5
                 MES     @33
                 PLUS    101 1
-                ;XMESSAGE "#n"
 
->
-_           _   PLUS    33 1
+>_          _   PLUS    33 1
                 LT      33 14
                 SKIP    -2
 
->
-_           _   NOTZERO 101
+>_          _   NOTZERO 101
                 DONE
 
->
-_           _   INK      5
+>_          _   INK      5
                 XMESSAGE 1
 
 /END
