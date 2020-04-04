@@ -15,15 +15,6 @@
 
 #define TIMEOUT   87                ;If Timeout last frame
 
-; GFX routines
-#define gfxCopyToPhys   0
-#define gfxCopyToBack   1
-#define gfxSwapPages    2
-#define gfxPicToPhys    3
-#define gfxPicToBack    4
-#define gfxClearPhys    5
-#define gfxClearBack    6
-
 ;                               System flags 0-63
 #define fDark               0
 #define fObjectsCarried     1
@@ -537,19 +528,18 @@ LUEGO           2       conjugation
 ;------------------------------------------------------------------------------
 /LTX                            ;Location Texts
 ; \k\b #k#b
-;/0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
-/0 ""
+/0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
 /1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Eres un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de tí un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Está decidido... Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por tí que debes despertarte definitivamente."
 /2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dió respeto cuando eras un niño.#k#b  Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
 /5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
-/6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#n  Frente a tí, está la puerta principal de la casa."
+/6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
 /7 " Te encuentras en el recibidor, despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior. Es desalentador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que dan paso a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado.#n#n  Parece no haber nadie en la casa."
 /8 " En el aseo el ambiente está cargado, espeso, tanto es así que la llama de la cerilla ha cambiado de color a un verde azulado y comienza a producir un centelleo titilante...#n#nSientes que no quieres estar aquí y comienzas a sentirte angustiado.#n#nLa frágil lumbre te permite descubrir un interruptor en la pared."
 /9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo." 
 /10 " Estás en la cocina. Donde ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una sensación de frío desalentadora que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con una portezuela, una alacena para la comida al ESTE y como no, la vieja lavadora, que con más de 20 años, aún sigue dando servicio." 
-/11 " La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#n  La estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque ésta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#n  Puedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#n  Desde aquí se accede a un amplio patio trasero al ESTE."
+/11 " La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#n  La estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque esta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#n  Puedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#n  Desde aquí se accede a un amplio patio trasero al ESTE."
 /12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 /13 " Estás en la despensa. Aquí se encuentra la alacena que usaban tus padres para guardar latas de comida y algún que otro utensilio de cocina."
 /14 " La luna llena gobierna la noche y su claridad se refleja sobre el extenso muro gris del patio, que se erige imponente como el adarve protector de la hacienda; inexpugnable."
@@ -1220,9 +1210,9 @@ BAJAR   lBath2
                 NOTZERO fFoco
                 INK     9               ; Color del narrador
                 XMESSAGE "Insistes en volver a mirar y una atracción hipnótica te hace fijar la vista en los focos.#k#n"
-                XMESSAGE "Te fries las retinas y caes insconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre emana a borbotones de la brecha.#k#n#n"
+                XMESSAGE "Te fries las retinas y caes insconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre emana a borbotones de la brecha.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15               ; Color del narrador
                 END                
 
@@ -1375,7 +1365,6 @@ BAJAR   lBath2
                 DONE	
 
 ; Esto es por si al jugador le da por tirar este objeto sin haberlo cogido. No es necesario, pero seguro que se ejecuta después de jugar varias veces y el jugador quiere hacer las cosas rápido.
-> LANZAR    GNOMO
 > TIRAR		GNOMO		AT lPorche
                 NOTCARR oGnomo          ; No llevamos el objeto en el inventario
                 INK     9               ; Color del narrador
@@ -2102,9 +2091,9 @@ BAJAR   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ.#n#n"
+                XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 DONE
 
@@ -2127,9 +2116,9 @@ BAJAR   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n#n"
+                XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n"
                 INK     4   
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -2153,9 +2142,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Te acercas a la mesa.#k#n Notas un crujido metálico y ves que algo que se mueve delante de ti te clava un objeto punzante en el pecho.#k#n Son unas tijeras.#k#n"
                 INK     15 
-                XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n#n"
+                XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -2177,9 +2166,9 @@ BAJAR   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n#n"
+                XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -2244,9 +2233,9 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9                  ; Color del narrador
-                XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti.#k#n#n"
+                XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -2285,7 +2274,7 @@ BAJAR   lBath2
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#k#n"
                 XMESSAGE " Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 END  
 
 > EXAMINA   PUERTA
@@ -2299,9 +2288,9 @@ BAJAR   lBath2
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado de que un día tu padre te atropelló sacando el coche marcha atrás, e inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso sobre la rampa de hormigón.#k#n"
                 XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabemos hasta que veamos la radiografía) parece que te perforan un poco los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n#n"
                 INK     14
-                XMESSAGE "¿Pero tu no se supone que ibas a ayudarme, cacho inútil?, ahora tu espíritu se va a quedar aquí conmigo para siempre.#n#n"
+                XMESSAGE "¿Pero tu no se supone que ibas a ayudarme, cacho inútil?, ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 END  
 
 > N        _            AT lExteriorCochera
@@ -2496,9 +2485,9 @@ BAJAR   lBath2
                 ZERO    fManguera                   ; No encontró la manguera
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo.#k#n"
-                XMESSAGE " Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas...#n#n"
+                XMESSAGE " Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas...#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -2513,9 +2502,9 @@ BAJAR   lBath2
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Color del narrador
                 XMESSAGE "Abres el grifo y comienza a salir agua a presión. No CONECTASTE la manguera y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k#n"
-                XMESSAGE " El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia fatal.#k#n#n"
+                XMESSAGE " El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia fatal.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END                
 
@@ -2539,9 +2528,9 @@ BAJAR   lBath2
                 ISAT    oPelota 252
                 CREATE  oPelota
                 GET     oPelota
-                XMESSAGE "#n#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
+                XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END 
 
@@ -2555,9 +2544,9 @@ BAJAR   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manguera en la rejila
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en contínua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#n#n"
+                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en contínua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END 
 
@@ -3039,9 +3028,9 @@ BAJAR   lBath2
                 INK     2
                 XMESSAGE "Venga, coge impulso que la puerta es maciza de narices.#k#n"
                 INK     9
-                XMESSAGE "Con toda tu energía corres a embestir el armario y te pegas de lleno con el, el armario es arrastrado a toda velocidad hacia la puerta y el impacto es tremendo, no obstante un armario de chapa galvanizada poco puede hacer ante una puerta maciza, lo que si ocurre es que la chapa se deforma y el estante superior atraviesa la chapa trasera del armario y te cercena la cabeza como quien corta una barra de mantequilla.#k#n#n"
+                XMESSAGE "Con toda tu energía corres a embestir el armario y te pegas de lleno con el, el armario es arrastrado a toda velocidad hacia la puerta y el impacto es tremendo, no obstante un armario de chapa galvanizada poco puede hacer ante una puerta maciza, lo que si ocurre es que la chapa se deforma y el estante superior atraviesa la chapa trasera del armario y te cercena la cabeza como quien corta una barra de mantequilla.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -3282,9 +3271,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "El triturador se activa con tu mano en su interior y durante un instante notas calor.#k#n"
                 XMESSAGE "Las cuchillas te mutilan los dedos de la mano y notas enseguida como una fuerza de succión muy fuerte tira de tu brazo hacia adentro, mientras escuchas el crujido de tus huesos contra las paredes metálicas del fregadero.#k#n"
-                XMESSAGE "Hay sangre por todas partes.#k#n#n"
+                XMESSAGE "Hay sangre por todas partes.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"                
+                XMESSAGE "#nHas muerto.#n"                
                 INK     15              ; Color del sistema
                 END
 
@@ -3611,9 +3600,9 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla     
                 NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
+                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -3625,9 +3614,9 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario             
                 NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
+                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15               ; Color del narrador
                 END
 
@@ -3991,9 +3980,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Sin más dilacíón, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n#n"
                 XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n#n"
-                XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n#n"
+                XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n"
                 INK     4
-                XMESSAGE "Has Muerto.#n"              
+                XMESSAGE "#nHas Muerto.#n"              
                 INK     15              ; Color del sistema
                 END
 
@@ -5181,9 +5170,9 @@ BAJAR   lBath2
                 XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
                 INK     9
                 XMESSAGE "La niña desaparece...#k#n#n"
-                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
+                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -5203,9 +5192,9 @@ BAJAR   lBath2
                 XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
                 INK     9
                 XMESSAGE "La niña desaparece...#k#n#n"
-                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
+                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -5225,9 +5214,9 @@ BAJAR   lBath2
                 XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
                 INK     9
                 XMESSAGE "La niña desaparece...#k#n#n"
-                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
+                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15
                 END
 
@@ -5569,13 +5558,13 @@ BAJAR   lBath2
                 ;ISAT   oHacha 252
                 ;CREATE oHacha
                 ;GET    oHacha
-                ISAT   oPaleta 252
-                CREATE oPaleta
-                GET    oPaleta
+                ;ISAT   oPaleta 252
+                ;CREATE oPaleta
+                ;GET    oPaleta
                 ;SET    fCombinacion     ; Tenemos la combinación del candado
                 ;SET    fJugar           ; Hemos jugado con el crío
                 ;SET    fLeerDiario
-                GOTO    lBodega
+                GOTO    lBath3
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
@@ -5682,9 +5671,9 @@ BAJAR   lBath2
                 NOTZERO fVasAMorir
                 INK     9               ; Color del narrador
                 XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
-                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n"
+                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n"
                 INK     4
-                XMESSAGE "Has muerto.#n"
+                XMESSAGE "#nHas muerto.#n"
                 INK     15              ; Color del sistema
                 END
 
@@ -5849,9 +5838,7 @@ BAJAR   lBath2
                 WINAT   0       0
                 WINSIZE 10      127     ; 14 filas de alto * 8 pixels por fila = 112 pixels
                 PICTURE 0
-                DISPLAY 0                
-                ;ANYKEY
-                ;CLS
+                DISPLAY 0
 
 > _         _   WINDOW  1               ; Window para los textos
                 WINAT   13      0
@@ -5859,8 +5846,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 DESC    0               ; Introducción
                 ANYKEY
-                GFX     0 5       ;clearPhys
-                ;CLS                     ; Limpiamos la pantalla
+                CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 SET     255             ; Pone a cero todas las banderas
 
