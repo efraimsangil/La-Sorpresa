@@ -2204,7 +2204,7 @@ BAJAR   lBath2
                 LET     fVasAMorir 0
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#n Al fondo del chamizo puedes observar un armario metálico."
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n  El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#n  Al fondo del chamizo puedes observar un armario metálico."
                 GOTO    lChamizo
                 DONE
 
@@ -2212,10 +2212,11 @@ BAJAR   lBath2
                 ZERO    fControlLuz    ; esto estaba en NOTZERO fControlLuz
                 ZERO    fTurnosConLuz
                 CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario
-                SET   fDarkF           ; Desactivamos la oscuridad
+                SET     fDarkF           ; Desactivamos la oscuridad
                 NOTZERO fJugar         ; El crío nos va a revelar que en el chamizo están sus restos.
                 INK     9              ; Color del narrador
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                INK     15
                 ISAT    oPala 252
                 CREATE  oPala
                 GET     oPala
@@ -2906,15 +2907,16 @@ BAJAR   lBath2
                 INK     12  
                 XMESSAGE "Hijo, ¿qué ha ocurrido aquí?#k#n"
                 INK     3 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
+                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
+                XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
                 XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#k#n"
                 XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario escrito de puño y letra por la criada, que voy a dar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurre el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!#k#n"
                 INK     12
-                XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría.#k#n"
+                XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría.#k#n"
                 XMESSAGE "Tu madre y yo hemos estado dándole muchas vueltas al asunto de los niños durante los últimos meses, ya que sabíamos que pronto se iba a cumplir la fecha en la que volverían a aparecer. Esto me costó fuertes discusiones con tu madre, porque toda mi intención era volver a la casa para intentar comprender qué era lo que aquellos niños necesitaban.#n"
                 XMESSAGE "Yo sé que en aquel momento esos críos necesitaban algo de nosotros y también sé que se enfadaron muchísimo cuando al verlos, salimos corriendo de allí, de hecho, la niña, al vernos salir corriendo, nos amenazó cuando salíamos por la puerta.#k#n"
                 XMESSAGE "Lo que verdaderamente lamento ha sido avisarte con tan poco tiempo; no te imaginas las broncas que he tenido con tu madre, hasta que se me ocurrió la idea de que tú me acompañases, porque ella se negaba rotundamente a que yo fuese solo. Tu madre finalmente transigió porque las discusiones eran cada vez más fuertes entre nosotros y yo tenía muy claro que debía volver esta noche a la casa.#k#n"
-                XMESSAGE "Yo estuve esperandote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído#k#n"
+                XMESSAGE "Yo estuve esperandote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído.#k#n"
                 INK     3
                 XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
                 INK     12
@@ -2930,7 +2932,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "De acuerdo, vámonos.#k#n#b"
                 INK     9
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
                 INK 15
                 END
 
@@ -2959,14 +2961,15 @@ BAJAR   lBath2
                 INK     12  
                 XMESSAGE "Hijo, que ha ocurrido aquí?#k#n"
                 INK     3 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubriesen sus cuerpos enterrados en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces. La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
+                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
+                XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
                 XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa. Gracias a el he podido salir de ella y encontrar también los restos de la familia en el chamizo#k#n"
                 INK     12
-                XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría.#k#n"
+                XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estabamos en la casa, algo horrible nos pasaría.#k#n"
                 XMESSAGE "Tu madre y yo hemos estado dándole muchas vueltas al asunto de los niños durante los últimos meses, ya que sabíamos que pronto se iba a cumplir la fecha en la que volverían a aparecer. Esto me costó fuertes discusiones con tu madre, porque toda mi intención era volver a la casa para intentar comprender qué era lo que aquellos niños necesitaban.#n"
                 XMESSAGE "Yo sé que en aquel momento esos críos necesitaban algo de nosotros y también sé que se enfadaron muchísimo cuando al verlos, salimos corriendo de allí, de hecho, la niña, al vernos salir corriendo, nos amenazó cuando salíamos por la puerta.#k#n"
                 XMESSAGE "Lo que verdaderamente lamento ha sido avisarte con tan poco tiempo; no te imaginas las broncas que he tenido con tu madre, hasta que se me ocurrió la idea de que tú me acompañases, porque ella se negaba rotundamente a que yo fuese solo. Tu madre finalmente transigió porque las discusiones eran cada vez más fuertes entre nosotros y yo tenía muy claro que debía volver esta noche a la casa.#k#n"
-                XMESSAGE "Yo estuve esperandote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído#k#n"
+                XMESSAGE "Yo estuve esperandote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído.#k#n"
                 INK     3
                 XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
                 INK     12
@@ -2980,7 +2983,7 @@ BAJAR   lBath2
                 INK     12
                 XMESSAGE "Está amaneciendo hijo, venga, vamos a casa que tu madre debe estar preocupadísima.#k#n"
                 INK     3
-                XMESSAGE "De acuerdo, vámonos.#k#nb"
+                XMESSAGE "De acuerdo, vámonos.#k#n#b"
                 INK     9
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heróica, te daremos un valioso consejo:#k#n"
                 XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de titulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#k"
