@@ -562,10 +562,10 @@ LUEGO           2       conjugation
 /20 " Estás en el baño; tiene un pequeño respiradero en el techo, además de una tina majestuosa, que te lleva a recordar con nostalgia esos baños tan divertidos que tenías de pequeño. Tu madre te obligaba a hacerlo porque venías de la calle siempre lleno de barro."
 /21 " Estás en la segunda alcoba, esta es más pequeña que la primera y tiene una cama de servidumbre muy sobria. Al SUR está el baño. La falta de ornamento es un poco inquietante."
 /22 " Estás en el cuarto de baño. Es pequeño pero completo, dispone de una tina antigua, una pila y un retrete.#n#n  Sientes como si hubieras viajado en el tiempo. Este lugar es anacrónico."
-/23 " Sin duda estamos en el dormitorio principal; hay una cama muy grande con cabecero de madera y al NORTE está el baño. En la estancia hay una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la tenue luz que proyecta la cerilla, apenas puedes discernir de que se trata."
+/23 " Sin duda estamos en el dormitorio principal; hay una cama muy grande con cabecero de madera y al NORTE está el baño. En la estancia hay una alfombra en el suelo y una pequeña mesita de noche con una lámpara moderna. Notas algo raro en la pared, pero con la tenue luz que proyecta la cerilla, apenas puedes discenir de que se trata."
 /24 " Una terma con mosaico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; hoy día, no deja de sorprenderte cada vez que la contemplas. La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón que desconoces, está llena de agua hasta el borde."
 /25 " Has entrado en lo que parece ser un gabinete. No terminas de explicarte qué hace este habitáculo aquí, pero te pone los pelos de punta.#n#n  Puedes ver una camilla médica de la que cuelgan unas cadenas y también hay una mesa con instrumental quirúrgico oxidado. El suelo tiene una gran mancha oscura que posiblemente sea sangre seca.#n#n  La trampilla por la que has entrado se cierra y ya no podrás regresar por ella."
-/26 " El niño te descubre un escondrijo entre los cipreses y el muro.#k#n#n  Se trata de un recoveco que parece estar construido para respetar el crecimiento natural de los cipreses, pero que con los años el árbol que crece en ese lugar no ha ocupado todo el espacio previsto, dejando un entrante detrás de el que impide que se vea lo que hay en el interior."
+/26 " El niño te descubre un escondrijo entre los cipreses y el muro.#k#n#n  Se trata de un recoveco que parece estar construido para respetar el crecimiento natural de los cipreses, pero que con los años el arbol que crece en ese lugar no ha ocupado todo el espacio previsto, dejando un entrante detrás de el que impide que se vea lo que hay en el interior."
 /27 " Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio. En este lugar hay un olor a humedad y a cerrado muy desagradable.#n#n  Al fondo del chamizo puedes observar un armario metálico."
 /28 " Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en el centro. En la pared, pese a la reducida visibilidad,  puedes contemplar un grifo y también hay un generador de gasoil."
 /29 " Estás encima del retrete. Desde aquí puedes acceder a la cisterna."
@@ -697,7 +697,7 @@ BAJAR   lBath2
                 SET     fDarkF           ; Oscuro
 
 > _         _   PICTURE @fPlayer        ; Si hay gráfico, cárgalo
-                DISPLAY @fDarkF         ; Muéstralo si no oscuro; si oscuro
+                DISPLAY @fDarkF         ; Muestralo si no oscuro; si oscuro
 
 > _         _   WINDOW  1
                 NOTZERO fDarkF           ; Oscuro
@@ -769,7 +769,7 @@ BAJAR   lBath2
 
 ;------------------------------------------------------------------------------
 /PRO 3 ; Antiguo proceso 1 del PAW. (Nótese que tanto la tabla de respuestas como los
-; antiguos procesos 1 y 2 del PAW ahora pueden estar en cualquier parte; o no
+; antiguos procesos 1 y 2 del PAW ahora pueden estar en cualquer parte; o no
 ; existir en absoluto, ya que ya no hay nada automático al haberse implementado
 ; todo en el propio lenguaje del DAAD)
 ; Esta tabla se ejecuta tras describir las localidades, por lo cual es ideal para describir 
@@ -953,7 +953,7 @@ BAJAR   lBath2
                 INK     12              ; Color del padre 
                 XMESSAGE "Dile a Morfeo que espere un momento y escucha: Recuerda que hoy habíamos quedado aquí, en la sierra. Tenemos algo muy importante que contarte, así que espabila y ve saliendo de casa, que sino, se te va a hacer muy tarde.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Ostras, pues si te soy sincero, estaba tan cansado que ya no recordaba que hoy teníamos que vernos. Venga, salgo ya.#n"
+                XMESSAGE "Ostrás, pues si te soy sincero, estaba tan cansado que ya no recordaba que hoy teníamos que vernos. Venga, salgo ya.#n"
                 INK     12              ; Color del padre 
                 XMESSAGE "Ahora nos vemos, hijo, conduce con cuidado. Hasta luego.#n"
                 INK     3               ; Color del protagonista
@@ -968,7 +968,7 @@ BAJAR   lBath2
                 XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al ESTE."
                 DONE
 
-; Controlamos la acción dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
+; Controlamos la accion dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
 > EXAMINA   HABITACION
 > MIRAR		_			AT lMadrid    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
@@ -1166,7 +1166,7 @@ BAJAR   lBath2
                 INK     6
                 XMESSAGE "TUS PADRES YA ESTáN CON NOSOTROS.#k#n"
                 INK     14
-                XMESSAGE "Quería decírtelo, pero me has caído tan bien... Hemos tenido un accidente con ellos... con un cuchillo...#k#n"
+                XMESSAGE "Quería decírtelo, pero me has caido tan bien... Hemos tenido un accidente con ellos... con un cuchillo...#k#n"
                 INK     6
                 XMESSAGE "¡HE SIDO YO! Hace treinta años les dije que no viniesen nunca más por aquí.#k#n"
                 INK     14 
@@ -1189,7 +1189,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Pero que estás diciendo! A ver, ¡los niños me dijeron que habíais muerto!#k#n"
                 INK     12
-                XMESSAGE "¿En serio? ¡Que cabrones! Eso es que les debió sentar fatal que nos fuésemos de allí corriendo... Bueno qué... ¿Una cerveza o qué carallo?#k#n"
+                XMESSAGE "¿En serío? ¡Que cabrones! Eso es que les debió sentar fatal que nos fuésemos de allí corriendo... Bueno qué... ¿Una cerveza o qué carallo?#k#n"
                 INK     3
                 XMESSAGE "Una o siete, pero, ¿qué pasa con mamá?#k#n"
                 INK     12
@@ -1223,7 +1223,7 @@ BAJAR   lBath2
                 NOTZERO fFoco
                 INK     9               ; Color del narrador
                 XMESSAGE "Insistes en volver a mirar y una atracción hipnótica te hace fijar la vista en los focos.#k#n"
-                XMESSAGE "Te fríes las retinas y caes inconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre emana a borbotones de la brecha.#k#n"
+                XMESSAGE "Te fries las retinas y caes inconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre emana a borbotones de la brecha.#k#n"
                 INK     4
                 XMESSAGE "Has muerto.#n"
                 INK     15               ; Color del narrador
@@ -1960,7 +1960,7 @@ BAJAR   lBath2
                 INK     14 
                 XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. Hoy hace treinta años que pasó todo y como nadie ha descubierto nunca lo que ha ocurrido, cada treinta años pasamos una noche en la casa hasta que se descubran los cuerpos.#k#n"
                 INK     3
-                XMESSAGE "¿Has dicho que llevasteis los cuerpos al chamizo?#k#n"
+                XMESSAGE "¿Has dicho que llevásteis los cuerpos al chamizo?#k#n"
                 INK     14 
                 XMESSAGE "Si. Allí los enterramos con una pala y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
                 INK     9
@@ -2061,7 +2061,7 @@ BAJAR   lBath2
 
 ; NOTA: A partir de aquí, con Fjugar, el niño debería interactuar con nosotros y debería darnos la pista de apagar la cerilla en el gabinete. También tiene que contarnos parte de la historia, ya que pasando por aquí, vamos a resolver el juego sin pasar por el garaje, por tanto no nos enteraríamos de la historia del juego.
 
-; Aquí llevamos al crío con nosotros pero no hemos leído el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
+; Aquí llevamos al crío con nosotros pero no hemos leido el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA   AT lBodega
@@ -2087,7 +2087,7 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-; Aquí llevamos al crío con nosotros y hemos leído el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
+; Aquí llevamos al crío con nosotros y hemos leido el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA   AT lBodega
@@ -2853,7 +2853,7 @@ BAJAR   lBath2
                 DESTROY oLataDeAceite
                 CLEAR   fCombinacion
                 INK     2
-                XMESSAGE "Tío, a quien se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
+                XMESSAGE "Tío, a quíen se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
                 INK     15
                 XMESSAGE "Por decisión unánime del equipo de desarrollo, se te amonesta devolviéndote a la bodega y quitándote los objetos necesarios para no permitirte entrar de nuevo por la trampilla. Te recomendamos que pruebes otro de los finales disponibles, majete.#k"
                 CLEAR  fMoverAlambique
@@ -2983,7 +2983,7 @@ BAJAR   lBath2
                 CARRIED oHacha
                 CARRIED oLlaveCoche
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                ZERO    fLeerDiario     ; No hemos leído el diario de la criada
+                ZERO    fLeerDiario     ; No hemos leido el diario de la criada
                 INK     9
                 XMESSAGE "Rompes el travesaño de la puerta con el hacha y sales al exterior de la casa.#k#n"
                 INK     3
@@ -3020,7 +3020,7 @@ BAJAR   lBath2
                 XMESSAGE "De acuerdo, vayámonos.#k#n#b"
                 INK     9
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n"
-                XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#k"
+                XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de titulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#k"
                 INK     15
                 END
 
@@ -3290,7 +3290,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿Nunca has visto una cuchara?"
+                XMESSAGE "¿Núnca has visto una cuchara?"
                 DONE
 
 > COGER     CUCHARAS    AT  lCocina
@@ -4026,7 +4026,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Sin más dilación, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n#n"
+                XMESSAGE "Sin más dilacíón, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n#n"
                 XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n#n"
                 XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n#n"
                 INK     4
@@ -5440,7 +5440,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRáEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5458,7 +5458,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRáEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5476,7 +5476,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRáEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
