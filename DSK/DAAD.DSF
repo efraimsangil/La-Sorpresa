@@ -5639,6 +5639,12 @@ BAJAR   lBath2
                 ;PRINT   28
                ; DONE
 
+> AYUDA     MAGIA
+            XMESSAGE "аимсз#n"
+            XMESSAGE "#nHas muerto#n"
+
+            DONE
+
 > AYUDA     OSITO                
                 XMESSAGE "fControlLuz"
                 PRINT   73

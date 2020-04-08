@@ -4005,170 +4005,178 @@
 	},
 	{
 		"Value":583,
-		"Text":"fControlLuz#n"
+		"Text":"ÁÉÍÓÚ#n#n"
 	},
 	{
 		"Value":584,
-		"Text":"fUsarCerilla#n"
+		"Text":"#nHas muerto#n#n"
 	},
 	{
 		"Value":585,
-		"Text":"fTurnosConLuz#n"
+		"Text":"fControlLuz#n"
 	},
 	{
 		"Value":586,
-		"Text":"fVasAMorir#n"
+		"Text":"fUsarCerilla#n"
 	},
 	{
 		"Value":587,
-		"Text":"fDarkF#n"
+		"Text":"fTurnosConLuz#n"
 	},
 	{
 		"Value":588,
-		"Text":"Has apagado la cerilla. #n"
+		"Text":"fVasAMorir#n"
 	},
 	{
 		"Value":589,
-		"Text":"Enciendes una cerilla y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#n"
+		"Text":"fDarkF#n"
 	},
 	{
 		"Value":590,
-		"Text":"No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n#n"
+		"Text":"Has apagado la cerilla. #n"
 	},
 	{
 		"Value":591,
-		"Text":"Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n#n"
+		"Text":"Enciendes una cerilla y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#n"
 	},
 	{
 		"Value":592,
-		"Text":"Ya tienes una cerilla encendida.#n"
+		"Text":"No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n#n"
 	},
 	{
 		"Value":593,
-		"Text":"No puedes ver nada. Está muy oscuro.#n"
+		"Text":"Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n#n"
 	},
 	{
 		"Value":594,
-		"Text":"Ya has apagado la cerilla.#n"
+		"Text":"Ya tienes una cerilla encendida.#n"
 	},
 	{
 		"Value":595,
-		"Text":"9 de Agosto de 1949.#n#n"
+		"Text":"No puedes ver nada. Está muy oscuro.#n"
 	},
 	{
 		"Value":596,
-		"Text":"Hoy comienzo a trabajar en esta casa. Estoy ilusionada porque ya no voy a pasar más calamidades. El señor me ha dicho que va a ayudar a mis padres dándoles dinero para mantener sus tierras a cambio de mi estancia aquí. Durante el día hay más servicio trabajando, pero parece ser que voy a ser la única interna.#k#n#n"
+		"Text":"Ya has apagado la cerilla.#n"
 	},
 	{
 		"Value":597,
-		"Text":"20 de Septiembre de 1949.#n#n"
+		"Text":"9 de Agosto de 1949.#n#n"
 	},
 	{
 		"Value":598,
-		"Text":"El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mi y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#k#n#n"
+		"Text":"Hoy comienzo a trabajar en esta casa. Estoy ilusionada porque ya no voy a pasar más calamidades. El señor me ha dicho que va a ayudar a mis padres dándoles dinero para mantener sus tierras a cambio de mi estancia aquí. Durante el día hay más servicio trabajando, pero parece ser que voy a ser la única interna.#k#n#n"
 	},
 	{
 		"Value":599,
-		"Text":"17 de Octubre de 1949.#n#n"
+		"Text":"20 de Septiembre de 1949.#n#n"
 	},
 	{
 		"Value":600,
-		"Text":"Noto al señor muy interesado en mi, últimamente me requiere  para que le haga compañía y le de conversación, empiezo a pensar que me pretende.#k#n#n"
+		"Text":"El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mi y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#k#n#n"
 	},
 	{
 		"Value":601,
-		"Text":"1 de Enero 1950.#n#n"
+		"Text":"17 de Octubre de 1949.#n#n"
 	},
 	{
 		"Value":602,
-		"Text":"Anoche el señor me hizo tocamientos... Estaba bebido y se puso violento. Hoy ha venido a mis aposentos a pedirme disculpas. Me ha dejado usar la terma para darme un baño como muestra de conciliación. Me siento muy incómoda, pero comprendo que el alcohol transforma a las personas. Tengo un poco de miedo.#k#n#n"
+		"Text":"Noto al señor muy interesado en mi, últimamente me requiere  para que le haga compañía y le de conversación, empiezo a pensar que me pretende.#k#n#n"
 	},
 	{
 		"Value":603,
-		"Text":"25 de Febrero de 1950.#n#n"
+		"Text":"1 de Enero 1950.#n#n"
 	},
 	{
 		"Value":604,
-		"Text":"El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojalá pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#k#n#n"
+		"Text":"Anoche el señor me hizo tocamientos... Estaba bebido y se puso violento. Hoy ha venido a mis aposentos a pedirme disculpas. Me ha dejado usar la terma para darme un baño como muestra de conciliación. Me siento muy incómoda, pero comprendo que el alcohol transforma a las personas. Tengo un poco de miedo.#k#n#n"
 	},
 	{
 		"Value":605,
-		"Text":"16 de Marzo de 1950.#n#n"
+		"Text":"25 de Febrero de 1950.#n#n"
 	},
 	{
 		"Value":606,
-		"Text":" El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n#n"
+		"Text":"El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojalá pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#k#n#n"
 	},
 	{
 		"Value":607,
-		"Text":"10 de Abril de 1950.#n#n"
+		"Text":"16 de Marzo de 1950.#n#n"
 	},
 	{
 		"Value":608,
-		"Text":" Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#k#n#n"
+		"Text":" El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n#n"
 	},
 	{
 		"Value":609,
-		"Text":"4 de Mayo de 1950.#n#n"
+		"Text":"10 de Abril de 1950.#n#n"
 	},
 	{
 		"Value":610,
-		"Text":"Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n#n"
+		"Text":" Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#k#n#n"
 	},
 	{
 		"Value":611,
-		"Text":"Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n#n"
+		"Text":"4 de Mayo de 1950.#n#n"
 	},
 	{
 		"Value":612,
-		"Text":"Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n#n"
+		"Text":"Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n#n"
 	},
 	{
 		"Value":613,
-		"Text":"25  de Junio de 1950.#n#n"
+		"Text":"Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n#n"
 	},
 	{
 		"Value":614,
-		"Text":" Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#k#n#n"
+		"Text":"Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n#n"
 	},
 	{
 		"Value":615,
-		"Text":"5 de Agosto de 1950.#n #n"
+		"Text":"25  de Junio de 1950.#n#n"
 	},
 	{
 		"Value":616,
-		"Text":"¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener nauseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#k#n#n"
+		"Text":" Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#k#n#n"
 	},
 	{
 		"Value":617,
-		"Text":"10 de Septiembre de 1950.#n #n"
+		"Text":"5 de Agosto de 1950.#n #n"
 	},
 	{
 		"Value":618,
-		"Text":"El señor se ha dado cuenta del tamaño de mi tripa y me ha escondido en una habitación que no conocía. Está oculta tras una vitrina en el salón de la casa. Me ha dicho que nadie debe verme y que tengo que esconderme aquí cuando vengan visitas.#k#n#n"
+		"Text":"¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener nauseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#k#n#n"
 	},
 	{
 		"Value":619,
-		"Text":"6 de Octubre de 1950.#n#n"
+		"Text":"10 de Septiembre de 1950.#n #n"
 	},
 	{
 		"Value":620,
-		"Text":" Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#k#n#n"
+		"Text":"El señor se ha dado cuenta del tamaño de mi tripa y me ha escondido en una habitación que no conocía. Está oculta tras una vitrina en el salón de la casa. Me ha dicho que nadie debe verme y que tengo que esconderme aquí cuando vengan visitas.#k#n#n"
 	},
 	{
 		"Value":621,
-		"Text":"23 de Febrero de 1951.#n#n"
+		"Text":"6 de Octubre de 1950.#n#n"
 	},
 	{
 		"Value":622,
-		"Text":" Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#k#n#n"
+		"Text":" Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#k#n#n"
 	},
 	{
 		"Value":623,
-		"Text":"9 de Marzo de 1951.#n#n"
+		"Text":"23 de Febrero de 1951.#n#n"
 	},
 	{
 		"Value":624,
+		"Text":" Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#k#n#n"
+	},
+	{
+		"Value":625,
+		"Text":"9 de Marzo de 1951.#n#n"
+	},
+	{
+		"Value":626,
 		"Text":" El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego por que alguien lo encuentre algún día y se haga justicia.#k#n"
 	}
 	],
@@ -45885,6 +45893,33 @@
 					]
 			},
 			{
+				"Entry":"AYUDA MAGIA",
+				"Verb":58,
+				"Noun":166,
+				"condacts":
+					[
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":583,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":584,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
 				"Entry":"AYUDA OSITO",
 				"Verb":58,
 				"Noun":191,
@@ -45894,7 +45929,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":583,
+						"Param1":585,
 						"NumParams":1
 					},
 					{
@@ -45915,7 +45950,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":584,
+						"Param1":586,
 						"NumParams":1
 					},
 					{
@@ -45936,7 +45971,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":585,
+						"Param1":587,
 						"NumParams":1
 					},
 					{
@@ -45957,7 +45992,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":586,
+						"Param1":588,
 						"NumParams":1
 					},
 					{
@@ -45978,7 +46013,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":587,
+						"Param1":589,
 						"NumParams":1
 					},
 					{
@@ -46272,7 +46307,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":588,
+						"Param1":590,
 						"NumParams":1
 					},
 					{
@@ -46357,7 +46392,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":589,
+						"Param1":591,
 						"NumParams":1
 					},
 					{
@@ -46442,7 +46477,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":589,
+						"Param1":591,
 						"NumParams":1
 					},
 					{
@@ -46481,14 +46516,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":590,
+						"Param1":592,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":591,
+						"Param1":593,
 						"NumParams":1
 					},
 					{
@@ -46548,14 +46583,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":590,
+						"Param1":592,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":591,
+						"Param1":593,
 						"NumParams":1
 					},
 					{
@@ -46617,7 +46652,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":592,
+						"Param1":594,
 						"NumParams":1
 					},
 					{
@@ -46658,7 +46693,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":592,
+						"Param1":594,
 						"NumParams":1
 					},
 					{
@@ -46692,7 +46727,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":593,
+						"Param1":595,
 						"NumParams":1
 					},
 					{
@@ -46733,7 +46768,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":594,
+						"Param1":596,
 						"NumParams":1
 					},
 					{
@@ -46809,34 +46844,6 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":595,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":596,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":13,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
 						"Param1":597,
 						"NumParams":1
 					},
@@ -47023,20 +47030,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":611,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":612,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -47047,7 +47040,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":613,
+						"Param1":611,
 						"NumParams":1
 					},
 					{
@@ -47055,6 +47048,20 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":612,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":613,
 						"NumParams":1
 					},
 					{
@@ -47202,6 +47209,34 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":624,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":625,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":626,
 						"NumParams":1
 					},
 					{
@@ -47277,34 +47312,6 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":595,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":596,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":13,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
 						"Param1":597,
 						"NumParams":1
 					},
@@ -47491,20 +47498,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":611,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":612,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -47515,7 +47508,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":613,
+						"Param1":611,
 						"NumParams":1
 					},
 					{
@@ -47523,6 +47516,20 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":612,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":613,
 						"NumParams":1
 					},
 					{
@@ -47670,6 +47677,34 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":624,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":625,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":626,
 						"NumParams":1
 					},
 					{
