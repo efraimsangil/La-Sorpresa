@@ -406,13 +406,13 @@ CUIDAd          5       adverb
 
 ;                               Prepositions
 A               2       preposition
-;DE              3       preposition
-;EN              4       preposition
-;POR             5       preposition
+DE              3       preposition
+EN              4       preposition
+POR             5       preposition
 ;TRAVES          5       preposition
-;BAJO            7       preposition
-;JUNTO           8       preposition
-;MENOS           13      preposition
+BAJO            7       preposition
+JUNTO           8       preposition
+MENOS           13      preposition
 
 ;                               Pronombres
 ;                               Conjunciones
@@ -5638,10 +5638,20 @@ BAJAR   lBath2
                 ;XMESSAGE "fDarkF"
                 ;PRINT   28
                ; DONE
+                 ;XMESSAGE "áéíóúñÑ#n"
+            ;XMESSAGE "Abres el grifo.#k#n"
+            ;XMESSAGE " Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas...#n#k"
 
 > AYUDA     MAGIA
-            XMESSAGE "ÁÉÍÓÚ#n"
-            XMESSAGE "#nHas muerto#n"
+            ;XMESSAGE "áéíóúñÑ#n"
+            INK     15 
+            XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n"
+            INK     4
+            XMESSAGE "#nHas muerto.#n"
+            INK     15
+            XMESSAGE "Tengo tanto que contarte." 
+            XMESSAGE "#nMe dijo hasta pronto. No para de dolerme.#n"
+            XMESSAGE "a, ante, bajo, cabe, con, contra, de, desde, durante, en, entre, hacia, hasta, mediante, para, por, según, sin, so, sobre, tras, versus y vía"
 
             DONE
 
@@ -5775,7 +5785,7 @@ BAJAR   lBath2
                 INK     13
                 XMESSAGE "17 de Octubre de 1949.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Noto al señor muy interesado en mi, últimamente me requiere  para que le haga compañía y le de conversación, empiezo a pensar que me pretende.#k#n"
+                XMESSAGE "Noto al señor muy interesado en mi, últimamente me requiere para que le haga compañía y le de conversación, empiezo a pensar que me pretende.#k#n"
                 INK     13
                 XMESSAGE "1 de Enero 1950.#n"
                 INK     9               ; Color del narrador
@@ -5893,8 +5903,14 @@ BAJAR   lBath2
 > _         _   WINDOW  0               ; Window para imágenes
                 WINAT   0       0
                 WINSIZE 10      127     ; 14 filas de alto * 8 pixels por fila = 112 pixels
-                PICTURE 0
-                DISPLAY 0                
+                XPICTURE 200    ; Pantalla de Portada del juego
+                MESSAGE "#k"
+                GFX     0 5
+                XPICTURE 201    ; Pantalla del Equipo de Desarrollo
+                MESSAGE "#k"
+                GFX     0 5
+                ;DISPLAY 0
+                ;MESSAGE "#k"
                 ;ANYKEY
                 ;CLS
 
@@ -5903,7 +5919,8 @@ BAJAR   lBath2
                 WINSIZE 25      127     ; Tamaño máximo
                 CLS                     ; Limpiamos la pantalla
                 DESC    0               ; Introducción
-                ANYKEY
+                ;ANYKEY
+                ;MESSAGE "#k"
                 GFX     0 5       ;clearPhys
                 ;CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
