@@ -99,7 +99,7 @@
 #define fBajarRetrete       96      ; Control de la destrucción del retrete cuando bajas del mismo en lBath2
 #define fFlashBack          97      ; Control del cambio de realidad en lRoom3. Tenemos distintas descripciones al tener dicho flag
 #define fTerma              98      ; Controla EXAMINAR dos veces la TERMA en lBath3
-#define fFotoPeluche            99      ; Si has visto o no la foto en lRoom1
+#define fFotoPeluche        99      ; Si has visto o no la foto en lRoom1
 ; Los flags 100 y 101 se usan en un proceso que se encarga de mostrarnos las salidas cuando usamos SALID en el juego
 #define fMoverAlambique     102     ; Controla si se movió o no el ALAMBIQUE en lBodega para acceder a la TRAMPILLA
 #define fNenaMala           103     ; Controla que hayamos entrado en lRoom3 y activamos la aparación de la cría en lPasillo2
