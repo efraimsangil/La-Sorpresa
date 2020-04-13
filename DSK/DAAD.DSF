@@ -532,7 +532,7 @@ LUEGO           2       conjugation
 /18 "una paleta#g#fmn#t"
 /19 "un hacha#g#f%&'#t"
 /20 "llave de la bodega#g#f1#t"  
-/21 "llaves del coche#g#f)*#t"
+/21 "llaves del coche#g#fIJ#t"
 /22 "una lata de aceite#g#fFG#t"
 /23 "una manguera#g#f-.#t"
 ;------------------------------------------------------------------------------
@@ -779,7 +779,7 @@ BAJAR   lBath2
                 ZERO    fDarkF          ; No está oscuro
                 PROCESS 7
                 LISTOBJ
-                XMESSAGE "#n"
+                ;XMESSAGE "#n"
 
 ; Este es un control de luz de las localizaciones comprendidas entre 9 y 29
 > _         _
@@ -1041,13 +1041,15 @@ BAJAR   lBath2
                 DONE
 
 > E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
-                WORN     oRopa          ; Lleva puesto el objeto
-                NOTZERO fUsarTelefono   ; Ha usado el teléfono
+                WORN    oRopa          ; Lleva puesto el objeto
+                NOTZERO fUsarTelefono   ; Ha usado el teléfono                
                 INK     9               ; Color del narrador
-                XMESSAGE "Te duchas y te vistes con rapidez: sabes que a tu padre no le gusta que le hagan esperar.#k#n#nCoges las llaves del coche#g#f)*#t, cierras la puerta de casa y vas directo al garaje del edificio.#k"
-                ;
-                ; NOTA: Vestir al personaje?
-                ;
+                XMESSAGE "Te duchas y te vistes con rapidez: sabes que a tu padre no le gusta que le hagan esperar.#n"
+                ISAT    oLlaveCoche 252
+                CREATE  oLlaveCoche
+                GET     oLlaveCoche
+                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k"
+                
                 GOTO    lCoche          ; Vamos a la localización
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
@@ -1486,7 +1488,7 @@ BAJAR   lBath2
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#f)*#t, so melón?, porque no las siento encima.#k#n"
                 INK     3
-                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#f)*#t!#k"
+                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
@@ -2792,7 +2794,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#f)*#t.#n"
+                XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
                 INK     3               ; Color del protagonista
                 XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
                 INK     2               ; Color de tu consciencia
@@ -3729,7 +3731,8 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "De entre toda la estancia, destaca una vitrina grande y acristalada que a día de hoy se encuentra desprovista de todo utensilio."
                 DONE
-
+> USAR
+> ESCUCHAR
 > CARGAR    CASSETTE    AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -4211,9 +4214,9 @@ BAJAR   lBath2
                 LET     fControlLuz 0
                 CLEAR   fUsarCerilla
                 CLS                     ; Limpiamos la pantalla
+                GOTO    lPasillo1
                 INK     9               ; Color del narrador
-                GOTO    16
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                XMESSAGE "Te encuentras en la planta superior, donde un espacioso corredor conduce a las alcobas de la casa.#n#n  Hay una puerta situada al NORTE y el pasillo continúa al ESTE."
                 DONE
 
 > N         _           AT lRoom1
@@ -4339,10 +4342,22 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fManchaSangre
+                SET     fManchaSangre
                 INK     9               ; Color del narrador
                 XMESSAGE "La cama está almidonada y está dura como una piedra.#k#n Observas el colchón durante unos instantes y ves que empieza a formarse en el una mancha de sangre en el lateral.#k#n La mancha crece hasta formar un charco húmedo.#n"
                 INK     2               ; Color de la conciencia
                 XMESSAGE "Has visto muchas películas de miedo y siempre que pasa eso, se está recreando un acontecimiento pasado."
+                DONE 
+
+> EXAMINA   CAMA        AT lRoom2
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fManchaSangre
+                INK     9               ; Color del narrador
+                XMESSAGE "La cama está almidonada y está dura como una piedra.#k#n Observas el colchón durante unos instantes y ves una mancha de sangre en el lateral.#k#n La mancha crece hasta formar un charco húmedo.#n"                
                 DONE 
 
 > N         _           AT lRoom2
@@ -4551,7 +4566,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Hay un hacha#g#f%&'#t clavada en el suelo, entre los restos del retrete destrozado.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hostia! Conozco este hacha#g#f%&'#t, es el hacha#g#f%&'#t de mi padre. No hay duda alguna, es el hacha#g#f%&'#t que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa."
+                XMESSAGE "¡Hostia! Conozco este hacha#g#f%&'#t, es el hacha#g#f%&'#t de mi padre. No hay duda alguna, es el hacha#g#f%&'#t que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n"
 				INK     2               ; Color de tu consciencia
                 MESSAGE "No quisiera ser inoportuno, pero a ver como vas a justificar a tus padres este destrozo.#n"
                 INK     3               ; Color del protagonista
@@ -4606,7 +4621,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lBath2                
                 INK     9               ; Color del narrador
-                XMESSAGE "Cuando te dispones a bajar del retrete, resbalas con la sangre que hay en la tapa y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegado a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
+                XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegado a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
                 INK     3               ; Color del protagonista
                 XMESSAGE "¿Qué hostias ha sido eso? ¡Por un pelo no me decapitan! Parece que sigo entero...#k#n"
                 INK     2               ; Color de tu consciencia
@@ -4933,7 +4948,7 @@ BAJAR   lBath2
                 NOTZERO fTerma
                 ZERO    fFinTerma
                 INK     9               ; Color del narrador
-                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano que deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
+                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
                 ISAT    oLlaveCaja 252
                 CREATE  oLlaveCaja
                 INK     15              ; Color del sistema
@@ -5631,25 +5646,25 @@ BAJAR   lBath2
                 ;ISAT    oLlaveBodega 252
                 ;CREATE  oLlaveBodega
                 ;GET     oLlaveBodega
-                ISAT    oLlavePatio 252
-                CREATE  oLlavePatio
-                GET     oLlavePatio
-                ISAT    oSecretKey1 252
-                CREATE  oSecretKey1
-                GET     oSecretKey1
-                ISAT    oCerillas 252
-                CREATE  oCerillas
-                GET     oCerillas
-                ISAT    oLataDeAceite 252
-                CREATE  oLataDeAceite 
-                GET     oLataDeAceite 
-                ISAT    oHacha 252
-                CREATE  oHacha
-                GET     oHacha
-                ISAT    oPaleta 252
-                CREATE  oPaleta
-                GET     oPaleta
-                SET     fCombinacion     ; Tenemos la combinación del candado
+                ;ISAT    oLlavePatio 252
+                ;CREATE  oLlavePatio
+                ;GET     oLlavePatio
+                ;ISAT    oSecretKey1 252
+                ;CREATE  oSecretKey1
+                ;GET     oSecretKey1
+                ;ISAT    oCerillas 252
+                ;CREATE  oCerillas
+                ;GET     oCerillas
+                ;ISAT    oLataDeAceite 252
+                ;CREATE  oLataDeAceite 
+                ;GET     oLataDeAceite 
+                ;ISAT    oHacha 252
+                ;CREATE  oHacha
+                ;GET     oHacha
+                ;ISAT    oPaleta 252
+                ;CREATE  oPaleta
+                ;GET     oPaleta
+                ;SET     fCombinacion     ; Tenemos la combinación del candado
                 ;SET     fJugar           ; Hemos jugado con el crío
                 ;SET     fLeerDiario
                 GOTO    lRecibidor
@@ -5803,7 +5818,7 @@ BAJAR   lBath2
                 SET     fDarkF
                 LET     fControlLuz 0
                 INK     9
-                XMESSAGE "Has apagado la cerilla. "
+                XMESSAGE "Has apagado la cerilla#g#f4#t."
                 DONE
 
 > PRENDER   CERILLA
@@ -5812,12 +5827,12 @@ BAJAR   lBath2
                 LET     fApagarCerilla 0
 				ZERO    fUsarCerilla
                 SET     fUsarCerilla
-                LET     fTurnosConLuz 8 ; Numero de turnos hasta que te quedas sin luz
+                LET     fTurnosConLuz 10 ; Numero de turnos hasta que te quedas sin luz
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
                 INK     9               ; Color del narrador
-                XMESSAGE "Enciendes una cerilla y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
+                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
                 DONE
 
 > PRENDER   CERILLA     
@@ -5840,7 +5855,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fUsarCerilla
                 INK     15              ; Color del sistema
-                XMESSAGE "Ya tienes una cerilla encendida."
+                XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
                 DONE
 
 > _         _
@@ -5853,7 +5868,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fApagarCerilla
                 INK     9              ; Color del sistema
-                XMESSAGE "Ya has apagado la cerilla."
+                XMESSAGE "Ya has apagado la cerilla#g#f4#t."
                 DONE
 
 > EXAMINA   DIARIO
