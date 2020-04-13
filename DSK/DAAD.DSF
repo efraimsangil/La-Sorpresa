@@ -66,12 +66,12 @@
 ; NOTA: Describir en el código todos los flags
 #define fLeerDiario         64      ; Control que activamos cuando leemos el diario
 #define fPuertaCochera      65      ; NOTA: Lo vamos a usar?
-#define fDesenterrar        66      ; No se usa
+#define fDesenterrar        66      ; 
 #define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lMadrid
 #define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide DORMIR
 #define fFinTerma           69      ; 
 #define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos
-#define fPorche             71      ; No se usa
+#define fPorche             71      ;
 #define fTurnosConLuz       72      ; Control del número de turnos con Luz
 #define fControlLuz         73      ; Control de la luz de la cerilla 
 #define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces
@@ -109,7 +109,7 @@
 #define fCombinacion        107
 #define fApagarCerilla      108
 #define fVasAPalmar         109
-
+#define fManchaSangre       110
 
 ;                               Localizaciones
 #define lIntro              0
@@ -3731,8 +3731,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "De entre toda la estancia, destaca una vitrina grande y acristalada que a día de hoy se encuentra desprovista de todo utensilio."
                 DONE
-> USAR
-> ESCUCHAR
+                
+> USAR      CASSETTE
+> ESCUCHAR  CASSETTE
 > CARGAR    CASSETTE    AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
