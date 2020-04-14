@@ -541,7 +541,7 @@ LUEGO           2       conjugation
 ;/0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
 /0 ""
 /1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Eres un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de tí un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Está decidido... Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por tí que debes despertarte definitivamente."
-/2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b  Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
+/2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
 /5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
@@ -943,7 +943,10 @@ BAJAR   lBath2
 > COGER     TELEFONO    AT lMadrid  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
-                CLS                     ; Limpiamos la pantalla
+                WINDOW  0
+                XPICTURE 202    ; Pantalla del Equipo de Desarrollo
+                WINDOW  1
+                ;CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del teléfono; no obstante, tanteas con las manos en la mesilla y descuelgas.#n"
                 INK     12              ; Color del padre 
@@ -1042,18 +1045,27 @@ BAJAR   lBath2
 
 > E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
                 WORN    oRopa          ; Lleva puesto el objeto
-                NOTZERO fUsarTelefono   ; Ha usado el teléfono                
+                NOTZERO fUsarTelefono   ; Ha usado el teléfono
+                WINDOW  0
+                XPICTURE 203            ; El protagonista saliendo de casa
+                WINDOW  1
                 INK     9               ; Color del narrador
-                XMESSAGE "Te duchas y te vistes con rapidez: sabes que a tu padre no le gusta que le hagan esperar.#n"
+                XMESSAGE "Te apresuras en salir de casa: sabes que a tu padre no le gusta que le hagan esperar.#n"
                 ISAT    oLlaveCoche 252
                 CREATE  oLlaveCoche
                 GET     oLlaveCoche
-                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k"
-                
+                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k"                
                 GOTO    lCoche          ; Vamos a la localización
-                CLS                     ; Limpiamos la pantalla
+                WINDOW  0
+                XPICTURE 003    ; Pantalla del Equipo de Desarrollo
+                WINDOW  1
+                XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
+                WINDOW  0
+                XPICTURE 204    ; Pantalla del Equipo de Desarrollo
+                WINDOW  1
                 INK     9               ; Color del narrador
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b"
+                XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad.#k#b"
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -6009,27 +6021,22 @@ BAJAR   lBath2
 
 > _         _   WINDOW  0               ; Window para imágenes
                 WINAT   0       0
-                WINSIZE 10      127     ; 14 filas de alto * 8 pixels por fila = 112 pixels
-                XPICTURE 200    ; Pantalla de Portada del juego
+                WINSIZE 13      127     ; 14 filas de alto * 8 pixels por fila = 112 pixels
+                XPICTURE 200            ; Pantalla de Portada del juego
                 MESSAGE "#k"
                 GFX     0 5
                 XPICTURE 201    ; Pantalla del Equipo de Desarrollo
                 MESSAGE "#k"
                 GFX     0 5
                 ;DISPLAY 0
-                ;MESSAGE "#k"
-                ;ANYKEY
-                ;CLS
+
 
 > _         _   WINDOW  1               ; Window para los textos
                 WINAT   13      0
                 WINSIZE 25      127     ; Tamaño máximo
                 CLS                     ; Limpiamos la pantalla
                 DESC    0               ; Introducción
-                ;ANYKEY
-                ;MESSAGE "#k"
-                GFX     0 5       ;clearPhys
-                ;CLS                     ; Limpiamos la pantalla
+                GFX     0 5             ;clearPhys
                 INK     9               ; Color del narrador
                 SET     255             ; Pone a cero todas las banderas
 
