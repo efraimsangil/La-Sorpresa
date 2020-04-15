@@ -1057,15 +1057,20 @@ BAJAR   lBath2
                 XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k"                
                 GOTO    lCoche          ; Vamos a la localización
                 WINDOW  0
-                XPICTURE 003    ; Pantalla del Equipo de Desarrollo
+                XPICTURE 002  ; Pantalla 
                 WINDOW  1
-                XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
+                XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#k#b"
                 WINDOW  0
-                XPICTURE 204    ; Pantalla del Equipo de Desarrollo
+                XPICTURE 204         ; Carretera
+                WINDOW  1
+                XMESSAGE "Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
+                WINDOW  0
+                XPICTURE 205    ; Tunel de árboles
                 WINDOW  1
                 INK     9               ; Color del narrador
                 XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b"
-                XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad.#k#b"
+                XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
+                ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -1494,7 +1499,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque sino me voy a cabrear... ¡Y lo sabéis!#k#n#b"
+                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡Y lo sabéis!#k#n#b"
                 INK     9               ; Color del narrador
                 XMESSAGE "No responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     2               ; Color de tu consciencia
@@ -4915,7 +4920,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     9               ; Color del narrador
-                XMESSAGE "Una terma con mosaico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde.#n"
+                XMESSAGE "Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde.#n"
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Yo examinaría con determinación esa terma."
                 DONE
@@ -5680,8 +5685,60 @@ BAJAR   lBath2
                 ;SET     fCombinacion     ; Tenemos la combinación del candado
                 ;SET     fJugar           ; Hemos jugado con el crío
                 ;SET     fLeerDiario
-                GOTO    lRecibidor
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                WINDOW 0
+                XPICTURE 220
+                WINDOW 1
+                XMESSAGE "220#k"
+                WINDOW 0
+                XPICTURE 221
+                WINDOW 1
+                XMESSAGE "221#k"
+                WINDOW 0
+                XPICTURE 222
+                WINDOW 1
+                XMESSAGE "222#k"
+                WINDOW 0
+                XPICTURE 223
+                WINDOW 1
+                XMESSAGE "223#k"
+                WINDOW 0
+                XPICTURE 224
+                WINDOW 1
+                XMESSAGE "224#k"
+                WINDOW 0
+                XPICTURE 225
+                WINDOW 1
+                XMESSAGE "225#k"
+                WINDOW 0
+                XPICTURE 226
+                WINDOW 1
+                XMESSAGE "226#k"
+                WINDOW 0
+                XPICTURE 227
+                WINDOW 1
+                XMESSAGE "227#k"
+                WINDOW 0
+                XPICTURE 228
+                WINDOW 1
+                XMESSAGE "228#k"
+                WINDOW 0
+                XPICTURE 229
+                WINDOW 1
+                XMESSAGE "229#k"
+                WINDOW 0
+                XPICTURE 230
+                WINDOW 1
+                XMESSAGE "230#k"
+                WINDOW 0
+                XPICTURE 231
+                WINDOW 1
+                XMESSAGE "231#k"
+                WINDOW 0
+                XPICTURE 232
+                WINDOW 1
+                XMESSAGE "232#k"
+                ; GOTO    lRecibidor
+               ; RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 ;> AYUDA     _
@@ -5900,7 +5957,7 @@ BAJAR   lBath2
                 INK     13
                 XMESSAGE "20 de Septiembre de 1949.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mi y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#k#n"
+                XMESSAGE "El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mí y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#k#n"
                 INK     13
                 XMESSAGE "17 de Octubre de 1949.#n"
                 INK     9               ; Color del narrador
@@ -5925,16 +5982,16 @@ BAJAR   lBath2
                 XMESSAGE "4 de Mayo de 1950.#n"
                 INK     9               ; Color del narrador
                 XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n"
-                XMESSAGE "Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mi y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n"
+                XMESSAGE "Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mí y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n"
                 XMESSAGE "Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n"
                 INK     13
                 XMESSAGE "25  de Junio de 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Aún estoy resentida de las heridas, también siento nauseas. Vomito todo el tiempo y me encuentro fatal.#k#n"
+                XMESSAGE " Aún estoy resentida de las heridas, también siento náuseas. Vomito todo el tiempo y me encuentro fatal.#k#n"
                 INK     13
                 XMESSAGE "5 de Agosto de 1950.#n "
                 INK     9               ; Color del narrador
-                XMESSAGE "¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener nauseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#k#n"
+                XMESSAGE "¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener náuseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#k#n"
                 INK     13
                 XMESSAGE "10 de Septiembre de 1950.#n "
                 INK     9               ; Color del narrador
@@ -5946,7 +6003,7 @@ BAJAR   lBath2
                  INK    13               
                 XMESSAGE "23 de Febrero de 1951.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluida.#k#n"
+                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n"
                 INK     13
                 XMESSAGE "9 de Marzo de 1951.#n"
                 INK     9               ; Color del narrador
