@@ -1,0 +1,26 @@
+001 Marcos sobando
+002 Coche
+003 Exterior de la casa
+200 Portada
+201 Créditos
+202 Marcos cogiendo telefono
+203 Marcos saliendo de casa
+204 Carretera
+205 Tunel de árboles
+221 Ext. Cochera
+222 Cocina
+223 Recibidor
+224 Ext. Chamizo
+225 Salón
+230 Escalera
+232 Terma
+233 Bodega
+234 lBath3
+235 lBath2
+236 lChamizo
+237 lAseo
+
+FALTAN
+
+
+

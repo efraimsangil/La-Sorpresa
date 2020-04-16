@@ -67,7 +67,7 @@
 #define fLeerDiario         64      ; Control que activamos cuando leemos el diario
 #define fPuertaCochera      65      ; NOTA: Lo vamos a usar?
 #define fDesenterrar        66      ; 
-#define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lMadrid
+#define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lBurgos
 #define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide DORMIR
 #define fFinTerma           69      ; 
 #define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos
@@ -113,7 +113,7 @@
 
 ;                               Localizaciones
 #define lIntro              0
-#define lMadrid             1
+#define lBurgos             1
 #define lCoche              2
 #define lExtCasa            3
 #define lExteriorCochera    4
@@ -205,7 +205,7 @@ TODAS   20      noun
 
 ;                               Objetos
 CONSOLA         98     noun     ; lRecibidor
-MESILLA         99     noun     ; lMadrid
+MESILLA         99     noun     ; lBurgos
 DIARIO          100    noun     ; lCriada
 LLAV1           101    noun     ; Es un objeto
 LLAV2           102    noun     ; Es un objeto
@@ -233,7 +233,7 @@ ROPA            123    noun     ; Es un objeto
 MUEBLE          124    noun     ; lSalon
 FREGADERO       125    noun     ; lCocina
 LAVADORA        126    noun     ; lCocina
-TELEFONO        127    noun     ; lMadrid
+TELEFONO        127    noun     ; lBurgos
 PELUCHE         128    noun     ; Es un objeto
 INTERRUPTOR     129    noun     ; lAseo
 ASEO            130    noun     ; lAseo
@@ -242,7 +242,7 @@ PLANTA          132    noun     ; lPorche
 FOTOGRAFIA      133    noun     ; lRecibidor
 CUCHILLO        134    noun     ; lCocina
 PELOTA          135    noun     ; lPatio
-CAMA            136    noun     ; lMadrid, lCriada, lRoom1, lRoom2, lRoom3
+CAMA            136    noun     ; lBurgos, lCriada, lRoom1, lRoom2, lRoom3
 PALETA          137    noun     ; lBodega
 HACHA           138    noun     ; Es un objeto
 PARED           139    noun     ; lBodega, lCochera, lCocina, lRoom3
@@ -258,14 +258,14 @@ CIEMPIES        148    noun     ; lPorche
 SUELO           149    noun     ; lPorche, lGabinete, lCochera, lChamizo, lAseo, lCriada, lRoom3
 CUCHARAS        150    noun     ; lCocina
 TRITURADOR      151    noun     ; lCocina
-MANTA           152    noun     ; lMadrid
+MANTA           152    noun     ; lBurgos
 TIMBRE          153    noun     ; lPorche
 ALACENA         154    noun     ; lDespensa
 OBJETO          155    noun     ; lRoom1
 VITRINA         156    noun     ; lSalon
-CHUPETE         157    noun     ; lMadrid. Cheat
+CHUPETE         157    noun     ; lBurgos. Cheat
 MONITOR         158    noun     ; No se usa
-LAMPARA         159    noun     ; lMadrid, lRoom3
+LAMPARA         159    noun     ; lBurgos, lRoom3
 CASSETTE        160    noun     ; lSalon
 MURO            161    noun     ; lPatio
 MANCHA          162    noun     ; lBodega, lBath1
@@ -301,7 +301,7 @@ OSITO           191    noun     ; No se usa
 AGUA            192    noun     ; lBath3
 MOSAICO         193    noun     ; lBath3
 ALCOBA          194    noun     ; lRoom1
-HABITACION      195    noun     ; lMadrid
+HABITACION      195    noun     ; lBurgos
 RECIBIDOR       196    noun     ; lRecibidor
 CHAMIZO         197    noun     ; lChamizo
 COCINA          198    noun     ; lCocina
@@ -574,7 +574,7 @@ LUEGO           2       conjugation
 ;------------------------------------------------------------------------------
 /CON                            ;Conexiones
 /0
-/1                      ; lMadrid
+/1                      ; lBurgos
 E       lCoche
 /2                      ; lCoche
 E       lExtCasa
@@ -882,7 +882,7 @@ BAJAR   lBath2
 ; Estamos en locMadrid
 
 > ABRIR     ARMARIO 
-> EXAMINA   ARMARIO     AT lMadrid
+> EXAMINA   ARMARIO     AT lBurgos
             INK     15
             ISAT    oRopa 252       ; El objeto no está en ninguna parte (de momento no es visible)
             CREATE  oRopa           ; Creamos el objeto de su ropa
@@ -892,48 +892,48 @@ BAJAR   lBath2
             INK     9
             DONE
 
-> EXAMINA 	CAMA		AT lMadrid
+> EXAMINA 	CAMA		AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una cama grande y aparentemente cómoda."
                 DONE
 
-> EXAMINA 	MANTA		AT lMadrid
+> EXAMINA 	MANTA		AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Es suave y calentita."
                 DONE
 
 ; Controlamos el poder examinar la mesilla habiendo usado el teléfono o no, de modo que mostramos dos tipos distintos de mensajes.
-> EXAMINA 	MESILLA		AT lMadrid      ; Examina la mesilla y NO ha usado el teléfono
+> EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
                 ZERO    fUsarTelefono   ; Controlamos si NO ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n"
                 XMESSAGE "Hay un teléfono de góndola sobre ella y no deja de sonar."              
                 DONE
 
-> EXAMINA 	MESILLA		AT lMadrid      ; Examina la mesilla y SI ha usado el teléfono
+> EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, cambiamos el mensaje de salida
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n"
                 DONE
 
 ; NOTA: Enciendo el LED
-> ENCENDER  LAMPARA     AT lMadrid
+> ENCENDER  LAMPARA     AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Enciendes la lámpara."
                 DONE
 
 ; NOTA: Enciendo el LED
-> APAGAR    LAMPARA     AT lMadrid
+> APAGAR    LAMPARA     AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Apagas la lámpara."
                 DONE
 
-> EXAMINA   LAMPARA     AT lMadrid
+> EXAMINA   LAMPARA     AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una lámpara con una pantalla especialmente pequeña."
                 DONE
 
-> EXAMINA 	TELEFONO    AT lMadrid
+> EXAMINA 	TELEFONO    AT lBurgos
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "¡Venga ya!, nadie EXAMINA el teléfono. Lo coge, lo descuelga, contesta, pero jamás lo examina. ¡No eres un Doctor!"
                 DONE
@@ -941,7 +941,7 @@ BAJAR   lBath2
 ; Controlamos coger el teléfono dos veces y sacamos dos mensajes distintos dependiendo del valor del flag que controla que usó o no el teléfono.
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lMadrid  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+> COGER     TELEFONO    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
                 WINDOW  0
@@ -966,7 +966,7 @@ BAJAR   lBath2
 
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lMadrid      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
+> COGER     TELEFONO    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al ESTE."
@@ -974,7 +974,7 @@ BAJAR   lBath2
 
 ; Controlamos la acción dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
 > EXAMINA   HABITACION
-> MIRAR		_			AT lMadrid    
+> MIRAR		_			AT lBurgos    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 INK     9               ; Color de tu consciencia
                 XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono.#n"
@@ -983,14 +983,14 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA   HABITACION
-> MIRAR		_			AT lMadrid 
+> MIRAR		_			AT lBurgos 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
                 INK     9               ; Color de tu consciencia
                 XMESSAGE "Tu habitación es grande, pero la decoración es minimalista; una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
-> DORMIR	_			AT lMadrid      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
+> DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
@@ -998,7 +998,7 @@ BAJAR   lBath2
                 XMESSAGE "El teléfono sigue sonando. ¿No piensas cogerlo? ¿Vas a seguir durmiendo?"             
                 DONE
 
-> DORMIR	_			AT lMadrid      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
+> DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
                 NOTZERO fUsarTelefono   ; Ha cogido el teléfono
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
@@ -1006,7 +1006,7 @@ BAJAR   lBath2
                 XMESSAGE "¿En serio quieres seguir durmiendo?"    
                 DONE
 
-> DORMIR	_			AT lMadrid
+> DORMIR	_			AT lBurgos
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     9               ; Color del narrador
@@ -1014,7 +1014,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> DORMIR	_			AT lMadrid
+> DORMIR	_			AT lBurgos
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     9               ; Color del narrador
@@ -1023,7 +1023,7 @@ BAJAR   lBath2
                 END
 
 ; Es un complemento por si el jugador se le ocurre usarla.
-> COLGAR    TELEFONO    AT lMadrid
+> COLGAR    TELEFONO    AT lBurgos
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede COLGARLO
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Cuelgas el teléfono."
@@ -1031,20 +1031,20 @@ BAJAR   lBath2
 
 ; Control de movimiento para salir de la localización. Sólo se puede salir hacia el Este, pero es obligatorio haber cogido el teléfono.
 
-> E			_			AT lMadrid      ; Si no ha usado el teléfono, no le dejamos ir al Este
+> E			_			AT lBurgos      ; Si no ha usado el teléfono, no le dejamos ir al Este
                 ZERO    fUsarTelefono   ; No ha usado el teléfono
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "¿No crees que deberías atender al teléfono?"
                 DONE
 
-> E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
+> E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
                 NOTWORN oRopa           ; No lleva puesto el objeto
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes salir de casa en pelotas. Debes vestirte antes."
                 DONE
 
-> E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
+> E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
                 WORN    oRopa          ; Lleva puesto el objeto
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 WINDOW  0
@@ -1055,7 +1055,7 @@ BAJAR   lBath2
                 ISAT    oLlaveCoche 252
                 CREATE  oLlaveCoche
                 GET     oLlaveCoche
-                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k"                
+                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
                 WINDOW  0
                 XPICTURE 002  ; Pantalla 
@@ -5664,7 +5664,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
                 DONE
 
-> USAR      CHUPETE     AT lMadrid
+> USAR      CHUPETE     AT lBurgos
                 ISAT    oLlaveBodega 252
                 CREATE  oLlaveBodega
                 GET     oLlaveBodega
@@ -5687,7 +5687,7 @@ BAJAR   lBath2
                 SET     fJugar  
                 GOTO    lCochera
 
-> LLAMAR      CHUPETE     AT lMadrid
+> LLAMAR      CHUPETE     AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Eres un tramposo o tienes muchas prisas.#nVenga, te llevaré directamente al recibidor de la casa.#k"
                 CLS                     ; Limpiamos la pantalla
