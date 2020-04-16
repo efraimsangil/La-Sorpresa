@@ -534,7 +534,8 @@ LUEGO           2       conjugation
 /20 "llave de la bodega#g#f1#t"  
 /21 "llaves del coche#g#fIJ#t"
 /22 "una lata de aceite#g#fFG#t"
-/23 "una manguera#g#f-.#t"
+/23 "una manguera#g#fKL#t"
+;/23 "una manguera#g#f-#t "
 ;------------------------------------------------------------------------------
 /LTX                            ;Location Texts
 ; \k\b #k#b
@@ -1086,6 +1087,7 @@ BAJAR   lBath2
 
 > E			_			AT lCoche
 				CLS                     ; Limpiamos la pantalla
+                DESTROY oLlaveCoche
 				GOTO    lExtCasa        ; Vamos a la localización
                 INK     9               ; Color del narrador
 				RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -2409,7 +2411,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK     9
-                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#f-.#t tirada en el suelo que está conectada al grifo.#n"
+                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#fKL#t tirada en el suelo que está conectada al grifo.#n"
                 INK     3
                 XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
                 INK     9
@@ -2448,12 +2450,10 @@ BAJAR   lBath2
                 ISAT    oManguera 252
                 CREATE  oManguera
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo está revestido de una pintura roja muy densa. Encuentras algo en una de las esquinas.#n"
-                INK     3
-                XMESSAGE "¡Hey! ¡Aquí hay una manguera#g#f-.#t!#n"
+                XMESSAGE "El suelo está revestido de una pintura roja muy densa. Encuentras algo en una de las esquinas.#n"               
                 INK     15
                 GET     oManguera
-                XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
+                MESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
 
 > EXAMINA   SUELO       AT lCochera
@@ -2473,7 +2473,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fConectarManguera  ; la manguera está desconectada
                 INK     9               ; Color del narrador
-                XMESSAGE "El grifo tiene un adaptador para CONECTAR una manguera#g#f-.#t."
+                XMESSAGE "El grifo tiene un adaptador para CONECTAR una manguera#g#fKL#t."
                 DONE
 
 > EXAMINA   GRIFO       AT lCochera
@@ -2483,7 +2483,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF            ; Desactivamos la oscuridad
                 NOTZERO fConectarManguera ; la manguera está conectada
                 INK     9                 ; Color del narrador
-                XMESSAGE "El grifo tiene una manguera#g#f-.#t conectada."
+                XMESSAGE "El grifo tiene una manguera#g#fKL#t conectada."
                 DONE
 
 > EXAMINA   GENERADOR   AT lCochera
@@ -2522,7 +2522,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 INK     9               ; Color del narrador
-                XMESSAGE "No tienes ninguna manguera#g#f-.#t."
+                XMESSAGE "No tienes ninguna manguera#g#fKL#t."
                 DONE
 
 > USAR      MANGUERA    AT lCochera
@@ -2714,7 +2714,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fCerrarGrifo
+                ZERO fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "Volvemos a la bodega.#k"
                 CLS  
@@ -2727,7 +2727,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
-                ZERO    fCerrarGrifo
+                NOTZERO fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
                 DONE
@@ -2745,17 +2745,24 @@ BAJAR   lBath2
                 XMESSAGE "La puerta está cerrada."
                 DONE
 
+> ABRIR     PUERTA      AT lExteriorChamizo                
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                SET     fDarkF          ; Activamos el flag de la oscuridad
+                NOTZERO fJugar
+                INK     9               ; Color del narrador
+                XMESSAGE "El chamizo está muy oscuro. Necesitamos luz para entrar."
+                DONE
+
+
 > ABRIR     PUERTA      AT lExteriorChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
-                XMESSAGE "Abres la puerta del chamizo y entras.#k#n"
+                XMESSAGE "Abres la puerta del chamizo y entras.#k#b#n"
                 CLS                     ; Limpiamos la pantalla
-                GOTO    lChamizo
-                INK     9
-                XMESSAGE "Nos adentramos en el chamizo.#k#b"
+                GOTO    lChamizo              
                 INK     14
                 XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t y me temo que ya no podemos entrar en la casa para cogerla.#n"
                 INK     3
@@ -5658,6 +5665,29 @@ BAJAR   lBath2
                 DONE
 
 > USAR      CHUPETE     AT lMadrid
+                ISAT    oLlaveBodega 252
+                CREATE  oLlaveBodega
+                GET     oLlaveBodega
+                ISAT    oLlavePatio 252
+                CREATE  oLlavePatio
+                GET     oLlavePatio
+                ISAT    oCerillas 252
+                CREATE  oCerillas
+                GET     oCerillas
+                ISAT    oLataDeAceite 252
+                CREATE  oLataDeAceite 
+                GET     oLataDeAceite 
+                ISAT    oHacha 252
+                CREATE  oHacha
+                GET     oHacha
+                ISAT    oPaleta 252
+                CREATE  oPaleta
+                GET     oPaleta
+                SET     fCombinacion     ; Tenemos la combinación del candado
+                SET     fJugar  
+                GOTO    lCochera
+
+> LLAMAR      CHUPETE     AT lMadrid
                 INK     9               ; Color del narrador
                 XMESSAGE "Eres un tramposo o tienes muchas prisas.#nVenga, te llevaré directamente al recibidor de la casa.#k"
                 CLS                     ; Limpiamos la pantalla
@@ -5798,7 +5828,7 @@ BAJAR   lBath2
                 MESSAGE  "llave de la bodega#g#f1#t" 
                 MESSAGE  "llaves del coche#g#fIJ#t"
                 MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#f-.#t"
+                MESSAGE  "una manguera#g#fKL#t"
                 MESSAGE "#n"
                 INK 9
                 MESSAGE "Ropa de calle#g#f=#t"          
@@ -5821,7 +5851,7 @@ BAJAR   lBath2
                 MESSAGE  "llave de la bodega#g#f1#t" 
                 MESSAGE  "llaves del coche#g#fIJ#t"
                 MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#f-.#t"
+                MESSAGE  "una manguera#g#fKL#t"
                 MESSAGE "#n"
                 INK     4                
                 MESSAGE "#g#fBHAS MUERTOC#t"
