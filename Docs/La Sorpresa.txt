@@ -1,0 +1,98 @@
+La Sorpresa.
+Una historia original de: 
+Javier Quílez <Invértigo>
+Efraim Sánchez-Gil 
+
+Y la envidiable colaboración de:
+Jorge Romero <Oniric Factor>
+Miguel Angel <Mortimer><Hardware del cartucho>
+Natalia Pujol <NatyPC><Adaptación de msx2daad para este juego>
+
+© 2020 Desarrollado con DAAD y MSX2DAAD. 
+
+
+Buenos días
+
+Cuando tengáis un momento, me gustaría saber vuestra opinión sobre el juego.
+
+Hasta dónde llegaste?
+
+Te quedaste atascado en algún sitio en especial?
+
+Que te ha parecido la ambientación?
+
+Que te ha parecido la historia?
+
+Jugarías de nuevo?
+
+Te ha sido difícil dar con las acciones a realizar?
+
+Tu calificación final del 1 al 10?
+-----------------
+
+Nuestro protagonista, tu, recibes una llamada de tu padre. Quiere que os veáis en la casa del pueblo, en Galicia. Tiene algo que contarte.
+
+Cuando llegas a las afueras de la casa, no hay nadie y decides entrar. La puerta se cierra de tal modo que no puedes salir. Pasan cosas extrañas en dicha casa, y deberás lograr escapar ileso además de resolver el misterio que la rodea.
+
+El título del juego es "La Sorpresa", porque lo va a ser en todos los sentidos. El equipo de desarrollo lo componen Jorge Romero <Oniric Factor><Desarrollo con DAAD>, Miguel Angel <Mortimer><Hardware del cartucho>, Natalia Pujol <NatyPC><Adaptación de msx2daad para este juego y ayuda con DAAD>, Javier Quílez <Invértigo><Guión, música, iconos, gráficos>
+Efraim Sánchez-Gil <Guión, iconos, gráficos y desarrollo en DAAD>.
+
+El sitema del juego es sencillo, VERBO + NOMBRE. Hemos procurado que muchas de las posibles acciones en cada localización, esten cubiertas para que no aparezca mucho el mensaje "No puedes hacer eso".
+
+El juego se distribuirá gratuitamente en principio con gráficos en un fichero .ROM. El juego se está desarrollando en dos idiomas, inglés y español. Más adelante saldrá la versión de cartucho con un hardware sorprendente, que seguro llamará la atención de más de uno. Finalmente, se abrirá el código con todo documentado para que cualquiera pueda aprender cómo se ha resuelto el juego y les sirva para sus futuras creaciones.
+
+
+como quienes la están desarrollando, si se ha escogido algún nombre como brupo, el título del juego, qué sistema de autoría se emplea, el modo de distribución previsto, innovaciones y quizá el boceto de carátula o alguna captura de pantalla preliminar. Y por supuesto, el título...
+
+
+
+
+
+
+
+
+---
+Nuestro protagonista, tu, recibes una llamada de tu padre. Quiere que os veáis en la casa del pueblo, en Galicia. Tiene algo que contarte.
+
+Cuando llegas a las afueras de la casa, no hay nadie y decides entrar. La puerta se cierra de tal modo que no puedes salir. Pasan cosas extrañas en dicha casa, y deberás lograr escapar ileso además de resolver el misterio que la rodea.
+
+
+
+El protagonista esta en su casa en Burgos y recibe una llamada de su padre para reunirse en la casa del pueblo en Galicia, España
+
+Se acerca en coche y logra entrar en la casa, y aquí comienza la aventura
+
+No puede salir de la casa y tiene que buscar una salida.
+
+Básicamente va a la casa y ocurren cosas en la casa, hay apariciones de fantamas (una mujer, un niño y una niña), que conforme se desarrolla la acción, se va explicando. Es una trama compleja de misterio, un poquito de terror y un drama tremendo.
+
+El juego tiene varios finales y puede resolverse o no el misterio, de tal manera que anima a jugarse de nuevo. La casa está a oscuras, es una idea para sumergir al jugador en el juego y se puede mover prendiendo las cerillas de cocina (fósforos largos) de una caja que encuentra en el recibidor de la casa.
+
+El juego es como una novela... como los antiguos libros de "elige tu propia aventura" pero en este caso, es más interactivo, en lugar de ir a la página tal o cual, podemos movernos por las estancias con los puntos cardinales, interactuar con el entorno escribiendo comandos básicos, del tipo "examina librería" "mirar", ahora se han puesto muy de moda este tipo de aventuras.
+
+Para que te hagas a la idea, es como una especie de libro-juego moderno pero con las ventajas que nos proporciona la tecnología digital, como un juego de rol, cómo los juegos de novelas gráficas.
+
+La luz de la portada, podría hacer uso del mismo tipo de iluminación que las capturas que te he mostrado.
+
+
+
+
+
+
+
+estamos preparando un cartucho que implementa algunas cosas interesantes
+
+como una luz LED que simula la cerilla que enciendes
+
+son gadgets para animar a la gente a que compre el juego en formato físico
+
+porque parte de la experiencia la llevará el cartucho
+
+como un reproductor mp3 con sonidos que se reproducen durante el juego
+
+y una banda sonora original que estoy componiendo yo
+
+vamos, que lo que queremos es poner las cosas de tal manera que la gente quiera comprarlo
+
+aunque lo vamos a liberar
+

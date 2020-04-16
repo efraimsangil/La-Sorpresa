@@ -1,0 +1,55 @@
+256 pixeles de ancho
+88 pix
+http://trizbort.io/app/index.html#
+
+
+A;adir nuevas localizaciones que tengan distintas acciones para cuando salgas de la casa
+lRecibidor
+lPorche
+
+Si acabas el juego y obtienes el final malo, dar pista de que juegue de nuevo y encuentre el diario.
+
+
+PREVIOS:
+
+ELIMINAR LLAVE DEL GARAJE
+COLOCAR OTRA PUERTA MÁS EN LA BODEGA
+BLOQUEAR SALIDA DEL GARAJE POR LA PUERTA DELANTERA
+COLOCAR PELOTA EN GARAJE
+
+Final bueno
+
+
+- Accedemos al garaje desde la bodega
+- Cogemos la pelota
+- Vamos al patio y jugamos con el niño
+- El niño nos entrega la LLAVE DEL CHAMIZO 
+- El niño desbloquea la ENTRADA PRINCIPAL
+- Accedemos al chamizo por la entrada principal
+- cogemos LLAVES DEL COCHE en el chamizo 
+- BLOQUEAMOS EL ACCESO AL GABINETE PARA NO REDUNDAR.
+ El gabinete es una estancia a la que se accede desde la bodega, pero el propio gabinete tiene una puerta que da al chamizo, pero esta solo se abre desde el gabinete, no pudiendo entrar desde el chamizo al mismo.
+
+- finalizamos con el niño
+
+
+La bodega tiene una trampilla con cerradura mecanica y te lleva al gabinete. Desde el gabinete llegamos al chamizo pero desde el chamizo no llegamos al gabinete.
+
+------------------------------------------------------------------------
+
+final malo
+
+- en la bodega descubrimos una segunda puerta (queda por 
+determinar si necesitamos otro objeto para descubrirla)
+- colocamos una estancia intermedia desde la BODEGA hasta el CHAMIZO
+para poner las trampas que nos de la gana y dificultar el acceso al CHAMIZO
+, al que se entra por dentro de la casa.
+
+- Una vez superadas las trampas, cogemos las LLAVES DEL COCHE, pero
+como no tenemos las llaves del CHAMIZO, debemos ROMPER PUERTA CON EL HACHA
+para romper el travesaño de la puerta.
+- Finalizamos sin el niño
+
+
+
+

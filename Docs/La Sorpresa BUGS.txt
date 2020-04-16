@@ -1,0 +1,51 @@
+No dejar prender cerilla en las localizaciones primeras
+http://msx.jannone.org/conv/
+
+
+
+
+
+
+
+
+
+
+
+- COGER FELPUDO te deja sin haber realizado antes un MIRAR
+	- Es normal porque el gnomo y maceta son objetos y el felpudo es un flag
+
+- lAseo
+	- Abrir cajon
+	- Prender cerilla
+	- Norte
+	- Usar interruptor (se apaga la cerilla)
+	- Prender cerilla
+	- Coger fotografia
+	- Prender cerilla (No te mata)
+	- Usar cerilla (SI te mata)
+	
+- lAseo
+	- Usar interruptor (se apaga la cerilla)
+	- Coger fotografia (No debería dejarte coger la fotografía)
+
+- lDespensa
+	- Cuando estoy dentro de la despensa y se pira la luz, al ir al OESTE, se descojona algo
+
+- lSalon
+	- Desde el salon al ESTE, no funciona correctamente
+
+- Prender cerilla: Si ya tienes una encendida, que no te deje encender otra para ganar otros 5 o 6 turnos
+
+- Como se cambia el color de la pantalla 1
+- PNJ en los pasillos y si le tiras el juguete te deja en paz o crear una persecución de un fantasma
+- Desde lDescansillo si me muevo a N S E se activa el flag de la oscuridad y ya no puedo hacer nada
+
+
+- Se podría hacer que cada vez que USAS o PRENDES cerilla el mensaje sea aleatorio o secuencial de modo que no sea el mismo?
+
+http://files.ruijc.webnode.com%252F200000839-382d139271%252FLedCandle2_SCH_Max.jpg
+
+,`‚´
+
+£
+Ç
