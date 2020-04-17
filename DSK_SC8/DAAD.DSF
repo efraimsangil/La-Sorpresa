@@ -5688,35 +5688,9 @@ BAJAR   lBath2
                 GOTO    lCochera
 
 > LLAMAR      CHUPETE     AT lBurgos
-                INK     9               ; Color del narrador
-                XMESSAGE "Eres un tramposo o tienes muchas prisas.#nVenga, te llevaré directamente al recibidor de la casa.#k"
                 CLS                     ; Limpiamos la pantalla
-                ;ISAT    oLlaveBodega 252
-                ;CREATE  oLlaveBodega
-                ;GET     oLlaveBodega
-                ;ISAT    oLlavePatio 252
-                ;CREATE  oLlavePatio
-                ;GET     oLlavePatio
-                ;ISAT    oSecretKey1 252
-                ;CREATE  oSecretKey1
-                ;GET     oSecretKey1
-                ;ISAT    oCerillas 252
-                ;CREATE  oCerillas
-                ;GET     oCerillas
-                ;ISAT    oLataDeAceite 252
-                ;CREATE  oLataDeAceite 
-                ;GET     oLataDeAceite 
-                ;ISAT    oHacha 252
-                ;CREATE  oHacha
-                ;GET     oHacha
-                ;ISAT    oPaleta 252
-                ;CREATE  oPaleta
-                ;GET     oPaleta
-                ;SET     fCombinacion     ; Tenemos la combinación del candado
-                ;SET     fJugar           ; Hemos jugado con el crío
-                ;SET     fLeerDiario
                 WINDOW 0
-                XPICTURE 220
+                XPICTURE 225
                 WINDOW 1
                 XMESSAGE "220#k"
                 WINDOW 0
