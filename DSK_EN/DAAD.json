@@ -1097,59 +1097,59 @@
 	[
 	{
 		"Value":0,
-		"Text":"#nSalidas visibles: "
+		"Text":"#nExits: "
 	},
 	{
 		"Value":1,
-		"Text":"Ninguna"
+		"Text":"No one"
 	},
 	{
 		"Value":2,
-		"Text":"Norte "
+		"Text":"North "
 	},
 	{
 		"Value":3,
-		"Text":"Sur "
+		"Text":"South "
 	},
 	{
 		"Value":4,
-		"Text":"Este "
+		"Text":"East "
 	},
 	{
 		"Value":5,
-		"Text":"Oeste "
+		"Text":"West "
 	},
 	{
 		"Value":6,
-		"Text":"Noreste "
+		"Text":"Northeast "
 	},
 	{
 		"Value":7,
-		"Text":"Noroeste "
+		"Text":"Northwest "
 	},
 	{
 		"Value":8,
-		"Text":"Sureste "
+		"Text":"Southeast "
 	},
 	{
 		"Value":9,
-		"Text":"Suroeste "
+		"Text":"Southwest "
 	},
 	{
 		"Value":10,
-		"Text":"Arriba "
+		"Text":"Up "
 	},
 	{
 		"Value":11,
-		"Text":"Abajo "
+		"Text":"Down "
 	},
 	{
 		"Value":12,
-		"Text":"Entrar "
+		"Text":"Enter "
 	},
 	{
 		"Value":13,
-		"Text":"Salir "
+		"Text":"Exit "
 	},
 	{
 		"Value":14,
@@ -1164,47 +1164,47 @@
 	[
 	{
 		"Value":0,
-		"Text":"Está demasiado oscuro, no puedes ver nada."
+		"Text":"It's too dark to see anything."
 	},
 	{
 		"Value":1,
-		"Text":"#nTambién puedes ver:"
+		"Text":"I can also see: "
 	},
 	{
 		"Value":2,
-		"Text":"#n"
+		"Text":"#nWhat now?"
 	},
 	{
 		"Value":3,
-		"Text":"#n"
+		"Text":"#nWhat next?"
 	},
 	{
 		"Value":4,
-		"Text":"#n"
+		"Text":"#nWhat should I do now?"
 	},
 	{
 		"Value":5,
-		"Text":"#n"
+		"Text":"#nWhat should I do next?"
 	},
 	{
 		"Value":6,
-		"Text":"No he entendido nada."
+		"Text":"#nI was not able to understand any of that.  Please try again."
 	},
 	{
 		"Value":7,
-		"Text":"No puedes ir en esa dirección."
+		"Text":"#nI can't go in that direction."
 	},
 	{
 		"Value":8,
-		"Text":"No puedes hacer eso."
+		"Text":"I can't do that.#n"
 	},
 	{
 		"Value":9,
-		"Text":"Llevo:#n"
+		"Text":"I have with me:#n"
 	},
 	{
 		"Value":10,
-		"Text":"Llevas puesto:#n"
+		"Text":"I am wearing:#n"
 	},
 	{
 		"Value":11,
@@ -1212,11 +1212,11 @@
 	},
 	{
 		"Value":12,
-		"Text":"¿Seguro?"
+		"Text":"Are you sure? "
 	},
 	{
 		"Value":13,
-		"Text":"¿Quieres intentarlo de nuevo?"
+		"Text":"Would you like another go? "
 	},
 	{
 		"Value":14,
@@ -1224,11 +1224,11 @@
 	},
 	{
 		"Value":15,
-		"Text":"Vale."
+		"Text":"OK.#n"
 	},
 	{
 		"Value":16,
-		"Text":"Pulsa una tecla para continuar."
+		"Text":"Press any key to continue.#n"
 	},
 	{
 		"Value":17,
@@ -1256,35 +1256,35 @@
 	},
 	{
 		"Value":23,
-		"Text":"No llevas eso puesto."
+		"Text":"I'm not wearing one of those.#n"
 	},
 	{
 		"Value":24,
-		"Text":"No puedes. Tienes puesto _."
+		"Text":"I can't.  I'm wearing the _."
 	},
 	{
 		"Value":25,
-		"Text":"Ya tienes _."
+		"Text":"I already have the _."
 	},
 	{
 		"Value":26,
-		"Text":"Aquí no hay nada de eso."
+		"Text":"There isn't one of those here."
 	},
 	{
 		"Value":27,
-		"Text":"No puedes llevar nada más."
+		"Text":"I can't carry any more things."
 	},
 	{
 		"Value":28,
-		"Text":"No tienes eso.#n"
+		"Text":"I don't have one of those."
 	},
 	{
 		"Value":29,
-		"Text":"Ya llevas puesto _.#n"
+		"Text":"I'm already wearing the _."
 	},
 	{
 		"Value":30,
-		"Text":"S"
+		"Text":"Y"
 	},
 	{
 		"Value":31,
@@ -1292,11 +1292,11 @@
 	},
 	{
 		"Value":32,
-		"Text":"Hay más..."
+		"Text":"More..."
 	},
 	{
 		"Value":33,
-		"Text":">"
+		"Text":"#n>"
 	},
 	{
 		"Value":34,
@@ -1304,47 +1304,47 @@
 	},
 	{
 		"Value":35,
-		"Text":"#nEl tiempo pasa..."
+		"Text":"#nTime passes...#n"
 	},
 	{
 		"Value":36,
-		"Text":"Has cogido _."
+		"Text":"I now have the _.#n"
 	},
 	{
 		"Value":37,
-		"Text":"Te has puesto _."
+		"Text":"I'm now wearing the _.#n"
 	},
 	{
 		"Value":38,
-		"Text":"Te has quitado _."
+		"Text":"I've removed the _.#n"
 	},
 	{
 		"Value":39,
-		"Text":"Has dejado _."
+		"Text":"I've dropped the _.#n"
 	},
 	{
 		"Value":40,
-		"Text":"No puedes ponerte _."
+		"Text":"I can't wear the _.#n"
 	},
 	{
 		"Value":41,
-		"Text":"No puedes quitarte _."
+		"Text":"I can't remove the _.#n"
 	},
 	{
 		"Value":42,
-		"Text":"No puedes quitarte _.  No puedo llevar nada más en las manos."
+		"Text":"I can't remove the _.  My hands are full.#n"
 	},
 	{
 		"Value":43,
-		"Text":"@ pesa demasiado para tí."
+		"Text":"The _ weighs too much for me.#n"
 	},
 	{
 		"Value":44,
-		"Text":"@ está en"
+		"Text":"#nThe _ is in the "
 	},
 	{
 		"Value":45,
-		"Text":"@ no está en"
+		"Text":"The _ isn't in the "
 	},
 	{
 		"Value":46,
@@ -1352,7 +1352,7 @@
 	},
 	{
 		"Value":47,
-		"Text":" y "
+		"Text":" and "
 	},
 	{
 		"Value":48,
@@ -1360,11 +1360,11 @@
 	},
 	{
 		"Value":49,
-		"Text":"No tienes _."
+		"Text":"I don't have the _.#n"
 	},
 	{
 		"Value":50,
-		"Text":"No llevas puesto _."
+		"Text":"I'm not wearing the _.#n"
 	},
 	{
 		"Value":51,
@@ -1372,15 +1372,15 @@
 	},
 	{
 		"Value":52,
-		"Text":"No hay nada de eso en"
+		"Text":"There isn't one of those in the "
 	},
 	{
 		"Value":53,
-		"Text":"Nada.#n"
+		"Text":"Nothing.#n"
 	},
 	{
 		"Value":54,
-		"Text":"C"
+		"Text":"T"
 	},
 	{
 		"Value":55,
@@ -1388,35 +1388,35 @@
 	},
 	{
 		"Value":56,
-		"Text":"Unidad no preparada. Pulsa una tecla para volver a intentarlo."
+		"Text":"Drive not ready - press any key to retry.#n"
 	},
 	{
 		"Value":57,
-		"Text":"Error de entrada/salida."
+		"Text":"I/O Error.#n"
 	},
 	{
 		"Value":58,
-		"Text":"El disco o el directorio puede estar lleno."
+		"Text":"Disc or Directory may be full."
 	},
 	{
 		"Value":59,
-		"Text":"Nombre de fichero no válido."
+		"Text":"Invalid filename."
 	},
 	{
 		"Value":60,
-		"Text":"Nombre del fichero:"
+		"Text":"Type in name of file:"
 	},
 	{
 		"Value":61,
-		"Text":"Pon en marcha la cinta."
+		"Text":"Start tape.#n"
 	},
 	{
 		"Value":62,
-		"Text":"¿Cinta o disco?"
+		"Text":"Tape or Disc?"
 	},
 	{
 		"Value":63,
-		"Text":"Salidas: "
+		"Text":"Exits: "
 	},
 	{
 		"Value":64,
@@ -1432,7 +1432,7 @@
 	},
 	{
 		"Value":67,
-		"Text":"O,"
+		"Text":"W,"
 	}
 	],
 "locations":
@@ -1443,7 +1443,7 @@
 	},
 	{
 		"Value":1,
-		"Text":"Burgos.#n#n      10 de Enero de 1987.#k#b  Eres un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de tí un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Está decidido... Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por tí que debes despertarse definitivamente."
+		"Text":"Burgos.#n#n      January 10th, 1987.  You are a serious guy, with a big personality; a hard-working and responsible person, used to take on that comes your way in order to maintain your work status. You are not a very sociable person and with the years, you have inevitably become an incorrigible misanthrope, making you a hermit, of a few words, inexpressive and hostile at times.#k#b  You tend to talk to yourself a lot and have a highly developed consciousness: you can rarely show off your social skills. In other words, people who occasionally approach you run away in fear.#k#b  Today is Saturday and apparently you have no plans except to enjoy your 48 hours of freedom; that's what you call weekends. It's 12:30PM, is a cold winter day and you're still in bed half awake, sluggish. The early mornings of the week weigh you down more and more and you feel unable to leave your warm nest under the flannel blanket.#k#b  It's decided... You turn around in bed with the firm intention of sleeping a little longer, but at that same moment the phone on the bedside table rings. Someone's decided for you that you must definitely wake up."
 	},
 	{
 		"Value":2,

@@ -412,92 +412,92 @@ LUEGO           2       conjugation
 
 
 ;------------------------------------------------------------------------------
-/STX                            ;Mensajes del sistema
-/0 "Está demasiado oscuro, no puedes ver nada."
-/1 "#nTambién puedes ver:"
-/2 "#n"
-/3 "#n"
-/4 "#n"
-/5 "#n"
-/6 "No he entendido nada."
-/7 "No puedes ir en esa dirección."
-/8 "No puedes hacer eso."
-/9 "Llevo:#n"
-/10 "Llevas puesto:#n"
-/11 "";*Libre
-/12 "¿Seguro?"
-/13 "¿Quieres intentarlo de nuevo?"
-/14 ""  ;*Libre
-/15 "Vale."
-/16 "Pulsa una tecla para continuar."
-/17 "" ;*Has jugado
-/18 "" ;*\sturno
-/19 "" ;*s
-/20 "" ; *.
-/21 "" ; *Ha resuelto un
-/22 "" ; *%
-/23 "No llevas eso puesto."
-/24 "No puedes. Tienes puesto _."
-/25 "Ya tienes _."
-/26 "Aquí no hay nada de eso."
-/27 "No puedes llevar nada más."
-/28 "No tienes eso.#n"
-/29 "Ya llevas puesto _.#n"
-/30 "S";Un solo carácter en mayúsculas. Inicial de Sí
-/31 "N"  ;Un solo carácter en mayúsculas. Inicial de No
-/32 "Hay más..."
-/33 ">"
-/34 "" ;*Libre
-/35 "#nEl tiempo pasa..."
-/36 "Has cogido _."
-/37 "Te has puesto _."
-/38 "Te has quitado _."
-/39 "Has dejado _."
-/40 "No puedes ponerte _."
-/41 "No puedes quitarte _."
-/42 "No puedes quitarte _.  No puedo llevar nada más en las manos."
-/43 "@ pesa demasiado para tí."
-/44 "@ está en"
-/45 "@ no está en"
+/STX    ;System Message Texts
+/0 "It's too dark to see anything."
+/1 "I can also see: "
+/2 "#nWhat now?"
+/3 "#nWhat next?"
+/4 "#nWhat should I do now?"
+/5 "#nWhat should I do next?"
+/6 "#nI was not able to understand any of that.  Please try again."
+/7 "#nI can't go in that direction."
+/8 "I can't do that.#n"
+/9 "I have with me:#n"
+/10 "I am wearing:#n"
+/11 "";*Spare
+/12 "Are you sure? "
+/13 "Would you like another go? "
+/14 "";*Spare
+/15 "OK.#n"
+/16 "Press any key to continue.#n"
+/17 "";*You have taken
+/18 "";*\sturn
+/19 "";*s
+/20 "";*.[CR]
+/21 "";*You have scored
+/22 "";*%[CR]
+/23 "I'm not wearing one of those.#n"
+/24 "I can't.  I'm wearing the _."
+/25 "I already have the _."
+/26 "There isn't one of those here."
+/27 "I can't carry any more things."
+/28 "I don't have one of those."
+/29 "I'm already wearing the _."
+/30 "Y"    ;One upper case character only
+/31 "N"    ;One upper case character only
+/32 "More..."
+/33 "#n>"
+/34 "";*Spare
+/35 "#nTime passes...#n"
+/36 "I now have the _.#n"
+/37 "I'm now wearing the _.#n"
+/38 "I've removed the _.#n"
+/39 "I've dropped the _.#n"
+/40 "I can't wear the _.#n"
+/41 "I can't remove the _.#n"
+/42 "I can't remove the _.  My hands are full.#n"
+/43 "The _ weighs too much for me.#n"
+/44 "#nThe _ is in the "
+/45 "The _ isn't in the "
 /46 ", "
-/47 " y "
+/47 " and "
 /48 ".#n"
-/49 "No tienes _."
-/50 "No llevas puesto _."
+/49 "I don't have the _.#n"
+/50 "I'm not wearing the _.#n"
 /51 ".#n"
-/52 "No hay nada de eso en"
-/53 "Nada.#n"
-/54 "C" ; Inicial de Cinta
-/55 "D" ; Disco
-/56 "Unidad no preparada. Pulsa una tecla para volver a intentarlo."
-/57 "Error de entrada/salida."
-/58 "El disco o el directorio puede estar lleno."
-/59 "Nombre de fichero no válido."
-/60 "Nombre del fichero:"
-/61 "Pon en marcha la cinta."
-/62 "¿Cinta o disco?"
-/63 "Salidas: "
+/52 "There isn't one of those in the "
+/53 "Nothing.#n"
+/54 "T" ;Letter for Tape
+/55 "D" ;Disc
+/56 "Drive not ready - press any key to retry.#n"
+/57 "I/O Error.#n"
+/58 "Disc or Directory may be full."
+/59 "Invalid filename."
+/60 "Type in name of file:"
+/61 "Start tape.#n"
+/62 "Tape or Disc?"
+/63 "Exits: "
 /64 "N," 
 /65 "S," 
 /66 "E," 
-/67 "O,"
+/67 "W,"
 
 ;------------------------------------------------------------------------------
 /MTX                            ;Mensajes
-/0 "#nSalidas visibles: "
-/1 "Ninguna"
-/2 "Norte "
-/3 "Sur "
-/4 "Este "
-/5 "Oeste "
-/6 "Noreste "
-/7 "Noroeste "
-/8 "Sureste "
-/9 "Suroeste "
-/10 "Arriba "
-/11 "Abajo "
-/12 "Entrar "
-/13 "Salir "
+/0 "#nExits: "
+/1 "No one"
+/2 "North "
+/3 "South "
+/4 "East "
+/5 "West "
+/6 "Northeast "
+/7 "Northwest "
+/8 "Southeast "
+/9 "Southwest "
+/10 "Up "
+/11 "Down "
+/12 "Enter "
+/13 "Exit "
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
@@ -529,7 +529,7 @@ LUEGO           2       conjugation
 /LTX                            ;Location Texts
 ; \k\b #k#b
 /0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
-/1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Eres un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de tí un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Está decidido... Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por tí que debes despertarte definitivamente."
+/1 "Burgos.#n#n      January 10th, 1987.  You are a serious guy, with a big personality; a hard-working and responsible person, used to take on that comes your way in order to maintain your work status. You are not a very sociable person and with the years, you have inevitably become an incorrigible misanthrope, making you a hermit, of a few words, inexpressive and hostile at times.#k#b  You tend to talk to yourself a lot and have a highly developed consciousness: you can rarely show off your social skills. In other words, people who occasionally approach you run away in fear.#k#b  Today is Saturday and apparently you have no plans except to enjoy your 48 hours of freedom; that's what you call weekends. It's 12:30PM, is a cold winter day and you're still in bed half awake, sluggish. The early mornings of the week weigh you down more and more and you feel unable to leave your warm nest under the flannel blanket.#k#b  It's decided... You turn around in bed with the firm intention of sleeping a little longer, but at that same moment the phone on the bedside table rings. Someone's decided for you that you must definitely wake up."
 /2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dió respeto cuando eras un niño.#k#b  Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."

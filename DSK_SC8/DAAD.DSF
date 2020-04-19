@@ -811,6 +811,7 @@ BAJAR   lBath2
                 CLEAR   fControlLuz
                 XMESSAGE "#k"
                 CLS
+                GFX     0 5
                 CLEAR   fUsarCerilla
                 XMESSAGE "Se ha consumido la cerilla."
                 
@@ -953,7 +954,7 @@ BAJAR   lBath2
                 INK     12              ; Color del padre 
                 XMESSAGE "Buenos días, hijo. ¿Qué tal estás?#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Hola, padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n#n"
+                XMESSAGE "Hola, padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n"
                 INK     12              ; Color del padre 
                 XMESSAGE "Dile a Morfeo que espere un momento y escucha: Recuerda que hoy habíamos quedado aquí, en la sierra. Tenemos algo muy importante que contarte, así que espabila y ve saliendo de casa, que sino, se te va a hacer muy tarde.#n"
                 INK     3               ; Color del protagonista
@@ -2665,7 +2666,7 @@ BAJAR   lBath2
                 NOTZERO fConectarManguera           ; Si conectó la manguera al grifo
                 INK     9                           ; Color del narrador
                 XMESSAGE "El agua está cayendo por la rejilla con una gran presión y se está llenando a gran velocidad.#n Notas como rápidamente sube el nivel del agua y debido a la presión, la rejilla cede y deja al descubierto el desagüe.#n Ves que de su interior sale una pelota#g#f:;#t. Acto seguido, cierras el grifo.#n"
-                SET     fCerrarGrifo
+                ;CLEAR   fCerrarGrifo
                 ISAT    oPelota 252
                 CREATE  oPelota
                 INK     15              ; Color del sistema
@@ -2675,18 +2676,28 @@ BAJAR   lBath2
                 XMESSAGE"¿Nos echamos un partidito?"                
                 DONE
 
-> CERRAR    GRIFO       AT lCochera
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fCerrarGrifo
-                SET     fCerrarGrifo
-                INK     9               ; Color del narrador
-                XMESSAGE "Has cerrado el grifo.#n"
-                INK     2
-                XMESSAGE "Evitando una catástrofe..."
-                DONE
+;> CERRAR    GRIFO       AT lCochera
+;                NOTZERO fControlLuz
+;                NOTZERO fTurnosConLuz
+;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+;                CLEAR   fDarkF          ; Desactivamos la oscuridad
+;                NOTZERO fCerrarGrifo
+;                CLEAR   fCerrarGrifo
+;                INK     9               ; Color del narrador
+;                XMESSAGE "Has cerrado el grifo.#n"
+;                INK     2
+;                XMESSAGE "Evitando una catástrofe..."
+;                DONE
+
+;> CERRAR    GRIFO       AT lCochera
+;                NOTZERO fControlLuz
+;                NOTZERO fTurnosConLuz
+;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+;                CLEAR   fDarkF          ; Desactivamos la oscuridad
+;                NOTZERO fCerrarGrifo
+;                INK     9               ; Color del narrador
+;                XMESSAGE "El grifo ya está cerrado.#n"              
+;                DONE
 
 > MOVER     REJILLA
 > ABRIR     REJILLA    AT lCochera
@@ -2714,7 +2725,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO fCerrarGrifo
+                ;ZERO    fCerrarGrifo
                 INK     9               ; Color del narrador
                 XMESSAGE "Volvemos a la bodega.#k"
                 CLS  
@@ -2722,15 +2733,15 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> E         _           AT lCochera
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CLEAR   fDarkF          ; Desactivamos la oscuridad                
-                NOTZERO fCerrarGrifo
-                INK     9               ; Color del narrador
-                XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
-                DONE
+;> E         _           AT lCochera
+;                NOTZERO fControlLuz
+;                NOTZERO fTurnosConLuz
+;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+;                CLEAR   fDarkF          ; Desactivamos la oscuridad                
+;                NOTZERO fCerrarGrifo
+;                INK     9               ; Color del narrador
+;                XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
+;                DONE
 
 ; Estamos en locExtChamizo
 
@@ -5680,9 +5691,15 @@ BAJAR   lBath2
                 ISAT    oHacha 252
                 CREATE  oHacha
                 GET     oHacha
-                ISAT    oPaleta 252
-                CREATE  oPaleta
-                GET     oPaleta
+                ;ISAT    oPelota 252
+                ;CREATE  oPelota
+                ;GET     oPelota
+                ISAT    oLlavePorche 252
+                CREATE  oLlavePorche
+                GET     oLlavePorche
+                ;ISAT    oPaleta 252
+                ;CREATE  oPaleta
+                ;GET     oPaleta
                 SET     fCombinacion     ; Tenemos la combinación del candado
                 SET     fJugar  
                 GOTO    lCochera
@@ -6086,7 +6103,7 @@ BAJAR   lBath2
                 XPICTURE 200            ; Pantalla de Portada del juego
                 MESSAGE "#k"
                 GFX     0 5
-                XPICTURE 201    ; Pantalla del Equipo de Desarrollo
+                XPICTURE 201            ; Pantalla del Equipo de Desarrollo
                 MESSAGE "#k"
                 GFX     0 5
                 ;DISPLAY 0
