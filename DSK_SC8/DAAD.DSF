@@ -552,7 +552,7 @@ LUEGO           2       conjugation
 /9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo." 
 /10 " Estás en la cocina. Donde ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una sensación de frío desalentadora que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con una portezuela, una alacena para la comida al ESTE y como no, la vieja lavadora, que con más de 20 años, aún sigue dando servicio." 
 /11 " La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#n  La estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque ésta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#n  Puedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#n  Desde aquí se accede a un amplio patio trasero al ESTE."
-/12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n#n  Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
+/12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más pequeñas, parece que una imponente escalera otorgaba un estatus de opulencia.#n  Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 /13 " Estás en la despensa. Aquí se encuentra la alacena que usaban tus padres para guardar latas de comida y algún que otro utensilio de cocina."
 /14 " La luna llena gobierna la noche y su claridad se refleja sobre el extenso muro gris del patio, que se erige imponente como el adarve protector de la hacienda; inexpugnable."
 /15 " Has entrado en lo que parece ser un dormitorio antiguo sin ventilación ni iluminación, aunque hay muestras de haber sido habitado, pues hay una cama de paja, un banco antiguo de madera que parece de otro siglo y un orinal de porcelana."
@@ -1187,27 +1187,27 @@ BAJAR   lBath2
                 XMESSAGE "Aparece la niña...#k#n"
                 INK     6
                 XMESSAGE "TUS PADRES YA ESTáN CON NOSOTROS.#k#n"
-                INK     14
-                XMESSAGE "Quería decírtelo, pero me has caído tan bien... Hemos tenido un accidente con ellos... con un cuchillo...#k#n"
-                INK     6
+                ;INK     14
+                ;XMESSAGE "Quería decírtelo, pero me has caído tan bien... Hemos tenido un accidente con ellos... con un cuchillo...#k#n"
+                ;INK     6
                 XMESSAGE "¡HE SIDO YO! Hace treinta años les dije que no viniesen nunca más por aquí.#k#n"
                 INK     14 
                 XMESSAGE "¡CORRE! ¡SAL DE AQUí! ¡RáPIDO!#k#b"
                 INK     9
-                XMESSAGE "Arrancas el coche a toda velocidad y sale de la finca derrapando.#nUna vez sale de la casa, detiene el coche.#k#n"
+                XMESSAGE "Arrancas el coche a toda velocidad y sale de la finca derrapando.#nTe alejas de la casa y a unos cientos de metros, detienes el coche.#k#n"
                 INK     3 
                 XMESSAGE "Han matado a mis padres... La casa está llena de fantasmas sádicos... No tengo ni idea de qué pintan ahí... He salido vivo de milagro...#k#n"
                 INK     2
-                XMESSAGE "Nunca te perdonarás lo que les ha pasado a tus padres, ¡NUNCA!#k#n"
+                XMESSAGE "Nunca te perdonarás lo que les ha pasado a tus padres, ¡NUNCA!#k#b#n"
                 INK     9
-                XMESSAGE "Retomas tu camino hacia la salida del pueblo y se te cruza un coche conocido que toca el claxon.#k#n"
+                XMESSAGE "Retomas tu camino hacia la salida del pueblo y te cruzas con un coche que te resulta familiar. Te toca el claxon.#k#n"
                 INK     12
                 XMESSAGE "¡Hijo! ¡Hijo! ¡Qué alegría verte! Sospechaba que aún estarías por aquí.#k#n"
                 INK     3
                 XMESSAGE "¡PAPA! ¡No me jodas! ¡Estás VIVO! Cuando te cuente lo que ha ocurrido no te lo vas a creer.#k#n"
                 INK     12
                 XMESSAGE "Me lo puedo imaginar, no te preocupes... Has conocido a la familia que aparece cada treinta años en la casa, ¿verdad? Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele...#k#n"
-                XMESSAGE"La verdad es que pensando a posteriori, parecían tenían tener asuntos pendientes que resolver, pero tu madre me sacó de allí del brazo en aquel momento y me dijo que ni se me ocurriese volver.#k#n. Hoy había quedado contigo para intentar resolver el problema juntos, ya que sabía que justo esta noche iban a volver a a parecer los niños en la casa, pero chico, llegaste tan tarde que tuve que marcharme.#k#n"
+                XMESSAGE"La verdad es que pensando a posteriori, parecían tenían tener asuntos pendientes que resolver, pero tu madre me sacó de allí del brazo en aquel momento y me dijo que ni se me ocurriese volver.#k#nHoy había quedado contigo para intentar resolver el problema juntos, ya que sabía que justo esta noche iban a volver a a parecer los niños en la casa, pero chico, llegaste tan tarde que tuve que marcharme.#k#n"
                 INK     3
                 XMESSAGE "¡Pero que estás diciendo! A ver, ¡los niños me dijeron que habíais muerto!#k#n"
                 INK     12
@@ -1217,9 +1217,9 @@ BAJAR   lBath2
                 INK     12
                 XMESSAGE "Tu madre lleva borracha desde el mediodía; el alcohol y los antidepresivos no son buena combinación.#nVenga hijo, vayámonos de aquí.#k#n"
                 INK     3
-                XMESSAGE "Avanti.#k#n"
+                XMESSAGE "Avanti.#k#b#n"
                 INK     9
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Chapucero.#n#n De todos los posibles finales, este es el peor de todos. Has salido de la casa sin enterarte de nada de la historia."
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: Chapucero.#n#n De todos los posibles finales, este uno de los peores. Has salido de la casa sin enterarte de nada de la historia.#n"
                 INK     15
                 END
 
@@ -2665,7 +2665,7 @@ BAJAR   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manquera en la rejilla
                 NOTZERO fConectarManguera           ; Si conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "El agua está cayendo por la rejilla con una gran presión y se está llenando a gran velocidad.#n Notas como rápidamente sube el nivel del agua y debido a la presión, la rejilla cede y deja al descubierto el desagüe.#n Ves que de su interior sale una pelota#g#f:;#t. Acto seguido, cierras el grifo.#n"
+                XMESSAGE "El agua está cayendo por la rejilla con una gran presión y se está llenando a gran velocidad.#n Notas como rápidamente sube el nivel del agua y debido a la presión, la rejilla cede y deja al descubierto el desagüe.#n Ves que de su interior sale una pelota#g#f:;#t. Acto seguido, cierras el grifo."
                 ;CLEAR   fCerrarGrifo
                 ISAT    oPelota 252
                 CREATE  oPelota
@@ -3027,7 +3027,8 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "De acuerdo, vayámonos.#k#n#b"
                 INK     9
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
+                ;XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. Nos vemos en la próxima aventura.#n "
                 INK 15
                 END
 
@@ -3081,7 +3082,7 @@ BAJAR   lBath2
                 XMESSAGE "De acuerdo, vayámonos.#k#n#b"
                 INK     9
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACIóN: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n"
-                XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#k"
+                XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo."
                 INK     15
                 END
 
@@ -3845,7 +3846,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Joder! ¡La tarjeta se ha atascado!#n"
                 INK     2
-                XMESSAGE "¡Olvida la tarjeta! Que la den por...! Podrías probar a mover la vitrina.#n"
+                XMESSAGE "¡Olvida la tarjeta! ¡Que la den por...! Podrías probar a mover la vitrina.#n"
                 DESTROY oSecretKey1               
                 INK     3               ; Color del protagonista
                 XMESSAGE "Claro, tu no hagas nada.#n"
