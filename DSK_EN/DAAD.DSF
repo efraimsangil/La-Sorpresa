@@ -58,7 +58,7 @@
 #define fLeerDiario         64      ; Control que activamos cuando leemos el diario
 #define fPuertaCochera      65      ; NOTA: Lo vamos a usar?
 #define fDesenterrar        66      ; No se usa
-#define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lMadrid
+#define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lBurgos
 #define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide DORMIR
 #define fFinTerma           69      ; 
 #define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos
@@ -103,7 +103,7 @@
 
 ;                               Localizaciones
 #define lIntro              0
-#define lMadrid             1
+#define lBurgos             1
 #define lCoche              2
 #define lExtCasa            3
 #define lExteriorCochera    4
@@ -195,7 +195,7 @@ TODAS   20      noun
 
 ;                               Objetos
 CONSOLA         98     noun     ; lRecibidor
-MESILLA         99     noun     ; lMadrid
+MESILLA         99     noun     ; lBurgos
 DIARIO          100    noun     ; lCriada
 LLAV1           101    noun     ; Es un objeto
 LLAV2           102    noun     ; Es un objeto
@@ -223,7 +223,7 @@ ROPA            123    noun     ; Es un objeto
 MUEBLE          124    noun     ; lSalon
 FREGADERO       125    noun     ; lCocina
 LAVADORA        126    noun     ; lCocina
-TELEFONO        127    noun     ; lMadrid
+TELEFONO        127    noun     ; lBurgos
 PELUCHE         128    noun     ; Es un objeto
 INTERRUPTOR     129    noun     ; lAseo
 ASEO            130    noun     ; lAseo
@@ -232,7 +232,7 @@ PLANTA          132    noun     ; lPorche
 FOTOGRAFIA      133    noun     ; lRecibidor
 CUCHILLO        134    noun     ; lCocina
 PELOTA          135    noun     ; lPatio
-CAMA            136    noun     ; lMadrid, lCriada, lRoom1, lRoom2, lRoom3
+CAMA            136    noun     ; lBurgos, lCriada, lRoom1, lRoom2, lRoom3
 PALETA          137    noun     ; lBodega
 HACHA           138    noun     ; Es un objeto
 PARED           139    noun     ; lBodega, lCochera, lCocina, lRoom3
@@ -248,14 +248,14 @@ CIEMPIES        148    noun     ; lPorche
 SUELO           149    noun     ; lPorche, lGabinete, lCochera, lChamizo, lAseo, lCriada, lRoom3
 CUCHARAS        150    noun     ; lCocina
 TRITURADOR      151    noun     ; lCocina
-MANTA           152    noun     ; lMadrid
+MANTA           152    noun     ; lBurgos
 TIMBRE          153    noun     ; lPorche
 ALACENA         154    noun     ; lDespensa
 OBJETO          155    noun     ; lRoom1
 VITRINA         156    noun     ; lSalon
-CHUPETE         157    noun     ; lMadrid. Cheat
+CHUPETE         157    noun     ; lBurgos. Cheat
 MONITOR         158    noun     ; No se usa
-LAMPARA         159    noun     ; lMadrid, lRoom3
+LAMPARA         159    noun     ; lBurgos, lRoom3
 CASSETTE        160    noun     ; lSalon
 MURO            161    noun     ; lPatio
 MANCHA          162    noun     ; lBodega, lBath1
@@ -291,7 +291,7 @@ OSITO           191    noun     ; No se usa
 AGUA            192    noun     ; lBath3
 MOSAICO         193    noun     ; lBath3
 ALCOBA          194    noun     ; lRoom1
-HABITACION      195    noun     ; lMadrid
+HABITACION      195    noun     ; lBurgos
 RECIBIDOR       196    noun     ; lRecibidor
 CHAMIZO         197    noun     ; lChamizo
 COCINA          198    noun     ; lCocina
@@ -528,8 +528,8 @@ LUEGO           2       conjugation
 ;------------------------------------------------------------------------------
 /LTX                            ;Location Texts
 ; \k\b #k#b
-/0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
-/1 "Burgos.#n#n      January 10th, 1987.  You are a serious guy, with a big personality; a hard-working and responsible person, used to take on that comes your way in order to maintain your work status. You are not a very sociable person and with the years, you have inevitably become an incorrigible misanthrope, making you a hermit, of a few words, inexpressive and hostile at times.#k#b  You tend to talk to yourself a lot and have a highly developed consciousness: you can rarely show off your social skills. In other words, people who occasionally approach you run away in fear.#k#b  Today is Saturday and apparently you have no plans except to enjoy your 48 hours of freedom; that's what you call weekends. It's 12:30PM, is a cold winter day and you're still in bed half awake, sluggish. The early mornings of the week weigh you down more and more and you feel unable to leave your warm nest under the flannel blanket.#k#b  It's decided... You turn around in bed with the firm intention of sleeping a little longer, but at that same moment the phone on the bedside table rings. Someone's decided for you that you must definitely wake up."
+/0 ""
+/1 " Burgos.#n#n      January 10th, 1987.  You are a serious guy, with a big personality; a hard-working and responsible person, used to take on that comes your way in order to maintain your work status. You are not a very sociable person and with the years, you have inevitably become an incorrigible misanthrope, making you a hermit, of a few words, inexpressive and hostile at times.#k#b  You tend to talk to yourself a lot and have a highly developed consciousness: you can rarely show off your social skills. In other words, people who occasionally approach you run away in fear.#k#b  Today is Saturday and apparently you have no plans except to enjoy your 48 hours of freedom; that's what you call weekends. It's 12:30PM, is a cold winter day and you're still in bed half awake, sluggish. The early mornings of the week weigh you down more and more and you feel unable to leave your warm nest under the flannel blanket.#k#b  It's decided... You turn around in bed with the firm intention of sleeping a little longer, but at that same moment the phone on the bedside table rings. Someone's decided for you that you must definitely wake up."
 /2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dió respeto cuando eras un niño.#k#b  Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
@@ -562,7 +562,7 @@ LUEGO           2       conjugation
 ;------------------------------------------------------------------------------
 /CON                            ;Conexiones
 /0
-/1                      ; lMadrid
+/1                      ; lBurgos
 E       lCoche
 /2                      ; lCoche
 E       lExtCasa
@@ -870,7 +870,7 @@ BAJAR   lBath2
 ; Estamos en locMadrid
 
 > ABRIR     ARMARIO 
-> EXAMINA   ARMARIO     AT lMadrid
+> EXAMINA   ARMARIO     AT lBurgos
             INK     15
             ISAT    oRopa 252       ; El objeto no está en ninguna parte (de momento no es visible)
             CREATE  oRopa           ; Creamos el objeto de su ropa
@@ -880,158 +880,158 @@ BAJAR   lBath2
             INK     9
             DONE
 
-> EXAMINA 	CAMA		AT lMadrid
+> EXAMINA 	CAMA		AT lBurgos
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una cama grande y aparentemente cómoda."
+                XMESSAGE "It's a big bed and it looks very comfortable."
                 DONE
 
-> EXAMINA 	MANTA		AT lMadrid
+> EXAMINA 	MANTA		AT lBurgos
                 INK     9               ; Color del narrador
-                XMESSAGE "Es suave y calentita."
+                XMESSAGE "It's soft and warm."
                 DONE
 
 ; Controlamos el poder examinar la mesilla habiendo usado el teléfono o no, de modo que mostramos dos tipos distintos de mensajes.
-> EXAMINA 	MESILLA		AT lMadrid      ; Examina la mesilla y NO ha usado el teléfono
+> EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
                 ZERO    fUsarTelefono   ; Controlamos si NO ha usado el teléfono
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n"
-                XMESSAGE "Hay un teléfono de góndola sobre ella y no deja de sonar."              
+                XMESSAGE "It's a pine wood night table, with a lamp that lets in a lot of light and you can't look at it directly because it hurts your eyes. It's very clean and no scratches or scuffs.#n"
+                XMESSAGE "There's a gondola phone on it and it won't stop ringing."              
                 DONE
 
-> EXAMINA 	MESILLA		AT lMadrid      ; Examina la mesilla y SI ha usado el teléfono
+> EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, cambiamos el mensaje de salida
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n"
+                XMESSAGE "It's a pine wood night table, with a lamp that lets in a lot of light and you can't look at it directly because it hurts your eyes. It's very clean and no scratches or scuffs.#n"
                 DONE
 
 ; NOTA: Enciendo el LED
-> ENCENDER  LAMPARA     AT lMadrid
+> ENCENDER  LAMPARA     AT lBurgos
                 INK     9               ; Color del narrador
-                XMESSAGE "Enciendes la lámpara."
+                XMESSAGE "You turn on the lamp."
                 DONE
 
 ; NOTA: Enciendo el LED
-> APAGAR    LAMPARA     AT lMadrid
+> APAGAR    LAMPARA     AT lBurgos
                 INK     9               ; Color del narrador
-                XMESSAGE "Apagas la lámpara."
+                XMESSAGE "You turn off the lamp."
                 DONE
 
-> EXAMINA   LAMPARA     AT lMadrid
+> EXAMINA   LAMPARA     AT lBurgos
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una lámpara con una pantalla especialmente pequeña."
+                XMESSAGE "It's a lamp that shines a lot of light.."
                 DONE
 
-> EXAMINA 	TELEFONO    AT lMadrid
+> EXAMINA 	TELEFONO    AT lBurgos
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¡Venga ya!, nadie EXAMINA el teléfono. Lo coge, lo descuelga, contesta, pero jamás lo examina. ¡No eres un Doctor!"
+                XMESSAGE "Come on!, no one's looking at the phone. He picks it up, hangs it up, takes it, but he never examines it. You're not a doctor!"
                 DONE
 
 ; Controlamos coger el teléfono dos veces y sacamos dos mensajes distintos dependiendo del valor del flag que controla que usó o no el teléfono.
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lMadrid  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+> COGER     TELEFONO    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                XMESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del teléfono; no obstante, tanteas con las manos en la mesilla y descuelgas.#n"
+                XMESSAGE "You're too sleepy to know where the sound of the phone is coming from, however, you grope around on the table and pick up.#n"
                 INK     12              ; Color del padre 
-                XMESSAGE "Buenos días, hijo. ¿Qué tal estás?#n"
+                XMESSAGE "Good morning, son. How are you?#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Hola, padre. Hasta que me llamaste estaba como un rey, en cama, tratando de negociar con Morfeo una segunda ronda.#n#n"
+                XMESSAGE "Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n#n"
                 INK     12              ; Color del padre 
-                XMESSAGE "Dile a Morfeo que espere un momento y escucha: Recuerda que hoy habíamos quedado aquí, en la sierra. Tenemos algo muy importante que contarte, así que espabila y ve saliendo de casa, que sino, se te va a hacer muy tarde.#n"
+                XMESSAGE "Tell Morpheus to wait a moment and listen: Remember that today we had arranged to meet here, in the mountains. We have something very important to tell you, so get up and leave the house, otherwise it's going to be very late..#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Ostrás, pues si te soy sincero, estaba tan cansado que ya no recordaba que hoy teníamos que vernos. Venga, salgo ya.#n"
+                XMESSAGE "Hmmm, if I am honest, I was so tired that I no longer remembered that we had to meet today. Okay, I'll be leaving now..#n"
                 INK     12              ; Color del padre 
-                XMESSAGE "Ahora nos vemos, hijo, conduce con cuidado. Hasta luego.#n"
+                XMESSAGE "See you now, son, drive carefully. Bye bye.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Hasta luego, padre."              
+                XMESSAGE "See you later, father.."              
                 DONE              
 
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lMadrid      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
+> COGER     TELEFONO    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al ESTE."
+                XMESSAGE "Your father has already hung up. You better get off your ass and go EAST to get the car."
                 DONE
 
 ; Controlamos la accion dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
 > EXAMINA   HABITACION
-> MIRAR		_			AT lMadrid    
+> MIRAR		_			AT lBurgos    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 INK     9               ; Color de tu consciencia
-                XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono, ¡vago!#n#n¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
+                XMESSAGE "The sound comes from the bedside table and you're still in bed, listening to the phone ring, you're a bum!#n#nYou're not going to take it? What if it's important?#n#nWhat if they're the ones at the game store to notify you that they have MSX Nemesis in stock again?"
                 DONE
 
 > EXAMINA   HABITACION
-> MIRAR		_			AT lMadrid 
+> MIRAR		_			AT lBurgos 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
                 INK     9               ; Color de tu consciencia
-                XMESSAGE "Tu habitación es grande, pero la decoración es minimalista; una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible."
+                XMESSAGE "Your room is big, but the decoration is minimalist; a bed, a table with a lamp and a wall cupboard is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the ornaments are expendable."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
-> DORMIR	_			AT lMadrid      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
+> DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "El teléfono sigue sonando. ¿No piensas cogerlo? ¿Vas a seguir durmiendo?"             
+                XMESSAGE "The phone's still ringing. Aren't you going to pick it up? Are you going to keep sleeping?"             
                 DONE
 
-> DORMIR	_			AT lMadrid      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
+> DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
                 NOTZERO fUsarTelefono   ; Ha cogido el teléfono
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿En serio quieres seguir durmiendo?"    
+                XMESSAGE "Do you really want to keep sleeping?"    
                 DONE
 
-> DORMIR	_			AT lMadrid
+> DORMIR	_			AT lBurgos
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     9               ; Color del narrador
-                XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en el Continente.#n"
+                XMESSAGE "You're a smart guy. Nothing in this world is going to break your moment of peace and quiet. Besides, you already had the day planned: shower, coffee, reading the news and then trying the new MSX games you bought in the game store.#n"
                 INK     15
                 END
 
-> DORMIR	_			AT lMadrid
+> DORMIR	_			AT lBurgos
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     9               ; Color del narrador
-                XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en el Continente.#n"
+                XMESSAGE "You're a smart guy. Nothing in this world is going to break your moment of peace and quiet. Besides, you already had the day planned: shower, coffee, reading the news and then trying the new MSX games you bought in the game store.#n"
                 INK     15
                 END
 
 ; Es un complemento por si el jugador se le ocurre usarla.
-> COLGAR    TELEFONO    AT lMadrid
+> COLGAR    TELEFONO    AT lBurgos
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede COLGARLO
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Cuelgas el teléfono."
+                XMESSAGE "You hang up the phone."
                 DONE          
 
 ; Control de movimiento para salir de la localización. Sólo se puede salir hacia el Este, pero es obligatorio haber cogido el teléfono.
 
-> E			_			AT lMadrid      ; Si no ha usado el teléfono, no le dejamos ir al Este
+> E			_			AT lBurgos      ; Si no ha usado el teléfono, no le dejamos ir al Este
                 ZERO    fUsarTelefono   ; No ha usado el teléfono
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿No crees que deberías atender al teléfono?"
+                XMESSAGE "Don't you think you should answer the phone?"
                 DONE
 
-> E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
+> E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
                 NOTWORN oRopa           ; No lleva puesto el objeto
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes salir de casa en pelotas. Debes vestirte antes."
+                XMESSAGE "You can't leave the house naked. You have to get dressed first."
                 DONE
 
-> E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
+> E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
                 WORN     oRopa          ; Lleva puesto el objeto
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     9               ; Color del narrador
-                XMESSAGE "Te duchas y te vistes con rapidez: sabes que a tu padre no le gusta que le hagan esperar.#k#n#nCoges las llaves del coche, cierras la puerta de casa y vas directo al garaje del edificio.#k"
+                XMESSAGE "You shower and dress quickly: you know your father doesn't like to be kept waiting.#k#n#nYou take the car keys, lock the door and go straight to the building's garage.#k"
                 ;
                 ; NOTA: Vestir al personaje?
                 ;
@@ -1049,7 +1049,7 @@ BAJAR   lBath2
 > ESCUCHAR METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
 	            XPLAY "l2t255o4cdegffaggo5co4bo5co4gecdefgagfedeco3bo4cdo3gbo4dfedeo4cdegffaggo5co4bo5co4gecdefgfedco3go4co3bo4l1c"
                 INK     2
-                XMESSAGE "Creo que me he confundido de música, perdón... sigue al ESTE y olvidemos este asunto."
+                XMESSAGE "I think I got the music mixed up, sorry... follow to the EAST and let's forget about this."
                 DONE
 
 > E			_			AT lCoche
@@ -1061,12 +1061,12 @@ BAJAR   lBath2
 
 > EXAMINA   _           AT lCoche
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Estás conduciendo, no creo que sea buena idea examinar nada ahora mismo."
+                XMESSAGE "You're driving, I don't think it's a good idea to examine anything right now."
                 DONE
 
 > MIRAR     _           AT lCoche
                 INK     9               ; Color del narrador
-                XMESSAGE "Te encanta la paz y tranquilidad del paisaje que discurre mientras conduces. Es un viaje largo, pero tiene cierto encanto."
+                XMESSAGE "You love the peace and quiet of the scenery as you drive. It's a long drive, but it has a certain charm."
                 DONE
 
 ; Estamos en locExtCasa
@@ -5539,7 +5539,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
                 DONE
 
-> USAR      CHUPETE     AT lMadrid
+> USAR      CHUPETE     AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "Eres un tramposo o tienes muchas prisas.#nVenga, te llevaré directamente al recibidor de la casa.#k"
                 CLS                     ; Limpiamos la pantalla
