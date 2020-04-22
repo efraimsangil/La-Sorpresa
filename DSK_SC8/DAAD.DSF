@@ -542,7 +542,7 @@ LUEGO           2       conjugation
 ;/0 "La Sorpresa.#n#nUna historia original de:#n#nJavier Quílez <Invértigo>#nEfraim Sánchez Gil#n#n#n Y la envidiable colaboración de:#n#nJorge Romero <Oniric Factor>#n<Gráficos>#n#nMiguel Angel <Mortimer>#n<Hardware del cartucho>#n#nNatalia Pujol <NatyPC>#n<Adaptación de msx2daad para este juego>#n#n#nDesarrollado con DAAD y MSX2DAAD. 2020#n#n"
 /0 ""
 /1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Eres un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de ti un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Está decidido... Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por ti que debes despertarte definitivamente."
-/2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
+/2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
 /5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
@@ -845,40 +845,6 @@ BAJAR   lBath2
 ; NOTA: Poner sistema de claves para continuar la aventura desde algún punto determinado
 
 ; Aquí comienza la aventura
-> USAR      MUEBLE      
-                INK     1
-                XMESSAGE "INK 1"
-                INK     2               ; Color de tu consciencia
-                XMESSAGE "INK 2"
-                INK     3               ; Color del protagonista
-                XMESSAGE "INK 3"
-                INK     4
-                XMESSAGE "INK 4"
-                INK     5
-                XMESSAGE "INK 5"
-                INK     6
-                XMESSAGE "INK 6"
-                INK     7
-                XMESSAGE "INK 7"
-                INK     8
-                XMESSAGE "INK 8"
-                INK     9               ; Color del narrador
-                XMESSAGE "INK 9"
-                INK     10
-                XMESSAGE "INK 10"
-                INK     11
-                XMESSAGE "INK 11"
-                INK     12
-                XMESSAGE "INK 12"
-                INK     13
-                XMESSAGE "INK 13"
-                INK     14
-                XMESSAGE "INK 14"
-                INK     15              ; Color del sistema
-                XMESSAGE "INK 15"
-                DONE
-
-; Comienza la historia
 
 ; Estamos en locMadrid
 
@@ -1523,7 +1489,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque sino me voy a cabrear... ¡Y lo sabéis!#n"
+                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡Y lo sabéis!#n"
                 INK     9               ; Color del narrador
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     2               ; Color de tu consciencia
@@ -5480,7 +5446,7 @@ BAJAR   lBath2
                 INK     2               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que sino, el vino cae mal al estómago.#k"
+                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
                 DESTROY oPeluche
                 LET     fNenaMala 5	
@@ -5506,7 +5472,7 @@ BAJAR   lBath2
                 INK     2               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que sino, el vino cae mal al estómago.#k"
+                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
                 DESTROY oPeluche
                 LET     fNenaMala 5	
@@ -5643,12 +5609,6 @@ BAJAR   lBath2
                 DONE
 
 ; Uso general
-;> USAR      COJONES
-                ;SET     fJugar
-                ;GOTO lCochera
-                ;GOTO	lRecibidor
-                ;RESTART
-                ;DONE
 
 > EXAMINA	FOTOGRAFIA
                 NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
@@ -5705,7 +5665,7 @@ BAJAR   lBath2
                 SET     fJugar  
                 GOTO    lCochera
 
-> LLAMAR      CHUPETE     AT lBurgos
+> LLAMAR    CHUPETE     AT lBurgos
                 CLS                     ; Limpiamos la pantalla
                 WINDOW 0
                 XPICTURE 225
@@ -5763,40 +5723,38 @@ BAJAR   lBath2
                ; RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-;> AYUDA     _
-;                INK     15              ; Color del sistema
-;                XMESSAGE "Guía de referencia rápida."
-;                XMESSAGE "Bienvenido a esta aventura de ficción interactiva.#n#nDadas las prestaciones de nuestros vetustos micro ordenadores, el programa interpreta un rango reducido de acciones.#n#nRecomendamos, pues, que construyas tus frases en infinitivo. Algunas de las acciones más comunes son:#n#n    > Ayuda#n    > Inventario[I]#n    > Describir localización[R]#n    > Examinar[EX]#n    > Norte[N], Sur[S], Este[E], Oeste[O]#n    > Bajar[AB], Subir[AR]#n    > Entrar[EN], Salir[SA]#n    > Coger#n    > Usar#n    > Empujar, Tirar, Mover#n    > Abrir, Cerrar#n    > Poner, Quitar#n    > Mover#n    > Encender, Prender#n#nConforme cumplas determinados hitos en tu aventura, desbloquearás algunos passwords.#n#nBasta con escribir 'pass' seguido de un espacio y la palabra clave en la sala de recarga energética, para continuar donde lo dejaste."
-;                DONE
-
-;> AYUDA     _
-                ;INK     9
-                ;XMESSAGE "Siempre que uses MIRAR, se te dan pistas, para saber lo que debes hacer en dicha localización, lee atentamente."
-                ;XMESSAGE "fControlLuz"
-                ;PRINT   73
-                ;XMESSAGE "fUsarCerilla"
-                ;PRINT   90
-                ;XMESSAGE "fTurnosConLuz"
-                ;PRINT   72
-                ;XMESSAGE "fVasAMorir"
-                ;PRINT   89
-                ;XMESSAGE "fDarkF"
-                ;PRINT   28
-               ; DONE
-                 ;XMESSAGE "áéíóúñÑ#n"
-            ;XMESSAGE "Abres el grifo.#k#n"
-            ;XMESSAGE " Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas...#n#k"
-
-;> AYUDA     MAGIA
-;            INK     15 
-;            XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n"
-;            INK     4
-;            XMESSAGE "#nHas muerto.#n"
-;            INK     15
-;            XMESSAGE "Tengo tanto que contarte." 
-;            XMESSAGE "#nMe dijo hasta pronto. No para de dolerme.#n"
-;            XMESSAGE "a, ante, bajo, cabe, con, contra, de, desde, durante, en, entre, hacia, hasta, mediante, para, por, según, sin, so, sobre, tras, versus y vía"
-;            DONE
+> USAR      MUEBLE      
+                INK     1
+                XMESSAGE "INK 1"
+                INK     2               ; Color de tu consciencia
+                XMESSAGE "INK 2"
+                INK     3               ; Color del protagonista
+                XMESSAGE "INK 3"
+                INK     4
+                XMESSAGE "INK 4"
+                INK     5
+                XMESSAGE "INK 5"
+                INK     6
+                XMESSAGE "INK 6"
+                INK     7
+                XMESSAGE "INK 7"
+                INK     8
+                XMESSAGE "INK 8"
+                INK     9               ; Color del narrador
+                XMESSAGE "INK 9"
+                INK     10
+                XMESSAGE "INK 10"
+                INK     11
+                XMESSAGE "INK 11"
+                INK     12
+                XMESSAGE "INK 12"
+                INK     13
+                XMESSAGE "INK 13"
+                INK     14
+                XMESSAGE "INK 14"
+                INK     15              ; Color del sistema
+                XMESSAGE "INK 15"
+                DONE
 
 > AYUDA     MAGIA
                 INK 15
