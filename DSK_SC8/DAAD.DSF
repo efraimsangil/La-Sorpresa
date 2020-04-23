@@ -1280,7 +1280,7 @@ BAJAR   lBath2
 > COGER 	TODO		AT lPorche
                 ZERO    fPorche
                 INK     2               ; Color de tu consciencia
-	            XMESSAGE "¡Coger el qué si no has mirado nada!"
+	            XMESSAGE "¡Coger el qué, si no has mirado nada!"
                 DONE
 
 > EXAMINA 	FELPUDO		AT lPorche
