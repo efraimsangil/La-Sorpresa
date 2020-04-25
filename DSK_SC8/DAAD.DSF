@@ -1087,7 +1087,7 @@ BAJAR   lBath2
                 INK     14             ; Color del crío  
                 XMESSAGE "Ahí ya no podemos ir, mi hermana ha bloqueado la puerta y yo no puedo hacer nada para abrirla.#n"
                 INK     3              ; Color del protagonista
-                XMESSAGE "A mi me pasaba lo mismo cuando llegaba borracho a casa a las tantas."
+                XMESSAGE "A mí me pasaba lo mismo cuando llegaba borracho a casa a las tantas."
                 INK     9              ; Color del narrador
                 DONE
 
@@ -2264,11 +2264,12 @@ BAJAR   lBath2
                 LET     fVasAMorir 0
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable."
+                XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
                 INK     14 ;Color del crío
                 XMESSAGE "Tengo algo importante que decir.#k#n"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Dime, ¿que te ocurre?#k#n"
+                XMESSAGE "Dime, ¿qué te ocurre?#k#n"
                 INK     14 ;Color del crío
                 XMESSAGE "Bajo este suelo están nuestros cuerpos.#k#n Un día yo me escapé de la casa en busca de ayuda y el señor mató a mi madre y a mi hermana, más tarde me encontró en mitad del camino y me trajo a casa.#k#n El señor me obligó a traer aquí los cuerpos de mi madre y de mi hermana, cavó un agujero en este suelo y cuando terminó, me mató a mi también y aún estamos enterrados aquí.#n"
                 INK     3 ;Color del protagonista
@@ -2854,7 +2855,7 @@ BAJAR   lBath2
                 XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz.#n"
                 INK     3
                 ; CAGADA
-                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque se que me van a hacer montones de preguntas, estoy seguro."  
+                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque sé que me van a hacer montones de preguntas, estoy seguro."  
                 ZERO fDesenterrar
                 SET  fDesenterrar
                 DONE
@@ -2963,7 +2964,7 @@ BAJAR   lBath2
                 INK     14 
                 XMESSAGE "Te espero aquí.#k#n#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n"
+                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece tu padre.#k#n"
                 CLS
                 INK     12  
                 XMESSAGE "Hijo, ¿qué ha ocurrido aquí?#k#n"
@@ -2983,7 +2984,7 @@ BAJAR   lBath2
                 INK     12
                 XMESSAGE "Vaya, lamento que no leyeses el mensaje que te escribí, no era mi intención dejarte solo y esperaba que hubieses venido enseguida a casa de tu hermana, que es donde nos encontrábamos.#k#n"
                 INK     3
-                XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes que era lo que estaba ocurriendo.#k#n"
+                XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes qué era lo que estaba ocurriendo.#k#n"
                 INK     12
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo, no queríamos preocuparte.#k#n"
                 INK     3
@@ -3019,9 +3020,9 @@ BAJAR   lBath2
                 INK     14 
                 XMESSAGE "Te espero aquí.#k#n#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n#b"
+                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece tu padre.#k#n#b"
                 INK     12  
-                XMESSAGE "Hijo, que ha ocurrido aquí?#k#n"
+                XMESSAGE "Hijo, qué ha ocurrido aquí?#k#n"
                 INK     3 
                 XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
                 XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
@@ -3037,7 +3038,7 @@ BAJAR   lBath2
                 INK     12
                 XMESSAGE "Vaya, lamento que no leyeses el mensaje que te escribí, no era mi intención dejarte solo y esperaba que hubieses venido enseguida a casa de tu hermana, que es donde nos encontrábamos.#k#n"
                 INK     3
-                XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes que era lo que estaba ocurriendo.#k#n"
+                XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes qué era lo que estaba ocurriendo.#k#n"
                 INK     12
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo, no queríamos preocuparte.#k#n"
                 INK     3
@@ -3932,7 +3933,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Abres el banco y en su interior encuentras ropa de mujer e infantil.#n"
                 INK     3
-                XMESSAGE "¿Esto que es?#n"
+                XMESSAGE "¿Esto qué es?#n"
                 INK     15
                 ISAT    oLlaveBodega 252
                 CREATE  oLlaveBodega
@@ -3982,9 +3983,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Quitas la loseta y descubres que debajo hay un hueco que contiene un cuaderno escondido.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Un diario? ¿Quien se toma tantas molestias en esconder un diario?#n"
+                XMESSAGE "¿Un diario? ¿Quién se toma tantas molestias en esconder un diario?#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿A que esperas para leerlo?#n"
+                XMESSAGE "¿A qué esperas para leerlo?#n"
                 INK     15              ; Color del sistema
                 ISAT    oDiario 252
                 CREATE  oDiario 
@@ -4509,7 +4510,7 @@ BAJAR   lBath2
                 ZERO    fBajarRetrete
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                XMESSAGE "Bajas la tapa del retrete y te subes a el."
+                XMESSAGE "Bajas la tapa del retrete y te subes a él."
                 GOTO    lRetrete
                 DONE
 
@@ -5953,7 +5954,7 @@ BAJAR   lBath2
                 INK     13
                 XMESSAGE "16 de Marzo de 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n"
+                XMESSAGE " El señor ha abusado de mí. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n"
                 INK     13
                 XMESSAGE "10 de Abril de 1950.#n"
                 INK     9               ; Color del narrador
@@ -5961,7 +5962,7 @@ BAJAR   lBath2
                 INK     13
                 XMESSAGE "4 de Mayo de 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n"
+                XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera dónde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n"
                 XMESSAGE "Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mí y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n"
                 XMESSAGE "Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n"
                 INK     13
@@ -5983,7 +5984,8 @@ BAJAR   lBath2
                  INK    13               
                 XMESSAGE "23 de Febrero de 1951.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n"
+                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n"
+                XMESSAGE " Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n"
                 INK     13
                 XMESSAGE "9 de Marzo de 1951.#n"
                 INK     9               ; Color del narrador
