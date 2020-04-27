@@ -66,12 +66,12 @@
 ; NOTA: Describir en el código todos los flags
 #define fLeerDiario         64      ; Control que activamos cuando leemos el diario
 #define fPuertaCochera      65      ; NOTA: Lo vamos a usar?
-#define fDesenterrar        66      ; 
+#define fDesenterrar        66      ; Flag que controla si se llegó a desenterrar los cuerpos, de modo que te condiciona el tipo de final al que puedes llegar.
 #define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lBurgos
 #define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide DORMIR
 #define fFinTerma           69      ; 
 #define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos
-#define fPorche             71      ;
+#define fPorche             71      ; Flag que controla ciertas acciones repetidas en lPorche
 #define fTurnosConLuz       72      ; Control del número de turnos con Luz
 #define fControlLuz         73      ; Control de la luz de la cerilla 
 #define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces
@@ -106,10 +106,10 @@
 #define fAceite             104     ; Has entrado en BATH1 y examinado la cisterna
 #define fCodigoDiario       105     ; Código necesario para abrir la trampilla de lBodega
 #define fQuitarMancha       106     
-#define fCombinacion        107
-#define fApagarCerilla      108
-#define fVasAPalmar         109
-#define fManchaSangre       110
+#define fCombinacion        107     ; Flag para controlar si tenemos la combinación del candado que hay para acceder al gabinete. Dicha combinación nos la da la niña si le damos el peluche bueno.
+#define fApagarCerilla      108     ; Flag para dejar al jugador que apague la cerilla de modo intencionado. Le vendrá bien en el Gabinete.
+#define fVasAPalmar         109     ; Flag para controlar si prende cerilla en lAseo matamos al protagonista
+#define fManchaSangre       110     ; Flag para lRoom2 y que no aparezca la mancha de sangre cuando examinas dos veces
 
 ;                               Localizaciones
 #define lIntro              0
@@ -144,7 +144,7 @@
 #define lRetrete            29
 
 ;                               Objetos
-#define oRopa               0       ; Ropa
+#define oRopa               0       ; lBurgos
 #define oLlaveChamizo       1       ; lCochera
 #define oLlaveCochera       2       ; No se usa
 #define oCableTelefono      3       ; No se usa
@@ -1098,9 +1098,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> S			_           AT lExtCasa
-                ;Zero fPuertaCochera
-                ;CARRIED oLlaveCochera
+> S			_           AT lExtCasa            
                 INK     9                   ; Color del narrador
                 CLS                         ; Limpiamos la pantalla
                 GOTO    lExteriorCochera    ; Vamos a la localización
