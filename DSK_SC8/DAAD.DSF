@@ -846,7 +846,7 @@ BAJAR   lBath2
 
 ; Aquí comienza la aventura
 
-; Estamos en locMadrid
+; Estamos en locBurgos
 
 > ABRIR     ARMARIO 
 > EXAMINA   ARMARIO     AT lBurgos
@@ -911,8 +911,9 @@ BAJAR   lBath2
 > COGER     TELEFONO    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
+                XMESSAGE "#b"
                 WINDOW  0
-                XPICTURE 202    ; Pantalla del Equipo de Desarrollo
+                XPICTURE 202            ; Cogiendo el teléfono
                 WINDOW  1
                 ;CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
@@ -1025,15 +1026,15 @@ BAJAR   lBath2
                 XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
                 WINDOW  0
-                XPICTURE 002  ; Pantalla 
+                XPICTURE 002            ; Foto dentro del coche 
                 WINDOW  1
                 XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#k#b"
                 WINDOW  0
-                XPICTURE 204         ; Carretera
+                XPICTURE 204            ; Foto de la Carretera
                 WINDOW  1
                 XMESSAGE "Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
                 WINDOW  0
-                XPICTURE 205    ; Tunel de árboles
+                XPICTURE 205            ; Foto del Tunel de árboles
                 WINDOW  1
                 INK     9               ; Color del narrador
                 XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b"
