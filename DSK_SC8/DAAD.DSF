@@ -11,7 +11,7 @@
 /CTL                            ;Sección de control
 ;#extern "MLV_MSX.BIN"
 ;#classic
-;#debug
+#debug
 
 #define TIMEOUT   87                ;If Timeout last frame
 
@@ -5637,33 +5637,34 @@ BAJAR   lBath2
                 DONE
 
 > USAR      CHUPETE     AT lBurgos
-                ISAT    oLlaveBodega 252
-                CREATE  oLlaveBodega
-                GET     oLlaveBodega
-                ISAT    oLlavePatio 252
-                CREATE  oLlavePatio
-                GET     oLlavePatio
-                ISAT    oCerillas 252
-                CREATE  oCerillas
-                GET     oCerillas
-                ISAT    oLataDeAceite 252
-                CREATE  oLataDeAceite 
-                GET     oLataDeAceite 
-                ISAT    oHacha 252
-                CREATE  oHacha
-                GET     oHacha
+                ;ISAT    oLlaveBodega 252
+                ;CREATE  oLlaveBodega
+                ;GET     oLlaveBodega
+                ;ISAT    oLlavePatio 252
+                ;CREATE  oLlavePatio
+                ;GET     oLlavePatio
+                ;ISAT    oCerillas 252
+                ;CREATE  oCerillas
+                ;GET     oCerillas
+                ;ISAT    oLataDeAceite 252
+                ;CREATE  oLataDeAceite 
+                ;GET     oLataDeAceite 
+                ;ISAT    oHacha 252
+                ;CREATE  oHacha
+                ;GET     oHacha
                 ;ISAT    oPelota 252
                 ;CREATE  oPelota
                 ;GET     oPelota
-                ISAT    oLlavePorche 252
-                CREATE  oLlavePorche
-                GET     oLlavePorche
+                ;ISAT    oLlavePorche 252
+                ;CREATE  oLlavePorche
+                ;GET     oLlavePorche
                 ;ISAT    oPaleta 252
                 ;CREATE  oPaleta
                 ;GET     oPaleta
-                SET     fCombinacion     ; Tenemos la combinación del candado
-                SET     fJugar  
-                GOTO    lCochera
+                ;SET     fCombinacion     ; Tenemos la combinación del candado
+                ;SET     fJugar  
+                GOTO    lRecibidor
+                DONE
 
 > LLAMAR    CHUPETE     AT lBurgos
                 CLS                     ; Limpiamos la pantalla
