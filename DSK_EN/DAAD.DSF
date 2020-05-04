@@ -1,28 +1,37 @@
-;------------------------------------------------------------------------------------------
-;ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-;ÑÑÑÑÑ                                                                                  ÑÑÑÑÑ
-;ÑÑÑÑÑ Este es el fichero de inicio de la librería para DAAD Reborn Compiler en español ÑÑÑÑÑ
-;ÑÑÑÑÑ                                                                                  ÑÑÑÑÑ
-;ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+; BLANK.SCE empty database for DAAD V2
+;
+; This database provides a way of adapting PAW & DAAD V1 sources to DAAD V2. 
+; Note that flags which were automatically decremented no longer do so.
+;
+; English language template, recreated by Stefan Vogt, Pond Soft [17-7-18].
 
-; Por favor no quites las eñes en el recuadro justo encima, están ahí para que notes fácil-
-; mente si abres el fichero con una codificación que no es la correcta (ISO-8859-1 o Win1252)
+;------------------------------------------------------------------------------
+;
+; 'Everything is possible in this life ( but it all costs time and money! )'
+;                                                              Tim Gilberts
+;
+;                                      'And also WE ALL have to work for it'
+;                                                            Andrï¿½s Samudio
+;
+;                                                                   [8-6-89]
+;
+;------------------------------------------------------------------------------
 
 /CTL                            ;Sección de control
-;#extern "MLV_MSX.BIN"
+
+;#extern "MALUVA"
 ;#classic
 ;#debug
 
-#define TIMEOUT   87                ;If Timeout last frame
+#define TIMEOUT   87            ;If Timeout last frame
 
-;                               System flags 0-63
+; System flags 0-63
 #define fDark               0
 #define fObjectsCarried     1
-
 #define fDarkF              28
-#define fGFlags             29      ; This is best tested using HASAT GMODE
+#define fGFlags             29     ; This is best tested using HASAT GMODE
 #define fScore              30
-#define fTurns              31      ; 2 bytes
+#define fTurns              31    ; 2 bytes
 #define fTurnsHi            32
 
 #define fVerb               33
@@ -50,55 +59,58 @@
 #define fRefObjAttr2        59
 #define fInkeyKey1          60
 #define fInkeyKey2          61
-#define fScreenMode         62      ; 2=Text, 4=CGA, 13=EGA, 141=VGA
-#define fCurrentWindow      63      ; Which window is active at the moment
+#define fScreenMode         62     ; 2=Text, 4=CGA, 13=EGA, 141=VGA
+#define fCurrentWindow      63     ; Which window is active at the moment
 
 ;                               Flags de usuario
 ; NOTA: Describir en el código todos los flags
 #define fLeerDiario         64      ; Control que activamos cuando leemos el diario
 #define fPuertaCochera      65      ; NOTA: Lo vamos a usar?
-#define fDesenterrar        66      ; No se usa
+#define fDesenterrar        66      ; Flag que controla si se llegó a desenterrar los cuerpos, de modo que te condiciona el tipo de final al que puedes llegar.
 #define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lBurgos
-#define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide DORMIR
+#define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide SLEEP
 #define fFinTerma           69      ; 
 #define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos
-#define fCableTelefono      71      ; No se usa
+#define fPorche             71      ; Flag que controla ciertas acciones repetidas en lPorche
 #define fTurnosConLuz       72      ; Control del número de turnos con Luz
 #define fControlLuz         73      ; Control de la luz de la cerilla 
-#define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces
+#define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERN dos veces
 #define fCajon              75      ; Control para el cajón de la consola en lRecibidor
-#define fConsola            76      ; Control para EXAMINAR CONSOLA en lRecibidor y mostrar varios mensajes
-#define fEscalon             77      ; Control del TABLON suelto de lEscaleras
+#define fConsola            76      ; Control para EXAMI CONSOLA en lRecibidor y mostrar varios mensajes
+#define fEscalon            77      ; Control del TABLON suelto de lEscaleras
 #define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo
 #define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama
 #define fUsarPala           80      ; Control para que no usemos la pala dos veces
 #define fJugar              81      ; Control para saber si se jugó con el niño en lPatio (Crucial para uno de los finales)
-#define fTriturador         82      ; Control para matar al jugador si decide EXAMINAR por segunda vez el TRITURADOR en lCocina
-#define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche
+#define fTriturador         82      ; Control para matar al jugador si decide EXAMI por segunda vez el SHREDDER en lCocina
+#define fFoco               83      ; Control para matar al jugador si decido EXAMI SPOTS por segunda vez en lPorche
 #define fPatio              84      ; Control para jugar con el crío en lPatio
 #define fGnomoRoto          85      ; Control para cuando rompes el Gnomo en lPorche
 #define fInsistePuerta      86      ; Control para abrir la puerta de la cochera en ExteriorCochera
 #define fInsisteMuchoPuerta 87      ; Control para abrir la puerta de la cochera en ExteriorCochera
-#define fUsarTarjeta        88      ; Control de USAR TARJETA en la VITRINA en lSalon
+#define fUsarTarjeta        88      ; Control de USAR CARD en la SHOWCASE en lSalon
 #define fVasAMorir          89      ; Control para matar al jugador en lGabinete
 #define fUsarCerilla        90      ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado
-#define fUsarAceite         91      ; Control de ENGRASAR CANDADO en lBodega para poder abrirlo
+#define fUsarAceite         91      ; Control de GREASE PADLOCK en lBodega para poder abrirlo
 #define fManguera           92      ; Control para comprobar que encuentra y usa la manguera en lCochera
 #define fMangueraRejilla    93      ; Control para comprobar que pone la manguera en la rejilla en lCochera
 #define fConectarManguera   94      ; Control para comprobar conecta la manguera en el grifo en lCochera
 #define fCerrarGrifo        95      ; Control para comprobar que cierra el grifo de agua en lCochera
 #define fBajarRetrete       96      ; Control de la destrucción del retrete cuando bajas del mismo en lBath2
 #define fFlashBack          97      ; Control del cambio de realidad en lRoom3. Tenemos distintas descripciones al tener dicho flag
-#define fTerma              98      ; Controla EXAMINAR dos veces la TERMA en lBath3
-#define fFotoPeluche            99      ; Si has visto o no la foto en lRoom1
+#define fTerma              98      ; Controla EXAMI dos veces la THERMA en lBath3
+#define fFotoPeluche        99      ; Si has visto o no la foto en lRoom1
 ; Los flags 100 y 101 se usan en un proceso que se encarga de mostrarnos las salidas cuando usamos SALID en el juego
-#define fMoverAlambique     102     ; Controla si se movió o no el ALAMBIQUE en lBodega para acceder a la TRAMPILLA
+#define fMoverAlambique     102     ; Controla si se movió o no el STILL en lBodega para acceder a la HATCH
 #define fNenaMala           103     ; Controla que hayamos entrado en lRoom3 y activamos la aparación de la cría en lPasillo2
 #define fAceite             104     ; Has entrado en BATH1 y examinado la cisterna
 #define fCodigoDiario       105     ; Código necesario para abrir la trampilla de lBodega
 #define fQuitarMancha       106     
-#define fCombinacion        107
-#define fApagarCerilla      108
+#define fCombinacion        107     ; Flag para controlar si tenemos la combinación del candado que hay para acceder al gabinete. Dicha combinación nos la da la niña si le damos el peluche bueno.
+#define fApagarCerilla      108     ; Flag para dejar al jugador que apague la cerilla de modo intencionado. Le vendrá bien en el Gabinete.
+#define fVasAPalmar         109     ; Flag para controlar si prende cerilla en lAseo matamos al protagonista
+#define fManchaSangre       110     ; Flag para lRoom2 y que no aparezca la mancha de sangre cuando examinas dos veces
+
 
 
 ;                               Localizaciones
@@ -160,255 +172,262 @@
 #define oManguera           23      ; lCochera
 
 ;------------------------------------------------------------------------------
-/VOC                            ;Vocabulario
-;                       Movimiento: verbos y nombres < 14
-N       2       noun
-NORTE   2       noun
-S       3       noun
-SUR     3       noun
-E       4       noun
-ESTE    4       noun
-O       5       noun
-OESTE   5       noun
-NE      6       noun
-NO      7       noun
-SE      8       noun
-SO      9       noun
-AR      10      noun
-ARRIBA  10      noun
-SUBIR   10      verb
-AB      11      noun
-ABAJO   11      noun
-BAJAR   11      verb
-SALID   12      verb
-X       12      verb
-ENTRAR  13      verb
-SALIR   14      verb
+/VOC    ;Vocabulary
 
-;                       Nombres <20 indica que se pueden usar como verbos
-;                               <50 indica nombre propio (no admite lo, la...)
-I       15      noun
-INVEN   15      noun
-TODO    20      noun
-TODOS   20      noun
-TODAS   20      noun
+;                       Movements ie verbs and nouns < 14
+N       2       noun
+NORTH   2       noun
+S       3       noun
+SOUTH   3       noun
+E       4       noun
+EAST    4       noun
+W       5       noun
+WEST    5       noun
+NE      6       noun
+NW      7       noun
+SE      8       noun
+SW      9       noun
+U       10      noun
+UP      10      noun
+ASCEN   10      verb
+D       11      noun
+DOWN    11      noun
+DESCE   11      verb
+EXITS   12      verb
+X       12      verb
+ENTER   13      verb
+EXIT    14      verb
+
+;                       Nouns   <20 means can be used as verbs
+;                               <50 means a proper noun ie not an 'IT'
+I       14      noun
+INVEN   14      noun
+ALL     20      noun
+LOT     20      noun
+EVERY   20      noun
 
 ;                               Objetos
 CONSOLA         98     noun     ; lRecibidor
-MESILLA         99     noun     ; lBurgos
-DIARIO          100    noun     ; lCriada
-LLAV1           101    noun     ; Es un objeto
-LLAV2           102    noun     ; Es un objeto
-TRAVESA         103    noun     ; lChamizo
-PALA            104    noun     ; lGabinete
-LLAV0           105    noun     ; Es un objeto
-FELPUDO         106    noun     ; lPorche
-MACETA          107    noun     ; lPorche
+NIGHTSTAND      99     noun     ; lBurgos
+DIARY           100    noun     ; lCriada
+KEY1            101    noun     ; Es un objeto
+KEY2            102    noun     ; Es un objeto
+CROSSBAR        103    noun     ; lChamizo
+SHOVEL          104    noun     ; lGabinete
+KEY0            105    noun     ; Es un objeto
+DOORMAT         106    noun     ; lPorche
+POT             107    noun     ; lPorche
 GNOMO           108    noun     ; lPorche
-PORCHE          109    noun     ; lPorche
+PORCH           109    noun     ; lPorche
 METALICA        110    noun     ; lCoche, lPorche
-PUERTA          111    noun     ; lPorche, lBodega, lExteriorCochera, lCochera, lChamizo
-CAJON           112    noun     ; lRecibidor, lCocina
-CERILLAS        113    noun     ; lRecibidor
-BODEGA          114    noun     ; lBodega
-ESCALERAS       115    noun     ; lEscaleras
-LLAVE           116    noun     ; lPorche
+DOOR            111    noun     ; lPorche, lBodega, lExteriorCochera, lCochera, lChamizo
+DRAWER          112    noun     ; lRecibidor, lCocina
+MATCH           113    noun     ; lRecibidor
+CELLAR          114    noun     ; lBodega
+STAIRS          115    noun     ; lEscaleras
+KEY             116    noun     ; lPorche
 TABLON          117    noun     ; lEscaleras
-CAJA            118    noun     ; lEscaleras
-TARJETA         119    noun     ; lSalon
-LLAV3           120    noun     ; Es un objeto
+BOX             118    noun     ; lEscaleras
+CARD            119    noun     ; lSalon
+KEY3            120    noun     ; Es un objeto
 SKEY1           121    noun     ; Es un objeto
-KCAJA           122    noun     ; Es un objeto
-ROPA            123    noun     ; Es un objeto
-MUEBLE          124    noun     ; lSalon
-FREGADERO       125    noun     ; lCocina
-LAVADORA        126    noun     ; lCocina
-TELEFONO        127    noun     ; lBurgos
-PELUCHE         128    noun     ; Es un objeto
-INTERRUPTOR     129    noun     ; lAseo
-ASEO            130    noun     ; lAseo
-SUMIDERO        131    noun     ; lCocina
-PLANTA          132    noun     ; lPorche
-FOTOGRAFIA      133    noun     ; lRecibidor
-CUCHILLO        134    noun     ; lCocina
-PELOTA          135    noun     ; lPatio
-CAMA            136    noun     ; lBurgos, lCriada, lRoom1, lRoom2, lRoom3
-PALETA          137    noun     ; lBodega
-HACHA           138    noun     ; Es un objeto
-PARED           139    noun     ; lBodega, lCochera, lCocina, lRoom3
-CHIMENEA        140    noun     ; lSalon
-RESTOS          141    noun     ; NOTA: Creo que lo vamos a quitar
-PANEL           142    noun     ; No se usa
+KBOX            122    noun     ; Es un objeto
+CLOTHES         123    noun     ; Es un objeto
+FURNITURE       124    noun     ; lSalon
+SINK            125    noun     ; lCocina
+WASHER          126    noun     ; lCocina
+PHONE           127    noun     ; lBurgos
+TEDDY           128    noun     ; Es un objeto
+SWITCH          129    noun     ; lAseo
+TOILET          130    noun     ; lAseo
+SUMP            131    noun     ; lCocina
+PLANT           132    noun     ; lPorche
+PHOTOGRAPHY     133    noun     ; lRecibidor
+KNIFE           134    noun     ; lCocina
+BALL            135    noun     ; lPatio
+BED             136    noun     ; lBurgos, lCriada, lRoom1, lRoom2, lRoom3
+SCRAPER         137    noun     ; lBodega
+AXE             138    noun     ; Es un objeto
+WALL            139    noun     ; lBodega, lCochera, lCocina, lRoom3
+FIREPLACE       140    noun     ; lSalon
+TREAD           141    noun     ; No se usa
+WALLS           142    noun     ; No se usa
 CABLE           143    noun     ; Es un objeto. No se usa.
-APARADOR        144    noun     ; lCocina
-LLAV4           145    noun     ; Es un objeto
-LLAV5           146    noun     ; Es un objeto
-FOCOS           147    noun     ; lPorche
-CIEMPIES        148    noun     ; lPorche
-SUELO           149    noun     ; lPorche, lGabinete, lCochera, lChamizo, lAseo, lCriada, lRoom3
-CUCHARAS        150    noun     ; lCocina
-TRITURADOR      151    noun     ; lCocina
-MANTA           152    noun     ; lBurgos
-TIMBRE          153    noun     ; lPorche
-ALACENA         154    noun     ; lDespensa
-OBJETO          155    noun     ; lRoom1
-VITRINA         156    noun     ; lSalon
-CHUPETE         157    noun     ; lBurgos. Cheat
+DRESSER         144    noun     ; lCocina
+KEY4            145    noun     ; Es un objeto
+KEY5            146    noun     ; Es un objeto
+SPOTS           147    noun     ; lPorche
+CENTIPEDE       148    noun     ; lPorche
+FLOOR           149    noun     ; lPorche, lGabinete, lCochera, lChamizo, lAseo, lCriada, lRoom3
+SPOONS          150    noun     ; lCocina
+SHREDDER        151    noun     ; lCocina
+BLANKET         152    noun     ; lBurgos
+BELL            153    noun     ; lPorche
+STORAGE         154    noun     ; lDespensa
+OBJECT          155    noun     ; lRoom1
+SHOWCASE        156    noun     ; lSalon
+PACIFIER        157    noun     ; lBurgos. Cheat
 MONITOR         158    noun     ; No se usa
-LAMPARA         159    noun     ; lBurgos, lRoom3
+LAMP            159    noun     ; lBurgos, lRoom3
 CASSETTE        160    noun     ; lSalon
 MURO            161    noun     ; lPatio
-MANCHA          162    noun     ; lBodega, lBath1
-COJONES         163    noun     ; lCocina
-RANURA          164    noun     ; lSalon
-RESPIRADERO     165    noun     ; lBath1
-MAGIA           166    noun     ; Cheat
-LATA            167    noun     ; Es un objeto
-TRAMPILLA       168    noun     ; lBodega
-CANDADO         169    noun     ; lBodega
-GABINETE        170    noun     ; lChamizo
-REJILLA         171    noun     ; lCochera
-MANGUERA        172    noun     ; lCochera
-GRIFO           173    noun     ; lCochera
-MESA            174    noun     ; lGabinete
-CAMILLA         175    noun     ; lGabinete
-CADENAS         176    noun     ; lGabinete
-BOMBERO         177    noun     ; No se si lo llegaremos a usar
-TRASTOS         178    noun     ; lChamizo
-TIERRA          179    noun     ; lChamizo
-ARMARIO         180    noun     ; lChamizo
-ALAMBIQUE       181    noun     ; lBodega
-BOTELLERO       182    noun     ; lBodega
-TINA            183    noun     ; lBath1, lBath2
-CISTERNA        184    noun     ; lBath2, lRetrete
-RETRETE         185    noun     ; lRetrete
-PILA            186    noun     ; lBath2
-ALFOMBRA        187    noun     ; lRoom3
-MESITA          188    noun     ; lRoom3
-TERMA           189    noun     ; lBath3
+STAIN           162    noun     ; lBodega, lBath1
+BALLS           163    noun     ; lCocina
+GROOVE          164    noun     ; lSalon
+VENT            165    noun     ; lBath1
+MAGIC           166    noun     ; Cheat
+TIN             167    noun     ; Es un objeto
+HATCH           168    noun     ; lBodega
+PADLOCK         169    noun     ; lBodega
+OFFICE          170    noun     ; lChamizo
+GRID            171    noun     ; lCochera
+HOSE            172    noun     ; lCochera
+TAP             173    noun     ; lCochera
+TABLE           174    noun     ; lGabinete
+LITTER          175    noun     ; lGabinete
+BONDS           176    noun     ; lGabinete
+FIREMAN         177    noun     ; No se si lo llegaremos a usar
+JUNK            178    noun     ; lChamizo
+SAND            179    noun     ; lChamizo
+CLOSET          180    noun     ; lChamizo
+STILL           181    noun     ; lBodega
+WINERACK        182    noun     ; lBodega
+TUB             183    noun     ; lBath1, lBath2
+CISTERN         184    noun     ; lBath2, lRetrete
+WC              185    noun     ; lRetrete
+BASIN           186    noun     ; lBath2
+CARPET          187    noun     ; lRoom3
+BEDSIDE         188    noun     ; lRoom3
+THERMA          189    noun     ; lBath3
 MURETE          190    noun     ; lBath3
-OSITO           191    noun     ; No se usa
-AGUA            192    noun     ; lBath3
-MOSAICO         193    noun     ; lBath3
-ALCOBA          194    noun     ; lRoom1
-HABITACION      195    noun     ; lBurgos
-RECIBIDOR       196    noun     ; lRecibidor
-CHAMIZO         197    noun     ; lChamizo
-COCINA          198    noun     ; lCocina
-DESPENSA        199    noun     ; lDespensa
-SALON           200    noun     ; lSalon
-PATIO           201    noun     ; lPatio
-PASILLO         202    noun     ; lPasillo1
-BANCO           203    noun     ; lCriada
-ORINAL          204    noun     ; lCriada
+BEAR            191    noun     ; 
+WATER           192    noun     ; lBath3
+MOSAIC          193    noun     ; lBath3
+BEDROOM         194    noun     ; lRoom1
+ROOM            195    noun     ; lBurgos
+FOYER           196    noun     ; lRecibidor
+SHED            197    noun     ; lChamizo
+KITCHEN         198    noun     ; lCocina
+PANTRY          199    noun     ; lDespensa
+LOUNGE          200    noun     ; lSalon
+COURTYARD       201    noun     ; lPatio
+HALLWAY         202    noun     ; lPasillo1
+BENCH           203    noun     ; lCriada
+URINAL          204    noun     ; lCriada
 BANO            205    noun     ; lBath1
-BAÑO            206    noun     ; lBath1
-FLUIDO          207    noun     ; lBath2
-SANGRE          208    noun     ; lBath2
-LOSETA          209    noun     ; lCriada
-CABECERO        210    noun     ; lRoom3
-GENERADOR       211    noun     ; lCochera
+BATHROOM        206    noun     ; lBath1
+FLUID           207    noun     ; lBath2
+BLOOD           208    noun     ; lBath2
+TILE            209    noun     ; lCriada
+HEADBOARD       210    noun     ; lRoom3
+GENERATOR       211    noun     ; lCochera
 LAREIRA         212    noun     ; lSalon
-COLCHON         213    noun     ; lCriada
-LUNA            214    noun     ; lPatio
-BARANDILLA      215    noun     ; lEscaleras
+MATTRESS        213    noun     ; lCriada
+MOON            214    noun     ; lPatio
+HANDRAIL        215    noun     ; lEscaleras
 
-;                               Verbos
-COGER           20      verb
-DEJAR           21      verb
-SOLTAR          21      verb
-QUITAR          22      verb
-PONER           23      verb
-R               24      verb
-M               24      verb
-MIRAR           24      verb
-REDES           24      verb
-F               25      verb
-FIN             25      verb
-SAVE            26      verb
-SV              26      verb
-LOAD            27      verb
-LD              27      verb
-RAMSA           28      verb
-RAMLO           29      verb
-EX              30      verb
-EXAMI           30      verb
-DECIR           31      verb
-PREGUNT         31      verb
-HABLAR          31      verb
-JUGAR           32      verb
-BEBER           33      verb
+;                       Verbs
+GET     20      verb
+TAKE    20      verb
+DROP    21      verb
+PUT     21      verb
+REMOV   22      verb
+WEAR    23      verb
+R       24      verb
+REDES   24      verb
+QUIT    25      verb
+Q       25      verb
+STOP    25      verb
+SAVE    26      verb
+LOAD    27      verb
+RAMSA   28      verb
+RAMLO   29      verb
+LOOK    30      verb
+EXAMI   30      verb
+SAY     31      verb
+ASK     31      verb
+TALK    31      verb
+SPEAK   31      verb
 
 ;verbos jugador
-USAR            33      verb
-DORMIR          34      verb
-TIRAR           35      verb
-ESCUCHAR        36      verb
-ENCENDER        37      verb
-ABRIR           38      verb
-PRENDER         39      verb
-MOVER           40      verb
-GOLPEAR         41      verb
-LANZAR          42      verb
-ROMPER          43      verb
-LEER            44      verb
-COLOCAR         45      verb
-EMPUJAR         46      verb
-PULSAR          47      verb
-ACCIONAR        48      verb
-CONTESTAR       49      verb
-DESCOLGAR       49      verb
-ACABAR          50      verb
-LEVANTAR        51      verb
-APAGAR          52      verb
+
+PLAY            32      verb
+DRINK           33      verb
+USE             33      verb
+SLEEP           34      verb
+PULL            35      verb
+LISTEN          36      verb
+LIGHT           37      verb
+OPEN            38      verb
+TURN            39      verb    ; LIGHT
+MOVE            40      verb
+HIT             41      verb
+THROW           42      verb
+BREAK           43      verb
+READ            44      verb
+PONER           45      verb
+PUSH            46      verb
+PRESS           47      verb
+ACTIVATE        48      verb
+ANSWER          49      verb
+PICK            49      verb
+ACABAR          50      verb    ; no se usa
+LIFT            51      verb
+APAGAR          52      verb    ; LIGHT
 CARGAR          53      verb
-TREPAR          54      verb
-SALTAR          55      verb
-ENGRASAR        56      verb
+CLIMB           54      verb
+JUMP            55      verb
+GREASE          56      verb
 CONECTAR        57      verb
-AYUDA           58      verb
-COLGAR          59      verb
-LLAMAR          60      verb
+HELP            58      verb
+HUNG            59      verb
+CALL            60      verb
 CERRAR          61      verb
-CAGAR           62      verb
+SHIT            62      verb
 
-;                               Adjetivos
-PEQUE           2       adjective
-GRANDE          3       adjective
-VIEJO           4       adjective
-VIEJA           4       adjective
-NUEVO           5       adjective
-NUEVA           5       adjective
-DURO            6       adjective
-DURA            6       adjective
-BLANDO          7       adjective
-CORTO           8       adjective
-CORTA           8       adjective
-LARGO           9       adjective
-LARGA           9       adjective
-COCHE           10      adjective
+;                               Adjectives
+SMALL   2       adjective
+BIG     3       adjective
+LARGE   3       adjective
+OLD     4       adjective
+NEW     5       adjective
+HARD    6       adjective
+SOFT    7       adjective
+SHORT   8       adjective
+LONG    9       adjective
+CAR     10      adjective
 
-;                               Adverbios
-RAPID           2       adverb
-DESPA           3       adverb
-LENTA           3       adverb
-CUIDAd          5       adverb
+;                               Adverbs
+QUICK   2       adverb
+SLOWL   3       adverb
+QUIET   4       adverb
+LOUDL   5       adverb
+CAREF   6       adverb
+SOFTL   6       adverb
+GENTL   6       adverb
 
 ;                               Prepositions
-A               2       preposition
-;DE              3       preposition
-;EN              4       preposition
-;POR             5       preposition
-;TRAVES          5       preposition
-;BAJO            7       preposition
-;JUNTO           8       preposition
-;MENOS           13      preposition
+TO      2       preposition
+FROM    3       preposition
+IN      4       preposition
+OUT     5       preposition
+THROU   6       preposition
+OVER    7       preposition
+UNDER   8       preposition
+BY      9       preposition
+ON      10      preposition
+OFF     11      preposition
+AT      12      preposition
+EXCEP   13      preposition
 
-;                               Pronombres
-;                               Conjunciones
-Y               2       conjugation
-ENTONCE         2       conjugation
-LUEGO           2       conjugation
+;                               Pronouns
+IT      2       pronoun
+THEM    2       pronoun
+
+;                               Conjugations
+AND     2       conjugation
+THEN    2       conjugation
+
 
 
 ;------------------------------------------------------------------------------
@@ -483,7 +502,7 @@ LUEGO           2       conjugation
 /67 "W,"
 
 ;------------------------------------------------------------------------------
-/MTX                            ;Mensajes
+/MTX    ;Message Texts
 /0 "#nExits: "
 /1 "No one"
 /2 "North "
@@ -501,30 +520,31 @@ LUEGO           2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "Ropa de calle"           ; No se usa
-/1 "llave del chamizo"
+/0 "Ropa de calle#g#f=#t"          
+/1 "llave del chamizo#g#f2#t"
 /2 "llave de la cochera"    ; No se usa
 /3 "una batería de coche"   ; No se usa
-/4 "una pala"
-/5 "una llave de la entrada principal"
-/6 "un felpudo"
-/7 "una maceta"
-/8 "un Gnomo"
-/9 "una caja de cerillas"
-/10 "una llave dorada"     ; No se usa 
-/11 "una tarjeta de seguridad"
-/12 "llave de una caja pequeña"
-/13 "un diario"
-/14 "un osito de peluche"
-/15 "llave del patio"
-/16 "una fotografía"
-/17 "una pelota"
-/18 "una paleta"
-/19 "un hacha"
-/20 "llave de la bodega" 
-/21 "llaves del coche"
-/22 "una lata de aceite"
-/23 "una manguera"
+/4 "una pala#g#f()*#t"
+/5 "una llave de la entrada principal#g#f7#t"
+/6 "un felpudo#g#fVWXY#t"
+/7 "una maceta#g#f!#t"
+/8 "un Gnomo#g#f9#t"
+/9 "una caja de cerillas#g#f+,#t"
+/10 "una llave dorada"      ; No se usa 
+/11 "una tarjeta de seguridad#g#f<#t"
+/12 "llave de una caja pequeña#g#f3#t"
+/13 "un diario#g#f$#t"
+/14 "un osito de peluche#g#f##t"
+/15 "llave del patio#g#f6#t"
+/16 "una fotografía#g#fD#t"
+/17 "una pelota#g#f:;#t"
+/18 "una paleta#g#fmn#t"
+/19 "un hacha#g#f%&'#t"
+/20 "llave de la bodega#g#f1#t"  
+/21 "llaves del coche#g#fIJ#t"
+/22 "una lata de aceite#g#fFG#t"
+/23 "una manguera#g#fKL#t"
+
 ;------------------------------------------------------------------------------
 /LTX                            ;Location Texts
 ; \k\b #k#b
@@ -559,8 +579,9 @@ LUEGO           2       conjugation
 /28 " Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en el centro. En la pared, pese a la reducida visibilidad,  puedes contemplar un grifo y también hay un generador de gasoil."
 /29 " Estás encima del retrete. Desde aquí puedes acceder a la cisterna."
 
+
 ;------------------------------------------------------------------------------
-/CON                            ;Conexiones
+/CON    ;Connections
 /0
 /1                      ; lBurgos
 E       lCoche
@@ -570,49 +591,49 @@ E       lExtCasa
 N       lExteriorChamizo
 S       lExteriorCochera
 E       lPorche
-O       lCoche
+W       lCoche
 /4                      ; lEntradaCochera
 N       lExtCasa
 /5                      ; lEntradaChamizo
 S       lExteriorCochera
 /6                      ; lPorche
-O       lExtCasa
+W       lExtCasa
 /7                      ; lRecibidor
 N       lAseo
 S       lCocina
 E       lSalon
-BAJAR   lBodega
-SUBIR   lEscaleras
-O       lExtCasa
+DOWN   lBodega
+UP   lEscaleras
+W       lExtCasa
 /8                      ; lAseo
 S       lRecibidor
 /9                      ; lBodega
-SUBIR   lRecibidor
+UP   lRecibidor
 /10                     ; lCocina
 E       lDespensa
 N       lRecibidor
 /11                     ; lSalon
-O       lRecibidor
+W       lRecibidor
 E       lPatio
 /12                     ; lEscaleras
-SUBIR   lPasillo1
-BAJAR   lRecibidor
+UP   lPasillo1
+DOWN   lRecibidor
 /13                     ; lDespensa
-O       lCocina
+W       lCocina
 /14                     ; lPatio
-O       lSalon
+W       lSalon
 /15                     ; lCriada
 N       lSalon
 /16                     ; lPasillo1
-BAJAR   lEscaleras
+DOWN   lEscaleras
 N       lRoom1
 E       lPasillo2
 /17                     ; lPasillo2
-O       lPasillo1
+W       lPasillo1
 E       lPasillo3
 S       lRoom2
 /18                     ; lPasillo3
-O       lPasillo2
+W       lPasillo2
 N       lRoom3
 /19                     ; lRoom1
 S       lPasillo1
@@ -623,7 +644,7 @@ S       lRoom1
 N       lPasillo2
 S       lBath2
 /22                     ; lBath2
-SUBIR   lRetrete
+UP   lRetrete
 N       lRoom2
 /23                     ; lRoom3
 S       lPasillo3
@@ -635,46 +656,48 @@ N       lChamizo
 /26
 
 /27                     ; lChamizo
-O       lExteriorChamizo
+W       lExteriorChamizo
 
 /28                     ; lCochera
-O       lExteriorCochera
+W       lExteriorCochera
 E       lBodega
 
 /29                     ; lRetrete
-BAJAR   lBath2
+DOWN   lBath2
 
 ;------------------------------------------------------------------------------
-/OBJ                            ;Objetos
+/OBJ    ;Object Definitions
+
 ;obj  starts  weight    c w  5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0    noun   adjective
 ;num    at
-/0      252     1       _ Y  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    ROPA        _
-/1      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV1       _
-/2      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV2       _
-/3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV3       _
+/0      252     1       _ Y  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CLOTHES        _
+/1      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY1       _
+/2      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY2       _
+/3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY3       _
 /4      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CABLE       _
-/5      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV0       _
-/6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
-/7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
+/5      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY0       _
+/6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    DOORMAT     _
+/7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    POT      _
 /8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
-/9      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CERILLAS    _
+/9      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MATCH    _
 /10     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TABLON      _
 /11     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    SKEY1       _
-/12     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KCAJA       _
-/13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV4       _
-/14     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PELUCHE     _
-/15     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV5       _
-/16     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FOTOGRAFIA  _
-/17     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PELOTA      _
-/18     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PALETA      _
-/19     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    HACHA       _
-/20     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV4       _
-/21     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV5       _
-/22     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LATA        _
-/23     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MANGUERA    _
+/12     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KBOX       _
+/13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY4       _
+/14     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TEDDY     _
+/15     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY5       _
+/16     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PHOTOGRAPHY  _
+/17     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    BALL      _
+/18     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    SCRAPER      _
+/19     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    AXE       _
+/20     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY4       _
+/21     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KEY5       _
+/22     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TIN        _
+/23     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    HOSE    _
+
 
 ;------------------------------------------------------------------------------
-/PRO 0                          ;Bucle principal de localidades
+/PRO 0       ;Main Location Loop
 
 > _         _   AT      0               ; Empezamos una partida
                 PROCESS 6               ; El proceso de inicialización
@@ -686,7 +709,7 @@ BAJAR   lBath2
                 SET     fDarkF           ; Oscuro
 
 > _         _   PICTURE @fPlayer        ; Si hay gráfico, cárgalo
-                DISPLAY @fDarkF         ; Muestralo si no oscuro; si oscuro
+                DISPLAY @fDarkF         ; Muéstralo si no oscuro; si oscuro
 
 > _         _   WINDOW  1
                 NOTZERO fDarkF           ; Oscuro
@@ -695,21 +718,15 @@ BAJAR   lBath2
 > _         _   ZERO    fDarkF
                 DESC    @fPlayer        ; DESC No sale del bucle ahora
 
-;> _       _     NEWLINE 
-;                INK     6 
-;                SYSMESS 63
-;                INK     1 
-
 > _         _   PROCESS 3
 
-; Ahora usamos el proceso 1 como el bucle principal del juego. Un retorno desde
-; aquí significa el fin del juego
+; Now we use Process 1 as the main code loop, a return from it is the end
+; of the game
 
-> _         _   PROCESS 1
+> _       _     PROCESS 1
 
 ;------------------------------------------------------------------------------
 /PRO 1
-
 > _         _   INK     15              ; Color blanco para la entrada de acciones
 
 > _         _   PROCESS 4               ; Lo que en el PAW era el proceso 2
@@ -747,43 +764,27 @@ BAJAR   lBath2
 
 ;------------------------------------------------------------------------------
 /PRO 2
-
 > _         _   INK     15              ; Color del sistema
 
 > _         _   HASAT TIMEOUT
                 SYSMESS 35
                 DONE
 
-> _         _   SYSMESS 6               ; No te entiendo
+> _         _   SYSMESS 6               ; I didn't understand
 
 ;------------------------------------------------------------------------------
-/PRO 3 ; Antiguo proceso 1 del PAW. (Nótese que tanto la tabla de respuestas como los
-; antiguos procesos 1 y 2 del PAW ahora pueden estar en cualquer parte; o no
-; existir en absoluto, ya que ya no hay nada automático al haberse implementado
-; todo en el propio lenguaje del DAAD)
-; Esta tabla se ejecuta tras describir las localidades, por lo cual es ideal para describir 
-; cosas de las localidades que no sean fijas
+/PRO 3 ; Old process 1. Note that both the response table and the old PAW 
+; process tables 1 and 2 can now be anywhere or completely absent. Everything
+; is implemented in the DAAD language itself.
 
-> _         _   NEWLINE
-                ZERO    fDarkF          ; No está oscuro
-                PROCESS 7
+;This is better carried out thus
+> _       _     NEWLINE
+                ZERO    fDarkF            ; Isn't dark
                 LISTOBJ
-                XMESSAGE "#n"
-
-; Este es un control de luz de las localizaciones comprendidas entre 9 y 29
-> _         _
-                GT      38 8            ; Si la localización es mayor de 8
-                LT      38 30           ; Si la localización es menor de 30
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
-                SET     fDarkF          ; Activamos la oscuridad
-                INK     15
-                XMESSAGE "#n"
-                XMESSAGE "Estamos a oscuras."
 
 ;------------------------------------------------------------------------------
-/PRO 4 ; Antiguo proceso 2 del PAW
+/PRO 4 ; Old process 2
 
-; Por cada turno, descontamos un turno de luz
 > _         _
                 GT      fTurnosConLuz 0
                 MINUS   fTurnosConLuz 1
@@ -799,6 +800,7 @@ BAJAR   lBath2
                 CLEAR   fControlLuz
                 XMESSAGE "#k"
                 CLS
+                GFX     0 5
                 CLEAR   fUsarCerilla
                 XMESSAGE "Se ha consumido la cerilla."
                 
@@ -813,7 +815,8 @@ BAJAR   lBath2
                 ;MESSAGE "#n"
                 CLEAR   fUsarCerilla
 
-/PRO 5 ; Interpretamos los comandos como en la antigua tabla de respuestas
+;------------------------------------------------------------------------------
+/PRO 5 ; Command decoder
 
 ; Colores del juego
 ;INK 2       Voz de la conciencia
@@ -832,45 +835,11 @@ BAJAR   lBath2
 ; NOTA: Poner sistema de claves para continuar la aventura desde algún punto determinado
 
 ; Aquí comienza la aventura
-> USAR      MUEBLE      
-                INK     1
-                XMESSAGE "INK 1"
-                INK     2               ; Color de tu consciencia
-                XMESSAGE "INK 2"
-                INK     3               ; Color del protagonista
-                XMESSAGE "INK 3"
-                INK     4
-                XMESSAGE "INK 4"
-                INK     5
-                XMESSAGE "INK 5"
-                INK     6
-                XMESSAGE "INK 6"
-                INK     7
-                XMESSAGE "INK 7"
-                INK     8
-                XMESSAGE "INK 8"
-                INK     9               ; Color del narrador
-                XMESSAGE "INK 9"
-                INK     10
-                XMESSAGE "INK 10"
-                INK     11
-                XMESSAGE "INK 11"
-                INK     12
-                XMESSAGE "INK 12"
-                INK     13
-                XMESSAGE "INK 13"
-                INK     14
-                XMESSAGE "INK 14"
-                INK     15              ; Color del sistema
-                XMESSAGE "INK 15"
-                DONE
 
-; Comienza la historia
+; Estamos en locBurgos
 
-; Estamos en locMadrid
-
-> ABRIR     ARMARIO 
-> EXAMINA   ARMARIO     AT lBurgos
+> OPEN     CLOSET 
+> EXAMI   CLOSET     AT lBurgos
             INK     15
             ISAT    oRopa 252       ; El objeto no está en ninguna parte (de momento no es visible)
             CREATE  oRopa           ; Creamos el objeto de su ropa
@@ -880,59 +849,65 @@ BAJAR   lBath2
             INK     9
             DONE
 
-> EXAMINA 	CAMA		AT lBurgos
+> EXAMI 	BED		AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a big bed and it looks very comfortable."
                 DONE
 
-> EXAMINA 	MANTA		AT lBurgos
+> EXAMI 	BLANKET		AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "It's soft and warm."
                 DONE
 
 ; Controlamos el poder examinar la mesilla habiendo usado el teléfono o no, de modo que mostramos dos tipos distintos de mensajes.
-> EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
+> EXAMI 	NIGHTSTAND		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
                 ZERO    fUsarTelefono   ; Controlamos si NO ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a pine wood night table, with a lamp that lets in a lot of light and you can't look at it directly because it hurts your eyes. It's very clean and no scratches or scuffs.#n"
                 XMESSAGE "There's a gondola phone on it and it won't stop ringing."              
                 DONE
 
-> EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
+> EXAMI 	NIGHTSTAND		AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, cambiamos el mensaje de salida
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a pine wood night table, with a lamp that lets in a lot of light and you can't look at it directly because it hurts your eyes. It's very clean and no scratches or scuffs.#n"
                 DONE
 
 ; NOTA: Enciendo el LED
-> ENCENDER  LAMPARA     AT lBurgos
+> TURN  LAMP     AT lBurgos
+                PREP ON
                 INK     9               ; Color del narrador
                 XMESSAGE "You turn on the lamp."
                 DONE
 
 ; NOTA: Enciendo el LED
-> APAGAR    LAMPARA     AT lBurgos
+> TURN  LAMP     AT lBurgos
+                PREP OFF
                 INK     9               ; Color del narrador
                 XMESSAGE "You turn off the lamp."
                 DONE
 
-> EXAMINA   LAMPARA     AT lBurgos
+> EXAMI   LAMP     AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a lamp that shines a lot of light.."
                 DONE
 
-> EXAMINA 	TELEFONO    AT lBurgos
+> EXAMI 	PHONE    AT lBurgos
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Come on!, no one's looking at the phone. He picks it up, hangs it up, takes it, but he never examines it. You're not a doctor!"
                 DONE
 
 ; Controlamos coger el teléfono dos veces y sacamos dos mensajes distintos dependiendo del valor del flag que controla que usó o no el teléfono.
-> CONTESTAR TELEFONO
-> DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+> ANSWER PHONE
+> PICK PHONE
+> TAKE     PHONE    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
-                CLS                     ; Limpiamos la pantalla
+                XMESSAGE "#b"
+                WINDOW  0
+                XPICTURE 202            ; Cogiendo el teléfono
+                WINDOW  1
+                ;CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 XMESSAGE "You're too sleepy to know where the sound of the phone is coming from, however, you grope around on the table and pick up.#n"
                 INK     12              ; Color del padre 
@@ -949,65 +924,65 @@ BAJAR   lBath2
                 XMESSAGE "See you later, father.."              
                 DONE              
 
-> CONTESTAR TELEFONO
-> DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
+> ANSWER PHONE
+> PICK PHONE
+> TAKE     PHONE    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Your father has already hung up. You better get off your ass and go EAST to get the car."
                 DONE
 
-; Controlamos la accion dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
-> EXAMINA   HABITACION
-> MIRAR		_			AT lBurgos    
+; Controlamos la acción dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
+> EXAMI   ROOM
+> LOOK		_			AT lBurgos    
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 INK     9               ; Color de tu consciencia
                 XMESSAGE "The sound comes from the bedside table and you're still in bed, listening to the phone ring, you're a bum!#n#nYou're not going to take it? What if it's important?#n#nWhat if they're the ones at the game store to notify you that they have MSX Nemesis in stock again?"
                 DONE
 
-> EXAMINA   HABITACION
-> MIRAR		_			AT lBurgos 
+> EXAMI   ROOM
+> LOOK		_			AT lBurgos 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
                 INK     9               ; Color de tu consciencia
                 XMESSAGE "Your room is big, but the decoration is minimalist; a bed, a table with a lamp and a wall cupboard is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the ornaments are expendable."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
-> DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
+> SLEEP	_			AT lBurgos      ; Primer aviso al ejecutar SLEEP y no ha cogido el teléfono
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
-                ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
+                ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar SLEEP dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "The phone's still ringing. Aren't you going to pick it up? Are you going to keep sleeping?"             
                 DONE
 
-> DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
+> SLEEP	_			AT lBurgos      ; Primer aviso al ejecutar SLEEP y ha cogido el teléfono
                 NOTZERO fUsarTelefono   ; Ha cogido el teléfono
-                ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
+                ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar SLEEP dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Do you really want to keep sleeping?"    
                 DONE
 
-> DORMIR	_			AT lBurgos
+> SLEEP	_			AT lBurgos
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
-                NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
+                NOTZERO fNoUsarTelefono ; Ya usó SLEEP una vez
                 INK     9               ; Color del narrador
                 XMESSAGE "You're a smart guy. Nothing in this world is going to break your moment of peace and quiet. Besides, you already had the day planned: shower, coffee, reading the news and then trying the new MSX games you bought in the game store.#n"
                 INK     15
                 END
 
-> DORMIR	_			AT lBurgos
+> SLEEP	_			AT lBurgos
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
-                NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
+                NOTZERO fNoUsarTelefono ; Ya usó SLEEP una vez
                 INK     9               ; Color del narrador
                 XMESSAGE "You're a smart guy. Nothing in this world is going to break your moment of peace and quiet. Besides, you already had the day planned: shower, coffee, reading the news and then trying the new MSX games you bought in the game store.#n"
                 INK     15
                 END
 
 ; Es un complemento por si el jugador se le ocurre usarla.
-> COLGAR    TELEFONO    AT lBurgos
-                NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede COLGARLO
+> HUNG    PHONE    AT lBurgos
+                NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede HUNGLO
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "You hang up the phone."
                 DONE          
@@ -1028,25 +1003,41 @@ BAJAR   lBath2
                 DONE
 
 > E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
-                WORN     oRopa          ; Lleva puesto el objeto
+                WORN    oRopa          ; Lleva puesto el objeto
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
+                WINDOW  0
+                XPICTURE 203            ; El protagonista saliendo de casa
+                WINDOW  1
                 INK     9               ; Color del narrador
                 XMESSAGE "You shower and dress quickly: you know your father doesn't like to be kept waiting.#k#n#nYou take the car keys, lock the door and go straight to the building's garage.#k"
-                ;
-                ; NOTA: Vestir al personaje?
-                ;
+                ISAT    oLlaveCoche 252
+                CREATE  oLlaveCoche
+                GET     oLlaveCoche
+                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
-                CLS                     ; Limpiamos la pantalla
+                WINDOW  0
+                XPICTURE 002            ; Foto dentro del coche 
+                WINDOW  1
+                XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#k#b"
+                WINDOW  0
+                XPICTURE 204            ; Foto de la Carretera
+                WINDOW  1
+                XMESSAGE "Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
+                WINDOW  0
+                XPICTURE 205            ; Foto del Tunel de árboles
+                WINDOW  1
                 INK     9               ; Color del narrador
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b"
+                XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
+                ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 ; Estamos en locCoche
 
-> ESCUCHAR METALICA
-> ESCUCHAR METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
+> LISTEN METALICA
+> LISTEN METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
 	            XPLAY "l2t255o4cdegffaggo5co4bo5co4gecdefgagfedeco3bo4cdo3gbo4dfedeo4cdegffaggo5co4bo5co4gecdefgfedco3go4co3bo4l1c"
                 INK     2
                 XMESSAGE "I think I got the music mixed up, sorry... follow to the EAST and let's forget about this."
@@ -1054,17 +1045,18 @@ BAJAR   lBath2
 
 > E			_			AT lCoche
 				CLS                     ; Limpiamos la pantalla
+                DESTROY oLlaveCoche
 				GOTO    lExtCasa        ; Vamos a la localización
                 INK     9               ; Color del narrador
 				RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
 				DONE
 
-> EXAMINA   _           AT lCoche
+> EXAMI   _           AT lCoche
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "You're driving, I don't think it's a good idea to examine anything right now."
                 DONE
 
-> MIRAR     _           AT lCoche
+> LOOK     _           AT lCoche
                 INK     9               ; Color del narrador
                 XMESSAGE "You love the peace and quiet of the scenery as you drive. It's a long drive, but it has a certain charm."
                 DONE
@@ -1097,9 +1089,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> S			_           AT lExtCasa
-                ;Zero fPuertaCochera
-                ;CARRIED oLlaveCochera
+> S			_           AT lExtCasa            
                 INK     9                   ; Color del narrador
                 CLS                         ; Limpiamos la pantalla
                 GOTO    lExteriorCochera    ; Vamos a la localización
@@ -1185,7 +1175,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> MIRAR     _           AT lExtCasa
+> LOOK     _           AT lExtCasa
                 INK     9               ; Color del narrador
                 XMESSAGE "The house is spectacular; it is made entirely of stone from the quarries of Folgoso do Courel, which had to transport cheap labour by hand and suffered many worker injuries....#k#n#nOr maybe your parents already bought it built and had no idea how it was built.#n#nThe house has a big fireplace that in the winter has no break, burning the wood that your parents collect from the forest.#k#bIt has a nice front terrace, which you used to go out on in the summer for lunch or dinner.#n"
                 XMESSAGE "You notice the house is a bit careless, it's like it's been a while since you've had any visitors."
@@ -1193,7 +1183,7 @@ BAJAR   lBath2
 
 ; Estamos en locPorche
 ; Controlamos si se ejecuta dos veces la misma acción. La segunda vez matamos al jugador.
-> EXAMINA   FOCOS        AT lPorche                
+> EXAMI   SPOTS        AT lPorche                
                 ZERO    fFoco           ; Comprobamos que el flag vale 0
                 SET     fFoco           ; Se activa flag para que si vuelve a repetir esta acción, matamos al jugador
                 INK     9               ; Color del narrador
@@ -1202,8 +1192,8 @@ BAJAR   lBath2
                 XMESSAGE "I wouldn't do that again.."   ; Siempre que vamos a matar el jugador por repetir una acción dos veces, recibe un aviso
                 DONE
 
-> EXAMINA   FOCOS        AT lPorche
-                ; Si el flag de EXAMINA FOCOS está activo, mato al jugador
+> EXAMI   SPOTS        AT lPorche
+                ; Si el flag de EXAMI SPOTS está activo, mato al jugador
                 NOTZERO fFoco
                 INK     9               ; Color del narrador
                 XMESSAGE "You insist on looking again and a hypnotic attraction makes you fix your eyes on the spotlights.#k#n"
@@ -1231,7 +1221,7 @@ BAJAR   lBath2
                 DONE
 
 ; Con esta acción, se descubren todos los objetos de la localización para que el jugador pueda interactuar con ellos.
-> MIRAR     _			AT lPorche
+> LOOK     _			AT lPorche
                 ISAT    oMaceta 252     ; Succeeds if Object objno. is at Location locno
                 CREATE  oMaceta         ; Creamos el objeto
                 ISAT    oFelpudo 252
@@ -1246,10 +1236,10 @@ BAJAR   lBath2
                 XMESSAGE "¿Los vamos examinando poco a poco o tienes mucha prisa por entrar en la casa?"
                 DONE
 
-; Durante el juego, para hacerlo más dinámico, no hacemos uso del COGER objeto, si no que por el hecho de examinarlo, lo coges.
-> EXAMINA 	PLANTA
-> COGER 	MACETA
-> EXAMINA	MACETA		AT lPorche
+; Durante el juego, para hacerlo más dinámico, no hacemos uso del TAKE objeto, si no que por el hecho de examinarlo, lo coges.
+> EXAMI 	PLANT
+> TAKE 	POT
+> EXAMI	POT		AT lPorche
                 NOTZERO fPorche
                 INK     15              ; Color del sistema
                 GET     oMaceta         ; Cogemos el objeto
@@ -1258,63 +1248,63 @@ BAJAR   lBath2
                 XMESSAGE "The pot#g#f!#t still contains soil and what in its good times was possibly a plant, which is dry."
                 DONE
 
-> EXAMINA 	PLANTA
-> COGER 	MACETA
-> EXAMINA	MACETA		AT lPorche
+> EXAMI 	PLANT
+> TAKE 	POT
+> EXAMI	POT		AT lPorche
                 ZERO    fPorche                
                 INK     9               ; Color del narrador
                 XMESSAGE "I don't see anything like that."
                 DONE
 
 ; Como hay un bug con el COGER TODO del motor de DAAD, hemos creado una acción en esta localización para que sólo devuelva un mensaje.
-> COGER 	TODO		AT lPorche
+> TAKE 	ALL		AT lPorche
                 NOTZERO fPorche
                 INK     2               ; Color de tu consciencia
 	            XMESSAGE "Maybe it's better if you go slowly. You can't take so many things at once. You're not in a TV competition."
                 DONE
 
-> COGER 	TODO		AT lPorche
+> TAKE 	ALL		AT lPorche
                 ZERO    fPorche
                 INK     2               ; Color de tu consciencia
 	            XMESSAGE "Take what! if you haven't looked at anything!"
                 DONE
 
-> EXAMINA 	FELPUDO		AT lPorche
+> EXAMI 	DOORMAT		AT lPorche
                 NOTZERO fPorche
                 INK     9               ; Color del narrador
 	            XMESSAGE "It's a classic doormat with the message 'WELCOME HOME' #g#fVWXY#t."
                 DONE
 
-> EXAMINA 	FELPUDO		AT lPorche
+> EXAMI 	DOORMAT		AT lPorche
                 ZERO    fPorche
                 INK     9               ; Color del narrador
                 XMESSAGE "I don't see any of that."
                 DONE
 
 ; En estas acciones, usamos flags para controlar que se ejecute dos veces y en cada ejecución obtenga un mensaje distinto
-> LEVANTAR  FELPUDO
-> MOVER     FELPUDO
-> TIRAR     FELPUDO
-> EMPUJAR   FELPUDO
-> COGER 	FELPUDO     AT lPorche
+> LIFT  DOORMAT
+> MOVE     DOORMAT
+> PULL     DOORMAT
+> PUSH   DOORMAT
+> TAKE 	DOORMAT     AT lPorche
                 NOTZERO fPorche
                 ZERO    fCogerFelpudo   ; Flag que usamos para controlar que coja el Felpudo dos veces
                 SET     fCogerFelpudo
                 INK     9               ; Color del narrador
-	            XMESSAGE "Under the mat#g#fVWXY#t there's nothing special, except for a centipede that comes out when it's discovered.#n"
+	        XMESSAGE "Under the mat#g#fVWXY#t there's nothing special, except for a centipede that comes out when it's discovered.#n"
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Let's leave the mat #g#fVWXY#t in place and stop bothering the local wildlife."
                 DONE
 
-> COGER 	FELPUDO     AT lPorche
+> TAKE 	DOORMAT     AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
                 NOTCARR oLlavePorche
                 INK     2               ; Color de tu consciencia
-	            XMESSAGE "Really, again? The key to the house isn't gonna show up on its own. Keep looking."
+	        XMESSAGE "Really, again? The key to the house isn't gonna show up on its own. Keep looking."
                 DONE
 
-> COGER     CIEMPIES    AT lPorche
+> TAKE     CENTIPEDE    AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
                 INK     9               ; Color del narrador
@@ -1323,15 +1313,15 @@ BAJAR   lBath2
                 XMESSAGE "¿Tu crees que esto era necesario?"
                 DONE
 
-> EXAMINA   CIEMPIES    AT lPorche
+> EXAMI   CENTIPEDE    AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
                 INK     9               ; Color del narrador
                 XMESSAGE "Es repugnante."
                 DONE        
 
-> ROMPER    MACETA
-> TIRAR 	MACETA      AT lPorche
+> BREAK    POT
+> PULL 	POT      AT lPorche
                 CARRIED oMaceta         ; Llevamos el objeto en el inventario
                 INK     9               ; Color del narrador
 	            XMESSAGE "No es propio de ti, pero tiras la maceta contra el suelo y después de varios rebotes, se coloca justo donde estaba.#n"
@@ -1342,7 +1332,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"
                 DONE
 
-> DEJAR 	MACETA      AT lPorche
+> DROP 	POT      AT lPorche
                 CARRIED oMaceta         ; Llevamos el objeto en el inventario, si no fuera así, no se ejecuta
                 INK     9               ; Color del narrador
 	            XMESSAGE "Dejas la maceta#g#f!#t en su sitio con cuidado.#n"
@@ -1352,8 +1342,8 @@ BAJAR   lBath2
                 DROP    oMaceta         ; Soltamos el objeto, podríamos cogerlo de nuevo
                 DONE
 
-> COGER 	GNOMO
-> EXAMINA 	GNOMO		AT lPorche          
+> TAKE 	GNOMO
+> EXAMI 	GNOMO		AT lPorche          
                 NOTZERO fPorche      
                 INK     15              ; Color del sistema
                 GET     oGnomo          ; Cogemos el objeto
@@ -1364,21 +1354,21 @@ BAJAR   lBath2
                 XMESSAGE "No puedes abrirlo, a no ser que..."
                 DONE
 
-> ROMPER 	GNOMO		AT lPorche
+> BREAK 	GNOMO		AT lPorche
                 CARRIED oGnomo          ; Tenemos el objeto en el inventario
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Con las manos no puedes romperlo pero, ¿y si lo tiras al suelo?"
                 DONE
 
-> ABRIR 	GNOMO		AT lPorche
+> OPEN 	GNOMO		AT lPorche
                 CARRIED oGnomo          ; Tenemos el objeto en el inventario
                 INK     9               ; Color del narrador
                 XMESSAGE "Bajo los pies del gnomo hubo una abertura en su momento. Ahora hay yeso y no hay forma de quitarlo sin romper el gnomo."
                 DONE
 
 ; Gracias a lanzar el gnomo contra el suelo, el jugador descubre la llave de la puerta de entrada a la casa
-> LANZAR 	GNOMO
-> TIRAR		GNOMO		AT lPorche
+> THROW 	GNOMO
+> PULL		GNOMO		AT lPorche
                 CARRIED oGnomo          ; Llevamos el objeto en el inventario
                 ISAT    oLlavePorche 252
                 CREATE  oLlavePorche    ; Creamos el objeto
@@ -1396,22 +1386,22 @@ BAJAR   lBath2
                 DONE	
 
 ; Esto es por si al jugador le da por tirar este objeto sin haberlo cogido. No es necesario, pero seguro que se ejecuta después de jugar varias veces y el jugador quiere hacer las cosas rápido.
-> LANZAR    GNOMO
-> TIRAR		GNOMO		AT lPorche
+> THROW    GNOMO
+> PULL		GNOMO		AT lPorche
                 NOTCARR oGnomo          ; No llevamos el objeto en el inventario
                 INK     9               ; Color del narrador
             	XMESSAGE "No puedes tirar una cosa que no tienes."                
                 DONE	
 
 ; Si rompió el gnomo y examina el suelo, obtendrá este mensaje
-> EXAMINA   SUELO       AT lPorche
+> EXAMI   FLOOR       AT lPorche
                 NOTZERO fGnomoRoto      ; Comprueba si el gnomo se destruyó
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Después de tantos años, tus padres van a echar de menos al gnomo."
                 DONE
 
-> ESCUCHAR	METALICA
-> ESCUCHAR	METALLICA	AT lPorche
+> LISTEN	METALICA
+> LISTEN	METALLICA	AT lPorche
 	            XPLAY "T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
                 XPLAY "T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
                 XPLAY "T110O5G8E4.D32E32D4"
@@ -1419,31 +1409,31 @@ BAJAR   lBath2
                 XMESSAGE "Creo que me he confundido de música, perdón... intenta abrir la puerta y olvidemos este asunto."
                 DONE
 
-> EXAMINA   PORCHE      AT lPorche
+> EXAMI   PORCH      AT lPorche
                 INK     9               ; Color del narrador
                 XMESSAGE "Un imponente porche de madera preside la entrada de la casa, aunque da la sensación de que hace mucho tiempo que nadie pasa por aquí."
                 DONE
 
-> EXAMINA	PUERTA		AT lPorche
+> EXAMI	DOOR		AT lPorche
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, se abre con una llave.#n#nAhora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quién estaba en la puerta."
                 DONE
 
-> LLAMAR    TIMBRE
-> USAR      TIMBRE
-> EXAMINA   TIMBRE      AT lPorche
+> CALL    BELL
+> USE      BELL
+> EXAMI   BELL      AT lPorche
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?"
                 DONE
 
-> GOLPEAR	PUERTA		AT lPorche
+> HIT	DOOR		AT lPorche
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Nadie responde a tu llamada."
                 DONE
 
-> USAR 		PUERTA
-> USAR 		LLAVE
-> ABRIR 	PUERTA		AT lPorche
+> USE 		DOOR
+> USE 		KEY
+> OPEN 	DOOR		AT lPorche
                 NOTCARR oLlavePorche    ; No tenemos las llaves del Porche
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes entrar en la casa porque la puerta está cerrada con llave.#n"
@@ -1454,8 +1444,8 @@ BAJAR   lBath2
 ; Tenemos un par de acciones para controlar si entra en la casa teniendo las llaves y si lleva encima la maceta o no                
 
 > E         _
-> ENTRAR    _
-> ABRIR 	PUERTA		AT lPorche
+> ENTER     _
+> OPEN 	DOOR		AT lPorche
                 CLS                     ; Limpiamos la pantalla
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 CARRIED oMaceta         ; Tiene la maceta en el inventario
@@ -1479,8 +1469,8 @@ BAJAR   lBath2
                 DONE
 
 > E         _
-> ENTRAR    _
-> ABRIR		PUERTA		AT lPorche
+> ENTER     _
+> OPEN		DOOR		AT lPorche
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK     9               ; Color del narrador
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor.#n"
@@ -1501,14 +1491,14 @@ BAJAR   lBath2
 
 ; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, luego si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
 
-> SUBIR     _           AT lRecibidor
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+> UP     _           AT lRecibidor
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF          ; Activamos el flag de la oscuridad
                 INK     9               ; Color del narrador
                 XMESSAGE "Las escaleras están muy oscuras. Usa algo para iluminar, por favor.#n"
                 DONE
 
-> SUBIR     _           AT lRecibidor
+> UP     _           AT lRecibidor
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz     ; No es cero, luego tenemos luz
                 NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
@@ -1520,7 +1510,7 @@ BAJAR   lBath2
                 DONE
 
 > S         _           AT lRecibidor ; No podemos entrar en la cocina sin LUZ
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
                 XMESSAGE "La cocina está muy oscura, sin luz no es buena idea entrar. Necesitas algo para iluminar."
                 DONE
@@ -1537,7 +1527,7 @@ BAJAR   lBath2
                 DONE				
 
 > E         _           AT lRecibidor
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
                 XMESSAGE "El salón está muy oscuro, sin luz no se puede entrar."
                 DONE
@@ -1589,40 +1579,40 @@ BAJAR   lBath2
                 DONE
 
 ; MP3 de Intro del Super Mario
-> JUGAR     CONSOLA     AT lRecibidor
+> PLAY     		CONSOLA     AT lRecibidor
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Espera que voy a por el Super Mario Bros..."
                 DONE
 
-> EXAMINAR  RECIBIDOR
-> MIRAR     _           AT lRecibidor
+> EXAMI  FOYER
+> LOOK     _           AT lRecibidor
                 INK     9               ; Color del narrador
                 XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado; tiene un cajón."
                 DONE
 
 ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón. Siempre usamos flags para esto. Además, tenemos un flag para controlar si abrió el cajón y otro para la consola.
-> EXAMINA	CONSOLA     AT lRecibidor
+> EXAMI	CONSOLA     AT lRecibidor
                 ZERO    fConsola        ; Es la primera vez que ejecuta dicha acción
                 SET     fConsola        ; Activo un flag
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
                 DONE
 
-> EXAMINA	CONSOLA     AT lRecibidor
+> EXAMI	CONSOLA     AT lRecibidor
                 NOTZERO fConsola        ; Ya examinó la consola    
                 ZERO    fCajon          ; No hemos abierto el cajón
                 INK     9               ; Color del narrador
                 XMESSAGE "La consola sigue siendo preciosa. ¿Abres el cajón y seguimos?"
                 DONE
 
-> EXAMINA	CONSOLA     AT lRecibidor
+> EXAMI	CONSOLA     AT lRecibidor
                 NOTZERO fConsola        ; Ya examinó la consola    
                 NOTZERO fCajon          ; Hemos abierto el cajón
                 INK     9               ; Color del narrador
                 XMESSAGE "La consola sigue siendo preciosa. Ya no hay más que mirar aquí."
                 DONE
 
-> EXAMINA   CAJON        AT lRecibidor
+> EXAMI   DRAWER        AT lRecibidor
                 ZERO    fCajon          ; No hemos abierto el cajón
                 INK     9               ; Color del narrador
                 XMESSAGE "Es un cajón de madera con un tirador de hierro.#n"
@@ -1630,7 +1620,7 @@ BAJAR   lBath2
                 XMESSAGE "Si cierras los ojos y lo deseas con mucha fuerza, igual se abre sólo."
                 DONE
 
-> ABRIR		CAJON       AT lRecibidor
+> OPEN		DRAWER       AT lRecibidor
                 ISAT    oCerillas 252             
                 INK     9               ; Color del narrador
                 XMESSAGE "Abres el cajón y encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
@@ -1642,26 +1632,26 @@ BAJAR   lBath2
                 SET     fCajon          ; Ponemos el flag a 255. Hemos abierto el cajón
                 DONE
 
-> ABRIR		CAJON 		AT lRecibidor
+> OPEN		DRAWER 		AT lRecibidor
                 NOTZERO fCajon          ; Hemos abierto el cajón
                 INK     9               ; Color de tu consciencia
                 XMESSAGE "Ya no hay nada interesante en la consola."
                 DONE
 
-> EXAMINA   CAJON       AT lRecibidor
+> EXAMI   DRAWER       AT lRecibidor
                 NOTZERO fCajon          ; El cajón ya lo abrimos
                 INK     9               ; Color de tu consciencia
                 XMESSAGE "Ya no hay nada interesante en el cajón."
                 DONE
 
-> BAJAR         _       AT lRecibidor
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+> DOWN         _       AT lRecibidor
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
                 XMESSAGE "La bodega está muy oscura, sin luz no se puede entrar."
                 DONE
 
 ; Para bajar a la bodega, necesitamos una llave
-> BAJAR		_  			AT lRecibidor
+> DOWN		_  			AT lRecibidor
                 NOTCARR oLlaveBodega    ; No llevamos el objeto encima
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -1671,7 +1661,7 @@ BAJAR   lBath2
                 XMESSAGE "Necesitas la llave de la bodega#g#f1#t para poder entrar."
                 DONE
 
-> BAJAR		_  			AT lRecibidor
+> DOWN		_  			AT lRecibidor
                 CARRIED oLlaveBodega    ; Llevamos el objeto en nuestro inventario
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -1689,7 +1679,7 @@ BAJAR   lBath2
 
 ; /9 "La bodega. Un lugar angosto y húmedo que despide un aroma a tierra excavada profundo y penetrante.#n#nEn una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo.#n" 
 
-> SUBIR     _           AT lBodega
+> UP     _           AT lBodega
                 INK     9
                 XMESSAGE "Subimos al recibidor.#k"
                 CLS
@@ -1697,21 +1687,21 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-> MIRAR     _           AT lBodega
+> LOOK     _           AT lBodega
                 NOTZERO fControlLuz
                 ZERO    fQuitarMancha
                 INK     9               ; Color del narrador
                 XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo."
                 DONE
 
-> MIRAR     _           AT lBodega
+> LOOK     _           AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fQuitarMancha
                 INK     9               ; Color del narrador
                 XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar la puerta en la pared que has descubierto usando la paleta#g#fmn#t. Hay un alambique al fondo."
                 DONE
 
-> EXAMINA   PARED       AT lBodega
+> EXAMI   WALL       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1720,7 +1710,7 @@ BAJAR   lBath2
                 XMESSAGE "Es una pared con una gran mancha."
                 DONE
 
-> EXAMINA   ALAMBIQUE   AT lBodega
+> EXAMI   STILL   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1731,7 +1721,7 @@ BAJAR   lBath2
                 XMESSAGE "Seguro que se le dio buen uso a este cacharro."
                 DONE
 
-> MOVER     ALAMBIQUE   AT lBodega
+> MOVE     STILL   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1742,7 +1732,7 @@ BAJAR   lBath2
                 XMESSAGE "Mueves el alambique y al desplazarlo, puedes ver en el suelo una trampilla."
                 DONE
 
-> EXAMINA   BOTELLERO   AT lBodega
+> EXAMI   WINERACK   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1753,7 +1743,7 @@ BAJAR   lBath2
                 XMESSAGE "Una pena que no quede alguna botellita de vino."
                 DONE                
 
-> EXAMINA   MANCHA      AT lBodega
+> EXAMI   STAIN      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1764,7 +1754,7 @@ BAJAR   lBath2
                 XMESSAGE "Igual tengo algo que me sirva para quitarlo y comprobar qué hay detrás."
                 DONE
 
-> EXAMINA   TRAMPILLA   AT lBodega
+> EXAMI   HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1774,7 +1764,7 @@ BAJAR   lBath2
                 XMESSAGE "Es una trampilla de madera y metal que tiene un candado de combinación."
                 DONE
 
-> EXAMINA   CANDADO     AT lBodega
+> EXAMI   PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1783,7 +1773,7 @@ BAJAR   lBath2
                 XMESSAGE "El candado está en muy malas condiciones, parece oxidado y probablemente el mecanismo necesite un buen engrase."
                 DONE
 
-> ENGRASAR  CANDADO     AT lBodega
+> GREASE  PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1799,7 +1789,7 @@ BAJAR   lBath2
                 DESTROY oLataDeAceite
                 DONE
 
-> ENGRASAR  CANDADO     AT lBodega
+> GREASE  PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1811,8 +1801,8 @@ BAJAR   lBath2
                 DONE 
 
 ; Si hemos movido el alambique y No hemos usado el aceite, nos recomienda engrasar el candado. 
-> USAR      CANDADO
-> ABRIR     CANDADO     AT lBodega
+> USE      PADLOCK
+> OPEN     PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1823,8 +1813,8 @@ BAJAR   lBath2
                 XMESSAGE "El candado está oxidado y el mecanismo no funciona. Es recomendable engrasarlo."
                 DONE 
 ; Hemos movido el alambique y hemos engrasado el candado, pero no tenemos la combinación
-> USAR      CANDADO
-> ABRIR     CANDADO     AT lBodega
+> USE      PADLOCK
+> OPEN     PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1836,8 +1826,8 @@ BAJAR   lBath2
                 XMESSAGE "El mecanismo del candado funciona, pero no conoces la combinación para abrirlo."
                 DONE
 ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación, el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
-> USAR      CANDADO
-> ABRIR     CANDADO     AT lBodega
+> USE      PADLOCK
+> OPEN     PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1852,7 +1842,7 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-> USAR      PALETA      AT lBodega
+> USE      SCRAPER      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1869,7 +1859,7 @@ BAJAR   lBath2
                 DESTROY oPaleta
                 DONE
 
-> USAR      PALETA      AT lBodega
+> USE      SCRAPER      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1882,7 +1872,7 @@ BAJAR   lBath2
 ;ALTERNATIVAS: dependiendo de la puerta que hayamos abierto, la respuesta será diferente: podemos quitar la mancha de la pared y abrir la puerta de la cochera o bien retirar el alambique y descubrir la trampilla.
 
 ;esto solamente pasa si hemos rascado la pared con la paleta
-> EXAMINA 	PUERTA      AT lBodega
+> EXAMI 	DOOR      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1895,8 +1885,8 @@ BAJAR   lBath2
                 DONE
 
 ;NOTA: Por aquí entramos la primera vez sin jugar con el crío para coger la pelota.
-> USAR      PUERTA
-> ABRIR 	PUERTA      AT lBodega
+> USE      DOOR
+> OPEN 	DOOR      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1912,8 +1902,8 @@ BAJAR   lBath2
                 DONE
 
 ; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el crío en lugar de salir por la entrada ppal.
-> USAR      PUERTA
-> ABRIR 	PUERTA      AT lBodega
+> USE      DOOR
+> OPEN 	DOOR      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1975,8 +1965,8 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-> USAR      PUERTA
-> ABRIR 	PUERTA      AT lBodega
+> USE      DOOR
+> OPEN 	DOOR      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1987,8 +1977,8 @@ BAJAR   lBath2
                 DONE
 
 ; El alambique no se ha movido, por tanto no se puede acceder a la trampilla. 
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA   AT lBodega
+> USE      HATCH 
+> OPEN     HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1999,8 +1989,8 @@ BAJAR   lBath2
                 DONE
 
 ; El Alambique se ha movido, pero no se ha usado el aceite, no se puede entrar y no hace falta más control
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA   AT lBodega
+> USE      HATCH 
+> OPEN     HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2012,8 +2002,8 @@ BAJAR   lBath2
                 DONE
 
 ; el Alambique se ha movido, pero no se ha usado el aceite y no tenemos la combinación
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA   AT lBodega
+> USE      HATCH 
+> OPEN     HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2027,8 +2017,8 @@ BAJAR   lBath2
 
 ; el Alambique se ha movido, hemos engrasado el candado y conocemos la combinación
 
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA   AT lBodega
+> USE      HATCH 
+> OPEN     HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2049,8 +2039,8 @@ BAJAR   lBath2
 
 ; Aquí llevamos al crío con nosotros pero no hemos leído el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA   AT lBodega
+> USE      HATCH 
+> OPEN     HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2075,8 +2065,8 @@ BAJAR   lBath2
 
 ; Aquí llevamos al crío con nosotros y hemos leído el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA   AT lBodega
+> USE      HATCH 
+> OPEN     HATCH   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2104,15 +2094,15 @@ BAJAR   lBath2
 ;oLlaveCaja
 
 ; Damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
-; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMINAR en términos absolutos, nos lleva a morir.
+; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMI en términos absolutos, nos lleva a morir.
 ; Para escapar es necesario quedarse sin turnos de cerilla, o apagar la cerilla (estar a oscuras) para que la criada no le vea y pueda salir
 
-> MIRAR     _           AT lGabinete
+> LOOK     _           AT lGabinete
                 INK     9               ; Color del narrador
                 XMESSAGE "El lugar es estremecedor, húmedo y cerrado; el olor que desprende es nauseabundo. Hay una puerta al NORTE atrancada con una pala#g#f()*#t. Miras a tu alrededor y percibes que algo se mueve encima de la camilla."
                 DONE
 
-> EXAMINA   CAMILLA     AT lGabinete
+> EXAMI   LITTER     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2124,7 +2114,7 @@ BAJAR   lBath2
                 XMESSAGE "No hay sangre, los desgarros son limpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
                 DONE
 
-> EXAMINA   CAMILLA     AT lGabinete
+> EXAMI   LITTER     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2139,7 +2129,7 @@ BAJAR   lBath2
                 INK     15
                 DONE
 
-> EXAMINA   CADENAS     AT lGabinete
+> EXAMI   BONDS     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2151,7 +2141,7 @@ BAJAR   lBath2
                 XMESSAGE "La piel de la mujer sufre laceraciones y ves la carne a través de los cortes. No hay sangre, los desgarros son limpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
                 DONE
 
-> EXAMINA   CADENAS     AT lGabinete
+> EXAMI   BONDS     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2166,7 +2156,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> EXAMINA   MESA        AT lGabinete
+> EXAMI   TABLE        AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2177,7 +2167,7 @@ BAJAR   lBath2
                 XMESSAGE "A uno de los lados de la camilla, hay una mesa de chapa con una bandeja encima que contiene instrumental quirúrgico antiguo en unas condiciones poco higiénicas."
                 DONE
 
-> EXAMINA   MESA        AT lGabinete
+> EXAMI   TABLE        AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2194,7 +2184,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> EXAMINA   SUELO       AT lGabinete
+> EXAMI   FLOOR       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2205,7 +2195,7 @@ BAJAR   lBath2
                 XMESSAGE "El suelo es de azulejo blanco; está sucio y mugriento. Hay manchas de sangre por todas partes y tiene un tacto viscoso y húmedo."
                 DONE
 
-> EXAMINA   SUELO       AT lGabinete
+> EXAMI   FLOOR       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2260,11 +2250,12 @@ BAJAR   lBath2
                 LET     fVasAMorir 0
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable."
+                XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
                 INK     14 ;Color del crío
                 XMESSAGE "Tengo algo importante que decir.#k#n"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Dime, ¿que te ocurre?#k#n"
+                XMESSAGE "Dime, ¿qué te ocurre?#k#n"
                 INK     14 ;Color del crío
                 XMESSAGE "Bajo este suelo están nuestros cuerpos.#k#n Un día yo me escapé de la casa en busca de ayuda y el señor mató a mi madre y a mi hermana, más tarde me encontró en mitad del camino y me trajo a casa.#k#n El señor me obligó a traer aquí los cuerpos de mi madre y de mi hermana, cavó un agujero en este suelo y cuando terminó, me mató a mi también y aún estamos enterrados aquí.#n"
                 INK     3 ;Color del protagonista
@@ -2292,25 +2283,25 @@ BAJAR   lBath2
 
 ; Estamos en locExtCochera
 
-> MIRAR     _           AT lExteriorCochera
+> LOOK     _           AT lExteriorCochera
                 INK    9
                 XMESSAGE "Estás en el exterior de la cochera, frente a ti tienes la puerta."
                 DONE
 
-> EXAMINA   PUERTA      AT lExteriorCochera
+> EXAMI   DOOR      AT lExteriorCochera
                 INK    9
                 XMESSAGE "Es una puerta metálica galvanizada pintada de color crema."
                 DONE
 
 
-> ABRIR     PUERTA      AT lExteriorCochera
+> OPEN     DOOR      AT lExteriorCochera
                 ZERO    fInsistePuerta
                 SET     fInsistePuerta
                 INK     9
                 XMESSAGE "No puedes entrar, la puerta esta bloqueada."            
                 DONE   
                  
-> ABRIR     PUERTA      AT lExteriorCochera
+> OPEN     DOOR      AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 ZERO    fInsisteMuchoPuerta
                 SET     fInsisteMuchoPuerta
@@ -2320,7 +2311,7 @@ BAJAR   lBath2
                 XMESSAGE "No insistas más."             
                 DONE  
 
-> ABRIR     PUERTA      AT lExteriorCochera
+> OPEN     DOOR      AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 ZERO    fJugar
@@ -2330,13 +2321,13 @@ BAJAR   lBath2
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
                 XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n"
                 INK     4
-                MESSAGE "#g#fBYOU'RE DEADC#t"
+                MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     15
                 END  
 
-> ABRIR     PUERTA      AT lExteriorCochera
+> OPEN     DOOR      AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 NOTZERO fJugar
@@ -2348,7 +2339,7 @@ BAJAR   lBath2
                 INK     14
                 XMESSAGE "Yo pensaba que ibas a ayudarme y mírate. Ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
                 INK     4
-                MESSAGE "#g#fBYOU'RE DEADC#t"
+                MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     15
@@ -2363,11 +2354,11 @@ BAJAR   lBath2
 
 ; Estamos en locCochera
 
-; CONECTAR MANGUERA de modo que le ponemos en el GRIFO
-; ABRIR GRIFO
-; USAR MANGUERA se llena la rejilla de agua y flota la pelota, ya la puedes coger.
+; CONECTAR HOSE de modo que le ponemos en el TAP
+; OPEN TAP
+; USE HOSE se llena la rejilla de agua y flota la pelota, ya la puedes coger.
 
-> MIRAR     _           AT lCochera
+> LOOK     _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2384,7 +2375,7 @@ BAJAR   lBath2
                 INK     15
                 DONE
 
-> MIRAR     _           AT lCochera
+> LOOK     _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2394,7 +2385,7 @@ BAJAR   lBath2
                 XMESSAGE "La cochera no es muy grande. Destacan un grifo en la pared y una rejilla en el suelo."
                 DONE
 
-> EXAMINA   PUERTA      AT lCochera
+> EXAMI   DOOR      AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2403,7 +2394,7 @@ BAJAR   lBath2
                 XMESSAGE "Se trata de una puerta de garaje abatible. Es de chapa."                
                 DONE
 
-> EXAMINA   SUELO       AT lCochera
+> EXAMI   FLOOR       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2419,7 +2410,7 @@ BAJAR   lBath2
                 MESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
 
-> EXAMINA   SUELO       AT lCochera
+> EXAMI   FLOOR       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2429,7 +2420,7 @@ BAJAR   lBath2
                 XMESSAGE "El suelo está revestido de una pintura roja muy densa."
                 DONE
 
-> EXAMINA   GRIFO       AT lCochera
+> EXAMI   TAP       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2439,7 +2430,7 @@ BAJAR   lBath2
                 XMESSAGE "El grifo tiene un adaptador para CONECTAR una manguera#g#fKL#t."
                 DONE
 
-> EXAMINA   GRIFO       AT lCochera
+> EXAMI   TAP       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas         ; Llevamos el objeto en nuestro inventario
@@ -2449,7 +2440,7 @@ BAJAR   lBath2
                 XMESSAGE "El grifo tiene una manguera#g#fKL#t conectada."
                 DONE
 
-> EXAMINA   GENERADOR   AT lCochera
+> EXAMI   GENERATOR   AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2458,7 +2449,7 @@ BAJAR   lBath2
                 XMESSAGE "El generador no funciona pero de algún extraño modo, hay luz en el exterior de la casa. Podría ser energía residual."
                 DONE
 
-> EXAMINA   PARED       AT lCochera
+> EXAMI   WALL       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2467,7 +2458,7 @@ BAJAR   lBath2
                 XMESSAGE "Las paredes son blancas con un acabado rugoso.#n Puedes observar un grifo encastrado en una de ellas."
                 DONE
 
-> EXAMINA   REJILLA     AT lCochera
+> EXAMI   GRID     AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2478,7 +2469,7 @@ BAJAR   lBath2
                 MESSAGE "Seguro que hay alguna forma de hacer salir lo que hay en su interior."
                 DONE
 
-> USAR      MANGUERA    AT lCochera
+> USE      HOSE    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2488,7 +2479,7 @@ BAJAR   lBath2
                 XMESSAGE "No tienes ninguna manguera#g#fKL#t."
                 DONE
 
-> USAR      MANGUERA    AT lCochera
+> USE      HOSE    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2501,7 +2492,7 @@ BAJAR   lBath2
                 DESTROY oManguera
                 DONE
 
-> USAR      MANGUERA    AT lCochera
+> USE      HOSE    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2512,7 +2503,7 @@ BAJAR   lBath2
                 XMESSAGE "Ya está puesta la manguera#g#f-.#t en la rejilla."
                 DONE
 
-> CONECTAR  MANGUERA    AT lCochera
+> CONECTAR  HOSE    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2524,7 +2515,7 @@ BAJAR   lBath2
                 XMESSAGE "Conectas la manguera#g#f-.#t al grifo."
                 DONE
 
-> CONECTAR  MANGUERA    AT lCochera
+> CONECTAR  HOSE    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2535,8 +2526,8 @@ BAJAR   lBath2
                 XMESSAGE "Ya esta puesta la manguera#g#f-.#t en el grifo."
                 DONE
 
-> USAR      GRIFO
-> ABRIR     GRIFO       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
+> USE      TAP
+> OPEN     TAP       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2552,8 +2543,8 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> USAR      GRIFO
-> ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
+> USE      TAP
+> OPEN     TAP       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2572,8 +2563,8 @@ BAJAR   lBath2
                 END                
 
 
-> USAR      GRIFO
-> ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
+> USE      TAP
+> OPEN     TAP       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2599,8 +2590,8 @@ BAJAR   lBath2
                 INK     15
                 END 
 
-> USAR      GRIFO
-> ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
+> USE      TAP
+> OPEN     TAP       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2617,8 +2608,8 @@ BAJAR   lBath2
                 INK     15
                 END 
 
-> USAR      GRIFO
-> ABRIR     GRIFO       AT lCochera                                
+> USE      TAP
+> OPEN     TAP       AT lCochera                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2638,7 +2629,7 @@ BAJAR   lBath2
                 XMESSAGE"¿Nos echamos un partidito?"                
                 DONE
 
-;> CERRAR    GRIFO       AT lCochera
+;> CLOSE    TAP       AT lCochera
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
 ;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2651,7 +2642,7 @@ BAJAR   lBath2
 ;                XMESSAGE "Evitando una catástrofe..."
 ;                DONE
 
-;> CERRAR    GRIFO       AT lCochera
+;> CLOSE    TAP       AT lCochera
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
 ;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2661,8 +2652,8 @@ BAJAR   lBath2
 ;                XMESSAGE "El grifo ya está cerrado.#n"              
 ;                DONE
 
-> MOVER     REJILLA
-> ABRIR     REJILLA    AT lCochera
+> MOVE     GRID
+> OPEN     GRID    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2707,19 +2698,19 @@ BAJAR   lBath2
 
 ; Estamos en locExtChamizo
 
-> EXAMINA   PUERTA      AT lExteriorChamizo             
+> EXAMI   DOOR      AT lExteriorChamizo             
                 INK     9               ; Color del narrador
                 XMESSAGE "El chamizo tiene una puerta muy vieja, hecha de listones de madera pintada de verde que está completamente descascarillada y ajada por la temperie."
                 DONE
 
-> ABRIR     PUERTA      AT lExteriorChamizo
+> OPEN     DOOR      AT lExteriorChamizo
                 ZERO    fJugar
                 INK     9               ; Color del narrador
                 XMESSAGE "La puerta está cerrada."
                 DONE
 
-> ABRIR     PUERTA      AT lExteriorChamizo                
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+> OPEN     DOOR      AT lExteriorChamizo                
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF          ; Activamos el flag de la oscuridad
                 NOTZERO fJugar
                 INK     9               ; Color del narrador
@@ -2727,7 +2718,7 @@ BAJAR   lBath2
                 DONE
 
 
-> ABRIR     PUERTA      AT lExteriorChamizo
+> OPEN     DOOR      AT lExteriorChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2752,12 +2743,12 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locChamizo
-; SUELO     HERRAMIENTAS    TIERRA  ARMARIO
-; NOTA Aquí el comportamiento del MIRAR te lleva a la muerte si lo haces dos veces.
+; FLOOR     HERRAMIENTAS    SAND  CLOSET
+; NOTA Aquí el comportamiento del LOOK te lleva a la muerte si lo haces dos veces.
 
 ; Controlar que una vez usas pala, no la uses de nuevo
 
-> MIRAR        _        AT lChamizo
+> LOOK        _        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2766,7 +2757,7 @@ BAJAR   lBath2
                 XMESSAGE "Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico."
                 DONE
                 
-> EXAMINA   SUELO       AT lChamizo
+> EXAMI   FLOOR       AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2775,7 +2766,7 @@ BAJAR   lBath2
                 XMESSAGE "El suelo es de tierra y despide un indescriptible aroma profundo y penetrante. Cuánto más te acercas a el, más intenso es el olor."
                 DONE
 
-> EXAMINA   TIERRA      AT lChamizo
+> EXAMI   SAND      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2784,8 +2775,8 @@ BAJAR   lBath2
                 XMESSAGE "Alargas la mano y coges un puñadito de tierra. El olor es nauseabundo."
                 DONE
 
-> ABRIR     ARMARIO
-> EXAMINA   ARMARIO     AT lChamizo
+> OPEN     CLOSET
+> EXAMI   CLOSET     AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2803,7 +2794,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
 
-> EXAMINA   TRASTOS      AT lChamizo
+> EXAMI   JUNK      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2812,8 +2803,8 @@ BAJAR   lBath2
                 XMESSAGE "Trastos inservibles que no merecen tu atención."
                 DONE
 
-> EXAMINA   CHAMIZO
-> MIRAR     _           AT lChamizo                 ; Cogemos las llaves del coche
+> EXAMI   SHED
+> LOOK     _           AT lChamizo                 ; Cogemos las llaves del coche
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2824,7 +2815,7 @@ BAJAR   lBath2
 
 ; Aquí justo activamos el flag para el FINAL MEJOR, que es la comprobación de haber desenterrado a los cadáveres.
 
-> USAR      PALA        AT lChamizo
+> USE      SHOVEL        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2835,7 +2826,7 @@ BAJAR   lBath2
                 XMESSAGE "Ya has desenterrado los cadáveres."
                 DONE
 
-> USAR      PALA        AT lChamizo
+> USE      SHOVEL        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2860,7 +2851,7 @@ BAJAR   lBath2
 ; desenterrarlos. Como castigo, le vamos a poner en la bodega otra vez.
 
 
-> USAR      PALA        AT lChamizo
+> USE      SHOVEL        AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2886,8 +2877,8 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-> O            _
-> ABRIR         PUERTA  AT lChamizo
+> W            _
+> OPEN         DOOR  AT lChamizo
 
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2905,8 +2896,8 @@ BAJAR   lBath2
                 RESTART
                 DONE
                 
-> O             _
-> ABRIR         PUERTA  AT lChamizo
+> W             _
+> OPEN         DOOR  AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2918,8 +2909,8 @@ BAJAR   lBath2
 
 ; NOTA : Aquí es donde se determinan los diferentes finales del juego dependiendo de si tenemos al niño, la pala o el hacha.
 
-> USAR      HACHA 
-> ROMPER    TRAVESA     AT lChamizo
+> USE      AXE 
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2940,8 +2931,8 @@ BAJAR   lBath2
 
 ; FINAL MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante es el mejor final, porque además hemos leído el diario de la criada.
 
-> USAR      HACHA 
-> ROMPER    TRAVESA     AT lChamizo
+> USE      AXE 
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2959,7 +2950,7 @@ BAJAR   lBath2
                 INK     14 
                 XMESSAGE "Te espero aquí.#k#n#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n"
+                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece tu padre.#k#n"
                 CLS
                 INK     12  
                 XMESSAGE "Hijo, ¿qué ha ocurrido aquí?#k#n"
@@ -2996,8 +2987,8 @@ BAJAR   lBath2
 
 ; FINAL CASI MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante NO es el mejor final, porque NO hemos leído el diario de la criada y no podemos contar la historia al padre, solo sabemos lo que el niño nos cuenta a la entrada del gabinete (o a la entrada por la trampilla).
 
-> USAR      HACHA 
-> ROMPER    TRAVESA     AT lChamizo
+> USE      AXE 
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3015,7 +3006,7 @@ BAJAR   lBath2
                 INK     14 
                 XMESSAGE "Te espero aquí.#k#n#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece su padre.#k#n#b"
+                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece tu padre.#k#n#b"
                 INK     12  
                 XMESSAGE "Hijo, que ha ocurrido aquí?#k#n"
                 INK     3 
@@ -3048,8 +3039,8 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> USAR      HACHA 
-> ROMPER    TRAVESA     AT lChamizo
+> USE      AXE 
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3064,7 +3055,7 @@ BAJAR   lBath2
                 DONE
 
 ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
-> ROMPER    TRAVESA     AT lChamizo
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3076,7 +3067,7 @@ BAJAR   lBath2
                 XMESSAGE "La puerta está abierta, no necesitamos romper nada."
                 DONE
 
-> ROMPER    TRAVESA     AT lChamizo
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3109,7 +3100,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> ROMPER    TRAVESA     AT lChamizo
+> BREAK    CROSSBAR     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3121,7 +3112,7 @@ BAJAR   lBath2
                 INK     9
                 DONE
 
-> ENTRAR    GABINETE    AT lChamizo
+> ENTER     OFFICE    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3134,8 +3125,8 @@ BAJAR   lBath2
 
 ; Estamos en locAseo
 
-> EXAMINA   ASEO
-> MIRAR     _           AT lAseo
+> EXAMI   TOILET
+> LOOK     _           AT lAseo
                 INK     9               ; Color del narrador
                 XMESSAGE "Hay un interruptor en la pared."
              
@@ -3151,7 +3142,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> EXAMINA	ASEO 		AT lAseo                                
+> EXAMI	TOILET 		AT lAseo                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3162,7 +3153,7 @@ BAJAR   lBath2
                 XMESSAGE "Olvídate del aseo y sal de aquí."
                 DONE
 
-> EXAMINA   SUELO       AT lAseo
+> EXAMI   FLOOR       AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3171,7 +3162,7 @@ BAJAR   lBath2
                 XMESSAGE "El suelo está lleno de cristales."
                 DONE
 
-> EXAMINA   INTERRUPTOR AT lAseo
+> EXAMI   SWITCH AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3180,9 +3171,9 @@ BAJAR   lBath2
                 XMESSAGE "Es un interruptor."
                 DONE
 
-> PULSAR    INTERRUPTOR
-> ACCIONAR  INTERRUPTOR
-> USAR		INTERRUPTOR AT lAseo
+> PRESS    SWITCH
+> ACTIVATE  SWITCH
+> USE		SWITCH AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3219,9 +3210,9 @@ BAJAR   lBath2
                 SET     fVasAPalmar
                 DONE
 
-> PULSAR    INTERRUPTOR
-> ACCIONAR  INTERRUPTOR
-> USAR		INTERRUPTOR AT lAseo
+> PRESS    SWITCH
+> ACTIVATE  SWITCH
+> USE		SWITCH AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3235,7 +3226,7 @@ BAJAR   lBath2
 ; Estamos en locCocina
 
 > E         _           AT lCocina 
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "La despensa está muy oscura. Sin luz no se puede entrar."
@@ -3259,7 +3250,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> EXAMINA  PAREDES      AT lCocina
+> EXAMI  WALLS      AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3268,8 +3259,8 @@ BAJAR   lBath2
                 XMESSAGE "Son frías y húmedas."
                 DONE
 
-> EXAMINA   COCINA
-> MIRAR     _           AT lCocina
+> EXAMI   KITCHEN
+> LOOK     _           AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3280,7 +3271,7 @@ BAJAR   lBath2
                 XMESSAGE "Ya no se fabrican como antes. Jodida obsolescencia programada."
                 DONE
 
-> EXAMINA	FREGADERO   AT lCocina
+> EXAMI	SINK   AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3290,7 +3281,7 @@ BAJAR   lBath2
                 XMESSAGE "El fregadero está vacío, tiene un sumidero grande tipo americano. Algo parece estar atascado dentro."
                 DONE
 
-> EXAMINA	SUMIDERO    AT lCocina
+> EXAMI	SUMP    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3310,7 +3301,7 @@ BAJAR   lBath2
                 XMESSAGE "El triturador se ha parado."
                 DONE
 
-> EXAMINA   CUCHARAS     AT lCocina
+> EXAMI   SPOONS     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3319,7 +3310,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Nunca has visto una cuchara?"
                 DONE
 
-> COGER     CUCHARAS    AT  lCocina
+> TAKE     SPOONS    AT  lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3328,7 +3319,7 @@ BAJAR   lBath2
                 XMESSAGE "No pienso ir cargado con unas cucharas."
                 DONE
 
-> EXAMINA   TRITURADOR   AT lCocina
+> EXAMI   SHREDDER   AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3339,7 +3330,7 @@ BAJAR   lBath2
                 XMESSAGE "No creo que sea una buena idea."
                 DONE
 
-> EXAMINA   TRITURADOR   AT lCocina
+> EXAMI   SHREDDER   AT lCocina
                 NOTZERO fTriturador  ; si no es cero, es que es la segunda vez que lo examina, así que lo mato por cotilla
                 INK     9               ; Color del narrador
                 XMESSAGE "Te aventuras a introducir de nuevo la mano en el triturador desoyendo las advertencias de tu conciencia.#k#n"
@@ -3354,8 +3345,8 @@ BAJAR   lBath2
                 INK     15              ; Color del sistema
                 END
 
-> EXAMINA   MUEBLE
-> EXAMINA	APARADOR    AT lCocina
+> EXAMI   FURNITURE
+> EXAMI	DRESSER    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3364,8 +3355,8 @@ BAJAR   lBath2
                 XMESSAGE "Es un típico aparador de cocina hecho en madera con varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
                 DONE
 
-> ABRIR     CAJONES     AT lCocina
-> EXAMINA	CAJONES     AT lCocina
+> OPEN     DRAWERES     AT lCocina
+> EXAMI	DRAWERES     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3376,7 +3367,7 @@ BAJAR   lBath2
                 XMESSAGE "Joder, no sé si quiero saberlo."
                 DONE
 
-> EXAMINA	COJONES     AT lCocina
+> EXAMI	BALLS     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3385,8 +3376,8 @@ BAJAR   lBath2
                 XMESSAGE "No es momento de examinar tus genitales."
                 DONE
 
-> ABRIR     LAVADORA
-> EXAMINA	LAVADORA    AT lCocina
+> OPEN     WASHER
+> EXAMI	WASHER    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3399,8 +3390,8 @@ BAJAR   lBath2
                 XMESSAGE "Tampoco sé si quiero saberlo."
                 DONE
 
-> EXAMINA   CUCHILLO
-> COGER		CUCHILLO    AT lCocina
+> EXAMI   KNIFE
+> TAKE		KNIFE    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3413,14 +3404,14 @@ BAJAR   lBath2
 
 ; Estamos en locDespensa
 
-> EXAMINA   DESPENSA
-> MIRAR     _           AT lDespensa
+> EXAMI   PANTRY
+> LOOK     _           AT lDespensa
                 INK     9               ; Color del narrador
-                XMESSAGE "Estás en la despensa. Aquí se encuentra la ALACENA que usaban tus padres para guardar latas de comida. Tu solías EMPUJARLA para ver si caía alguna galleta desde arriba."
+                XMESSAGE "Estás en la despensa. Aquí se encuentra la STORAGE que usaban tus padres para guardar latas de comida. Tu solías PUSHLA para ver si caía alguna galleta desde arriba."
                 DONE
 
-> EXAMINA   ALACENA
-> ABRIR 	ALACENA     AT lDespensa
+> EXAMI   STORAGE
+> OPEN 	STORAGE     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3434,8 +3425,8 @@ BAJAR   lBath2
                 DONE
 
 ; NOTA: Estaría bien que cada vez que se empuja la alacena cayese una galleta y según cae, se la come, así no necesitamos contemplarla como objeto, hasta N galletas (poner contador?) y llegado un número de galletas, decirle al jugador que ya le tenemos domesticado
-> TIRAR     ALACENA
-> EMPUJAR   ALACENA     AT lDespensa
+> PULL     STORAGE
+> PUSH   STORAGE     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3444,7 +3435,7 @@ BAJAR   lBath2
                 XMESSAGE "Das un fuerte empujón a la alacena.#nNo ocurre nada."             
                 DONE            
 
-> ROMPER    ALACENA     AT lDespensa
+> BREAK    STORAGE     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3454,7 +3445,7 @@ BAJAR   lBath2
                 DONE
 
 > W         _           AT lDespensa 
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA     ; La cerilla se ha consumido
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH     ; La cerilla se ha consumido
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "La cocina está muy oscura. Sin luz no se puede entrar."
@@ -3473,7 +3464,7 @@ BAJAR   lBath2
 
 ; Estamos en locEscaleras
 
-> EXAMINA	ESCALERAS   AT lEscaleras                
+> EXAMI	STAIRS   AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3488,7 +3479,7 @@ BAJAR   lBath2
 ; Con flags, controlamos si se ha movido el tablón o se pone de nuevo en su sitio
 
 
-;> EXAMINA   ESCALON     AT lEscaleras                
+;> EXAMI   TREAD     AT lEscaleras                
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
 ;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3498,7 +3489,7 @@ BAJAR   lBath2
 ;                XMESSAGE "Efectivamente el escalón está un poco suelto. Prueba a moverlo."
 ;                DONE
 
-> EXAMINA   ESCALON      AT lEscaleras                
+> EXAMI   TREAD      AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3508,8 +3499,8 @@ BAJAR   lBath2
                 XMESSAGE "Has quitado el escalón y ahora hay un hueco. Eso podría ser una trampa mortal."
                 DONE
 
-> QUITAR    ESCALON
-> MOVER		ESCALON      AT lEscaleras
+> REMOVE    TREAD
+> MOVE		TREAD      AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3520,8 +3511,8 @@ BAJAR   lBath2
                 XMESSAGE "Mueves el escalón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro. Has dejado el hueco abierto y eso no es muy seguro."
                 DONE
 
-> QUITAR    ESCALON
-> MOVER		ESCALON     AT lEscaleras
+> REMOVE    TREAD
+> MOVE		TREAD     AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3531,8 +3522,8 @@ BAJAR   lBath2
                 XMESSAGE "El escalón no se mueve más."
                 DONE
 
-> EXAMINA   CANDADO
-> EXAMINA	CAJA        AT lEscaleras                
+> EXAMI   PADLOCK
+> EXAMI	BOX        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3542,7 +3533,7 @@ BAJAR   lBath2
                 XMESSAGE "La caja tiene un candado de seguridad. Necesitas una llave pequeña."
                 DONE
 
-> COGER		CAJA        AT lEscaleras                
+> TAKE		BOX        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3552,7 +3543,7 @@ BAJAR   lBath2
                 XMESSAGE "La caja está anclada dentro del hueco del escalón, no se puede coger."
                 DONE
 
-> ROMPER    CAJA        AT lEscaleras
+> BREAK    BOX        AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3562,7 +3553,7 @@ BAJAR   lBath2
                 XMESSAGE "¿No te sientes lo suficientemente culpable con haber roto el gnomo de tu madre, verdad?"
                 DONE
 
-> ABRIR		CAJA        AT lEscaleras                
+> OPEN		BOX        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3574,7 +3565,7 @@ BAJAR   lBath2
                 XMESSAGE "No tienes la llave para poder abrirla."
                 DONE
 
-> ABRIR		CAJA        AT lEscaleras                
+> OPEN		BOX        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3586,7 +3577,7 @@ BAJAR   lBath2
                 XMESSAGE "Ya tienes la tarjeta de seguridad#g#f<#t."
                 DONE
 
-> ABRIR		CAJA        AT lEscaleras                
+> OPEN		BOX        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3607,8 +3598,8 @@ BAJAR   lBath2
                 XMESSAGE "Tratemos de averiguarlo."
                 DONE
 
-> EXAMINA   ESCALERAS
-> MIRAR     _
+> EXAMI   STAIRS
+> LOOK     _
 > R         _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3621,8 +3612,8 @@ BAJAR   lBath2
                 XMESSAGE "Cuanto más lo escucho más me gusta. ¡¡¡Grupazo!!! En mi casa conservo aún el vaso de... AND BEER FOR ALL."
                 DONE
 
-> COLOCAR	ESCALON
-> PONER		ESCALON      AT lEscaleras
+> PUT	TREAD
+> PUT  		TREAD      AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
@@ -3642,7 +3633,7 @@ BAJAR   lBath2
                 XMESSAGE "Nada nada, sigue jugando."
                 DONE                
 
-> BAJAR     BARANDILLA  AT lEscaleras
+> DOWN     HANDRAIL  AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3651,13 +3642,13 @@ BAJAR   lBath2
                 XMESSAGE "No pienso subir mi culo a la barandilla y desplazarme hacia abajo."
                 DONE 
 
-> BAJAR     _           AT lEscaleras
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA                
+> DOWN     _           AT lEscaleras
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> BAJAR     _           AT lEscaleras
+> DOWN     _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3669,7 +3660,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE 
 
-> BAJAR     _          AT lEscaleras
+> DOWN     _          AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3685,7 +3676,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
-> SUBIR     _          AT lEscaleras
+> UP     _          AT lEscaleras
                 CLS                     ; Limpiamos la pantalla
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fControlLuz
@@ -3701,13 +3692,13 @@ BAJAR   lBath2
                 INK     15               ; Color del narrador
                 END
 
-> SUBIR     _           AT lEscaleras
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA                
+> UP     _           AT lEscaleras
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> SUBIR     _           AT lEscaleras
+> UP     _           AT lEscaleras
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3724,15 +3715,15 @@ BAJAR   lBath2
 ; NOTA: No puede haber restos humanos en la chimenea si los cuerpos fueron enterrados
 
 ;La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#nLa estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque esta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#nPuedes observar una vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#nDesde aquí se accede a un amplio patio trasero al este."
-> EXAMINA   SALON
-> MIRAR     _           AT lSalon
+> EXAMI   LOUNGE
+> LOOK     _           AT lSalon
                 INK     9               ; Color del narrador
                 XMESSAGE "De entre toda la estancia, destaca una vitrina grande y acristalada que a día de hoy se encuentra desprovista de todo utensilio."
                 DONE
                 
-> USAR      CASSETTE
-> ESCUCHAR  CASSETTE
-> CARGAR    CASSETTE    AT lSalon
+> USE      CASSETTE
+> LISTEN  CASSETTE
+> LOAD    CASSETTE    AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3745,9 +3736,9 @@ BAJAR   lBath2
                 ; Poner MP3 de carga de una cinta
                 DONE
 
-> EXAMINA   CASSETTE
-> EXAMINA   LAREIRA
-> EXAMINA	CHIMENEA    AT lSalon
+> EXAMI   CASSETTE
+> EXAMI   LAREIRA
+> EXAMI	FIREPLACE    AT lSalon
 				NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3756,9 +3747,9 @@ BAJAR   lBath2
                 XMESSAGE "Es una antigua cocina gallega con una hoguera en el centro y una chimenea encima. Está acotada por un cassette de hierro fundido."
               	DONE
 
-> EXAMINA   MUEBLE
-> ABRIR     VITRINA
-> EXAMINA	VITRINA     AT lSalon
+> EXAMI   FURNITURE
+> OPEN     SHOWCASE
+> EXAMI	SHOWCASE     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3772,9 +3763,9 @@ BAJAR   lBath2
                 MESSAGE "Pues venga, genio, igual tienes un objeto para interactuar con esa ranura o tocará buscarlo."
                 DONE
 
-> EXAMINA   MUEBLE
-> ABRIR     VITRINA
-> EXAMINA	VITRINA     AT lSalon
+> EXAMI   FURNITURE
+> OPEN     SHOWCASE
+> EXAMI	SHOWCASE     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3786,7 +3777,7 @@ BAJAR   lBath2
                 XMESSAGE "Quizás podrías intentar moverla."                
                 DONE
 
-> EXAMINA   RANURA      AT lSalon
+> EXAMI   GROOVE      AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3795,7 +3786,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Que parte de que es del tamaño de una tarjeta de crédito no has entendido?"
                 DONE
 
-> USAR 		TARJETA     AT lSalon
+> USE 		CARD     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3818,7 +3809,7 @@ BAJAR   lBath2
                 DONE
 
 
-> USAR 		TARJETA     AT lSalon
+> USE 		CARD     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3832,8 +3823,8 @@ BAJAR   lBath2
                 XMESSAGE "Ya estamos celebrando el festival del humor...."
                 DONE
 
-> EMPUJAR   VITRINA
-> MOVER 	VITRINA     AT lSalon
+> PUSH   SHOWCASE
+> MOVE 	SHOWCASE     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3852,7 +3843,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> MOVER     VITRINA     AT lSalon
+> MOVE     SHOWCASE     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz 
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3875,7 +3866,7 @@ BAJAR   lBath2
                 DONE
 
 > E         _           AT lSalon
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "El patio está muy oscuro. No puedes ver nada."
@@ -3894,7 +3885,7 @@ BAJAR   lBath2
 
 > E         _           AT lSalon
                 CARRIED oLlavePatio
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "El patio está muy oscura. Sin luz no se puede entrar."
@@ -3910,7 +3901,7 @@ BAJAR   lBath2
 ;
 ; Estamos en locCriada
 
-> MIRAR     _           AT lCriada
+> LOOK     _           AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3919,8 +3910,8 @@ BAJAR   lBath2
                 XMESSAGE "Es una habitación lúgubre y cerrada... Si alguien ha vivido aquí, lo ha hecho sin duda en unas condiciones inhumanas.#n#n Miras a tu alrededor y descubres que el suelo tiene marcas de haberse movido algún mueble.#k#n Parece que algo se mueve encima del colchón."
                 DONE
 
-> ABRIR     BANCO
-> EXAMINA   BANCO       AT lCriada
+> OPEN     BENCH
+> EXAMI   BENCH       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3928,7 +3919,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Abres el banco y en su interior encuentras ropa de mujer e infantil.#n"
                 INK     3
-                XMESSAGE "¿Esto que es?#n"
+                XMESSAGE "¿Esto qué es?#n"
                 INK     15
                 ISAT    oLlaveBodega 252
                 CREATE  oLlaveBodega
@@ -3937,8 +3928,8 @@ BAJAR   lBath2
                 INK     9
                 DONE
 
-> ABRIR     COLCHON
-> EXAMINA   COLCHON     AT lCriada
+> OPEN     MATTRESS
+> EXAMI   MATTRESS     AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3950,7 +3941,7 @@ BAJAR   lBath2
                 ; MP3 con la canción de la cucaracha.
                 DONE
 
-> EXAMINA   SUELO       AT lCriada
+> EXAMI   FLOOR       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3959,8 +3950,8 @@ BAJAR   lBath2
                 XMESSAGE "En el suelo ves unas marcas. Parece que han arrastrado un mueble."   
                 DONE      
 
-> EMPUJAR   BANCO
-> MOVER     BANCO       AT lCriada
+> PUSH   BENCH
+> MOVE     BENCH       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3969,8 +3960,8 @@ BAJAR   lBath2
                 XMESSAGE "Arrastras el banco y dejas al descubierto una loseta que se encuentra despegada del suelo."
                 DONE      
 
-> QUITAR    LOSETA
-> MOVER     LOSETA       AT lCriada
+> REMOVE    TILE
+> MOVE     TILE       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3978,9 +3969,9 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Quitas la loseta y descubres que debajo hay un hueco que contiene un cuaderno escondido.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Un diario? ¿Quien se toma tantas molestias en esconder un diario?#n"
+                XMESSAGE "¿Un diario? ¿Quién se toma tantas molestias en esconder un diario?#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿A que esperas para leerlo?#n"
+                XMESSAGE "¿A qué esperas para leerlo?#n"
                 INK     15              ; Color del sistema
                 ISAT    oDiario 252
                 CREATE  oDiario 
@@ -3989,7 +3980,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 DONE
 
-> EXAMINA   ORINAL      AT lCriada
+> EXAMI   URINAL      AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3998,7 +3989,7 @@ BAJAR   lBath2
                 XMESSAGE "Parece que aquí ha vivido gente."
                 DONE
 
-> EXAMINA   CAMA        AT lCriada
+> EXAMI   BED        AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4023,7 +4014,7 @@ BAJAR   lBath2
                 DONE
 
 > N         _           AT lCriada
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "El salón está muy oscuro. No puedes ver nada."
@@ -4044,7 +4035,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> EXAMINA   MURO        AT lPatio
+> EXAMI   MURO        AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4053,8 +4044,8 @@ BAJAR   lBath2
                 XMESSAGE "Se trata de un muro de mampostería de granito con unión de mortero bastardo de cemento blanco, cal morena y arena roja con un rejuntado de cemento gris y arena de río."
                 DONE
 
-> TREPAR    MURO
-> SALTAR    MURO        AT lPatio
+> CLIMB    MURO
+> JUMP    MURO        AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4068,8 +4059,8 @@ BAJAR   lBath2
                 INK     15              ; Color del sistema
                 END
 
-> EXAMINA   PATIO
-> MIRAR     _           AT lPatio
+> EXAMI   COURTYARD
+> LOOK     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4099,7 +4090,7 @@ BAJAR   lBath2
                 XMESSAGE "No sé si es buena idea jugar con un... ¿fantasma? Por otro lado, igual nos echa una mano. ¿Le echamos un par o escribimos FIN y acabamos con esta agonía?"
                 DONE
 
-> MIRAR     _           AT lPatio
+> LOOK      _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4109,8 +4100,8 @@ BAJAR   lBath2
                 XMESSAGE "El crío sigue en el patio esperando a que juegues con él."
                 DONE
 
-> EXAMINA   PATIO
-> HABLAR    _           AT lPatio
+> EXAMI   COURTYARD
+> TALK      _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4121,8 +4112,8 @@ BAJAR   lBath2
                 XMESSAGE "Jugando al pilla pilla. Pero nos gustaría jugar a la pelota#g#f:;#t. ¡Juega conmigo!"               
                 DONE
 
-> LANZAR    PELOTA
-> JUGAR     _           AT lPatio
+> THROW    BALL
+> PLAY      _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4141,7 +4132,7 @@ BAJAR   lBath2
                 XMESSAGE "De acuerdo, pues vayámonos."
                 DONE
 
-> JUGAR     _           AT lPatio
+> PLAY      _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4151,7 +4142,7 @@ BAJAR   lBath2
                 XMESSAGE "No has traído mi pelota#g#f:;#t, ¿me la buscas?"
                 DONE
 
-> EXAMINA   LUNA        AT lPatio
+> EXAMI   MOON        AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4162,8 +4153,8 @@ BAJAR   lBath2
 
 ; Estamos en locRoom1
 
-> EXAMINA   ALCOBA
-> MIRAR     _           AT lRoom1
+> EXAMI   BEDROOM
+> LOOK     _           AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4172,7 +4163,7 @@ BAJAR   lBath2
                 XMESSAGE "Fijándote muy bien, descubres una neblina muy sutil justo por encima de la cama que emana del objeto. Al NORTE está el baño."
                 DONE
 
-> EXAMINA 	CAMA        AT lRoom1
+> EXAMI 	BED        AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4181,8 +4172,8 @@ BAJAR   lBath2
                 XMESSAGE "Es de hierro. Hay un objeto sobre ella."
                 DONE
 
-> EXAMINA   OBJETO
-> COGER     OBJETO      AT lRoom1
+> EXAMI   OBJECT
+> TAKE     OBJECT      AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4252,7 +4243,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
-> MIRAR     _           AT lBath1
+> LOOK     _           AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4261,7 +4252,7 @@ BAJAR   lBath2
                 XMESSAGE "Hay una tina, que es una especie de bañera antigua y un respiradero que tiene una mancha de color amarillento."
                 DONE
 
-> EXAMINA   BANO        AT lBath1
+> EXAMI   BANO        AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4270,7 +4261,7 @@ BAJAR   lBath2
                 XMESSAGE "Estás jugando desde un MSX que no tiene eñe, ¿verdad? jajaja."
                 DONE
 
-> EXAMINA   BAÑO        AT lBath1
+> EXAMI   BATHROOM        AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4279,8 +4270,8 @@ BAJAR   lBath2
                 XMESSAGE "Estás jugando desde un emulador o un MSX que afortunadamente tiene eñe, ¿verdad? jajaja."
                 DONE
 
-> EXAMINA   PARED
-> EXAMINA   MANCHA      AT lBath1
+> EXAMI   WALL
+> EXAMI   STAIN      AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4289,7 +4280,7 @@ BAJAR   lBath2
                 XMESSAGE "Tocas la mancha y te deja un tacto grasiento en los dedos, tus sospechas se despejan. Parece aceite."
                 DONE
 
-> EXAMINA   TINA        AT lBath1
+> EXAMI   TUB        AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4298,7 +4289,7 @@ BAJAR   lBath2
                 XMESSAGE "No hay nada interesante aquí."
                 DONE
 
-> EXAMINA   RESPIRADERO AT lBath1
+> EXAMI   VENT AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4307,9 +4298,9 @@ BAJAR   lBath2
                 XMESSAGE "Es un respiradero metálico que está encastrado en el techo. De él sale un aire frío y denso que te sobrecoge. También puedes ver que tiene una mancha que se ha filtrado a la pared."
                 DONE
 
-> ABRIR     RESPIRADERO
-> TIRAR     RESPIRADERO
-> EMPUJAR   RESPIRADERO  AT lBath1
+> OPEN     VENT
+> PULL     VENT
+> PUSH   VENT  AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4326,8 +4317,8 @@ BAJAR   lBath2
 
 ; Estamos en la locRoom2
 
-> EXAMINA   ALCOBA
-> MIRAR     _           AT lRoom2
+> EXAMI   BEDROOM
+> LOOK     _           AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4336,7 +4327,7 @@ BAJAR   lBath2
                 XMESSAGE "Jamás habías visto una alcoba tan ausente de vida como esta."
                 DONE 
 
-> EXAMINA   CAMA        AT lRoom2
+> EXAMI   BED        AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4349,7 +4340,7 @@ BAJAR   lBath2
                 XMESSAGE "Has visto muchas películas de miedo y siempre que pasa eso, se está recreando un acontecimiento pasado."
                 DONE 
 
-> EXAMINA   CAMA        AT lRoom2
+> EXAMI   BED        AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4370,14 +4361,14 @@ BAJAR   lBath2
                 DONE
 
 > N         _           AT lRoom2 
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "El pasillo está muy oscuro. Sin luz no se puede entrar."
                 DONE
 
 > S         _           AT lRoom2 
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "El baño está muy oscuro. Sin luz no se puede entrar."
@@ -4407,7 +4398,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> EXAMINA   PILA		AT lBath2
+> EXAMI   BASIN		AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4417,7 +4408,7 @@ BAJAR   lBath2
                 DONE 
 
 
-> EXAMINA   TINA        AT lBath2
+> EXAMI   TUB        AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4426,7 +4417,7 @@ BAJAR   lBath2
                 XMESSAGE "No veo nada interesante."
                 DONE 
 
-> MIRAR     _           AT lBath2
+> LOOK     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4436,7 +4427,7 @@ BAJAR   lBath2
                 XMESSAGE "A tu alrededor ves una tina antigua, una pila y un retrete con una cisterna en lo alto."
                 DONE 
 
-> MIRAR     _           AT lBath2
+> LOOK     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4449,7 +4440,7 @@ BAJAR   lBath2
                 XMESSAGE "Puedes observar un hacha#g#f%&'#t clavada en el suelo."
                 DONE
 
-> MIRAR     _           AT lBath2
+> LOOK     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4460,7 +4451,7 @@ BAJAR   lBath2
                 XMESSAGE "A tu alrededor ves una tina antigua, una pila y un retrete con una cisterna en lo alto."
                 DONE
 
-> EXAMINA   CISTERNA    AT lBath2
+> EXAMI   CISTERN    AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4471,7 +4462,7 @@ BAJAR   lBath2
                 XMESSAGE "Igual si me subo al retrete podría echar un vistazo a esa cisterna."   
                 DONE
 
-> EXAMINA   RETRETE     AT lBath2
+> EXAMI   WC     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4481,7 +4472,7 @@ BAJAR   lBath2
                 XMESSAGE "No sé por qué, pero tengo ganas de usarlo."
                 DONE
 
-> CAGAR     _           AT lBath2
+> SHIT     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4496,8 +4487,8 @@ BAJAR   lBath2
                 XMESSAGE "YA. Ufff, gracias.#k" 
                 DONE
 
-> SUBIR     _
-> SUBIR     RETRETE     AT lBath2
+> UP     _
+> UP     WC     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4505,12 +4496,12 @@ BAJAR   lBath2
                 ZERO    fBajarRetrete
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                XMESSAGE "Bajas la tapa del retrete y te subes a el."
+                XMESSAGE "Bajas la tapa del retrete y te subes a él."
                 GOTO    lRetrete
                 DONE
 
-> SUBIR     _
-> SUBIR     RETRETE     AT lBath2
+> UP     _
+> UP     WC     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4521,8 +4512,8 @@ BAJAR   lBath2
                 XMESSAGE "Ya no existe el retrete. Está hecho añicos."
                 DONE
 
-> USAR      CISTERNA
-> USAR      RETRETE     AT lBath2
+> USE      CISTERN
+> USE      WC     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4530,11 +4521,11 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Un fluido viscoso y rojo inunda las paredes del retrete. La cisterna deja de funcionar, pues ya no escuchas el ruido de llenado del depósito.#n#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡HUELE A SANGRE!"
+                XMESSAGE "¡HUELE A BLOOD!"
                 DONE
 
 
-> BEBER     SANGRE     AT lBath2
+> DRINK     BLOOD     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4543,8 +4534,8 @@ BAJAR   lBath2
                 XMESSAGE "Eso lo haría si fuera otra clase de juego, si. En este no lo veo adecuado."                
                 DONE
 
-> EXAMINA   FLUIDO
-> EXAMINA   SANGRE      AT lBath2
+> EXAMI   FLUID
+> EXAMI   BLOOD      AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4553,9 +4544,9 @@ BAJAR   lBath2
                 XMESSAGE "¡No pienso tocar esa porquería!"
                 DONE
 
-> COGER     HACHA
-> EXAMINA   SUELO
-> EXAMINA   RETRETE     AT lBath2
+> TAKE     AXE
+> EXAMI   FLOOR
+> EXAMI   WC     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4576,7 +4567,7 @@ BAJAR   lBath2
                 GET     oHacha
                 DONE
 
-> EXAMINA   RETRETE     AT lBath2
+> EXAMI   WC     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4589,8 +4580,8 @@ BAJAR   lBath2
      
 ; Estamos en locRetrete
 
-> EXAMINA   RETRETE
-> MIRAR     _           AT lRetrete
+> EXAMI   WC
+> LOOK     _           AT lRetrete
                 INK     9               ; Color del narrador
                 XMESSAGE "Es un retrete...#n"
                 INK     2
@@ -4609,8 +4600,8 @@ BAJAR   lBath2
                 XMESSAGE "A tu alrededor ves una tina antigua, una pila, una cisterna y un montón de cascotes sobre un charco de sangre."
                 DONE
 
-> BAJAR     _
-> BAJAR     RETRETE     AT lRetrete
+> DOWN     _
+> DOWN     WC     AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4627,8 +4618,8 @@ BAJAR   lBath2
                 XMESSAGE "Está claro que no somos bienvenidos en esta casa."
                 DONE
 
-> EXAMINA   CISTERNA
-> ABRIR     CISTERNA    AT lRetrete
+> EXAMI   CISTERN
+> OPEN     CISTERN    AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
@@ -4646,8 +4637,8 @@ BAJAR   lBath2
                 XMESSAGE "¡Puaj! está chorreando de sangre."
                 DONE
 
-> EXAMINA   CISTERNA
-> ABRIR     CISTERNA    AT lRetrete
+> EXAMI   CISTERN
+> OPEN     CISTERN    AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
@@ -4693,7 +4684,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> MIRAR     _           AT lRoom3
+> LOOK     _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
@@ -4706,7 +4697,7 @@ BAJAR   lBath2
                 XMESSAGE "La estancia parece haber retrocedido en el tiempo treinta años. ¿Qué ha pasado?"
                 DONE
 
-> EXAMINA	CABECERO    AT lRoom3
+> EXAMI	HEADBOARD    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4716,7 +4707,7 @@ BAJAR   lBath2
                 XMESSAGE "Se trata de un cabecero de madera muy básico, no hay detalles a destacar."
                 DONE
 
-> EXAMINA	CABECERO    AT lRoom3
+> EXAMI	HEADBOARD    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4726,7 +4717,7 @@ BAJAR   lBath2
                 XMESSAGE "Donde estaba el cabecero de madera ahora hay uno de latón antiguo con piezas repujadas haciendo unas complicadas filigranas."
                 DONE
 
-> EXAMINA	PARED       AT lRoom3
+> EXAMI	WALL       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4738,7 +4729,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Parece que el gotelé aquí sigue de moda! ¡Y lo sufrido que es!" 
                 DONE
 
-> EXAMINA	PARED       AT lRoom3
+> EXAMI	WALL       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4748,7 +4739,7 @@ BAJAR   lBath2
                 XMESSAGE "Las paredes son blancas y rugosas pintadas en cal, están muy frías y desnudas."
                 DONE
 
-> EXAMINA   CAMA        AT lRoom3
+> EXAMI   BED        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4758,7 +4749,7 @@ BAJAR   lBath2
                 XMESSAGE "Se trata de una cama de matrimonio moderna."
                 DONE
 
-> EXAMINA   CAMA        AT lRoom3
+> EXAMI   BED        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4769,7 +4760,7 @@ BAJAR   lBath2
                 XMESSAGE "Quieres otro peluche,¿eh? ¡A la feria a disparar palillos!"
                 DONE
 ; Hemos visto la foto, por tanto el peluche está limpio
-> EXAMINA   CAMA        AT lRoom3
+> EXAMI   BED        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4789,7 +4780,7 @@ BAJAR   lBath2
                 XMESSAGE "Es blandito y conserva un aroma a perfume fresco, dan ganas de achucharlo."
                 DONE      
 ;NO hemos visto la foto, el peluche está mugriento
-> EXAMINA   CAMA        AT lRoom3
+> EXAMI   BED        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4807,7 +4798,7 @@ BAJAR   lBath2
                 XMESSAGE "Es un osito de peluche#g#f##t muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida."
                 DONE            
 
-> EXAMINA   ALFOMBRA    AT lRoom3
+> EXAMI   CARPET    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4817,7 +4808,7 @@ BAJAR   lBath2
                 XMESSAGE "Hay una alfombra grande y azul a los pies de la cama."
                 DONE
 
-> EXAMINA   ALFOMBRA    AT lRoom3
+> EXAMI   CARPET    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4829,7 +4820,7 @@ BAJAR   lBath2
                 XMESSAGE "Esta alfombra debe tener un siglo por lo menos."
                 DONE
 
-> EXAMINA   MESITA      AT lRoom3
+> EXAMI   BEDSIDE      AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4839,7 +4830,7 @@ BAJAR   lBath2
                 XMESSAGE "Es una mesita de noche rústica que hay justo en uno de los lados de la cama."
                 DONE
                 
-> EXAMINA   MESITA      AT lRoom3
+> EXAMI   BEDSIDE      AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4851,7 +4842,7 @@ BAJAR   lBath2
                 XMESSAGE "Me he dado un buen golpe en la cabeza, no entiendo nada...#n#nLas cosas no están en su sitio ni son las mismas."
                 DONE
 
-> EXAMINA   LAMPARA     AT lRoom3
+> EXAMI   LAMP     AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4861,7 +4852,7 @@ BAJAR   lBath2
                 XMESSAGE "Hay una lámpara justo encima de la cama, recuerdas que se encendía con una pera, pero ahora que has cogido maña con las cerillas, no te vas a poner a revolver la cama de tus padres."
                 DONE
 
-> EXAMINA   LAMPARA     AT lRoom3
+> EXAMI   LAMP     AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4871,7 +4862,7 @@ BAJAR   lBath2
                 XMESSAGE "Al lado de la cama puedes contemplar una lámpara de pie de estilo victoriano.#n#nLa base es de mármol con filigrana negra con pie grabado y la pantalla está recargada con unas cuentas doradas y negras que cuelgan de ella."
                 DONE
 
-> EXAMINA   SUELO       AT lRoom3
+> EXAMI   FLOOR       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4881,7 +4872,7 @@ BAJAR   lBath2
                 XMESSAGE "El suelo es de gres porcelánico esmaltado de color blanco."
                 DONE
 
-> EXAMINA   SUELO       AT lRoom3
+> EXAMI   FLOOR       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4895,7 +4886,7 @@ BAJAR   lBath2
 
 ; Estamos en locBath3
 
-> MIRAR     _           AT lBath3
+> LOOK     _           AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4906,7 +4897,7 @@ BAJAR   lBath2
                 XMESSAGE "Yo examinaría con determinación esa terma."
                 DONE
 
-> EXAMINA   AGUA        AT lBath3
+> EXAMI   WATER        AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
@@ -4917,7 +4908,7 @@ BAJAR   lBath2
                 XMESSAGE "No me lo puedo creer, ¡el agua es salada!"
                 DONE     
 
-> EXAMINA   MOSAICO     AT lBath3
+> EXAMI   MOSAIC     AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
@@ -4928,7 +4919,7 @@ BAJAR   lBath2
                 XMESSAGE "Pues claro, ¿no te acuerdas? Yo lo recuerdo como si fuera ayer. Estuvimos allí."
                 DONE     
 
-> EXAMINA   TERMA       AT lBath3
+> EXAMI   THERMA       AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4939,7 +4930,7 @@ BAJAR   lBath2
                 XMESSAGE "Percibes el ruido del agua moverse, será posible que...#n#nEstás muy cerca, pero no lo suficiente. Quizás deberías echar otro vistazo para asegurarte."
                 DONE     
 
-> EXAMINA   TERMA       AT lBath3
+> EXAMI   THERMA       AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
@@ -4957,7 +4948,7 @@ BAJAR   lBath2
                 SET     fFinTerma
                 DONE  
 
-> EXAMINA   TERMA       AT lBath3
+> EXAMI   THERMA       AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4971,7 +4962,7 @@ BAJAR   lBath2
                 XMESSAGE "Sea quien fuere quien estuviese ahí, ha desaparecido... vayámonos de aquí... ¡YA!"
                 DONE   
 
-> EXAMINA   MURETE      AT lBath3
+> EXAMI   MURETE      AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -4985,7 +4976,7 @@ BAJAR   lBath2
                 DONE
 
 > S			_           AT lBath3                
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
@@ -5004,19 +4995,19 @@ BAJAR   lBath2
 
 ; Estamos en el locPasillo1
 
-> EXAMINA   PASILLO
-> MIRAR     _           AT lPasillo1
+> EXAMI   HALLWAY
+> LOOK     _           AT lPasillo1
                 INK     9               ; Color del narrador
                 XMESSAGE "Tienes una puerta al NORTE y el corredor continúa hacia el ESTE."
                 DONE
 
-> BAJAR     _           AT lPasillo1
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+> DOWN     _           AT lPasillo1
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> BAJAR     _           AT lPasillo1                
+> DOWN     _           AT lPasillo1                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -5028,7 +5019,7 @@ BAJAR   lBath2
                 DONE
 
 > E     	_           AT lPasillo1 
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
@@ -5046,7 +5037,7 @@ BAJAR   lBath2
                 DONE
 
 > N			_           AT lPasillo1                
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
@@ -5074,8 +5065,8 @@ BAJAR   lBath2
 ; Tenemos una cría que se pasea por los pasillos y si no le das un objeto, te mata
 ; Una vez le das el objeto, la cría desaparece, no vuelve a salir
 
-> EXAMINA   PASILLO
-> MIRAR     _           AT lPasillo2
+> EXAMI   HALLWAY
+> LOOK     _           AT lPasillo2
                 INK     9               ; Color del narrador
                 XMESSAGE "Una puerta conduce hacia el SUR. El corredor continúa de ESTE a OESTE."
                 DONE
@@ -5083,21 +5074,21 @@ BAJAR   lBath2
 ;Controles de luz
 
 > E			_           AT lPasillo2
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > S         _           AT lPasillo2
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> O			_           AT lPasillo2
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+> W			_           AT lPasillo2
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
@@ -5153,7 +5144,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> O			_           AT lPasillo2
+> W			_           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -5165,7 +5156,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> O			_           AT lPasillo2
+> W			_           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -5180,7 +5171,7 @@ BAJAR   lBath2
 ;No hemos visto la foto
 ;Llevamos el peluche
 
-; La niña nos arrebata el peluche y desaparece. (PELUCHE SUCIO)
+; La niña nos arrebata el peluche y desaparece. (TEDDY SUCIO)
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -5192,7 +5183,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
+                XMESSAGE "¡DAME MI BEAR!¡ES MIO!#k#n"
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lRoom2
@@ -5213,7 +5204,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
+                XMESSAGE "¡DAME MI BEAR!¡ES MIO!#k#n"
                 DESTROY oPeluche	
                 LET     fNenaMala 5 
                 GOTO    lPasillo3
@@ -5234,7 +5225,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
+                XMESSAGE "¡DAME MI BEAR!¡ES MIO!#k#n"
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lPasillo1
@@ -5492,7 +5483,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRáEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI BEAR! ¡TRáEMELO YA!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5510,7 +5501,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRáEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI BEAR! ¡TRáEMELO YA!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5528,7 +5519,7 @@ BAJAR   lBath2
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRáEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI BEAR! ¡TRáEMELO YA!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5536,14 +5527,14 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locPasillo3
-> EXAMINA   PASILLO
-> MIRAR     _           AT lPasillo3
+> EXAMI   HALLWAY
+> LOOK     _           AT lPasillo3
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás en el final del pasillo y tienes una puerta hacia el NORTE. También puedes volver al ESTE."
                 DONE
 
 > N			_           AT lPasillo3
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
@@ -5586,14 +5577,14 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> O			_           AT lPasillo3
-                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+> W			_           AT lPasillo3
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> O			_           AT lPasillo3
+> W			_           AT lPasillo3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -5606,7 +5597,7 @@ BAJAR   lBath2
 
 ; Uso general
 
-> EXAMINA	FOTOGRAFIA
+> EXAMI	PHOTOGRAPHY
                 NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
                 INK     9               ; Color del narrador
 				XMESSAGE "Parece ser una fotografía#g#fD#t familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n"
@@ -5621,47 +5612,48 @@ BAJAR   lBath2
 				DESTROY oFotografia1
 				DONE
 
-> EXAMINA   CERILLAS
+> EXAMI   MATCH
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 INK     9               ; Color del narrador
                 XMESSAGE "Es una caja de cerillas#g#f+,#t de palo largo, típicas para encender los fogones de la cocina y velas."
                 DONE
 
-> LLAMAR    BOMBERO
+> CALL    FIREMAN
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
                 DONE
 
-> USAR      CHUPETE     AT lBurgos
-                ISAT    oLlaveBodega 252
-                CREATE  oLlaveBodega
-                GET     oLlaveBodega
-                ISAT    oLlavePatio 252
-                CREATE  oLlavePatio
-                GET     oLlavePatio
-                ISAT    oCerillas 252
-                CREATE  oCerillas
-                GET     oCerillas
-                ISAT    oLataDeAceite 252
-                CREATE  oLataDeAceite 
-                GET     oLataDeAceite 
-                ISAT    oHacha 252
-                CREATE  oHacha
-                GET     oHacha
+> USE      PACIFIER     AT lBurgos
+                ;ISAT    oLlaveBodega 252
+                ;CREATE  oLlaveBodega
+                ;GET     oLlaveBodega
+                ;ISAT    oLlavePatio 252
+                ;CREATE  oLlavePatio
+                ;GET     oLlavePatio
+                ;ISAT    oCerillas 252
+                ;CREATE  oCerillas
+                ;GET     oCerillas
+                ;ISAT    oLataDeAceite 252
+                ;CREATE  oLataDeAceite 
+                ;GET     oLataDeAceite 
+                ;ISAT    oHacha 252
+                ;CREATE  oHacha
+                ;GET     oHacha
                 ;ISAT    oPelota 252
                 ;CREATE  oPelota
                 ;GET     oPelota
-                ISAT    oLlavePorche 252
-                CREATE  oLlavePorche
-                GET     oLlavePorche
+                ;ISAT    oLlavePorche 252
+                ;CREATE  oLlavePorche
+                ;GET     oLlavePorche
                 ;ISAT    oPaleta 252
                 ;CREATE  oPaleta
                 ;GET     oPaleta
-                SET     fCombinacion     ; Tenemos la combinación del candado
-                SET     fJugar  
-                GOTO    lCochera
+                ;SET     fCombinacion     ; Tenemos la combinación del candado
+                ;SET     fJugar  
+                GOTO    lRecibidor
+                DONE
 
-> LLAMAR    CHUPETE     AT lBurgos
+> CALL    PACIFIER     AT lBurgos
                 CLS                     ; Limpiamos la pantalla
                 WINDOW 0
                 XPICTURE 225
@@ -5719,7 +5711,7 @@ BAJAR   lBath2
                ; RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> USAR      MUEBLE      
+> USE      FURNITURE      
                 INK     1
                 XMESSAGE "INK 1"
                 INK     2               ; Color de tu consciencia
@@ -5752,7 +5744,7 @@ BAJAR   lBath2
                 XMESSAGE "INK 15"
                 DONE
 
-> AYUDA     MAGIA
+> HELP     MAGIC
                 INK 15
                 MESSAGE "Ropa de calle#g#f=#t"          
                 MESSAGE "llave del chamizo#g#f2#t"
@@ -5805,7 +5797,7 @@ BAJAR   lBath2
                 INK 15                   
                 DONE
 
-> AYUDA     OSITO                
+> HELP     BEAR                
                 XMESSAGE "fControlLuz"
                 PRINT   73
                 XMESSAGE "#n"
@@ -5822,7 +5814,7 @@ BAJAR   lBath2
                 PRINT   28
                 DONE
                 
-> USAR      MAGIA
+> USE      MAGIC
                 ISAT    oCerillas       252
                 ISAT    oLlaveChamizo   252
                 ISAT    oLlavePorche    252
@@ -5854,7 +5846,8 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-> APAGAR    CERILLA
+> LIGHT     MATCH
+                PREP OFF
                 CARRIED oCerillas
                 NOTZERO fUsarCerilla
                 LET     fUsarCerilla 0
@@ -5867,8 +5860,9 @@ BAJAR   lBath2
                 XMESSAGE "Has apagado la cerilla#g#f4#t."
                 DONE
 
-> PRENDER   CERILLA
-> USAR 		CERILLA                
+> LIGHT     MATCH
+> USE 		MATCH          
+                PREP ON      
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 LET     fApagarCerilla 0
 				ZERO    fUsarCerilla
@@ -5881,8 +5875,9 @@ BAJAR   lBath2
                 XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
                 DONE
 
-> PRENDER   CERILLA     
-> USAR		CERILLA 
+> LIGHT MATCH     
+> USE   MATCH       
+                PREP ON
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fVasAPalmar
                 INK     9               ; Color del narrador
@@ -5895,9 +5890,10 @@ BAJAR   lBath2
                 INK     15              ; Color del sistema
                 END
 
-; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
-> PRENDER   CERILLA
-> USAR      CERILLA
+; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada TURN MATCH, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
+> LIGHT MATCH
+> USE   MATCH
+                PREP ON
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fUsarCerilla
                 INK     15              ; Color del sistema
@@ -5910,15 +5906,16 @@ BAJAR   lBath2
                 XMESSAGE "No puedes ver nada. Está muy oscuro."
                 DONE       
 
-> APAGAR    CERILLA
+> LIGHT MATCH
+                PREP OFF
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fApagarCerilla
                 INK     9              ; Color del sistema
                 XMESSAGE "Ya has apagado la cerilla#g#f4#t."
                 DONE
 
-> EXAMINA   DIARIO
-> LEER      DIARIO      
+> EXAMI   DIARY
+> READ      DIARY      
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -5949,7 +5946,7 @@ BAJAR   lBath2
                 INK     13
                 XMESSAGE "16 de Marzo de 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " El señor ha abusado de mi. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n"
+                XMESSAGE " El señor ha abusado de mí. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n"
                 INK     13
                 XMESSAGE "10 de Abril de 1950.#n"
                 INK     9               ; Color del narrador
@@ -5957,7 +5954,7 @@ BAJAR   lBath2
                 INK     13
                 XMESSAGE "4 de Mayo de 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera donde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n"
+                XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera dónde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n"
                 XMESSAGE "Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mí y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n"
                 XMESSAGE "Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n"
                 INK     13
@@ -5979,7 +5976,8 @@ BAJAR   lBath2
                  INK    13               
                 XMESSAGE "23 de Febrero de 1951.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n"
+                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n"
+                XMESSAGE " Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n"
                 INK     13
                 XMESSAGE "9 de Marzo de 1951.#n"
                 INK     9               ; Color del narrador
@@ -5991,7 +5989,7 @@ BAJAR   lBath2
                 ; de un palazo en la cabeza y lo deja caer al hoyo.
                 DONE
 
-> SALID     _   INK     9               ; Color del narrador
+> EXITS     _   INK     9               ; Color del narrador
                 PROCESS 7
                 DONE
 
@@ -6001,54 +5999,49 @@ BAJAR   lBath2
                 LISTAT  WORN
                 DONE
 
-;> COGER   TODO  DOALL   HERE                
-> COGER     _   AUTOG
+;> TAKE   ALL  DOALL   HERE                
+> TAKE     _   AUTOG
                 DONE
 
-;> COGER    _    PLACE @52 CARRIED
+;> TAKE    _    PLACE @52 CARRIED
 ;                INK     9               ; Color del narrador
 ;                SYSMESS 36
 ;                INK     9               ; Color del narrador
 
-;> DEJAR   TODO  DOALL   CARRIED
-> DEJAR     _   AUTOD
+;> DROP    ALL   DOALL   CARRIED
+> DROP    _     AUTOD
                 DONE
 
-;> QUITAR  TODO  DOALL   WORN
-> QUITAR    _   AUTOR
+> REMOVE  ALL   DOALL   WORN
+> REMOVE    _     AUTOR
                 DONE
 
-;> PONER   TODO  DOALL   CARRIED
-> PONER     _   AUTOW
+;> PUT     ALL  DOALL   CARRIED
+> PUT       _   AUTOW
                 DONE
 
 > R         _   ZERO    fDark
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
 
-> ACABAR    _   QUIT
-                END
-            
-> FIN       _     QUIT
+> Q       _     QUIT
                 END
 
+> Q       _     DONE                    ;Not like QUIT on PAW
 
-> FIN       _   DONE                    
+> SAVE    _     SAVE    0               ;ditto
+                RESTART
 
-> SV        _   SAVE 0                  
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+> LOAD    _     LOAD    0
+                RESTART
 
-> LD        _   LOAD 0
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+> RAMSA   _     RAMSAVE
+                RESTART
 
-> RAMSA     _   RAMSAVE
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+> RAMLO   _     RAMLOAD 255             ;Reload all flags
+                RESTART
 
-> RAMLO     _   RAMLOAD 255                             ;Reload all flags
-                RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
-
-> MIRAR     _   RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
-
+> LOOK    _     RESTART
 
 /PRO 6 ; Inicialización
 
