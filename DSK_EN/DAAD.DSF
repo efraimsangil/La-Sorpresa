@@ -1282,13 +1282,13 @@ BAJAR   lBath2
 > EXAMINA 	FELPUDO		AT lPorche
                 NOTZERO fPorche
                 INK     9               ; Color del narrador
-	            XMESSAGE "Es un clásico felpudo de esparto con el mensaje 'WELCOME HOME' #g#fVWXY#t. Tus padres no compraron el que ponía 'BIENVENIDOS' porque les recordaba a cierto cantante de rock al que tenían bastante manía."
+	            XMESSAGE "It's a classic doormat with the message 'WELCOME HOME' #g#fVWXY#t."
                 DONE
 
 > EXAMINA 	FELPUDO		AT lPorche
                 ZERO    fPorche
                 INK     9               ; Color del narrador
-                XMESSAGE "No veo nada de eso."
+                XMESSAGE "I don't see any of that."
                 DONE
 
 ; En estas acciones, usamos flags para controlar que se ejecute dos veces y en cada ejecución obtenga un mensaje distinto
@@ -1301,9 +1301,9 @@ BAJAR   lBath2
                 ZERO    fCogerFelpudo   ; Flag que usamos para controlar que coja el Felpudo dos veces
                 SET     fCogerFelpudo
                 INK     9               ; Color del narrador
-	            XMESSAGE "Debajo del felpudo#g#fVWXY#t no hay nada especial, a excepción de un ciempiés que sale por patas al haber sido descubierto.#n"
+	            XMESSAGE "Under the mat#g#fVWXY#t there's nothing special, except for a centipede that comes out when it's discovered.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Vamos a dejar el felpudo#g#fVWXY#t en su sitio y dejar de importunar a la fauna del lugar."
+                XMESSAGE "Let's leave the mat #g#fVWXY#t in place and stop bothering the local wildlife."
                 DONE
 
 > COGER 	FELPUDO     AT lPorche
@@ -1311,7 +1311,7 @@ BAJAR   lBath2
                 NOTZERO fCogerFelpudo
                 NOTCARR oLlavePorche
                 INK     2               ; Color de tu consciencia
-	            XMESSAGE "¿En serio, otra vez? La llave de la casa no va a aparecer sola. Sigue buscando."
+	            XMESSAGE "Really, again? The key to the house isn't gonna show up on its own. Keep looking."
                 DONE
 
 > COGER     CIEMPIES    AT lPorche
