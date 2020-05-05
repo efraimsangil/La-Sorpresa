@@ -79,6 +79,7 @@
 		{"symbol":"_VOC_TALK", "Value":31},
 		{"symbol":"_VOC_ASK", "Value":31},
 		{"symbol":"_VOC_SAY", "Value":31},
+		{"symbol":"_VOC_EX", "Value":30},
 		{"symbol":"_VOC_EXAMI", "Value":30},
 		{"symbol":"_VOC_LOOK", "Value":30},
 		{"symbol":"_VOC_RAMLO", "Value":29},
@@ -453,6 +454,7 @@
 		{"VocWord":"EAST", "Value":4,"VocType":2 },
 		{"VocWord":"ENTER", "Value":13,"VocType":0 },
 		{"VocWord":"EVERY", "Value":20,"VocType":2 },
+		{"VocWord":"EX", "Value":30,"VocType":0 },
 		{"VocWord":"EXAMI", "Value":30,"VocType":0 },
 		{"VocWord":"EXCEP", "Value":13,"VocType":4 },
 		{"VocWord":"EXIT", "Value":14,"VocType":0 },
@@ -1847,7 +1849,7 @@
 	},
 	{
 		"Value":14,
-		"Text":"Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n#n#n"
+		"Text":"Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n#n"
 	},
 	{
 		"Value":15,
@@ -1871,11 +1873,11 @@
 	},
 	{
 		"Value":20,
-		"Text":"The sound comes from the bedside table and you're still in bed, listening to the phone ring, you're a bum!#n#nYou're not going to take it? What if it's important?#n#nWhat if they're the ones at the game store to notify you that they have MSX Nemesis in stock again?#n"
+		"Text":"The sound comes from the bedside table and you're still in bed, listening to the phone ring, you're a bum!#n#nYou're not going to take it? What if it's important?#n#nWhat if they're the ones at the game store to notify you that they have Nemesis cartridge in stock again?#n"
 	},
 	{
 		"Value":21,
-		"Text":"Your room is big, but the decoration is minimalist; a bed, a table with a lamp and a wall cupboard is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the ornaments are expendable.#n"
+		"Text":"Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the ornaments are expendable.#n"
 	},
 	{
 		"Value":22,
@@ -1907,23 +1909,23 @@
 	},
 	{
 		"Value":29,
-		"Text":"#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b#n"
+		"Text":"#nYou close the door house and go straight to the building's garage.#k#b#n"
 	},
 	{
 		"Value":30,
-		"Text":"Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#k#b#n"
+		"Text":"You leave the house and take your car to the Sierra del Caurel; it is a long journey, but you like to drive and the road allows you to disconnect from your daily life.#k#b#n"
 	},
 	{
 		"Value":31,
-		"Text":"Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b#n"
+		"Text":"After a few hours of foggy windows and badly paved roads, you recognize the crossing that leads to the village where your parents have the house.#k#b There is little time to arrive, exhaustion begins to take its toll on you and you feel the numbness of your muscles after the long journey.#k#b#n"
 	},
 	{
 		"Value":32,
-		"Text":" Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b#n"
+		"Text":" In a pitiful mood, you suddenly perceive a distraction; the path has a beautiful grove of trees on either side, whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you respect as a child.#k#b#n"
 	},
 	{
 		"Value":33,
-		"Text":" Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad.#n"
+		"Text":" When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the deceased... A profound suggestion from childhood allows you to imagine the silhouette of the dog of Urco in the mist.#k#b Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality.#k#b#n"
 	},
 	{
 		"Value":34,
@@ -5515,11 +5517,18 @@
 					]
 			},
 			{
-				"Entry":"ANSWE PHONE",
+				"Entry":"ANSWE U",
 				"Verb":49,
-				"Noun":127,
+				"Noun":10,
 				"condacts":
 					[
+					{
+						"Opcode":69,
+						"Condact":"NOUN2",
+						"Indirection1":0,
+						"Param1":127,
+						"NumParams":1
+					},
 					{
 						"Opcode":0,
 						"Condact":"AT",
@@ -5835,250 +5844,23 @@
 					]
 			},
 			{
-				"Entry":"GET PHONE",
-				"Verb":20,
-				"Noun":127,
+				"Entry":"ANSWE U",
+				"Verb":49,
+				"Noun":10,
 				"condacts":
 					[
 					{
-						"Opcode":0,
-						"Condact":"AT",
+						"Opcode":69,
+						"Condact":"NOUN2",
 						"Indirection1":0,
-						"Param1":1,
+						"Param1":127,
 						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":67,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":67,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":11,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":130,
-						"Condact":"XPICTURE",
-						"Indirection1":0,
-						"Param1":202,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":12,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":12,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":13,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":14,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":12,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":15,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":16,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":12,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":18,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
 					}
 					]
 			},
 			{
 				"Entry":"ANSWE PHONE",
 				"Verb":49,
-				"Noun":127,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":67,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":2,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":19,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ANSWE PHONE",
-				"Verb":49,
-				"Noun":127,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":67,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":2,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":19,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"GET PHONE",
-				"Verb":20,
 				"Noun":127,
 				"condacts":
 					[
@@ -6818,6 +6600,34 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":32,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":130,
+						"Condact":"XPICTURE",
+						"Indirection1":0,
+						"Param1":206,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
 						"NumParams":1
 					},
 					{

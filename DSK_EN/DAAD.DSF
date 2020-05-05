@@ -175,36 +175,36 @@
 /VOC    ;Vocabulary
 
 ;                       Movements ie verbs and nouns < 14
-N       2       noun
-NORTH   2       noun
-S       3       noun
-SOUTH   3       noun
-E       4       noun
-EAST    4       noun
-W       5       noun
-WEST    5       noun
-NE      6       noun
-NW      7       noun
-SE      8       noun
-SW      9       noun
-U       10      noun
-UP      10      noun
-ASCEN   10      verb
-D       11      noun
-DOWN    11      noun
-DESCE   11      verb
-EXITS   12      verb
-X       12      verb
-ENTER   13      verb
-EXIT    14      verb
+N               2       noun
+NORTH           2       noun
+S               3       noun
+SOUTH           3       noun
+E               4       noun
+EAST            4       noun
+W               5       noun
+WEST            5       noun
+NE              6       noun
+NW              7       noun
+SE              8       noun
+SW              9       noun
+U               10      noun
+UP              10      noun
+ASCEN           10      verb
+D               11      noun
+DOWN            11      noun
+DESCE           11      verb
+EXITS           12      verb
+X               12      verb
+ENTER           13      verb
+EXIT            14      verb
 
 ;                       Nouns   <20 means can be used as verbs
 ;                               <50 means a proper noun ie not an 'IT'
-I       14      noun
-INVEN   14      noun
-ALL     20      noun
-LOT     20      noun
-EVERY   20      noun
+I               14      noun
+INVEN           14      noun
+ALL             20      noun
+LOT             20      noun
+EVERY           20      noun
 
 ;                               Objetos
 CONSOLE         98     noun     ; CONSOLA, CONSOLE TABLE.   lRecibidor
@@ -327,27 +327,28 @@ MOON            214    noun     ; LUNA.                     lPatio
 HANDRAIL        215    noun     ; BARANDILLA.               lEscaleras
 
 ;                       Verbs
-GET     20      verb
-TAKE    20      verb
-DROP    21      verb
-PUT     21      verb
-REMOV   22      verb
-WEAR    23      verb
-R       24      verb
-REDES   24      verb
-QUIT    25      verb
-Q       25      verb
-STOP    25      verb
-SAVE    26      verb
-LOAD    27      verb
-RAMSA   28      verb
-RAMLO   29      verb
-LOOK    30      verb
-EXAMI   30      verb
-SAY     31      verb
-ASK     31      verb
-TALK    31      verb
-SPEAK   31      verb
+GET             20      verb
+TAKE            20      verb
+DROP            21      verb
+PUT             21      verb
+REMOV           22      verb
+WEAR            23      verb
+R               24      verb
+REDES           24      verb
+QUIT            25      verb
+Q               25      verb
+STOP            25      verb
+SAVE            26      verb
+LOAD            27      verb
+RAMSA           28      verb
+RAMLO           29      verb
+LOOK            30      verb
+EXAMI           30      verb
+EX              30      verb
+SAY             31      verb
+ASK             31      verb
+TALK            31      verb
+SPEAK           31      verb
 
 ;verbos jugador
 
@@ -386,47 +387,48 @@ CERRAR          61      verb
 SHIT            62      verb
 
 ;                               Adjectives
-SMALL   2       adjective
-BIG     3       adjective
-LARGE   3       adjective
-OLD     4       adjective
-NEW     5       adjective
-HARD    6       adjective
-SOFT    7       adjective
-SHORT   8       adjective
-LONG    9       adjective
-CAR     10      adjective
+SMALL           2       adjective
+BIG             3       adjective
+LARGE           3       adjective
+OLD             4       adjective
+NEW             5       adjective
+HARD            6       adjective
+SOFT            7       adjective
+SHORT           8       adjective
+LONG            9       adjective
+CAR             10      adjective
 
 ;                               Adverbs
-QUICK   2       adverb
-SLOWL   3       adverb
-QUIET   4       adverb
-LOUDL   5       adverb
-CAREF   6       adverb
-SOFTL   6       adverb
-GENTL   6       adverb
+QUICK           2       adverb
+SLOWL           3       adverb
+QUIET           4       adverb
+LOUDL           5       adverb
+CAREF           6       adverb
+SOFTL           6       adverb
+GENTL           6       adverb
 
 ;                               Prepositions
-TO      2       preposition
-FROM    3       preposition
-IN      4       preposition
-OUT     5       preposition
-THROU   6       preposition
-OVER    7       preposition
-UNDER   8       preposition
-BY      9       preposition
-ON      10      preposition
-OFF     11      preposition
-AT      12      preposition
-EXCEP   13      preposition
+TO              2       preposition
+FROM            3       preposition
+IN              4       preposition
+OUT             5       preposition
+THROU           6       preposition
+OVER            7       preposition
+UNDER           8       preposition
+BY              9       preposition
+ON              10      preposition
+OFF             11      preposition
+AT              12      preposition
+EXCEP           13      preposition
+;UP              14      preposition
 
 ;                               Pronouns
-IT      2       pronoun
-THEM    2       pronoun
+IT              2       pronoun
+THEM            2       pronoun
 
 ;                               Conjugations
-AND     2       conjugation
-THEN    2       conjugation
+AND             2       conjugation
+THEN            2       conjugation
 
 
 
@@ -551,8 +553,8 @@ THEN    2       conjugation
 /0 ""
 /1 " Burgos.#n#n      January 10th, 1987.  You are a serious guy, with a big personality; a hard-working and responsible person, used to take on that comes your way in order to maintain your work status. You are not a very sociable person and with the years, you have inevitably become an incorrigible misanthrope, making you a hermit, of a few words, inexpressive and hostile at times.#k#b  You tend to talk to yourself a lot and have a highly developed consciousness: you can rarely show off your social skills. In other words, people who occasionally approach you run away in fear.#k#b  Today is Saturday and apparently you have no plans except to enjoy your 48 hours of freedom; that's what you call weekends. It's 12:30PM, is a cold winter day and you're still in bed half awake, sluggish. The early mornings of the week weigh you down more and more and you feel unable to leave your warm nest under the flannel blanket.#k#b  It's decided... You turn around in bed with the firm intention of sleeping a little longer, but at that same moment the phone on the bedside table rings. Someone's decided for you that you must definitely wake up."
 /2 " You leave home and take your car to the Sierra del Caurel; it's a long journey, but you like to drive and the road allows you to disconnect from your daily life.#n#n  After a few hours of steamed up windows and badly paved roads, you recognize the crossing that leads to the village where your parents used to live.#k#b  You've just arrived and the exhaustion begins to take its toll on you and you feel the numbness of your muscles after the long journey.#k#b  Suddenly you perceive a distraction; the road has a beautiful grove of trees on either side whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you respect as a child.#k#b  When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the dead... A deep suggestion since you were a child allows you to imagine the silhouette of Urco's dog from the mist.#k#b  Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality."
-/3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y la escena es sobrecogedora.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE se encuentra el porche; la entrada principal de la casa."
-/4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
+/3 " You're in the area around the family property. You contemplate the last glimmers of clarity that give way to the closed night. The icy wind whistles through the cypress trees that surround the farm and the scene is overwhelming.#k#b The house has two floors and from here you can see to the NORTH the old shed, to the SOUTH the garage and to the EAST the porch; the main entrance of the house."
+/4 " The garage has a small concrete ramp and a cream painted galvanized metal door."
 /5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
 /6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
 /7 " Te encuentras en el recibidor, despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior. Es desalentador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que dan paso a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado.#n#n  Parece no haber nadie en la casa."
@@ -834,9 +836,9 @@ DOWN   lBath2
 
 ; NOTA: Poner sistema de claves para continuar la aventura desde algún punto determinado
 
-; Aquí comienza la aventura
+; Starting the adventure
 
-; Estamos en locBurgos
+; You are in locBurgos
 
 > OPEN      CLOSET 
 > EXAMI     CLOSET     AT lBurgos
@@ -860,47 +862,49 @@ DOWN   lBath2
                 DONE
 
 ; Controlamos el poder examinar la mesilla habiendo usado el teléfono o no, de modo que mostramos dos tipos distintos de mensajes.
-> EXAMI 	NIGHTSTAND		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
+> EXAMI 	NIGHTSTAND  AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
                 ZERO    fUsarTelefono   ; Controlamos si NO ha usado el teléfono
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a pine wood night table, with a lamp that lets in a lot of light and you can't look at it directly because it hurts your eyes. It's very clean and no scratches or scuffs.#n"
                 XMESSAGE "There's a gondola phone on it and it won't stop ringing."              
                 DONE
 
-> EXAMI 	NIGHTSTAND		AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
+> EXAMI 	NIGHTSTAND  AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, cambiamos el mensaje de salida
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a pine wood night table, with a lamp that lets in a lot of light and you can't look at it directly because it hurts your eyes. It's very clean and no scratches or scuffs.#n"
                 DONE
 
 ; NOTA: Enciendo el LED
-> TURN      LAMP     AT lBurgos
-                PREP ON
+> TURN      LAMP        AT lBurgos
+                PREP    ON
                 INK     9               ; Color del narrador
                 XMESSAGE "You turn on the lamp."
                 DONE
 
 ; NOTA: Enciendo el LED
-> TURN      LAMP     AT lBurgos
-                PREP OFF
+> TURN      LAMP        AT lBurgos
+                PREP    OFF
                 INK     9               ; Color del narrador
                 XMESSAGE "You turn off the lamp."
                 DONE
 
-> EXAMI     LAMP     AT lBurgos
+> EXAMI     LAMP        AT lBurgos
                 INK     9               ; Color del narrador
                 XMESSAGE "It's a lamp that shines a lot of light.."
                 DONE
 
-> EXAMI 	PHONE    AT lBurgos
+> EXAMI 	PHONE       AT lBurgos
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Come on!, no one's looking at the phone. He picks it up, hangs it up, takes it, but he never examines it. You're not a doctor!"
                 DONE
 
 ; Controlamos coger el teléfono dos veces y sacamos dos mensajes distintos dependiendo del valor del flag que controla que usó o no el teléfono.
-> ANSWER    PHONE
-> PICK      PHONE
-> TAKE      PHONE    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+;> ANSWER    PHONE
+;> PICK      PHONE
+;> TAKE      PHONE       AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+
+> PICK      UP NOUN2 PHONE  AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
                 XMESSAGE "#b"
@@ -913,7 +917,31 @@ DOWN   lBath2
                 INK     12              ; Color del padre 
                 XMESSAGE "Good morning, son. How are you?#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n#n"
+                XMESSAGE "Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n"
+                INK     12              ; Color del padre 
+                XMESSAGE "Tell Morpheus to wait a moment and listen: Remember that today we had arranged to meet here, in the mountains. We have something very important to tell you, so get up and leave the house, otherwise it's going to be very late..#n"
+                INK     3               ; Color del protagonista
+                XMESSAGE "Hmmm, if I am honest, I was so tired that I no longer remembered that we had to meet today. Okay, I'll be leaving now..#n"
+                INK     12              ; Color del padre 
+                XMESSAGE "See you now, son, drive carefully. Bye bye.#n"
+                INK     3               ; Color del protagonista
+                XMESSAGE "See you later, father.."              
+                DONE   
+
+> PICK      PHONE   AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+                ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
+                SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
+                XMESSAGE "#b"
+                WINDOW  0
+                XPICTURE 202            ; Cogiendo el teléfono
+                WINDOW  1
+                ;CLS                     ; Limpiamos la pantalla
+                INK     9               ; Color del narrador
+                XMESSAGE "You're too sleepy to know where the sound of the phone is coming from, however, you grope around on the table and pick up.#n"
+                INK     12              ; Color del padre 
+                XMESSAGE "Good morning, son. How are you?#n"
+                INK     3               ; Color del protagonista
+                XMESSAGE "Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n"
                 INK     12              ; Color del padre 
                 XMESSAGE "Tell Morpheus to wait a moment and listen: Remember that today we had arranged to meet here, in the mountains. We have something very important to tell you, so get up and leave the house, otherwise it's going to be very late..#n"
                 INK     3               ; Color del protagonista
@@ -924,9 +952,13 @@ DOWN   lBath2
                 XMESSAGE "See you later, father.."              
                 DONE              
 
-> ANSWER    PHONE
-> PICK      PHONE
-> TAKE      PHONE    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
+> PICK      UP NOUN2 PHONE  AT lBurgos        ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
+                NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
+                INK     2               ; Color de tu consciencia
+                XMESSAGE "Your father has already hung up. You better get off your ass and go EAST to get the car."
+                DONE
+
+> PICK      PHONE       AT lBurgos        ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Your father has already hung up. You better get off your ass and go EAST to get the car."
@@ -948,7 +980,7 @@ DOWN   lBath2
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
-> SLEEP	_			AT lBurgos      ; Primer aviso al ejecutar SLEEP y no ha cogido el teléfono
+> SLEEP	    _			AT lBurgos      ; Primer aviso al ejecutar SLEEP y no ha cogido el teléfono
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar SLEEP dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
@@ -956,7 +988,7 @@ DOWN   lBath2
                 XMESSAGE "The phone's still ringing. Aren't you going to pick it up? Are you going to keep sleeping?"             
                 DONE
 
-> SLEEP	_			AT lBurgos      ; Primer aviso al ejecutar SLEEP y ha cogido el teléfono
+> SLEEP	    _			AT lBurgos      ; Primer aviso al ejecutar SLEEP y ha cogido el teléfono
                 NOTZERO fUsarTelefono   ; Ha cogido el teléfono
                 ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar SLEEP dos veces
                 SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
@@ -964,7 +996,7 @@ DOWN   lBath2
                 XMESSAGE "Do you really want to keep sleeping?"    
                 DONE
 
-> SLEEP	_			AT lBurgos
+> SLEEP	    _			AT lBurgos
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó SLEEP una vez
                 INK     9               ; Color del narrador
@@ -972,7 +1004,7 @@ DOWN   lBath2
                 INK     15
                 END
 
-> SLEEP	_			AT lBurgos
+> SLEEP	    _			AT lBurgos
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 NOTZERO fNoUsarTelefono ; Ya usó SLEEP una vez
                 INK     9               ; Color del narrador
@@ -981,7 +1013,14 @@ DOWN   lBath2
                 END
 
 ; Es un complemento por si el jugador se le ocurre usarla.
-> HUNG    PHONE    AT lBurgos
+
+> HUNG      UP NOUN2 PHONE  AT lBurgos
+                NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede HUNGLO
+                INK     2               ; Color de tu consciencia
+                XMESSAGE "You hang up the phone."
+                DONE   
+
+> HUNG      PHONE       AT lBurgos
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede HUNGLO
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "You hang up the phone."
@@ -1013,31 +1052,34 @@ DOWN   lBath2
                 ISAT    oLlaveCoche 252
                 CREATE  oLlaveCoche
                 GET     oLlaveCoche
-                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
+                XMESSAGE "#nYou close the door house and go straight to the building's garage.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
                 WINDOW  0
                 XPICTURE 002            ; Foto dentro del coche 
                 WINDOW  1
-                XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#k#b"
+                XMESSAGE "You leave the house and take your car to the Sierra del Caurel; it is a long journey, but you like to drive and the road allows you to disconnect from your daily life.#k#b"
                 WINDOW  0
                 XPICTURE 204            ; Foto de la Carretera
                 WINDOW  1
-                XMESSAGE "Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
+                XMESSAGE "After a few hours of foggy windows and badly paved roads, you recognize the crossing that leads to the village where your parents have the house.#k#b There is little time to arrive, exhaustion begins to take its toll on you and you feel the numbness of your muscles after the long journey.#k#b"
                 WINDOW  0
                 XPICTURE 205            ; Foto del Tunel de árboles
                 WINDOW  1
                 INK     9               ; Color del narrador
-                XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b"
-                XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
-                ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                XMESSAGE " In a pitiful mood, you suddenly perceive a distraction; the path has a beautiful grove of trees on either side, whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you respect as a child.#k#b"
+                WINDOW  0
+                XPICTURE 206            ; Foto del Urco
+                WINDOW  1
+                INK     9               ; Color del narrador
+                XMESSAGE " When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the deceased... A profound suggestion from childhood allows you to imagine the silhouette of the dog of Urco in the mist.#k#b Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality.#k#b"
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 ; Estamos en locCoche
 
-> LISTEN METALICA
-> LISTEN METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
+> LISTEN    METALICA
+> LISTEN    METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
 	            XPLAY "l2t255o4cdegffaggo5co4bo5co4gecdefgagfedeco3bo4cdo3gbo4dfedeo4cdegffaggo5co4bo5co4gecdefgfedco3go4co3bo4l1c"
                 INK     2
                 XMESSAGE "I think I got the music mixed up, sorry... follow to the EAST and let's forget about this."
@@ -1051,12 +1093,12 @@ DOWN   lBath2
 				RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
 				DONE
 
-> EXAMI   _           AT lCoche
+> EXAMI     _           AT lCoche
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "You're driving, I don't think it's a good idea to examine anything right now."
                 DONE
 
-> LOOK     _           AT lCoche
+> LOOK      _           AT lCoche
                 INK     9               ; Color del narrador
                 XMESSAGE "You love the peace and quiet of the scenery as you drive. It's a long drive, but it has a certain charm."
                 DONE
