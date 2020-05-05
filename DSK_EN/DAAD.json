@@ -194,7 +194,7 @@
 		{"symbol":"_VOC_KEY3", "Value":120},
 		{"symbol":"_VOC_CARD", "Value":119},
 		{"symbol":"_VOC_BOX", "Value":118},
-		{"symbol":"_VOC_TABLO", "Value":117},
+		{"symbol":"_VOC_BOARD", "Value":117},
 		{"symbol":"_VOC_KEY", "Value":116},
 		{"symbol":"_VOC_STAIR", "Value":115},
 		{"symbol":"_VOC_CELLA", "Value":114},
@@ -415,6 +415,7 @@
 		{"VocWord":"BIG", "Value":3,"VocType":3 },
 		{"VocWord":"BLANK", "Value":152,"VocType":2 },
 		{"VocWord":"BLOOD", "Value":208,"VocType":2 },
+		{"VocWord":"BOARD", "Value":117,"VocType":2 },
 		{"VocWord":"BONDS", "Value":176,"VocType":2 },
 		{"VocWord":"BOX", "Value":118,"VocType":2 },
 		{"VocWord":"BREAK", "Value":43,"VocType":0 },
@@ -590,7 +591,6 @@
 		{"VocWord":"SW", "Value":9,"VocType":2 },
 		{"VocWord":"SWITC", "Value":129,"VocType":2 },
 		{"VocWord":"TABLE", "Value":174,"VocType":2 },
-		{"VocWord":"TABLO", "Value":117,"VocType":2 },
 		{"VocWord":"TAKE", "Value":20,"VocType":0 },
 		{"VocWord":"TALK", "Value":31,"VocType":0 },
 		{"VocWord":"TAP", "Value":173,"VocType":2 },
@@ -1577,7 +1577,7 @@
 	},
 	{
 		"Value":2,
-		"Text":" Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b  Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dió respeto cuando eras un niño.#k#b  Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
+		"Text":" You leave home and take your car to the Sierra del Caurel; it's a long journey, but you like to drive and the road allows you to disconnect from your daily life.#n#n  After a few hours of steamed up windows and badly paved roads, you recognize the crossing that leads to the village where your parents used to live.#k#b  You've just arrived and the exhaustion begins to take its toll on you and you feel the numbness of your muscles after the long journey.#k#b  Suddenly you perceive a distraction; the road has a beautiful grove of trees on either side whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you respect as a child.#k#b  When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the dead... A deep suggestion since you were a child allows you to imagine the silhouette of Urco's dog from the mist.#k#b  Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality."
 	},
 	{
 		"Value":3,
@@ -3631,722 +3631,718 @@
 	},
 	{
 		"Value":460,
-		"Text":"Estás jugando desde un MSX que no tiene eñe, ¿verdad? jajaja.#n"
-	},
-	{
-		"Value":461,
 		"Text":"Estás jugando desde un emulador o un MSX que afortunadamente tiene eñe, ¿verdad? jajaja.#n"
 	},
 	{
-		"Value":462,
+		"Value":461,
 		"Text":"Tocas la mancha y te deja un tacto grasiento en los dedos, tus sospechas se despejan. Parece aceite.#n"
 	},
 	{
-		"Value":463,
+		"Value":462,
 		"Text":"No hay nada interesante aquí.#n"
 	},
 	{
-		"Value":464,
+		"Value":463,
 		"Text":"Es un respiradero metálico que está encastrado en el techo. De él sale un aire frío y denso que te sobrecoge. También puedes ver que tiene una mancha que se ha filtrado a la pared.#n"
 	},
 	{
-		"Value":465,
+		"Value":464,
 		"Text":"La tapa del respiradero cae al suelo y descubres que en su interior hay una pequeña lata de aceite#g#fFG#t.#n#n"
 	},
 	{
-		"Value":466,
+		"Value":465,
 		"Text":"Jamás habías visto una alcoba tan ausente de vida como esta.#n"
 	},
 	{
-		"Value":467,
+		"Value":466,
 		"Text":"La cama está almidonada y está dura como una piedra.#k#n Observas el colchón durante unos instantes y ves que empieza a formarse en él una mancha de sangre en el lateral.#k#n La mancha crece hasta formar un charco húmedo.#n#n"
 	},
 	{
-		"Value":468,
+		"Value":467,
 		"Text":"Has visto muchas películas de miedo y siempre que pasa eso, se está recreando un acontecimiento pasado.#n"
 	},
 	{
-		"Value":469,
+		"Value":468,
 		"Text":"La cama está almidonada y está dura como una piedra.#k#n Observas el colchón durante unos instantes y ves una mancha de sangre en el lateral.#k#n La mancha crece hasta formar un charco húmedo.#n#n"
 	},
 	{
-		"Value":470,
+		"Value":469,
 		"Text":"El pasillo está muy oscuro. Sin luz no se puede entrar.#n"
 	},
 	{
-		"Value":471,
+		"Value":470,
 		"Text":"El baño está muy oscuro. Sin luz no se puede entrar.#n"
 	},
 	{
-		"Value":472,
+		"Value":471,
 		"Text":"No veo nada interesante.#n"
 	},
 	{
-		"Value":473,
+		"Value":472,
 		"Text":"A tu alrededor ves una tina antigua, una pila y un retrete con una cisterna en lo alto.#n"
 	},
 	{
-		"Value":474,
+		"Value":473,
 		"Text":"A tu alrededor ves una tina antigua, una pila y un retrete con una cisterna en lo alto.#n#n"
 	},
 	{
-		"Value":475,
+		"Value":474,
 		"Text":"Puedes observar un hacha#g#f%&'#t clavada en el suelo.#n"
 	},
 	{
-		"Value":476,
+		"Value":475,
 		"Text":"¡No llegas desde aquí!#n#n"
 	},
 	{
-		"Value":477,
+		"Value":476,
 		"Text":"Igual si me subo al retrete podría echar un vistazo a esa cisterna.#n"
 	},
 	{
-		"Value":478,
+		"Value":477,
 		"Text":"No sé por qué, pero tengo ganas de usarlo.#n"
 	},
 	{
-		"Value":479,
+		"Value":478,
 		"Text":"Un momento...#k#b#n"
 	},
 	{
-		"Value":480,
+		"Value":479,
 		"Text":"Un momentoooo....#k#b#n"
 	},
 	{
-		"Value":481,
+		"Value":480,
 		"Text":"Ya casi estoy.#k#b#n"
 	},
 	{
-		"Value":482,
+		"Value":481,
 		"Text":"Siiiiiii...#k#b#n"
 	},
 	{
-		"Value":483,
+		"Value":482,
 		"Text":"YA. Ufff, gracias.#k#n"
 	},
 	{
-		"Value":484,
+		"Value":483,
 		"Text":"Bajas la tapa del retrete y te subes a él.#n"
 	},
 	{
-		"Value":485,
+		"Value":484,
 		"Text":"Ya no existe el retrete. Está hecho añicos.#n"
 	},
 	{
-		"Value":486,
+		"Value":485,
 		"Text":"Un fluido viscoso y rojo inunda las paredes del retrete. La cisterna deja de funcionar, pues ya no escuchas el ruido de llenado del depósito.#n#n#n"
 	},
 	{
-		"Value":487,
+		"Value":486,
 		"Text":"¡HUELE A BLOOD!#n"
 	},
 	{
-		"Value":488,
+		"Value":487,
 		"Text":"Eso lo haría si fuera otra clase de juego, si. En este no lo veo adecuado.#n"
 	},
 	{
-		"Value":489,
+		"Value":488,
 		"Text":"¡No pienso tocar esa porquería!#n"
 	},
 	{
-		"Value":490,
+		"Value":489,
 		"Text":"Hay un hacha#g#f%&'#t clavada en el suelo, entre los restos del retrete destrozado.#n#n"
 	},
 	{
-		"Value":491,
+		"Value":490,
 		"Text":"¡Hostia! Conozco este hacha#g#f%&'#t, es el hacha#g#f%&'#t de mi padre. No hay duda alguna, es el hacha#g#f%&'#t que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n#n"
 	},
 	{
-		"Value":492,
+		"Value":491,
 		"Text":"Uff, es verdad.#n#n"
 	},
 	{
-		"Value":493,
+		"Value":492,
 		"Text":"El retrete ahora se parece más a una placa turca.#n"
 	},
 	{
-		"Value":494,
+		"Value":493,
 		"Text":"Es un retrete...#n#n"
 	},
 	{
-		"Value":495,
+		"Value":494,
 		"Text":"...con un energúmeno encima....Si te viera tu madre...#n#n"
 	},
 	{
-		"Value":496,
+		"Value":495,
 		"Text":"Tienes frente a ti la cisterna.#n"
 	},
 	{
-		"Value":497,
+		"Value":496,
 		"Text":"A tu alrededor ves una tina antigua, una pila, una cisterna y un montón de cascotes sobre un charco de sangre.#n"
 	},
 	{
-		"Value":498,
+		"Value":497,
 		"Text":"Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegado a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n#n"
 	},
 	{
-		"Value":499,
+		"Value":498,
 		"Text":"¿Qué hostias ha sido eso? ¡Por un pelo no me decapitan! Parece que sigo entero...#k#n#n"
 	},
 	{
-		"Value":500,
+		"Value":499,
 		"Text":"Está claro que no somos bienvenidos en esta casa.#n"
 	},
 	{
-		"Value":501,
+		"Value":500,
 		"Text":"Quitas la tapa de la cisterna y ves que por dentro está manchada de sangre.#n#nPuedes observar una paleta#g#fmn#t de albañil en su interior.#n#n"
 	},
 	{
-		"Value":502,
+		"Value":501,
 		"Text":"¡Puaj! está chorreando de sangre.#n"
 	},
 	{
-		"Value":503,
+		"Value":502,
 		"Text":"Ya tienes la paleta#g#fmn#t. Aquí no hay nada más que ver.#n"
 	},
 	{
-		"Value":504,
+		"Value":503,
 		"Text":"Algo extraño ocurre aquí. Estás en el mismo lugar pero el mobiliario es completamente distinto... Son de otra época.#n#n Hay una cama muy grande y alta con cabecero y pie de forja. Donde estaba la mesilla ahora hay una lámpara victoriana de pie y una alfombra de la misma época.#n"
 	},
 	{
-		"Value":505,
+		"Value":504,
 		"Text":"Una presencia te invade y te tira al suelo... quedas inconsciente por unos instantes y cuando despiertas....#k#n#nEs el mismo lugar... pero estás desconcertado... Todo el contenido de la habitación está ahí, pero es... distinto.#n#n"
 	},
 	{
-		"Value":506,
+		"Value":505,
 		"Text":"La estancia parece haber retrocedido en el tiempo treinta años. ¿Qué ha pasado?#n"
 	},
 	{
-		"Value":507,
+		"Value":506,
 		"Text":"Se trata de un cabecero de madera muy básico, no hay detalles a destacar.#n"
 	},
 	{
-		"Value":508,
+		"Value":507,
 		"Text":"Donde estaba el cabecero de madera ahora hay uno de latón antiguo con piezas repujadas haciendo unas complicadas filigranas.#n"
 	},
 	{
-		"Value":509,
+		"Value":508,
 		"Text":"El temple hace que respiren las paredes.#n#n"
 	},
 	{
-		"Value":510,
+		"Value":509,
 		"Text":"¡Parece que el gotelé aquí sigue de moda! ¡Y lo sufrido que es!#n"
 	},
 	{
-		"Value":511,
+		"Value":510,
 		"Text":"Las paredes son blancas y rugosas pintadas en cal, están muy frías y desnudas.#n"
 	},
 	{
-		"Value":512,
+		"Value":511,
 		"Text":"Se trata de una cama de matrimonio moderna.#n"
 	},
 	{
-		"Value":513,
+		"Value":512,
 		"Text":"Quieres otro peluche,¿eh? ¡A la feria a disparar palillos!#n"
 	},
 	{
-		"Value":514,
+		"Value":513,
 		"Text":"Prestas atención a algo que sobresale de las faldas de la cama. Se trata de un osito de peluche#g#f##t.#n#n"
 	},
 	{
-		"Value":515,
+		"Value":514,
 		"Text":"Oh, qué osito#g#f##t tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n#n"
 	},
 	{
-		"Value":516,
+		"Value":515,
 		"Text":"Es blandito y conserva un aroma a perfume fresco, dan ganas de achucharlo.#n"
 	},
 	{
-		"Value":517,
+		"Value":516,
 		"Text":"Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un un osito de peluche#g#f##t.#n#n"
 	},
 	{
-		"Value":518,
+		"Value":517,
 		"Text":"Es un osito de peluche#g#f##t muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida.#n"
 	},
 	{
-		"Value":519,
+		"Value":518,
 		"Text":"Hay una alfombra grande y azul a los pies de la cama.#n"
 	},
 	{
-		"Value":520,
+		"Value":519,
 		"Text":"Hay una alfombra persa con flecos muy antigua a los pies de la cama. Tiene tonalidades rojas, ocres y amarillas.#n#n"
 	},
 	{
-		"Value":521,
+		"Value":520,
 		"Text":"Esta alfombra debe tener un siglo por lo menos.#n"
 	},
 	{
-		"Value":522,
+		"Value":521,
 		"Text":"Es una mesita de noche rústica que hay justo en uno de los lados de la cama.#n"
 	},
 	{
-		"Value":523,
+		"Value":522,
 		"Text":"La mesita ha desaparecido. En su lugar hay una lámpara de pie.#n#n"
 	},
 	{
-		"Value":524,
+		"Value":523,
 		"Text":"Me he dado un buen golpe en la cabeza, no entiendo nada...#n#nLas cosas no están en su sitio ni son las mismas.#n"
 	},
 	{
-		"Value":525,
+		"Value":524,
 		"Text":"Hay una lámpara justo encima de la cama, recuerdas que se encendía con una pera, pero ahora que has cogido maña con las cerillas, no te vas a poner a revolver la cama de tus padres.#n"
 	},
 	{
-		"Value":526,
+		"Value":525,
 		"Text":"Al lado de la cama puedes contemplar una lámpara de pie de estilo victoriano.#n#nLa base es de mármol con filigrana negra con pie grabado y la pantalla está recargada con unas cuentas doradas y negras que cuelgan de ella.#n"
 	},
 	{
-		"Value":527,
+		"Value":526,
 		"Text":"El suelo es de gres porcelánico esmaltado de color blanco.#n"
 	},
 	{
-		"Value":528,
+		"Value":527,
 		"Text":"El suelo es de terrazo; es el suelo clásico de las casas antiguas.#n#n"
 	},
 	{
-		"Value":529,
+		"Value":528,
 		"Text":"No reconozco este lugar en absoluto.#n"
 	},
 	{
-		"Value":530,
+		"Value":529,
 		"Text":"Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde.#n#n"
 	},
 	{
-		"Value":531,
+		"Value":530,
 		"Text":"Yo examinaría con determinación esa terma.#n"
 	},
 	{
-		"Value":532,
+		"Value":531,
 		"Text":"Te acercas con curiosidad hacia el agua y la acaricias con la punta de los dedos. Te llevas los dedos hacia la boca.#n#n"
 	},
 	{
-		"Value":533,
+		"Value":532,
 		"Text":"No me lo puedo creer, ¡el agua es salada!#n"
 	},
 	{
-		"Value":534,
+		"Value":533,
 		"Text":"Es curioso, que hace miles de años, existiera el Pixel Art usando teselas.#n#n"
 	},
 	{
-		"Value":535,
+		"Value":534,
 		"Text":"Pues claro, ¿no te acuerdas? Yo lo recuerdo como si fuera ayer. Estuvimos allí.#n"
 	},
 	{
-		"Value":536,
+		"Value":535,
 		"Text":"Percibes el ruido del agua moverse, será posible que...#n#nEstás muy cerca, pero no lo suficiente. Quizás deberías echar otro vistazo para asegurarte.#n"
 	},
 	{
-		"Value":537,
+		"Value":536,
 		"Text":"Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n#n"
 	},
 	{
-		"Value":538,
+		"Value":537,
 		"Text":"¡NO ME JODAS! ¿DONDE ESTAS? ¡He visto una puta mano!#n#n"
 	},
 	{
-		"Value":539,
+		"Value":538,
 		"Text":"Sea quien fuere quien estuviese ahí, ha desaparecido... vayámonos de aquí... ¡YA!#n"
 	},
 	{
-		"Value":540,
+		"Value":539,
 		"Text":"Es un murete que luce el mosaico del Dios Apolo.#n#n"
 	},
 	{
-		"Value":541,
+		"Value":540,
 		"Text":"Y yo venerando al Dios del sol con una cerilla en la mano.#n#n"
 	},
 	{
-		"Value":542,
+		"Value":541,
 		"Text":"¡Eres todo un devoto!#n"
 	},
 	{
-		"Value":543,
+		"Value":542,
 		"Text":"Tienes una puerta al NORTE y el corredor continúa hacia el ESTE.#n"
 	},
 	{
-		"Value":544,
+		"Value":543,
 		"Text":"Notas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo.#n"
 	},
 	{
-		"Value":545,
+		"Value":544,
 		"Text":"No puedes entrar en esta habitación. La puerta está bloqueada.#n"
 	},
 	{
-		"Value":546,
+		"Value":545,
 		"Text":"Una puerta conduce hacia el SUR. El corredor continúa de ESTE a OESTE.#n"
 	},
 	{
-		"Value":547,
+		"Value":546,
 		"Text":"¡Hay una niña en el pasillo!#k#n#n"
 	},
 	{
-		"Value":548,
+		"Value":547,
 		"Text":"¡DAME MI BEAR!¡ES MIO!#k#n#n"
 	},
 	{
-		"Value":549,
+		"Value":548,
 		"Text":"La niña te arrebata el osito de peluche#g#f##t y desaparece.#k#n"
 	},
 	{
-		"Value":550,
+		"Value":549,
 		"Text":"¿Tienes lo que me pertenece?#k#n#n"
 	},
 	{
-		"Value":551,
+		"Value":550,
 		"Text":"¿No tienes nada para mi?#k#n#n"
 	},
 	{
-		"Value":552,
+		"Value":551,
 		"Text":"¡PUES YO SI TENGO ALGO PARA TI!#k#n#n"
 	},
 	{
-		"Value":553,
+		"Value":552,
 		"Text":"La niña desaparece...#k#n#n#n"
 	},
 	{
-		"Value":554,
+		"Value":553,
 		"Text":"Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n#n"
 	},
 	{
-		"Value":555,
+		"Value":554,
 		"Text":"¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n#n"
 	},
 	{
-		"Value":556,
+		"Value":555,
 		"Text":"Debes investigar eso.#k#n"
 	},
 	{
-		"Value":557,
+		"Value":556,
 		"Text":"¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n#n"
 	},
 	{
-		"Value":558,
+		"Value":557,
 		"Text":"Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n#n"
 	},
 	{
-		"Value":559,
+		"Value":558,
 		"Text":"Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k#n"
 	},
 	{
-		"Value":560,
+		"Value":559,
 		"Text":"¡QUIERO MI BEAR! ¡TRáEMELO YA!#k#n"
 	},
 	{
-		"Value":561,
+		"Value":560,
 		"Text":"Estás en el final del pasillo y tienes una puerta hacia el NORTE. También puedes volver al ESTE.#n"
 	},
 	{
-		"Value":562,
+		"Value":561,
 		"Text":"Parece ser una fotografía#g#fD#t familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n#n"
 	},
 	{
-		"Value":563,
+		"Value":562,
 		"Text":"¿De dónde habrá salido esta fotografía#g#fD#t y quienes son?#k#b#n#n"
 	},
 	{
-		"Value":564,
+		"Value":563,
 		"Text":"Un manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.#n#n"
 	},
 	{
-		"Value":565,
+		"Value":564,
 		"Text":"¿Qué cojones está pasando?#n#n"
 	},
 	{
-		"Value":566,
+		"Value":565,
 		"Text":"¡Eso digo yo!#n"
 	},
 	{
-		"Value":567,
+		"Value":566,
 		"Text":"Es una caja de cerillas#g#f+,#t de palo largo, típicas para encender los fogones de la cocina y velas.#n"
 	},
 	{
-		"Value":568,
+		"Value":567,
 		"Text":"¿Con qué los vas a llamar? ¿con señales de humo?#n"
 	},
 	{
-		"Value":569,
+		"Value":568,
 		"Text":"220#k#n"
 	},
 	{
-		"Value":570,
+		"Value":569,
 		"Text":"221#k#n"
 	},
 	{
-		"Value":571,
+		"Value":570,
 		"Text":"222#k#n"
 	},
 	{
-		"Value":572,
+		"Value":571,
 		"Text":"223#k#n"
 	},
 	{
-		"Value":573,
+		"Value":572,
 		"Text":"224#k#n"
 	},
 	{
-		"Value":574,
+		"Value":573,
 		"Text":"225#k#n"
 	},
 	{
-		"Value":575,
+		"Value":574,
 		"Text":"226#k#n"
 	},
 	{
-		"Value":576,
+		"Value":575,
 		"Text":"227#k#n"
 	},
 	{
-		"Value":577,
+		"Value":576,
 		"Text":"228#k#n"
 	},
 	{
-		"Value":578,
+		"Value":577,
 		"Text":"229#k#n"
 	},
 	{
-		"Value":579,
+		"Value":578,
 		"Text":"230#k#n"
 	},
 	{
-		"Value":580,
+		"Value":579,
 		"Text":"231#k#n"
 	},
 	{
-		"Value":581,
+		"Value":580,
 		"Text":"232#k#n"
 	},
 	{
-		"Value":582,
+		"Value":581,
 		"Text":"INK 1#n"
 	},
 	{
-		"Value":583,
+		"Value":582,
 		"Text":"INK 2#n"
 	},
 	{
-		"Value":584,
+		"Value":583,
 		"Text":"INK 3#n"
 	},
 	{
-		"Value":585,
+		"Value":584,
 		"Text":"INK 4#n"
 	},
 	{
-		"Value":586,
+		"Value":585,
 		"Text":"INK 5#n"
 	},
 	{
-		"Value":587,
+		"Value":586,
 		"Text":"INK 6#n"
 	},
 	{
-		"Value":588,
+		"Value":587,
 		"Text":"INK 7#n"
 	},
 	{
-		"Value":589,
+		"Value":588,
 		"Text":"INK 8#n"
 	},
 	{
-		"Value":590,
+		"Value":589,
 		"Text":"INK 9#n"
 	},
 	{
-		"Value":591,
+		"Value":590,
 		"Text":"INK 10#n"
 	},
 	{
-		"Value":592,
+		"Value":591,
 		"Text":"INK 11#n"
 	},
 	{
-		"Value":593,
+		"Value":592,
 		"Text":"INK 12#n"
 	},
 	{
-		"Value":594,
+		"Value":593,
 		"Text":"INK 13#n"
 	},
 	{
-		"Value":595,
+		"Value":594,
 		"Text":"INK 14#n"
 	},
 	{
-		"Value":596,
+		"Value":595,
 		"Text":"INK 15#n"
 	},
 	{
-		"Value":597,
+		"Value":596,
 		"Text":"fControlLuz#n"
 	},
 	{
-		"Value":598,
+		"Value":597,
 		"Text":"fUsarCerilla#n"
 	},
 	{
-		"Value":599,
+		"Value":598,
 		"Text":"fTurnosConLuz#n"
 	},
 	{
-		"Value":600,
+		"Value":599,
 		"Text":"fVasAMorir#n"
 	},
 	{
-		"Value":601,
+		"Value":600,
 		"Text":"fDarkF#n"
 	},
 	{
-		"Value":602,
+		"Value":601,
 		"Text":"Has apagado la cerilla#g#f4#t.#n"
 	},
 	{
-		"Value":603,
+		"Value":602,
 		"Text":"Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#n"
 	},
 	{
-		"Value":604,
+		"Value":603,
 		"Text":"No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n#n"
 	},
 	{
-		"Value":605,
+		"Value":604,
 		"Text":"Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n#n"
 	},
 	{
-		"Value":606,
+		"Value":605,
 		"Text":"Ya tienes una cerilla#g#f4#t encendida.#n"
 	},
 	{
-		"Value":607,
+		"Value":606,
 		"Text":"No puedes ver nada. Está muy oscuro.#n"
 	},
 	{
-		"Value":608,
+		"Value":607,
 		"Text":"Ya has apagado la cerilla#g#f4#t.#n"
 	},
 	{
-		"Value":609,
+		"Value":608,
 		"Text":"9 de Agosto de 1949.#n#n"
 	},
 	{
-		"Value":610,
+		"Value":609,
 		"Text":"Hoy comienzo a trabajar en esta casa. Estoy ilusionada porque ya no voy a pasar más calamidades. El señor me ha dicho que va a ayudar a mis padres dándoles dinero para mantener sus tierras a cambio de mi estancia aquí. Durante el día hay más servicio trabajando, pero parece ser que voy a ser la única interna.#k#n#n"
 	},
 	{
-		"Value":611,
+		"Value":610,
 		"Text":"20 de Septiembre de 1949.#n#n"
 	},
 	{
-		"Value":612,
+		"Value":611,
 		"Text":"El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mí y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#k#n#n"
 	},
 	{
-		"Value":613,
+		"Value":612,
 		"Text":"17 de Octubre de 1949.#n#n"
 	},
 	{
-		"Value":614,
+		"Value":613,
 		"Text":"Noto al señor muy interesado en mi, últimamente me requiere para que le haga compañía y le de conversación, empiezo a pensar que me pretende.#k#n#n"
 	},
 	{
-		"Value":615,
+		"Value":614,
 		"Text":"1 de Enero 1950.#n#n"
 	},
 	{
-		"Value":616,
+		"Value":615,
 		"Text":"Anoche el señor me hizo tocamientos... Estaba bebido y se puso violento. Hoy ha venido a mis aposentos a pedirme disculpas. Me ha dejado usar la terma para darme un baño como muestra de conciliación. Me siento muy incómoda, pero comprendo que el alcohol transforma a las personas. Tengo un poco de miedo.#k#n#n"
 	},
 	{
-		"Value":617,
+		"Value":616,
 		"Text":"25 de Febrero de 1950.#n#n"
 	},
 	{
-		"Value":618,
+		"Value":617,
 		"Text":"El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojalá pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#k#n#n"
 	},
 	{
-		"Value":619,
+		"Value":618,
 		"Text":"16 de Marzo de 1950.#n#n"
 	},
 	{
-		"Value":620,
+		"Value":619,
 		"Text":" El señor ha abusado de mí. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n#n"
 	},
 	{
-		"Value":621,
+		"Value":620,
 		"Text":"10 de Abril de 1950.#n#n"
 	},
 	{
-		"Value":622,
+		"Value":621,
 		"Text":" Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#k#n#n"
 	},
 	{
-		"Value":623,
+		"Value":622,
 		"Text":"4 de Mayo de 1950.#n#n"
 	},
 	{
-		"Value":624,
+		"Value":623,
 		"Text":"Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera dónde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n#n"
 	},
 	{
-		"Value":625,
+		"Value":624,
 		"Text":"Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mí y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n#n"
 	},
 	{
-		"Value":626,
+		"Value":625,
 		"Text":"Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n#n"
 	},
 	{
-		"Value":627,
+		"Value":626,
 		"Text":"25  de Junio de 1950.#n#n"
 	},
 	{
-		"Value":628,
+		"Value":627,
 		"Text":" Aún estoy resentida de las heridas, también siento náuseas. Vomito todo el tiempo y me encuentro fatal.#k#n#n"
 	},
 	{
-		"Value":629,
+		"Value":628,
 		"Text":"5 de Agosto de 1950.#n #n"
 	},
 	{
-		"Value":630,
+		"Value":629,
 		"Text":"¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener náuseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#k#n#n"
 	},
 	{
-		"Value":631,
+		"Value":630,
 		"Text":"10 de Septiembre de 1950.#n #n"
 	},
 	{
-		"Value":632,
+		"Value":631,
 		"Text":"El señor se ha dado cuenta del tamaño de mi tripa y me ha escondido en una habitación que no conocía. Está oculta tras una vitrina en el salón de la casa. Me ha dicho que nadie debe verme y que tengo que esconderme aquí cuando vengan visitas.#k#n#n"
 	},
 	{
-		"Value":633,
+		"Value":632,
 		"Text":"6 de Octubre de 1950.#n#n"
 	},
 	{
-		"Value":634,
+		"Value":633,
 		"Text":" Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#k#n#n"
 	},
 	{
-		"Value":635,
+		"Value":634,
 		"Text":"23 de Febrero de 1951.#n#n"
 	},
 	{
-		"Value":636,
+		"Value":635,
 		"Text":" Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n#n"
 	},
 	{
-		"Value":637,
+		"Value":636,
 		"Text":" Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n#n"
 	},
 	{
-		"Value":638,
+		"Value":637,
 		"Text":"9 de Marzo de 1951.#n#n"
 	},
 	{
-		"Value":639,
+		"Value":638,
 		"Text":" El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego por que alguien lo encuentre algún día y se haga justicia.#k#n"
 	}
 	],
@@ -35867,68 +35863,6 @@
 					]
 			},
 			{
-				"Entry":"EXAMI BANO",
-				"Verb":30,
-				"Noun":205,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":20,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":2,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":460,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
 				"Entry":"EXAMI BATHR",
 				"Verb":30,
 				"Noun":206,
@@ -35980,7 +35914,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":461,
+						"Param1":460,
 						"NumParams":1
 					},
 					{
@@ -36042,7 +35976,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":462,
+						"Param1":461,
 						"NumParams":1
 					},
 					{
@@ -36104,7 +36038,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":462,
+						"Param1":461,
 						"NumParams":1
 					},
 					{
@@ -36166,7 +36100,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":463,
+						"Param1":462,
 						"NumParams":1
 					},
 					{
@@ -36228,7 +36162,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":464,
+						"Param1":463,
 						"NumParams":1
 					},
 					{
@@ -36304,7 +36238,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":465,
+						"Param1":464,
 						"NumParams":1
 					},
 					{
@@ -36409,7 +36343,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":465,
+						"Param1":464,
 						"NumParams":1
 					},
 					{
@@ -36514,7 +36448,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":465,
+						"Param1":464,
 						"NumParams":1
 					},
 					{
@@ -36605,7 +36539,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":466,
+						"Param1":465,
 						"NumParams":1
 					},
 					{
@@ -36667,7 +36601,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":466,
+						"Param1":465,
 						"NumParams":1
 					},
 					{
@@ -36743,7 +36677,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":467,
+						"Param1":466,
 						"NumParams":1
 					},
 					{
@@ -36757,7 +36691,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":468,
+						"Param1":467,
 						"NumParams":1
 					},
 					{
@@ -36826,7 +36760,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":469,
+						"Param1":468,
 						"NumParams":1
 					},
 					{
@@ -36939,7 +36873,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":470,
+						"Param1":469,
 						"NumParams":1
 					},
 					{
@@ -36987,7 +36921,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":471,
+						"Param1":470,
 						"NumParams":1
 					},
 					{
@@ -37193,7 +37127,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":472,
+						"Param1":471,
 						"NumParams":1
 					},
 					{
@@ -37255,7 +37189,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":472,
+						"Param1":471,
 						"NumParams":1
 					},
 					{
@@ -37324,7 +37258,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":473,
+						"Param1":472,
 						"NumParams":1
 					},
 					{
@@ -37400,7 +37334,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":474,
+						"Param1":473,
 						"NumParams":1
 					},
 					{
@@ -37414,7 +37348,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":475,
+						"Param1":474,
 						"NumParams":1
 					},
 					{
@@ -37490,7 +37424,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":473,
+						"Param1":472,
 						"NumParams":1
 					},
 					{
@@ -37552,7 +37486,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":476,
+						"Param1":475,
 						"NumParams":1
 					},
 					{
@@ -37566,7 +37500,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":477,
+						"Param1":476,
 						"NumParams":1
 					},
 					{
@@ -37635,7 +37569,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":478,
+						"Param1":477,
 						"NumParams":1
 					},
 					{
@@ -37704,6 +37638,13 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
+						"Param1":478,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
 						"Param1":479,
 						"NumParams":1
 					},
@@ -37729,6 +37670,73 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ASCEN _",
+				"Verb":10,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":22,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":96,
+						"NumParams":1
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
@@ -37736,80 +37744,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ASCEN _",
-				"Verb":10,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":22,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":96,
-						"NumParams":1
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":484,
-						"NumParams":1
-					},
-					{
 						"Opcode":37,
 						"Condact":"GOTO",
 						"Indirection1":0,
@@ -37887,7 +37821,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":484,
+						"Param1":483,
 						"NumParams":1
 					},
 					{
@@ -37968,7 +37902,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":485,
+						"Param1":484,
 						"NumParams":1
 					},
 					{
@@ -38042,7 +37976,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":485,
+						"Param1":484,
 						"NumParams":1
 					},
 					{
@@ -38104,7 +38038,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":486,
+						"Param1":485,
 						"NumParams":1
 					},
 					{
@@ -38118,7 +38052,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":487,
+						"Param1":486,
 						"NumParams":1
 					},
 					{
@@ -38180,7 +38114,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":486,
+						"Param1":485,
 						"NumParams":1
 					},
 					{
@@ -38194,7 +38128,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":487,
+						"Param1":486,
 						"NumParams":1
 					},
 					{
@@ -38256,7 +38190,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":488,
+						"Param1":487,
 						"NumParams":1
 					},
 					{
@@ -38318,7 +38252,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":489,
+						"Param1":488,
 						"NumParams":1
 					},
 					{
@@ -38380,7 +38314,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":489,
+						"Param1":488,
 						"NumParams":1
 					},
 					{
@@ -38456,7 +38390,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":490,
+						"Param1":489,
 						"NumParams":1
 					},
 					{
@@ -38470,7 +38404,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":491,
+						"Param1":490,
 						"NumParams":1
 					},
 					{
@@ -38498,7 +38432,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":492,
+						"Param1":491,
 						"NumParams":1
 					},
 					{
@@ -38603,7 +38537,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":490,
+						"Param1":489,
 						"NumParams":1
 					},
 					{
@@ -38617,7 +38551,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":491,
+						"Param1":490,
 						"NumParams":1
 					},
 					{
@@ -38645,7 +38579,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":492,
+						"Param1":491,
 						"NumParams":1
 					},
 					{
@@ -38750,7 +38684,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":490,
+						"Param1":489,
 						"NumParams":1
 					},
 					{
@@ -38764,7 +38698,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":491,
+						"Param1":490,
 						"NumParams":1
 					},
 					{
@@ -38792,7 +38726,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":492,
+						"Param1":491,
 						"NumParams":1
 					},
 					{
@@ -38897,7 +38831,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":493,
+						"Param1":492,
 						"NumParams":1
 					},
 					{
@@ -38931,7 +38865,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":494,
+						"Param1":493,
 						"NumParams":1
 					},
 					{
@@ -38945,7 +38879,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":495,
+						"Param1":494,
 						"NumParams":1
 					},
 					{
@@ -38959,7 +38893,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":496,
+						"Param1":495,
 						"NumParams":1
 					},
 					{
@@ -38993,7 +38927,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":494,
+						"Param1":493,
 						"NumParams":1
 					},
 					{
@@ -39007,7 +38941,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":495,
+						"Param1":494,
 						"NumParams":1
 					},
 					{
@@ -39021,7 +38955,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":496,
+						"Param1":495,
 						"NumParams":1
 					},
 					{
@@ -39090,7 +39024,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":497,
+						"Param1":496,
 						"NumParams":1
 					},
 					{
@@ -39178,7 +39112,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":498,
+						"Param1":497,
 						"NumParams":1
 					},
 					{
@@ -39192,7 +39126,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":499,
+						"Param1":498,
 						"NumParams":1
 					},
 					{
@@ -39206,7 +39140,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":500,
+						"Param1":499,
 						"NumParams":1
 					},
 					{
@@ -39294,7 +39228,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":498,
+						"Param1":497,
 						"NumParams":1
 					},
 					{
@@ -39308,7 +39242,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":499,
+						"Param1":498,
 						"NumParams":1
 					},
 					{
@@ -39316,6 +39250,97 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":499,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EXAMI CISTE",
+				"Verb":30,
+				"Noun":184,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":29,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":74,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":74,
+						"NumParams":1
+					},
+					{
+						"Opcode":55,
+						"Condact":"ISAT",
+						"Indirection1":0,
+						"Param1":18,
+						"Param2":252,
+						"NumParams":2
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":18,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -39326,97 +39351,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"EXAMI CISTE",
-				"Verb":30,
-				"Noun":184,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":29,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":74,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":74,
-						"NumParams":1
-					},
-					{
-						"Opcode":55,
-						"Condact":"ISAT",
-						"Indirection1":0,
-						"Param1":18,
-						"Param2":252,
-						"NumParams":2
-					},
-					{
-						"Opcode":44,
-						"Condact":"CREATE",
-						"Indirection1":0,
-						"Param1":18,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":501,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -39448,7 +39382,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":502,
+						"Param1":501,
 						"NumParams":1
 					},
 					{
@@ -39539,7 +39473,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":501,
+						"Param1":500,
 						"NumParams":1
 					},
 					{
@@ -39574,7 +39508,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":502,
+						"Param1":501,
 						"NumParams":1
 					},
 					{
@@ -39650,7 +39584,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":503,
+						"Param1":502,
 						"NumParams":1
 					},
 					{
@@ -39726,7 +39660,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":503,
+						"Param1":502,
 						"NumParams":1
 					},
 					{
@@ -39795,7 +39729,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":504,
+						"Param1":503,
 						"NumParams":1
 					},
 					{
@@ -40015,7 +39949,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":505,
+						"Param1":504,
 						"NumParams":1
 					},
 					{
@@ -40023,6 +39957,75 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":505,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EXAMI HEADB",
+				"Verb":30,
+				"Noun":210,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":23,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":97,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -40074,8 +40077,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -40109,75 +40112,6 @@
 					]
 			},
 			{
-				"Entry":"EXAMI HEADB",
-				"Verb":30,
-				"Noun":210,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":23,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":97,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":508,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
 				"Entry":"EXAMI WALL",
 				"Verb":30,
 				"Noun":139,
@@ -40236,7 +40170,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":509,
+						"Param1":508,
 						"NumParams":1
 					},
 					{
@@ -40250,7 +40184,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":510,
+						"Param1":509,
 						"NumParams":1
 					},
 					{
@@ -40319,7 +40253,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":511,
+						"Param1":510,
 						"NumParams":1
 					},
 					{
@@ -40388,7 +40322,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":512,
+						"Param1":511,
 						"NumParams":1
 					},
 					{
@@ -40465,7 +40399,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":513,
+						"Param1":512,
 						"NumParams":1
 					},
 					{
@@ -40556,7 +40490,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":514,
+						"Param1":513,
 						"NumParams":1
 					},
 					{
@@ -40591,7 +40525,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":515,
+						"Param1":514,
 						"NumParams":1
 					},
 					{
@@ -40605,7 +40539,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":516,
+						"Param1":515,
 						"NumParams":1
 					},
 					{
@@ -40696,7 +40630,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":517,
+						"Param1":516,
 						"NumParams":1
 					},
 					{
@@ -40725,6 +40659,75 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":517,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EXAMI CARPE",
+				"Verb":30,
+				"Noun":187,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":23,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":97,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -40776,8 +40779,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -40804,6 +40807,20 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":520,
+						"NumParams":1
+					},
+					{
 						"Opcode":22,
 						"Condact":"DONE",
 						"NumParams":0
@@ -40811,9 +40828,9 @@
 					]
 			},
 			{
-				"Entry":"EXAMI CARPE",
+				"Entry":"EXAMI BEDSI",
 				"Verb":30,
-				"Noun":187,
+				"Noun":188,
 				"condacts":
 					[
 					{
@@ -40845,8 +40862,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
+						"Opcode":11,
+						"Condact":"ZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -40863,20 +40880,6 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":520,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":2,
 						"NumParams":1
 					},
 					{
@@ -40928,8 +40931,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -40956,6 +40959,20 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":523,
+						"NumParams":1
+					},
+					{
 						"Opcode":22,
 						"Condact":"DONE",
 						"NumParams":0
@@ -40963,9 +40980,9 @@
 					]
 			},
 			{
-				"Entry":"EXAMI BEDSI",
+				"Entry":"EXAMI LAMP",
 				"Verb":30,
-				"Noun":188,
+				"Noun":159,
 				"condacts":
 					[
 					{
@@ -40997,8 +41014,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
+						"Opcode":11,
+						"Condact":"ZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -41015,20 +41032,6 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":523,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":3,
 						"NumParams":1
 					},
 					{
@@ -41080,8 +41083,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -41115,9 +41118,9 @@
 					]
 			},
 			{
-				"Entry":"EXAMI LAMP",
+				"Entry":"EXAMI FLOOR",
 				"Verb":30,
-				"Noun":159,
+				"Noun":149,
 				"condacts":
 					[
 					{
@@ -41149,8 +41152,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
+						"Opcode":11,
+						"Condact":"ZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -41218,8 +41221,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":97,
 						"NumParams":1
@@ -41246,75 +41249,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"EXAMI FLOOR",
-				"Verb":30,
-				"Noun":149,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":23,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":97,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":528,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -41325,7 +41259,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":529,
+						"Param1":528,
 						"NumParams":1
 					},
 					{
@@ -41387,7 +41321,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":530,
+						"Param1":529,
 						"NumParams":1
 					},
 					{
@@ -41401,7 +41335,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":531,
+						"Param1":530,
 						"NumParams":1
 					},
 					{
@@ -41463,7 +41397,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":532,
+						"Param1":531,
 						"NumParams":1
 					},
 					{
@@ -41477,7 +41411,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":533,
+						"Param1":532,
 						"NumParams":1
 					},
 					{
@@ -41539,7 +41473,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":534,
+						"Param1":533,
 						"NumParams":1
 					},
 					{
@@ -41553,7 +41487,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":535,
+						"Param1":534,
 						"NumParams":1
 					},
 					{
@@ -41629,7 +41563,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":536,
+						"Param1":535,
 						"NumParams":1
 					},
 					{
@@ -41705,7 +41639,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":537,
+						"Param1":536,
 						"NumParams":1
 					},
 					{
@@ -41838,7 +41772,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":538,
+						"Param1":537,
 						"NumParams":1
 					},
 					{
@@ -41852,7 +41786,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":539,
+						"Param1":538,
 						"NumParams":1
 					},
 					{
@@ -41914,7 +41848,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":540,
+						"Param1":539,
 						"NumParams":1
 					},
 					{
@@ -41928,7 +41862,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":541,
+						"Param1":540,
 						"NumParams":1
 					},
 					{
@@ -41942,7 +41876,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":542,
+						"Param1":541,
 						"NumParams":1
 					},
 					{
@@ -42096,7 +42030,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":543,
+						"Param1":542,
 						"NumParams":1
 					},
 					{
@@ -42130,7 +42064,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":543,
+						"Param1":542,
 						"NumParams":1
 					},
 					{
@@ -42238,7 +42172,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":544,
+						"Param1":543,
 						"NumParams":1
 					},
 					{
@@ -42533,6 +42467,40 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
+						"Param1":544,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EXAMI HALLW",
+				"Verb":30,
+				"Noun":202,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
 						"Param1":545,
 						"NumParams":1
 					},
@@ -42544,40 +42512,6 @@
 					]
 			},
 			{
-				"Entry":"EXAMI HALLW",
-				"Verb":30,
-				"Noun":202,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":546,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
 				"Entry":"EXAMI _",
 				"Verb":30,
 				"Noun":255,
@@ -42601,715 +42535,715 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
+						"Param1":545,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"E _",
+				"Verb":4,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":382,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"S _",
+				"Verb":3,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":382,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"W _",
+				"Verb":5,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":382,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"S _",
+				"Verb":3,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":103,
+						"NumParams":1
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":21,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"S _",
+				"Verb":3,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":13,
+						"Condact":"EQ",
+						"Indirection1":0,
+						"Param1":103,
+						"Param2":5,
+						"NumParams":2
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":21,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"E _",
+				"Verb":4,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":103,
+						"NumParams":1
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":18,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"E _",
+				"Verb":4,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":13,
+						"Condact":"EQ",
+						"Indirection1":0,
+						"Param1":103,
+						"Param2":5,
+						"NumParams":2
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":18,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"W _",
+				"Verb":5,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":103,
+						"NumParams":1
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":16,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"W _",
+				"Verb":5,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":13,
+						"Condact":"EQ",
+						"Indirection1":0,
+						"Param1":103,
+						"Param2":5,
+						"NumParams":2
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":37,
+						"Condact":"GOTO",
+						"Indirection1":0,
+						"Param1":16,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"S _",
+				"Verb":3,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":72,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":13,
+						"Condact":"EQ",
+						"Indirection1":0,
+						"Param1":103,
+						"Param2":255,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":99,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":14,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
 						"Param1":546,
 						"NumParams":1
 					},
 					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"E _",
-				"Verb":4,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":382,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"S _",
-				"Verb":3,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":382,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"W _",
-				"Verb":5,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":382,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"S _",
-				"Verb":3,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":103,
-						"NumParams":1
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"S _",
-				"Verb":3,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":13,
-						"Condact":"EQ",
-						"Indirection1":0,
-						"Param1":103,
-						"Param2":5,
-						"NumParams":2
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"E _",
-				"Verb":4,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":103,
-						"NumParams":1
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":18,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"E _",
-				"Verb":4,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":13,
-						"Condact":"EQ",
-						"Indirection1":0,
-						"Param1":103,
-						"Param2":5,
-						"NumParams":2
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":18,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"W _",
-				"Verb":5,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":103,
-						"NumParams":1
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":16,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"W _",
-				"Verb":5,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":13,
-						"Condact":"EQ",
-						"Indirection1":0,
-						"Param1":103,
-						"Param2":5,
-						"NumParams":2
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":16,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"S _",
-				"Verb":3,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":17,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":72,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":13,
-						"Condact":"EQ",
-						"Indirection1":0,
-						"Param1":103,
-						"Param2":255,
-						"NumParams":2
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":99,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":14,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":547,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -43320,7 +43254,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":548,
+						"Param1":547,
 						"NumParams":1
 					},
 					{
@@ -43356,7 +43290,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":549,
+						"Param1":548,
 						"NumParams":1
 					},
 					{
@@ -43450,7 +43384,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -43464,7 +43398,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":548,
+						"Param1":547,
 						"NumParams":1
 					},
 					{
@@ -43500,7 +43434,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":549,
+						"Param1":548,
 						"NumParams":1
 					},
 					{
@@ -43594,7 +43528,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -43608,7 +43542,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":548,
+						"Param1":547,
 						"NumParams":1
 					},
 					{
@@ -43644,7 +43578,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":549,
+						"Param1":548,
 						"NumParams":1
 					},
 					{
@@ -43738,7 +43672,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -43746,6 +43680,13 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":549,
 						"NumParams":1
 					},
 					{
@@ -43763,13 +43704,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":552,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -43780,14 +43714,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":553,
+						"Param1":552,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":554,
+						"Param1":553,
 						"NumParams":1
 					},
 					{
@@ -43906,7 +43840,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -43914,6 +43848,13 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":549,
 						"NumParams":1
 					},
 					{
@@ -43931,13 +43872,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":552,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -43948,14 +43882,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":553,
+						"Param1":552,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":554,
+						"Param1":553,
 						"NumParams":1
 					},
 					{
@@ -44074,7 +44008,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -44082,6 +44016,13 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":549,
 						"NumParams":1
 					},
 					{
@@ -44099,13 +44040,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":552,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -44116,14 +44050,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":553,
+						"Param1":552,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":554,
+						"Param1":553,
 						"NumParams":1
 					},
 					{
@@ -44249,7 +44183,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -44263,7 +44197,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":555,
+						"Param1":554,
 						"NumParams":1
 					},
 					{
@@ -44277,7 +44211,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":556,
+						"Param1":555,
 						"NumParams":1
 					},
 					{
@@ -44407,7 +44341,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -44421,7 +44355,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":555,
+						"Param1":554,
 						"NumParams":1
 					},
 					{
@@ -44435,7 +44369,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":556,
+						"Param1":555,
 						"NumParams":1
 					},
 					{
@@ -44565,7 +44499,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -44579,7 +44513,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":555,
+						"Param1":554,
 						"NumParams":1
 					},
 					{
@@ -44593,7 +44527,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":556,
+						"Param1":555,
 						"NumParams":1
 					},
 					{
@@ -44723,7 +44657,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -44731,6 +44665,20 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":556,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":2,
 						"NumParams":1
 					},
 					{
@@ -44744,20 +44692,6 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":2,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":558,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
 						"Param1":3,
 						"NumParams":1
 					},
@@ -44765,7 +44699,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":559,
+						"Param1":558,
 						"NumParams":1
 					},
 					{
@@ -44902,7 +44836,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -44916,7 +44850,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":557,
+						"Param1":556,
 						"NumParams":1
 					},
 					{
@@ -44930,7 +44864,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":558,
+						"Param1":557,
 						"NumParams":1
 					},
 					{
@@ -44944,7 +44878,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":559,
+						"Param1":558,
 						"NumParams":1
 					},
 					{
@@ -45081,7 +45015,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -45095,7 +45029,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":557,
+						"Param1":556,
 						"NumParams":1
 					},
 					{
@@ -45109,7 +45043,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":558,
+						"Param1":557,
 						"NumParams":1
 					},
 					{
@@ -45123,7 +45057,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":559,
+						"Param1":558,
 						"NumParams":1
 					},
 					{
@@ -45253,7 +45187,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -45267,7 +45201,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":560,
+						"Param1":559,
 						"NumParams":1
 					},
 					{
@@ -45375,7 +45309,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -45389,7 +45323,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":560,
+						"Param1":559,
 						"NumParams":1
 					},
 					{
@@ -45497,7 +45431,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":547,
+						"Param1":546,
 						"NumParams":1
 					},
 					{
@@ -45511,7 +45445,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":560,
+						"Param1":559,
 						"NumParams":1
 					},
 					{
@@ -45569,7 +45503,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":561,
+						"Param1":560,
 						"NumParams":1
 					},
 					{
@@ -45603,7 +45537,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":561,
+						"Param1":560,
 						"NumParams":1
 					},
 					{
@@ -46051,7 +45985,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":562,
+						"Param1":561,
 						"NumParams":1
 					},
 					{
@@ -46065,7 +45999,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":563,
+						"Param1":562,
 						"NumParams":1
 					},
 					{
@@ -46079,7 +46013,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":564,
+						"Param1":563,
 						"NumParams":1
 					},
 					{
@@ -46093,7 +46027,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":565,
+						"Param1":564,
 						"NumParams":1
 					},
 					{
@@ -46107,7 +46041,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":566,
+						"Param1":565,
 						"NumParams":1
 					},
 					{
@@ -46148,7 +46082,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":567,
+						"Param1":566,
 						"NumParams":1
 					},
 					{
@@ -46175,7 +46109,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":568,
+						"Param1":567,
 						"NumParams":1
 					},
 					{
@@ -46255,7 +46189,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":569,
+						"Param1":568,
 						"NumParams":1
 					},
 					{
@@ -46283,7 +46217,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":570,
+						"Param1":569,
 						"NumParams":1
 					},
 					{
@@ -46311,7 +46245,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":571,
+						"Param1":570,
 						"NumParams":1
 					},
 					{
@@ -46339,7 +46273,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":572,
+						"Param1":571,
 						"NumParams":1
 					},
 					{
@@ -46367,7 +46301,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":573,
+						"Param1":572,
 						"NumParams":1
 					},
 					{
@@ -46395,7 +46329,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":574,
+						"Param1":573,
 						"NumParams":1
 					},
 					{
@@ -46423,7 +46357,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":575,
+						"Param1":574,
 						"NumParams":1
 					},
 					{
@@ -46451,7 +46385,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":576,
+						"Param1":575,
 						"NumParams":1
 					},
 					{
@@ -46479,7 +46413,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":577,
+						"Param1":576,
 						"NumParams":1
 					},
 					{
@@ -46507,7 +46441,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":578,
+						"Param1":577,
 						"NumParams":1
 					},
 					{
@@ -46535,7 +46469,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":579,
+						"Param1":578,
 						"NumParams":1
 					},
 					{
@@ -46563,7 +46497,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":580,
+						"Param1":579,
 						"NumParams":1
 					},
 					{
@@ -46591,7 +46525,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":581,
+						"Param1":580,
 						"NumParams":1
 					},
 					{
@@ -46618,7 +46552,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":582,
+						"Param1":581,
 						"NumParams":1
 					},
 					{
@@ -46632,7 +46566,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":583,
+						"Param1":582,
 						"NumParams":1
 					},
 					{
@@ -46646,7 +46580,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":584,
+						"Param1":583,
 						"NumParams":1
 					},
 					{
@@ -46660,7 +46594,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":585,
+						"Param1":584,
 						"NumParams":1
 					},
 					{
@@ -46674,7 +46608,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":586,
+						"Param1":585,
 						"NumParams":1
 					},
 					{
@@ -46688,7 +46622,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":587,
+						"Param1":586,
 						"NumParams":1
 					},
 					{
@@ -46702,7 +46636,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":588,
+						"Param1":587,
 						"NumParams":1
 					},
 					{
@@ -46716,7 +46650,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":589,
+						"Param1":588,
 						"NumParams":1
 					},
 					{
@@ -46730,7 +46664,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":590,
+						"Param1":589,
 						"NumParams":1
 					},
 					{
@@ -46744,7 +46678,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":591,
+						"Param1":590,
 						"NumParams":1
 					},
 					{
@@ -46758,7 +46692,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":592,
+						"Param1":591,
 						"NumParams":1
 					},
 					{
@@ -46772,7 +46706,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":593,
+						"Param1":592,
 						"NumParams":1
 					},
 					{
@@ -46786,7 +46720,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":594,
+						"Param1":593,
 						"NumParams":1
 					},
 					{
@@ -46800,7 +46734,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":595,
+						"Param1":594,
 						"NumParams":1
 					},
 					{
@@ -46814,7 +46748,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":596,
+						"Param1":595,
 						"NumParams":1
 					},
 					{
@@ -47197,7 +47131,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":597,
+						"Param1":596,
 						"NumParams":1
 					},
 					{
@@ -47218,7 +47152,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":598,
+						"Param1":597,
 						"NumParams":1
 					},
 					{
@@ -47239,7 +47173,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":599,
+						"Param1":598,
 						"NumParams":1
 					},
 					{
@@ -47260,7 +47194,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":600,
+						"Param1":599,
 						"NumParams":1
 					},
 					{
@@ -47281,7 +47215,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":601,
+						"Param1":600,
 						"NumParams":1
 					},
 					{
@@ -47582,6 +47516,190 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
+						"Param1":601,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"LIGHT MATCH",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":68,
+						"Condact":"PREP",
+						"Indirection1":0,
+						"Param1":10,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":108,
+						"Param2":0,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":90,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":90,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":72,
+						"Param2":10,
+						"NumParams":2
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":602,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"DRINK MATCH",
+				"Verb":33,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":68,
+						"Condact":"PREP",
+						"Indirection1":0,
+						"Param1":10,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":108,
+						"Param2":0,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":90,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":90,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":72,
+						"Param2":10,
+						"NumParams":2
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":73,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
 						"Param1":602,
 						"NumParams":1
 					},
@@ -47606,190 +47724,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":108,
-						"Param2":0,
-						"NumParams":2
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":90,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":90,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":72,
-						"Param2":10,
-						"NumParams":2
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":603,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"DRINK MATCH",
-				"Verb":33,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":10,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":108,
-						"Param2":0,
-						"NumParams":2
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":90,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":90,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":72,
-						"Param2":10,
-						"NumParams":2
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":603,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"LIGHT MATCH",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":10,
-						"NumParams":1
-					},
-					{
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
@@ -47812,14 +47746,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":604,
+						"Param1":603,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":605,
+						"Param1":604,
 						"NumParams":1
 					},
 					{
@@ -47900,14 +47834,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":604,
+						"Param1":603,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":605,
+						"Param1":604,
 						"NumParams":1
 					},
 					{
@@ -47990,7 +47924,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":606,
+						"Param1":605,
 						"NumParams":1
 					},
 					{
@@ -48038,7 +47972,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":606,
+						"Param1":605,
 						"NumParams":1
 					},
 					{
@@ -48072,7 +48006,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":607,
+						"Param1":606,
 						"NumParams":1
 					},
 					{
@@ -48120,7 +48054,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":608,
+						"Param1":607,
 						"NumParams":1
 					},
 					{
@@ -48196,7 +48130,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":609,
+						"Param1":608,
 						"NumParams":1
 					},
 					{
@@ -48204,6 +48138,20 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":609,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48217,7 +48165,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48231,7 +48179,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48245,7 +48193,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48259,7 +48207,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48273,7 +48221,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48287,7 +48235,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48301,7 +48249,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48315,7 +48263,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48329,7 +48277,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48343,7 +48291,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48357,7 +48305,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48371,7 +48319,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48385,7 +48333,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48393,13 +48341,6 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":623,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48417,6 +48358,13 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
+						"NumParams":1
+					},
+					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
@@ -48427,7 +48375,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48441,7 +48389,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48455,7 +48403,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48469,7 +48417,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48483,7 +48431,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48497,7 +48445,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48511,7 +48459,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48525,7 +48473,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48539,7 +48487,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48550,17 +48498,17 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":636,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48574,20 +48522,6 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":638,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
 						"Param1":9,
 						"NumParams":1
 					},
@@ -48595,7 +48529,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":639,
+						"Param1":638,
 						"NumParams":1
 					},
 					{
@@ -48671,7 +48605,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":609,
+						"Param1":608,
 						"NumParams":1
 					},
 					{
@@ -48679,6 +48613,20 @@
 						"Condact":"INK",
 						"Indirection1":0,
 						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":609,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48692,7 +48640,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48706,7 +48654,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48720,7 +48668,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48734,7 +48682,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48748,7 +48696,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48762,7 +48710,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48776,7 +48724,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48790,7 +48738,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48804,7 +48752,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48818,7 +48766,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48832,7 +48780,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48846,7 +48794,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48860,7 +48808,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48868,13 +48816,6 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":623,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48892,6 +48833,13 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
+						"NumParams":1
+					},
+					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
@@ -48902,7 +48850,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48916,7 +48864,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48930,7 +48878,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48944,7 +48892,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48958,7 +48906,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -48972,7 +48920,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -48986,7 +48934,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -49000,7 +48948,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -49014,7 +48962,7 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -49025,17 +48973,17 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":636,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -49049,20 +48997,6 @@
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
-						"Param1":13,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":638,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
 						"Param1":9,
 						"NumParams":1
 					},
@@ -49070,7 +49004,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":639,
+						"Param1":638,
 						"NumParams":1
 					},
 					{
