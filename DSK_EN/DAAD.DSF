@@ -1458,18 +1458,18 @@ DOWN   lBath2
 
 > EXAMI	    DOOR		AT lPorche
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, se abre con una llave.#n#nAhora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quién estaba en la puerta."
+                XMESSAGE "It's a solid, strong door. Like all the main doors, it opens with a key.#n#nNow you remember that you always wanted the doorbell to be fixed, because when everyone was in the rooms, no one could hear who was at the door."
                 DONE
 
 > USE       BELL
 > EXAMI     BELL        AT lPorche
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?"
+                XMESSAGE "You didn't understand that the bell was broken, did you?"
                 DONE
 
 > HIT	    DOOR		AT lPorche
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Nadie responde a tu llamada."
+                XMESSAGE "Nobody answers your call."
                 DONE
 
 > USE 		DOOR
@@ -1477,9 +1477,9 @@ DOWN   lBath2
 > OPEN 	    DOOR		AT lPorche
                 NOTCARR oLlavePorche    ; No tenemos las llaves del Porche
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes entrar en la casa porque la puerta está cerrada con llave.#n"
+                XMESSAGE "You can't enter the house because the door is locked."
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Pero te viene a la memoria que, cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio. ¿Lo recuerdas?"
+                XMESSAGE "But do you remember, when your parents went for walks in the woods, they used to hide a key somewhere. Do you remember where?"
                 DONE
 
 ; Tenemos un par de acciones para controlar si entra en la casa teniendo las llaves y si lleva encima la maceta o no                
@@ -1488,20 +1488,20 @@ DOWN   lBath2
 > ENTER     _
 > OPEN 	    DOOR		AT lPorche
                 CLS                     ; Limpiamos la pantalla
-                CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
+                ;CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 CARRIED oMaceta         ; Tiene la maceta en el inventario
                 INK     9               ; Color del narrador
-                XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
+                XMESSAGE "You leave the flowerpot#g#f!#t in place.#n"
                 INK     9               ; Color del narrador
-            	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor.#n"
+            	XMESSAGE "You're already inside the house. It's cold. You tripped over the console in the hall."
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡Y lo sabéis!#k#n#b"
+                XMESSAGE "Hello?Anybody home? #nI don't want to joke around because I'm gonna get pissed off...  And you know it! #k#n#b"
                 INK     9               ; Color del narrador
-                XMESSAGE "No responde nadie. La puerta se cierra tras de ti de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
+                XMESSAGE "No one's answering. The door slams behind you. It doesn't open anymore. It's stuck and therefore you're locked in."
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#f)*#t, so melón?, porque no las siento encima.#k#n"
+                XMESSAGE "Hahaha, with all the trouble you had finding the damn key. Fucking gnome! Speaking of keys, where did you leave your car keys, 'cause I don't feel them on me?"
                 INK     3
-                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
+                XMESSAGE "Just what I needed! No way out of this house and now also without my car keys#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
@@ -1512,15 +1512,17 @@ DOWN   lBath2
 > E         _
 > ENTER     _
 > OPEN		DOOR		AT lPorche
-                CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
+                ;CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK     9               ; Color del narrador
-            	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor.#n"
+            	XMESSAGE "You're already inside the house. It's cold. You tripped over the console in the hall."
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡Y lo sabéis!#n"
+                XMESSAGE "Hello?Anybody home? #nI don't want to joke around because I'm gonna get pissed off...  And you know it! #k#n#b"
                 INK     9               ; Color del narrador
-                XMESSAGE "No responde nadie. La puerta se cierra tras de ti de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
+                XMESSAGE "No one's answering. The door slams behind you. It doesn't open anymore. It's stuck and therefore you're locked in."
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda!#k"
+                XMESSAGE "Hahaha, with all the trouble you had finding the damn key. Fucking gnome! Speaking of keys, where did you leave your car keys, 'cause I don't feel them on me?"
+                INK     3
+                XMESSAGE "Just what I needed! No way out of this house and now also without my car keys#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
@@ -1532,14 +1534,14 @@ DOWN   lBath2
 
 ; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, luego si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
 
-> UP     _           AT lRecibidor
+> UP         _          AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF          ; Activamos el flag de la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Las escaleras están muy oscuras. Usa algo para iluminar, por favor.#n"
+                XMESSAGE "The stairs are very dark. Use something to light it up, please."
                 DONE
 
-> UP     _           AT lRecibidor
+> UP        _           AT lRecibidor
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz     ; No es cero, luego tenemos luz
                 NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
@@ -1553,7 +1555,7 @@ DOWN   lBath2
 > S         _           AT lRecibidor ; No podemos entrar en la cocina sin LUZ
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
-                XMESSAGE "La cocina está muy oscura, sin luz no es buena idea entrar. Necesitas algo para iluminar."
+                XMESSAGE "The kitchen is too dark, without light it's not a good idea to go in. You need something to light it up."
                 DONE
 
 > S         _           AT lRecibidor ; Tenemos LUZ y nos metemos en la cocina
@@ -1570,7 +1572,7 @@ DOWN   lBath2
 > E         _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
-                XMESSAGE "El salón está muy oscuro, sin luz no se puede entrar."
+                XMESSAGE "The room is very dark, without light you can not enter."
                 DONE
 
 > E         _           AT lRecibidor
@@ -1604,64 +1606,64 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarInterruptor
                 INK     3               ; Color del protagonista
-                XMESSAGE "Después del susto que me he pegado... ¡yo ahí no entro!"
+                XMESSAGE "After the scare I got... I'm not going in there!"
                 DONE
 
 > N         _           AT lRecibidor
                 ZERO fControlLuz
                 INK     9               ; Color del narrador
-                XMESSAGE "El aseo está muy oscuro, sin luz no se puede entrar."
+                XMESSAGE "The toilet is very dark, without light you can not enter."
                 DONE
 
 > W         _           AT lRecibidor
                 ZERO    fJugar          ; No has jugado con el crío del patio
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta está bloqueada, no se puede abrir."
+                XMESSAGE "The door is locked, you can't open it."
                 DONE
 
 ; MP3 de Intro del Super Mario
-> PLAY     		CONSOLE     AT lRecibidor
+> PLAY     		CONSOLE AT lRecibidor
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Espera que voy a por el Super Mario Bros..."
+                XMESSAGE "Wait till I get the Super Mario Bros..."
                 DONE
 
-> EXAMI  FOYER
-> LOOK     _           AT lRecibidor
+> EXAMI     FOYER
+> LOOK      _           AT lRecibidor
                 INK     9               ; Color del narrador
-                XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado; tiene un cajón."
+                XMESSAGE "It is a wide hall and from this position you can see the toilet that is to the NORTH, to the EAST you can see the lounge, to the SOUTH you have the kitchen, DOWN is the cellar and UP are the rooms. You have a wooden console next to you; it has a drawer."
                 DONE
 
 ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón. Siempre usamos flags para esto. Además, tenemos un flag para controlar si abrió el cajón y otro para la consola.
-> EXAMI	CONSOLE     AT lRecibidor
+> EXAMI	    CONSOLE     AT lRecibidor
                 ZERO    fConsola        ; Es la primera vez que ejecuta dicha acción
                 SET     fConsola        ; Activo un flag
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
+                XMESSAGE "It's a beautiful wooden console with wrought iron legs. Your mother inherited it from her family. Your parents always keep a light fixture in the drawer for when the power goes out."
                 DONE
 
-> EXAMI	CONSOLE     AT lRecibidor
+> EXAMI	    CONSOLE     AT lRecibidor
                 NOTZERO fConsola        ; Ya examinó la consola    
                 ZERO    fCajon          ; No hemos abierto el cajón
                 INK     9               ; Color del narrador
-                XMESSAGE "La consola sigue siendo preciosa. ¿Abres el cajón y seguimos?"
+                XMESSAGE "The console's still beautiful. You open the drawer and we go on?"
                 DONE
 
-> EXAMI	CONSOLE     AT lRecibidor
+> EXAMI	    CONSOLE     AT lRecibidor
                 NOTZERO fConsola        ; Ya examinó la consola    
                 NOTZERO fCajon          ; Hemos abierto el cajón
                 INK     9               ; Color del narrador
-                XMESSAGE "La consola sigue siendo preciosa. Ya no hay más que mirar aquí."
+                XMESSAGE "The console is still beautiful. There's nothing to look at here anymore."
                 DONE
 
-> EXAMI   DRAWER        AT lRecibidor
+> EXAMI     DRAWER      AT lRecibidor
                 ZERO    fCajon          ; No hemos abierto el cajón
                 INK     9               ; Color del narrador
                 XMESSAGE "Es un cajón de madera con un tirador de hierro.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Si cierras los ojos y lo deseas con mucha fuerza, igual se abre sólo."
+                XMESSAGE "If you close your eyes and wish very hard, it may open by itself."
                 DONE
 
-> OPEN		DRAWER       AT lRecibidor
+> OPEN		DRAWER      AT lRecibidor
                 ISAT    oCerillas 252             
                 INK     9               ; Color del narrador
                 XMESSAGE "Abres el cajón y encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"

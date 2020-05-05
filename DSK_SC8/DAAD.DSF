@@ -1460,7 +1460,7 @@ BAJAR   lBath2
 > ENTRAR    _
 > ABRIR 	PUERTA		AT lPorche
                 CLS                     ; Limpiamos la pantalla
-                CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
+                ;CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 CARRIED oMaceta         ; Tiene la maceta en el inventario
                 INK     9               ; Color del narrador
                 XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
@@ -1484,15 +1484,19 @@ BAJAR   lBath2
 > E         _
 > ENTRAR    _
 > ABRIR		PUERTA		AT lPorche
-                CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
+                ;CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
+                INK     9               ; Color del narrador
+                XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
                 INK     9               ; Color del narrador
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nTe has tropezado con la consola del recibidor.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡Y lo sabéis!#n"
+                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡Y lo sabéis!#k#n#b"
                 INK     9               ; Color del narrador
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda!#k"
+                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#f)*#t, so melón?, porque no las siento encima.#k#n"
+                INK     3
+                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
@@ -1600,7 +1604,7 @@ BAJAR   lBath2
 > EXAMINAR  RECIBIDOR
 > MIRAR     _           AT lRecibidor
                 INK     9               ; Color del narrador
-                XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado; tiene un cajón."
+                XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, BAJANDO está la bodega y SUBIENDO están las habitaciones. Tienes una consola de madera a tu lado; tiene un cajón."
                 DONE
 
 ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón. Siempre usamos flags para esto. Además, tenemos un flag para controlar si abrió el cajón y otro para la consola.
