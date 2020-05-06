@@ -2676,7 +2676,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "La Rejilla se encuentra atascada y no se puede abrir."
+                XMESSAGE "La rejilla se encuentra atascada y no se puede abrir."
                 DONE
 
 > O         _           AT lCochera

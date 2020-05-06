@@ -2407,13 +2407,13 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK     9
-                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#fKL#t tirada en el suelo que está conectada al grifo.#n"
+                XMESSAGE "You find a mess in the garage... It's all full of water; it has an open grill and a hose#g#fKL#t on the floor which is connected to the tap.#n"
                 INK     3
-                XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
+                XMESSAGE "I won't touch that again!#k#n"
                 INK     9
-                XMESSAGE "El niño aparece a tu lado.#k#n" 
+                XMESSAGE "The child appears at your side.#k#n" 
                 INK     14
-                XMESSAGE "Aquí mataron a mi madre y a mi hermana. Yo me había escapado y el me encontró por el camino.#n Me trajo aquí y me obligó a llevar los cuerpos al chamizo. Recuerdo que había una llave escondida sobre la puerta de la cochera."
+                XMESSAGE "My mother and sister were killed here. I had escaped and he found me on the road.#n He brought me here and forced me to take the bodies to the shack. I remember there was a key hidden above the garage door."
                 INK     15
                 DONE
 
@@ -2424,7 +2424,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK      9
-                XMESSAGE "La cochera no es muy grande. Destacan un grifo en la pared y una rejilla en el suelo."
+                XMESSAGE "The garage isn't very big. There is a tap on the wall and a grid on the floor."
                 DONE
 
 > EXAMI     DOOR        AT lCochera
@@ -2433,7 +2433,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Se trata de una puerta de garaje abatible. Es de chapa."                
+                XMESSAGE "This is a folding garage door. It is made of metal.."                
                 DONE
 
 > EXAMI     FLOOR       AT lCochera
@@ -2446,7 +2446,7 @@ DOWN   lBath2
                 ISAT    oManguera 252
                 CREATE  oManguera
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo está revestido de una pintura roja muy densa. Encuentras algo en una de las esquinas.#n"               
+                XMESSAGE "The floor is covered with a very dense red paint. You find something in one of the corners.#n"               
                 INK     15
                 GET     oManguera
                 MESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -2459,7 +2459,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManguera
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo está revestido de una pintura roja muy densa."
+                XMESSAGE "The floor is coated with a very dense red paint."
                 DONE
 
 > EXAMI     TAP         AT lCochera
@@ -2469,7 +2469,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fConectarManguera  ; la manguera está desconectada
                 INK     9               ; Color del narrador
-                XMESSAGE "El grifo tiene un adaptador para CONECTAR una manguera#g#fKL#t."
+                XMESSAGE "The tap has an adapter for CONNECTING a hose#g#fKL#t."
                 DONE
 
 > EXAMI     TAP         AT lCochera
@@ -2479,7 +2479,7 @@ DOWN   lBath2
                 CLEAR   fDarkF            ; Desactivamos la oscuridad
                 NOTZERO fConectarManguera ; la manguera está conectada
                 INK     9                 ; Color del narrador
-                XMESSAGE "El grifo tiene una manguera#g#fKL#t conectada."
+                XMESSAGE "The tap has a hose#g#fKL#t connected."
                 DONE
 
 > EXAMI     GENERATOR   AT lCochera
@@ -2488,7 +2488,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "El generador no funciona pero de algún extraño modo, hay luz en el exterior de la casa. Podría ser energía residual."
+                XMESSAGE "The generator doesn't work but in some strange way, there is light outside the house. It could be residual energy."
                 DONE
 
 > EXAMI     WALL        AT lCochera
@@ -2497,7 +2497,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Las paredes son blancas con un acabado rugoso.#n Puedes observar un grifo encastrado en una de ellas."
+                XMESSAGE "The walls are white with a rough finish.#n You can see a tap embedded in one of them."
                 DONE
 
 > EXAMI     GRID        AT lCochera
@@ -2506,9 +2506,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Parece haber algo dentro. El conducto de salida de agua de la rejilla está obturado.#n"
+                XMESSAGE "There seems to be something inside. The water outlet on the grid is clogged.#n"
                 INK     2
-                MESSAGE "Seguro que hay alguna forma de hacer salir lo que hay en su interior."
+                MESSAGE "I'm sure there's some way to get what's inside out."
                 DONE
 
 > USE       HOSE        AT lCochera
@@ -2518,7 +2518,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 INK     9               ; Color del narrador
-                XMESSAGE "No tienes ninguna manguera#g#fKL#t."
+                XMESSAGE "You don't have any hose#g#fKL#t."
                 DONE
 
 > USE       HOSE        AT lCochera
@@ -2530,7 +2530,7 @@ DOWN   lBath2
                 ZERO    fMangueraRejilla    ; Flag de que ha tenido que examinar rejilla antes
                 SET     fMangueraRejilla
                 INK     9               ; Color del narrador
-                XMESSAGE "Pones la manguera#g#f-.#t en la rejilla."
+                XMESSAGE "You put the hose#g#f-.#t on the grid."
                 DESTROY oManguera
                 DONE
 
@@ -2542,7 +2542,7 @@ DOWN   lBath2
                 NOTZERO fManguera
                 NOTZERO fMangueraRejilla    ; Flag de que ha tenido que examinar rejilla antes
                 INK     9               ; Color del narrador
-                XMESSAGE "Ya está puesta la manguera#g#f-.#t en la rejilla."
+                XMESSAGE "The hose#g#f-.#t is already on the grid.."
                 DONE
 
 > CONECTAR  HOSE        AT lCochera
@@ -2554,7 +2554,7 @@ DOWN   lBath2
                 ZERO    fConectarManguera
                 SET     fConectarManguera   ; Flag de que ha tenido que examinar el grifo antes
                 INK     9               ; Color del narrador
-                XMESSAGE "Conectas la manguera#g#f-.#t al grifo."
+                XMESSAGE "You connect the hose#g#f-.#t to the tap."
                 DONE
 
 > CONECTAR  HOSE        AT lCochera
@@ -2565,7 +2565,7 @@ DOWN   lBath2
                 NOTZERO fManguera
                 NOTZERO fConectarManguera
                 INK     9               ; Color del narrador
-                XMESSAGE "Ya esta puesta la manguera#g#f-.#t en el grifo."
+                XMESSAGE "The hose#g#f-.#t is already on the tap."
                 DONE
 
 > USE       TAP
@@ -2576,8 +2576,8 @@ DOWN   lBath2
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 ZERO    fManguera                   ; No encontró la manguera
                 INK     9                           ; Color del narrador
-                XMESSAGE "Abres el grifo.#k#n"
-                XMESSAGE " Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas...#n#n"
+                XMESSAGE "You turn on the tap.#k#n"
+                XMESSAGE " Water starts to come out at a lot of pressure and immediately the pressure is so strong that it starts the tap and the water flow pulls you towards the wall with force.#n#n The impact against the wall breaks your spine and now you can't move... It's only a matter of hours...#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2595,8 +2595,8 @@ DOWN   lBath2
                 ZERO    fMangueraRejilla            ; No puso la manguera en la rejilla
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "Abres el grifo y comienza a salir agua a presión. No CONECTASTE la manguera#g#f-.#t y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k#n"
-                XMESSAGE " El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia fatal.#k#n#n"
+                XMESSAGE "You open the tap and water starts pouring out. You didn't CONNECT the hose#g#f-.#t and now you regret it a little, because there is no way to stop the flow.#k#n"
+                XMESSAGE " The tap bursts in your face and shatters it, causing a nice, fatal hemorrhage.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2615,9 +2615,9 @@ DOWN   lBath2
                 ZERO    fMangueraRejilla            ; Si puso la manguera en la rejilla
                 NOTZERO fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "Abres el grifo y el agua comienza a salir con una presión muy fuerte.#k#n"
-                XMESSAGE "La manguera#g#f-.#t se vuelve completamente ingobernable y te cruza la cara de un latigazo con tal fuerza que te desploma en el suelo inconsciente. #k#n"
-                XMESSAGE "Un gran charco de sangre se drena a través de la rejilla, el nivel de agua sube, la rejilla se abre y aparece un objeto.#n"
+                XMESSAGE "You turn on the tap and the water starts coming out with very strong pressure.#k#n"
+                XMESSAGE "The hose#g#f-.#t becomes completely unmanageable and whips you across the face with such force that you collapse on the floor unconscious.#k#n"
+                XMESSAGE "A large pool of blood drains through the grate, the water level rises, the grid opens and an object appears.#n"
                 INK     2
                 XMESSAGE "...#n"
                 INK     15
@@ -2642,7 +2642,7 @@ DOWN   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manguera en la rejilla
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en continua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#n#n"
+                XMESSAGE "You turn on the tap and water starts gushing out. There's no way to stop this mess. The tap doesn't turn off anymore. The garage is flooding at high speed and the water starts pouring into the generator.#n#n#k I think that your water-soaked shoes are not the most convenient insulator for a few thousand volts in continuous that are going to leave you at this very moment as a ration of Andalusian-style anchovies...#n#n#k You don't have to be a cook to find out that you are fried.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2660,7 +2660,7 @@ DOWN   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manquera en la rejilla
                 NOTZERO fConectarManguera           ; Si conectó la manguera al grifo
                 INK     9                           ; Color del narrador
-                XMESSAGE "El agua está cayendo por la rejilla con una gran presión y se está llenando a gran velocidad.#n Notas como rápidamente sube el nivel del agua y debido a la presión, la rejilla cede y deja al descubierto el desagüe.#n Ves que de su interior sale una pelota#g#f:;#t. Acto seguido, cierras el grifo."
+                XMESSAGE "The water is falling through the grid with great pressure and is filling up at great speed.#n You notice how quickly the water level rises and because of the pressure, the grid gives way and exposes the drain.#n You see a ball coming out of the interior#g#f:;#t. Then, you turn off the tap."
                 ;CLEAR   fCerrarGrifo
                 ISAT    oPelota 252
                 CREATE  oPelota
@@ -2668,7 +2668,7 @@ DOWN   lBath2
                 GET     oPelota
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     2               ; Color de tu consciencia
-                XMESSAGE"¿Nos echamos un partidito?"                
+                XMESSAGE"Shall we play a football game?"                
                 DONE
 
 > MOVE      GRID
@@ -2678,7 +2678,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "La Rejilla se encuentra atascada y no se puede abrir."
+                XMESSAGE "The grid is stuck and cannot be opened."
                 DONE
 
 > W         _           AT lCochera
@@ -2687,9 +2687,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta de la cochera se encuentra cerrada y no se abrirá.#n"     
+                XMESSAGE "The garage door is closed and will not open.#n"     
                 INK     3               ; Color del protagonista
-                XMESSAGE "Meridianamente claro."
+                XMESSAGE "Crystal clear."
                 DONE
 
 > E         _           AT lCochera ; Si salimos por la puerta, la puerta se bloquea con un flag y no podemos volver a entrar.
@@ -2699,7 +2699,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ;ZERO    fCerrarGrifo
                 INK     9               ; Color del narrador
-                XMESSAGE "Volvemos a la bodega.#k"
+                XMESSAGE "We go back to the wine cellar.#k"
                 CLS  
                 GOTO    lBodega
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
