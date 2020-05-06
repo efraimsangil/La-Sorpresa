@@ -1921,9 +1921,9 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una puerta metálica que comunica la Bodega con otro lugar.#n"
+                XMESSAGE "It's a metal door that connects the wine cellar to another place.#n"
                 INK     3
-                XMESSAGE "No tengo recuerdo alguno de esta puerta. Además, no tiene cerradura, luego seguro que se puede abrir."
+                XMESSAGE "I have no memory of this door. Besides, it doesn't have a lock, so I'm sure it can be opened."
                 DONE
 
 ;NOTA: Por aquí entramos la primera vez sin jugar con el crío para coger la pelota.
@@ -1936,7 +1936,7 @@ DOWN   lBath2
                 NOTZERO fQuitarMancha
                 ZERO    fJugar
                 INK     9               ; Color del narrador
-                XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k"
+                XMESSAGE "You open the door easily and you can see that on the other side is the garage.#k"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lCochera
@@ -1953,51 +1953,51 @@ DOWN   lBath2
                 NOTZERO fQuitarMancha
                 NOTZERO fJugar
                 INK     9               ; Color del narrador
-                XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k#n"
+                XMESSAGE "You open the door easily and you can see that on the other side is the garage.#k#n"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
                 GOTO    lCochera
                 ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
-                XMESSAGE "Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil.#k#n#b"
+                XMESSAGE "You've just entered the garage, a place where, as expected, there is no car. It smells of diesel and oil, but surprisingly the room is spotless, even though you have a very reduced visibility. It is a place with white walls and a floor covered with red epoxy paint with a grill in the middle. On the wall you can see a tap and there is also a diesel generator.#k#n#b"
                 INK     14
-                XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#k#n"
+                XMESSAGE "This is where it all happened! I remember it perfectly.#k#n"
                 INK     3
-                XMESSAGE "¿Has venido siguiéndome?#k#n"
+                XMESSAGE "Have you been following me?#k#n"
                 INK     14 
-                XMESSAGE "!Sí! Te has portado bien conmigo y yo te acompaño para ayudarte.#k#n"
+                XMESSAGE "Yes! You've been good to me and I'll go with you to help you.#k#n"
                 INK     3
-                XMESSAGE "Me has dicho que aquí ha ocurrido algo. ¿A qué te refieres?#k#n"
+                XMESSAGE "You told me something happened here. What do you mean?#k#n"
                 INK     14 
-                XMESSAGE "Un día yo escapé de la casa en busca de ayuda, porque el señor nos pegaba a mi madre, a mi hermana y a mí, pero el señor me descubrió camino del pueblo y me trajo aquí. #k#n"
+                XMESSAGE "One day I escaped from the house looking for help, because the Lord was beating my mother, my sister and me, but the Lord discovered me on the way to the village and brought me here.#k#n"
                 INK     3
-                XMESSAGE "¿Y qué pasó entonces?#k#n"
+                XMESSAGE "So what happened?#k#n"
                 INK     14 
-                XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El señor me hizo a mirar mientras los cortaba con un hacha#g#f%&'#t y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#k#n"
+                XMESSAGE "Well, here was my mother and sister dead. He had killed them and the bodies were on the floor. The Lord made me watch while he cut them with an axe#g#f%&'#t and when he finished, he forced me to help him take them to the shack.#k#n"
                 INK     3
-                XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#k#n"
+                XMESSAGE "I'm so sorry you had to witness that atrocity. As for your mother and sister... In the corridor of the house I found a little girl who almost finished me off and there was someone else in the last room.#k#n"
                 INK     14 
-                XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. Hoy hace treinta años que pasó todo y como nadie ha descubierto nunca lo que ha ocurrido, cada treinta años pasamos una noche en la casa hasta que se descubran los cuerpos.#k#n"
+                XMESSAGE "Yes, it was my mother and my sister. My sister is very angry because she saw Mom get killed before she did. Today it's been thirty years since everything happened and since no one has ever discovered what happened, every thirty years we spend a night in the house until the bodies are discovered.#k#n"
                 INK     3
-                XMESSAGE "¿Has dicho que llevasteis los cuerpos al chamizo?#k#n"
+                XMESSAGE "Did you say you took the bodies to the shack?#k#n"
                 INK     14 
-                XMESSAGE "Si. Allí los enterramos con una pala#g#f()*#t y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo#g#f2#t se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
+                XMESSAGE "Yes. There we buried them with a shovel#g#f()*#t and that's where the Lord killed me by finishing a shovel on my head... Which reminds me that the keys to the shack#g#f2#t are hidden somewhere in this garage, hold on a moment...#k#n"
                 INK     9
-                XMESSAGE "Observas como el niño se dirige hacia la puerta de la cochera, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#k#n"
+                XMESSAGE "You watch as the child walks to the garage door, rises to the ground and grabs something from the top fence of the door.#k#n"
                 INK     15
                 ISAT   oLlaveChamizo 252
                 CREATE oLlaveChamizo
                 GET    oLlaveChamizo
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     14
-                XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala#g#f()*#t para poder desenterrarnos.#k#n"
+                XMESSAGE "Here they are. Now we can go to the shack, but you need the shovel#g#f()*#t to dig us out.#k#n"
                 INK     2
-                XMESSAGE "¡Entendido! Hay que buscar una pala#g#f()*#t.#k#n"
+                XMESSAGE "Got it! I have to find a shovel#g#f()*#t.#k#n"
                 INK     3
-                XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#k#n"
+                XMESSAGE "All right, well, I'll help you solve the crime.#k#n"
                 INK     14
-                XMESSAGE "Te acompaño. Mi hermana tiene cerrada la puerta de acceso al exterior, pero yo la abro ahora mismo, lo malo es que se va a dar cuenta y ya no vamos a poder abrirla de nuevo.#k#n"
+                XMESSAGE "I'll go with you. My sister has closed the door to the outside, but I'm opening it right now, the bad thing is that she's going to find out and we won't be able to open it again.#k#n"
                 INK     9
-                XMESSAGE "El niño abre la puerta de la cochera y sales hacia el exterior.#k"
+                XMESSAGE "The child opens the garage door and you go outside.#k"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -2007,32 +2007,32 @@ DOWN   lBath2
                 RESTART
                 DONE
 
-> USE      DOOR
-> OPEN 	DOOR      AT lBodega
+> USE       DOOR
+> OPEN 	    DOOR        AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fQuitarMancha
                 INK     9               ; Color del narrador
-                XMESSAGE "Aquí no hay ninguna puerta."               
+                XMESSAGE "There's no door here."               
                 DONE
 
 ; El alambique no se ha movido, por tanto no se puede acceder a la trampilla. 
-> USE      HATCH 
-> OPEN     HATCH   AT lBodega
+> USE       HATCH 
+> OPEN      HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fMoverAlambique ; Ha movido el alambique
                 INK     9
-                XMESSAGE "La trampilla se encuentra bajo un alambique, no se puede abrir."
+                XMESSAGE "The trap door is under a still, it cannot be opened."
                 DONE
 
 ; El Alambique se ha movido, pero no se ha usado el aceite, no se puede entrar y no hace falta más control
-> USE      HATCH 
-> OPEN     HATCH   AT lBodega
+> USE       HATCH 
+> OPEN      HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2040,12 +2040,12 @@ DOWN   lBath2
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 ZERO    fUsarAceite
                 INK     9
-                XMESSAGE "No puedes abrir la trampilla porque hay un candado puesto.#k"
+                XMESSAGE "You can't open the trap door because there's a lock on it.#k"
                 DONE
 
 ; el Alambique se ha movido, pero no se ha usado el aceite y no tenemos la combinación
-> USE      HATCH 
-> OPEN     HATCH   AT lBodega
+> USE       HATCH 
+> OPEN      HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2054,13 +2054,13 @@ DOWN   lBath2
                 NOTZERO fUsarAceite
                 ZERO    fCombinacion
                 INK     9
-                XMESSAGE "El candado está engrasado y tiene mejor pinta, pero no conoces la combinación para abrirlo.#k"
+                XMESSAGE "The lock is greased and looks better, but you don't know the combination to open it.#k"
                 DONE
 
 ; el Alambique se ha movido, hemos engrasado el candado y conocemos la combinación
 
-> USE      HATCH 
-> OPEN     HATCH   AT lBodega
+> USE       HATCH 
+> OPEN      HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2070,7 +2070,7 @@ DOWN   lBath2
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion
                 INK     9
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
+                XMESSAGE "You put the combination in the lock and get the trap door open.#k"
                 CLS
                 GOTO    lGabinete
                 LET     fVasAMorir 0
@@ -2081,8 +2081,8 @@ DOWN   lBath2
 
 ; Aquí llevamos al crío con nosotros pero no hemos leído el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
-> USE      HATCH 
-> OPEN     HATCH   AT lBodega
+> USE       HATCH 
+> OPEN      HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2093,11 +2093,11 @@ DOWN   lBath2
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion
                 INK     9
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k#n"
+                XMESSAGE "You put the combination in the lock and get the trap door open.#k#n"
                 INK     14              ;Voz del crío
-                XMESSAGE "Presiento que mi madre está aquí dentro... Lo mejor es procurar que no nos vea y no debemos entretenernos.#k#n"
+                XMESSAGE "I feel like my mother is in here... The best thing is to make sure she doesn't see us and we shouldn't be distracted.#k#n"
                 INK     2
-                XMESSAGE "Debemos ser cautelosos.#k"                
+                XMESSAGE "We must be careful.#k"                
                 CLS
                 INK     9
                 GOTO    lGabinete
@@ -2107,8 +2107,8 @@ DOWN   lBath2
 
 ; Aquí llevamos al crío con nosotros y hemos leído el diario, el hecho de leer o no el diario, debe ser un condicionante informativo. 
 
-> USE      HATCH 
-> OPEN     HATCH   AT lBodega
+> USE       HATCH 
+> OPEN      HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2119,7 +2119,7 @@ DOWN   lBath2
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion
                 INK     9
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
+                XMESSAGE "You put the combination in the lock and get the trap door open.#k#n"
                 CLS
                 GOTO    lGabinete
                 LET     fVasAMorir 0
@@ -2139,12 +2139,12 @@ DOWN   lBath2
 ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMI en términos absolutos, nos lleva a morir.
 ; Para escapar es necesario quedarse sin turnos de cerilla, o apagar la cerilla (estar a oscuras) para que la criada no le vea y pueda salir
 
-> LOOK     _           AT lGabinete
+> LOOK      _           AT lGabinete
                 INK     9               ; Color del narrador
-                XMESSAGE "El lugar es estremecedor, húmedo y cerrado; el olor que desprende es nauseabundo. Hay una puerta al NORTE atrancada con una pala#g#f()*#t. Miras a tu alrededor y percibes que algo se mueve encima de la camilla."
+                XMESSAGE "The place is shocking, wet and closed; the smell it gives off is nauseating. There is a door to the NORTH stuck with a shovel#g#f()*#t. You look around and feel something moving on the table."
                 DONE
 
-> EXAMI   LITTER     AT lGabinete
+> EXAMI     LITTER      AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2152,18 +2152,18 @@ DOWN   lBath2
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Una mujer está postrada boca arriba retorciéndose de dolor encima de la camilla, desnuda y encadenada de pies y manos como si de un potro se tratase. Sus muñecas y tobillos tienen unas escaras profundas y el tejido cambia de color y comienza a ulcerarse.#n#nLa piel de la mujer sufre laceraciones y ves la carne a través de los cortes.#n"
-                XMESSAGE "No hay sangre, los desgarros son limpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
+                XMESSAGE "A woman is lying on her back, writhing in pain on the stretcher, naked and chained hand and foot as if she were a colt. Her wrists and ankles have deep scars and the tissue changes color and begins to ulcerate.#n#nThe woman's skin is lacerated and you see the flesh through the cuts.#n"
+                XMESSAGE "There's no blood, the lacerations are clean and don't bleed... It seems that someone or something is causing the cuts at that very moment; the woman is screaming and panting in pain."
                 DONE
 
-> EXAMI   LITTER     AT lGabinete
+> EXAMI     LITTER      AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ.#n#n"
+                XMESSAGE "You approach to take a closer look and at that very moment the chains come off and the woman sticks her icy and bony fingers into your neck with superhuman strength.#k#n#n Her long nails penetrate your throat and with a sudden gesture, she snaps your neck from the inside, tearing the muscles and exposing your windpipe...#k#n#n You are now a human FISH candy dispenser.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2171,7 +2171,7 @@ DOWN   lBath2
                 INK     15
                 DONE
 
-> EXAMI   BONDS     AT lGabinete
+> EXAMI     BONDS       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2179,11 +2179,11 @@ DOWN   lBath2
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Son unas cadenas oxidadas de hierro soldadas a la camilla.#n#n Una mujer está postrada boca arriba retorciéndose de dolor encima de ella, desnuda y encadenada de pies y manos como si de un potro se tratase. Sus muñecas y tobillos tienen unas escaras profundas y el tejido cambia de color y comienza a ulcerarse.#n#n" 
-                XMESSAGE "La piel de la mujer sufre laceraciones y ves la carne a través de los cortes. No hay sangre, los desgarros son limpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
+                XMESSAGE "They are rusty iron chains welded to the stretcher.#n#n A woman is lying on her back writhing in pain on top of her, naked and chained hand and foot as if she were a colt. Her wrists and ankles have deep scars and the tissue changes color and begins to ulcerate..#n#n" 
+                XMESSAGE "The woman's skin is lacerated and you see the flesh through the cuts. There's no blood, the cuts are clean and don't bleed... It seems that someone or something is causing the tears at that very moment; the woman screams and gasps in pain."
                 DONE
 
-> EXAMI   BONDS     AT lGabinete
+> EXAMI     BONDS       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2198,7 +2198,7 @@ DOWN   lBath2
                 INK     15
                 END
 
-> EXAMI   TABLE        AT lGabinete
+> EXAMI     TABLE       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2209,7 +2209,7 @@ DOWN   lBath2
                 XMESSAGE "A uno de los lados de la camilla, hay una mesa de chapa con una bandeja encima que contiene instrumental quirúrgico antiguo en unas condiciones poco higiénicas."
                 DONE
 
-> EXAMI   TABLE        AT lGabinete
+> EXAMI     TABLE       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2226,7 +2226,7 @@ DOWN   lBath2
                 INK     15
                 END
 
-> EXAMI   FLOOR       AT lGabinete
+> EXAMI     FLOOR       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2237,7 +2237,7 @@ DOWN   lBath2
                 XMESSAGE "El suelo es de azulejo blanco; está sucio y mugriento. Hay manchas de sangre por todas partes y tiene un tacto viscoso y húmedo."
                 DONE
 
-> EXAMI   FLOOR       AT lGabinete
+> EXAMI     FLOOR       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
