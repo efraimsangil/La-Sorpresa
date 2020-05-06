@@ -1666,7 +1666,7 @@ DOWN   lBath2
 > OPEN		DRAWER      AT lRecibidor
                 ISAT    oCerillas 252             
                 INK     9               ; Color del narrador
-                XMESSAGE "Abres el cajón y encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
+                XMESSAGE "You open the drawer and find a box of XXL kitchen matches#g#f+,#t.#n"
                 CREATE  oCerillas       ; Creamos el objeto
                 INK     15              ; Color del sistema
                 GET     oCerillas       ; Cogemos el objeto
@@ -1678,19 +1678,19 @@ DOWN   lBath2
 > OPEN		DRAWER 		AT lRecibidor
                 NOTZERO fCajon          ; Hemos abierto el cajón
                 INK     9               ; Color de tu consciencia
-                XMESSAGE "Ya no hay nada interesante en la consola."
+                XMESSAGE "There's nothing interesting on the console anymore."
                 DONE
 
-> EXAMI   DRAWER       AT lRecibidor
+> EXAMI     DRAWER      AT lRecibidor
                 NOTZERO fCajon          ; El cajón ya lo abrimos
                 INK     9               ; Color de tu consciencia
-                XMESSAGE "Ya no hay nada interesante en el cajón."
+                XMESSAGE "There's nothing interesting in the drawer anymore."
                 DONE
 
-> DOWN         _       AT lRecibidor
+> DOWN      _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
-                XMESSAGE "La bodega está muy oscura, sin luz no se puede entrar."
+                XMESSAGE "The wine cellar is very dark, without light you can't enter."
                 DONE
 
 ; Para bajar a la bodega, necesitamos una llave
@@ -1701,7 +1701,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Necesitas la llave de la bodega#g#f1#t para poder entrar."
+                XMESSAGE "You need the key to the wine cellar#g#f1#t to get in."
                 DONE
 
 > DOWN		_  			AT lRecibidor
@@ -1711,8 +1711,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Abres la puerta de la bodega.#k"
-                CLS                     ; Limpiamos la pantalla
+                XMESSAGE "You open the wine cellar door.#k#b"
                 INK     9               ; Color del narrador
                 GOTO    lBodega         ; Vamos a esa la localización       
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -1722,49 +1721,49 @@ DOWN   lBath2
 
 ; /9 "La bodega. Un lugar angosto y húmedo que despide un aroma a tierra excavada profundo y penetrante.#n#nEn una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo.#n" 
 
-> UP     _           AT lBodega
+> UP        _           AT lBodega
                 INK     9
-                XMESSAGE "Subimos al recibidor.#k"
+                XMESSAGE "We go upstairs to the foyer.#k"
                 CLS
                 GOTO    lRecibidor
                 RESTART
                 DONE
 
-> LOOK     _           AT lBodega
+> LOOK      _           AT lBodega
                 NOTZERO fControlLuz
                 ZERO    fQuitarMancha
                 INK     9               ; Color del narrador
-                XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo."
+                XMESSAGE "On one of the walls a moldy wooden wine rack stands out and you can also see a large stain on the wall and a still in the background."
                 DONE
 
-> LOOK     _           AT lBodega
+> LOOK      _           AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fQuitarMancha
                 INK     9               ; Color del narrador
-                XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar la puerta en la pared que has descubierto usando la paleta#g#fmn#t. Hay un alambique al fondo."
+                XMESSAGE "On one of the walls there is a moldy wooden wine rack and you can also see the door on the wall that you discovered using the palette#g#fmn#t. There is a still in the background."
                 DONE
 
-> EXAMI   WALL       AT lBodega
+> EXAMI     WALL        AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una pared con una gran mancha."
+                XMESSAGE "It's a wall with a big stain on it."
                 DONE
 
-> EXAMI   STILL   AT lBodega
+> EXAMI     STILL       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es un viejo alambique que por su estado, debió usarse bastante. Prestas atención y descubres que el alambique está situado justo encima de una trampilla.#n"
+                XMESSAGE "It's an old still that, because of its condition, must have been used a lot. You pay attention and discover that the still is located just above a trap door.#n"
                 INK     3
-                XMESSAGE "Seguro que se le dio buen uso a este cacharro."
+                XMESSAGE "I'm sure this thing was put to good use."
                 DONE
 
-> MOVE     STILL   AT lBodega
+> MOVE      STILL       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1772,21 +1771,21 @@ DOWN   lBath2
                 SET     fMoverAlambique ; Activamos dicho flag
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Mueves el alambique y al desplazarlo, puedes ver en el suelo una trampilla."
+                XMESSAGE "You move the still and when you move it, you can see a trapdoor on the floor."
                 DONE
 
-> EXAMI   WINERACK   AT lBodega
+> EXAMI     WINERACK    AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Se trata de un viejo botellero realizado en madera que tiene una capacidad de unas 50 botellas. Está vacío.#n"
+                XMESSAGE "It is an old bottle rack made of wood that has a capacity of about 50 bottles. It is empty.#n"
                 INK     2
-                XMESSAGE "Una pena que no quede alguna botellita de vino."
+                XMESSAGE "It's a shame there aren't any little bottles of wine left."
                 DONE                
 
-> EXAMI   STAIN      AT lBodega
+> EXAMI     STAIN       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1794,29 +1793,29 @@ DOWN   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "La mancha parece ser de yeso"
                 INK     3
-                XMESSAGE "Igual tengo algo que me sirva para quitarlo y comprobar qué hay detrás."
+                XMESSAGE "Maybe I have something I can use to remove it and check what's behind it."
                 DONE
 
-> EXAMI   HATCH   AT lBodega
+> EXAMI     HATCH       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fMoverAlambique
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una trampilla de madera y metal que tiene un candado de combinación."
+                XMESSAGE "It's a wood and metal trapdoor that has a combination lock."
                 DONE
 
-> EXAMI   PADLOCK     AT lBodega
+> EXAMI     PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                XMESSAGE "El candado está en muy malas condiciones, parece oxidado y probablemente el mecanismo necesite un buen engrase."
+                XMESSAGE "The lock is in very bad condition, it looks rusty and probably the mechanism needs a good lubrication."
                 DONE
 
-> GREASE  PADLOCK     AT lBodega
+> GREASE    PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1826,13 +1825,13 @@ DOWN   lBath2
                 SET     fUsarAceite     ; Activamos el flag de haber usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación.#n"
+                XMESSAGE "You've greased the lock and the combination mechanism is working.#n"
                 INK     9
-                XMESSAGE "Se ha vaciado la lata de aceite#g#fFG#t y la tiras."
+                XMESSAGE "The oil can has been emptied#g#fFG#t and you throw it away.."
                 DESTROY oLataDeAceite
                 DONE
 
-> GREASE  PADLOCK     AT lBodega
+> GREASE    PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1840,12 +1839,12 @@ DOWN   lBath2
                 NOTCARR oLataDeAceite   ; Hemos usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "No tienes nada con qué engrasar el candado."
+                XMESSAGE "You don't have anything to grease the lock."
                 DONE 
 
 ; Si hemos movido el alambique y No hemos usado el aceite, nos recomienda engrasar el candado. 
-> USE      PADLOCK
-> OPEN     PADLOCK     AT lBodega
+> USE       PADLOCK
+> OPEN      PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1853,11 +1852,11 @@ DOWN   lBath2
                 ZERO    fUsarAceite     ; No hemos usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "El candado está oxidado y el mecanismo no funciona. Es recomendable engrasarlo."
+                XMESSAGE "The lock is rusty and the mechanism doesn't work. It is recommended to grease it."
                 DONE 
 ; Hemos movido el alambique y hemos engrasado el candado, pero no tenemos la combinación
-> USE      PADLOCK
-> OPEN     PADLOCK     AT lBodega
+> USE       PADLOCK
+> OPEN      PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1866,11 +1865,11 @@ DOWN   lBath2
                 ZERO    fCombinacion    ; No tenemos la combinación del candado
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "El mecanismo del candado funciona, pero no conoces la combinación para abrirlo."
+                XMESSAGE "The lock mechanism works, but you don't know the combination to open it."
                 DONE
 ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación, el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
-> USE      PADLOCK
-> OPEN     PADLOCK     AT lBodega
+> USE       PADLOCK
+> OPEN      PADLOCK     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1878,14 +1877,14 @@ DOWN   lBath2
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion    ; Tenemos la combinación del candado
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
+                XMESSAGE "You put the combination in the lock and open the trap door.#k"
                 CLS
                 GOTO    lGabinete
                 LET     fVasAMorir 0    ; Activo un flag con el que controlamos cuando matar al jugar
                 RESTART
                 DONE
 
-> USE      SCRAPER      AT lBodega
+> USE       SCRAPER     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1894,28 +1893,28 @@ DOWN   lBath2
                 SET     fQuitarMancha   ; Activamos dicho flag
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡No me lo puedo creer!#n"
+                XMESSAGE "I can't believe it!#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Rascas la mancha con la paleta#g#fmn#t y descubres un contorno en la pared.#n"
+                XMESSAGE "You scratch the stain with the palette#g#fmn#t and discover an outline on the wall.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta#g#fmn#t. ¡Qué burro eres!"
+                XMESSAGE "It's a door! And by the way, we broke the paddle#g#fmn#t. What an ass you are!"
                 DESTROY oPaleta
                 DONE
 
-> USE      SCRAPER      AT lBodega
+> USE       SCRAPER     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fQuitarMancha   ; Ya usó la paleta
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
+                XMESSAGE "You broke the paddle#g#fmn#t, but the door is visible. You can use it.#n"
                 DONE
 
 ;ALTERNATIVAS: dependiendo de la puerta que hayamos abierto, la respuesta será diferente: podemos quitar la mancha de la pared y abrir la puerta de la cochera o bien retirar el alambique y descubrir la trampilla.
 
 ;esto solamente pasa si hemos rascado la pared con la paleta
-> EXAMI 	DOOR      AT lBodega
+> EXAMI 	DOOR        AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1928,8 +1927,8 @@ DOWN   lBath2
                 DONE
 
 ;NOTA: Por aquí entramos la primera vez sin jugar con el crío para coger la pelota.
-> USE      DOOR
-> OPEN 	DOOR      AT lBodega
+> USE       DOOR
+> OPEN 	    DOOR        AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -1945,8 +1944,8 @@ DOWN   lBath2
                 DONE
 
 ; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el crío en lugar de salir por la entrada ppal.
-> USE      DOOR
-> OPEN 	DOOR      AT lBodega
+> USE       DOOR
+> OPEN 	    DOOR        AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
