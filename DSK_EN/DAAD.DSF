@@ -2190,7 +2190,7 @@ DOWN   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n#n"
+                XMESSAGE "You approach to examine the chains closely.#k#n The woman immediately notices your presence and with a terrible fury, she shakes herself violently and one of the links that make up the chain breaks.#k#n The woman grabs you tightly by the neck with superhuman strength and sinks the nut with her thumb until the cracking of the vertebrae in your neck rumbles in your head.#k#n#n"
                 INK     4   
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2206,7 +2206,7 @@ DOWN   lBath2
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "A uno de los lados de la camilla, hay una mesa de chapa con una bandeja encima que contiene instrumental quirúrgico antiguo en unas condiciones poco higiénicas."
+                XMESSAGE "On one side of the stretcher, there is a metal table with a tray on top containing old surgical instruments in unsanitary conditions."
                 DONE
 
 > EXAMI     TABLE       AT lGabinete
@@ -2216,9 +2216,9 @@ DOWN   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te acercas a la mesa.#k#n Notas un crujido metálico y ves que algo que se mueve delante de ti te clava un objeto punzante en el pecho.#k#n Son unas tijeras.#k#n"
+                XMESSAGE "You approach the table.#k#n You notice a metallic crackle and you see that something moving in front of you sticks a sharp object in your chest.#k#n It's a pair of scissors.#k#n"
                 INK     15 
-                XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n#n"
+                XMESSAGE "You took the scissors... or at least you're wearing them.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2234,7 +2234,7 @@ DOWN   lBath2
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo es de azulejo blanco; está sucio y mugriento. Hay manchas de sangre por todas partes y tiene un tacto viscoso y húmedo."
+                XMESSAGE "The floor is white tile; it's dirty and filthy. There are blood stains everywhere and it has a viscous and wet feel."
                 DONE
 
 > EXAMI     FLOOR       AT lGabinete
@@ -2244,7 +2244,7 @@ DOWN   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n#n"
+                XMESSAGE "You bend down again to examine the floor and notice a metallic snap right above you.#k#n Something hits your head with tremendous force and you fall to the floor.#k#n You feel a second blow and then you don't feel anything anymore.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2256,14 +2256,14 @@ DOWN   lBath2
 ; NOTA: Aquí controlamos fJugar y dependiendo de si llevamos al crío o no, el crío nos revela que ahí están sus restos mortales.
 ; Recordamos que en todo caso, el juego termina al romper el travesaño.
 
-> N        _            AT lGabinete
+> N         _           AT lGabinete
                 ZERO    fControlLuz    ; esto estaba en NOTZERO fControlLuz
                 ZERO    fTurnosConLuz
                 CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario
                 SET     fDarkF           ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK     9              ; Color del narrador
-                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                XMESSAGE "Thanks to the fact that you are in the dark, you manage to approach the door without being seen by the presence above the stretcher. There's a shovel#g#f()*#t stuck in the door, but you grab it without a problem.#n#n You open the door and walk out of this horrible place.#k#n"
                 INK     15
                 ISAT    oPala 252
                 CREATE  oPala
@@ -2272,18 +2272,18 @@ DOWN   lBath2
                 LET     fVasAMorir 0
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n  El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#n  Al fondo del chamizo puedes observar un armario metálico."
+                XMESSAGE "You have entered the room through a sliding wall panel that, just as you leave, returns to its place.#n#n  The shack is an infected, damp place, where rusty gardening tools and some tools used to be kept, but there's nothing like that here anymore. The soil is compacted and very dirty; there is a very unpleasant smell of damp and closed.#n#n  At the bottom of the shack you can see a metal cabinet."
                 GOTO    lChamizo
                 DONE
 
-> N        _            AT lGabinete
+> N         _           AT lGabinete
                 ZERO    fControlLuz    ; esto estaba en NOTZERO fControlLuz
                 ZERO    fTurnosConLuz
                 CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario
                 SET     fDarkF           ; Desactivamos la oscuridad
                 NOTZERO fJugar         ; El crío nos va a revelar que en el chamizo están sus restos.
                 INK     9              ; Color del narrador
-                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                XMESSAGE "Thanks to the fact that you are in the dark, you manage to approach the door without being seen by the presence above the stretcher. There's a shovel#g#f()*#t stuck in the door, but you grab it without a problem.#n#n You open the door and walk out of this horrible place.#k#n"
                 INK     15
                 ISAT    oPala 252
                 CREATE  oPala
@@ -2292,30 +2292,30 @@ DOWN   lBath2
                 LET     fVasAMorir 0
                 CLS
                 INK     9
-                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable."
-                XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
+                XMESSAGE "You have entered the room through a sliding wall panel that, just as you leave, returns to its place.#n#n  The shack is an infected, damp place, where rusty gardening tools and some tools used to be kept, but there's nothing like that here anymore. The soil is compacted and very dirty; there is a very unpleasant smell of damp and closed."
+                XMESSAGE "#nAt the bottom of the shack you can see a metal cabinet.#k#n"
                 INK     14 ;Color del crío
-                XMESSAGE "Tengo algo importante que decir.#k#n"
+                XMESSAGE "I have something important to tell you.#k#n"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Dime, ¿qué te ocurre?#k#n"
+                XMESSAGE "Tell me, what's the matter?#k#n"
                 INK     14 ;Color del crío
-                XMESSAGE "Bajo este suelo están nuestros cuerpos.#k#n Un día yo me escapé de la casa en busca de ayuda y el señor mató a mi madre y a mi hermana, más tarde me encontró en mitad del camino y me trajo a casa.#k#n El señor me obligó a traer aquí los cuerpos de mi madre y de mi hermana, cavó un agujero en este suelo y cuando terminó, me mató a mi también y aún estamos enterrados aquí.#n"
+                XMESSAGE "Under this floor are our bodies.#k#n One day I ran away from the house looking for help and the Lord killed my mother and sister, later he found me in the middle of the road and brought me home.#k#n The Lord forced me to bring the bodies of my mother and sister here, he dug a hole in this ground and when he was done, he killed me too and we are still buried here.#n"
                 INK     3 ;Color del protagonista
-                XMESSAGE "Tengo que dar con la forma de descubrir los cuerpos y de avisar a las autoridades.#k#n"
+                XMESSAGE "I have to find a way to discover the bodies and alert the authorities.#k#n"
                 INK     14 ;Color del crío
-                XMESSAGE "Muchas gracias, realmente necesito que se nos dé descanso, porque estamos atrapados en esta casa.#k#n"        
+                XMESSAGE "Thank you very much, I really need to be given a break, because we're stuck in this house.#k#n"        
                 INK     3 ;Color del protagonista
-                XMESSAGE "De acuerdo, haré cuanto esté en mi mano.#k"
+                XMESSAGE "All right, I'll do my best.#k"
                 GOTO    lChamizo
                 DONE
 
-> N        _            AT lGabinete
+> N         _           AT lGabinete
                 NOTZERO fControlLuz     ; esto estaba en NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9                  ; Color del narrador
-                XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti.#k#n#n"
+                XMESSAGE "You try to get closer to the door and the presence above the table senses you.#k#n You hear how the chains that hold it break and the presence pounces on you.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2325,69 +2325,69 @@ DOWN   lBath2
 
 ; Estamos en locExtCochera
 
-> LOOK     _           AT lExteriorCochera
+> LOOK      _           AT lExteriorCochera
                 INK    9
-                XMESSAGE "Estás en el exterior de la cochera, frente a ti tienes la puerta."
+                XMESSAGE "You're outside the garage, in front of you is the door."
                 DONE
 
-> EXAMI   DOOR      AT lExteriorCochera
+> EXAMI     DOOR        AT lExteriorCochera
                 INK    9
-                XMESSAGE "Es una puerta metálica galvanizada pintada de color crema."
+                XMESSAGE "It's a cream painted galvanized metal door."
                 DONE
 
 
-> OPEN     DOOR      AT lExteriorCochera
+> OPEN      DOOR        AT lExteriorCochera
                 ZERO    fInsistePuerta
                 SET     fInsistePuerta
                 INK     9
-                XMESSAGE "No puedes entrar, la puerta esta bloqueada."            
+                XMESSAGE "You can't get in, the door is locked."            
                 DONE   
                  
-> OPEN     DOOR      AT lExteriorCochera
+> OPEN      DOOR        AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 ZERO    fInsisteMuchoPuerta
                 SET     fInsisteMuchoPuerta
                 INK     9
-                XMESSAGE "La puerta sigue cerrada.#n"
+                XMESSAGE "The door's still closed..#n"
                 INK     2 ; Voz de la conciencia
-                XMESSAGE "No insistas más."             
+                XMESSAGE "Do not insist more."             
                 DONE  
 
-> OPEN     DOOR      AT lExteriorCochera
+> OPEN      DOOR        AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 ZERO    fJugar
                 INK     2               ; Voz de la conciencia
-                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE INSISTIR!#n"   
+                XMESSAGE "THE DOOR IS CLOSED! STOP INSISTING!#n"   
                 INK     9
-                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
-                XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n"
+                XMESSAGE "Your conscience is playing tricks on you... That's when the veiled memory of the day your father ran you over in reverse comes to mind. You unconsciously walk away from the door, so unlucky that you trip and fall sideways with all your weight and in a bad position on the concrete ramp.#k#n"
+                XMESSAGE "Your ribs crackle like a Walkers bag...One or more of them (we won't know until we see the X-ray) seems to have perforated the lungs.#n"
                 INK     4
-                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     15
                 END  
 
-> OPEN     DOOR      AT lExteriorCochera
+> OPEN      DOOR        AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 NOTZERO fJugar
                 INK     2               ; Voz de la conciencia
-                XMESSAGE "¡QUE LA PUERTA ESTá CERRADA CAGÜEN ROS! ¡DEJA YA DE INSISTIR!#n"   
+                XMESSAGE "THE DOOR IS CLOSED! STOP INSISTING!#n"   
                 INK     9
-                XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
-                XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n"
+                XMESSAGE "Your conscience is playing tricks on you... That's when the veiled memory of the day your father ran you over in reverse comes to mind. You unconsciously walk away from the door, so unlucky that you trip and fall sideways with all your weight and in a bad position on the concrete ramp.#k#n"
+                XMESSAGE "Your ribs crackle like a Walkers bag...One or more of them (we won't know until we see the X-ray) seems to have perforated the lungs.#n"
                 INK     14
-                XMESSAGE "Yo pensaba que ibas a ayudarme y mírate. Ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
+                XMESSAGE "I thought you were going to help me and look at you. Now your spirit is going to stay here with me forever.#n"
                 INK     4
-                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     15
                 END  
 
-> N        _            AT lExteriorCochera
+> N         _            AT lExteriorCochera
                 INK     9               ; Color del narrador
                 CLS
                 GOTO    lExtCasa 
@@ -2400,7 +2400,7 @@ DOWN   lBath2
 ; OPEN TAP
 ; USE HOSE se llena la rejilla de agua y flota la pelota, ya la puedes coger.
 
-> LOOK     _           AT lCochera
+> LOOK      _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2417,7 +2417,7 @@ DOWN   lBath2
                 INK     15
                 DONE
 
-> LOOK     _           AT lCochera
+> LOOK      _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2427,7 +2427,7 @@ DOWN   lBath2
                 XMESSAGE "La cochera no es muy grande. Destacan un grifo en la pared y una rejilla en el suelo."
                 DONE
 
-> EXAMI   DOOR      AT lCochera
+> EXAMI     DOOR        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2436,7 +2436,7 @@ DOWN   lBath2
                 XMESSAGE "Se trata de una puerta de garaje abatible. Es de chapa."                
                 DONE
 
-> EXAMI   FLOOR       AT lCochera
+> EXAMI     FLOOR       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2452,7 +2452,7 @@ DOWN   lBath2
                 MESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
 
-> EXAMI   FLOOR       AT lCochera
+> EXAMI     FLOOR       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2462,7 +2462,7 @@ DOWN   lBath2
                 XMESSAGE "El suelo está revestido de una pintura roja muy densa."
                 DONE
 
-> EXAMI   TAP       AT lCochera
+> EXAMI     TAP         AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2472,7 +2472,7 @@ DOWN   lBath2
                 XMESSAGE "El grifo tiene un adaptador para CONECTAR una manguera#g#fKL#t."
                 DONE
 
-> EXAMI   TAP       AT lCochera
+> EXAMI     TAP         AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas         ; Llevamos el objeto en nuestro inventario
@@ -2482,7 +2482,7 @@ DOWN   lBath2
                 XMESSAGE "El grifo tiene una manguera#g#fKL#t conectada."
                 DONE
 
-> EXAMI   GENERATOR   AT lCochera
+> EXAMI     GENERATOR   AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2491,7 +2491,7 @@ DOWN   lBath2
                 XMESSAGE "El generador no funciona pero de algún extraño modo, hay luz en el exterior de la casa. Podría ser energía residual."
                 DONE
 
-> EXAMI   WALL       AT lCochera
+> EXAMI     WALL        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2500,7 +2500,7 @@ DOWN   lBath2
                 XMESSAGE "Las paredes son blancas con un acabado rugoso.#n Puedes observar un grifo encastrado en una de ellas."
                 DONE
 
-> EXAMI   GRID     AT lCochera
+> EXAMI     GRID        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2511,7 +2511,7 @@ DOWN   lBath2
                 MESSAGE "Seguro que hay alguna forma de hacer salir lo que hay en su interior."
                 DONE
 
-> USE      HOSE    AT lCochera
+> USE       HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2521,7 +2521,7 @@ DOWN   lBath2
                 XMESSAGE "No tienes ninguna manguera#g#fKL#t."
                 DONE
 
-> USE      HOSE    AT lCochera
+> USE       HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2534,7 +2534,7 @@ DOWN   lBath2
                 DESTROY oManguera
                 DONE
 
-> USE      HOSE    AT lCochera
+> USE       HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2545,7 +2545,7 @@ DOWN   lBath2
                 XMESSAGE "Ya está puesta la manguera#g#f-.#t en la rejilla."
                 DONE
 
-> CONECTAR  HOSE    AT lCochera
+> CONECTAR  HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2557,7 +2557,7 @@ DOWN   lBath2
                 XMESSAGE "Conectas la manguera#g#f-.#t al grifo."
                 DONE
 
-> CONECTAR  HOSE    AT lCochera
+> CONECTAR  HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2568,8 +2568,8 @@ DOWN   lBath2
                 XMESSAGE "Ya esta puesta la manguera#g#f-.#t en el grifo."
                 DONE
 
-> USE      TAP
-> OPEN     TAP       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
+> USE       TAP
+> OPEN      TAP         AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2585,8 +2585,8 @@ DOWN   lBath2
                 INK     15
                 END
 
-> USE      TAP
-> OPEN     TAP       AT lCochera                 ; Mueres porque se inunda la Cochera
+> USE       TAP
+> OPEN      TAP         AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2605,8 +2605,8 @@ DOWN   lBath2
                 END                
 
 
-> USE      TAP
-> OPEN     TAP       AT lCochera                 ; Mueres porque se inunda la Cochera
+> USE       TAP
+> OPEN      TAP         AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2632,8 +2632,8 @@ DOWN   lBath2
                 INK     15
                 END 
 
-> USE      TAP
-> OPEN     TAP       AT lCochera                 ; Mueres porque se inunda la Cochera
+> USE       TAP
+> OPEN      TAP         AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2650,8 +2650,8 @@ DOWN   lBath2
                 INK     15
                 END 
 
-> USE      TAP
-> OPEN     TAP       AT lCochera                                
+> USE       TAP
+> OPEN      TAP         AT lCochera                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
@@ -2671,31 +2671,8 @@ DOWN   lBath2
                 XMESSAGE"¿Nos echamos un partidito?"                
                 DONE
 
-;> CLOSE    TAP       AT lCochera
-;                NOTZERO fControlLuz
-;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-;                CLEAR   fDarkF          ; Desactivamos la oscuridad
-;                NOTZERO fCerrarGrifo
-;                CLEAR   fCerrarGrifo
-;                INK     9               ; Color del narrador
-;                XMESSAGE "Has cerrado el grifo.#n"
-;                INK     2
-;                XMESSAGE "Evitando una catástrofe..."
-;                DONE
-
-;> CLOSE    TAP       AT lCochera
-;                NOTZERO fControlLuz
-;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-;                CLEAR   fDarkF          ; Desactivamos la oscuridad
-;                NOTZERO fCerrarGrifo
-;                INK     9               ; Color del narrador
-;                XMESSAGE "El grifo ya está cerrado.#n"              
-;                DONE
-
-> MOVE     GRID
-> OPEN     GRID    AT lCochera
+> MOVE      GRID
+> OPEN      GRID        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2727,16 +2704,6 @@ DOWN   lBath2
                 GOTO    lBodega
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
-
-;> E         _           AT lCochera
-;                NOTZERO fControlLuz
-;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-;                CLEAR   fDarkF          ; Desactivamos la oscuridad                
-;                NOTZERO fCerrarGrifo
-;                INK     9               ; Color del narrador
-;                XMESSAGE "No puedes salir de la cochera si no cierras el grifo."               
-;                DONE
 
 ; Estamos en locExtChamizo
 

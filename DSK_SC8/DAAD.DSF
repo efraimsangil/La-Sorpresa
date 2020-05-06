@@ -2270,7 +2270,7 @@ BAJAR   lBath2
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable."
                 XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
                 INK     14 ;Color del crío
-                XMESSAGE "Tengo algo importante que decir.#k#n"
+                XMESSAGE "Tengo algo importante que decirte.#k#n"
                 INK     3 ;Color del protagonista
                 XMESSAGE "Dime, ¿qué te ocurre?#k#n"
                 INK     14 ;Color del crío
