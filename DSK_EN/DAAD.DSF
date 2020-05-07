@@ -2707,39 +2707,39 @@ DOWN   lBath2
 
 ; Estamos en locExtChamizo
 
-> EXAMI   DOOR      AT lExteriorChamizo             
+> EXAMI     DOOR        AT lExteriorChamizo             
                 INK     9               ; Color del narrador
-                XMESSAGE "El chamizo tiene una puerta muy vieja, hecha de listones de madera pintada de verde que está completamente descascarillada y ajada por la temperie."
+                XMESSAGE "The shack has a very old door, made of wooden slats painted green that is completely peeled and worn out by the temper."
                 DONE
 
-> OPEN     DOOR      AT lExteriorChamizo
+> OPEN      DOOR        AT lExteriorChamizo
                 ZERO    fJugar
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta está cerrada."
+                XMESSAGE "The door is closed."
                 DONE
 
-> OPEN     DOOR      AT lExteriorChamizo                
+> OPEN      DOOR        AT lExteriorChamizo                
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF          ; Activamos el flag de la oscuridad
                 NOTZERO fJugar
                 INK     9               ; Color del narrador
-                XMESSAGE "El chamizo está muy oscuro. Necesitamos luz para entrar."
+                XMESSAGE "The shack is very dark. We need light to get in.."
                 DONE
 
 
-> OPEN     DOOR      AT lExteriorChamizo
+> OPEN      DOOR        AT lExteriorChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
-                XMESSAGE "Abres la puerta del chamizo y entras.#k#b#n"
+                XMESSAGE "You open the door to the shack and walk in.#k#b#n"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lChamizo              
                 INK     14
-                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t y me temo que ya no podemos entrar en la casa para cogerla.#n"
+                XMESSAGE "Here, under the ground, is our grave, but you can't dig us up without a shovel#g#f()*#t and I'm afraid we can't go in the house to get it anymore.#n"
                 INK     3
-                XMESSAGE "Vaya, cuánto lo siento.#k#b"                
+                XMESSAGE "Oh, I'm so sorry.#k#b"                
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -2757,7 +2757,7 @@ DOWN   lBath2
 
 ; Controlar que una vez usas pala, no la uses de nuevo
 
-> LOOK        _        AT lChamizo
+> LOOK      _           AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2766,7 +2766,7 @@ DOWN   lBath2
                 XMESSAGE "Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico."
                 DONE
                 
-> EXAMI   FLOOR       AT lChamizo
+> EXAMI     FLOOR       AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2775,7 +2775,7 @@ DOWN   lBath2
                 XMESSAGE "El suelo es de tierra y despide un indescriptible aroma profundo y penetrante. Cuánto más te acercas a el, más intenso es el olor."
                 DONE
 
-> EXAMI   SAND      AT lChamizo
+> EXAMI     SAND        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2784,8 +2784,8 @@ DOWN   lBath2
                 XMESSAGE "Alargas la mano y coges un puñadito de tierra. El olor es nauseabundo."
                 DONE
 
-> OPEN     CLOSET
-> EXAMI   CLOSET     AT lChamizo
+> OPEN      CLOSET
+> EXAMI     CLOSET      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2803,7 +2803,7 @@ DOWN   lBath2
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
 
-> EXAMI   JUNK      AT lChamizo
+> EXAMI     JUNK        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2812,8 +2812,8 @@ DOWN   lBath2
                 XMESSAGE "Trastos inservibles que no merecen tu atención."
                 DONE
 
-> EXAMI   SHED
-> LOOK     _           AT lChamizo                 ; Cogemos las llaves del coche
+> EXAMI     SHED
+> LOOK      _           AT lChamizo                 ; Cogemos las llaves del coche
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2824,7 +2824,7 @@ DOWN   lBath2
 
 ; Aquí justo activamos el flag para el FINAL MEJOR, que es la comprobación de haber desenterrado a los cadáveres.
 
-> USE      SHOVEL        AT lChamizo
+> USE       SHOVEL      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2835,7 +2835,7 @@ DOWN   lBath2
                 XMESSAGE "Ya has desenterrado los cadáveres."
                 DONE
 
-> USE      SHOVEL        AT lChamizo
+> USE       SHOVEL      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2860,7 +2860,7 @@ DOWN   lBath2
 ; desenterrarlos. Como castigo, le vamos a poner en la bodega otra vez.
 
 
-> USE      SHOVEL        AT lChamizo
+> USE       SHOVEL      AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2886,9 +2886,8 @@ DOWN   lBath2
                 RESTART
                 DONE
 
-> W            _
-> OPEN         DOOR  AT lChamizo
-
+> W         _
+> OPEN      DOOR        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2905,8 +2904,8 @@ DOWN   lBath2
                 RESTART
                 DONE
                 
-> W             _
-> OPEN         DOOR  AT lChamizo
+> W         _
+> OPEN      DOOR        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2918,8 +2917,8 @@ DOWN   lBath2
 
 ; NOTA : Aquí es donde se determinan los diferentes finales del juego dependiendo de si tenemos al niño, la pala o el hacha.
 
-> USE      AXE 
-> BREAK    CROSSBAR     AT lChamizo
+> USE       AXE 
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2940,8 +2939,8 @@ DOWN   lBath2
 
 ; FINAL MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante es el mejor final, porque además hemos leído el diario de la criada.
 
-> USE      AXE 
-> BREAK    CROSSBAR     AT lChamizo
+> USE       AXE 
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2996,8 +2995,8 @@ DOWN   lBath2
 
 ; FINAL CASI MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante NO es el mejor final, porque NO hemos leído el diario de la criada y no podemos contar la historia al padre, solo sabemos lo que el niño nos cuenta a la entrada del gabinete (o a la entrada por la trampilla).
 
-> USE      AXE 
-> BREAK    CROSSBAR     AT lChamizo
+> USE       AXE 
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3048,8 +3047,8 @@ DOWN   lBath2
                 INK     15
                 END
 
-> USE      AXE 
-> BREAK    CROSSBAR     AT lChamizo
+> USE       AXE 
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3064,7 +3063,7 @@ DOWN   lBath2
                 DONE
 
 ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
-> BREAK    CROSSBAR     AT lChamizo
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3076,7 +3075,7 @@ DOWN   lBath2
                 XMESSAGE "La puerta está abierta, no necesitamos romper nada."
                 DONE
 
-> BREAK    CROSSBAR     AT lChamizo
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3109,7 +3108,7 @@ DOWN   lBath2
                 INK     15
                 END
 
-> BREAK    CROSSBAR     AT lChamizo
+> BREAK     CROSSBAR    AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3121,7 +3120,7 @@ DOWN   lBath2
                 INK     9
                 DONE
 
-> ENTER     OFFICE    AT lChamizo
+> ENTER     OFFICE      AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3134,8 +3133,8 @@ DOWN   lBath2
 
 ; Estamos en locAseo
 
-> EXAMI   TOILET
-> LOOK     _           AT lAseo
+> EXAMI     TOILET
+> LOOK      _           AT lAseo
                 INK     9               ; Color del narrador
                 XMESSAGE "Hay un interruptor en la pared."
              
@@ -3151,7 +3150,7 @@ DOWN   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> EXAMI	TOILET 		AT lAseo                                
+> EXAMI	    TOILET 		AT lAseo                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3162,7 +3161,7 @@ DOWN   lBath2
                 XMESSAGE "Olvídate del aseo y sal de aquí."
                 DONE
 
-> EXAMI   FLOOR       AT lAseo
+> EXAMI     FLOOR       AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3171,7 +3170,7 @@ DOWN   lBath2
                 XMESSAGE "El suelo está lleno de cristales."
                 DONE
 
-> EXAMI   SWITCH AT lAseo
+> EXAMI     SWITCH      AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3180,9 +3179,9 @@ DOWN   lBath2
                 XMESSAGE "Es un interruptor."
                 DONE
 
-> PRESS    SWITCH
+> PRESS     SWITCH
 > ACTIVATE  SWITCH
-> USE		SWITCH AT lAseo
+> USE		SWITCH      AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3219,9 +3218,9 @@ DOWN   lBath2
                 SET     fVasAPalmar
                 DONE
 
-> PRESS    SWITCH
+> PRESS     SWITCH
 > ACTIVATE  SWITCH
-> USE		SWITCH AT lAseo
+> USE		SWITCH      AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3259,7 +3258,7 @@ DOWN   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> EXAMI  WALLS      AT lCocina
+> EXAMI     WALLS       AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3268,8 +3267,8 @@ DOWN   lBath2
                 XMESSAGE "Son frías y húmedas."
                 DONE
 
-> EXAMI   KITCHEN
-> LOOK     _           AT lCocina
+> EXAMI     KITCHEN
+> LOOK      _           AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3280,7 +3279,7 @@ DOWN   lBath2
                 XMESSAGE "Ya no se fabrican como antes. Jodida obsolescencia programada."
                 DONE
 
-> EXAMI	SINK   AT lCocina
+> EXAMI	    SINK        AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3290,7 +3289,7 @@ DOWN   lBath2
                 XMESSAGE "El fregadero está vacío, tiene un sumidero grande tipo americano. Algo parece estar atascado dentro."
                 DONE
 
-> EXAMI	SUMP    AT lCocina
+> EXAMI	    SUMP        AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3310,7 +3309,7 @@ DOWN   lBath2
                 XMESSAGE "El triturador se ha parado."
                 DONE
 
-> EXAMI   SPOONS     AT lCocina
+> EXAMI     SPOONS      AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3319,7 +3318,7 @@ DOWN   lBath2
                 XMESSAGE "¿Nunca has visto una cuchara?"
                 DONE
 
-> TAKE     SPOONS    AT  lCocina
+> TAKE      SPOONS      AT  lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3328,7 +3327,7 @@ DOWN   lBath2
                 XMESSAGE "No pienso ir cargado con unas cucharas."
                 DONE
 
-> EXAMI   SHREDDER   AT lCocina
+> EXAMI     SHREDDER    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3339,7 +3338,7 @@ DOWN   lBath2
                 XMESSAGE "No creo que sea una buena idea."
                 DONE
 
-> EXAMI   SHREDDER   AT lCocina
+> EXAMI     SHREDDER    AT lCocina
                 NOTZERO fTriturador  ; si no es cero, es que es la segunda vez que lo examina, así que lo mato por cotilla
                 INK     9               ; Color del narrador
                 XMESSAGE "Te aventuras a introducir de nuevo la mano en el triturador desoyendo las advertencias de tu conciencia.#k#n"
@@ -3354,8 +3353,8 @@ DOWN   lBath2
                 INK     15              ; Color del sistema
                 END
 
-> EXAMI   FURNITURE
-> EXAMI	DRESSER    AT lCocina
+> EXAMI     FURNITURE
+> EXAMI	    DRESSER     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3364,8 +3363,8 @@ DOWN   lBath2
                 XMESSAGE "Es un típico aparador de cocina hecho en madera con varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
                 DONE
 
-> OPEN     DRAWERES     AT lCocina
-> EXAMI	DRAWERES     AT lCocina
+> OPEN      DRAWERES    AT lCocina
+> EXAMI	    DRAWERES    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3376,7 +3375,7 @@ DOWN   lBath2
                 XMESSAGE "Joder, no sé si quiero saberlo."
                 DONE
 
-> EXAMI	BALLS     AT lCocina
+> EXAMI	    BALLS       AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3385,8 +3384,8 @@ DOWN   lBath2
                 XMESSAGE "No es momento de examinar tus genitales."
                 DONE
 
-> OPEN     WASHER
-> EXAMI	WASHER    AT lCocina
+> OPEN      WASHER
+> EXAMI	    WASHER      AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3399,8 +3398,8 @@ DOWN   lBath2
                 XMESSAGE "Tampoco sé si quiero saberlo."
                 DONE
 
-> EXAMI   KNIFE
-> TAKE		KNIFE    AT lCocina
+> EXAMI     KNIFE
+> TAKE		KNIFE       AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3413,14 +3412,14 @@ DOWN   lBath2
 
 ; Estamos en locDespensa
 
-> EXAMI   PANTRY
-> LOOK     _           AT lDespensa
+> EXAMI     PANTRY
+> LOOK      _           AT lDespensa
                 INK     9               ; Color del narrador
                 XMESSAGE "Estás en la despensa. Aquí se encuentra la STORAGE que usaban tus padres para guardar latas de comida. Tu solías PUSHLA para ver si caía alguna galleta desde arriba."
                 DONE
 
-> EXAMI   STORAGE
-> OPEN 	STORAGE     AT lDespensa
+> EXAMI     STORAGE
+> OPEN 	    STORAGE     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3434,8 +3433,8 @@ DOWN   lBath2
                 DONE
 
 ; NOTA: Estaría bien que cada vez que se empuja la alacena cayese una galleta y según cae, se la come, así no necesitamos contemplarla como objeto, hasta N galletas (poner contador?) y llegado un número de galletas, decirle al jugador que ya le tenemos domesticado
-> PULL     STORAGE
-> PUSH   STORAGE     AT lDespensa
+> PULL      STORAGE
+> PUSH      STORAGE     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3444,7 +3443,7 @@ DOWN   lBath2
                 XMESSAGE "Das un fuerte empujón a la alacena.#nNo ocurre nada."             
                 DONE            
 
-> BREAK    STORAGE     AT lDespensa
+> BREAK     STORAGE     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
