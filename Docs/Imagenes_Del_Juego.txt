@@ -1,0 +1,42 @@
+001 Marcos sobando
+002 lCoche
+003 lExtCasa
+200 Portada
+201 Créditos
+202 Marcos cogiendo telefono
+203 Marcos saliendo de casa
+204 Carretera
+205 Tunel de árboles
+230 Niña del pasillo 2
+
+
+
+---
+221 004	lExteriorCochera
+222 010 lCocina
+223 007 lRecibidor
+224 005 lExteriorChamizo
+225 011 lSalon
+230 012 lEscaleras
+233 009 lBodega
+234 024 lBath3
+235 020 lBath1
+236 027 lChamizo
+237 008 lAseo
+238 013 lDespensa
+239	014 lPatio
+240 015 lCriada
+241 016 lPasillo1
+242 017 lPasillo2
+243 018 lPasillo3
+244 019 lRoom1
+245 021 lRoom2
+246 023 lRoom3
+247 lRoom3 MIRAR
+248 lRetrete Roto
+249 lRetrete Cisterna
+
+FALTAN
+
+
+

@@ -11,7 +11,7 @@
 /CTL                            ;Sección de control
 ;#extern "MLV_MSX.BIN"
 ;#classic
-#debug
+;#debug
 
 #define TIMEOUT   87                ;If Timeout last frame
 
@@ -5199,6 +5199,9 @@ BAJAR   lBath2
                 CARRIED oPeluche        ; llevamos el peluche encima
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
                 DESTROY oPeluche	
@@ -5220,6 +5223,9 @@ BAJAR   lBath2
                 CARRIED oPeluche ; llevamos el peluche encima
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
                 DESTROY oPeluche	
@@ -5241,6 +5247,9 @@ BAJAR   lBath2
                 CARRIED oPeluche ; llevamos el peluche encima
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
                 DESTROY oPeluche	
@@ -5265,6 +5274,9 @@ BAJAR   lBath2
                 NOTCARR oPeluche ;No has cogido el peluche
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¿Tienes lo que me pertenece?#k#n"
                 XMESSAGE "¿No tienes nada para mi?#k#n"
@@ -5289,6 +5301,9 @@ BAJAR   lBath2
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¿Tienes lo que me pertenece?#k#n"
                 XMESSAGE "¿No tienes nada para mi?#k#n"
@@ -5313,6 +5328,9 @@ BAJAR   lBath2
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¿Tienes lo que me pertenece?#k#n"
                 XMESSAGE "¿No tienes nada para mi?#k#n"
@@ -5344,6 +5362,9 @@ BAJAR   lBath2
                 EQ      fNenaMala 255   ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
                 INK     2               ; Color de la conciencia
@@ -5367,6 +5388,9 @@ BAJAR   lBath2
                 EQ      fNenaMala 255 ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
                 INK     2               ; Color de la conciencia
@@ -5390,6 +5414,9 @@ BAJAR   lBath2
                 EQ      fNenaMala 255 ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
                 INK     2               ; Color de la conciencia
@@ -5419,6 +5446,9 @@ BAJAR   lBath2
                 NOTZERO fAceite
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK     2               ; Color del protagonista
@@ -5445,6 +5475,9 @@ BAJAR   lBath2
                 NOTZERO fAceite
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK     2               ; Color del protagonista
@@ -5471,6 +5504,9 @@ BAJAR   lBath2
                 NOTZERO fAceite
                 INK     3               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW  0
+                XPICTURE 230            ; Cría en el pasillo
+                WINDOW  1
                 INK     6
                 XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK     2               ; Color del protagonista
