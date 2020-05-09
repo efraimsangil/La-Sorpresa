@@ -3472,7 +3472,7 @@ DOWN   lBath2
 
 ; Estamos en locEscaleras
 
-> EXAMI	STAIRS   AT lEscaleras                
+> EXAMI	    STAIRS      AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3497,7 +3497,7 @@ DOWN   lBath2
 ;                XMESSAGE "Efectivamente el escalón está un poco suelto. Prueba a moverlo."
 ;                DONE
 
-> EXAMI   TREAD      AT lEscaleras                
+> EXAMI     TREAD       AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3508,7 +3508,7 @@ DOWN   lBath2
                 DONE
 
 > REMOVE    TREAD
-> MOVE		TREAD      AT lEscaleras
+> MOVE		TREAD       AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3520,7 +3520,7 @@ DOWN   lBath2
                 DONE
 
 > REMOVE    TREAD
-> MOVE		TREAD     AT lEscaleras
+> MOVE		TREAD       AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3530,8 +3530,8 @@ DOWN   lBath2
                 XMESSAGE "The step doesn't move anymore."
                 DONE
 
-> EXAMI   PADLOCK
-> EXAMI	BOX        AT lEscaleras                
+> EXAMI     PADLOCK
+> EXAMI	    BOX         AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3541,7 +3541,7 @@ DOWN   lBath2
                 XMESSAGE "The box has a safety lock. You need a small key."
                 DONE
 
-> TAKE		BOX        AT lEscaleras                
+> TAKE		BOX         AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3551,7 +3551,7 @@ DOWN   lBath2
                 XMESSAGE "The box is fixed in the stepwell, you can't take it."
                 DONE
 
-> BREAK    BOX        AT lEscaleras
+> BREAK     BOX         AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3561,7 +3561,7 @@ DOWN   lBath2
                 XMESSAGE "You don't feel guilty enough about breaking your mother's gnome, do you?"
                 DONE
 
-> OPEN		BOX        AT lEscaleras                
+> OPEN		BOX         AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3573,7 +3573,7 @@ DOWN   lBath2
                 XMESSAGE "You don't have the key to open it."
                 DONE
 
-> OPEN		BOX        AT lEscaleras                
+> OPEN		BOX         AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3585,7 +3585,7 @@ DOWN   lBath2
                 XMESSAGE "You already have the security card#g#f<#t."
                 DONE
 
-> OPEN		BOX        AT lEscaleras                
+> OPEN		BOX         AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3606,8 +3606,8 @@ DOWN   lBath2
                 XMESSAGE "Let's try to find out."
                 DONE
 
-> EXAMI   STAIRS
-> LOOK     _
+> EXAMI     STAIRS
+> LOOK      _
 > R         _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3620,8 +3620,8 @@ DOWN   lBath2
                 XMESSAGE "The more I hear it, the more I like it. I love that band! In my house I still have the glass of... AND BEER FOR ALL."
                 DONE
 
-> PUT	TREAD
-> PUT  		TREAD      AT lEscaleras
+> PUT	    TREAD
+> PUT  		TREAD       AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
@@ -3641,7 +3641,7 @@ DOWN   lBath2
                 XMESSAGE "Nothing nothing, just keep playing."
                 DONE                
 
-> DOWN     HANDRAIL  AT lEscaleras
+> DOWN      HANDRAIL    AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3650,13 +3650,13 @@ DOWN   lBath2
                 XMESSAGE "I'm not gonna get my ass up on the railing and move down."
                 DONE 
 
-> DOWN     _           AT lEscaleras
+> DOWN      _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Color del narrador
                 XMESSAGE "You can't move blindly. Use something to illuminate yourself."
                 DONE
 
-> DOWN     _           AT lEscaleras
+> DOWN      _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3668,7 +3668,7 @@ DOWN   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE 
 
-> DOWN     _          AT lEscaleras
+> DOWN      _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3684,7 +3684,7 @@ DOWN   lBath2
                 INK     15
                 END
 
-> UP     _          AT lEscaleras
+> UP        _           AT lEscaleras
                 CLS                     ; Limpiamos la pantalla
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fControlLuz
@@ -3700,13 +3700,13 @@ DOWN   lBath2
                 INK     15               ; Color del narrador
                 END
 
-> UP     _           AT lEscaleras
+> UP        _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Color del narrador
                 XMESSAGE "You can't move blindly. Use something to illuminate yourself."
                 DONE
 
-> UP     _           AT lEscaleras
+> UP        _           AT lEscaleras
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3723,15 +3723,15 @@ DOWN   lBath2
 ; NOTA: No puede haber restos humanos en la chimenea si los cuerpos fueron enterrados
 
 ;La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#nLa estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque esta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#nPuedes observar una vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#nDesde aquí se accede a un amplio patio trasero al este."
-> EXAMI   LOUNGE
-> LOOK     _           AT lSalon
+> EXAMI     LOUNGE
+> LOOK      _               AT lSalon
                 INK     9               ; Color del narrador
                 XMESSAGE "Of all the room, a large, glazed display case stands out. Today it is empty of any utensils."
                 DONE
                 
-> USE      CASSETTE
-> LISTEN  CASSETTE
-> LOAD    CASSETTE    AT lSalon
+> USE       CASSETTE
+> LISTEN    CASSETTE
+> LOAD      CASSETTE        AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3744,9 +3744,9 @@ DOWN   lBath2
                 ; Poner MP3 de carga de una cinta
                 DONE
 
-> EXAMI   CASSETTE
-> EXAMI   LAREIRA
-> EXAMI	FIREPLACE    AT lSalon
+> EXAMI     CASSETTE
+> EXAMI     LAREIRA
+> EXAMI	    FIREPLACE       AT lSalon
 				NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3755,9 +3755,9 @@ DOWN   lBath2
                 XMESSAGE "It is an old Galician kitchen with a fire in the centre and a fireplace above it. It is enclosed by a cast-iron cassette."
               	DONE
 
-> EXAMI   FURNITURE
-> OPEN     SHOWCASE
-> EXAMI	SHOWCASE     AT lSalon
+> EXAMI     FURNITURE
+> OPEN      SHOWCASE
+> EXAMI	    SHOWCASE        AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -3771,9 +3771,9 @@ DOWN   lBath2
                 MESSAGE "Pues venga, genio, igual tienes un objeto para interactuar con esa ranura o tocará buscarlo."
                 DONE
 
-> EXAMI   FURNITURE
-> OPEN     SHOWCASE
-> EXAMI	SHOWCASE     AT lSalon
+> EXAMI     FURNITURE
+> OPEN      SHOWCASE
+> EXAMI	    SHOWCASE        AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
