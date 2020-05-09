@@ -1475,6 +1475,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
+                DESTROY oLlaveCoche
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
@@ -1498,6 +1499,7 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
+                DESTROY oLlaveCoche
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -3029,7 +3031,7 @@ BAJAR   lBath2
                 INK     3 
                 XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
                 XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
-                XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa. Gracias a el he podido salir de ella y encontrar también los restos de la familia en el chamizo#k#n"
+                XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa. Gracias a el he podido salir de ella y encontrar también los restos de la familia en el chamizo.#k#n"
                 INK     12
                 XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estábamos en la casa, algo horrible nos pasaría.#k#n"
                 XMESSAGE "Tu madre y yo hemos estado dándole muchas vueltas al asunto de los niños durante los últimos meses, ya que sabíamos que pronto se iba a cumplir la fecha en la que volverían a aparecer. Esto me costó fuertes discusiones con tu madre, porque toda mi intención era volver a la casa para intentar comprender qué era lo que aquellos niños necesitaban.#n"
@@ -3309,7 +3311,7 @@ BAJAR   lBath2
                 XMESSAGE "Por el susto y la excitación sacas tu mano a toda velocidad y el objeto que tenías cogido por los dedos sale despedido, con la suerte de que consigues capturarlo al vuelo.#k#n"
                 INK     2
                 XMESSAGE "¿En serio acabo de jugarme la vida metiendo la mano en un triturador?#n"
-                XMESSAGE "Por cierto, lo que has cogido son unas llaves#g#f6#t.#n"
+                XMESSAGE "Por cierto, lo que has cogido es una llave#g#f6#t.#n"
                 CREATE  oLlavePatio
                 INK     15              ; Color del sistema
                 GET     oLlavePatio

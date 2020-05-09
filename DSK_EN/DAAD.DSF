@@ -2763,7 +2763,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los utensilios de jardinería oxidados y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico."
+                XMESSAGE "You've entered the shack. An infected, damp place, where they used to keep rusty gardening tools and a few things, but there's nothing like that here anymore. The floor is compacted earth and is very dirty; there is a smell of humidity and a very unpleasant closing.#n#nAt the bottom of the shack you can see a metal cabinet."
                 DONE
                 
 > EXAMI     FLOOR       AT lChamizo
@@ -2772,7 +2772,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo es de tierra y despide un indescriptible aroma profundo y penetrante. Cuánto más te acercas a el, más intenso es el olor."
+                XMESSAGE "The floor is earthy and gives off an indescribable deep and penetrating aroma. The closer you get to it, the more intense the smell."
                 DONE
 
 > EXAMI     SAND        AT lChamizo
@@ -2781,7 +2781,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Alargas la mano y coges un puñadito de tierra. El olor es nauseabundo."
+                XMESSAGE "You extend your hand and take a little handful of dirt. The smell is nauseous."
                 DONE
 
 > OPEN      CLOSET
@@ -2791,11 +2791,11 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
+                XMESSAGE "Among all the junk in the closet, you can see your car keys#g#fIJ#t.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
+                XMESSAGE"But how did they get here?#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja#n"
+                XMESSAGE "With everything that's happened so far and you're asking yourself that question? hahaha#n"
                 INK     15
                 ISAT    oLlaveCoche 252
                 CREATE  oLlaveCoche
@@ -2809,7 +2809,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Trastos inservibles que no merecen tu atención."
+                XMESSAGE "Useless junk that doesn't need your attention."
                 DONE
 
 > EXAMI     SHED
@@ -2832,7 +2832,7 @@ DOWN   lBath2
                 CARRIED oPala
                 NOTZERO fUsarPala
                 INK     9
-                XMESSAGE "Ya has desenterrado los cadáveres."
+                XMESSAGE "You've already exhumed the bodies."
                 DONE
 
 > USE       SHOVEL      AT lChamizo
@@ -2845,12 +2845,12 @@ DOWN   lBath2
                 ZERO    fUsarPala
                 SET     fUsarPala
                 INK     9               ; Color del narrador
-                XMESSAGE "Comienzas a cavar y enseguida encuentras tres bolsas negras que contienen restos humanos en su interior.#n"       
+                XMESSAGE "You start digging and soon you find three black bags containing human bones inside.#n"       
                 INK     14
-                XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz.#n"
+                XMESSAGE "Here are my and my family's bodies, please, I ask you to give us a dignified grave so we can rest in peace.#n"
                 INK     3
                 ; CAGADA
-                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque se que me van a hacer montones de preguntas, estoy seguro."  
+                XMESSAGE "As soon as I can get out, I'll tell my parents and the police, although I know they'll ask a lot of questions, I'm sure."  
                 ZERO fDesenterrar
                 SET  fDesenterrar
                 DONE
@@ -2871,14 +2871,14 @@ DOWN   lBath2
                 ZERO    fUsarPala
                 SET     fUsarPala
                 INK     9               ; Color del narrador
-                XMESSAGE "Tramposo, tramposo, tramposo....#n#n Tienes demasiada información o mucha suerte. Se supone que no deberías saber donde se usa la pala#g#f()*#t sin que hayan#n transcurrido ciertos acontecimientos, así que el equipo de desarrollo de esta aventura ha decidido amonestarte, quitándote algunos objetos que van a impedir que termines el juego de una determinada manera.#n"
+                XMESSAGE "Cheater, cheater, cheater!!!#n#n You have too much information or too much luck.You're not supposed to know where to use the shovel#g#f()*#t without certain events having taken place, so the development team of this adventure has decided to warn you, removing some items that will prevent you from reaching one of the endings.#n"
                 DESTROY oPala
                 DESTROY oLataDeAceite
                 CLEAR   fCombinacion
                 INK     2
-                XMESSAGE "Tío, a quien se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
+                XMESSAGE "Mate, why did you do it!  Anyway, I think we can manage to get out of here.#k#n"
                 INK     15
-                XMESSAGE "Por decisión unánime del equipo de desarrollo, se te amonesta devolviéndote a la bodega y quitándote los objetos necesarios para no permitirte entrar de nuevo por la trampilla. Te recomendamos que pruebes otro de los finales disponibles, majete.#k"
+                XMESSAGE "PBy unanimous decision of the development team, you are warned by returning to the cellar and removing the necessary items so that you are not allowed to enter again through the trap door. We recommend that you try another of the available endings, mate.#k"
                 CLEAR  fMoverAlambique
                 INK     9
                 CLS 
@@ -2894,7 +2894,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveChamizo
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta está abierta. Sales al exterior del chamizo.#k"
+                XMESSAGE "The door is open. You go outside the shack.#k"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -2912,7 +2912,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 INK     9               ; Color del narrador
-                XMESSAGE "La puerta está cerrada con un travesaño de madera."
+                XMESSAGE "The door is closed with a wooden crossbar."
                 DONE
 
 ; NOTA : Aquí es donde se determinan los diferentes finales del juego dependiendo de si tenemos al niño, la pala o el hacha.
@@ -2927,7 +2927,7 @@ DOWN   lBath2
                 NOTCARR oLlaveChamizo
                 CARRIED oHacha
                 ZERO    fDesenterrar   ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k"
+                XMESSAGE "You break the crossbar of the door with the axe#g#f%&'#t and go outside the house.#k"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -2952,44 +2952,44 @@ DOWN   lBath2
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 NOTZERO fLeerDiario
                 INK     9
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
+                XMESSAGE "You break the door crossbar with the axe#g#f%&'#t and go outside the house.#k#n"
                 INK     3
-                XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
+                XMESSAGE "I'm going to call the police right now.#k#n"
                 INK     14 
-                XMESSAGE "Te espero aquí.#k#n#b"
+                XMESSAGE "I'll wait for you here.#k#n#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece tu padre.#k#n"
+                XMESSAGE "After an hour, you return to the house with the police and after a few minutes your father also appears.#k#n"
                 CLS
                 INK     12  
-                XMESSAGE "Hijo, ¿qué ha ocurrido aquí?#k#n"
+                XMESSAGE "Son, what's happened here?#k#n"
                 INK     3 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
-                XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
-                XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#k#n"
-                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario#g#f$#t escrito de puño y letra por la criada, que voy a dar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurre el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!#k#n"
+                XMESSAGE "If I tell you, you won't believe it and I don't want to say it out loud so the agents won't hear us, but there are ghosts in this house! They are ghosts who were living here and who would never find their rest until their bodies were discovered, who were here, in the shack... You had bought a house where atrocious crimes were committed.#n"
+                XMESSAGE "The police are waiting for the forensic scientist to testify to the release of the bodies.#k#n"
+                XMESSAGE "It happens that the owner of this house took in a young maid as an intern in exchange for financial support from her parents; he abused her and she had a pair of twins as a result of that abuse. Things got so complicated that the owner of the house took the lives of all of them and buried them right in the shack, but that's not all.#k#n"
+                XMESSAGE "It happens that today when I came to see you, I met all of them, in fact I even spoke to one of the children, who, by the way, was the one who revealed to me the whereabouts of the bodies. I also found a diary#g#f$#t written in the maid's handwriting, which I am going to give to the police to attest to the events, where the facts are narrated until the abuse occurs. The rest was told to me by the boy who came with me through the house. I found it in the backyard!#k#n"
                 INK     12
-                XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estábamos en la casa, algo horrible nos pasaría.#k#n"
-                XMESSAGE "Tu madre y yo hemos estado dándole muchas vueltas al asunto de los niños durante los últimos meses, ya que sabíamos que pronto se iba a cumplir la fecha en la que volverían a aparecer. Esto me costó fuertes discusiones con tu madre, porque toda mi intención era volver a la casa para intentar comprender qué era lo que aquellos niños necesitaban.#n"
-                XMESSAGE "Yo sé que en aquel momento esos críos necesitaban algo de nosotros y también sé que se enfadaron muchísimo cuando al verlos, salimos corriendo de allí, de hecho, la niña, al vernos salir corriendo, nos amenazó cuando salíamos por la puerta.#k#n"
-                XMESSAGE "Lo que verdaderamente lamento ha sido avisarte con tan poco tiempo; no te imaginas las broncas que he tenido con tu madre, hasta que se me ocurrió la idea de que tú me acompañases, porque ella se negaba rotundamente a que yo fuese solo. Tu madre finalmente transigió porque las discusiones eran cada vez más fuertes entre nosotros y yo tenía muy claro que debía volver esta noche a la casa.#k#n"
-                XMESSAGE "Yo estuve esperándote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído.#k#n"
+                XMESSAGE "You're freezing me out, son... The thing is...#k#n#n Just thirty years ago, on a night just like this, a boy and a girl appeared in the house. Maybe their intentions weren't evil, but your mother almost had a heart attack and dragged me out of there. The thing is that as we were leaving through the hall, the child shouted at us that in thirty years they would appear again and if we were in the house, something horrible would happen to us.#k#n"
+                XMESSAGE "Your mother and I have been thinking a lot about the children for the last few months, as we knew that the date they would reappear was coming soon. This cost me a lot of arguments with your mother, because my whole intention was to go back to the house to try to understand what those children needed.#n"
+                XMESSAGE "I know that at that time those kids needed something from us and I also know that they were very angry when when we saw them, we ran out of there, in fact, the girl, seeing us run out, threatened us when we went out the door.#k#n"
+                XMESSAGE "What I really regret was to warn you at such short notice; you can't imagine the fights I had with your mother, until I got the idea that you should come with me, because she absolutely refused to let me go alone. Your mother finally gave in because the arguments were getting stronger between us and I was very clear that I had to go back to the house tonight.#k#n"
+                XMESSAGE "I was waiting for you at the entrance of the estate until the sun was down and I couldn't wait for you any longer, in fact, I left you a note on the door of the house, but I see that you haven't read it.#k#n"
                 INK     3
-                XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
+                XMESSAGE "I was late, it's true, but I didn't see any note when I arrived. The thing is that I was very surprised that your car was not in the driveway and there was no sign of life in the house, so I went in to investigate and it turns out that I was locked inside and couldn't get out anymore.#k#n"
                 INK     12
-                XMESSAGE "Vaya, lamento que no leyeses el mensaje que te escribí, no era mi intención dejarte solo y esperaba que hubieses venido enseguida a casa de tu hermana, que es donde nos encontrábamos.#k#n"
+                XMESSAGE "Well, I'm sorry you didn't read the message I wrote to you, I didn't mean to leave you alone and I hoped you'd come straight to your sister's house, which is where we were.#k#n"
                 INK     3
-                XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes que era lo que estaba ocurriendo.#k#n"
+                XMESSAGE "Well, I almost died here. You should have told me what was going on in the house.#k#n"
                 INK     12
-                XMESSAGE "No tengo nada que decir, lo siento mucho hijo, no queríamos preocuparte.#k#n"
+                XMESSAGE "I have nothing to say, I'm so sorry son, we didn't mean to worry you.#k#n"
                 INK     3
-                XMESSAGE "Está bien, no pasa nada.#k#n"
+                XMESSAGE "It's okay, it's all right.#k#n"
                 INK     12
-                XMESSAGE "Está amaneciendo hijo, venga, vamos a casa que tu madre debe estar preocupadísima.#k#n"
+                XMESSAGE "It's dawning son, come on, let's go home your mother must be very worried.#k#n"
                 INK     3
-                XMESSAGE "De acuerdo, vayámonos.#k#b"
+                XMESSAGE "All right, let's go.#k#b"
                 INK     9
-                ;XMESSAGE "YOU HAVE COMPLETED THE ADVENTURE#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
-                XMESSAGE "YOU HAVE COMPLETED THE ADVENTURE#n#n CALIFICACIóN: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. Nos vemos en la próxima aventura.#n "
+                ;XMESSAGE "YOU HAVE COMPLETED THE ADVENTURE#n#n QUALIFICATION: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
+                XMESSAGE "YOU HAVE COMPLETED THE ADVENTURE#n#n QUALIFICATION: PERFECT!#n#nYou've finished the adventure by completing the puzzles and you've learned the story behind it. Congratulations.#k#n#n We hope you enjoyed the game and had a good time with it. See you in the next adventure.#n "
                 INK 15
                 END
 
@@ -3008,42 +3008,42 @@ DOWN   lBath2
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 ZERO    fLeerDiario     ; No hemos leído el diario de la criada
                 INK     9
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
+                XMESSAGE "You break the door crossbar with the axe#g#f%&'#t and go outside the house.#k#n"
                 INK     3
-                XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
+                XMESSAGE "I'm going to call the police right now.#k#n"
                 INK     14 
-                XMESSAGE "Te espero aquí.#k#n#b"
+                XMESSAGE "I'll wait for you here.#k#n#b"
                 INK     9
-                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos también aparece tu padre.#k#n#b"
+                XMESSAGE "After an hour, you return to the house with the police and after a few minutes your father also appears.#k#n"
                 INK     12  
-                XMESSAGE "Hijo, que ha ocurrido aquí?#k#n"
+                XMESSAGE "Son, what's happened here?#k#n"
                 INK     3 
-                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
-                XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
-                XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa. Gracias a el he podido salir de ella y encontrar también los restos de la familia en el chamizo#k#n"
+                XMESSAGE "If I tell you, you won't believe it and I don't want to say it out loud so the agents won't hear us, but there are ghosts in this house! They are ghosts who were living here and who would never find their rest until their bodies were discovered, who were here, in the shack... You had bought a house where atrocious crimes were committed.#n"
+                XMESSAGE "The police are waiting for the forensic scientist to testify to the release of the bodies.#k#n"
+                XMESSAGE "I met all of them in the house! In fact, I even talked to one of the children, who, by the way, was the one who revealed the whereabouts of the bodies. I found a ghost boy in the courtyard and he accompanied me around the house. Thanks to him, I was able to get out of the house and find the remains of the family in the shack.#k#n"
                 INK     12
-                XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que conforme salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estábamos en la casa, algo horrible nos pasaría.#k#n"
-                XMESSAGE "Tu madre y yo hemos estado dándole muchas vueltas al asunto de los niños durante los últimos meses, ya que sabíamos que pronto se iba a cumplir la fecha en la que volverían a aparecer. Esto me costó fuertes discusiones con tu madre, porque toda mi intención era volver a la casa para intentar comprender qué era lo que aquellos niños necesitaban.#n"
-                XMESSAGE "Yo sé que en aquel momento esos críos necesitaban algo de nosotros y también sé que se enfadaron muchísimo cuando al verlos, salimos corriendo de allí, de hecho, la niña, al vernos salir corriendo, nos amenazó cuando salíamos por la puerta.#k#n"
-                XMESSAGE "Lo que verdaderamente lamento ha sido avisarte con tan poco tiempo; no te imaginas las broncas que he tenido con tu madre, hasta que se me ocurrió la idea de que tú me acompañases, porque ella se negaba rotundamente a que yo fuese solo. Tu madre finalmente transigió porque las discusiones eran cada vez más fuertes entre nosotros y yo tenía muy claro que debía volver esta noche a la casa.#k#n"
-                XMESSAGE "Yo estuve esperándote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído.#k#n"
+                XMESSAGE "You're freezing me out, son... The thing is...#k#n#n Just thirty years ago, on a night just like this, a boy and a girl appeared in the house. Maybe their intentions weren't evil, but your mother almost had a heart attack and dragged me out of there. The thing is that as we were leaving through the hall, the child shouted at us that in thirty years they would appear again and if we were in the house, something horrible would happen to us.#k#n"
+                XMESSAGE "Your mother and I have been thinking a lot about the children for the last few months, as we knew that the date they would reappear was coming soon. This cost me a lot of arguments with your mother, because my whole intention was to go back to the house to try to understand what those children needed.#n"
+                XMESSAGE "I know that at that time those kids needed something from us and I also know that they were very angry when when we saw them, we ran out of there, in fact, the girl, seeing us run out, threatened us when we went out the door.#k#n"
+                XMESSAGE "What I really regret was to warn you at such short notice; you can't imagine the fights I had with your mother, until I got the idea that you should come with me, because she absolutely refused to let me go alone. Your mother finally gave in because the arguments were getting stronger between us and I was very clear that I had to go back to the house tonight.#k#n"
+                XMESSAGE "I was waiting for you at the entrance of the estate until the sun was down and I couldn't wait for you any longer, in fact, I left you a note on the door of the house, but I see that you haven't read it.#k#n"
                 INK     3
-                XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
+                XMESSAGE "I was late, it's true, but I didn't see any note when I arrived. The thing is that I was very surprised that your car was not in the driveway and there was no sign of life in the house, so I went in to investigate and it turns out that I was locked inside and couldn't get out anymore.#k#n"
                 INK     12
-                XMESSAGE "Vaya, lamento que no leyeses el mensaje que te escribí, no era mi intención dejarte solo y esperaba que hubieses venido enseguida a casa de tu hermana, que es donde nos encontrábamos.#k#n"
+                XMESSAGE "Well, I'm sorry you didn't read the message I wrote to you, I didn't mean to leave you alone and I hoped you'd come straight to your sister's house, which is where we were.#k#n"
                 INK     3
-                XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes que era lo que estaba ocurriendo.#k#n"
+                XMESSAGE "Well, I almost died here. You should have told me what was going on in the house.#k#n"
                 INK     12
-                XMESSAGE "No tengo nada que decir, lo siento mucho hijo, no queríamos preocuparte.#k#n"
+                XMESSAGE "I have nothing to say, I'm so sorry son, we didn't mean to worry you.#k#n"
                 INK     3
-                XMESSAGE "Está bien, no pasa nada.#k#n"
+                XMESSAGE "It's okay, it's all right.#k#n"
                 INK     12
-                XMESSAGE "Está amaneciendo hijo, venga, vamos a casa que tu madre debe estar preocupadísima.#k#n"
+                XMESSAGE "It's dawning son, come on, let's go home your mother must be very worried.#k#n"
                 INK     3
-                XMESSAGE "De acuerdo, vayámonos.#k#b"
+                XMESSAGE "All right, let's go.#k#b"
                 INK     9
-                XMESSAGE "YOU HAVE COMPLETED THE ADVENTURE#n#n CALIFICACIóN: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n"
-                XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR; del cual, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo."
+                XMESSAGE "YOU HAVE COMPLETED THE ADVENTURE#n#n QUALIFICATION: GOOD.#n#nYou have finished the adventure by completing the puzzles, but you have not known the story behind it. Congratulations.#n#n#k As a reward for this heroic feat, we'll give you some valuable advice:#k#n"
+                XMESSAGE "Remember to download MSX1PACK to enjoy a must-have compilation of MSX1 titles. MSX1PACK is compatible with original systems with MegaFlashRom, Carnivore, FlashJacks and some FPGA boards like ZXUNO, Mística or MiSTer and also with MSXVR; of which, the development team strongly recommends buying the KMARE, because of the great music that has been composed by one of the members of this team."
                 INK     15
                 END
 
@@ -3059,7 +3059,7 @@ DOWN   lBath2
                 NOTCARR oLlaveCoche
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 INK     2
-                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... Antes de romper nada... Tengo la sensación de que no vamos a llegar muy lejos sin algo que nos hace falta para poder salir de esta casa. ¡Brrrum! ¡Brrrum!#k"
+                XMESSAGE "If you intend to run and call the police... Before you break anything... I have a feeling we're not going to get very far without something we need to get out of this house. ¡Brrrum! ¡Brrrum!#k"
                 DONE
 
 ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
@@ -3072,7 +3072,7 @@ DOWN   lBath2
                 CARRIED oLlaveChamizo
                 ZERO    fDesenterrar
                 INK     2
-                XMESSAGE "La puerta está abierta, no necesitamos romper nada."
+                XMESSAGE "The door is open, we don't need to break anything."
                 DONE
 
 > BREAK     CROSSBAR    AT lChamizo
@@ -3084,23 +3084,23 @@ DOWN   lBath2
                 NOTCARR oLlaveChamizo
                 NOTCARR oHacha
                 INK     9
-                XMESSAGE "No tienes forma de romper el travesaño.#n"
+                XMESSAGE "You have no way of breaking the crossbar.#n"
                 INK     2               ; Color de la conciencia
-                XMESSAGE "Uh oh... Parece que nos hemos quedado encerrados amigo. Y no me vale con que digas que estas aventuras conversacionales están mal diseñadas porque puedes coger el armario metálico y echarlo sobre la puerta... ¿quieres probar? pues venga vamos...#k#n"
+                XMESSAGE "Uh oh... Looks like we're stuck here, mate. And I don't appreciate you saying that these conversational adventures are badly designed because you can take the metal cabinet and throw it over the door... You want to try it? Come on, let's go...#k#n"
                 INK     9
-                XMESSAGE "Pones todo tu empeño en separar el armario metálico de la pared...#k#n"
+                XMESSAGE "You put all your energy into separating the metal cabinet from the wall...#k#n"
                 INK     2
-                XMESSAGE "Venga, que hasta ahí vas bien, campeón.#k#n"
+                XMESSAGE "Come on, you're doing fine, champ.#k#n"
                 INK     9
-                XMESSAGE "Consigues arrastrar el armario dos metros y lo colocas justo enfrente de la puerta.#k#n"
+                XMESSAGE "You manage to drag the cabinet two meters and place it right in front of the door.#k#n"
                 INK     2
-                XMESSAGE "Bien bien... Cuánto esmero, estoy sorprendido.#k#n"
+                XMESSAGE "Well well... How much care, I'm surprised.#k#n"
                 INK     9
-                XMESSAGE "Te dispones a coger impulso echándote hacia atrás unos pasos...#k#n"
+                XMESSAGE "You take a few steps back to push yourself...#k#n"
                 INK     2
-                XMESSAGE "Venga, coge impulso que la puerta es maciza de narices.#k#n"
+                XMESSAGE "Come on, get a grip that the door is very sturdy..#k#n"
                 INK     9
-                XMESSAGE "Con toda tu energía corres a embestir el armario y te pegas de lleno con él, el armario es arrastrado a toda velocidad hacia la puerta y el impacto es tremendo, no obstante un armario de chapa galvanizada poco puede hacer ante una puerta maciza, lo que si ocurre es que la chapa se deforma y el estante superior atraviesa la chapa trasera del armario y te cercena la cabeza como quien corta una barra de mantequilla.#k#n#n"
+                XMESSAGE "With all your energy you run to crush the cabinet and you hit it head on, the cabinet is dragged at full speed towards the door and the impact is huge, however a cabinet made of galvanized sheet metal can do little to a solid door, what happens is that the sheet metal deforms and the top shelf goes through the back sheet of the cabinet and cuts your head off like a bar of butter.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -3116,7 +3116,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oHacha
                 INK     3
-                XMESSAGE "No tengo nada que usar para romper ese travesaño."                
+                XMESSAGE "I don't have anything to break that crossbar."                
                 INK     9
                 DONE
 
@@ -3127,7 +3127,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2
-                XMESSAGE "No podemos volver por ahí."
+                XMESSAGE "We can't go back that way.."
                 INK     9
                 DONE
 
@@ -3136,7 +3136,7 @@ DOWN   lBath2
 > EXAMI     TOILET
 > LOOK      _           AT lAseo
                 INK     9               ; Color del narrador
-                XMESSAGE "Hay un interruptor en la pared."
+                XMESSAGE "There's a switch in the wall."
              
                 DONE
 
@@ -3156,9 +3156,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-            	XMESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla.#n"
+            	XMESSAGE "You can't see anything. And you can't turn the light on, since there's no bulb.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Olvídate del aseo y sal de aquí."
+                XMESSAGE "Forget about the toilet and get out of here."
                 DONE
 
 > EXAMI     FLOOR       AT lAseo
@@ -3167,7 +3167,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "El suelo está lleno de cristales."
+                XMESSAGE "The floor is full of crystals."
                 DONE
 
 > EXAMI     SWITCH      AT lAseo
@@ -3176,7 +3176,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "Es un interruptor."
+                XMESSAGE "It's a switch.."
                 DONE
 
 > PRESS     SWITCH
@@ -3192,27 +3192,27 @@ DOWN   lBath2
                 CREATE  oFotografia1
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                XMESSAGE "Pulsas el interruptor y ves una fotografía#g#fD#t en el suelo, pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires.#n"
+                XMESSAGE "You press the switch and see a picture#g#fD#t on the floor, but the light starts flashing quickly and the bulb jumps out.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Argggg! ¡Santa madre de la hostia puta! ¡Está todo lleno de cristales!#n"
+                XMESSAGE "Argggg! What a scare! It's all full of glass!#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¡Dios! ¡Casi me cago encima! Otra como esta y me quedo muñeco... me pregunto si habrá un puto desfibrilador en esta santa casa.#n"
+                XMESSAGE "God! I almost shit myself! Another one like this and I'm dead... I wonder if there's a fucking defibrillator in this holy house.#n"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
                 CLEAR   fControlLuz 
                 INK     9               ; Color del narrador
-                XMESSAGE "Del susto se te ha apagado la cerilla.#k#n"
+                XMESSAGE "With the scare, your match went out.#k#n"
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                XMESSAGE "Aún a pesar del susto y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía#g#fD#t.#n"
+                XMESSAGE "In addition to the scare, and being very careful not to cut yourself with the glass of the light bulb, you reach out your hand and get to the photograph#g#fD#t.#n"
                 INK     15              ; Color del sistema
                 GET     oFotografia1
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     9               ; Color del narrador
-                XMESSAGE "Al cogerla has sentido como si algo muy frío te tocara la mano. Se te han puesto los pelos como escarpias y tu corazón se desboca.#n"
+                XMESSAGE "When you hold it, you feel as if something very cold is touching your hand. Your hair has grown like spikes and your heart is racing.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Podrías encender algo para iluminarte y ver qué te ha tocado, o igual no es buena idea. ¿Nos vamos?"
+                XMESSAGE "You could light something and see what you got, or maybe it's not a good idea. Shall we go?"
                 INK     9
                 ZERO    fVasAPalmar
                 SET     fVasAPalmar
@@ -3227,7 +3227,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarInterruptor
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Obviamente no funciona. ¿Hasta dónde llegan tus conocimientos de electricidad? Si no hay bombilla, no puede haber luz."
+                XMESSAGE "Obviously it doesn't work. How far does your knowledge of electricity get? If there's no bulb, there can't be any light."
                 INK     9
                 DONE
 
@@ -3237,7 +3237,7 @@ DOWN   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "La despensa está muy oscura. Sin luz no se puede entrar."
+                XMESSAGE "The pantry's too dark. Without light you can't get in.."
                 DONE
 
 > E         _           AT lCocina ; Tenemos LUZ y nos metemos en el almacén
@@ -3264,7 +3264,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Son frías y húmedas."
+                XMESSAGE "They are cold and wet."
                 DONE
 
 > EXAMI     KITCHEN
@@ -3274,9 +3274,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Puedes ver el fregadero, un aparador con cajones y la vieja lavadora.#n"
+                XMESSAGE "You can see the sink, a sideboard with drawers and the old washing machine.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Ya no se fabrican como antes. Jodida obsolescencia programada."
+                XMESSAGE "They are no longer manufactured as before. Fucking programmed obsolescence."
                 DONE
 
 > EXAMI	    SINK        AT lCocina
@@ -3286,7 +3286,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ISAT    oLlavePatio 252
                 INK     9               ; Color del narrador
-                XMESSAGE "El fregadero está vacío, tiene un sumidero grande tipo americano. Algo parece estar atascado dentro."
+                XMESSAGE "The sink is empty, it has a big American-style sink. Something seems to be stuck inside."
                 DONE
 
 > EXAMI	    SUMP        AT lCocina
@@ -3295,18 +3295,18 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te alzas en el fregadero para poder acceder mejor al sumidero. Vas introduciendo la mano poco a poco; es un proceso delicado, pues podría caerse en el fondo lo que hubiera allí atascado y darlo por perdido.#n"
-                XMESSAGE "Con la punta de los dedos consigues cogerlo y según comienzas a sacar la mano, sientes que se pone el marcha el triturador del fregadero.#n"
-                XMESSAGE "Por el susto y la excitación sacas tu mano a toda velocidad y el objeto que tenías cogido por los dedos sale despedido, con la suerte de que consigues capturarlo al vuelo.#k#n"
+                XMESSAGE "You stand at the sink so you can better access the sink. You slowly introduce your hand; it is a delicate process, because what is stuck there could fall to the bottom and be lost.#n"
+                XMESSAGE "With your fingertips you manage to hold it and as you start to take your hand out, you feel the sink grinder turn on.#n"
+                XMESSAGE "With the fright and excitement you take out your hand at full speed and the object that you were holding by the fingers comes out, with the luck that you manage to capture it on the fly.#k#n"
                 INK     2
-                XMESSAGE "¿En serio acabo de jugarme la vida metiendo la mano en un triturador?#n"
-                XMESSAGE "Por cierto, lo que has cogido son unas llaves#g#f6#t.#n"
+                XMESSAGE "Did I really just risk my life sticking my hand in a grinder?#n"
+                XMESSAGE "By the way, what you've taken is a key#g#f6#t.#n"
                 CREATE  oLlavePatio
                 INK     15              ; Color del sistema
                 GET     oLlavePatio
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     9               ; Color del narrador
-                XMESSAGE "El triturador se ha parado."
+                XMESSAGE "The shredder has stopped."
                 DONE
 
 > EXAMI     SPOONS      AT lCocina
@@ -3315,7 +3315,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿Nunca has visto una cuchara?"
+                XMESSAGE "You've never seen a spoon?"
                 DONE
 
 > TAKE      SPOONS      AT  lCocina
@@ -3324,7 +3324,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     3               ; Color del protagonista
-                XMESSAGE "No pienso ir cargado con unas cucharas."
+                XMESSAGE "I'm not going to carry a set of spoons."
                 DONE
 
 > EXAMI     SHREDDER    AT lCocina
@@ -3335,17 +3335,17 @@ DOWN   lBath2
                 ZERO    fTriturador     ; flag para controlar si lo examina dos veces
                 SET     fTriturador
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "No creo que sea una buena idea."
+                XMESSAGE "I don't think it's a good idea."
                 DONE
 
 > EXAMI     SHREDDER    AT lCocina
                 NOTZERO fTriturador  ; si no es cero, es que es la segunda vez que lo examina, así que lo mato por cotilla
                 INK     9               ; Color del narrador
-                XMESSAGE "Te aventuras a introducir de nuevo la mano en el triturador desoyendo las advertencias de tu conciencia.#k#n"
+                XMESSAGE "You risk putting your hand back in the shredder by ignoring the warnings of your conscience.#k#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "El triturador se activa con tu mano en su interior y durante un instante notas calor.#k#n"
-                XMESSAGE "Las cuchillas te mutilan los dedos de la mano y notas enseguida como una fuerza de succión muy fuerte tira de tu brazo hacia adentro, mientras escuchas el crujido de tus huesos contra las paredes metálicas del fregadero.#k#n"
-                XMESSAGE "Hay sangre por todas partes.#k#n#n"
+                XMESSAGE "The shredder is activated with your hand inside and you feel warm for a moment.#k#n"
+                XMESSAGE "The blades mutilate your fingers and you immediately notice how a very strong suction force pulls your arm down, while you listen to the cracking of your bones against the metal walls of the sink.#k#n"
+                XMESSAGE "There's blood everywhere.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -3360,7 +3360,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es un típico aparador de cocina hecho en madera con varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
+                XMESSAGE "It is a typical kitchen sideboard made of wood with several drawers. Your parents bought it at the flea market in Madrid in not very good conditions but at a fantastic price. Your father's idea was to restore it and he did it excellently.."
                 DONE
 
 > OPEN      DRAWERES    AT lCocina
@@ -3370,9 +3370,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es curioso, solo hay cucharas. ¿Dónde está lo que falta?#n"
+                XMESSAGE "Strange, there are only spoons. Where's the rest of it?#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Joder, no sé si quiero saberlo."
+                XMESSAGE "Damn it, I don't know if I want to know.."
                 DONE
 
 > EXAMI	    BALLS       AT lCocina
@@ -3381,7 +3381,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "No es momento de examinar tus genitales."
+                XMESSAGE "This is not the time to examine your genitals."
                 DONE
 
 > OPEN      WASHER
@@ -3391,11 +3391,11 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Dentro encuentras un cuchillo grande de carnicero cubierto de...#n"
+                XMESSAGE "Inside you find a large butcher's knife covered with...#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡¡¡Sangre!!!#n#n¿Pero qué puñetas hace eso ahí dentro?#n"
+                XMESSAGE "Blood!!!#n#nWhat the hell is that doing in there?#n"
                 INK     2               ; Color de tu consciencia 
-                XMESSAGE "Tampoco sé si quiero saberlo."
+                XMESSAGE "I also don't know if I want to know."
                 DONE
 
 > EXAMI     KNIFE
@@ -3405,7 +3405,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     3               ; Color del protagonista
-                XMESSAGE "No pienso tocar eso ni con un palo.#n"
+                XMESSAGE "I'm not touching that, even if I had a stick.#n"
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "Cagao."
                 DONE
@@ -3415,7 +3415,7 @@ DOWN   lBath2
 > EXAMI     PANTRY
 > LOOK      _           AT lDespensa
                 INK     9               ; Color del narrador
-                XMESSAGE "Estás en la despensa. Aquí se encuentra la STORAGE que usaban tus padres para guardar latas de comida. Tu solías PUSHLA para ver si caía alguna galleta desde arriba."
+                XMESSAGE "You're in the pantry. Here is the STORAGE that your parents used to store cans of food. You used to PUSH to see if any cookies fell from the top."
                 DONE
 
 > EXAMI     STORAGE
@@ -3425,11 +3425,11 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Está vacío por completo, pero te vienen recuerdos de esos botes de mermelada para los desayunos, el bote de colacao, el vaso de nocilla y las latas de fabada para cuando a tu madre no le apetecía cocinar.#n"
+                XMESSAGE "It's completely empty, but you remember those marmalade jars for breakfast, the chocolate bottle, the glass of nocilla and the cans of fabada for when your mother didn't feel like cooking.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Y colocaba las galletas encima de ella, fuera de nuestro alcance.#n"
+                XMESSAGE "And put the cookies on top of it, out of reach.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Me reiría mucho si encontrase alguna galleta escondida arriba del todo."
+                XMESSAGE "I'd have a good laugh if I found any cookies hidden at the top."
                 DONE
 
 ; NOTA: Estaría bien que cada vez que se empuja la alacena cayese una galleta y según cae, se la come, así no necesitamos contemplarla como objeto, hasta N galletas (poner contador?) y llegado un número de galletas, decirle al jugador que ya le tenemos domesticado
@@ -3440,7 +3440,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad         
                 INK     9               ; Color del narrador
-                XMESSAGE "Das un fuerte empujón a la alacena.#nNo ocurre nada."             
+                XMESSAGE "You give the cupboard a big push. Nothing happens."             
                 DONE            
 
 > BREAK     STORAGE     AT lDespensa
@@ -3449,14 +3449,14 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿Quieres darle un disgusto a madre?"
+                XMESSAGE "Do you want to piss off mother?"
                 DONE
 
 > W         _           AT lDespensa 
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH     ; La cerilla se ha consumido
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "La cocina está muy oscura. Sin luz no se puede entrar."
+                XMESSAGE "The kitchen is very dark. Without light you can't go in."
                 DONE
 
 > W         _           AT lDespensa
@@ -3479,9 +3479,9 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad           
                 ZERO    fEscalon   
                 INK     3               ; Color del protagonista
-                XMESSAGE "Lo cierto es que siento curiosidad. Si esto cruje será por algo.#n"
+                XMESSAGE "Actually, I'm curious. If this crunches, it's because of something.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Hay un escalón que parece tener cierta holgura y se mueve un poco. Echemos un vistazo."
+                XMESSAGE "There's a step that seems to have some slack in it and it moves a little bit. Let's take a look."
                 DONE
 
 ; Con flags, controlamos si se ha movido el tablón o se pone de nuevo en su sitio
@@ -3504,7 +3504,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Has quitado el escalón y ahora hay un hueco. Eso podría ser una trampa mortal."
+                XMESSAGE "You've taken the step down and now there's a gap. That could be a death trap."
                 DONE
 
 > REMOVE    TREAD
@@ -3516,7 +3516,7 @@ DOWN   lBath2
                 ZERO    fEscalon
                 SET     fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Mueves el escalón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro. Has dejado el hueco abierto y eso no es muy seguro."
+                XMESSAGE "You move the step and move it to the side. You can see a metal box inside. You've left the hole open and that's not very safe."
                 DONE
 
 > REMOVE    TREAD
@@ -3527,7 +3527,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "El escalón no se mueve más."
+                XMESSAGE "The step doesn't move anymore."
                 DONE
 
 > EXAMI   PADLOCK
@@ -3538,7 +3538,7 @@ DOWN   lBath2
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "La caja tiene un candado de seguridad. Necesitas una llave pequeña."
+                XMESSAGE "The box has a safety lock. You need a small key."
                 DONE
 
 > TAKE		BOX        AT lEscaleras                
@@ -3548,7 +3548,7 @@ DOWN   lBath2
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "La caja está anclada dentro del hueco del escalón, no se puede coger."
+                XMESSAGE "The box is fixed in the stepwell, you can't take it."
                 DONE
 
 > BREAK    BOX        AT lEscaleras
@@ -3558,7 +3558,7 @@ DOWN   lBath2
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿No te sientes lo suficientemente culpable con haber roto el gnomo de tu madre, verdad?"
+                XMESSAGE "You don't feel guilty enough about breaking your mother's gnome, do you?"
                 DONE
 
 > OPEN		BOX        AT lEscaleras                
@@ -3570,7 +3570,7 @@ DOWN   lBath2
                 NOTCARR oLlaveCaja
                 NOTCARR oSecretKey1
                 INK     9               ; Color del narrador
-                XMESSAGE "No tienes la llave para poder abrirla."
+                XMESSAGE "You don't have the key to open it."
                 DONE
 
 > OPEN		BOX        AT lEscaleras                
@@ -3582,7 +3582,7 @@ DOWN   lBath2
                 NOTCARR oLlaveCaja
                 CARRIED oSecretKey1
                 INK     9               ; Color del narrador
-                XMESSAGE "Ya tienes la tarjeta de seguridad#g#f<#t."
+                XMESSAGE "You already have the security card#g#f<#t."
                 DONE
 
 > OPEN		BOX        AT lEscaleras                
@@ -3595,15 +3595,15 @@ DOWN   lBath2
                 ISAT    oSecretKey1 252
                 CREATE  oSecretKey1
                 INK     9               ; Color del narrador
-                XMESSAGE "Has conseguido abrir la caja pero la llave se ha partido y no se puede quitar.#n"
+                XMESSAGE "You have opened the box but the key has been broken and cannot be removed.#n"
                 DESTROY oLlaveCaja
                 INK     15              ; Color del sistema
                 GET     oSecretKey1
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#g#f<#t#n"
+                XMESSAGE "What will open that security card?#g#f<#t#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Tratemos de averiguarlo."
+                XMESSAGE "Let's try to find out."
                 DONE
 
 > EXAMI   STAIRS
@@ -3615,9 +3615,9 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Estás en las escaleras. Hay un tablón apoyado en la barandilla y en el hueco, puedes ver una caja metálica.#n"
+                XMESSAGE "You're on the stairs. There's a board propped up on the banister and in the opening, you can see a metal box.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Cuanto más lo escucho más me gusta. ¡¡¡Grupazo!!! En mi casa conservo aún el vaso de... AND BEER FOR ALL."
+                XMESSAGE "The more I hear it, the more I like it. I love that band! In my house I still have the glass of... AND BEER FOR ALL."
                 DONE
 
 > PUT	TREAD
@@ -3630,15 +3630,15 @@ DOWN   lBath2
                 ZERO    fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Has puesto el escalón en su sitio.#n"
+                XMESSAGE "You've put the step in place.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Me ha parecido una buena decisión, porque seguro que si no lo hago, me parto el cuello cayendo por las escaleras.#n"
+                XMESSAGE "I thought it was a good decision, because I'm sure if I don't, I'll break my neck falling down the stairs.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "No te quepa la menor duda. Tengo un par de condactos preparados para asegurarme de ello.#n" 
+                XMESSAGE "Don't be surprised. I've got a couple of CondActs ready to make sure.#n" 
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Condactos?#n"
+                XMESSAGE "CondActs?#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Nada nada, sigue jugando."
+                XMESSAGE "Nothing nothing, just keep playing."
                 DONE                
 
 > DOWN     HANDRAIL  AT lEscaleras
@@ -3647,13 +3647,13 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     3               ; Color del narrador
-                XMESSAGE "No pienso subir mi culo a la barandilla y desplazarme hacia abajo."
+                XMESSAGE "I'm not gonna get my ass up on the railing and move down."
                 DONE 
 
 > DOWN     _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move blindly. Use something to illuminate yourself."
                 DONE
 
 > DOWN     _           AT lEscaleras
@@ -3676,7 +3676,7 @@ DOWN   lBath2
                 CLS                     ; Limpiamos la pantalla     
                 NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
+                XMESSAGE "You accidentally put your foot on the step you took the plank off and stumble badly. You fall down the stairs and break your neck.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -3692,7 +3692,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario             
                 NOTZERO fEscalon
                 INK     9               ; Color del narrador
-                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
+                XMESSAGE "You accidentally put your foot on the step you took the plank off and stumble badly. You fall down the stairs and break your neck.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -3703,7 +3703,7 @@ DOWN   lBath2
 > UP     _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move blindly. Use something to illuminate yourself."
                 DONE
 
 > UP     _           AT lEscaleras
@@ -3726,7 +3726,7 @@ DOWN   lBath2
 > EXAMI   LOUNGE
 > LOOK     _           AT lSalon
                 INK     9               ; Color del narrador
-                XMESSAGE "De entre toda la estancia, destaca una vitrina grande y acristalada que a día de hoy se encuentra desprovista de todo utensilio."
+                XMESSAGE "Of all the room, a large, glazed display case stands out. Today it is empty of any utensils."
                 DONE
                 
 > USE      CASSETTE
@@ -3737,7 +3737,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     10              ; Color especial
-                XMESSAGE "Found: Graciosito#n#n"
+                XMESSAGE "Found: Silly#n#n"
                 INK     6
                 XMESSAGE "MSX2 with 128Kb VRAM is needed to run!"
                 INK     9
@@ -3752,7 +3752,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una antigua cocina gallega con una hoguera en el centro y una chimenea encima. Está acotada por un cassette de hierro fundido."
+                XMESSAGE "It is an old Galician kitchen with a fire in the centre and a fireplace above it. It is enclosed by a cast-iron cassette."
               	DONE
 
 > EXAMI   FURNITURE
