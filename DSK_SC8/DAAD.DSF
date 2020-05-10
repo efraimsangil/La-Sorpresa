@@ -3907,7 +3907,7 @@ BAJAR   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "El patio está muy oscura. Sin luz no se puede entrar."
+                XMESSAGE "El patio está muy oscuro. Sin luz no se puede entrar."
                 DONE
 
 > O         _           AT lSalon                
@@ -4074,8 +4074,10 @@ BAJAR   lBath2
                 XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n#n"
                 XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n#n"
                 INK     4
-                XMESSAGE "Has Muerto.#n"              
-                INK     15              ; Color del sistema
+                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "#n"
+                INK     15               ; Color del narrador
                 END
 
 > EXAMINA   PATIO
