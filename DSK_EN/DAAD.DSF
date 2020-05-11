@@ -325,6 +325,7 @@ LAREIRA         212    noun     ; lSalon
 MATTRESS        213    noun     ; COLCHON.                  lCriada
 MOON            214    noun     ; LUNA.                     lPatio
 HANDRAIL        215    noun     ; BARANDILLA.               lEscaleras
+LOO             216    noun     ; BAÑO.
 
 ;                       Verbs
 GET             20      verb
