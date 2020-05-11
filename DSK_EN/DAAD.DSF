@@ -4602,11 +4602,11 @@ DOWN   lBath2
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lBath2                
                 INK     9               ; Color del narrador
-                XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegado a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
+                XMESSAGE "When you get off the toilet, you slip and fall backwards. Just as your head hits the ground, an axe #g#f%&'#t flies at full speed straight at you and hits the toilet hard, destroying it completely.#k#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Qué hostias ha sido eso? ¡Por un pelo no me decapitan! Parece que sigo entero...#k#n"
+                XMESSAGE "What the hell was that? He almost cut my head off! Looks like I'm still in one piece....#k#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Está claro que no somos bienvenidos en esta casa."
+                XMESSAGE "It is clear that we are not welcome in this house."
                 DONE
 
 > EXAMI     CISTERN
@@ -4620,12 +4620,12 @@ DOWN   lBath2
                 ISAT    oPaleta 252
                 CREATE  oPaleta
                 INK     9               ; Color del narrador
-                XMESSAGE "Quitas la tapa de la cisterna y ves que por dentro está manchada de sangre.#n#nPuedes observar una paleta#g#fmn#t de albañil en su interior.#n" 
+                XMESSAGE "You take off the lid of the cistern and you see that inside it is stained with blood.#n#nYou can see a mason's scraper#g#fmn#t inside it.#n" 
                 INK     15              ; Color del sistema
                 GET     oPaleta
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK 	2
-                XMESSAGE "¡Puaj! está chorreando de sangre."
+                XMESSAGE "Yuck! It's stained with blood..."
                 DONE
 
 > EXAMI   CISTERN
@@ -4637,7 +4637,7 @@ DOWN   lBath2
                 NOTZERO fAbrirCisterna
                 CARRIED oPaleta
                 INK     9               ; Color del narrador
-                XMESSAGE "Ya tienes la paleta#g#fmn#t. Aquí no hay nada más que ver."
+                XMESSAGE "You already have the scraper#g#fmn#t. There's nothing more to see here."
                 DONE 
 
 ; Estamos en locRoom3
@@ -4650,7 +4650,7 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Algo extraño ocurre aquí. Estás en el mismo lugar pero el mobiliario es completamente distinto... Son de otra época.#n#n Hay una cama muy grande y alta con cabecero y pie de forja. Donde estaba la mesilla ahora hay una lámpara victoriana de pie y una alfombra de la misma época."
+                XMESSAGE "There's something strange happening here. You're in the same place but the furniture is completely different... They're from another era. There's a very big, high bed with a headboard and a wrought-iron foot. Where the bedside table used to be there is now a Victorian floor lamp and a carpet from the same period."
                 DONE
 
 > N         _           AT lRoom3
@@ -4675,7 +4675,7 @@ DOWN   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-> LOOK     _           AT lRoom3
+> LOOK      _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
@@ -4683,9 +4683,9 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 SET     fFlashBack
                 INK     9               ; Color del narrador
-                XMESSAGE "Una presencia te invade y te tira al suelo... quedas inconsciente por unos instantes y cuando despiertas....#k#n#nEs el mismo lugar... pero estás desconcertado... Todo el contenido de la habitación está ahí, pero es... distinto.#n"
+                XMESSAGE "A presence invades you and throws you to the floor... you are unconscious for a few moments and when you wake up...#k#n#nIt is the same place... but you are confused... All the stuff in the room is there, but it's... different.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "La estancia parece haber retrocedido en el tiempo treinta años. ¿Qué ha pasado?"
+                XMESSAGE "The room seems to have gone back in time by 30 years. What happened?"
                 DONE
 
 > EXAMI	HEADBOARD    AT lRoom3
@@ -4695,7 +4695,7 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Se trata de un cabecero de madera muy básico, no hay detalles a destacar."
+                XMESSAGE "It is a very basic wooden headboard, there are no details to mention."
                 DONE
 
 > EXAMI	HEADBOARD    AT lRoom3
@@ -4705,7 +4705,7 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Donde estaba el cabecero de madera ahora hay uno de latón antiguo con piezas repujadas haciendo unas complicadas filigranas."
+                XMESSAGE "Where the wooden headboard used to be there is now an antique brass one with embossed pieces making some complicated filigrees."
                 DONE
 
 > EXAMI	WALL       AT lRoom3
@@ -4715,9 +4715,9 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "El temple hace que respiren las paredes.#n"
+                XMESSAGE "The paint makes the walls breathe.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Parece que el gotelé aquí sigue de moda! ¡Y lo sufrido que es!" 
+                XMESSAGE "It seems that the plastic paintwork here is still in use! And how painful it is!" 
                 DONE
 
 > EXAMI	WALL       AT lRoom3
@@ -4727,7 +4727,7 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Las paredes son blancas y rugosas pintadas en cal, están muy frías y desnudas."
+                XMESSAGE "The walls are white and roughly painted, they are very cold and naked."
                 DONE
 
 > EXAMI   BED        AT lRoom3
@@ -4737,7 +4737,7 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Se trata de una cama de matrimonio moderna."
+                XMESSAGE "It's a modern double bed."
                 DONE
 
 > EXAMI   BED        AT lRoom3
@@ -4748,7 +4748,7 @@ DOWN   lBath2
                 EQ      fNenaMala 5
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Quieres otro peluche,¿eh? ¡A la feria a disparar palillos!"
+                XMESSAGE "You want another cuddly toy, huh? Go to the fair and shoot toothpicks!"
                 DONE
 ; Hemos visto la foto, por tanto el peluche está limpio
 > EXAMI   BED        AT lRoom3
@@ -4761,14 +4761,14 @@ DOWN   lBath2
                 ISAT    oPeluche    252
                 CREATE  oPeluche
                 INK     9               ; Color del narrador
-                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama. Se trata de un osito de peluche#g#f##t.#n"
+                XMESSAGE "You pay attention to something sticking out of the bed.#k#n#n You reach in and find a teddy bear#g#f##t.#n"
                 INK     15              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     3               ; Color del protagonista
-                XMESSAGE "Oh, qué osito#g#f##t tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n"
+                XMESSAGE "Oh, what a soft bear#g#f##t It looks like the same teddy bear that the little girl in the picture had.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Es blandito y conserva un aroma a perfume fresco, dan ganas de achucharlo."
+                XMESSAGE "It is soft and retains a fresh scent, making you want to hug it."
                 DONE      
 ;NO hemos visto la foto, el peluche está mugriento
 > EXAMI   BED        AT lRoom3
@@ -4781,12 +4781,12 @@ DOWN   lBath2
                 ISAT    oPeluche    252
                 CREATE  oPeluche
                 INK     9               ; Color del narrador
-                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un un osito de peluche#g#f##t.#n"
+                XMESSAGE "You pay attention to something sticking out of the bed.#k#n#n You reach in and find a teddy bear#g#f##t.#n"
                 INK     15              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es un osito de peluche#g#f##t muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida."
+                XMESSAGE "It's a very old teddy bear#g#f##t; it's filthy and dirty. I've never seen this teddy in my life."
                 DONE            
 
 > EXAMI   CARPET    AT lRoom3
@@ -4796,7 +4796,7 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Hay una alfombra grande y azul a los pies de la cama."
+                XMESSAGE "There's a big blue carpet at the bottom of the bed."
                 DONE
 
 > EXAMI   CARPET    AT lRoom3
@@ -4806,9 +4806,9 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Hay una alfombra persa con flecos muy antigua a los pies de la cama. Tiene tonalidades rojas, ocres y amarillas.#n"
+                XMESSAGE "There's a very old Persian carpet with fringes at the foot of the bed. It has shades of red, ochre and yellow.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Esta alfombra debe tener un siglo por lo menos."
+                XMESSAGE "This carpet must be at least a century old."
                 DONE
 
 > EXAMI   BEDSIDE      AT lRoom3
@@ -4818,7 +4818,7 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una mesita de noche rústica que hay justo en uno de los lados de la cama."
+                XMESSAGE "It's a rustic bedside table right on the side of the bed."
                 DONE
                 
 > EXAMI   BEDSIDE      AT lRoom3
@@ -4828,9 +4828,9 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "La mesita ha desaparecido. En su lugar hay una lámpara de pie.#n"
+                XMESSAGE "The bedside table is gone. There's a floor lamp in its place.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Me he dado un buen golpe en la cabeza, no entiendo nada...#n#nLas cosas no están en su sitio ni son las mismas."
+                XMESSAGE "I've had a good bump on the head, I don't understand anything... #n#nThings are not in place and are not the same."
                 DONE
 
 > EXAMI   LAMP     AT lRoom3
@@ -4840,7 +4840,7 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Hay una lámpara justo encima de la cama, recuerdas que se encendía con una pera, pero ahora que has cogido maña con las cerillas, no te vas a poner a revolver la cama de tus padres."
+                XMESSAGE "It's a simple and modest lamp.."
                 DONE
 
 > EXAMI   LAMP     AT lRoom3
@@ -4850,7 +4850,7 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Al lado de la cama puedes contemplar una lámpara de pie de estilo victoriano.#n#nLa base es de mármol con filigrana negra con pie grabado y la pantalla está recargada con unas cuentas doradas y negras que cuelgan de ella."
+                XMESSAGE "Next to the bed you can see a Victorian-style floor lamp.#n#nThe base is made of marble with black filigree with an engraved foot and the lampshade is topped with black and gold beads hanging from it."
                 DONE
 
 > EXAMI   FLOOR       AT lRoom3
@@ -4860,7 +4860,7 @@ DOWN   lBath2
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo es de gres porcelánico esmaltado de color blanco."
+                XMESSAGE "The floor is made of white glazed porcelain tile."
                 DONE
 
 > EXAMI   FLOOR       AT lRoom3
@@ -4870,9 +4870,9 @@ DOWN   lBath2
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "El suelo es de terrazo; es el suelo clásico de las casas antiguas.#n"
+                XMESSAGE "The floor is made of terrazzo; it is the classic floor of the old houses.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "No reconozco este lugar en absoluto."
+                XMESSAGE "I don't recognize this place at all."
                 DONE
 
 ; Estamos en locBath3
@@ -4883,9 +4883,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     9               ; Color del narrador
-                XMESSAGE "Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del Dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde.#n"
+                XMESSAGE "A thermal bath with mosaic is certainly the most extravagant caprice that the original owner of this house allowed himself; you still can't help but be surprised every time you look at it.#k The bath is located next to a wall that shows off the mosaic of the God Apollo.#n#n At this moment and for some unknown reason, it is filled to the brim with water.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Yo examinaría con determinación esa terma."
+                XMESSAGE "I would examine closely that thermal bath."
                 DONE
 
 > EXAMI   WATER        AT lBath3
@@ -4894,9 +4894,9 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Te acercas con curiosidad hacia el agua y la acaricias con la punta de los dedos. Te llevas los dedos hacia la boca.#n"
+                XMESSAGE "You approach the water with curiosity and caress it with your fingertips. You take your fingers to your mouth.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "No me lo puedo creer, ¡el agua es salada!"
+                XMESSAGE "I can't believe it, the water is salty!"
                 DONE     
 
 > EXAMI   MOSAIC     AT lBath3
@@ -4905,9 +4905,7 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es curioso, que hace miles de años, existiera el Pixel Art usando teselas.#n"
-                INK     2               ; Color de tu consciencia
-                XMESSAGE "Pues claro, ¿no te acuerdas? Yo lo recuerdo como si fuera ayer. Estuvimos allí."
+                XMESSAGE "It's interesting that thousands of years ago, there was Pixel Art using ceramic tiles..#n"                
                 DONE     
 
 > EXAMI   THERMA       AT lBath3
@@ -4918,7 +4916,7 @@ DOWN   lBath2
                 ZERO    fTerma
                 SET     fTerma                
                 INK     9               ; Color del narrador
-                XMESSAGE "Percibes el ruido del agua moverse, será posible que...#n#nEstás muy cerca, pero no lo suficiente. Quizás deberías echar otro vistazo para asegurarte."
+                XMESSAGE "You hear the sound of water moving, it's possible that...#n#nYou're very close, but not close enough. Maybe you should take another look to make sure."
                 DONE     
 
 > EXAMI   THERMA       AT lBath3
@@ -4929,7 +4927,7 @@ DOWN   lBath2
                 NOTZERO fTerma
                 ZERO    fFinTerma
                 INK     9               ; Color del narrador
-                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
+                XMESSAGE "You decide to approach the thermal bath carefully, surprised by the noise you hear.#k#n#nAs you approach, you notice that the water is splashing on the walls of the bath.#k#n#nFrom the wall you see the arm of a woman holding a set of keys#g#f3#t in her hand. The woman drops them on the floor and immediately removes her arm from the wall..#n"
                 ISAT    oLlaveCaja 252
                 CREATE  oLlaveCaja
                 INK     15              ; Color del sistema
@@ -4948,9 +4946,9 @@ DOWN   lBath2
                 NOTZERO fFinTerma                
                 CARRIED oLlaveCaja
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡NO ME JODAS! ¿DONDE ESTAS? ¡He visto una puta mano!#n"
+                XMESSAGE "DON'T FUCK ME! WHERE ARE YOU? I saw a fucking hand!#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Sea quien fuere quien estuviese ahí, ha desaparecido... vayámonos de aquí... ¡YA!"
+                XMESSAGE "Whatever was there, it's gone... let's get out of here... NOW!"
                 DONE   
 
 > EXAMI   MURETE      AT lBath3
@@ -4959,18 +4957,18 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Color del narrador
-                XMESSAGE "Es un murete que luce el mosaico del Dios Apolo.#n"
+                XMESSAGE "It's a wall that shows the mosaic of the God Apollo.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Y yo venerando al Dios del sol con una cerilla en la mano.#n"
+                XMESSAGE "And I'm venerating the God of the sun with a match in my hand.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¡Eres todo un devoto!"
+                XMESSAGE "You're so devoted!"
                 DONE
 
 > S			_           AT lBath3                
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move blindly. Use something to illuminate yourself."
                 DONE
 
 > S			_           AT lBath3                
@@ -4989,13 +4987,13 @@ DOWN   lBath2
 > EXAMI   HALLWAY
 > LOOK     _           AT lPasillo1
                 INK     9               ; Color del narrador
-                XMESSAGE "Tienes una puerta al NORTE y el corredor continúa hacia el ESTE."
+                XMESSAGE "You have a door to the NORTH and the corridor continues to the EAST."
                 DONE
 
 > DOWN     _           AT lPasillo1
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > DOWN     _           AT lPasillo1                
@@ -5005,7 +5003,7 @@ DOWN   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla                
                 INK     9               ; Color del narrador
-                XMESSAGE "Notas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
+                XMESSAGE "You feel a little crunch under your feet. There's always been one step on that ladder that no one cared to fix."
                 GOTO    lEscaleras
                 DONE
 
@@ -5013,7 +5011,7 @@ DOWN   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > E     	_           AT lPasillo1
@@ -5031,7 +5029,7 @@ DOWN   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > N			_           AT lPasillo1                
@@ -5049,7 +5047,7 @@ DOWN   lBath2
 > N			_           AT lPasillo1                
                 NOTZERO fRoom1
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes entrar en esta habitación. La puerta está bloqueada."
+                XMESSAGE "You can't come into this room. The door is locked.."
                 DONE
 
 ; Estamos en locPasillo2
@@ -5059,7 +5057,7 @@ DOWN   lBath2
 > EXAMI   HALLWAY
 > LOOK     _           AT lPasillo2
                 INK     9               ; Color del narrador
-                XMESSAGE "Una puerta conduce hacia el SUR. El corredor continúa de ESTE a OESTE."
+                XMESSAGE "A door leads to the SOUTH. The corridor continues from EAST to WEST."
                 DONE
 
 ;Controles de luz
@@ -5068,21 +5066,21 @@ DOWN   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > S         _           AT lPasillo2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > W			_           AT lPasillo2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 ; Nos movemos con luz
@@ -5172,14 +5170,14 @@ DOWN   lBath2
                 ZERO    fFotoPeluche    ; no hemos visto la foto
                 CARRIED oPeluche        ; llevamos el peluche encima
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡DAME MI BEAR!¡ES MIO!#k#n"
+                XMESSAGE "GIVE ME MY BEAR! IT'S MINE!#k#n"
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lRoom2
                 INK     9               ; Color del narrador
-                XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
+                XMESSAGE "The girl grabs your teddy bear#g#f##t and disappears.#k"
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5193,14 +5191,14 @@ DOWN   lBath2
                 ZERO    fFotoPeluche ;no hemos visto la foto
                 CARRIED oPeluche ; llevamos el peluche encima
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡DAME MI BEAR!¡ES MIO!#k#n"
+                XMESSAGE "GIVE ME MY BEAR! IT'S MINE!#k#n"
                 DESTROY oPeluche	
                 LET     fNenaMala 5 
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
-                XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
+                XMESSAGE "The girl grabs your teddy bear#g#f##t and disappears.#k"
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5214,14 +5212,14 @@ DOWN   lBath2
                 ZERO    fFotoPeluche ;no hemos visto la foto
                 CARRIED oPeluche ; llevamos el peluche encima
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡DAME MI BEAR!¡ES MIO!#k#n"
+                XMESSAGE "GIVE ME MY BEAR! IT'S MINE!#k#n"
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lPasillo1
                 INK     9               ; Color del narrador
-                XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
+                XMESSAGE "The girl grabs your teddy bear#g#f##t and disappears.#k"
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5238,14 +5236,14 @@ DOWN   lBath2
                 ZERO    fFotoPeluche ;No has visto la foto
                 NOTCARR oPeluche ;No has cogido el peluche
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¿Tienes lo que me pertenece?#k#n"
-                XMESSAGE "¿No tienes nada para mi?#k#n"
-                XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
+                XMESSAGE "Do you have what is mine?#k#n"
+                XMESSAGE "Don't you have anything for me?#k#n"
+                XMESSAGE "I HAVE SOMETHING FOR YOU!#k#n"
                 INK     9
-                XMESSAGE "La niña desaparece...#k#n#n"
-                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
+                XMESSAGE "The girl disappears...#k#n#n"
+                XMESSAGE "You feel a very strong pressure on both sides of your head and the last thing you hear is the cracking of the spinal cord separating from each other... Suddenly, you no longer feel your body, but you can see it from above for a few moments before brain death.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -5262,14 +5260,14 @@ DOWN   lBath2
                 ZERO    fFotoPeluche
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¿Tienes lo que me pertenece?#k#n"
-                XMESSAGE "¿No tienes nada para mi?#k#n"
-                XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
+                XMESSAGE "Do you have what is mine?#k#n"
+                XMESSAGE "Don't you have anything for me?#k#n"
+                XMESSAGE "I HAVE SOMETHING FOR YOU!#k#n"
                 INK     9
-                XMESSAGE "La niña desaparece...#k#n#n"
-                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
+                XMESSAGE "The girl disappears...#k#n#n"
+                XMESSAGE "You feel a very strong pressure on both sides of your head and the last thing you hear is the cracking of the spinal cord separating from each other... Suddenly, you no longer feel your body, but you can see it from above for a few moments before brain death.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -5286,14 +5284,14 @@ DOWN   lBath2
                 ZERO    fFotoPeluche
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¿Tienes lo que me pertenece?#k#n"
-                XMESSAGE "¿No tienes nada para mi?#k#n"
-                XMESSAGE "¡PUES YO SI TENGO ALGO PARA TI!#k#n"
+                XMESSAGE "Do you have what is mine?#k#n"
+                XMESSAGE "Don't you have anything for me?#k#n"
+                XMESSAGE "I HAVE SOMETHING FOR YOU!#k#n"
                 INK     9
-                XMESSAGE "La niña desaparece...#k#n#n"
-                XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
+                XMESSAGE "The girl disappears...#k#n#n"
+                XMESSAGE "You feel a very strong pressure on both sides of your head and the last thing you hear is the cracking of the spinal cord separating from each other... Suddenly, you no longer feel your body, but you can see it from above for a few moments before brain death.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -5317,11 +5315,11 @@ DOWN   lBath2
                 ZERO    fAceite         ; no tenemos el aceite
                 EQ      fNenaMala 255   ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
+                XMESSAGE "My Teddy! Thanks a lot, I missed him a lot. For giving me back my bear, I will help you; look well in the bathroom that is in the room next to the stairs, what you find will help you get out of the house.#k#n"
                 INK     2               ; Color de la conciencia
-                XMESSAGE "Debes investigar eso.#k"  
+                XMESSAGE "You should investigate that.#k"  
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lRoom2
@@ -5340,11 +5338,11 @@ DOWN   lBath2
                 ZERO    fAceite ; no tenemos el aceite
                 EQ      fNenaMala 255 ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
+                XMESSAGE "My Teddy! Thanks a lot, I missed him a lot. For giving me back my bear, I will help you; look well in the bathroom that is in the room next to the stairs, what you find will help you get out of the house.#k#n"
                 INK     2               ; Color de la conciencia
-                XMESSAGE "Debes investigar eso.#k" 
+                XMESSAGE "You should investigate that.#k"  
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lPasillo3
@@ -5363,11 +5361,11 @@ DOWN   lBath2
                 ZERO    fAceite ; no tenemos el aceite
                 EQ      fNenaMala 255 ;hemos entrado en ROOM3
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
+                XMESSAGE "My Teddy! Thanks a lot, I missed him a lot. For giving me back my bear, I will help you; look well in the bathroom that is in the room next to the stairs, what you find will help you get out of the house.#k#n"
                 INK     2               ; Color de la conciencia
-                XMESSAGE "Debes investigar eso.#k" 
+                XMESSAGE "You should investigate that.#k"  
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lPasillo1
@@ -5392,13 +5390,13 @@ DOWN   lBath2
                 CARRIED oPeluche
                 NOTZERO fAceite
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
+                XMESSAGE "My Teddy bear! Thanks a lot, I missed him a lot. For giving me back my bear, I will help you; that can of oil#g#fFG#t that you have can be used in the cellar, but you need something else; memorize this combination that I give you.#k#n"
                 INK     2               ; Color del protagonista
-                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
+                XMESSAGE "Combination memorized. You must investigate the cellar. That's cool, huh?#k#n" ; Color de tu consciencia
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
+                XMESSAGE "It's something I had planned to do, but with some cheese tapas, otherwise the wine falls badly on the stomach.#k"
                 SET     fCombinacion
                 DESTROY oPeluche	
                 LET     fNenaMala 5
@@ -5418,13 +5416,13 @@ DOWN   lBath2
                 CARRIED oPeluche
                 NOTZERO fAceite
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
+                XMESSAGE "My Teddy bear! Thanks a lot, I missed him a lot. For giving me back my bear, I will help you; that can of oil#g#fFG#t that you have can be used in the cellar, but you need something else; memorize this combination that I give you.#k#n"
                 INK     2               ; Color del protagonista
-                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
+                XMESSAGE "Combination memorized. You must investigate the cellar. That's cool, huh?#k#n" ; Color de tu consciencia
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
+                XMESSAGE "It's something I had planned to do, but with some cheese tapas, otherwise the wine falls badly on the stomach.#k"
                 SET     fCombinacion
                 DESTROY oPeluche
                 LET     fNenaMala 5	
@@ -5444,13 +5442,13 @@ DOWN   lBath2
                 CARRIED oPeluche
                 NOTZERO fAceite
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡Mi Osito! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
+                XMESSAGE "My Teddy bear! Thanks a lot, I missed him a lot. For giving me back my bear, I will help you; that can of oil#g#fFG#t that you have can be used in the cellar, but you need something else; memorize this combination that I give you.#k#n"
                 INK     2               ; Color del protagonista
-                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
+                XMESSAGE "Combination memorized. You must investigate the cellar. That's cool, huh?#k#n" ; Color de tu consciencia
                 INK     3               ; Color del protagonista
-                XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
+                XMESSAGE "It's something I had planned to do, but with some cheese tapas, otherwise the wine falls badly on the stomach.#k"
                 SET     fCombinacion
                 DESTROY oPeluche
                 LET     fNenaMala 5	
@@ -5472,9 +5470,9 @@ DOWN   lBath2
                 NOTZERO fFotoPeluche
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI BEAR! ¡TRáEMELO YA!#k"
+                XMESSAGE "I WANT MY TEDDY BEAR! BRING IT TO ME NOW!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5490,9 +5488,9 @@ DOWN   lBath2
                 NOTZERO fFotoPeluche
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI BEAR! ¡TRáEMELO YA!#k"
+                XMESSAGE "I WANT MY TEDDY BEAR! BRING IT TO ME NOW!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5508,9 +5506,9 @@ DOWN   lBath2
                 NOTZERO fFotoPeluche
                 NOTCARR oPeluche
                 INK     3               ; Color del protagonista
-                XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                XMESSAGE "There's a girl in the corridor!#k#n"
                 INK     6
-                XMESSAGE "¡QUIERO MI BEAR! ¡TRáEMELO YA!#k"
+                XMESSAGE "I WANT MY TEDDY BEAR! BRING IT TO ME NOW!#k"
                 GOTO    lPasillo3
                 INK     9               ; Color del narrador
                 CLS                     ; Limpiamos la pantalla
@@ -5521,14 +5519,14 @@ DOWN   lBath2
 > EXAMI   HALLWAY
 > LOOK     _           AT lPasillo3
                 INK     9               ; Color del narrador
-                XMESSAGE "Estás en el final del pasillo y tienes una puerta hacia el NORTE. También puedes volver al ESTE."
+                XMESSAGE "You're at the end of the corridor and you have a door to the NORTH. You can also go back to the EAST."
                 DONE
 
 > N			_           AT lPasillo3
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > N         _           AT lPasillo3
@@ -5572,7 +5570,7 @@ DOWN   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
+                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
                 DONE
 
 > W			_           AT lPasillo3
@@ -5591,27 +5589,27 @@ DOWN   lBath2
 > EXAMI	PHOTOGRAPHY
                 NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
                 INK     9               ; Color del narrador
-				XMESSAGE "Parece ser una fotografía#g#fD#t familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n"
+				XMESSAGE "It appears to be a familiar photograph#g#fD#t... It's framed in a beautiful carved wooden frame. There are three people in the picture; a woman, a boy and a girl, but you don't recognize anyone. Whose picture is this and what is it doing here?#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿De dónde habrá salido esta fotografía#g#fD#t y quienes son?#k#b#n"
+                XMESSAGE "Where did this picture come from#g#fD#t and who are they?#k#b#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Un manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.#n"
+                XMESSAGE "A black patch begins to form in the center of the picture. It catches fire and you drop it. The photo is consumed on the ground by the flames.#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "¿Qué cojones está pasando?#n"
+                XMESSAGE "What the hell is going on?#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¡Eso digo yo!"
+                XMESSAGE "That's what I say!"
 				DESTROY oFotografia1
 				DONE
 
 > EXAMI   MATCH
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 INK     9               ; Color del narrador
-                XMESSAGE "Es una caja de cerillas#g#f+,#t de palo largo, típicas para encender los fogones de la cocina y velas."
+                XMESSAGE "It is a box of matches#g#f+,#t of long stick, typical for lighting kitchen stoves and candles."
                 DONE
 
 > CALL    FIREMAN
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
+                XMESSAGE "What are you gonna call them with? Smoke signals?"
                 DONE
 
 > USE      PACIFIER     AT lBurgos
@@ -5644,165 +5642,11 @@ DOWN   lBath2
                 GOTO    lRecibidor
                 DONE
 
-> CALL    PACIFIER     AT lBurgos
-                CLS                     ; Limpiamos la pantalla
-                WINDOW 0
-                XPICTURE 225
-                WINDOW 1
-                XMESSAGE "220#k"
-                WINDOW 0
-                XPICTURE 221
-                WINDOW 1
-                XMESSAGE "221#k"
-                WINDOW 0
-                XPICTURE 222
-                WINDOW 1
-                XMESSAGE "222#k"
-                WINDOW 0
-                XPICTURE 223
-                WINDOW 1
-                XMESSAGE "223#k"
-                WINDOW 0
-                XPICTURE 224
-                WINDOW 1
-                XMESSAGE "224#k"
-                WINDOW 0
-                XPICTURE 225
-                WINDOW 1
-                XMESSAGE "225#k"
-                WINDOW 0
-                XPICTURE 226
-                WINDOW 1
-                XMESSAGE "226#k"
-                WINDOW 0
-                XPICTURE 227
-                WINDOW 1
-                XMESSAGE "227#k"
-                WINDOW 0
-                XPICTURE 228
-                WINDOW 1
-                XMESSAGE "228#k"
-                WINDOW 0
-                XPICTURE 229
-                WINDOW 1
-                XMESSAGE "229#k"
-                WINDOW 0
-                XPICTURE 230
-                WINDOW 1
-                XMESSAGE "230#k"
-                WINDOW 0
-                XPICTURE 231
-                WINDOW 1
-                XMESSAGE "231#k"
-                WINDOW 0
-                XPICTURE 232
-                WINDOW 1
-                XMESSAGE "232#k"
-                ; GOTO    lRecibidor
-               ; RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
-                DONE
-
-> USE      FURNITURE      
-                INK     1
-                XMESSAGE "INK 1"
-                INK     2               ; Color de tu consciencia
-                XMESSAGE "INK 2"
-                INK     3               ; Color del protagonista
-                XMESSAGE "INK 3"
-                INK     4
-                XMESSAGE "INK 4"
-                INK     5
-                XMESSAGE "INK 5"
-                INK     6
-                XMESSAGE "INK 6"
-                INK     7
-                XMESSAGE "INK 7"
-                INK     8
-                XMESSAGE "INK 8"
-                INK     9               ; Color del narrador
-                XMESSAGE "INK 9"
-                INK     10
-                XMESSAGE "INK 10"
-                INK     11
-                XMESSAGE "INK 11"
-                INK     12
-                XMESSAGE "INK 12"
-                INK     13
-                XMESSAGE "INK 13"
-                INK     14
-                XMESSAGE "INK 14"
-                INK     15              ; Color del sistema
-                XMESSAGE "INK 15"
-                DONE
-
 > HELP     MAGIC
-                INK 15
-                MESSAGE "Ropa de calle#g#f=#t"          
-                MESSAGE "llave del chamizo#g#f2#t"
-                MESSAGE "una pala#g#f()*#t"
-                MESSAGE "una llave de la entrada principal#g#f7#t"
-                MESSAGE "un felpudo#g#fVWXY#t"
-                MESSAGE "una maceta#g#f!#t"
-                MESSAGE "un Gnomo#g#f9#t"
-                MESSAGE "una caja de cerillas#g#f+,#t"
-                MESSAGE  "una tarjeta de seguridad#g#f<#t"
-                MESSAGE  "llave de una caja pequeña#g#f3#t"
-                MESSAGE  "un diario#g#f$#t"
-                MESSAGE  "un osito de peluche#g#f##t"
-                MESSAGE  "llave del patio#g#f6#t"
-                MESSAGE  "una fotografía#g#fD#t"
-                MESSAGE  "una pelota#g#f:;#t"
-                MESSAGE  "una paleta#g#fmn#t"
-                MESSAGE  "un hacha#g#f%&'#t"
-                MESSAGE  "llave de la bodega#g#f1#t" 
-                MESSAGE  "llaves del coche#g#fIJ#t"
-                MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#fKL#t"
-                MESSAGE "#n"
-                INK 9
-                MESSAGE "Ropa de calle#g#f=#t"          
-                MESSAGE "llave del chamizo#g#f2#t"
-                MESSAGE "una pala#g#f()*#t"
-                MESSAGE "una llave de la entrada principal#g#f7#t"
-                MESSAGE "un felpudo#g#fVWXY#t"
-                MESSAGE "una maceta#g#f!#t"
-                MESSAGE "un Gnomo#g#f9#t"
-                MESSAGE "una caja de cerillas#g#f+,#t"
-                MESSAGE  "una tarjeta de seguridad#g#f<#t"
-                MESSAGE  "llave de una caja pequeña#g#f3#t"
-                MESSAGE  "un diario#g#f$#t"
-                MESSAGE  "un osito de peluche#g#f##t"
-                MESSAGE  "llave del patio#g#f6#t"
-                MESSAGE  "una fotografía#g#fD#t"
-                MESSAGE  "una pelota#g#f:;#t"
-                MESSAGE  "una paleta#g#fmn#t"
-                MESSAGE  "un hacha#g#f%&'#t"
-                MESSAGE  "llave de la bodega#g#f1#t" 
-                MESSAGE  "llaves del coche#g#fIJ#t"
-                MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#fKL#t"
-                MESSAGE "#n"
                 INK     4                
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 INK 15                   
-                DONE
-
-> HELP     BEAR                
-                XMESSAGE "fControlLuz"
-                PRINT   73
-                XMESSAGE "#n"
-                XMESSAGE "fUsarCerilla"
-                PRINT   90
-                XMESSAGE "#n"
-                XMESSAGE "fTurnosConLuz"
-                PRINT   72
-                XMESSAGE "#n"
-                XMESSAGE "fVasAMorir"
-                PRINT   89
-                XMESSAGE "#n"
-                XMESSAGE "fDarkF"
-                PRINT   28
                 DONE
                 
 > USE      MAGIC
@@ -5848,7 +5692,7 @@ DOWN   lBath2
                 SET     fDarkF
                 LET     fControlLuz 0
                 INK     9
-                XMESSAGE "Has apagado la cerilla#g#f4#t."
+                XMESSAGE "You've put out the match#g#f4#t."
                 DONE
 
 > LIGHT     MATCH
@@ -5863,7 +5707,7 @@ DOWN   lBath2
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
                 INK     9               ; Color del narrador
-                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
+                XMESSAGE "You light a match#g#f4#t and thanks to it, you can now move, examine or look in dark places.#n"
                 DONE
 
 > LIGHT MATCH     
@@ -5872,8 +5716,8 @@ DOWN   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fVasAPalmar
                 INK     9               ; Color del narrador
-                XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
-                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n"
+                XMESSAGE "You shouldn't have to do that. A girl appears in front of you and throws you hard against the sink and you hear a loud CRACK in your head.#n"
+                XMESSAGE "You fall to the ground like a dummy. The last thing you notice is the sound of your blood gurgling.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -5888,13 +5732,13 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fUsarCerilla
                 INK     15              ; Color del sistema
-                XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
+                XMESSAGE "You already have a match#g#f4#t on.."
                 DONE
 
 > _         _
                 NOTZERO fDarkF
                 INK     9               ; Color del narrador
-                XMESSAGE "No puedes ver nada. Está muy oscuro."
+                XMESSAGE "You can't see anything. It's too dark.."
                 DONE       
 
 > LIGHT MATCH
@@ -5902,10 +5746,10 @@ DOWN   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fApagarCerilla
                 INK     9              ; Color del sistema
-                XMESSAGE "Ya has apagado la cerilla#g#f4#t."
+                XMESSAGE "You've already put off the match#g#f4#t."
                 DONE
 
-> EXAMI   DIARY
+> EXAMI     DIARY
 > READ      DIARY      
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -5915,64 +5759,64 @@ DOWN   lBath2
                 ZERO    fLeerDiario
                 SET     fLeerDiario
                 INK     13
-                XMESSAGE "9 de Agosto de 1949.#n"
+                XMESSAGE "August 9th, 1949.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Hoy comienzo a trabajar en esta casa. Estoy ilusionada porque ya no voy a pasar más calamidades. El señor me ha dicho que va a ayudar a mis padres dándoles dinero para mantener sus tierras a cambio de mi estancia aquí. Durante el día hay más servicio trabajando, pero parece ser que voy a ser la única interna.#k#n"
+                XMESSAGE "I start work on this house today. I'm excited because I'm not going to have any more calamities. The Lord has told me that he is going to help my parents by giving them money to keep their land in exchange for my stay here. During the day there is more service working, but it seems that I will be the only resident.#k#n"
                 INK     13
-                XMESSAGE "20 de Septiembre de 1949.#n"
+                XMESSAGE "September 20, 1949.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "El señor es muy buena persona y es muy atento conmigo; creo que se toma muchas molestias en estar pendiente de mí y de cuando en cuando viene a hablarme. Estoy muy contenta, aunque el trabajo es muy duro.#k#n"
+                XMESSAGE "The Lord is a very good person and he is very polite to me; I think he takes a lot of care to keep an eye on me and from time to time he comes to talk to me. I am very happy, although the work is very hard.#k#n"
                 INK     13
-                XMESSAGE "17 de Octubre de 1949.#n"
+                XMESSAGE "October 17, 1949.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Noto al señor muy interesado en mi, últimamente me requiere para que le haga compañía y le de conversación, empiezo a pensar que me pretende.#k#n"
+                XMESSAGE "I feel the Lord is very interested in me, recently he requires me to keep him company and give him conversation, I begin to think that he intends me.#k#n"
                 INK     13
-                XMESSAGE "1 de Enero 1950.#n"
+                XMESSAGE "January 1st, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Anoche el señor me hizo tocamientos... Estaba bebido y se puso violento. Hoy ha venido a mis aposentos a pedirme disculpas. Me ha dejado usar la terma para darme un baño como muestra de conciliación. Me siento muy incómoda, pero comprendo que el alcohol transforma a las personas. Tengo un poco de miedo.#k#n"
+                XMESSAGE "Last night the Lord touched me... He was drunk and got violent. Today he came to my chamber to apologize to me. He let me use the thermal bath as a sign of reconciliation. I feel very uncomfortable, but I understand that alcohol transforms people. I'm a little afraid.#k#n"
                 INK     13
-                XMESSAGE "25 de Febrero de 1950.#n"
+                XMESSAGE "February 25, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "El señor lleva tiempo sin aparecer por la casa, está de negocios en Inglaterra. Desde aquella noche no he vuelto a ser la misma, me siento sucia y no quiero que vuelva. Ojalá pudiera irme de aquí, pero mis padres realmente necesitan esa ayuda que el señor les proporciona.#k#n"
+                XMESSAGE "The Lord has not been in the house for some time, he's on business in England. Since that night I haven't been the same, I feel dirty and I don't want him to come back. I wish I could leave here, but my parents really need that help the Lord gives them.#k#n"
                 INK     13
-                XMESSAGE "16 de Marzo de 1950.#n"
+                XMESSAGE "March 16, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " El señor ha abusado de mí. Quiero morirme... Hoy ha vuelto de viaje y se ha emborrachado... Ha despedido a todo el servicio y cuando se han ido, ha venido a mis aposentos,  y me ha obligado a acostarme con él en mi propia cama. Quiero cerrar los ojos y no despertar nunca más.#k#n"
+                XMESSAGE " The Lord has abused me. I want to die... Today he came back from a journey and got drunk... He dismissed the entire service and when they left, he came to my chamber, and forced me to sleep with him in my own bed. I want to close my eyes and never wake up again.#k#n"
                 INK     13
-                XMESSAGE "10 de Abril de 1950.#n"
+                XMESSAGE "April 10, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Me voy a escapar, ¡ya no soporto estar aquí por más tiempo!#k#n"
+                XMESSAGE " I'm going to escape, I can't stay here any longer!#k#n"
                 INK     13
-                XMESSAGE "4 de Mayo de 1950.#n"
+                XMESSAGE "May 4, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE "Estoy aterrada... El señor me ha descubierto intentando huir y me ha tenido encerrada en un cuarto espeluznante. Me vendó los ojos para que no supiera dónde está, pero conozco la casa perfectamente, he bajado muchas escaleras.#k#n"
-                XMESSAGE "Me ha desnudado, me ha atado de pies y manos a una camilla, me ha azotado, ha vuelto a abusar de mí y me ha hecho cortes con un bisturí por todo el cuerpo.#n He estado varios días atada en esa camilla sin poder moverme, pasando un frío horrible y un dolor insoportable.#k#n"
-                XMESSAGE "Venía una vez al día a darme de comer, a curarme los cortes y me ha amenazado con matarme como se me ocurra volver a escapar; me dice que soy suya y que puede hacer conmigo lo que quiera.#n Ha intentado darme puntos porque las heridas son profundas, ojalá ese hombre sufra un destino horrible para que yo pueda salir de aquí.#k#n"
+                XMESSAGE "I'm terrified... The Lord caught me trying to run away and kept me locked up in a creepy room. He blindfolded me so I wouldn't know where he was, but I know the house perfectly, I've been down many stairs.#k#n"
+                XMESSAGE "He has undressed me, tied my hands and feet to a stretcher, whipped me, abused me again, and cut me all over with a scalpel.#n I was tied up on that stretcher for several days without being able to move, and I was in terrible cold and unbearable pain.#k#n"
+                XMESSAGE "He came once a day to feed me, to care for my cuts, and he threatened to kill me if I ever escaped again; he tells me that I am his and that he can do with me what he wants.#n He tried to give me stitches because the wounds are deep, I hope that man suffers a horrible fate so that I can get out of here.#k#n"
                 INK     13
-                XMESSAGE "25  de Junio de 1950.#n"
+                XMESSAGE "June 25, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Aún estoy resentida de las heridas, también siento náuseas. Vomito todo el tiempo y me encuentro fatal.#k#n"
+                XMESSAGE " I still resent the wounds, I also feel nauseous. I throw up all the time and I feel awful.#k#n"
                 INK     13
-                XMESSAGE "5 de Agosto de 1950.#n "
+                XMESSAGE "August 5, 1950.#n "
                 INK     9               ; Color del narrador
-                XMESSAGE "¡Estoy embarazada! Estoy segura de ello. Se me empieza a abultar la tripa y no dejo de tener náuseas. Espero ocultarlo todo el tiempo que pueda, no quiero que se entere el señor o será peor.#k#n"
+                XMESSAGE "I'm pregnant! I'm sure you are. My stomach is starting to bulge and I'm getting nauseous. I hope to hide it as long as I can, I don't want the Lord to know or it'll be worse.#k#n"
                 INK     13
-                XMESSAGE "10 de Septiembre de 1950.#n "
+                XMESSAGE "September 10, 1950.#n "
                 INK     9               ; Color del narrador
-                XMESSAGE "El señor se ha dado cuenta del tamaño de mi tripa y me ha escondido en una habitación que no conocía. Está oculta tras una vitrina en el salón de la casa. Me ha dicho que nadie debe verme y que tengo que esconderme aquí cuando vengan visitas.#k#n"
+                XMESSAGE "The Lord has realized the size of my belly and has hidden me in a room I did not know. It's hidden behind a window in the living room of the house. He told me that no one must see me and that I must hide here when visitors come.#k#n"
                 INK     13
-                XMESSAGE "6 de Octubre de 1950.#n"
+                XMESSAGE "October 6, 1950.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Hoy he escuchado una conversación con un invitado y le dijo que yo ya no estaba a su servicio, porque había vuelto con mis padres, tengo mucho miedo de lo que pueda pasar.#k#n"
+                XMESSAGE " Today I heard a conversation with a guest and told him that I was no longer at his service, because I had returned to my parents, I am very afraid of what might happen.#k#n"
                  INK    13               
-                XMESSAGE "23 de Febrero de 1951.#n"
+                XMESSAGE "February 23rd, 1951.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " Hoy he alumbrado a un niño y a un a niña a la vez. Son gemelos; mis sentimientos son contradictorios. He tenido el parto en el mismo lugar donde me torturaron  y me lo ha practicado el.#n"
-                XMESSAGE " Yo pensaba que iba a deshacerse de los niños, pero ha sido indulgente y me ha dicho que nunca jamás deben salir de la habitación donde me tiene recluída.#k#n"
+                XMESSAGE " Today I gave birth to a boy and a girl at the same time. They are twins; my feelings are mixed. I gave birth to them in the same place where I was tortured.#n"
+                XMESSAGE " I thought he was going to get rid of the kids, but he's been lenient and told me they should never, ever leave the room where he's keeping me.#k#n"
                 INK     13
-                XMESSAGE "9 de Marzo de 1951.#n"
+                XMESSAGE "March 9, 1951.#n"
                 INK     9               ; Color del narrador
-                XMESSAGE " El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego por que alguien lo encuentre algún día y se haga justicia.#k"
+                XMESSAGE " The gentleman came to my room and almost surprised me with the diary in my hand, I decided to hide it so that he would never find it, because he could kill me if he did. I pray that one day someone will find it and justice will be done.#k"
 
                 ; El resto de la historia, de cuando el niño ya con seis años escapa de la casa y le pilla el terrateniente en el pueblo, lo narrará el niño en el garaje.
                 ; la historia continua cuando el terrateniente descubre al niño intentando escapar, lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y con la ayuda de este, le da
