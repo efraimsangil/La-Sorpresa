@@ -1471,7 +1471,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     2               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#f)*#t, so melón?, porque no las siento encima.#k#n"
+                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque no las siento encima.#k#n"
                 INK     3
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
@@ -5912,6 +5912,9 @@ BAJAR   lBath2
                 LET     fTurnosConLuz 0
                 SET     fDarkF
                 LET     fControlLuz 0
+                WINDOW  0
+                GFX     0 5
+                WINDOW  1
                 INK     9
                 XMESSAGE "Has apagado la cerilla#g#f4#t."
                 DONE
@@ -5926,9 +5929,11 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
+                WINDOW  0                
+                WINDOW  1                
                 INK     9               ; Color del narrador
                 XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
-                DONE
+                RESTART
 
 > PRENDER   CERILLA     
 > USAR		CERILLA 
@@ -5954,6 +5959,9 @@ BAJAR   lBath2
                 DONE
 
 > _         _
+                WINDOW  0
+                GFX     0 5
+                WINDOW  1
                 NOTZERO fDarkF
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes ver nada. Está muy oscuro."

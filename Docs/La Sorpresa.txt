@@ -1,5 +1,15 @@
 https://www.polyplay.xyz/Box-Insert-for-MSX-Cartridges
 
+https://www.electroschematics.com/pcb-design-software/
+
+Fuentes del Illustrator (Portada)
+pc-de-la-torre.png
+
+Fonts
+BernardMT-Condensed
+FreebooterShadow
+MyriadPro-Bold
+
 Logos de MSX
 https://logodix.com/msx
 
