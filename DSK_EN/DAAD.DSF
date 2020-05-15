@@ -918,7 +918,7 @@ DOWN   lBath2
                 INK     12              ; Color del padre 
                 XMESSAGE "Good morning, son. How are you?#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Hello, father. Until you called me I was sleeping peacefully, lying in bed, trying to negotiate with Morpheus for a second round.#n"
+                XMESSAGE "Hello, father. Until you called me I was sleeping peacefully, lying in bed, trying to negotiate with Morpheus (the god of sleep and dreams) for a second round.#n"
                 INK     12              ; Color del padre 
                 XMESSAGE "Tell Morpheus to wait a moment and listen: Remember that today we had arranged to meet here, in the mountains. We have something very important to tell you, so get up and leave the house, otherwise it's going to be very late..#n"
                 INK     3               ; Color del protagonista
