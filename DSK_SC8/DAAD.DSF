@@ -5048,6 +5048,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE "Notas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
                 GOTO    lEscaleras
+                RESTART
                 DONE
 
 > E     	_           AT lPasillo1 
@@ -5940,10 +5941,10 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
-                WINDOW  0                
-                WINDOW  1                
+                ;WINDOW  0                
+                ;WINDOW  1                
                 INK     9               ; Color del narrador
-                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n"
+                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
                 RESTART
 
 > PRENDER   CERILLA     

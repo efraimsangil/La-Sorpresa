@@ -4194,7 +4194,7 @@
 	},
 	{
 		"Value":602,
-		"Text":"Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#n"
+		"Text":"Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b#n"
 	},
 	{
 		"Value":603,
@@ -43978,6 +43978,11 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					},
+					{
 						"Opcode":22,
 						"Condact":"DONE",
 						"NumParams":0
@@ -49653,20 +49658,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
 						"Opcode":66,
 						"Condact":"INK",
 						"Indirection1":0,
@@ -49749,20 +49740,6 @@
 						"Condact":"SET",
 						"Indirection1":0,
 						"Param1":73,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
 						"NumParams":1
 					},
 					{
