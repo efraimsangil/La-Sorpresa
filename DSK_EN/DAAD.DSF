@@ -478,7 +478,7 @@ THEN            2       conjugation
 /40 "I can't wear the _.#n"
 /41 "I can't remove the _.#n"
 /42 "I can't remove the _.  My hands are full.#n"
-/43 "The _ weighs too much for me.#n"
+/43 "The _ weight too much for me.#n"
 /44 "#nThe _ is in the "
 /45 "The _ isn't in the "
 /46 ", "
@@ -553,7 +553,7 @@ THEN            2       conjugation
 ; \k\b #k#b
 /0 ""
 /1 " Burgos.#n#n      January 10th, 1987.  You are a serious guy, with a big personality; a hard-working and responsible person, used to take on that comes your way in order to maintain your work status. You are not a very sociable person and with the years, you have inevitably become an incorrigible misanthrope, making you a hermit, of a few words, inexpressive and hostile at times.#k#b  You tend to talk to yourself a lot and have a highly developed consciousness: you can rarely show off your social skills. In other words, people who occasionally approach you run away in fear.#k#b  Today is Saturday and apparently you have no plans except to enjoy your 48 hours of freedom; that's what you call weekends. It's 12:30PM, is a cold winter day and you're still in bed half awake, sluggish. The early mornings of the week weigh you down more and more and you feel unable to leave your warm nest under the flannel blanket.#k#b  It's decided... You turn around in bed with the firm intention of sleeping a little longer, but at that same moment the phone on the bedside table rings. Someone's decided for you that you must definitely wake up."
-/2 " You leave home and take your car to the Sierra del Caurel; it's a long journey, but you like to drive and the road allows you to disconnect from your daily life.#n#n  After a few hours of steamed up windows and badly paved roads, you recognize the crossing that leads to the village where your parents used to live.#k#b  You've just arrived and the exhaustion begins to take its toll on you and you feel the numbness of your muscles after the long journey.#k#b  Suddenly you perceive a distraction; the road has a beautiful grove of trees on either side whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you respect as a child.#k#b  When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the dead... A deep suggestion since you were a child allows you to imagine the silhouette of Urco's dog from the mist.#k#b  Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality."
+/2 " You leave home and take your car to the Sierra del Caurel; it's a long journey, but you like to drive and the road allows you to disconnect from your daily life.#n#n  After a few hours of steamed up windows and badly paved roads, you recognize the crossing that leads to the village where your parents used to live.#k#b  You've just arrived and the exhaustion begins to take its toll on you and you feel the numbness in your muscles after the long journey.#k#b  Suddenly you perceive a distraction; the road has a beautiful grove of trees on either side whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you respect as a child.#k#b  When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the dead... A deep suggestion since you were a child allows you to imagine the silhouette of Urco's dog from the mist.#k#b  Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality."
 /3 " You're in the area around the family property. You contemplate the last glimmers of clarity that give way to the closed night. The icy wind whistles through the cypress trees that surround the farm and the scene is overwhelming.#k#b The house has two floors and from here you can see to the NORTH the old shed, to the SOUTH the garage and to the EAST the porch; the main entrance of the house."
 /4 " The garage has a small concrete ramp and a cream painted galvanized metal door."
 /5 " You're on the outside of the shack. It's a place where the sun never shines.#n#n The cement walls are covered with moss and it feels like they can't absorb any more moisture. Just thinking about it, all your bones go numb.#n#n The shack has a very old door, made of wooden slats with a greenish color. It's completely peeled off by the temper."
@@ -914,11 +914,11 @@ DOWN   lBath2
                 WINDOW  1
                 ;CLS                     ; Limpiamos la pantalla
                 INK     9               ; Color del narrador
-                XMESSAGE "You're too sleepy to know where the sound of the phone is coming from, however, you grope around on the table and pick up.#n"
+                XMESSAGE "You're too sleepy to know where the sound of the phone is coming from, however, you reach around on the table and pick up.#n"
                 INK     12              ; Color del padre 
                 XMESSAGE "Good morning, son. How are you?#n"
                 INK     3               ; Color del protagonista
-                XMESSAGE "Hello, father. Until you called me I was like a king, lying in bed, trying to negotiate with Morpheus for a second round.#n"
+                XMESSAGE "Hello, father. Until you called me I was sleeping peacefully, lying in bed, trying to negotiate with Morpheus for a second round.#n"
                 INK     12              ; Color del padre 
                 XMESSAGE "Tell Morpheus to wait a moment and listen: Remember that today we had arranged to meet here, in the mountains. We have something very important to tell you, so get up and leave the house, otherwise it's going to be very late..#n"
                 INK     3               ; Color del protagonista
@@ -977,7 +977,7 @@ DOWN   lBath2
 > LOOK		_			AT lBurgos 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
                 INK     9               ; Color de tu consciencia
-                XMESSAGE "Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the ornaments are expendable."
+                XMESSAGE "Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the expendable ornaments."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
@@ -1053,7 +1053,7 @@ DOWN   lBath2
                 ISAT    oLlaveCoche 252
                 CREATE  oLlaveCoche
                 GET     oLlaveCoche
-                XMESSAGE "#nYou close the door house and go straight to the building's garage.#k#b"                
+                XMESSAGE "#nYou close the house door and go straight to the building's garage.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
                 WINDOW  0
                 XPICTURE 002            ; Foto dentro del coche 
