@@ -1039,7 +1039,7 @@ BAJAR   lBath2
                 INK     9               ; Color del narrador
                 XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un niño.#k#b"
                 XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco de entre la bruma.#k#b  Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad."
-                ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                DESTROY oLlaveCoche
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -1054,8 +1054,8 @@ BAJAR   lBath2
                 DONE
 
 > E			_			AT lCoche
-				CLS                     ; Limpiamos la pantalla
-                DESTROY oLlaveCoche
+                
+                CLS                     ; Limpiamos la pantalla                
 				GOTO    lExtCasa        ; Vamos a la localización
                 INK     9               ; Color del narrador
 				RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -1480,7 +1480,6 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
-                DESTROY oLlaveCoche
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
@@ -1507,7 +1506,6 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
-                DESTROY oLlaveCoche
                 GOTO    lRecibidor
                 INK     9               ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra

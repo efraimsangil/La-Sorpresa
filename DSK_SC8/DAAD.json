@@ -6903,6 +6903,13 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":43,
+						"Condact":"DESTROY",
+						"Indirection1":0,
+						"Param1":21,
+						"NumParams":1
+					},
+					{
 						"Opcode":37,
 						"Condact":"GOTO",
 						"Indirection1":0,
@@ -7020,13 +7027,6 @@
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
 					},
 					{
 						"Opcode":37,
@@ -10649,13 +10649,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
@@ -10800,13 +10793,6 @@
 						"Condact":"DESTROY",
 						"Indirection1":0,
 						"Param1":7,
-						"NumParams":1
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -10957,13 +10943,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
@@ -11108,13 +11087,6 @@
 						"Condact":"DESTROY",
 						"Indirection1":0,
 						"Param1":7,
-						"NumParams":1
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -11265,13 +11237,6 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
@@ -11416,13 +11381,6 @@
 						"Condact":"DESTROY",
 						"Indirection1":0,
 						"Param1":7,
-						"NumParams":1
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -11559,13 +11517,6 @@
 						"NumParams":0
 					},
 					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
 						"Opcode":37,
 						"Condact":"GOTO",
 						"Indirection1":0,
@@ -11692,13 +11643,6 @@
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
 					},
 					{
 						"Opcode":37,
@@ -11829,13 +11773,6 @@
 						"NumParams":0
 					},
 					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
 						"Opcode":37,
 						"Condact":"GOTO",
 						"Indirection1":0,
@@ -11962,13 +11899,6 @@
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
 					},
 					{
 						"Opcode":37,
@@ -12099,13 +12029,6 @@
 						"NumParams":0
 					},
 					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
-					},
-					{
 						"Opcode":37,
 						"Condact":"GOTO",
 						"Indirection1":0,
@@ -12232,13 +12155,6 @@
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
-					},
-					{
-						"Opcode":43,
-						"Condact":"DESTROY",
-						"Indirection1":0,
-						"Param1":21,
-						"NumParams":1
 					},
 					{
 						"Opcode":37,

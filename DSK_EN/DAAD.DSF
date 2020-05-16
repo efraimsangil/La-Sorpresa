@@ -1073,6 +1073,7 @@ DOWN   lBath2
                 WINDOW  1
                 INK     9               ; Color del narrador
                 XMESSAGE " When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the deceased... A profound suggestion from childhood allows you to imagine the silhouette of the dog of Urco in the mist.#k#b Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality.#k#b"
+                DESTROY oLlaveCoche
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
