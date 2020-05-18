@@ -1572,7 +1572,7 @@
 	},
 	{
 		"Value":1,
-		"Text":"Burgos.#n#n      10 de Enero de 1987.#k#b  Eres Marcos, un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de ti un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: aunque en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por ti que debes despertarte definitivamente."
+		"Text":"Burgos.#n#n      10 de Enero de 1987.#k#b  Eres Marcos, un tipo serio, con carácter; una persona trabajadora y responsable, acostumbrada a asumir todo lo que se te venga encima con tal de mantener tu estatus laboral. Trabajas en la construcción y eres un gran profesional, meticuloso, una profesión que desarrollaste al haber colaborado bajo las exigencias vividas con tu padre a la hora de hacer obra en la casa del pueblo y en su propia casa. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de ti un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia muy desarrollada: aunque en pocas ocasiones puedes hacer gala de tus habilidades sociales. En resumidas cuentas, la gente que ocasionalmente se te acerca, huye despavorida.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por ti que debes despertarte definitivamente."
 	},
 	{
 		"Value":2,
@@ -5333,6 +5333,54 @@
 					]
 			},
 			{
+				"Entry":"EX MESIT",
+				"Verb":30,
+				"Noun":188,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":67,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
 				"Entry":"EX MESIL",
 				"Verb":30,
 				"Noun":99,
@@ -5371,6 +5419,47 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EX MESIT",
+				"Verb":30,
+				"Noun":188,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":67,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":6,
 						"NumParams":1
 					},
 					{
@@ -49883,28 +49972,6 @@
 				"Noun":255,
 				"condacts":
 					[
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":87,
-						"Condact":"GFX",
-						"Indirection1":0,
-						"Param1":0,
-						"Param2":5,
-						"NumParams":2
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
 					{
 						"Opcode":12,
 						"Condact":"NOTZERO",

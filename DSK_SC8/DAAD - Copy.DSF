@@ -5693,8 +5693,6 @@ BAJAR   lBath2
                 DONE
 
 > USAR      CHUPETE     AT lBurgos
-                INK     9
-                XMESSAGE "Te acerco al recibidor de la casa para ganar tiempo.#k"
                 ;ISAT    oLlaveBodega 252
                 ;CREATE  oLlaveBodega
                 ;GET     oLlaveBodega
@@ -5722,7 +5720,6 @@ BAJAR   lBath2
                 ;SET     fCombinacion     ; Tenemos la combinación del candado
                 ;SET     fJugar  
                 GOTO    lRecibidor
-                RESTART
                 DONE
 
 > LLAMAR    CHUPETE     AT lBurgos
@@ -5945,7 +5942,6 @@ BAJAR   lBath2
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
                 ;WINDOW  0                
-                ;DISPLAY 1
                 ;WINDOW  1                
                 INK     9               ; Color del narrador
                 XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
@@ -5974,11 +5970,11 @@ BAJAR   lBath2
                 XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
                 DONE
 
-> _         _                
+> _         _
+                WINDOW  0
+                GFX     0 5
+                WINDOW  1
                 NOTZERO fDarkF
-                ;WINDOW  0
-                ;GFX     0 5
-                ;WINDOW  1
                 INK     9               ; Color del narrador
                 XMESSAGE "No puedes ver nada. Está muy oscuro."
                 DONE       
