@@ -580,7 +580,7 @@ THEN            2       conjugation
 /25 " You've entered what appears to be a cabinet. You can't explain what this room is doing here, but it makes your hair stand on end. You can see a medical stretcher with chains hanging from it and there is also a table with rusty surgical instruments. The floor has a big dark stain which is probably dried blood.#n#n The trap door you came in through closes and you can't go back through it anymore."
 /26 " The child discovers a hiding place for you between the cypresses and the wall.#k#n#n It is a nook that seems to be built to respect the natural growth of the cypresses, but over the years the tree that grows in that place has not taken up all the space provided, leaving an entrance behind that prevents you from seeing what is inside."
 /27 " You've entered the shack. An infected, damp place, where they used to keep rusty gardening utensils and some tools, but there's nothing like that here anymore. The soil is compacted and very dirty. In this place there is a very unpleasant smell of humidity and closing.#n#n At the bottom of the shack you can see a metal cabinet."
-/28 " You've just entered the garage, a place where, as expected, there is no car. It smells of diesel and oil, but surprisingly the room is spotless. It's a place with white walls and a red epoxy paint floor with a grill in the middle. On the wall, despite the reduced visibility, you can see a tap and there is also a diesel generator."
+/28 " You've just entered the garage, a place where, as expected, there is no car. It smells of diesel and oil, but surprisingly the room is spotless. It's a place with white walls and a red epoxy paint floor with a grill in the middle. On the wall, despite the limited visibility, you can see a tap and there is also a diesel generator."
 /29 " You're on top of the toilet. From here you can access the cistern."
 
 
@@ -1496,13 +1496,13 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 XMESSAGE "You leave the flowerpot#g#f!#t in place.#n"
                 INK     9               ; Narrator color
-            	XMESSAGE "You're already inside the house. It's cold. You tripped over the console in the hall."
+            	XMESSAGE "You're already inside the house. It's cold. You stumbled over the console."
                 INK     3               ; Marcos Color
                 XMESSAGE "Hello? Anybody home? #nI don't want to joke around because I'm gonna get pissed. And you know it! #k#n#b"
                 INK     9               ; Narrator color
                 XMESSAGE "No one's answering. The door slams behind you. It doesn't open anymore. It's stuck and therefore you're locked in."
                 INK     2               ; Color of consciousness
-                XMESSAGE "Hahaha, with all the trouble you had finding the damn key. Fucking gnome! Speaking of keys, where did you leave your car keys, Marcos. because I don't feel them on me?"
+                XMESSAGE "Hahaha, with all the trouble you had finding the damn key. Fucking gnome! Speaking of keys, where did I leave the car keys, Marcos. because I don't feel them on me?"
                 INK     3
                 XMESSAGE "Just what I needed! No way out of this house and now also without my car keys#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
@@ -1517,13 +1517,13 @@ DOWN    lBath2
 > OPEN		DOOR		AT lPorche
                 ;CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK     9               ; Narrator color
-            	XMESSAGE "You're already inside the house. It's cold. You tripped over the console in the hall."
+            	XMESSAGE "You're already inside the house. It's cold. You stumbled over the console."
                 INK     3               ; Marcos Color
                 XMESSAGE "Hello? Anybody home? #nI don't want to joke around because I'm gonna get pissed. And you know it! #k#n#b"
                 INK     9               ; Narrator color
                 XMESSAGE "No one's answering. The door slams behind you. It doesn't open anymore. It's stuck and therefore you're locked in."
                 INK     2               ; Color of consciousness
-                XMESSAGE "Hahaha, with all the trouble you had finding the damn key. Fucking gnome! Speaking of keys, where did you leave your car keys, 'cause I don't feel them on me?"
+                XMESSAGE "Hahaha, with all the trouble you had finding the damn key. Fucking gnome! Speaking of keys, where did I leave the car keys, 'cause I don't feel them on me?"
                 INK     3
                 XMESSAGE "Just what I needed! No way out of this house and now also without my car keys#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
@@ -1541,7 +1541,7 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF          ; Activamos el flag de la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "The stairs are very dark. Use something to light it up, please."
+                XMESSAGE "The stairs are very dark. Use something for some illumination, please."
                 DONE
 
 > UP        _           AT lRecibidor
@@ -1558,7 +1558,7 @@ DOWN    lBath2
 > S         _           AT lRecibidor ; No podemos entrar en la cocina sin LUZ
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Narrator color
-                XMESSAGE "The kitchen is too dark, without light it's not a good idea to go in. You need something to light it up."
+                XMESSAGE "The kitchen is too dark, without light it's not a good idea to go in. You need something for some illumination."
                 DONE
 
 > S         _           AT lRecibidor ; Tenemos LUZ y nos metemos en la cocina
@@ -1855,7 +1855,7 @@ DOWN    lBath2
                 ZERO    fUsarAceite     ; No hemos usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9
-                XMESSAGE "The lock is rusty and the mechanism doesn't work. It is recommended to grease it."
+                XMESSAGE "The lock is rusty and the mechanism doesn't work. Maybe it needs some grease."
                 DONE 
 ; Hemos movido el alambique y hemos engrasado el candado, pero no tenemos la combinación
 > USE       PADLOCK
@@ -1900,7 +1900,7 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 XMESSAGE "You scratch the stain with the palette#g#fmn#t and discover an outline on the wall.#n"
                 INK     3               ; Marcos Color
-                XMESSAGE "It's a door! And by the way, we broke the paddle#g#fmn#t. What an ass you are!"
+                XMESSAGE "It's a door! And by the way, we broke the paddle#g#fmn#t. That was clumsy!"
                 DESTROY oPaleta
                 DONE
 
@@ -1961,7 +1961,7 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 GOTO    lCochera
                 ;RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
-                XMESSAGE "You've just entered the garage, a place where, as expected, there is no car. It smells of diesel and oil, but surprisingly the room is spotless, even though you have a very reduced visibility. It is a place with white walls and a floor covered with red epoxy paint with a grill in the middle. On the wall you can see a tap and there is also a diesel generator.#k#n#b"
+                XMESSAGE "You've just entered the garage, a place where, as expected, there is no car. It smells of diesel and oil, but surprisingly the room is spotless, even though you have a very limited visibility. It is a place with white walls and a floor covered with red epoxy paint with a grill in the middle. On the wall you can see a tap and there is also a diesel generator.#k#n#b"
                 INK     14
                 XMESSAGE "This is where it all happened! I remember it perfectly.#k#n"
                 INK     3
@@ -1977,15 +1977,15 @@ DOWN    lBath2
                 INK     14 
                 XMESSAGE "Well, here was my mother and sister dead. He had killed them and the bodies were on the floor. The Lord made me watch while he cut them with an axe#g#f%&'#t and when he finished, he forced me to help him take them to the shack.#k#n"
                 INK     3
-                XMESSAGE "I'm so sorry you had to witness that atrocity. As for your mother and sister... In the corridor of the house I found a little girl who almost finished me off and there was someone else in the last room.#k#n"
+                XMESSAGE "I'm so sorry you had to witness that atrocity. As for your mother and sister... In the corridor of the house I found a little girl who tried to kill me and there was someone else in the last room.#k#n"
                 INK     14 
                 XMESSAGE "Yes, it was my mother and my sister. My sister is very angry because she saw Mom get killed before she did. Today it's been thirty years since everything happened and since no one has ever discovered what happened, every thirty years we spend a night in the house until the bodies are discovered.#k#n"
                 INK     3
                 XMESSAGE "Did you say you took the bodies to the shack?#k#n"
                 INK     14 
-                XMESSAGE "Yes. There we buried them with a shovel#g#f()*#t and that's where the Lord killed me by finishing a shovel on my head... Which reminds me that the keys to the shack#g#f2#t are hidden somewhere in this garage, hold on a moment...#k#n"
+                XMESSAGE "Yes. There we buried them with a shovel#g#f()*#t and that's where the Lord killed me by hitting me with a shovel on my head... Which reminds me that the keys to the shack#g#f2#t are hidden somewhere in this garage, hold on a moment...#k#n"
                 INK     9
-                XMESSAGE "You watch as the child walks to the garage door, rises to the ground and grabs something from the top fence of the door.#k#n"
+                XMESSAGE "You watch as the child walks to the garage door, rises from the ground and grabs something from the top fence of the door.#k#n"
                 INK     15
                 ISAT   oLlaveChamizo 252
                 CREATE oLlaveChamizo
@@ -2144,7 +2144,7 @@ DOWN    lBath2
 
 > LOOK      _           AT lGabinete
                 INK     9               ; Narrator color
-                XMESSAGE "The place is shocking, wet and closed; the smell it gives off is nauseating. There is a door to the NORTH stuck with a shovel#g#f()*#t. You look around and feel something moving on the table."
+                XMESSAGE "The place is creepy, wet and closed; the smell is nauseating. There is a door to the NORTH stuck with a shovel#g#f()*#t. You look around and feel something moving on the table."
                 DONE
 
 > EXAMI     LITTER      AT lGabinete
@@ -2155,7 +2155,7 @@ DOWN    lBath2
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "A woman is lying on her back, writhing in pain on the stretcher, naked and chained hand and foot as if she were a colt. Her wrists and ankles have deep scars and the tissue changes color and begins to ulcerate.#n#nThe woman's skin is lacerated and you see the flesh through the cuts.#n"
+                XMESSAGE "A woman is lying on her back, writhing in pain on the stretcher, naked and chained hand and foot. Her wrists and ankles have deep cuts and the tissue changes color and begins to ulcerate.#n#nThe woman's skin is lacerated and you see the flesh through the cuts.#n"
                 XMESSAGE "There's no blood, the lacerations are clean and don't bleed... It seems that someone or something is causing the cuts at that very moment; the woman is screaming and panting in pain."
                 DONE
 
@@ -2166,7 +2166,7 @@ DOWN    lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "You approach to take a closer look and at that very moment the chains come off and the woman sticks her icy and bony fingers into your neck with superhuman strength.#k#n#n Her long nails penetrate your throat and with a sudden gesture, she snaps your neck from the inside, tearing the muscles and exposing your windpipe...#k#n#n You are now a human FISH candy dispenser.#n#n"
+                XMESSAGE "You approach to take a closer look and at that very moment the chains come off and the woman sticks her icy and bony fingers into your neck with superhuman strength.#k#n#n Her long nails penetrate your throat and with a sudden gesture, she snaps your neck from the inside, tearing the muscles and exposing your windpipe...#k#n#n You are now a human PEZ candy dispenser.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2193,7 +2193,7 @@ DOWN    lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "You approach to examine the chains closely.#k#n The woman immediately notices your presence and with a terrible fury, she shakes herself violently and one of the links that make up the chain breaks.#k#n The woman grabs you tightly by the neck with superhuman strength and sinks the nut with her thumb until the cracking of the vertebrae in your neck rumbles in your head.#k#n#n"
+                XMESSAGE "You approach to examine carefully the chains.#k#n The woman immediately feels your presence and with a terrible fury, breaks her chains.#k#n The woman grabs you tightly by the neck and strangles you.#k#n#n"
                 INK     4   
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2275,7 +2275,7 @@ DOWN    lBath2
                 LET     fVasAMorir 0
                 CLS
                 INK     9
-                XMESSAGE "You have entered the room through a sliding wall panel that, just as you leave, returns to its place.#n#n  The shack is an infected, damp place, where rusty gardening tools and some tools used to be kept, but there's nothing like that here anymore. The soil is compacted and very dirty; there is a very unpleasant smell of damp and closed.#n#n  At the bottom of the shack you can see a metal cabinet."
+                XMESSAGE "You have entered the room through a sliding wall panel that, just as you leave, returns to its place.#n#n  The shack is an infected, damp place, where rusty gardening tools and some tools used to be kept, but there's nothing like that here anymore. The soil is compacted and very dirty; there is a very unpleasant smell of damp.#n#n  On the floor of the shack you can see a metal cabinet."
                 GOTO    lChamizo
                 DONE
 
@@ -2306,7 +2306,7 @@ DOWN    lBath2
                 INK     3 ;Marcos Color
                 XMESSAGE "I have to find a way to discover the bodies and alert the authorities.#k#n"
                 INK     14 ;Color del crío
-                XMESSAGE "Thank you very much, I really need to be given a break, because we're stuck in this house.#k#n"        
+                XMESSAGE "Thank you very much, we need to be buried with respect or we will continue to be trapped in the house.#k#n"        
                 INK     3 ;Marcos Color
                 XMESSAGE "All right, I'll do my best.#k"
                 GOTO    lChamizo
@@ -2363,8 +2363,8 @@ DOWN    lBath2
                 INK     2               ; Voz de la conciencia
                 XMESSAGE "THE DOOR IS CLOSED! STOP INSISTING!#n"   
                 INK     9
-                XMESSAGE "Your conscience is playing tricks on you... That's when the veiled memory of the day your father ran you over in reverse comes to mind. You unconsciously walk away from the door, so unlucky that you trip and fall sideways with all your weight and in a bad position on the concrete ramp.#k#n"
-                XMESSAGE "Your ribs crackle like a Walkers bag...One or more of them (we won't know until we see the X-ray) seems to have perforated the lungs.#n"
+                XMESSAGE "Your conscience is playing tricks on you... That's when the veiled memory of the day your father ran you over in reverse comes to mind. You unconsciously walk away from the door and stumble. You fall on the concrete ramp in a bad posture.#k#n"
+                XMESSAGE "Your ribs crackle like a crisps bag...One or more of them (we won't know until we see the X-ray) seems to have perforated the lungs.#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2379,8 +2379,8 @@ DOWN    lBath2
                 INK     2               ; Voz de la conciencia
                 XMESSAGE "THE DOOR IS CLOSED! STOP INSISTING!#n"   
                 INK     9
-                XMESSAGE "Your conscience is playing tricks on you... That's when the veiled memory of the day your father ran you over in reverse comes to mind. You unconsciously walk away from the door, so unlucky that you trip and fall sideways with all your weight and in a bad position on the concrete ramp.#k#n"
-                XMESSAGE "Your ribs crackle like a Walkers bag...One or more of them (we won't know until we see the X-ray) seems to have perforated the lungs.#n"
+                XMESSAGE "Your conscience is playing tricks on you... That's when the veiled memory of the day your father ran you over in reverse comes to mind. You unconsciously walk away from the door and stumble. You fall on the concrete ramp in a bad posture.#k#n"
+                XMESSAGE "Your ribs crackle like a crisps bag...One or more of them (we won't know until we see the X-ray) seems to have perforated the lungs.#n"
                 INK     14
                 XMESSAGE "I thought you were going to help me and look at you. Now your spirit is going to stay here with me forever.#n"
                 INK     4
@@ -2580,7 +2580,7 @@ DOWN    lBath2
                 ZERO    fManguera                   ; No encontró la manguera
                 INK     9                           ; Narrator color
                 XMESSAGE "You turn on the tap.#k#n"
-                XMESSAGE " Water starts to come out at a lot of pressure and immediately the pressure is so strong that it starts the tap and the water flow pulls you towards the wall with force.#n#n The impact against the wall breaks your spine and now you can't move... It's only a matter of hours...#n#n"
+                XMESSAGE " Water starts starts to flow with a lot of pressure and slams you into a wall with force.#n#n The impact against the wall breaks your spine and now you can't move... It's only a matter of hours...#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2645,7 +2645,7 @@ DOWN    lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manguera en la rejilla
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     9                           ; Narrator color
-                XMESSAGE "You turn on the tap and water starts gushing out. There's no way to stop this mess. The tap doesn't turn off anymore. The garage is flooding at high speed and the water starts pouring into the generator.#n#n#k I think that your water-soaked shoes are not the most convenient insulator for a few thousand volts in continuous that are going to leave you at this very moment as a ration of Andalusian-style anchovies...#n#n#k You don't have to be a cook to find out that you are fried.#n#n"
+                XMESSAGE "You turn on the tap and water starts gushing out. There's no way to stop this mess. The tap doesn't turn off anymore. The garage is flooding quickly and the water starts pouring into the generator.#n#n#k I think that your water-soaked shoes are not the most convenient insulator for a few thousand volts in continuous that are going to leave you at this very moment as a ration of Andalusian-style anchovies...#n#n#k You don't have to be a cook to find out that you are fried.#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -2663,7 +2663,7 @@ DOWN    lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manquera en la rejilla
                 NOTZERO fConectarManguera           ; Si conectó la manguera al grifo
                 INK     9                           ; Narrator color
-                XMESSAGE "The water is falling through the grid with great pressure and is filling up at great speed.#n You notice how quickly the water level rises and because of the pressure, the grid gives way and exposes the drain.#n You see a ball coming out of the interior#g#f:;#t. Then, you turn off the tap."
+                XMESSAGE "The water is falling through the grid with great pressure and is filling up fast.#n You notice how quickly the water level rises and because of the pressure, the grid gives way and exposes the drain.#n You see a ball coming out of the interior#g#f:;#t. Then, you turn off the tap."
                 ;CLEAR   fCerrarGrifo
                 ISAT    oPelota 252
                 CREATE  oPelota
@@ -2712,7 +2712,7 @@ DOWN    lBath2
 
 > EXAMI     DOOR        AT lExteriorChamizo             
                 INK     9               ; Narrator color
-                XMESSAGE "The shack has a very old door, made of wooden slats painted green that is completely peeled and worn out by the temper."
+                XMESSAGE "The shack has a very old door, made of wooden slats painted green that is completely peeled and worn out."
                 DONE
 
 > OPEN      DOOR        AT lExteriorChamizo

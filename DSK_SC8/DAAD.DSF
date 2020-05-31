@@ -351,6 +351,7 @@ JUGAR           32      verb
 
 ;verbos jugador
 USAR            33      verb
+UTILIZAR        33      verb
 DORMIR          34      verb
 TIRAR           35      verb
 ESCUCHAR        36      verb
@@ -382,6 +383,7 @@ COLGAR          59      verb
 LLAMAR          60      verb
 CERRAR          61      verb
 CAGAR           62      verb
+CAVAR           63      verb
 
 
 ;                               Adjetivos
@@ -1437,8 +1439,7 @@ BAJAR   lBath2
 
 > PULSAR    TIMBRE
 > LLAMAR    TIMBRE
-> USAR      TIMBRE
-> EXAMINA   TIMBRE      AT lPorche
+> USAR      TIMBRE      AT lPorche
                 INK     2               ; Color de tu consciencia
                 XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?"
                 DONE
@@ -1870,6 +1871,7 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
+> UTILIZAR  PALETA
 > USAR      PALETA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -1887,6 +1889,7 @@ BAJAR   lBath2
                 DESTROY oPaleta
                 DONE
 
+> UTILIZAR  PALETA
 > USAR      PALETA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2846,6 +2849,7 @@ BAJAR   lBath2
 
 ; Aquí justo activamos el flag para el FINAL MEJOR, que es la comprobación de haber desenterrado a los cadáveres.
 
+> CAVAR     _
 > USAR      PALA        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2857,6 +2861,7 @@ BAJAR   lBath2
                 XMESSAGE "Ya has desenterrado los cadáveres."
                 DONE
 
+> CAVAR     _
 > USAR      PALA        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2881,7 +2886,7 @@ BAJAR   lBath2
 ; ya que el crío no está para darnos pistas sobre dónde están los cadáveres, así que será casualidad el
 ; desenterrarlos. Como castigo, le vamos a poner en la bodega otra vez.
 
-
+> CAVAR     _
 > USAR      PALA        AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3086,6 +3091,7 @@ BAJAR   lBath2
                 DONE
 
 ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
+> USAR      HACHA 
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3098,6 +3104,7 @@ BAJAR   lBath2
                 XMESSAGE "La puerta está abierta, no necesitamos romper nada."
                 DONE
 
+> USAR      HACHA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3131,6 +3138,7 @@ BAJAR   lBath2
                 INK     15
                 END
 
+> USAR      HACHA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
