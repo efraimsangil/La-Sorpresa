@@ -1176,7 +1176,8 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "¡Papá! ¡No me jodas! ¡Estás VIVO! Cuando te cuente lo que ha ocurrido no te lo vas a creer.#k#n"
                 INK     12
-                XMESSAGE "Me lo puedo imaginar, no te preocupes. Has conocido a la familia que aparece cada treinta años en la casa, ¿verdad? Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele...#k#n"
+                ; Corregir en la versión inglés
+                XMESSAGE "Me lo puedo imaginar, no te preocupes. Has conocido a la familia que años atrás, murió en la casa, ¿verdad? Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele. Tu eras muy pequeño..#k#n"
                 XMESSAGE"La verdad es que pensando a posteriori, parecían tener asuntos pendientes que resolver, pero tu madre me sacó de allí del brazo en aquel momento y me dijo que ni se me ocurriese volver.#k#nHoy había quedado contigo para intentar resolver el problema juntos, ya que sabía que justo esta noche iban a volver a a parecer los niños en la casa, pero chico, llegaste tan tarde que tuve que marcharme.#k#n"
                 INK     3
                 XMESSAGE "¿Pero qué estás diciendo? A ver, ¡los niños me dijeron que habíais muerto!#k#n"
@@ -1967,7 +1968,8 @@ BAJAR   lBath2
                 INK     3
                 XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#k#n"
                 INK     14 
-                XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. Hoy hace treinta años que pasó todo y como nadie ha descubierto nunca lo que ocurrió, cada treinta años pasaremos una noche en la casa hasta que se descubran los cuerpos.#k#n"
+                ; Corregir en la versión en inglés
+                XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. De vez en cuando, y no entiendo el por qué, aparecemos en la casa. Supongo que no descansaremos en paz hasta que alguien descubra los cuerpos.#k#n"
                 INK     3
                 XMESSAGE "¿Has dicho que llevasteis los cuerpos al chamizo?#k#n"
                 INK     14 
