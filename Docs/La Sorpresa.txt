@@ -20,6 +20,10 @@ X:\Fotografia\Carla Sanchez-Gil Lopez\2013\Sesion vestido blanco\
 Revisar el verbo usar en el juego y meter sinónimos
 Contabilizar las veces que el verbo USAR
 
+DEBUG
+El fichero rom debe contener el msx2daad.com especial para debug.
+
+C:\Program Files\openMSX>openmsx.exe -machine Panasonic_FS-A1WSX -script info_daad.tcl -cart sordebug.rom
 
 La Sorpresa.
 Una historia original de: 
