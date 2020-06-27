@@ -380,7 +380,7 @@ CARGAR          53      verb
 CLIMB           54      verb
 JUMP            55      verb
 GREASE          56      verb
-CONECTAR        57      verb
+CONNECT        57      verb    ; FIX: Buscar verbo correcto para conectar manguera en grifo
 HELP            58      verb
 HUNG            59      verb
 CALL            60      verb
@@ -2399,7 +2399,7 @@ DOWN    lBath2
 
 ; Estamos en locCochera
 
-; CONECTAR HOSE de modo que le ponemos en el TAP
+; CONNECT HOSE de modo que le ponemos en el TAP
 ; OPEN TAP
 ; USE HOSE se llena la rejilla de agua y flota la pelota, ya la puedes coger.
 
@@ -2548,7 +2548,7 @@ DOWN    lBath2
                 XMESSAGE "The hose#g#f-.#t is already on the grid.."
                 DONE
 
-> CONECTAR  HOSE        AT lCochera
+> CONNECT  HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2560,7 +2560,7 @@ DOWN    lBath2
                 XMESSAGE "You connect the hose#g#f-.#t to the tap."
                 DONE
 
-> CONECTAR  HOSE        AT lCochera
+> CONNECT  HOSE        AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
