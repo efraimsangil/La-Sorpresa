@@ -579,7 +579,7 @@ THEN            2       conjugation
 /24 " A thermal bath with mosaicism is undoubtedly the most extravagant whim that the original owner of this house allowed himself; nowadays, it does not cease to surprise you every time you contemplate it. The bath is located next to a wall that shows the mosaic of the God Apollo.#n#n At this moment and for some reason that you do not know, it is full of water up to the edge."
 /25 " You've entered what appears to be a cabinet. You can't explain what this room is doing here, but it makes your hair stand on end. You can see a medical stretcher with chains hanging from it and there is also a table with rusty surgical instruments. The floor has a big dark stain which is probably dried blood.#n#n The trap door you came in through closes and you can't go back through it anymore."
 /26 " The child discovers a hiding place for you between the cypresses and the wall.#k#n#n It is a nook that seems to be built to respect the natural growth of the cypresses, but over the years the tree that grows in that place has not taken up all the space provided, leaving an entrance behind that prevents you from seeing what is inside."
-/27 " You've entered the shack. An infected, damp place, where they used to keep rusty gardening utensils and some tools, but there's nothing like that here anymore. The soil is compacted and very dirty. In this place there is a very unpleasant smell of humidity and closing.#n#n At the bottom of the shack you can see a metal cabinet."
+/27 " You've entered the shack. An infected, damp place, where they used to keep rusty gardening tools and a few things, but there's nothing like that here anymore. The soil is compacted and very dirty. In this place there is a very unpleasant smell of humidity and closing.#n#n At the bottom of the shack you can see a metal cabinet."
 /28 " You've just entered the garage, a place where, as expected, there is no car. It smells of diesel and oil, but surprisingly the room is spotless. It's a place with white walls and a red epoxy paint floor with a grill in the middle. On the wall, despite the limited visibility, you can see a tap and there is also a diesel generator."
 /29 " You're on top of the toilet. From here you can access the cistern."
 
@@ -2712,7 +2712,7 @@ DOWN    lBath2
 
 > EXAMI     DOOR        AT lExteriorChamizo             
                 INK     9               ; Narrator color
-                XMESSAGE "The shack has a very old door, made of wooden slats painted green that is completely peeled and worn out."
+                XMESSAGE "The shack has a very old door, made of wooden planks painted green that is completely peeled and worn out by the weather."
                 DONE
 
 > OPEN      DOOR        AT lExteriorChamizo
@@ -2784,7 +2784,7 @@ DOWN    lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "You extend your hand and take a little handful of dirt. The smell is nauseous."
+                XMESSAGE "You extend your hand and take a little handful of dirt. The smell is nauseating."
                 DONE
 
 > OPEN      CLOSET
@@ -2881,7 +2881,7 @@ DOWN    lBath2
                 INK     2
                 XMESSAGE "Mate, why did you do it!  Anyway, I think we can manage to get out of here.#k#n"
                 INK     15
-                XMESSAGE "PBy unanimous decision of the development team, you are warned by returning to the cellar and removing the necessary items so that you are not allowed to enter again through the trap door. We recommend that you try another of the available endings, mate.#k"
+                XMESSAGE "By unanimous decision of the development team, you are warned by returning to the cellar and removing the necessary items so that you are not allowed to enter again through the trap door. We recommend that you try another of the available endings, mate.#k"
                 CLEAR  fMoverAlambique
                 INK     9
                 CLS 
@@ -2966,14 +2966,14 @@ DOWN    lBath2
                 INK     12  
                 XMESSAGE "Son, what's happened here?#k#n"
                 INK     3 
-                XMESSAGE "If I tell you, you won't believe it and I don't want to say it out loud so the agents won't hear us, but there are ghosts in this house! They are ghosts who were living here and who would never find their rest until their bodies were discovered, who were here, in the shack... You had bought a house where atrocious crimes were committed.#n"
+                XMESSAGE "If I tell you, you won't believe it and I don't want to say it out loud so the agents won't hear us, but there are ghosts in this house! They are ghosts who wonder around the house and who would never find their rest in peace until their bodies were discovered, who were here, in the shack... You have bought a house where atrocious crimes were committed.#n"
                 XMESSAGE "The police are waiting for the forensic scientist to testify to the release of the bodies.#k#n"
                 XMESSAGE "It happens that the owner of this house took in a young maid as an intern in exchange for financial support from her parents; he abused her and she had a pair of twins as a result of that abuse. Things got so complicated that the owner of the house took the lives of all of them and buried them right in the shack, but that's not all.#k#n"
-                XMESSAGE "It happens that today when I came to see you, I met all of them, in fact I even spoke to one of the children, who, by the way, was the one who revealed to me the whereabouts of the bodies. I also found a diary#g#f$#t written in the maid's handwriting, which I am going to give to the police to attest to the events, where the facts are narrated until the abuse occurs. The rest was told to me by the boy who came with me through the house. I found it in the backyard!#k#n"
+                XMESSAGE "It happens that today when I came to see you, I met all of them, in fact I even spoke to one of the children, who, by the way, was the one who revealed to me the whereabouts of the bodies. I also found a diary#g#f$#t written in the maid's handwriting, which I am going to give to the police to attest to the events, where the facts. The rest was told to me by the boy who came with me through the house. I found it in the backyard!#k#n"
                 INK     12
-                XMESSAGE "You're freezing me out, son... The thing is...#k#n#n Just thirty years ago, on a night just like this, a boy and a girl appeared in the house. Maybe their intentions weren't evil, but your mother almost had a heart attack and dragged me out of there. The thing is that as we were leaving through the hall, the child shouted at us that in thirty years they would appear again and if we were in the house, something horrible would happen to us.#k#n"
+                XMESSAGE "You're freeking me out, son... The thing is...#k#n#n Just thirty years ago, on a night just like this, a boy and a girl appeared in the house. Maybe their intentions weren't evil, but your mother almost had a heart attack and dragged me out of there. TTat as we were leaving through the hall, the child shouted at us that in thirty years they would appear again and if we were in the house, something horrible would happen to us.#k#n"
                 XMESSAGE "Your mother and I have been thinking a lot about the children for the last few months, as we knew that the date they would reappear was coming soon. This cost me a lot of arguments with your mother, because my whole intention was to go back to the house to try to understand what those children needed.#n"
-                XMESSAGE "I know that at that time those kids needed something from us and I also know that they were very angry when when we saw them, we ran out of there, in fact, the girl, seeing us run out, threatened us when we went out the door.#k#n"
+                XMESSAGE "I know that at that time those kids needed something from us and I also know that they were very angry when we saw them, we ran out of there, in fact, the girl, seeing us run out, threatened us when we went out the door.#k#n"
                 XMESSAGE "What I really regret was to warn you at such short notice; you can't imagine the fights I had with your mother, until I got the idea that you should come with me, because she absolutely refused to let me go alone. Your mother finally gave in because the arguments were getting stronger between us and I was very clear that I had to go back to the house tonight.#k#n"
                 XMESSAGE "I was waiting for you at the entrance of the estate until the sun was down and I couldn't wait for you any longer, in fact, I left you a note on the door of the house, but I see that you haven't read it.#k#n"
                 INK     3
@@ -3021,13 +3021,13 @@ DOWN    lBath2
                 INK     12  
                 XMESSAGE "Son, what's happened here?#k#n"
                 INK     3 
-                XMESSAGE "If I tell you, you won't believe it and I don't want to say it out loud so the agents won't hear us, but there are ghosts in this house! They are ghosts who were living here and who would never find their rest until their bodies were discovered, who were here, in the shack... You had bought a house where atrocious crimes were committed.#n"
-                XMESSAGE "The police are waiting for the forensic scientist to testify to the release of the bodies.#k#n"
+                XMESSAGE "If I tell you, you won't believe it and I don't want to say it out loud or the agents will hear us, but there are ghosts in this house! They are ghosts who were living here and who would never find their rest until their bodies were discovered, in the shack... You had bought a house where atrocious crimes were committed.#n"
+                XMESSAGE "The police are waiting for the forensic scientist to testify to the remains of the bodies.#k#n"
                 XMESSAGE "I met all of them in the house! In fact, I even talked to one of the children, who, by the way, was the one who revealed the whereabouts of the bodies. I found a ghost boy in the courtyard and he accompanied me around the house. Thanks to him, I was able to get out of the house and find the remains of the family in the shack.#k#n"
                 INK     12
                 XMESSAGE "You're freezing me out, son... The thing is...#k#n#n Just thirty years ago, on a night just like this, a boy and a girl appeared in the house. Maybe their intentions weren't evil, but your mother almost had a heart attack and dragged me out of there. The thing is that as we were leaving through the hall, the child shouted at us that in thirty years they would appear again and if we were in the house, something horrible would happen to us.#k#n"
                 XMESSAGE "Your mother and I have been thinking a lot about the children for the last few months, as we knew that the date they would reappear was coming soon. This cost me a lot of arguments with your mother, because my whole intention was to go back to the house to try to understand what those children needed.#n"
-                XMESSAGE "I know that at that time those kids needed something from us and I also know that they were very angry when when we saw them, we ran out of there, in fact, the girl, seeing us run out, threatened us when we went out the door.#k#n"
+                XMESSAGE "I know that at that time those kids needed something from us and I also know that they were very angry when we saw them, we ran out of there, in fact, the girl, seeing us run out, threatened us when we went out the door.#k#n"
                 XMESSAGE "What I really regret was to warn you at such short notice; you can't imagine the fights I had with your mother, until I got the idea that you should come with me, because she absolutely refused to let me go alone. Your mother finally gave in because the arguments were getting stronger between us and I was very clear that I had to go back to the house tonight.#k#n"
                 XMESSAGE "I was waiting for you at the entrance of the estate until the sun was down and I couldn't wait for you any longer, in fact, I left you a note on the door of the house, but I see that you haven't read it.#k#n"
                 INK     3
@@ -3103,7 +3103,7 @@ DOWN    lBath2
                 INK     2
                 XMESSAGE "Come on, get a grip that the door is very sturdy..#k#n"
                 INK     9
-                XMESSAGE "With all your energy you run to crush the cabinet and you hit it head on, the cabinet is dragged at full speed towards the door and the impact is huge, however a cabinet made of galvanized sheet metal can do little to a solid door, what happens is that the sheet metal deforms and the top shelf goes through the back sheet of the cabinet and cuts your head off like a bar of butter.#k#n#n"
+                XMESSAGE "With all your energy you run to crush the cabinet and you hit it head on, the cabinet is dragged at full speed towards the door and the impact is huge, however a cabinet made of galvanized sheet metal can do little to a solid door,  the sheet metal deforms and the top shelf goes through the back sheet of the cabinet and cuts your head off like a bar of butter.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -3195,11 +3195,11 @@ DOWN    lBath2
                 CREATE  oFotografia1
                 CLS                     ; Limpiamos la pantalla
                 INK     9               ; Narrator color
-                XMESSAGE "You press the switch and see a picture#g#fD#t on the floor, but the light starts flashing quickly and the bulb jumps out.#n"
+                XMESSAGE "You press the switch and see a picture#g#fD#t on the floor, but the light starts flashing quickly and the light bulb explode.#n"
                 INK     3               ; Marcos Color
-                XMESSAGE "Argggg! What a scare! It's all full of glass!#n"
+                XMESSAGE "Argggg! What a scare! The floor is full of glass!#n"
                 INK     2               ; Color of consciousness
-                XMESSAGE "God! I almost shit myself! Another one like this and I'm dead... I wonder if there's a fucking defibrillator in this holy house.#n"
+                XMESSAGE "God! I almost shit myself! Another one like this and I'm dead... I wonder if there's a fucking defibrillator in this bloody house.#n"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -3213,7 +3213,7 @@ DOWN    lBath2
                 GET     oFotografia1
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     9               ; Narrator color
-                XMESSAGE "When you hold it, you feel as if something very cold is touching your hand. Your hair has raised like spikes and your heart is racing.#n"
+                XMESSAGE "When you hold it, you feel as if something very cold is touching your hand. Your have goosebumps and your heart is racing.#n"
                 INK     2               ; Color of consciousness
                 XMESSAGE "You could light something and see what you got, or maybe it's not a good idea. Shall we go?"
                 INK     9
@@ -3428,7 +3428,7 @@ DOWN    lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "It's completely empty, but you remember those marmalade jars for breakfast, the chocolate bottle, the glass of nocilla and the cans of fabada for when your mother didn't feel like cooking.#n"
+                XMESSAGE "It's completely empty, but you remember those marmalade jars for breakfast, the chocolate bottle, the glass of nutella and the cans of beans for when your mother didn't feel like cooking.#n"
                 INK     2               ; Color of consciousness
                 XMESSAGE "And put the cookies on top of it, out of reach.#n"
                 INK     3               ; Marcos Color
@@ -3482,23 +3482,12 @@ DOWN    lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad           
                 ZERO    fEscalon   
                 INK     3               ; Marcos Color
-                XMESSAGE "Actually, I'm curious. If this crunches, it's because of something.#n"
+                XMESSAGE "I'm curious. If the step creaks, it's because of something.#n"
                 INK     2               ; Color of consciousness
                 XMESSAGE "There's a step that seems to have some slack in it and it moves a little bit. Let's take a look."
                 DONE
 
 ; Con flags, controlamos si se ha movido el tablón o se pone de nuevo en su sitio
-
-
-;> EXAMI   TREAD     AT lEscaleras                
-;                NOTZERO fControlLuz
-;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-;                CLEAR   fDarkF          ; Desactivamos la oscuridad
-                
-;                INK     2               ; Color of consciousness
-;                XMESSAGE "Efectivamente el escalón está un poco suelto. Prueba a moverlo."
-;                DONE
 
 > EXAMI     TREAD       AT lEscaleras                
                 NOTZERO fControlLuz
@@ -3635,13 +3624,7 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 XMESSAGE "You've put the step in place.#n"
                 INK     3               ; Marcos Color
-                XMESSAGE "I thought it was a good decision, because I'm sure if I don't, I'll break my neck falling down the stairs.#n"
-                INK     2               ; Color of consciousness
-                XMESSAGE "Don't be surprised. I've got a couple of CondActs ready to make sure.#n" 
-                INK     3               ; Marcos Color
-                XMESSAGE "CondActs?#n"
-                INK     2               ; Color of consciousness
-                XMESSAGE "Nothing nothing, just keep playing."
+                XMESSAGE "I thought it was a good decision, because I'm sure if I don't, I'll break my neck falling down the stairs.#n"                
                 DONE                
 
 > DOWN      HANDRAIL    AT lEscaleras
@@ -3656,7 +3639,7 @@ DOWN    lBath2
 > DOWN      _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move blindly. Use something to illuminate yourself."
+                XMESSAGE "You can't move blindly. Use something to illuminate the room."
                 DONE
 
 > DOWN      _           AT lEscaleras
@@ -3706,7 +3689,7 @@ DOWN    lBath2
 > UP        _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH                
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move blindly. Use something to illuminate yourself."
+                XMESSAGE "You can't move blindly. Use something to illuminate the room."
                 DONE
 
 > UP        _           AT lEscaleras
@@ -3956,7 +3939,7 @@ DOWN    lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "On the floor you see some marks. It looks like a furniture has been dragged."   
+                XMESSAGE "On the floor you see some furniture marks. It looks like a furniture has been dragged."
                 DONE      
 
 > PUSH      BENCH
@@ -4062,7 +4045,7 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 XMESSAGE "Without losing a second, you take the impulse and you prepare to crown the wall with all the courage that you have....#k#n#n"
                 XMESSAGE "Unfortunately, the boldness that characterizes you is absolutely zero.....#k#n#n"
-                XMESSAGE "The first thing to hit the wall is your skull, which compresses your spine so strongly that it opens up like a banana, leaving your vertebrae made of phosphatine... If someone needs mother cells, they can collect them here with a spoon.#k#n#n"
+                XMESSAGE "The first thing to hit the wall is your skull, which compresses your spine so strongly that it opens up like a banana, leaving your spine destroyed... If someone needs mother cells, they can collect them here with a spoon.#k#n#n"
                 INK     4
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -4094,11 +4077,11 @@ DOWN    lBath2
                 INK     14
                 XMESSAGE "I want to play ball#g#f:;#t.#n"
                 INK     3               ; Marcos Color 
-                XMESSAGE "I don't have any ball#g#f:;#t.#n"
+                XMESSAGE "I don't have a ball#g#f:;#t.#n"
                 INK     14
                 XMESSAGE "In the house there is surely a ball#g#f:;#t,I brought one. Could you find it and come play with me?#n"
                 INK     2               ; Color of consciousness
-                XMESSAGE "I don't know if it's a good idea to play with a... ghost? On the other hand, maybe he'll help us. Do we give him courage or do we write END and finish with this agony?"
+                XMESSAGE "I don't know if it's a good idea to play with a... ghost? On the other hand, maybe he'll help us."
                 DONE
 
 > LOOK      _           AT lPatio
@@ -4159,7 +4142,7 @@ DOWN    lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     9               ; Narrator color
-                XMESSAGE "The moon shines a soft light. I still think it's the fake and someone put it there.."
+                XMESSAGE "The moon shines a soft light."
                 DONE
 
 ; Estamos en locRoom1
@@ -4581,7 +4564,7 @@ DOWN    lBath2
                 INK     2
                 XMESSAGE "...with an egghead on top... If your mother saw you...#n"
                 INK     9               ; Narrator color
-                XMESSAGE "Tienes frente a ti la cisterna."
+                XMESSAGE "You have the loo in front of you."
                 DONE
 
 > R         _           AT lRetrete
@@ -4764,7 +4747,7 @@ DOWN    lBath2
                 ISAT    oPeluche    252
                 CREATE  oPeluche
                 INK     9               ; Narrator color
-                XMESSAGE "You pay attention to something sticking out of the bed.#k#n#n You reach in and find a teddy bear#g#f##t.#n"
+                XMESSAGE "You notice something sticking out of the bed.#k#n#n You reach in and find a teddy bear#g#f##t.#n"
                 INK     15              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -4784,7 +4767,7 @@ DOWN    lBath2
                 ISAT    oPeluche    252
                 CREATE  oPeluche
                 INK     9               ; Narrator color
-                XMESSAGE "You pay attention to something sticking out of the bed.#k#n#n You reach in and find a teddy bear#g#f##t.#n"
+                XMESSAGE "You notice to something sticking out of the bed.#k#n#n You reach in and find a teddy bear#g#f##t.#n"
                 INK     15              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -4971,7 +4954,7 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move blindly. Use something to illuminate yourself."
+                XMESSAGE "You can't move blindly. Use something to illuminate the room."
                 DONE
 
 > S			_           AT lBath3                
@@ -4996,7 +4979,7 @@ DOWN    lBath2
 > DOWN     _           AT lPasillo1
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > DOWN     _           AT lPasillo1                
@@ -5014,7 +4997,7 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > E     	_           AT lPasillo1
@@ -5032,7 +5015,7 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > N			_           AT lPasillo1                
@@ -5069,21 +5052,21 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > S         _           AT lPasillo2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > W			_           AT lPasillo2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 ; Nos movemos con luz
@@ -5529,7 +5512,7 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > N         _           AT lPasillo3
@@ -5573,7 +5556,7 @@ DOWN    lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos TURN MATCH
                 SET     fDarkF
                 INK     9               ; Narrator color
-                XMESSAGE "You can't move in the dark. Use something to illuminate yourself."
+                XMESSAGE "You can't move in the dark. Use something to illuminate the room."
                 DONE
 
 > W			_           AT lPasillo3

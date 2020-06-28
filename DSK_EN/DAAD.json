@@ -47,7 +47,7 @@
 		{"symbol":"_VOC_CALL", "Value":60},
 		{"symbol":"_VOC_HUNG", "Value":59},
 		{"symbol":"_VOC_HELP", "Value":58},
-		{"symbol":"_VOC_CONEC", "Value":57},
+		{"symbol":"_VOC_CONNE", "Value":57},
 		{"symbol":"_VOC_GREAS", "Value":56},
 		{"symbol":"_VOC_JUMP", "Value":55},
 		{"symbol":"_VOC_CLIMB", "Value":54},
@@ -437,7 +437,7 @@
 		{"VocWord":"CLIMB", "Value":54,"VocType":0 },
 		{"VocWord":"CLOSE", "Value":180,"VocType":2 },
 		{"VocWord":"CLOTH", "Value":123,"VocType":2 },
-		{"VocWord":"CONEC", "Value":57,"VocType":0 },
+		{"VocWord":"CONNE", "Value":57,"VocType":0 },
 		{"VocWord":"CONSO", "Value":98,"VocType":2 },
 		{"VocWord":"COURT", "Value":201,"VocType":2 },
 		{"VocWord":"CROSS", "Value":103,"VocType":2 },
@@ -18787,7 +18787,7 @@
 					]
 			},
 			{
-				"Entry":"CONEC HOSE",
+				"Entry":"CONNE HOSE",
 				"Verb":57,
 				"Noun":172,
 				"condacts":
@@ -18870,7 +18870,7 @@
 					]
 			},
 			{
-				"Entry":"CONEC HOSE",
+				"Entry":"CONNE HOSE",
 				"Verb":57,
 				"Noun":172,
 				"condacts":
