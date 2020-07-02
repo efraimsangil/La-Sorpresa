@@ -15,6 +15,16 @@
 
 #define TIMEOUT   87                ;If Timeout last frame
 
+; Colores del juego
+;INK 2       Voz de la conciencia
+;INK 3       Voz del protagonista
+;INK 4       Muerte
+;INK 6       Voz de la niña fantasma
+;INK 9       Voz del narrador
+;INK 12      Voz del Padre
+;INK 14      Voz del niño fantasma
+;INK 15      Mensajes del sistema
+
 ; GFX routines
 #define gfxCopyToPhys   0
 #define gfxCopyToBack   1
@@ -384,7 +394,9 @@ LLAMAR          60      verb
 CERRAR          61      verb
 CAGAR           62      verb
 CAVAR           63      verb
-
+CORTA           64      verb
+METER           65      verb
+INTRODUCIR      66      verb
 
 ;                               Adjetivos
 PEQUE           2       adjective
@@ -397,7 +409,7 @@ DURO            6       adjective
 DURA            6       adjective
 BLANDO          7       adjective
 CORTO           8       adjective
-CORTA           8       adjective
+;CORTA           8       adjective
 LARGO           9       adjective
 LARGA           9       adjective
 COCHE           10      adjective
@@ -831,15 +843,7 @@ BAJAR   lBath2
 
 /PRO 5 ; Interpretamos los comandos como en la antigua tabla de respuestas
 
-; Colores del juego
-;INK 2       Voz de la conciencia
-;INK 3       Voz del protagonista
-;INK 4       Muerte
-;INK 6       Voz de la niña fantasma
-;INK 9       Voz del narrador
-;INK 12      Voz del Padre
-;INK 14      Voz del niño fantasma
-;INK 15      Mensajes del sistema
+
 
 ; #n    Salto de línea
 ; #k    Espera la pulsación de una tecla
@@ -2505,7 +2509,7 @@ BAJAR   lBath2
                 MESSAGE "Seguro que hay alguna forma de hacer salir lo que hay en su interior."
                 DONE
 
-> USAR      MANGUERA    AT lCochera
+> CONECTAR  MANGUERA    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2515,7 +2519,7 @@ BAJAR   lBath2
                 XMESSAGE "No tienes ninguna manguera#g#fKL#t."
                 DONE
 
-> USAR      MANGUERA    AT lCochera
+> CONECTAR  MANGUERA    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2528,7 +2532,7 @@ BAJAR   lBath2
                 DESTROY oManguera
                 DONE
 
-> USAR      MANGUERA    AT lCochera
+> CONECTAR  MANGUERA    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -2948,6 +2952,7 @@ BAJAR   lBath2
 ; NOTA : Aquí es donde se determinan los diferentes finales del juego dependiendo de si tenemos al niño, la pala o el hacha.
 
 > USAR      HACHA 
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -2969,7 +2974,8 @@ BAJAR   lBath2
 
 ; FINAL MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante es el mejor final, porque además hemos leído el diario de la criada.
 
-> USAR      HACHA 
+> USAR      HACHA
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3026,6 +3032,7 @@ BAJAR   lBath2
 ; FINAL CASI MEJOR, hemos entrado con el crío por el gabinete, hemos desenterrado los cadáveres y tenemos el hacha para salir, no obstante NO es el mejor final, porque NO hemos leído el diario de la criada y no podemos contar la historia al padre, solo sabemos lo que el niño nos cuenta a la entrada del gabinete (o a la entrada por la trampilla).
 
 > USAR      HACHA 
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3078,6 +3085,7 @@ BAJAR   lBath2
                 END
 
 > USAR      HACHA 
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3093,7 +3101,8 @@ BAJAR   lBath2
                 DONE
 
 ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
-> USAR      HACHA 
+> USAR      HACHA
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3107,6 +3116,7 @@ BAJAR   lBath2
                 DONE
 
 > USAR      HACHA
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3141,6 +3151,7 @@ BAJAR   lBath2
                 END
 
 > USAR      HACHA
+> CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
@@ -3823,6 +3834,8 @@ BAJAR   lBath2
                 XMESSAGE "¿Que parte de que es del tamaño de una tarjeta de crédito no has entendido?"
                 DONE
 
+> METER     TARJETA
+> INTRODUCIR TARJETA
 > USAR 		TARJETA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -3845,7 +3858,8 @@ BAJAR   lBath2
                 INK     9
                 DONE
 
-
+> METER     TARJETA
+> INTRODUCIR TARJETA
 > USAR 		TARJETA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -5944,6 +5958,7 @@ BAJAR   lBath2
                 XMESSAGE "Has apagado la cerilla#g#f4#t."
                 DONE
 
+> ENCENDER  CERILLA
 > PRENDER   CERILLA
 > USAR 		CERILLA                
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
@@ -5961,6 +5976,7 @@ BAJAR   lBath2
                 XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
                 RESTART
 
+> ENCENDER  CERILLA
 > PRENDER   CERILLA     
 > USAR		CERILLA 
                 CLS                     ; Limpiamos la pantalla                
@@ -5976,6 +5992,7 @@ BAJAR   lBath2
                 END
 
 ; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
+> ENCENDER  CERILLA
 > PRENDER   CERILLA
 > USAR      CERILLA
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
