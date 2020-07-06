@@ -557,7 +557,7 @@ THEN            2       conjugation
 /2 " You leave home and take your car to the Sierra del Caurel; it's a long journey, but you like to drive and the road allows you to disconnect from your daily life.#n#n  After a few hours of steamed up windows and badly paved roads, you recognize the crossing that leads to the village where your parents used to live.#k#b  You've just arrived and the exhaustion begins to take its toll on you and you feel the numbness in your muscles after the long journey.#k#b  Suddenly you perceive a distraction; the road has a beautiful grove of trees on either side whose branches taper through the treetops, producing an overwhelming tunnel effect that always gave you the chill as a child.#k#b  When the fog lifted, you found the place unsettling and your imagination played tricks on you. The holy company, the airs and graces of the dead... A deep suggestion since you were a child allows you to imagine the silhouette of Urco's dog from the mist.#k#b  Perhaps this land of processions, rites and pilgrimages of penitents left a deep mark on your personality."
 /3 " You're in the area around the family property. You see the last shades of light dissipating into the dark night. The icy wind whistles through the cypress trees that surround the farm and the scene is overwhelming.#k#b The house has two floors and from here you can see to the NORTH the old shed, to the SOUTH the garage and to the EAST the porch; the main entrance of the house."
 /4 " The garage has a small concrete ramp and a cream painted galvanized metal door."
-/5 " You're on the outside of the shack. It's a place where the sun never shines.#n#n The cement walls are covered with moss and it feels like they can't absorb any more moisture. Just thinking about it, all your bones go numb.#n#n The shack has a very old door, made of wooden slats with a greenish color. It's completely peeled off by high temperature."
+/5 " You're on the outside of the shack. It's a place where the sun never shines.#n#n The cement walls are covered with moss and it feels like they can't absorb any more moisture. Just thinking about it, all your bones go numb.#n#n The shack has a very old door, made of wooden slats with a greenish color. It's completely peeled off by the weather."
 /6 " A pair of powerful spotlights illuminate the porch. You never liked those lights because they attracted a lot of insects on summer nights. It was impossible to be there without suffering the ferocious attack of a bloodthirsty mosquito."
 /7 " You find yourself in the foyer, stripped of every detail and dressed only in the subtle glow of the outside lights. It is discouraging and doesn't welcome you to its rooms.#n#n You can see the stairs that lead to the top floor, the toilet to the NORTH, the kitchen to the SOUTH, the living room to the EAST and DOWN is the wine cellar. In front of you, there is the console that you have stumbled upon.#n#n There seems to be no one in the house."
 /8 " In the bathroom the atmosphere is charged, thick, so much so that the flame of the match has changed colour to a bluish green and begins to produce a flickering sparkle...#n#nYou feel that you don't want to be here and you begin to feel distressed.#n#nThe fragile light allows you to discover a switch on the wall."
@@ -1998,7 +1998,7 @@ DOWN    lBath2
                 INK     3
                 XMESSAGE "All right, well, I'll help you solve the crime.#k#n"
                 INK     14
-                XMESSAGE "I'll go with you. My sister has closed the door to the outside, but I'm opening it right now, the bad thing is that she's going to find out and we won't be able to open it again.#k#n"
+                XMESSAGE "I'll go with you. My sister has locked the door to the outside, but I'm opening it right now, the bad thing is that she's going to find out and we won't be able to open it again.#k#n"
                 INK     9
                 XMESSAGE "The child opens the garage door and you go outside.#k"
                 CLEAR   fUsarCerilla               
@@ -2351,7 +2351,7 @@ DOWN    lBath2
                 ZERO    fInsisteMuchoPuerta
                 SET     fInsisteMuchoPuerta
                 INK     9
-                XMESSAGE "The door's still closed..#n"
+                XMESSAGE "The door's still locked..#n"
                 INK     2 ; Voz de la conciencia
                 XMESSAGE "Do not insist more."             
                 DONE  
@@ -2690,7 +2690,7 @@ DOWN    lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     9               ; Narrator color
-                XMESSAGE "The garage door is closed and will not open.#n"     
+                XMESSAGE "The garage door is locked and will not open.#n"     
                 INK     3               ; Marcos Color
                 XMESSAGE "Crystal clear."
                 DONE
@@ -2718,7 +2718,7 @@ DOWN    lBath2
 > OPEN      DOOR        AT lExteriorChamizo
                 ZERO    fJugar
                 INK     9               ; Narrator color
-                XMESSAGE "The door is closed."
+                XMESSAGE "The door is locked."
                 DONE
 
 > OPEN      DOOR        AT lExteriorChamizo                
@@ -2915,7 +2915,7 @@ DOWN    lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 INK     9               ; Narrator color
-                XMESSAGE "The door is closed with a wooden crossbar."
+                XMESSAGE "The door is locked with a wooden crossbar."
                 DONE
 
 ; NOTA : Aquí es donde se determinan los diferentes finales del juego dependiendo de si tenemos al niño, la pala o el hacha.
