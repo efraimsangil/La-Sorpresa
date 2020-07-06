@@ -867,6 +867,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"           ; Como GET no hace salto de línea, hemos de forzarlo y así el mensaje de has cogido el objeto, deja dos líneas de espacio por debajo para cuando digo te has puesto la ropa.
                 WEAR    oRopa           ; Para vestirse con dicho objeto
                 INK     9
+                XMESSAGE "Además, coges tu mochila. Nunca sales sin ella."
                 DONE
 
 > EXAMINA 	CAMA		AT lBurgos
