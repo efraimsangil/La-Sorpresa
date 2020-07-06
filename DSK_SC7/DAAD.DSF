@@ -4544,7 +4544,7 @@ BAJAR   lBath2
                 XMESSAGE "Un momentoooo....#k#b"
                 XMESSAGE "Ya casi estoy.#k#b"
                 XMESSAGE "Hmmmmm...#k#b"
-                XMESSAGE "YA. Ufff, gracias.#k" 
+                XMESSAGE "YA. Ufff, gracias.#k#n" 
                 INK colorConsciencia
                 XMESSAGE "La leyenda urbana resulta ser cierta y la cerilla (que no sabes cómo lograste mantener encendida durante la compleja operación) se lleva los hediondos efluvios en un santiamén. Aquí no ha pasado nada."
                 DONE
