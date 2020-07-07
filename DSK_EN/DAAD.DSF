@@ -5693,8 +5693,12 @@ DOWN    lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
+                WINDOW  0
+                PICTURE 1
+                WINDOW  1 
                 INK     9               ; Narrator color
                 XMESSAGE "You light a match#g#f4#t and thanks to it, you can now move, examine or look in dark places.#n"
+                RESTART
                 DONE
 
 > LIGHT MATCH     
