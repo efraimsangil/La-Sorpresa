@@ -841,7 +841,6 @@ BAJAR   lBath2
                 CLEAR   fDarkF
                 CLEAR   fTurnosConLuz
                 CLEAR   fControlLuz
-                ;MESSAGE "#n"
                 CLEAR   fUsarCerilla
 
 /PRO 5 ; Interpretamos los comandos como en la antigua tabla de respuestas
@@ -6035,11 +6034,12 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fVasAPalmar
                 SET     fControlLuz     ; Ponemos a 255 el flag
-                ;WINDOW  0                
-                ;DISPLAY 1
-                ;WINDOW  1                
+                WINDOW  0
+                PICTURE 0
+                WINDOW  1              
                 INK     9               ; Color del narrador
                 XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
+                
                 RESTART
 
 > ENCENDER  CERILLA
@@ -6183,8 +6183,8 @@ BAJAR   lBath2
                 DONE
 
 ;> QUITAR  TODO  DOALL   WORN
-> QUITAR    _   AUTOR
-                DONE
+;> QUITAR    _   AUTOR
+;                DONE
 
 ;> PONER   TODO  DOALL   CARRIED
 > PONER     _   AUTOW
