@@ -3,3 +3,4 @@ SC8
 
 - Poder examinar los objetos que coges y/o llevas en el inventario
 - Porche: oler plantar, mear planta, arrancar planta, romper maceta
+
