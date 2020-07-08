@@ -539,31 +539,31 @@ LUEGO           2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "ropa de calle#g#f=#t"          
-/1 "llave del chamizo#g#f2#t"
+/0 "ropa de calle"          
+/1 "llave del chamizo"
 /2 "llave de la cochera"    ; No se usa
 /3 "una batería de coche"   ; No se usa
-/4 "una pala#g#f()*#t"
-/5 "una llave de la entrada principal#g#f7#t"
-/6 "un felpudo#g#fVWXY#t"
-/7 "una maceta#g#f!#t"
-/8 "un gnomo#g#f9#t"
-/9 "una caja de cerillas#g#f+,#t"
+/4 "una pala"
+/5 "una llave de la entrada principal"
+/6 "un felpudo"
+/7 "una maceta"
+/8 "un gnomo"
+/9 "una caja de cerillas"
 /10 "una llave dorada"      ; No se usa 
-/11 "una tarjeta de seguridad#g#f<#t"
-/12 "una llave de una caja pequeña#g#f3#t"
-/13 "un diario#g#f$#t"
-/14 "un osito de peluche#g#f##t"
-/15 "una llave del patio#g#f6#t"
-/16 "una fotografía#g#fD#t"
-/17 "una pelota#g#f:;#t"
-/18 "una paleta#g#fmn#t"
-/19 "un hacha#g#f%&'#t"
-/20 "una llave de la bodega#g#f1#t"  
-/21 "llaves del coche#g#fIJ#t"
-/22 "una lata de aceite#g#fFG#t"
-/23 "una manguera#g#fKL#t"
-;/23 "una manguera#g#f-#t "
+/11 "una tarjeta de seguridad"
+/12 "una llave de una caja pequeña"
+/13 "un diario"
+/14 "un osito de peluche"
+/15 "una llave del patio"
+/16 "una fotografía"
+/17 "una pelota"
+/18 "una paleta"
+/19 "un hacha"
+/20 "una llave de la bodega"  
+/21 "llaves del coche"
+/22 "una lata de aceite"
+/23 "una manguera"
+
 ;------------------------------------------------------------------------------
 /LTX                            ;Location Texts
 ; \k\b #k#b
@@ -932,9 +932,9 @@ BAJAR   lBath2
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
                 XMESSAGE "#b"
-                WINDOW  0
-                XPICTURE 202            ; Cogiendo el teléfono
-                WINDOW  1
+                ;WINDOW  0
+                ;XPICTURE 202            ; Cogiendo el teléfono
+                ;WINDOW  1
                 ;CLS                     ; Limpiamos la pantalla
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del teléfono; no obstante, tanteas con las manos en la mesilla y descuelgas.#n"
@@ -1035,9 +1035,9 @@ BAJAR   lBath2
 > E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
                 WORN    oRopa          ; Lleva puesto el objeto
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
-                WINDOW  0
-                XPICTURE 203            ; El protagonista saliendo de casa
-                WINDOW  1
+                ;WINDOW  0
+                ;XPICTURE 203            ; El protagonista saliendo de casa
+                ;WINDOW  1
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Te apresuras a salir de casa: sabes que a tu padre no le gusta que le hagan esperar.#n"
                 ISAT    oLlaveCoche 252
@@ -1045,17 +1045,17 @@ BAJAR   lBath2
                 GET     oLlaveCoche
                 XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
-                WINDOW  0
-                XPICTURE 002            ; Foto dentro del coche 
-                WINDOW  1
+                ;WINDOW  0
+                ;XPICTURE 002            ; Foto dentro del coche 
+                ;WINDOW  1
                 XMESSAGE "Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#k#b"
-                WINDOW  0
-                XPICTURE 204            ; Foto de la Carretera
-                WINDOW  1
+                ;WINDOW  0
+                ;XPICTURE 204            ; Foto de la Carretera
+                ;WINDOW  1
                 XMESSAGE "Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes el entumecimiento de tus músculos tras el largo viaje.#k#b"
-                WINDOW  0
-                XPICTURE 205            ; Foto del Tunel de árboles
-                WINDOW  1
+                ;WINDOW  0
+                ;XPICTURE 205            ; Foto del Tunel de árboles
+                ;WINDOW  1
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sobrecogedor que siempre te dio respeto cuando eras un chiquillo.#k#b"
                 XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco asomar de entre la bruma.#k#b Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad.#k#n#b"
@@ -1230,8 +1230,7 @@ BAJAR   lBath2
                 XMESSAGE "Insistes en volver a mirar y una atracción hipnótica te hace fijar la vista en los focos.#k#n"
                 XMESSAGE "Te fríes las retinas y caes inconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre mana a borbotones de la brecha.#k#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema               ; Color del narrador
                 END                
@@ -1262,7 +1261,7 @@ BAJAR   lBath2
                 ZERO    fPorche
                 SET     fPorche
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta#g#f!#t, un felpudo#g#fVWXY#t y un gnomo de jardín#g#f9#t.#n"
+                XMESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta, un felpudo y un gnomo de jardín.#n"
                 INK colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿Los vamos examinando poco a poco o tienes mucha prisa por entrar en la casa?"
                 DONE
@@ -1276,7 +1275,7 @@ BAJAR   lBath2
                 GET     oMaceta         ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "La maceta#g#f!#t aún contiene tierra y lo que en sus buenos tiempos fue posiblemente una planta, que ahora está más seca que la mojama."
+                XMESSAGE "La maceta aún contiene tierra y lo que en sus buenos tiempos fue posiblemente una planta, que ahora está más seca que la mojama."
                 DONE
 
 > EXAMINA 	PLANTA
@@ -1303,7 +1302,7 @@ BAJAR   lBath2
 > EXAMINA 	FELPUDO		AT lPorche
                 NOTZERO fPorche
                 INK colorNarrador               ; Color del narrador
-	            XMESSAGE "Es un clásico felpudo de esparto con el mensaje 'WELCOME HOME' #g#fVWXY#t. Tus padres no compraron el que ponía 'BIENVENIDOS' porque les recordaba a cierto cantante de rock al que tenían bastante manía."
+	            XMESSAGE "Es un clásico felpudo de esparto con el mensaje 'WELCOME HOME' . Tus padres no compraron el que ponía 'BIENVENIDOS' porque les recordaba a cierto cantante de rock al que tenían bastante manía."
                 DONE
 
 > EXAMINA 	FELPUDO		AT lPorche
@@ -1322,9 +1321,9 @@ BAJAR   lBath2
                 ZERO    fCogerFelpudo   ; Flag que usamos para controlar que coja el Felpudo dos veces
                 SET     fCogerFelpudo
                 INK colorNarrador               ; Color del narrador
-	            XMESSAGE "Debajo del felpudo#g#fVWXY#t no hay nada especial, a excepción de un ciempiés que sale por patas al verse descubierto.#n"
+	            XMESSAGE "Debajo del felpudo no hay nada especial, a excepción de un ciempiés que sale por patas al verse descubierto.#n"
                 INK colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Vamos a dejar el felpudo#g#fVWXY#t en su sitio y dejar de importunar a la fauna del lugar."
+                XMESSAGE "Vamos a dejar el felpudo en su sitio y dejar de importunar a la fauna del lugar."
                 DONE
 
 > COGER 	FELPUDO     AT lPorche
@@ -1366,7 +1365,7 @@ BAJAR   lBath2
 > DEJAR 	MACETA      AT lPorche
                 CARRIED oMaceta         ; Llevamos el objeto en el inventario, si no fuera así, no se ejecuta
                 INK colorNarrador               ; Color del narrador
-	            XMESSAGE "Dejas la maceta#g#f!#t en su sitio con cuidado.#n"
+	            XMESSAGE "Dejas la maceta en su sitio con cuidado.#n"
                 INK colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Que buen hijo eres, si te viera tu madre, estaría orgullosa de su retoño. Y ahora al grano, ¿vas a conseguir entrar en la casa o llamamos a los bomberos?"
                 INK colorSistema              ; Color del sistema
@@ -1405,7 +1404,7 @@ BAJAR   lBath2
                 ISAT    oLlavePorche 252
                 CREATE  oLlavePorche    ; Creamos el objeto
                 INK colorNarrador               ; Color del narrador
-            	XMESSAGE "Tiras el gnomo contra el suelo y salta en mil pedazos. Parece ser que escondía una llave metálica #g#f7#t (me encanta ese grupo de música) en su interior.#n"
+            	XMESSAGE "Tiras el gnomo contra el suelo y salta en mil pedazos. Parece ser que escondía una llave metálica  (me encanta ese grupo de música) en su interior.#n"
                 INK colorSistema              ; Color del sistema
                 GET     oLlavePorche    ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -1489,7 +1488,7 @@ BAJAR   lBath2
                 CARRIED oMaceta         ; Tiene la maceta en el inventario
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
+                XMESSAGE "Dejas de la maceta en su sitio.#n"
                 INK colorNarrador               ; Color del narrador
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
                 INK colorMarcos               ; Color del protagonista
@@ -1497,9 +1496,9 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque antes notaba que las llevaba encima.#k#n"
+                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche, so melón?, porque antes notaba que las llevaba encima.#k#n"
                 INK colorMarcos
-                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
+                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
@@ -1524,7 +1523,7 @@ BAJAR   lBath2
                 INK colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#f)*#t, so melón?, porque no las siento encima.#k#n"
                 INK colorMarcos
-                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
+                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#k"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK colorNarrador               ; Color del narrador
@@ -1668,7 +1667,7 @@ BAJAR   lBath2
 > ABRIR		CAJON       AT lRecibidor
                 ISAT    oCerillas 252             
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Abres el cajón y encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
+                XMESSAGE "Abres el cajón y encuentras una caja de cerillas de cocina XXL.#n"
                 CREATE  oCerillas       ; Creamos el objeto
                 INK colorSistema              ; Color del sistema
                 GET     oCerillas       ; Cogemos el objeto
@@ -1703,7 +1702,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Necesitas la llave de la bodega#g#f1#t para poder entrar."
+                XMESSAGE "Necesitas la llave de la bodega para poder entrar."
                 DONE
 
 > BAJAR		_  			AT lRecibidor
@@ -1743,7 +1742,7 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fQuitarMancha
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar la puerta que has descubierto usando la paleta#g#fmn#t. Hay un alambique al fondo."
+                XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar la puerta que has descubierto usando la paleta. Hay un alambique al fondo."
                 DONE
 
 > EXAMINA   PARED       AT lBodega
@@ -1830,7 +1829,7 @@ BAJAR   lBath2
                 INK colorNarrador
                 XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación.#n"
                 INK colorNarrador
-                XMESSAGE "Se ha vaciado la lata de aceite#g#fFG#t y la tiras."
+                XMESSAGE "Se ha vaciado la lata de aceite y la tiras."
                 DESTROY oLataDeAceite
                 DONE
 
@@ -1899,9 +1898,9 @@ BAJAR   lBath2
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "¡No me lo puedo creer!#n"
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Rascas la mancha con la paleta#g#fmn#t y descubres un contorno en la pared.#n"
+                XMESSAGE "Rascas la mancha con la paleta y descubres un contorno en la pared.#n"
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta#g#fmn#t. ¡Qué burro eres!"
+                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta. ¡Qué burro eres!"
                 DESTROY oPaleta
                 DONE
 
@@ -1913,7 +1912,7 @@ BAJAR   lBath2
                 NOTZERO fQuitarMancha   ; Ya usó la paleta
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
+                XMESSAGE "Has roto la paleta, pero la puerta está visible. La puedes usar.#n"
                 DONE
 
 ;ALTERNATIVAS: dependiendo de la puerta que hayamos abierto, la respuesta será diferente: podemos quitar la mancha de la pared y abrir la puerta de la cochera o bien retirar el alambique y descubrir la trampilla.
@@ -1979,7 +1978,7 @@ BAJAR   lBath2
                 INK colorMarcos
                 XMESSAGE "¿Y qué pasó entonces?#k#n"
                 INK colorNene 
-                XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El señor me obligó a mirar mientras los descuartizaba con un hacha#g#f%&'#t y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#k#n"
+                XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El señor me obligó a mirar mientras los descuartizaba con un hacha y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#k#n"
                 INK colorMarcos
                 XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#k#n"
                 INK colorNene 
@@ -1988,7 +1987,7 @@ BAJAR   lBath2
                 INK colorMarcos
                 XMESSAGE "¿Has dicho que llevasteis los cuerpos al chamizo?#k#n"
                 INK colorNene 
-                XMESSAGE "Si. Allí los enterramos con una pala#g#f()*#t y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo#g#f2#t se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
+                XMESSAGE "Si. Allí los enterramos con una pala y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
                 INK colorNarrador
                 XMESSAGE "Observas como el niño se dirige hacia la puerta de la cochera, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#k#n"
                 INK colorSistema
@@ -1997,9 +1996,9 @@ BAJAR   lBath2
                 GET    oLlaveChamizo
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorNene
-                XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala#g#f()*#t para poder desenterrarnos.#k#n"
+                XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala para poder desenterrarnos.#k#n"
                 INK colorConsciencia
-                XMESSAGE "¡Entendido! Hay que buscar una pala#g#f()*#t.#k#n"
+                XMESSAGE "¡Entendido! Hay que buscar una pala.#k#n"
                 INK colorMarcos
                 XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#k#n"
                 INK colorNene
@@ -2150,7 +2149,7 @@ BAJAR   lBath2
 
 > MIRAR     _           AT lGabinete
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "El lugar es estremecedor, húmedo y cerrado; el olor que desprende es nauseabundo. Hay una puerta al NORTE atrancada con una pala#g#f()*#t. Miras a tu alrededor y percibes que algo se mueve encima de la camilla."
+                XMESSAGE "El lugar es estremecedor, húmedo y cerrado; el olor que desprende es nauseabundo. Hay una puerta al NORTE atrancada con una pala. Miras a tu alrededor y percibes que algo se mueve encima de la camilla."
                 DONE
 
 > EXAMINA   CAMILLA     AT lGabinete
@@ -2174,8 +2173,7 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 DONE
@@ -2201,8 +2199,7 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Te acercas a examinar con detenimiento las cadenas.#k#n La mujer se percata inmediatamente de tu presencia y con una furia terrible, se sacude con violencia y uno de los eslabones que conforma la cadena se rompe.#k#n La mujer te agarra fuertemente del cuello con una fuerza sobrehumana y te hunde la nuez con el pulgar hasta que en tu cabeza retumba el crujir de las vertebras de tu cuello.#k#n#n"
                 INK colorMuerte   
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -2229,8 +2226,7 @@ BAJAR   lBath2
                 INK colorSistema 
                 XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -2255,8 +2251,7 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Vuelves a agacharte para examinar el suelo y notas un chasquido metálico justo encima de ti.#k#n Algo te golpea la cabeza con una fuerza tremenda y caes al suelo.#k#n Sientes un segundo golpe y a continuación ya no sientes nada más.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -2272,7 +2267,7 @@ BAJAR   lBath2
                 SET     fDarkF           ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK colorNarrador              ; Color del narrador
-                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 INK colorSistema
                 ISAT    oPala 252
                 CREATE  oPala
@@ -2292,7 +2287,7 @@ BAJAR   lBath2
                 SET     fDarkF           ; Desactivamos la oscuridad
                 NOTZERO fJugar         ; El crío nos va a revelar que en el chamizo están sus restos.
                 INK colorNarrador              ; Color del narrador
-                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 INK colorSistema
                 ISAT    oPala 252
                 CREATE  oPala
@@ -2326,8 +2321,7 @@ BAJAR   lBath2
                 INK colorNarrador                  ; Color del narrador
                 XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti. ¿Son los gritos que escuchas tuyos o suyos? Notas cómo la criatura te arranca con los dientes varios bocados de carne antes de que, misericordiosamente, pierdas la conciencia.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -2372,8 +2366,7 @@ BAJAR   lBath2
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
                 XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END  
@@ -2390,8 +2383,7 @@ BAJAR   lBath2
                 INK colorNene
                 XMESSAGE "Yo pensaba que ibas a ayudarme y mírate. Ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END  
@@ -2416,7 +2408,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK colorNarrador
-                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#fKL#t tirada en el suelo que está conectada al grifo.#n"
+                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera tirada en el suelo que está conectada al grifo.#n"
                 INK colorMarcos
                 XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
                 INK colorNarrador
@@ -2478,7 +2470,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fConectarManguera  ; la manguera está desconectada
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "El grifo tiene un adaptador para conectar una manguera#g#fKL#t."
+                XMESSAGE "El grifo tiene un adaptador para conectar una manguera."
                 DONE
 
 > EXAMINA   GRIFO       AT lCochera
@@ -2488,7 +2480,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF            ; Desactivamos la oscuridad
                 NOTZERO fConectarManguera ; la manguera está conectada
                 INK colorNarrador                 ; Color del narrador
-                XMESSAGE "El grifo tiene una manguera#g#fKL#t conectada."
+                XMESSAGE "El grifo tiene una manguera conectada."
                 DONE
 
 > EXAMINA   GENERADOR   AT lCochera
@@ -2535,7 +2527,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "No tienes ninguna manguera#g#fKL#t."
+                XMESSAGE "No tienes ninguna manguera."
                 DONE
 
 > USAR      MANGUERA
@@ -2604,8 +2596,7 @@ BAJAR   lBath2
                 XMESSAGE "Abres el grifo.#k#n"
                 XMESSAGE "Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -2623,8 +2614,7 @@ BAJAR   lBath2
                 XMESSAGE "Abres el grifo y comienza a salir agua a presión. No conectaste la manguera#g#f-.#t y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k#n"
                 XMESSAGE "El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia fatal.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END                
@@ -2651,8 +2641,7 @@ BAJAR   lBath2
                 GET     oPelota
                 XMESSAGE "#n#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END 
@@ -2669,8 +2658,7 @@ BAJAR   lBath2
                 INK colorNarrador                           ; Color del narrador
                 XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en continua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END 
@@ -2685,7 +2673,7 @@ BAJAR   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manquera en la rejilla
                 NOTZERO fConectarManguera           ; Si conectó la manguera al grifo
                 INK colorNarrador                           ; Color del narrador
-                XMESSAGE "El agua está cayendo por la rejilla con una gran presión y se está llenando a gran velocidad.#n Notas como rápidamente sube el nivel del agua y debido a la presión, la rejilla cede y deja al descubierto el desagüe.#n Ves que de su interior sale una pelota#g#f:;#t. Acto seguido, cierras el grifo."
+                XMESSAGE "El agua está cayendo por la rejilla con una gran presión y se está llenando a gran velocidad.#n Notas como rápidamente sube el nivel del agua y debido a la presión, la rejilla cede y deja al descubierto el desagüe.#n Ves que de su interior sale una pelota. Acto seguido, cierras el grifo."
                 ;CLEAR   fCerrarGrifo
                 ISAT    oPelota 252
                 CREATE  oPelota
@@ -2795,7 +2783,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lChamizo              
                 INK colorNene
-                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t y me temo que ya no podemos entrar en la casa para cogerla.#n"
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala y me temo que ya no podemos entrar en la casa para cogerla.#n"
                 INK colorMarcos
                 XMESSAGE "Vaya, cuánto lo siento.#k#b"                
                 INK colorNarrador               ; Color del narrador
@@ -2849,7 +2837,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
+                XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche.#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
                 INK colorConsciencia               ; Color de tu consciencia
@@ -2931,7 +2919,7 @@ BAJAR   lBath2
                 ZERO    fUsarPala
                 SET     fUsarPala
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Tramposo, tramposo, tramposo....#n#n Tienes demasiada información o mucha suerte. Se supone que no deberías saber donde se usa la pala#g#f()*#t sin que hayan#n transcurrido ciertos acontecimientos, así que el equipo de desarrollo de esta aventura ha decidido amonestarte, quitándote algunos objetos que van a impedir que termines el juego de una determinada manera.#n"
+                XMESSAGE "Tramposo, tramposo, tramposo....#n#n Tienes demasiada información o mucha suerte. Se supone que no deberías saber donde se usa la pala sin que hayan#n transcurrido ciertos acontecimientos, así que el equipo de desarrollo de esta aventura ha decidido amonestarte, quitándote algunos objetos que van a impedir que termines el juego de una determinada manera.#n"
                 DESTROY oPala
                 DESTROY oLataDeAceite
                 CLEAR   fCombinacion
@@ -2989,7 +2977,7 @@ BAJAR   lBath2
                 NOTCARR oLlaveChamizo
                 CARRIED oHacha
                 ZERO    fDesenterrar   ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k"
+                XMESSAGE "Rompes el travesaño de la puerta con el hacha y sales al exterior de la casa.#k"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
                 SET     fDarkF
@@ -3015,7 +3003,7 @@ BAJAR   lBath2
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 NOTZERO fLeerDiario
                 INK colorNarrador
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
+                XMESSAGE "Rompes el travesaño de la puerta con el hacha y sales al exterior de la casa.#k#n"
                 INK colorMarcos
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK colorNene 
@@ -3029,7 +3017,7 @@ BAJAR   lBath2
                 XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
                 XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
                 XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#k#n"
-                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario#g#f$#t escrito de puño y letra por la criada, que voy a entregar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurrió el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!#k#n"
+                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. También he encontrado un diario escrito de puño y letra por la criada, que voy a entregar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurrió el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!#k#n"
                 INK colorPadre
                 XMESSAGE "Me dejas helado, hijo... El caso es que...#k#n#n Hace justo treinta años, una noche tal como esta, aparecieron las presencias de un niño y una niña en la casa. Quizás sus intenciones no fuesen perversas, pero a tu madre casi le da un infarto y me sacó arrastras de allí. El caso es que, cuando salíamos por el recibidor, la niña nos gritó que en treinta años volverían a aparecer y si estábamos en la casa, algo horrible nos pasaría.#k#n"
                 XMESSAGE "Tu madre y yo hemos estado dándole muchas vueltas al asunto de los niños durante los últimos meses, ya que sabíamos que pronto se iba a cumplir la fecha en la que volverían a aparecer. Esto me costó fuertes discusiones con tu madre, porque toda mi intención era volver a la casa para intentar comprender qué era lo que aquellos niños necesitaban.#n"
@@ -3072,7 +3060,7 @@ BAJAR   lBath2
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 ZERO    fLeerDiario     ; No hemos leído el diario de la criada
                 INK colorNarrador
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
+                XMESSAGE "Rompes el travesaño de la puerta con el hacha y sales al exterior de la casa.#k#n"
                 INK colorMarcos
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK colorNene 
@@ -3171,8 +3159,7 @@ BAJAR   lBath2
                 INK colorNarrador
                 XMESSAGE "Con toda tu energía corres a embestir el armario y te pegas de lleno con él, el armario es arrastrado a toda velocidad hacia la puerta y el impacto es tremendo, no obstante un armario de chapa galvanizada poco puede hacer ante una puerta maciza, lo que si ocurre es que la chapa se deforma y el estante superior atraviesa la chapa trasera del armario y te cercena la cabeza como quien corta una barra de mantequilla.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -3263,7 +3250,7 @@ BAJAR   lBath2
                 CREATE  oFotografia1
                 CLS                     ; Limpiamos la pantalla
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Pulsas el interruptor y ves una fotografía#g#fD#t en el suelo, pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires.#n"
+                XMESSAGE "Pulsas el interruptor y ves una fotografía en el suelo, pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires.#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Argggg! ¡Santa madre de la hostia puta! ¡Está todo lleno de cristales!#n"
                 INK colorConsciencia               ; Color de tu consciencia
@@ -3276,7 +3263,7 @@ BAJAR   lBath2
                 XMESSAGE "Del susto se te ha apagado la cerilla.#k#n"
                 CLS                     ; Limpiamos la pantalla
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Aún a pesar del susto, y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía#g#fD#t.#n"
+                XMESSAGE "Aún a pesar del susto, y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía.#n"
                 INK colorSistema              ; Color del sistema
                 GET     oFotografia1
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -3372,7 +3359,7 @@ BAJAR   lBath2
                 XMESSAGE "Por el susto y la excitación sacas tu mano a toda velocidad y el objeto que tenías cogido por los dedos sale despedido, con la suerte de que consigues capturarlo al vuelo.#k#n"
                 INK colorConsciencia
                 XMESSAGE "¿En serio acabo de jugarme la vida metiendo la mano en un triturador?#n"
-                XMESSAGE "Por cierto, lo que has cogido es una llave#g#f6#t.#n"
+                XMESSAGE "Por cierto, lo que has cogido es una llave.#n"
                 CREATE  oLlavePatio
                 INK colorSistema              ; Color del sistema
                 GET     oLlavePatio
@@ -3419,8 +3406,7 @@ BAJAR   lBath2
                 XMESSAGE "Las cuchillas te mutilan los dedos de la mano y notas enseguida como una fuerza de succión muy fuerte tira de tu brazo hacia adentro, mientras escuchas el crujido de tus huesos contra las paredes metálicas del fregadero.#k#n"
                 XMESSAGE "Hay sangre por todas partes.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"         
                 INK colorSistema              ; Color del sistema
                 END
@@ -3664,7 +3650,7 @@ BAJAR   lBath2
                 NOTCARR oLlaveCaja
                 CARRIED oSecretKey1
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Ya tienes la tarjeta de seguridad#g#f<#t."
+                XMESSAGE "Ya tienes la tarjeta de seguridad."
                 DONE
 
 > ABRIR		CAJA        AT lEscaleras                
@@ -3683,7 +3669,7 @@ BAJAR   lBath2
                 GET     oSecretKey1
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#g#f<#t#n"
+                XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#n"
                 INK colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Tratemos de averiguarlo."
                 DONE
@@ -3756,8 +3742,7 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -3772,8 +3757,7 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema               ; Color del narrador
                 END
@@ -3883,7 +3867,7 @@ BAJAR   lBath2
                 ZERO    fUsarTarjeta
                 SET     fUsarTarjeta
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Introduces la tarjeta de seguridad#g#f<#t que encontraste en la caja oculta de las escaleras y suena un chasquido. Es como si se hubiera desbloqueado un mecanismo.#n"
+                XMESSAGE "Introduces la tarjeta de seguridad que encontraste en la caja oculta de las escaleras y suena un chasquido. Es como si se hubiera desbloqueado un mecanismo.#n"
                 INK colorMarcos
                 XMESSAGE "¡Joder! ¡La tarjeta se ha atascado!#n"
                 INK colorConsciencia
@@ -3969,7 +3953,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "No puedes entrar. Necesitas la llave del patio.#g#f6#t"
+                XMESSAGE "No puedes entrar. Necesitas la llave del patio."
                 DONE
 
 > E         _           AT lSalon
@@ -4144,8 +4128,7 @@ BAJAR   lBath2
                 XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n#n"
                 XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema               ; Color del narrador
                 END
@@ -4172,11 +4155,11 @@ BAJAR   lBath2
                 INK colorMarcos               ; Color del protagonista 
                 XMESSAGE "Juguemos un poco, supongo.#n"
                 INK colorNene
-                XMESSAGE "Quiero jugar a la pelota#g#f:;#t.#n"
+                XMESSAGE "Quiero jugar a la pelota.#n"
                 INK colorMarcos               ; Color del protagonista 
-                XMESSAGE "No tengo ninguna pelota#g#f:;#t.#n"
+                XMESSAGE "No tengo ninguna pelota.#n"
                 INK colorNene
-                XMESSAGE "En la casa seguro que hay una pelota#g#f:;#t, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
+                XMESSAGE "En la casa seguro que hay una pelota, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
                 INK colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "No sé si es buena idea jugar con un... ¿fantasma? Por otro lado, igual nos echa una mano. ¿Le echamos un par o escribimos FIN y acabamos con esta agonía?"
                 DONE
@@ -4200,7 +4183,7 @@ BAJAR   lBath2
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "Hola. ¿No sabes dónde están tus padres? ¿Qué haces aquí?#n"
                 INK colorNene
-                XMESSAGE "Jugando al pilla-pilla. Pero nos gustaría jugar a la pelota#g#f:;#t. ¡Juega conmigo!"               
+                XMESSAGE "Jugando al pilla-pilla. Pero nos gustaría jugar a la pelota. ¡Juega conmigo!"               
                 DONE
 
 > LANZAR    PELOTA
@@ -4212,9 +4195,9 @@ BAJAR   lBath2
                 CARRIED oPelota
                 SET     fJugar
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Le das la pelota#g#f:;#t que llevas contigo al crío y se le dibuja una sonrisa en la cara.#n"
+                XMESSAGE "Le das la pelota que llevas contigo al crío y se le dibuja una sonrisa en la cara.#n"
                 INK colorNene
-                XMESSAGE "Muchas gracias por devolverme mi pelota#g#f:;#t, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
+                XMESSAGE "Muchas gracias por devolverme mi pelota, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
                 INK colorNene  ; Color del niño
@@ -4230,7 +4213,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oPelota
                 INK colorNene
-                XMESSAGE "No has traído mi pelota#g#f:;#t, ¿me la buscas?"
+                XMESSAGE "No has traído mi pelota, ¿me la buscas?"
                 DONE
 
 > EXAMINA   LUNA        AT lPatio
@@ -4272,7 +4255,7 @@ BAJAR   lBath2
                 ZERO    fFotoPeluche
                 SET     fFotoPeluche
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Es un precioso marco de madera tallada que contiene una fotografía#g#fD#t de una niña y un niño.#n#nLa niña sostiene en la mano un osito de peluche#g#f##t.#k#n"
+                XMESSAGE "Es un precioso marco de madera tallada que contiene una fotografía de una niña y un niño.#n#nLa niña sostiene en la mano un osito de peluche.#k#n"
                 CLS                     ; Limpiamos la pantalla
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Una fuerte corriente de aire helado apaga tu cerilla.#n#nSúbitamente, una voz aguda y chirriante te grita con furia:#n"
@@ -4400,7 +4383,7 @@ BAJAR   lBath2
                 ZERO    fAceite
                 SET     fAceite
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "La tapa del respiradero cae al suelo y descubres que en su interior hay una pequeña lata de aceite#g#fFG#t.#n"
+                XMESSAGE "La tapa del respiradero cae al suelo y descubres que en su interior hay una pequeña lata de aceite.#n"
                 INK colorSistema              ; Color del sistema
                 ISAT    oLataDeAceite 252
                 CREATE  oLataDeAceite
@@ -4529,7 +4512,7 @@ BAJAR   lBath2
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "A tu alrededor ves una tina antigua, una pila y un retrete con una cisterna en lo alto.#n"
                 INK colorSistema
-                XMESSAGE "Puedes observar un hacha#g#f%&'#t clavada en el suelo."
+                XMESSAGE "Puedes observar un hacha clavada en el suelo."
                 DONE
 
 > MIRAR     _           AT lBath2
@@ -4648,9 +4631,9 @@ BAJAR   lBath2
                 NOTZERO fBajarRetrete
                 NOTCARR oHacha
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Hay un hacha#g#f%&'#t clavada en el suelo, entre los restos del retrete destrozado.#n"
+                XMESSAGE "Hay un hacha clavada en el suelo, entre los restos del retrete destrozado.#n"
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "¡Hostia! Conozco este hacha#g#f%&'#t, es el hacha#g#f%&'#t de mi padre. No hay duda alguna, es el hacha#g#f%&'#t que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n"
+                XMESSAGE "¡Hostia! Conozco este hacha, es el hacha de mi padre. No hay duda alguna, es el hacha que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n"
 				INK colorConsciencia               ; Color de tu consciencia
                 MESSAGE "No quisiera ser inoportuno, pero a ver cómo vas a justificar a tus padres este destrozo.#n"
                 INK colorMarcos               ; Color del protagonista
@@ -4705,7 +4688,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lBath2                
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegada a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
+                XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha vuela a toda velocidad pegada a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Qué hostias ha sido eso? ¡Por un pelo no me decapitan! Parece que sigo entero...#k#n"
                 INK colorConsciencia               ; Color de tu consciencia
@@ -4723,7 +4706,7 @@ BAJAR   lBath2
                 ISAT    oPaleta 252
                 CREATE  oPaleta
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Quitas la tapa de la cisterna y ves que por dentro está llena de sangre.#n#nPuedes observar una paleta#g#fmn#t de albañil en su interior.#n" 
+                XMESSAGE "Quitas la tapa de la cisterna y ves que por dentro está llena de sangre.#n#nPuedes observar una paleta de albañil en su interior.#n" 
                 INK colorSistema              ; Color del sistema
                 GET     oPaleta
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -4740,7 +4723,7 @@ BAJAR   lBath2
                 NOTZERO fAbrirCisterna
                 CARRIED oPaleta
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Ya tienes la paleta#g#fmn#t. Aquí no hay nada más que ver."
+                XMESSAGE "Ya tienes la paleta. Aquí no hay nada más que ver."
                 DONE 
 
 ; Estamos en locRoom3
@@ -4864,12 +4847,12 @@ BAJAR   lBath2
                 ISAT    oPeluche    252
                 CREATE  oPeluche
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama. Se trata de un osito de peluche#g#f##t.#n"
+                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama. Se trata de un osito de peluche.#n"
                 INK colorSistema              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "Oh, qué osito#g#f##t tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n"
+                XMESSAGE "Oh, qué osito tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n"
                 INK colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Es blandito y conserva un aroma a perfume fresco, dan ganas de achucharlo."
                 DONE      
@@ -4884,12 +4867,12 @@ BAJAR   lBath2
                 ISAT    oPeluche    252
                 CREATE  oPeluche
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un un osito de peluche#g#f##t.#n"
+                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un un osito de peluche.#n"
                 INK colorSistema              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "Es un osito de peluche#g#f##t muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida."
+                XMESSAGE "Es un osito de peluche muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida."
                 DONE            
 
 > EXAMINA   ALFOMBRA    AT lRoom3
@@ -5032,7 +5015,7 @@ BAJAR   lBath2
                 NOTZERO fTerma
                 ZERO    fFinTerma
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
+                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
                 ISAT    oLlaveCaja 252
                 CREATE  oLlaveCaja
                 INK colorSistema              ; Color del sistema
@@ -5286,7 +5269,7 @@ BAJAR   lBath2
                 LET     fNenaMala 5
                 GOTO    lRoom2
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
+                XMESSAGE "La niña te arrebata el osito de peluche y desaparece.#k"
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5310,7 +5293,7 @@ BAJAR   lBath2
                 LET     fNenaMala 5 
                 GOTO    lPasillo3
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
+                XMESSAGE "La niña te arrebata el osito de peluche y desaparece.#k"
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5334,7 +5317,7 @@ BAJAR   lBath2
                 LET     fNenaMala 5
                 GOTO    lPasillo1
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
+                XMESSAGE "La niña te arrebata el osito de peluche y desaparece.#k"
                 CLS                     ; Limpiamos la pantalla
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -5363,8 +5346,7 @@ BAJAR   lBath2
                 XMESSAGE "La niña desaparece...#k#n#n"
                 XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -5390,8 +5372,7 @@ BAJAR   lBath2
                 XMESSAGE "La niña desaparece...#k#n#n"
                 XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -5417,8 +5398,7 @@ BAJAR   lBath2
                 XMESSAGE "La niña desaparece...#k#n#n"
                 XMESSAGE "Notas una presión muy fuerte en ambos lados de tu cabeza y lo último que escuchas es el crujido de las vertebras separándose entre ellas... De repente, ya no sientes tu cuerpo, pero lo puedes ver desde lo alto durante unos instantes antes de la muerte cerebral.#k#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 INK colorSistema
                 END
@@ -5528,7 +5508,7 @@ BAJAR   lBath2
                 XPICTURE 230            ; Cría en el pasillo
                 WINDOW  1
                 INK colorNena
-                XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
+                XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK colorConsciencia               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
                 INK colorMarcos               ; Color del protagonista
@@ -5557,7 +5537,7 @@ BAJAR   lBath2
                 XPICTURE 230            ; Cría en el pasillo
                 WINDOW  1
                 INK colorNena
-                XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
+                XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK colorConsciencia               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
                 INK colorMarcos               ; Color del protagonista
@@ -5586,7 +5566,7 @@ BAJAR   lBath2
                 XPICTURE 230            ; Cría en el pasillo
                 WINDOW  1
                 INK colorNena
-                XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
+                XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK colorConsciencia               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
                 INK colorMarcos               ; Color del protagonista
@@ -5731,9 +5711,9 @@ BAJAR   lBath2
 > EXAMINA	FOTOGRAFIA
                 NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
                 INK colorNarrador               ; Color del narrador
-				XMESSAGE "Parece ser una fotografía#g#fD#t familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n"
+				XMESSAGE "Parece ser una fotografía familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n"
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "¿De dónde habrá salido esta fotografía#g#fD#t y quienes son?#k#b#n"
+                XMESSAGE "¿De dónde habrá salido esta fotografía y quienes son?#k#b#n"
                 INK colorNarrador               ; Color del narrador
                 XMESSAGE "Un manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.#n"
                 INK colorMarcos               ; Color del protagonista
@@ -5748,7 +5728,7 @@ BAJAR   lBath2
 > EXAMINA   CERILLAS
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 INK colorNarrador               ; Color del narrador
-                XMESSAGE "Es una caja de cerillas#g#f+,#t de palo largo, típicas para encender los fogones de la cocina y velas."
+                XMESSAGE "Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas."
                 DONE
 
 > EXAMINA   ROPA
@@ -5913,54 +5893,53 @@ BAJAR   lBath2
 
 > AYUDA     MAGIA
                 INK 15
-                MESSAGE "Ropa de calle#g#f=#t"          
-                MESSAGE "llave del chamizo#g#f2#t"
-                MESSAGE "una pala#g#f()*#t"
-                MESSAGE "una llave de la entrada principal#g#f7#t"
-                MESSAGE "un felpudo#g#fVWXY#t"
-                MESSAGE "una maceta#g#f!#t"
-                MESSAGE "un gnomo#g#f9#t"
-                MESSAGE "una caja de cerillas#g#f+,#t"
-                MESSAGE  "una tarjeta de seguridad#g#f<#t"
-                MESSAGE  "llave de una caja pequeña#g#f3#t"
-                MESSAGE  "un diario#g#f$#t"
-                MESSAGE  "un osito de peluche#g#f##t"
-                MESSAGE  "llave del patio#g#f6#t"
-                MESSAGE  "una fotografía#g#fD#t"
-                MESSAGE  "una pelota#g#f:;#t"
-                MESSAGE  "una paleta#g#fmn#t"
-                MESSAGE  "un hacha#g#f%&'#t"
-                MESSAGE  "llave de la bodega#g#f1#t" 
-                MESSAGE  "llaves del coche#g#fIJ#t"
-                MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#fKL#t"
+                MESSAGE "Ropa de calle"          
+                MESSAGE "llave del chamizo"
+                MESSAGE "una pala"
+                MESSAGE "una llave de la entrada principal"
+                MESSAGE "un felpudo"
+                MESSAGE "una maceta"
+                MESSAGE "un gnomo"
+                MESSAGE "una caja de cerillas"
+                MESSAGE  "una tarjeta de seguridad"
+                MESSAGE  "llave de una caja pequeña"
+                MESSAGE  "un diario"
+                MESSAGE  "un osito de peluche"
+                MESSAGE  "llave del patio"
+                MESSAGE  "una fotografía"
+                MESSAGE  "una pelota"
+                MESSAGE  "una paleta"
+                MESSAGE  "un hacha"
+                MESSAGE  "llave de la bodega" 
+                MESSAGE  "llaves del coche"
+                MESSAGE  "una lata de aceite"
+                MESSAGE  "una manguera"
                 MESSAGE "#n"
                 INK 9
-                MESSAGE "Ropa de calle#g#f=#t"          
-                MESSAGE "llave del chamizo#g#f2#t"
-                MESSAGE "una pala#g#f()*#t"
-                MESSAGE "una llave de la entrada principal#g#f7#t"
-                MESSAGE "un felpudo#g#fVWXY#t"
-                MESSAGE "una maceta#g#f!#t"
-                MESSAGE "un Gnomo#g#f9#t"
-                MESSAGE "una caja de cerillas#g#f+,#t"
-                MESSAGE  "una tarjeta de seguridad#g#f<#t"
-                MESSAGE  "llave de una caja pequeña#g#f3#t"
-                MESSAGE  "un diario#g#f$#t"
-                MESSAGE  "un osito de peluche#g#f##t"
-                MESSAGE  "llave del patio#g#f6#t"
-                MESSAGE  "una fotografía#g#fD#t"
-                MESSAGE  "una pelota#g#f:;#t"
-                MESSAGE  "una paleta#g#fmn#t"
-                MESSAGE  "un hacha#g#f%&'#t"
-                MESSAGE  "llave de la bodega#g#f1#t" 
-                MESSAGE  "llaves del coche#g#fIJ#t"
-                MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#fKL#t"
+                MESSAGE "Ropa de calle"          
+                MESSAGE "llave del chamizo"
+                MESSAGE "una pala"
+                MESSAGE "una llave de la entrada principal"
+                MESSAGE "un felpudo"
+                MESSAGE "una maceta"
+                MESSAGE "un Gnomo"
+                MESSAGE "una caja de cerillas"
+                MESSAGE  "una tarjeta de seguridad"
+                MESSAGE  "llave de una caja pequeña"
+                MESSAGE  "un diario"
+                MESSAGE  "un osito de peluche"
+                MESSAGE  "llave del patio"
+                MESSAGE  "una fotografía"
+                MESSAGE  "una pelota"
+                MESSAGE  "una paleta"
+                MESSAGE  "un hacha"
+                MESSAGE  "llave de la bodega" 
+                MESSAGE  "llaves del coche"
+                MESSAGE  "una lata de aceite"
+                MESSAGE  "una manguera"
                 MESSAGE "#n"
                 INK colorMuerte                
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 INK 15                   
                 DONE
 
@@ -6056,8 +6035,7 @@ BAJAR   lBath2
                 XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
                 XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n"
                 INK colorMuerte
-                MESSAGE "#g#fBHAS MUERTOC#t"
-                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "HAS MUERTO"
                 MESSAGE "#n"
                 XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
                 INK colorSistema              ; Color del sistema
