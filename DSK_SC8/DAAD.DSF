@@ -887,6 +887,18 @@ BAJAR   lBath2
                 XMESSAGE "Es suave y calentita."
                 DONE
 
+> EXAMINA 	SUELO		AT lBurgos
+                INK colorNarrador               ; Color del narrador
+                XMESSAGE "Es un precioso suelo de parquet."
+                DONE
+
+> EXAMINA 	TECHO		AT lBurgos
+                INK colorConsciencia               ; Color del narrador
+                XMESSAGE "¿Estás buscando arañas?"
+                DONE
+
+
+
 ; Controlamos el poder examinar la mesilla habiendo usado el teléfono o no, de modo que mostramos dos tipos distintos de mensajes.
 > EXAMINA   MESITA
 > EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
