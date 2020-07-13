@@ -4,3 +4,15 @@ SC8
 - Poder examinar los objetos que coges y/o llevas en el inventario
 - Porche: oler plantar, mear planta, arrancar planta, romper maceta
 
+[locCriada]
+
+- te deja mover banco todo el rato
+- te deja mover loseta todo el rato
+
+
+
+CAMBIOS
+
+[locBodega]
+QUITAR YESO CON PALETA
+

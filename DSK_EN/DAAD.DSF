@@ -1418,7 +1418,7 @@ DOWN    lBath2
                 ISAT    oLlavePorche 252
                 CREATE  oLlavePorche    ; Creamos el objeto
                 INK     9               ; Narrator color
-            	XMESSAGE "You throw the gnome on the ground and it breaks into a thousand pieces. Apparently he was hiding a metal key #g#f7#t inside it.#n"
+            	XMESSAGE "You throw the gnome on the ground and it breaks into a thousand pieces. Apparently, a metal key #g#f7#t was hidden inside of it.#n"
                 INK     15              ; Color del sistema
                 GET     oLlavePorche    ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
