@@ -380,12 +380,13 @@ CARGAR          53      verb
 CLIMB           54      verb
 JUMP            55      verb
 GREASE          56      verb
-CONNECT        57      verb    ; FIX: Buscar verbo correcto para conectar manguera en grifo
+CONNECT         57      verb    ; FIX: Buscar verbo correcto para conectar manguera en grifo
 HELP            58      verb
 HUNG            59      verb
 CALL            60      verb
 CERRAR          61      verb
 SHIT            62      verb
+BLOW            63      verb
 
 ;                               Adjectives
 SMALL           2       adjective
@@ -523,30 +524,30 @@ THEN            2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "a streetwear#g#f=#t"          
-/1 "a shack key#g#f2#t"
-/2 "a garage key"    ; No se usa
-/3 "una batería de coche"   ; No se usa
-/4 "a shovel#g#f()*#t"
-/5 "a key for the main entrance#g#f7#t"
-/6 "a doormat#g#fVWXY#t"
-/7 "a pot#g#f!#t"
-/8 "a gnome#g#f9#t"
-/9 "a box of matches#g#f+,#t"
-/10 "una llave dorada"      ; No se usa 
-/11 "a security card#g#f<#t"
-/12 "a small box key#g#f3#t"
-/13 "a diary#g#f$#t"
-/14 "a teddy bear#g#f##t"
-/15 "a yard key#g#f6#t"
-/16 "a photograph#g#fD#t"
-/17 "a ball#g#f:;#t"
-/18 "a scraper#g#fmn#t"
+/0 "streetwear#g#f=#t"          
+/1 "shack key#g#f2#t"
+/2 ""    ; No se usa
+/3 ""    ; No se usa
+/4 "shovel#g#f()*#t"
+/5 "key for the main entrance#g#f7#t"
+/6 "doormat#g#fVWXY#t"
+/7 "pot#g#f!#t"
+/8 "gnome#g#f9#t"
+/9 "box of matches#g#f+,#t"
+/10 ""      ; No se usa 
+/11 "security card#g#f<#t"
+/12 "small box key#g#f3#t"
+/13 "diary#g#f$#t"
+/14 "teddy bear#g#f##t"
+/15 "yard key#g#f6#t"
+/16 "photograph#g#fD#t"
+/17 "ball#g#f:;#t"
+/18 "scraper#g#fmn#t"
 /19 "an axe#g#f%&'#t"
-/20 "a cellar key#g#f1#t"  
-/21 "a car key#g#fIJ#t"
+/20 "cellar key#g#f1#t"  
+/21 "car key#g#fIJ#t"
 /22 "an oil can#g#fFG#t"
-/23 "a hose#g#fKL#t"
+/23 "hose#g#fKL#t"
 ;/23 "una manguera#g#f-#t "
 
 ;------------------------------------------------------------------------------
@@ -562,7 +563,7 @@ THEN            2       conjugation
 /7 " You find yourself in the foyer, stripped of every detail and dressed only in the subtle glow of the outside lights. It is discouraging and doesn't welcome you to its rooms.#n#n You can see the stairs that lead to the top floor, the toilet to the NORTH, the kitchen to the SOUTH, the living room to the EAST and DOWN is the wine cellar. In front of you, there is the console that you have stumbled upon.#n#n There seems to be no one in the house."
 /8 " In the bathroom the atmosphere is charged, thick, so much so that the flame of the match has changed colour to a bluish green and begins to produce a flickering sparkle...#n#nYou feel that you don't want to be here and you begin to feel distressed.#n#nThe fragile light allows you to discover a switch on the wall."
 /9 " The cellar. A narrow and humid place that gives off a penetrating aroma of deep excavated earth.#n#n On one of the walls stands out a moldy wooden wine rack and you can also see, a large stain on the wall and a still in the background.." 
-/10 " You're in the kitchen. Where yesterday was a cozy place that gave you that warm feeling of home, today is a room where you invade a feeling of cold discouraging that comes from the moisture contained in the walls.#n#n You can see the sink, a sideboard with a door, a cupboard for food to the EAST and of course, the old washing machine, which with over 20 years, still serving." 
+/10 " You're in the kitchen. Where yesterday it was a cozy place that gave you that warm feeling of home, today it's a room where you get a feeling of cold discouraging that comes from the moisture contained in the walls.#n#n You can see the sink, a sideboard with a door, a cupboard for food to the EAST and of course, the old washing machine, which with over 20 years, still serving." 
 /11 " The faint light of the match barely illuminates the living room of the house.#n#n The room is wide and is presided over by a large stone fireplace with a forging cassette. Your father installed it because he was no longer using it to cook, and mainly for the fear of sweet death which has happened in many houses in the village. From it, some tubes were branched out to distribute the heat through all the rooms.#n#n You can see a large display cabinet where some books, family ornaments and a majestic Murano glass dish were once stacked, which dressed the great celebrations with an elegance and glamour typical of high nobility.#n#n From here you can access a large backyard to the EAST."
 /12 " The stairs that in the house are very old and give off a certain old aroma of linseed oil. The steps are made of wood, wide and blunt. Despite the fact that people were smaller in the past, it seems that an imposing staircase gave a status of opulence.#n#n You notice a snap under your feet; you look down and see a loose step."
 /13 " You're in the pantry. Here is the cupboard that your parents used to store cans of food and some kitchen utensils."
@@ -978,7 +979,7 @@ DOWN    lBath2
 > LOOK		_			AT lBurgos 
                 NOTZERO fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
                 INK     9               ; Color of consciousness
-                XMESSAGE "Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the expendable ornaments."
+                XMESSAGE "Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and you don't need expendable ornaments."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
@@ -1496,7 +1497,7 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 XMESSAGE "You leave the flowerpot#g#f!#t in place.#n"
                 INK     9               ; Narrator color
-            	XMESSAGE "You're already inside the house. It's cold. You stumbled over the console."
+            	XMESSAGE "You open the door and walk inside the house. It's cold. You stumble over the console."
                 INK     3               ; Marcos Color
                 XMESSAGE "Hello? Anybody home? #nI don't want to joke around because I'm gonna get pissed. And you know it! #k#n#b"
                 INK     9               ; Narrator color
@@ -1517,7 +1518,7 @@ DOWN    lBath2
 > OPEN		DOOR		AT lPorche
                 ;CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK     9               ; Narrator color
-            	XMESSAGE "You're already inside the house. It's cold. You stumbled over the console."
+            	XMESSAGE "You open the door and walk inside the house. It's cold. You stumble over the console."
                 INK     3               ; Marcos Color
                 XMESSAGE "Hello? Anybody home? #nI don't want to joke around because I'm gonna get pissed. And you know it! #k#n#b"
                 INK     9               ; Narrator color
@@ -5668,8 +5669,9 @@ DOWN    lBath2
                 RESTART
                 DONE
 
-> LIGHT     MATCH
-                PREP OFF
+> BLOW      MATCH
+;> LIGHT     MATCH
+                ;PREP OFF
                 CARRIED oCerillas
                 NOTZERO fUsarCerilla
                 LET     fUsarCerilla 0
@@ -5684,7 +5686,7 @@ DOWN    lBath2
 
 > LIGHT     MATCH
 ;> USE 		MATCH          
-                PREP ON      
+                ;PREP ON      
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 LET     fApagarCerilla 0
 				ZERO    fUsarCerilla
@@ -5703,7 +5705,7 @@ DOWN    lBath2
 
 > LIGHT MATCH     
 ;> USE   MATCH       
-                PREP ON
+                ;PREP ON
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fVasAPalmar
                 INK     9               ; Narrator color
@@ -5719,7 +5721,7 @@ DOWN    lBath2
 ; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada TURN MATCH, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
 > LIGHT MATCH
 ;> USE   MATCH
-                PREP ON
+                ;PREP ON
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fUsarCerilla
                 INK     15              ; Color del sistema
@@ -5732,8 +5734,9 @@ DOWN    lBath2
                 XMESSAGE "You can't see anything. It's too dark.."
                 DONE       
 
-> LIGHT MATCH
-                PREP OFF
+> BLOW      MATCH
+;> LIGHT     MATCH
+                ;PREP OFF
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fApagarCerilla
                 INK     9              ; Color del sistema

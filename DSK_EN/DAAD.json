@@ -42,6 +42,7 @@
 		{"symbol":"_VOC_LARGE", "Value":3},
 		{"symbol":"_VOC_BIG", "Value":3},
 		{"symbol":"_VOC_SMALL", "Value":2},
+		{"symbol":"_VOC_BLOW", "Value":63},
 		{"symbol":"_VOC_SHIT", "Value":62},
 		{"symbol":"_VOC_CERRA", "Value":61},
 		{"symbol":"_VOC_CALL", "Value":60},
@@ -418,6 +419,7 @@
 		{"VocWord":"BIG", "Value":3,"VocType":3 },
 		{"VocWord":"BLANK", "Value":152,"VocType":2 },
 		{"VocWord":"BLOOD", "Value":208,"VocType":2 },
+		{"VocWord":"BLOW", "Value":63,"VocType":0 },
 		{"VocWord":"BOARD", "Value":117,"VocType":2 },
 		{"VocWord":"BONDS", "Value":176,"VocType":2 },
 		{"VocWord":"BOX", "Value":118,"VocType":2 },
@@ -1617,11 +1619,11 @@
 	},
 	{
 		"Value":2,
-		"Text":"garage key"
+		"Text":""
 	},
 	{
 		"Value":3,
-		"Text":"una batería de coche"
+		"Text":""
 	},
 	{
 		"Value":4,
@@ -1629,7 +1631,7 @@
 	},
 	{
 		"Value":5,
-		"Text":"a key for the main entrance#g#f7#t"
+		"Text":"key for the main entrance#g#f7#t"
 	},
 	{
 		"Value":6,
@@ -1645,11 +1647,11 @@
 	},
 	{
 		"Value":9,
-		"Text":"a box of matches#g#f+,#t"
+		"Text":"box of matches#g#f+,#t"
 	},
 	{
 		"Value":10,
-		"Text":"una llave dorada"
+		"Text":""
 	},
 	{
 		"Value":11,
@@ -1689,11 +1691,11 @@
 	},
 	{
 		"Value":20,
-		"Text":"a cellar key#g#f1#t"
+		"Text":"cellar key#g#f1#t"
 	},
 	{
 		"Value":21,
-		"Text":"a car key#g#fIJ#t"
+		"Text":"car key#g#fIJ#t"
 	},
 	{
 		"Value":22,
@@ -1804,7 +1806,7 @@
 	},
 	{
 		"Value":24,
-		"Text":"Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and the expendable ornaments.#n"
+		"Text":"Your room is big, but the decoration is minimalist; a bed, a nightstand with a lamp and a closet is all that the room has to offer.#n#n As a pragmatic person, you use the room to sleep and you don't need expendable ornaments.#n"
 	},
 	{
 		"Value":25,
@@ -2148,7 +2150,7 @@
 	},
 	{
 		"Value":110,
-		"Text":"You're already inside the house. It's cold. You stumbled over the console.#n"
+		"Text":"You open the door and walk inside the house. It's cold. You stumble over the console.#n"
 	},
 	{
 		"Value":111,
@@ -45991,18 +45993,11 @@
 					]
 			},
 			{
-				"Entry":"LIGHT MATCH",
-				"Verb":37,
+				"Entry":"BLOW MATCH",
+				"Verb":63,
 				"Noun":113,
 				"condacts":
 					[
-					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":11,
-						"NumParams":1
-					},
 					{
 						"Opcode":8,
 						"Condact":"CARRIED",
@@ -46089,13 +46084,6 @@
 				"Noun":113,
 				"condacts":
 					[
-					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":10,
-						"NumParams":1
-					},
 					{
 						"Opcode":8,
 						"Condact":"CARRIED",
@@ -46208,13 +46196,6 @@
 				"condacts":
 					[
 					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":10,
-						"NumParams":1
-					},
-					{
 						"Opcode":29,
 						"Condact":"CLS",
 						"NumParams":0
@@ -46296,13 +46277,6 @@
 				"condacts":
 					[
 					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":10,
-						"NumParams":1
-					},
-					{
 						"Opcode":8,
 						"Condact":"CARRIED",
 						"Indirection1":0,
@@ -46372,18 +46346,11 @@
 					]
 			},
 			{
-				"Entry":"LIGHT MATCH",
-				"Verb":37,
+				"Entry":"BLOW MATCH",
+				"Verb":63,
 				"Noun":113,
 				"condacts":
 					[
-					{
-						"Opcode":68,
-						"Condact":"PREP",
-						"Indirection1":0,
-						"Param1":11,
-						"NumParams":1
-					},
 					{
 						"Opcode":8,
 						"Condact":"CARRIED",
