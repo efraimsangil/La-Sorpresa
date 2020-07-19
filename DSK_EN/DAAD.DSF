@@ -523,30 +523,30 @@ THEN            2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX                            ;Object Texts
-/0 "streetwear#g#f=#t"          
-/1 "shack key#g#f2#t"
-/2 "garage key"    ; No se usa
+/0 "a streetwear#g#f=#t"          
+/1 "a shack key#g#f2#t"
+/2 "a garage key"    ; No se usa
 /3 "una batería de coche"   ; No se usa
-/4 "shovel#g#f()*#t"
+/4 "a shovel#g#f()*#t"
 /5 "a key for the main entrance#g#f7#t"
-/6 "doormat#g#fVWXY#t"
-/7 "pot#g#f!#t"
-/8 "gnome#g#f9#t"
+/6 "a doormat#g#fVWXY#t"
+/7 "a pot#g#f!#t"
+/8 "a gnome#g#f9#t"
 /9 "a box of matches#g#f+,#t"
 /10 "una llave dorada"      ; No se usa 
-/11 "security card#g#f<#t"
-/12 "small box key#g#f3#t"
-/13 "diary#g#f$#t"
-/14 "teddy bear#g#f##t"
-/15 "yard key#g#f6#t"
-/16 "photograph#g#fD#t"
-/17 "ball#g#f:;#t"
-/18 "scraper#g#fmn#t"
+/11 "a security card#g#f<#t"
+/12 "a small box key#g#f3#t"
+/13 "a diary#g#f$#t"
+/14 "a teddy bear#g#f##t"
+/15 "a yard key#g#f6#t"
+/16 "a photograph#g#fD#t"
+/17 "a ball#g#f:;#t"
+/18 "a scraper#g#fmn#t"
 /19 "an axe#g#f%&'#t"
 /20 "a cellar key#g#f1#t"  
 /21 "a car key#g#fIJ#t"
 /22 "an oil can#g#fFG#t"
-/23 "hose#g#fKL#t"
+/23 "a hose#g#fKL#t"
 ;/23 "una manguera#g#f-#t "
 
 ;------------------------------------------------------------------------------
