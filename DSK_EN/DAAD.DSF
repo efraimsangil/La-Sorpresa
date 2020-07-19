@@ -528,7 +528,7 @@ THEN            2       conjugation
 /2 "garage key"    ; No se usa
 /3 "una batería de coche"   ; No se usa
 /4 "shovel#g#f()*#t"
-/5 "key for the main entrance#g#f7#t"
+/5 "a key for the main entrance#g#f7#t"
 /6 "doormat#g#fVWXY#t"
 /7 "pot#g#f!#t"
 /8 "gnome#g#f9#t"
@@ -1394,7 +1394,7 @@ DOWN    lBath2
                 GET     oGnomo          ; Cogemos el objeto
                 INK     9               ; Narrator color
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
-                XMESSAGE "He's a chubby gnome with a mischievous smile and an intense look. #? You examine it carefully; it seems to be made of plaster since it weighs little, possibly hollow inside. You look for the opening through which the object was introduced, its feet, but now they're sealed with plaster.#n"
+                XMESSAGE "He's a chubby gnome with a mischievous smile and an intense look. You examine it carefully; it seems to be made of plaster since it weighs little, possibly hollow inside. You look for the opening through which the object was introduced, its feet, but now they're sealed with plaster.#n"
                 INK     2               ; Color of consciousness
                 XMESSAGE "You can't open it, unless..."
                 DONE
