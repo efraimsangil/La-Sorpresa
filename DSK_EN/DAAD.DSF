@@ -5571,9 +5571,9 @@ DOWN    lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
-; Uso general
+; General use
 
-> EXAMI	PHOTOGRAPHY
+> EXAMI	    PHOTOGRAPHY
                 NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
                 INK     9               ; Narrator color
 				XMESSAGE "It appears to be a familiar photograph#g#fD#t... It's framed in a beautiful carved wooden frame. There are three people in the picture; a woman, a boy and a girl, but you don't recognize anyone. Whose picture is this and what is it doing here?#n"
@@ -5588,18 +5588,18 @@ DOWN    lBath2
 				DESTROY oFotografia1
 				DONE
 
-> EXAMI   MATCH
+> EXAMI     MATCH
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 INK     9               ; Narrator color
                 XMESSAGE "It is a box of matches#g#f+,#t of long stick, typical for lighting kitchen stoves and candles."
                 DONE
 
-> CALL    FIREMAN
+> CALL      FIREMAN
                 INK     2               ; Color of consciousness
                 XMESSAGE "What are you gonna call them with? Smoke signals?"
                 DONE
 
-> USE      PACIFIER     AT lBurgos
+> USE       PACIFIER     AT lBurgos
                 ;ISAT    oLlaveBodega 252
                 ;CREATE  oLlaveBodega
                 ;GET     oLlaveBodega
@@ -5630,14 +5630,14 @@ DOWN    lBath2
                 RESTART
                 DONE
 
-> HELP     MAGIC
+> HELP      MAGIC
                 INK     4                
                 MESSAGE "#g#fBYOU'RE DEADC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 INK 15                   
                 DONE
                 
-> USE      MAGIC
+> USE       MAGIC
                 ISAT    oCerillas       252
                 ISAT    oLlaveChamizo   252
                 ISAT    oLlavePorche    252
@@ -5670,8 +5670,7 @@ DOWN    lBath2
                 DONE
 
 > BLOW      MATCH
-;> LIGHT     MATCH
-                ;PREP OFF
+                PREP OUT
                 CARRIED oCerillas
                 NOTZERO fUsarCerilla
                 LET     fUsarCerilla 0
@@ -5681,7 +5680,15 @@ DOWN    lBath2
                 SET     fDarkF
                 LET     fControlLuz 0
                 INK     9
-                XMESSAGE "You've put out the match#g#f4#t."
+                XMESSAGE "You put the match out.#g#f4#t."
+                DONE
+
+> BLOW      MATCH
+                PREP OUT
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                NOTZERO fApagarCerilla
+                INK     9              ; Color del sistema
+                XMESSAGE "You've already put off the match#g#f4#t."
                 DONE
 
 > LIGHT     MATCH
@@ -5703,7 +5710,7 @@ DOWN    lBath2
                 RESTART
                 DONE
 
-> LIGHT MATCH     
+> LIGHT     MATCH     
 ;> USE   MATCH       
                 ;PREP ON
                 CLS                     ; Limpiamos la pantalla                
@@ -5719,8 +5726,8 @@ DOWN    lBath2
                 END
 
 ; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada TURN MATCH, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
-> LIGHT MATCH
-;> USE   MATCH
+> LIGHT     MATCH
+;> USE      MATCH
                 ;PREP ON
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fUsarCerilla
@@ -5733,15 +5740,6 @@ DOWN    lBath2
                 INK     9               ; Narrator color
                 XMESSAGE "You can't see anything. It's too dark.."
                 DONE       
-
-> BLOW      MATCH
-;> LIGHT     MATCH
-                ;PREP OFF
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                NOTZERO fApagarCerilla
-                INK     9              ; Color del sistema
-                XMESSAGE "You've already put off the match#g#f4#t."
-                DONE
 
 > EXAMI     DIARY
 > READ      DIARY      

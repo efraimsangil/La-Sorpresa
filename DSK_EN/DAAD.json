@@ -1528,7 +1528,7 @@
 	},
 	{
 		"Value":10,
-		"Text":" You're in the kitchen. Where yesterday was a cozy place that gave you that warm feeling of home, today is a room where you invade a feeling of cold discouraging that comes from the moisture contained in the walls.#n#n You can see the sink, a sideboard with a door, a cupboard for food to the EAST and of course, the old washing machine, which with over 20 years, still serving."
+		"Text":" You're in the kitchen. Where yesterday it was a cozy place that gave you that warm feeling of home, today it's a room where you get a feeling of cold discouraging that comes from the moisture contained in the walls.#n#n You can see the sink, a sideboard with a door, a cupboard for food to the EAST and of course, the old washing machine, which with over 20 years, still serving."
 	},
 	{
 		"Value":11,
@@ -3966,31 +3966,31 @@
 	},
 	{
 		"Value":564,
-		"Text":"You've put out the match#g#f4#t.#n"
+		"Text":"You put the match out.#g#f4#t.#n"
 	},
 	{
 		"Value":565,
-		"Text":"You light a match#g#f4#t and thanks to it, you can now move, examine or look in dark places.#n#n"
+		"Text":"You've already put off the match#g#f4#t.#n"
 	},
 	{
 		"Value":566,
-		"Text":"You shouldn't have to do that. A girl appears in front of you and throws you hard against the sink and you hear a loud CRACK in your head.#n#n"
+		"Text":"You light a match#g#f4#t and thanks to it, you can now move, examine or look in dark places.#n#n"
 	},
 	{
 		"Value":567,
-		"Text":"You fall to the ground like a dummy. The last thing you notice is the sound of your blood gurgling.#n#n#n"
+		"Text":"You shouldn't have to do that. A girl appears in front of you and throws you hard against the sink and you hear a loud CRACK in your head.#n#n"
 	},
 	{
 		"Value":568,
-		"Text":"You already have a match#g#f4#t on..#n"
+		"Text":"You fall to the ground like a dummy. The last thing you notice is the sound of your blood gurgling.#n#n#n"
 	},
 	{
 		"Value":569,
-		"Text":"You can't see anything. It's too dark..#n"
+		"Text":"You already have a match#g#f4#t on..#n"
 	},
 	{
 		"Value":570,
-		"Text":"You've already put off the match#g#f4#t.#n"
+		"Text":"You can't see anything. It's too dark..#n"
 	},
 	{
 		"Value":571,
@@ -45999,6 +45999,13 @@
 				"condacts":
 					[
 					{
+						"Opcode":68,
+						"Condact":"PREP",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
 						"Opcode":8,
 						"Condact":"CARRIED",
 						"Indirection1":0,
@@ -46069,6 +46076,54 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":564,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"BLOW MATCH",
+				"Verb":63,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":68,
+						"Condact":"PREP",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":108,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":565,
 						"NumParams":1
 					},
 					{
@@ -46174,7 +46229,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":565,
+						"Param1":566,
 						"NumParams":1
 					},
 					{
@@ -46218,14 +46273,14 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":566,
+						"Param1":567,
 						"NumParams":1
 					},
 					{
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":567,
+						"Param1":568,
 						"NumParams":1
 					},
 					{
@@ -46301,7 +46356,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":568,
+						"Param1":569,
 						"NumParams":1
 					},
 					{
@@ -46322,47 +46377,6 @@
 						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":569,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"BLOW MATCH",
-				"Verb":63,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":108,
 						"NumParams":1
 					},
 					{
