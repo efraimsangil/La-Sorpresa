@@ -1544,7 +1544,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#f)*#t, so melón?, porque no las siento encima.#k#n"
+                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque no las siento encima.#k#n"
                 INK colorMarcos
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
