@@ -1,3 +1,28 @@
+locBurgos
+Lo primero que me he encontrado, en la localización de Burgos, en la casa, al inicio es...
+
+Se supone que estás en la cama cuando suena el teléfono
+
+ahora bien, si abres el armario (te vistes de inmediato, porque no tenemos un PONER ROPA), si después lanzas un EX HABITACION, te dice que sigues en la cama
+
+Sería conveniente controlar que saliste de la cama?
+
+* Controlar el salir de la cama
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SC8
 - Localizacion 022 es bathroom2 y usar la foto de room2
 

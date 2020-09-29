@@ -130,6 +130,7 @@
 #define fApagarCerilla      108     ; Flag para dejar al jugador que apague la cerilla de modo intencionado. Le vendrá bien en el Gabinete.
 #define fVasAPalmar         109     ; Flag para controlar si prende cerilla en lAseo matamos al protagonista
 #define fManchaSangre       110     ; Flag para lRoom2 y que no aparezca la mancha de sangre cuando examinas dos veces
+#define fLevantado          111     ; Flag para lBurgos y controlamos que se haya levantado de la cama
 
 ;                               Localizaciones
 #define lIntro              0
@@ -872,13 +873,28 @@ BAJAR   lBath2
 
 > ABRIR     ARMARIO 
 > EXAMINA   ARMARIO     AT lBurgos
-                INK colorSistema
+                ZERO    fLevantado
+                INK     colorNarrador               
+                XMESSAGE "Estás super cómodo en la cama y no te apetece levantarte. El teléfono sigue sonando."
+                DONE
+
+> ABRIR     ARMARIO 
+> EXAMINA   ARMARIO     AT lBurgos
+                NOTZERO fLevantado
+                INK     colorSistema
                 ISAT    oRopa 252       ; El objeto no está en ninguna parte (de momento no es visible)
                 CREATE  oRopa           ; Creamos el objeto de su ropa
                 GET     oRopa           ; Lo cogemos
                 XMESSAGE "#n"           ; Como GET no hace salto de línea, hemos de forzarlo y así el mensaje de has cogido el objeto, deja dos líneas de espacio por debajo para cuando digo te has puesto la ropa.
                 WEAR    oRopa           ; Para vestirse con dicho objeto
                 INK     colorNarrador
+                DONE
+
+> ABRIR     ARMARIO 
+> EXAMINA   ARMARIO     AT lBurgos
+                WORN    oRopa          ; Lleva puesto el objeto
+                INK     colorConsciencia               
+                XMESSAGE "Ya te has vestido, no vamos a cambiar de ropa otra vez. Esto no es un juego de cambiar de ropita a tu avatar."
                 DONE
 
 > EXAMINA 	CAMA		AT lBurgos
@@ -950,6 +966,8 @@ BAJAR   lBath2
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
 > COGER     TELEFONO    AT lBurgos  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
+                ZERO    fLevantado
+                SET     fLevantado        
                 ZERO    fUsarTelefono       ; Si no ha usado el teléfono, este flag vale 0
                 SET     fUsarTelefono       ; Ahora ponemos el flag en 255 para dejar claro que SI lo ha usado
                 XMESSAGE "#b"
@@ -970,27 +988,16 @@ BAJAR   lBath2
                 INK colorPadre              ; Color del padre 
                 XMESSAGE "Ahora nos vemos, hijo, conduce con cuidado. Hasta luego.#n"
                 INK colorMarcos               ; Color del protagonista
-                XMESSAGE "Hasta luego, padre."              
+                XMESSAGE "Hasta luego, padre."
                 DONE              
 
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
-> COGER     TELEFONO    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
+> COGER     TELEFONO    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.                
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al ESTE."
                 DONE
-
-; Controlamos la acción dos veces, una para cuando no se ha usado el teléfono y para cuando se ha usado
-;> EXAMINA   HABITACION
-;> MIRAR		_			AT lBurgos    
-;                NOTZERO    fUsarTelefono   ; No ha cogido el teléfono
-;                INK     colorNarrador               ; Color de tu consciencia
-;                XMESSAGE "Es una habitación amplia, con un "
-;                XMESSAGE "El sonido viene de la mesilla y tu sigues en la cama, escuchando como suena el teléfono.#n"
-;                INK     colorConsciencia
-;                XMESSAGE "¡Vago! ¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"
-;                DONE
 
 > EXAMINA   HABITACION
 > MIRAR		_			AT lBurgos 
