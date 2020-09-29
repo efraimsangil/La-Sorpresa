@@ -131,6 +131,7 @@
 #define fVasAPalmar         109     ; Flag para controlar si prende cerilla en lAseo matamos al protagonista
 #define fManchaSangre       110     ; Flag para lRoom2 y que no aparezca la mancha de sangre cuando examinas dos veces
 #define fLevantado          111     ; Flag para lBurgos y controlamos que se haya levantado de la cama
+#define fTimbre             112     ; Flag para controlar que pulsa dos veces el timbre y cambiamos el texto de salida
 
 ;                               Localizaciones
 #define lIntro              0
@@ -579,7 +580,7 @@ LUEGO           2       conjugation
 /3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y y el conjunto tiene un cierto aire imponente, casi sobrecogedor.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE el porche, que es el acceso principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
 /5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
-/6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de mil mosquitos sedientos de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
+/6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de miles de mosquitos sedientos de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
 /7 " Te encuentras en el recibidor, despojado de todo detalle y ambientado tan solo con el sutil resplandor de las luces del exterior. Es descorazonador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que SUBEN a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado. Parece que en la casa no hay nadie."
 /8 " La luna llena gobierna la noche y su claridad se derrama por el patio, rodeado por un extenso muro gris que se erige imponente como el adarve protector de la hacienda inexpugnable."
 /9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo." 
@@ -1095,30 +1096,29 @@ BAJAR   lBath2
 
 ; Estamos en locCoche
 
-> ESCUCHAR METALICA
-> ESCUCHAR METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
-	            XPLAY "l2t255o4cdegffaggo5co4bo5co4gecdefgagfedeco3bo4cdo3gbo4dfedeo4cdegffaggo5co4bo5co4gecdefgfedco3go4co3bo4l1c"
-                INK     colorConsciencia
-                XMESSAGE "Creo que me he confundido de música, perdón... sigue al ESTE y olvidemos este asunto."
-                DONE
+;> ESCUCHAR METALICA
+;> ESCUCHAR METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
+;	            XPLAY "l2t255o4cdegffaggo5co4bo5co4gecdefgagfedeco3bo4cdo3gbo4dfedeo4cdegffaggo5co4bo5co4gecdefgfedco3go4co3bo4l1c"
+;                INK     colorConsciencia
+;                XMESSAGE "Creo que me he confundido de música, perdón... sigue al ESTE y olvidemos este asunto."
+;                DONE
 
-> E			_			AT lCoche
-                
-                CLS                     ; Limpiamos la pantalla                
-				GOTO    lExtCasa        ; Vamos a la localización
-                INK     colorNarrador               
-				RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
-				DONE
+;> E			_			AT lCoche              
+;                CLS                     ; Limpiamos la pantalla                
+;				GOTO    lExtCasa        ; Vamos a la localización
+;                INK     colorNarrador               
+;				RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+;				DONE
 
-> EXAMINA   _           AT lCoche
-                INK     colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Estás conduciendo, no creo que sea buena idea examinar nada ahora mismo."
-                DONE
+;> EXAMINA   _           AT lCoche
+;                INK     colorConsciencia               ; Color de tu consciencia
+;                XMESSAGE "Estás conduciendo, no creo que sea buena idea examinar nada ahora mismo."
+;                DONE
 
-> MIRAR     _           AT lCoche
-                INK     colorNarrador               
-                XMESSAGE "Te encanta la paz y tranquilidad del paisaje que discurre mientras conduces. Es un viaje largo, pero tiene cierto atractivo."
-                DONE
+;> MIRAR     _           AT lCoche
+;                INK     colorNarrador               
+;                XMESSAGE "Te encanta la paz y tranquilidad del paisaje que discurre mientras conduces. Es un viaje largo, pero tiene cierto atractivo."
+;                DONE
 
 ; Estamos en locExtCasa
 ; Si vamos al Chamizo o al Garaje, podemos interactuar con la puerta o lo que haya en dicha localización. 
@@ -1183,7 +1183,7 @@ BAJAR   lBath2
                 XMESSAGE "Te has quedado como las vacas que ven pasar el tren, ¿eh?. Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada de la historia.#k#b"
                 INK     colorNarrador               ; Color de tu consciencia
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni te has acercado, oye.#k#n Te recomendamos encarecidamente que le des otra oportunidad al juego y le dediques un poco más de atención.#k"
-                INK colorSistema              ; Para que el texto de Quieres volver a intentarlo aparezca en blanco. 
+                INK     colorSistema              ; Para que el texto de Quieres volver a intentarlo aparezca en blanco. 
                 END
 
 ; FINAL MALO: Te vas con el niño, da igual por donde hayamos salido, si por la cochera o por el gabinete
@@ -1195,40 +1195,40 @@ BAJAR   lBath2
                 XMESSAGE "Arrancas el coche y justo cuando vas salir de hacienda, el niño se manifiesta:#k#n"
                 INK     colorNene
                 XMESSAGE "Aquí me despido de ti. No puedo acompañarte porque no puedo abandonar la casa.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Yo voy a localizar a mis padres para explicarles lo que ha ocurrido. También necesito saber que se encuentran bien.#k#n"
                 INK     colorNarrador 
                 XMESSAGE "Aparece la niña...#k#n"
-                INK colorNena
+                INK     colorNena
                 XMESSAGE "TUS PADRES YA ESTáN CON NOSOTROS.#k#n"              
                 XMESSAGE "¡HE SIDO YO! Hace treinta años les dije que no viniesen nunca más por aquí.#k#n"
                 INK     colorNene 
                 XMESSAGE "¡CORRE! ¡SAL DE AQUí! ¡RáPIDO!#k#b"
                 INK     colorNarrador
                 XMESSAGE "Arrancas el coche a toda velocidad y sale de la finca derrapando.#nTe alejas de la casa y detienes el coche a unos cientos de metros.#k#n"
-                INK colorMarcos 
+                INK     colorMarcos 
                 XMESSAGE "Han matado a mis padres... La casa está llena de fantasmas sádicos... No tengo ni idea de qué pintan ahí... He salido vivo de milagro...#k#n"
                 INK     colorConsciencia
                 XMESSAGE "Nunca te perdonarás lo que les ha pasado a tus padres, ¡NUNCA!#k#b#n"
                 INK     colorNarrador
                 XMESSAGE "Retomas tu camino hacia la salida del pueblo y te cruzas con un coche que te resulta familiar. Te toca el claxon.#k#n"
-                INK colorPadre
+                INK     colorPadre
                 XMESSAGE "¡Hijo! ¡Hijo! ¡Qué alegría verte! Sospechaba que aún estarías por aquí.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¡Papá! ¡No me jodas! ¡Estás VIVO! Cuando te cuente lo que ha ocurrido no te lo vas a creer.#k#n"
-                INK colorPadre
+                INK     colorPadre
                 ; Corregir en la versión inglés
                 XMESSAGE "Me lo puedo imaginar, no te preocupes. Has conocido a la familia que años atrás, murió en la casa, ¿verdad? Hace treinta años se nos aparecieron a nosotros y a tu madre casi le da un telele. Tu eras muy pequeño..#k#n"
                 XMESSAGE"La verdad es que pensando a posteriori, parecían tener asuntos pendientes que resolver, pero tu madre me sacó de allí del brazo en aquel momento y me dijo que ni se me ocurriese volver.#k#nHoy había quedado contigo para intentar resolver el problema juntos, ya que sabía que justo esta noche iban a volver a a parecer los niños en la casa, pero chico, llegaste tan tarde que tuve que marcharme.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¿Pero qué estás diciendo? A ver, ¡los niños me dijeron que habíais muerto!#k#n"
-                INK colorPadre
+                INK     colorPadre
                 XMESSAGE "¿En serio? ¡Qué cabrones! Eso es que les debió sentar fatal que nos fuésemos de allí corriendo... Bueno qué... ¿Una cerveza o qué carallo?#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Una o siete, pero, ¿qué pasa con mamá?#k#n"
-                INK colorPadre
+                INK     colorPadre
                 XMESSAGE "Tu madre lleva borracha desde el mediodía; el alcohol y los antidepresivos no son buena combinación.#nVenga hijo, vayámonos de aquí.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Avanti.#k#b"
                 INK     colorNarrador
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: Chapucero.#n#n De todos los posibles finales, este es uno de los peores. Has salido de la casa sin enterarte de nada de la historia.#n"
@@ -1243,7 +1243,7 @@ BAJAR   lBath2
 
 ; Estamos en locPorche
 ; Controlamos si se ejecuta dos veces la misma acción. La segunda vez matamos al jugador.
-> EXAMINA   FOCOS        AT lPorche                
+> EXAMINA   FOCOS       AT lPorche                
                 ZERO    fFoco           ; Comprobamos que el flag vale 0
                 SET     fFoco           ; Se activa flag para que si vuelve a repetir esta acción, matamos al jugador
                 INK     colorNarrador               
@@ -1252,7 +1252,7 @@ BAJAR   lBath2
                 XMESSAGE "Yo no haría eso de nuevo."   ; Siempre que vamos a matar el jugador por repetir una acción dos veces, recibe un aviso
                 DONE
 
-> EXAMINA   FOCOS        AT lPorche
+> EXAMINA   FOCOS       AT lPorche
                 ; Si el flag de EXAMINA FOCOS está activo, mato al jugador
                 NOTZERO fFoco
                 INK     colorNarrador               
@@ -1262,7 +1262,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema               
+                INK     colorSistema               
                 END                
 
 > O         _           AT lPorche                
@@ -1301,7 +1301,7 @@ BAJAR   lBath2
 > COGER 	MACETA
 > EXAMINA	MACETA		AT lPorche
                 NOTZERO fPorche
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oMaceta         ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorNarrador               
@@ -1313,7 +1313,7 @@ BAJAR   lBath2
 > EXAMINA	MACETA		AT lPorche
                 ZERO    fPorche                
                 INK     colorNarrador               
-                XMESSAGE "No veo nada de eso."
+                XMESSAGE "No veo nada de eso. Prueba a MIRAR antes para observar lo que te rodea."
                 DONE
 
 ; Como hay un bug con el COGER TODO del motor de DAAD, hemos creado una acción en esta localización para que sólo devuelva un mensaje.
@@ -1392,14 +1392,22 @@ BAJAR   lBath2
                 XMESSAGE "#n"
                 DONE
 
+> ROMPER    MACETA
+> TIRAR 	MACETA      AT lPorche
+                NOTCARR oMaceta
+                INK     colorNarrador
+                XMESSAGE "Prueba esta acción habiendo cogido el objeto antes."
+                DONE
+
 > DEJAR 	MACETA      AT lPorche
                 CARRIED oMaceta         ; Llevamos el objeto en el inventario, si no fuera así, no se ejecuta
                 INK     colorNarrador               
-	            XMESSAGE "Dejas la maceta#g#f!#t en su sitio con cuidado.#n"
+	            XMESSAGE "Dejas la maceta#g#f!#t en su sitio con cuidado."
                 INK     colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Que buen hijo eres, si te viera tu madre, estaría orgullosa de su retoño. Y ahora al grano, ¿vas a conseguir entrar en la casa o llamamos a los bomberos?"
+                XMESSAGE "Que buen hijo eres, si te viera tu madre, estaría orgullosa de su retoño. Y ahora al grano, ¿vas a conseguir entrar en la casa o llamamos a los bomberos?#n"
                 INK colorSistema              ; Color del sistema
                 DROP    oMaceta         ; Soltamos el objeto, podríamos cogerlo de nuevo
+                XMESSAGE "#n"            ; Como DROP no hace salto de linea, hemos de forzarlo.
                 DONE
 
 > COGER 	GNOMO
@@ -1410,7 +1418,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 XMESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa. #nLo examinas con atención; parece estar hecho de escayola ya que pesa poco, posiblemente esté hueco por dentro.#n"
-                XMESSAGE "Lo agitas en el aire y algo pequeño golpea las paredes internas. Encuentras en la zona de los pies la abertura por la cual se introdujo el objeto, pero ahora está sellada con yeso.#n"
+                XMESSAGE "Lo agitas en el aire y algo pequeño golpea las paredes internas. Encuentras en la zona de los pies la abertura por la cual se introdujo el objeto, pero ahora está sellada.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "No puedes abrirlo, a no ser que..."
                 DONE
@@ -1480,14 +1488,29 @@ BAJAR   lBath2
                 XMESSAGE "Es una puerta robusta y maciza. Como todas las puertas principales, se abre con una llave.#n#nAhora recuerdas que siempre quisiste que arreglaran el timbre de la casa, porque cuando todo el mundo estaba en las habitaciones, nadie escuchaba quién estaba en la puerta."
                 DONE
 
+> EXAMINA   TIMBRE      AT lPorche
+                INK     colorConsciencia               ; Color de tu consciencia
+                XMESSAGE "Es un interruptor que cuando lo pulsas, dentro de la casa suena un sonido indicando, que alguien está en la puerta y desea entrar o hablar con alguien que se encuentre dentro de la casa."
+                DONE
+
 > PULSAR    TIMBRE
 > LLAMAR    TIMBRE
 > EXAMINA   TIMBRE
 > USAR      TIMBRE      AT lPorche
+                ZERO    fTimbre
+                SET     fTimbre
+                INK     colorConsciencia               ; Color de tu consciencia
+                XMESSAGE "El timbre está roto, no suena nada dentro de la casa."
+                DONE
+
+> PULSAR    TIMBRE
+> LLAMAR    TIMBRE
+> EXAMINA   TIMBRE
+> USAR      TIMBRE      AT lPorche
+                NOTZERO fTimbre
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?"
                 DONE
-
 > GOLPEAR	PUERTA		AT lPorche
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Nadie responde a tu llamada."

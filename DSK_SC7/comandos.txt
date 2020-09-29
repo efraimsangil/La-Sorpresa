@@ -22,12 +22,12 @@
 > DORMIR	_			AT lBurgos
 > COLGAR    TELEFONO    AT lBurgos
 
-
+[No se usa]
 > ESCUCHAR METALICA
 > E			_			AT lCoche
 > EXAMINA   _           AT lCoche
 > MIRAR     _           AT lCoche
-
+[---------]
 
 > E			_           AT lExtCasa   
 > E			_           AT lExtCasa     
@@ -47,18 +47,13 @@
 > EXAMINA 	PLANTA
 > COGER 	MACETA
 > EXAMINA	MACETA		AT lPorche
-> EXAMINA 	PLANTA
 > COGER 	MACETA
-> EXAMINA	MACETA		AT lPorche
 > COGER 	TODO		AT lPorche
-> COGER 	TODO		AT lPorche
-> EXAMINA 	FELPUDO		AT lPorche
 > EXAMINA 	FELPUDO		AT lPorche
 > LEVANTAR  FELPUDO
 > MOVER     FELPUDO
 > TIRAR     FELPUDO
 > EMPUJAR   FELPUDO
-> COGER 	FELPUDO     AT lPorche
 > COGER 	FELPUDO     AT lPorche
 > COGER     CIEMPIES    AT lPorche
 > EXAMINA   CIEMPIES    AT lPorche
@@ -69,8 +64,6 @@
 > EXAMINA 	GNOMO		AT lPorche          
 > ROMPER 	GNOMO		AT lPorche
 > ABRIR 	GNOMO		AT lPorche
-> LANZAR 	GNOMO
-> TIRAR		GNOMO		AT lPorche
 > LANZAR    GNOMO
 > TIRAR		GNOMO		AT lPorche
 > EXAMINA   SUELO       AT lPorche
@@ -83,24 +76,12 @@
 > EXAMINA   TIMBRE
 > USAR      TIMBRE      AT lPorche
 > GOLPEAR	PUERTA		AT lPorche
-> E         _
 > ENTRAR    _
 > EMPUJAR   PUERTA
 > USAR 		PUERTA
 > USAR 		LLAVE
 > ABRIR 	PUERTA		AT lPorche
-> E         _
-> ENTRAR    _
-> EMPUJAR   PUERTA
 > USAR 		PUERTA
-> USAR 		LLAVE
-> ABRIR 	PUERTA		AT lPorche
-> E         _
-> ENTRAR    _
-> EMPUJAR   PUERTA
-> USAR 		PUERTA
-> USAR 		LLAVE
-> ABRIR		PUERTA		AT lPorche
 
 
 > SUBIR     _           AT lRecibidor
