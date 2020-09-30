@@ -413,7 +413,8 @@ METER           65      verb
 INTRODUCIR      66      verb
 ACOPLAR         67      verb
 ENCHUFAR        68      verb
-
+PISAR           69      verb
+APLASTAR        70      verb
 
 ;                               Adjetivos
 PEQUE           2       adjective
@@ -756,7 +757,7 @@ BAJAR   lBath2
 ;------------------------------------------------------------------------------
 /PRO 1
 
-> _         _   INK colorSistema              ; Color blanco para la entrada de acciones
+> _         _   INK     colorSistema              ; Color blanco para la entrada de acciones
 
 > _         _   PROCESS 4               ; Lo que en el PAW era el proceso 2
 
@@ -774,7 +775,7 @@ BAJAR   lBath2
 > _         _   INK     colorNarrador                
 
 > _         _   PROCESS 5               ; La antigua tabla de respuestas
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 ISDONE                  ; Ha hecho algo?
                 REDO                    ; Sí­: pedimos otra orden del jugador
 
@@ -783,18 +784,18 @@ BAJAR   lBath2
 
 > _         _   NEWTEXT
                 LT      fVerb    14
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 SYSMESS 7
                 REDO
 
-> _         _   INK colorSistema              ; Color del sistema
+> _         _   INK     colorSistema              ; Color del sistema
                 SYSMESS 8
                 REDO
 
 ;------------------------------------------------------------------------------
 /PRO 2
 
-> _         _   INK colorSistema              ; Color del sistema
+> _         _   INK     colorSistema              ; Color del sistema
 
 > _         _   HASAT TIMEOUT
                 SYSMESS 35
@@ -821,7 +822,7 @@ BAJAR   lBath2
                 LT      38 30           ; Si la localización es menor de 30
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
                 SET     fDarkF          ; Activamos la oscuridad
-                INK colorSistema
+                INK     colorSistema
                 XMESSAGE "#n"
                 XMESSAGE "Estás a oscuras."
 
@@ -1029,7 +1030,7 @@ BAJAR   lBath2
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     colorNarrador               
                 XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en Simago.#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > DORMIR	_			AT lBurgos
@@ -1037,7 +1038,7 @@ BAJAR   lBath2
                 NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
                 INK     colorNarrador               
                 XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en Simago.#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 ; Es un complemento por si el jugador se le ocurre usarla.
@@ -1232,7 +1233,7 @@ BAJAR   lBath2
                 XMESSAGE "Avanti.#k#b"
                 INK     colorNarrador
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: Chapucero.#n#n De todos los posibles finales, este es uno de los peores. Has salido de la casa sin enterarte de nada de la historia.#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > MIRAR     _           AT lExtCasa
@@ -1359,10 +1360,20 @@ BAJAR   lBath2
 > COGER 	FELPUDO     AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
-                NOTCARR oLlavePorche
                 INK     colorConsciencia               ; Color de tu consciencia
 	            XMESSAGE "¿En serio, otra vez? La llave de la casa no va a aparecer sola. Sigue buscando."
                 DONE       
+
+> ROMPER 	FELPUDO     AT lPorche               
+                INK     colorConsciencia               ; Color de tu consciencia
+	            XMESSAGE "No me parece buena idea. No pienso hacerlo."
+                DONE      
+
+> PISAR     CIEMPIES
+> APLASTAR  CIEMPIES    AT lPorche
+                INK     colorConsciencia               ; Color de tu consciencia
+                XMESSAGE "Me niego rotundamente a realizar semejante acto."
+                DONE
 
 > COGER     CIEMPIES    AT lPorche
                 NOTZERO fPorche
@@ -1376,7 +1387,7 @@ BAJAR   lBath2
 > EXAMINA   CIEMPIES    AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
-                INK     colorNarrador               
+                INK     colorConsciencia               
                 XMESSAGE "Es repugnante."
                 DONE        
 
@@ -1387,7 +1398,7 @@ BAJAR   lBath2
 	            XMESSAGE "Aunque no es algo que hagas a menudo, obtienes un malévolo placer al tirar la maceta contra el suelo, pero después de varios rebotes vuelve a quedarse justo donde estaba.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¡Sublime! Y además, ¡está intacta! ¿De qué estará hecha?#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 DROP    oMaceta
                 XMESSAGE "#n"
                 DONE
@@ -1405,7 +1416,7 @@ BAJAR   lBath2
 	            XMESSAGE "Dejas la maceta#g#f!#t en su sitio con cuidado."
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Que buen hijo eres, si te viera tu madre, estaría orgullosa de su retoño. Y ahora al grano, ¿vas a conseguir entrar en la casa o llamamos a los bomberos?#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 DROP    oMaceta         ; Soltamos el objeto, podríamos cogerlo de nuevo
                 XMESSAGE "#n"            ; Como DROP no hace salto de linea, hemos de forzarlo.
                 DONE
@@ -1413,7 +1424,7 @@ BAJAR   lBath2
 > COGER 	GNOMO
 > EXAMINA 	GNOMO		AT lPorche          
                 NOTZERO fPorche      
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oGnomo          ; Cogemos el objeto
                 INK     colorNarrador               
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
@@ -1443,7 +1454,7 @@ BAJAR   lBath2
                 CREATE  oLlavePorche    ; Creamos el objeto
                 INK     colorNarrador               
             	XMESSAGE "Tiras el gnomo contra el suelo y salta en mil pedazos. Parece ser que escondía una llave metálica #g#f7#t (me encanta ese grupo de música) en su interior.#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oLlavePorche    ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorConsciencia               ; Color de tu consciencia
@@ -1466,7 +1477,13 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lPorche
                 NOTZERO fGnomoRoto      ; Comprueba si el gnomo se destruyó
                 INK     colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Después de tantos años, tus padres van a echar de menos al gnomo."
+                XMESSAGE "El suelo está repleto de pequeños trozos de ceramica. Después de tantos años, tus padres van a echar de menos al gnomo."
+                DONE
+; Si no rompió el gnomo y examina el suelo, tenemos este otro mensaje
+> EXAMINA   SUELO       AT lPorche
+                ZERO    fGnomoRoto      ; Comprueba si el gnomo se destruyó
+                INK     colorNarrador               ; Color de tu consciencia
+                XMESSAGE "No hay nada destacable en el suelo."
                 DONE
 
 > ESCUCHAR	METALICA
@@ -1495,17 +1512,15 @@ BAJAR   lBath2
 
 > PULSAR    TIMBRE
 > LLAMAR    TIMBRE
-> EXAMINA   TIMBRE
 > USAR      TIMBRE      AT lPorche
                 ZERO    fTimbre
                 SET     fTimbre
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu consciencia
                 XMESSAGE "El timbre está roto, no suena nada dentro de la casa."
                 DONE
 
 > PULSAR    TIMBRE
 > LLAMAR    TIMBRE
-> EXAMINA   TIMBRE
 > USAR      TIMBRE      AT lPorche
                 NOTZERO fTimbre
                 INK     colorConsciencia               ; Color de tu consciencia
@@ -1551,7 +1566,7 @@ BAJAR   lBath2
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque antes notaba que las llevaba encima.#k#n"
                 INK colorMarcos
-                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
+                XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
@@ -1722,7 +1737,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "Abres el cajón y encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
                 CREATE  oCerillas       ; Creamos el objeto
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oCerillas       ; Cogemos el objeto
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 ZERO    fCajon          ; Si es 0
@@ -2053,7 +2068,7 @@ BAJAR   lBath2
                 XMESSAGE "Si. Allí los enterramos con una pala#g#f()*#t y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo#g#f2#t se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
                 INK     colorNarrador
                 XMESSAGE "Observas como el niño se dirige hacia la puerta de la cochera, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#k#n"
-                INK colorSistema
+                INK     colorSistema
                 ISAT   oLlaveChamizo 252
                 CREATE oLlaveChamizo
                 GET    oLlaveChamizo
@@ -2240,7 +2255,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 DONE
 
 > EXAMINA   CADENAS     AT lGabinete
@@ -2267,7 +2282,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > EXAMINA   MESA        AT lGabinete
@@ -2289,13 +2304,13 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Te acercas a la mesa.#k#n Notas un crujido metálico y ves como algo que se mueve delante de ti te clava un objeto punzante en el pecho.#k#n Son unas tijeras.#k#n"
-                INK colorSistema 
+                INK     colorSistema 
                 XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > EXAMINA   SUELO       AT lGabinete
@@ -2321,7 +2336,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 ; Aquí tenemos que estar a oscuras para salir, si no es así, el juego se termina.
@@ -2336,7 +2351,7 @@ BAJAR   lBath2
                 ZERO    fJugar
                 INK     colorNarrador              
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
-                INK colorSistema
+                INK     colorSistema
                 ISAT    oPala 252
                 CREATE  oPala
                 GET     oPala
@@ -2356,7 +2371,7 @@ BAJAR   lBath2
                 NOTZERO fJugar         ; El crío nos va a revelar que en el chamizo están sus restos.
                 INK     colorNarrador              
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
-                INK colorSistema
+                INK     colorSistema
                 ISAT    oPala 252
                 CREATE  oPala
                 GET     oPala
@@ -2392,7 +2407,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 ; Estamos en locExtCochera
@@ -2438,7 +2453,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END  
 
 > ABRIR     PUERTA      AT lExteriorCochera
@@ -2456,7 +2471,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END  
 
 > N        _            AT lExteriorCochera
@@ -2486,7 +2501,7 @@ BAJAR   lBath2
                 XMESSAGE "El niño aparece a tu lado.#k#n" 
                 INK     colorNene
                 XMESSAGE "Aquí mataron a mi madre y a mi hermana. Yo me había escapado y el me encontró por el camino.#n Me trajo aquí y me obligó a llevar los cuerpos al chamizo. Recuerdo que había una llave escondida sobre la puerta de la cochera."
-                INK colorSistema
+                INK     colorSistema
                 DONE
 
 > MIRAR     _           AT lCochera
@@ -2520,7 +2535,7 @@ BAJAR   lBath2
                 CREATE  oManguera
                 INK     colorNarrador               
                 XMESSAGE "El suelo está revestido de una pintura roja muy densa. Encuentras algo en una de las esquinas.#n"               
-                INK colorSistema
+                INK     colorSistema
                 GET     oManguera
                 MESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
@@ -2679,7 +2694,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > USAR      GRIFO
@@ -2698,7 +2713,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END                
 
 
@@ -2717,7 +2732,7 @@ BAJAR   lBath2
                 XMESSAGE "Un gran charco de sangre se drena a través de la rejilla, el nivel de agua sube, la rejilla se abre y aparece un objeto.#n"
                 INK     colorConsciencia
                 XMESSAGE "...#n"
-                INK colorSistema
+                INK     colorSistema
                 ISAT    oPelota 252
                 CREATE  oPelota
                 GET     oPelota
@@ -2726,7 +2741,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END 
 
 > USAR      GRIFO
@@ -2744,7 +2759,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END 
 
 > USAR      GRIFO
@@ -2761,7 +2776,7 @@ BAJAR   lBath2
                 ;CLEAR   fCerrarGrifo
                 ISAT    oPelota 252
                 CREATE  oPelota
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oPelota
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorConsciencia               ; Color de tu consciencia
@@ -2926,7 +2941,7 @@ BAJAR   lBath2
                 XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja#n"
-                INK colorSistema
+                INK     colorSistema
                 ISAT    oLlaveCoche 252
                 CREATE  oLlaveCoche
                 GET     oLlaveCoche
@@ -3009,7 +3024,7 @@ BAJAR   lBath2
                 CLEAR   fCombinacion
                 INK     colorConsciencia
                 XMESSAGE "Tío, a quien se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
-                INK colorSistema
+                INK     colorSistema
                 XMESSAGE "Por decisión unánime del equipo de desarrollo, se te amonesta devolviéndote a la bodega y quitándote los objetos necesarios para no permitirte entrar de nuevo por la trampilla. Te recomendamos que pruebes otro de los finales disponibles, majete.#k"
                 CLEAR  fMoverAlambique
                 INK     colorNarrador
@@ -3180,7 +3195,7 @@ BAJAR   lBath2
                 INK     colorNarrador
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n"
                 XMESSAGE "Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1. MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR. Y por cierto, si tienes un MSXVR, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo."
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > USAR      HACHA 
@@ -3246,7 +3261,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > USAR      HACHA
@@ -3348,7 +3363,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
                 XMESSAGE "Aún a pesar del susto, y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía#g#fD#t.#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oFotografia1
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorNarrador               
@@ -3494,7 +3509,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"         
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 END
 
 > EXAMINA   MUEBLE
@@ -3751,7 +3766,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "Has conseguido abrir la caja pero la llave se ha partido y no se puede quitar.#n"
                 DESTROY oLlaveCaja
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oSecretKey1
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMarcos               ; Color del protagonista
@@ -3831,7 +3846,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > SUBIR     _          AT lEscaleras
@@ -3847,7 +3862,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema               
+                INK     colorSistema               
                 END
 
 > SUBIR     _           AT lEscaleras
@@ -4066,7 +4081,7 @@ BAJAR   lBath2
                 XMESSAGE "Abres el banco y en su interior encuentras ropa de mujer e infantil.#n"
                 INK colorMarcos
                 XMESSAGE "¿Esto qué es?#n"
-                INK colorSistema
+                INK     colorSistema
                 ISAT    oLlaveBodega 252
                 CREATE  oLlaveBodega
                 GET     oLlaveBodega
@@ -4118,7 +4133,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Un diario? ¿Quién se toma tantas molestias en esconder un diario?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿A qué esperas para leerlo?#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 ISAT    oDiario 252
                 CREATE  oDiario 
                 GET     oDiario
@@ -4211,7 +4226,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema               
+                INK     colorSistema               
                 END
 
 > EXAMINA   PATIO
@@ -4352,7 +4367,7 @@ BAJAR   lBath2
                 XMESSAGE "No tengo la menor idea, pero ya no puedes entrar en la habitación.#n"
                 INK     colorNarrador               
                 XMESSAGE "Se ha bloqueado la puerta.#n"   
-                INK colorSistema              ; Color del sistema             
+                INK     colorSistema              ; Color del sistema             
                 XMESSAGE "La cerilla que sostienes se apaga.#k"
                 SET     fRoom1
                 LET     fTurnosConLuz 0
@@ -4465,7 +4480,7 @@ BAJAR   lBath2
                 SET     fAceite
                 INK     colorNarrador               
                 XMESSAGE "La tapa del respiradero cae al suelo y descubres que en su interior hay una pequeña lata de aceite#g#fFG#t.#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 ISAT    oLataDeAceite 252
                 CREATE  oLataDeAceite
                 GET     oLataDeAceite
@@ -4592,7 +4607,7 @@ BAJAR   lBath2
                 NOTCARR oHacha          
                 INK     colorNarrador               
                 XMESSAGE "A tu alrededor ves una tina antigua, una pila y un retrete con una cisterna en lo alto.#n"
-                INK colorSistema
+                INK     colorSistema
                 XMESSAGE "Puedes observar un hacha#g#f%&'#t clavada en el suelo."
                 DONE
 
@@ -4719,7 +4734,7 @@ BAJAR   lBath2
                 MESSAGE "No quisiera ser inoportuno, pero a ver cómo vas a justificar a tus padres este destrozo.#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "Uff, es verdad.#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 ISAT    oHacha 252
                 CREATE  oHacha
                 GET     oHacha
@@ -4788,7 +4803,7 @@ BAJAR   lBath2
                 CREATE  oPaleta
                 INK     colorNarrador               
                 XMESSAGE "Quitas la tapa de la cisterna y ves que por dentro está llena de sangre.#n#nPuedes observar una paleta#g#fmn#t de albañil en su interior.#n" 
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oPaleta
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK 	2
@@ -4929,7 +4944,7 @@ BAJAR   lBath2
                 CREATE  oPeluche
                 INK     colorNarrador               
                 XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama. Se trata de un osito de peluche#g#f##t.#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMarcos               ; Color del protagonista
@@ -4949,7 +4964,7 @@ BAJAR   lBath2
                 CREATE  oPeluche
                 INK     colorNarrador               
                 XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un un osito de peluche#g#f##t.#n"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK colorMarcos               ; Color del protagonista
@@ -5099,7 +5114,7 @@ BAJAR   lBath2
                 XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
                 ISAT    oLlaveCaja 252
                 CREATE  oLlaveCaja
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 GET     oLlaveCaja
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 ZERO    fFinTerma
@@ -5430,7 +5445,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > E         _           AT lPasillo2
@@ -5457,7 +5472,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 > O         _           AT lPasillo2
@@ -5484,7 +5499,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK colorSistema
+                INK     colorSistema
                 END
 
 ; Hemos visto la foto
@@ -5971,7 +5986,7 @@ BAJAR   lBath2
                 XMESSAGE "INK 13"
                 INK     colorNene
                 XMESSAGE "INK 14"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 XMESSAGE "INK 15"
                 DONE
 
@@ -6127,7 +6142,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 END
 
 ; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
@@ -6136,7 +6151,7 @@ BAJAR   lBath2
 > USAR      CERILLA
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
                 NOTZERO fUsarCerilla
-                INK colorSistema              ; Color del sistema
+                INK     colorSistema              ; Color del sistema
                 XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
                 DONE
 
