@@ -1244,7 +1244,13 @@ BAJAR   lBath2
 
 ; Estamos en locPorche
 ; Controlamos si se ejecuta dos veces la misma acción. La segunda vez matamos al jugador.
-> EXAMINA   FOCOS       AT lPorche                
+
+> ROMPER    FOCOS       AT lPorche
+                INK     colorConsciencia               
+                XMESSAGE "Eso es un acto de bandalismo. No pienso hacerlo."
+                DONE
+
+> EXAMINA   FOCOS       AT lPorche
                 ZERO    fFoco           ; Comprobamos que el flag vale 0
                 SET     fFoco           ; Se activa flag para que si vuelve a repetir esta acción, matamos al jugador
                 INK     colorNarrador               
@@ -1557,7 +1563,10 @@ BAJAR   lBath2
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK     colorNarrador               
                 XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
-                INK     colorNarrador               
+                INK     colorNarrador
+                WINDOW  0
+                XPICTURE 007            ; El protagonista saliendo de casa
+                WINDOW  1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
@@ -1582,7 +1591,10 @@ BAJAR   lBath2
 > ABRIR		PUERTA		AT lPorche
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 NOTCARR oMaceta                
-                INK     colorNarrador               
+                INK     colorNarrador
+                WINDOW  0
+                XPICTURE 007            ; El protagonista saliendo de casa
+                WINDOW  1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
                 INK colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
