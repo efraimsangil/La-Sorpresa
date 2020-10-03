@@ -3333,8 +3333,7 @@ BAJAR   lBath2
 > EXAMINA   ASEO
 > MIRAR     _           AT lAseo
                 INK     colorNarrador               
-                XMESSAGE "Hay un interruptor en la pared."
-             
+                XMESSAGE "Hay un interruptor en la pared."             
                 DONE
 
 > S         _           AT lAseo
@@ -3400,6 +3399,10 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "Del susto se te ha apagado la cerilla.#k#n"
                 CLS                     ; Limpiamos la pantalla
+                ; Quitar la foto
+                WINDOW  0
+                GFX     0 5
+                WINDOW  1
                 INK     colorNarrador               
                 XMESSAGE "Aún a pesar del susto, y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía#g#fD#t.#n"
                 INK     colorSistema              ; Color del sistema
