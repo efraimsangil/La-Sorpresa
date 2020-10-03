@@ -305,7 +305,7 @@ GRIFO           173    noun     ; lCochera
 MESA            174    noun     ; lGabinete
 CAMILLA         175    noun     ; lGabinete
 CADENAS         176    noun     ; lGabinete
-BOMBERO         177    noun     ; No se si lo llegaremos a usar
+BOMBERO         177    noun     ; No se usa
 TRASTOS         178    noun     ; lChamizo
 TIERRA          179    noun     ; lChamizo
 ARMARIO         180    noun     ; lChamizo
@@ -319,7 +319,7 @@ ALFOMBRA        187    noun     ; lRoom3
 MESITA          188    noun     ; lRoom3
 TERMA           189    noun     ; lBath3
 MURETE          190    noun     ; lBath3
-OSITO           191    noun     ; No se usa
+OSITO           191    noun     ; Cheat
 AGUA            192    noun     ; lBath3
 MOSAICO         193    noun     ; lBath3
 ALCOBA          194    noun     ; lRoom1
@@ -1614,6 +1614,13 @@ BAJAR   lBath2
 
 ; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, pero si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
 
+> SALIR     _           AT lRecibidor
+                ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
+                SET     fDarkF          ; Activamos el flag de la oscuridad
+                INK     colorNarrador               
+                XMESSAGE "No puedes salir por la puerta principal. Está bloqueada."
+                DONE
+
 > SUBIR     _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 SET     fDarkF          ; Activamos el flag de la oscuridad
@@ -1652,7 +1659,7 @@ BAJAR   lBath2
 > E         _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 INK     colorNarrador               
-                XMESSAGE "El salón está muy oscuro, sin luz no se puede entrar."
+                XMESSAGE "El salón está muy oscuro."
                 DONE
 
 > E         _           AT lRecibidor
@@ -1692,7 +1699,7 @@ BAJAR   lBath2
 > N         _           AT lRecibidor
                 ZERO    fControlLuz
                 INK     colorNarrador               
-                XMESSAGE "El aseo está muy oscuro, sin luz no se puede entrar."
+                XMESSAGE "El aseo está muy oscuro."
                 DONE
 
 > O         _           AT lRecibidor
@@ -2900,7 +2907,7 @@ BAJAR   lBath2
                 SET     fDarkF          ; Activamos el flag de la oscuridad
                 NOTZERO fJugar
                 INK     colorNarrador               
-                XMESSAGE "El chamizo está muy oscuro. Necesitamos luz para entrar."
+                XMESSAGE "El chamizo está muy oscuro."
                 DONE
 
 
@@ -4210,7 +4217,7 @@ BAJAR   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 SET     fDarkF
                 INK     colorNarrador               
-                XMESSAGE "El salón está muy oscuro. No puedes ver nada."
+                XMESSAGE "El salón está muy oscuro."
                 DONE      
 
 
@@ -4232,7 +4239,7 @@ BAJAR   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 SET     fDarkF          ; Ponemos la localización a oscuras
                 INK     colorNarrador               
-                XMESSAGE "El salón está muy oscuro. No puedes ver nada."
+                XMESSAGE "El salón está muy oscuro."
                 DONE 
 
 > EXAMINA   MURO        AT lPatio
@@ -4567,14 +4574,14 @@ BAJAR   lBath2
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 SET     fDarkF
                 INK     colorNarrador               
-                XMESSAGE "El pasillo está muy oscuro. Sin luz no se puede entrar."
+                XMESSAGE "El pasillo está muy oscuro."
                 DONE
 
 > S         _           AT lRoom2 
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 SET     fDarkF
                 INK     colorNarrador               
-                XMESSAGE "El baño está muy oscuro. Sin luz no se puede entrar."
+                XMESSAGE "El baño está muy oscuro."
                 DONE
 
 > S         _           AT lRoom2                
@@ -5899,8 +5906,12 @@ BAJAR   lBath2
                 DONE
 
 > USAR      CHUPETE     AT lBurgos
+                CREATE  oRopa           ; Creamos el objeto de su ropa
+                GET     oRopa           ; Lo cogemos
+                WEAR    oRopa           ; Para vestirse con dicho objeto
                 INK     colorNarrador
-                XMESSAGE "Te acerco al recibidor de la casa para ganar tiempo.#k"
+                XMESSAGE "#n#nAhora te llevaré al recibidor de la casa para ganar tiempo.#k"
+                CLS
                 ;ISAT    oLlaveBodega 252
                 ;CREATE  oLlaveBodega
                 ;GET     oLlaveBodega
@@ -5929,64 +5940,6 @@ BAJAR   lBath2
                 ;SET     fJugar  
                 GOTO    lRecibidor
                 RESTART
-                DONE
-
-> LLAMAR    CHUPETE     AT lBurgos
-                CLS                     ; Limpiamos la pantalla
-                WINDOW 0
-                XPICTURE 225
-                WINDOW 1
-                XMESSAGE "220#k"
-                WINDOW 0
-                XPICTURE 221
-                WINDOW 1
-                XMESSAGE "221#k"
-                WINDOW 0
-                XPICTURE 222
-                WINDOW 1
-                XMESSAGE "222#k"
-                WINDOW 0
-                XPICTURE 223
-                WINDOW 1
-                XMESSAGE "223#k"
-                WINDOW 0
-                XPICTURE 224
-                WINDOW 1
-                XMESSAGE "224#k"
-                WINDOW 0
-                XPICTURE 225
-                WINDOW 1
-                XMESSAGE "225#k"
-                WINDOW 0
-                XPICTURE 226
-                WINDOW 1
-                XMESSAGE "226#k"
-                WINDOW 0
-                XPICTURE 227
-                WINDOW 1
-                XMESSAGE "227#k"
-                WINDOW 0
-                XPICTURE 228
-                WINDOW 1
-                XMESSAGE "228#k"
-                WINDOW 0
-                XPICTURE 229
-                WINDOW 1
-                XMESSAGE "229#k"
-                WINDOW 0
-                XPICTURE 230
-                WINDOW 1
-                XMESSAGE "230#k"
-                WINDOW 0
-                XPICTURE 231
-                WINDOW 1
-                XMESSAGE "231#k"
-                WINDOW 0
-                XPICTURE 232
-                WINDOW 1
-                XMESSAGE "232#k"
-                ; GOTO    lRecibidor
-               ; RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
 > USAR      MUEBLE      
