@@ -981,15 +981,15 @@ BAJAR   lBath2
                 XMESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del teléfono; no obstante, tanteas con las manos en la mesilla y descuelgas.#n"
                 INK colorPadre              ; Color del padre 
                 XMESSAGE "Buenos días, hijo. ¿Qué tal estás?#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Hola, padre. Hasta que me llamaste estaba como un rey, en la cama, tratando de negociar con Morfeo una segunda ronda.#n"
                 INK colorPadre              ; Color del padre 
                 XMESSAGE "Dile a Morfeo que espere un momento y escucha. Recuerda que hoy habíamos quedado aquí, en la sierra. Tenemos algo muy importante que contarte, así que espabila y ve saliendo de casa, o se te va a hacer muy tarde.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Ostras, pues si te soy sincero, estaba tan cansado que ya no recordaba que hoy teníamos que vernos. Venga, salgo ya.#k#n"
                 INK colorPadre              ; Color del padre 
                 XMESSAGE "Ahora nos vemos, hijo, conduce con cuidado. Hasta luego.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Hasta luego, padre."
                 DONE              
 
@@ -1123,7 +1123,6 @@ BAJAR   lBath2
 
 ; Estamos en locExtCasa
 ; Si vamos al Chamizo o al Garaje, podemos interactuar con la puerta o lo que haya en dicha localización. 
-; NOTA: Solo en el caso del final peor, cuando salimos con el niño, se nos descubre una estancia secreta donde hay ramitas para poder quemar la casa.
 
 > E			_           AT lExtCasa   
                 ZERO    fJugar          ; Comprobamos que NO se jugó con el crío del patio
@@ -1180,7 +1179,7 @@ BAJAR   lBath2
                 ZERO    fJugar          ; No llegaste a jugar con el crío el patio
                 INK     colorNarrador               ; Color de tu consciencia
                 XMESSAGE "Arrancas el coche y dejas atrás la hacienda y te detienes justo antes de salir del pueblo.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Te has quedado como las vacas que ven pasar el tren, ¿eh?. Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada de la historia.#k#b"
                 INK     colorNarrador               ; Color de tu consciencia
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni te has acercado, oye.#k#n Te recomendamos encarecidamente que le des otra oportunidad al juego y le dediques un poco más de atención.#k"
@@ -1303,7 +1302,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Los vamos examinando poco a poco o tienes mucha prisa por entrar en la casa?"
                 DONE
 
-; Durante el juego, para hacerlo más dinámico, no hacemos uso del COGER objeto, si no que por el hecho de examinarlo, lo coges.
+; Durante el juego, para hacerlo más fácil, cuando examinas un objeto, lo coges, aunque también puedes usar el verbo COGER si eres un jugador experimentado.
 > EXAMINA 	PLANTA
 > COGER 	MACETA
 > EXAMINA	MACETA		AT lPorche
@@ -1465,7 +1464,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Ahora bien, cuando sepa tu madre que has roto el gnomo... ¡¡¡vas a flipar!!!#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Mi madre apreciaba mucho el gnomo."
                 DESTROY oGnomo          ; Destruimos el objeto
                 SET     fGnomoRoto      ; Activamos un flag para controlar que se destruyó dicho objeto
@@ -1568,13 +1567,13 @@ BAJAR   lBath2
                 XPICTURE 007            ; El protagonista saliendo de casa
                 WINDOW  1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque antes notaba que las llevaba encima.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
@@ -1596,13 +1595,13 @@ BAJAR   lBath2
                 XPICTURE 007            ; El protagonista saliendo de casa
                 WINDOW  1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque no las siento encima.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
@@ -1613,7 +1612,7 @@ BAJAR   lBath2
 ; Estamos en locRecibidor
 ; Ya estamos dentro de la casa, en el recibidor y no podemos salir al exterior por la puerta principal
 
-; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, luego si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
+; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, pero si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
 
 > SUBIR     _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
@@ -1626,7 +1625,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz     ; No es cero, luego tenemos luz
                 NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario       ; Llevamos en el inventario las cerillas
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
                 CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
                 INK     colorNarrador               
                 GOTO    lEscaleras
@@ -1643,7 +1642,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 GOTO    lCocina
@@ -1660,7 +1659,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
@@ -1671,7 +1670,7 @@ BAJAR   lBath2
 > N         _           AT lRecibidor                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fUsarInterruptor
                 CLS                     ; Limpiamos la pantalla
@@ -1683,15 +1682,15 @@ BAJAR   lBath2
 > N         _           AT lRecibidor                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarInterruptor
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos     ; Color del protagonista
                 XMESSAGE "Después del susto que me he pegado... ¡yo ahí no entro!"
                 DONE
 
 > N         _           AT lRecibidor
-                ZERO fControlLuz
+                ZERO    fControlLuz
                 INK     colorNarrador               
                 XMESSAGE "El aseo está muy oscuro, sin luz no se puede entrar."
                 DONE
@@ -1756,12 +1755,7 @@ BAJAR   lBath2
                 SET     fCajon          ; Ponemos el flag a 255. Hemos abierto el cajón
                 DONE
 
-> ABRIR		CAJON 		AT lRecibidor
-                NOTZERO fCajon          ; Hemos abierto el cajón
-                INK     colorNarrador               ; Color de tu consciencia
-                XMESSAGE "Ya no hay nada interesante en la consola."
-                DONE
-
+> ABRIR		CAJON
 > EXAMINA   CAJON       AT lRecibidor
                 NOTZERO fCajon          ; El cajón ya lo abrimos
                 INK     colorNarrador               ; Color de tu consciencia
@@ -1779,17 +1773,17 @@ BAJAR   lBath2
                 NOTCARR oLlaveBodega    ; No llevamos el objeto encima
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Necesitas la llave de la bodega#g#f1#t para poder entrar."
                 DONE
 
 > BAJAR		_  			AT lRecibidor
-                CARRIED oLlaveBodega    ; Llevamos el objeto en nuestro inventario
+                CARRIED oLlaveBodega    ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Abres la puerta de la bodega.#k"
@@ -1810,17 +1804,17 @@ BAJAR   lBath2
                 GOTO    lRecibidor
                 RESTART
                 DONE
-
+; Estas dos acciones de MIRAR están controladas por un flag que valdrá 0 o 255 dependiendo de si NO hizo uso de la paleta en la mancha o SI. NO=0 y SI=255
 > MIRAR     _           AT lBodega
                 NOTZERO fControlLuz
-                ZERO    fQuitarMancha
+                ZERO    fQuitarMancha   ; Flag para comprobar si usó la paleta en la mancha o no. En este caso comprobamos que NO ha usado la paleta en la mancha.
                 INK     colorNarrador               
                 XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo."
                 DONE
 
 > MIRAR     _           AT lBodega
                 NOTZERO fControlLuz
-                NOTZERO fQuitarMancha
+                NOTZERO fQuitarMancha   ; Flag que indica que SI usó la paleta en la mancha porque ya no vale 0
                 INK     colorNarrador               
                 XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar la puerta que has descubierto usando la paleta#g#fmn#t. Hay un alambique al fondo."
                 DONE
@@ -1828,7 +1822,7 @@ BAJAR   lBath2
 > EXAMINA   PARED       AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es una pared con una gran mancha."
@@ -1837,18 +1831,18 @@ BAJAR   lBath2
 > EXAMINA   ALAMBIQUE   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es un viejo alambique que por su estado, debió usarse bastante. Prestas atención y descubres que el alambique está situado justo encima de una trampilla.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Seguro que se le dio buen uso a este cacharro."
                 DONE
 
 > MOVER     ALAMBIQUE   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fMoverAlambique ; Es un flag para controlar que hemos movido el Alambique
                 SET     fMoverAlambique ; Activamos dicho flag
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -1859,7 +1853,7 @@ BAJAR   lBath2
 > EXAMINA   BOTELLERO   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Se trata de un viejo botellero realizado en madera que tiene una capacidad de unas cincuenta botellas. Está vacío.#n"
@@ -1870,18 +1864,18 @@ BAJAR   lBath2
 > EXAMINA   MANCHA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "La mancha parece ser de yeso.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Igual tengo algo que me sirva para quitarlo y comprobar qué hay detrás."
                 DONE
 
 > EXAMINA   TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fMoverAlambique
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -1891,7 +1885,7 @@ BAJAR   lBath2
 > EXAMINA   CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 XMESSAGE "El candado está en muy malas condiciones, parece oxidado y probablemente el mecanismo necesite un buen engrase."
@@ -1900,7 +1894,7 @@ BAJAR   lBath2
 > ENGRASAR  CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 CARRIED oLataDeAceite   ; Llevamos con nosotros la lata de aceite
                 ZERO    fUsarAceite     ; No hemos usado la lata de aceite
@@ -1916,7 +1910,7 @@ BAJAR   lBath2
 > ENGRASAR  CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 NOTCARR oLataDeAceite   ; Hemos usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -1929,7 +1923,7 @@ BAJAR   lBath2
 > ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 ZERO    fUsarAceite     ; No hemos usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -1941,7 +1935,7 @@ BAJAR   lBath2
 > ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 NOTZERO fUsarAceite     ; No hemos usado la lata de aceite
                 ZERO    fCombinacion    ; No tenemos la combinación del candado
@@ -1954,48 +1948,74 @@ BAJAR   lBath2
 > ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 NOTZERO fUsarAceite
                 NOTZERO fCombinacion    ; Tenemos la combinación del candado
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
                 CLS
-                GOTO    lGabinete
+                GOTO    lGabinete       ; Vamos a la localicación lGabinete
                 LET     fVasAMorir 0    ; Activo un flag con el que controlamos cuando matar al jugar
                 RESTART
                 DONE
 
-
-;> UTILIZAR  PALETA
-;> USAR      PALETA      AT lBodega
-> QUITAR    YESO      AT lBodega
-                PREP    CON
-                NOUN2   PALETA
+> UTILIZAR  PALETA
+> USAR      PALETA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
-                CARRIED oPaleta         ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CARRIED oPaleta         ; Llevamos el objeto en nuestro inventario?
                 ZERO    fQuitarMancha   ; Flag para controlar el uso de la paleta
                 SET     fQuitarMancha   ; Activamos dicho flag
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡No me lo puedo creer!#n"
                 INK     colorNarrador               
                 XMESSAGE "Rascas la mancha con la paleta#g#fmn#t y descubres un contorno en la pared.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta#g#fmn#t. ¡Qué burro eres!"
-                DESTROY oPaleta
+                DESTROY oPaleta         ; Destruimos el objeto porque no lo vamos a usar más
                 DONE
 
-;> UTILIZAR  PALETA
-;> USAR      PALETA      AT lBodega
+; Esta es una de las pocas acciones complejas. Deben usar QUITAR YESO CON PALETA
+
 > QUITAR    YESO      AT lBodega
                 PREP    CON
                 NOUN2   PALETA
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CARRIED oPaleta         ; Llevamos el objeto en nuestro inventario?
+                ZERO    fQuitarMancha   ; Flag para controlar el uso de la paleta
+                SET     fQuitarMancha   ; Activamos dicho flag
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorMarcos               ; Color del protagonista
+                XMESSAGE "¡No me lo puedo creer!#n"
+                INK     colorNarrador               
+                XMESSAGE "Rascas la mancha con la paleta#g#fmn#t y descubres un contorno en la pared.#n"
+                INK     colorMarcos               ; Color del protagonista
+                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta#g#fmn#t. ¡Qué burro eres!"
+                DESTROY oPaleta         ; Destruimos el objeto porque no lo vamos a usar más
+                DONE
+
+> UTILIZAR  PALETA
+> USAR      PALETA      AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                NOTZERO fQuitarMancha   ; Ya usó la paleta
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorNarrador               
+                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
+                DONE
+
+> QUITAR    YESO      AT lBodega
+                PREP    CON
+                NOUN2   PALETA
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fQuitarMancha   ; Ya usó la paleta
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -2004,16 +2024,16 @@ BAJAR   lBath2
 
 ;ALTERNATIVAS: dependiendo de la puerta que hayamos abierto, la respuesta será diferente: podemos quitar la mancha de la pared y abrir la puerta de la cochera o bien retirar el alambique y descubrir la trampilla.
 
-;esto solamente pasa si hemos rascado la pared con la paleta
+;esto solamente pasa si hemos usado la paleta con la mancha
 > EXAMINA 	PUERTA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
                 INK     colorNarrador               
                 XMESSAGE "Es una puerta metálica que comunica la bodega con otro lugar.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "No tengo recuerdo alguno de esta puerta. Además, no tiene cerradura, luego seguro que se puede abrir."
                 DONE
 
@@ -2025,7 +2045,7 @@ BAJAR   lBath2
 > ABRIR 	PUERTA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
                 ZERO    fJugar
@@ -2044,7 +2064,7 @@ BAJAR   lBath2
 > ABRIR 	PUERTA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha
                 NOTZERO fJugar
@@ -2057,24 +2077,24 @@ BAJAR   lBath2
                 XMESSAGE "Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil.#k#n#b"
                 INK     colorNene
                 XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¿Has venido siguiéndome?#k#n"
                 INK     colorNene 
                 XMESSAGE "!Sí! Te has portado bien conmigo y yo te acompaño para ayudarte.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Me has dicho que aquí ha ocurrido algo. ¿A qué te refieres?#k#n"
                 INK     colorNene 
                 XMESSAGE "Un día yo escapé de la casa en busca de ayuda, porque el señor nos pegaba a mi madre, a mi hermana y a mí, pero el señor me descubrió camino del pueblo y me trajo aquí. #k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¿Y qué pasó entonces?#k#n"
                 INK     colorNene 
                 XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El señor me obligó a mirar mientras los descuartizaba con un hacha#g#f%&'#t y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#k#n"
                 INK     colorNene 
                 ; Corregir en la versión en inglés
                 XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. De vez en cuando, y no entiendo el por qué, aparecemos en la casa. Supongo que no descansaremos en paz hasta que alguien descubra los cuerpos.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¿Has dicho que llevasteis los cuerpos al chamizo?#k#n"
                 INK     colorNene 
                 XMESSAGE "Si. Allí los enterramos con una pala#g#f()*#t y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo#g#f2#t se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
@@ -2089,7 +2109,7 @@ BAJAR   lBath2
                 XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala#g#f()*#t para poder desenterrarnos.#k#n"
                 INK     colorConsciencia
                 XMESSAGE "¡Entendido! Hay que buscar una pala#g#f()*#t.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#k#n"
                 INK     colorNene
                 XMESSAGE "Te acompaño. Mi hermana tiene cerrada la puerta de acceso al exterior, pero yo la abro ahora mismo, lo malo es que se va a dar cuenta y ya no vamos a poder abrirla de nuevo.#k#n"
@@ -2110,7 +2130,7 @@ BAJAR   lBath2
 > ABRIR 	PUERTA      AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fQuitarMancha
                 INK     colorNarrador               
@@ -2122,7 +2142,7 @@ BAJAR   lBath2
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fMoverAlambique ; Ha movido el alambique
                 INK     colorNarrador
@@ -2134,7 +2154,7 @@ BAJAR   lBath2
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 ZERO    fUsarAceite
@@ -2147,7 +2167,7 @@ BAJAR   lBath2
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 NOTZERO fUsarAceite
@@ -2162,7 +2182,7 @@ BAJAR   lBath2
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fJugar
                 NOTZERO fMoverAlambique ; Ha movido el alambique
@@ -2184,7 +2204,7 @@ BAJAR   lBath2
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar          ; Aquí el crío nos da la pista de apagar la cerilla.
                 ZERO    fLeerDiario
@@ -2210,7 +2230,7 @@ BAJAR   lBath2
 > ABRIR     TRAMPILLA   AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar          ; Aquí el crío nos da la pista de apagar la cerilla.
                 NOTZERO fLeerDiario
@@ -2246,7 +2266,7 @@ BAJAR   lBath2
 > EXAMINA   CAMILLA     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fVasAMorir
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -2258,7 +2278,7 @@ BAJAR   lBath2
 > EXAMINA   CAMILLA     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -2273,7 +2293,7 @@ BAJAR   lBath2
 > EXAMINA   CADENAS     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fVasAMorir
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -2285,7 +2305,7 @@ BAJAR   lBath2
 > EXAMINA   CADENAS     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -2300,7 +2320,7 @@ BAJAR   lBath2
 > EXAMINA   MESA        AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fVasAMorir
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -2311,7 +2331,7 @@ BAJAR   lBath2
 > EXAMINA   MESA        AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -2328,7 +2348,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fVasAMorir
                 SET     fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -2339,7 +2359,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -2358,7 +2378,7 @@ BAJAR   lBath2
 > N        _            AT lGabinete
                 ZERO    fControlLuz    ; esto estaba en NOTZERO fControlLuz
                 ZERO    fTurnosConLuz
-                CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario?
                 SET     fDarkF           ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK     colorNarrador              
@@ -2378,7 +2398,7 @@ BAJAR   lBath2
 > N        _            AT lGabinete
                 ZERO    fControlLuz    ; esto estaba en NOTZERO fControlLuz
                 ZERO    fTurnosConLuz
-                CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas      ; Llevamos el objeto en nuestro inventario?
                 SET     fDarkF           ; Desactivamos la oscuridad
                 NOTZERO fJugar         ; El crío nos va a revelar que en el chamizo están sus restos.
                 INK     colorNarrador              
@@ -2395,15 +2415,15 @@ BAJAR   lBath2
                 XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
                 INK     colorNene ;Color del crío
                 XMESSAGE "Tengo algo importante que decirte.#k#n"
-                INK colorMarcos ;Color del protagonista
+                INK     colorMarcos ;Color del protagonista
                 XMESSAGE "Dime, ¿qué te ocurre?#k#n"
                 INK     colorNene ;Color del crío
                 XMESSAGE "Bajo este suelo están nuestros cuerpos.#k#n Un día yo me escapé de la casa en busca de ayuda y el señor mató a mi madre y a mi hermana, más tarde me encontró en mitad del camino y me trajo a casa.#k#n El señor me obligó a traer aquí los cuerpos de mi madre y de mi hermana, cavó un agujero en este suelo y cuando terminó, me mató a mi también y aún estamos enterrados aquí.#n"
-                INK colorMarcos ;Color del protagonista
+                INK     colorMarcos ;Color del protagonista
                 XMESSAGE "Tengo que dar con la forma de descubrir los cuerpos y de avisar a las autoridades.#k#n"
                 INK     colorNene ;Color del crío
                 XMESSAGE "Muchas gracias, realmente necesito que se nos dé descanso, porque estamos atrapados en esta casa.#k#n"        
-                INK colorMarcos ;Color del protagonista
+                INK     colorMarcos ;Color del protagonista
                 XMESSAGE "De acuerdo, haré cuanto esté en mi mano.#k"
                 GOTO    lChamizo
                 DONE
@@ -2411,7 +2431,7 @@ BAJAR   lBath2
 > N        _            AT lGabinete
                 NOTZERO fControlLuz     ; esto estaba en NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador                  
                 XMESSAGE "Intentas acercarte a la puerta y la presencia que hay encima de la camilla te percibe.#k#n Escuchas como las cadenas que la sujetan se rompen y la presencia se abalanza sobre ti. ¿Son los gritos que escuchas tuyos o suyos? Notas cómo la criatura te arranca con los dientes varios bocados de carne antes de que, misericordiosamente, pierdas la conciencia.#k#n#n"
@@ -2502,12 +2522,12 @@ BAJAR   lBath2
 > MIRAR     _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK     colorNarrador
                 XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#fKL#t tirada en el suelo que está conectada al grifo.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
                 INK     colorNarrador
                 XMESSAGE "El niño aparece a tu lado.#k#n" 
@@ -2519,7 +2539,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fJugar
                 INK      9
@@ -2530,7 +2550,7 @@ BAJAR   lBath2
 > EXAMINA   PUERTA      AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Se trata de una puerta de garaje abatible. Es de chapa."                
@@ -2539,7 +2559,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 SET     fManguera
@@ -2555,7 +2575,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManguera
                 INK     colorNarrador               
@@ -2565,7 +2585,7 @@ BAJAR   lBath2
 > EXAMINA   GRIFO       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fConectarManguera  ; la manguera está desconectada
                 INK     colorNarrador               
@@ -2575,7 +2595,7 @@ BAJAR   lBath2
 > EXAMINA   GRIFO       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas         ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas         ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF            ; Desactivamos la oscuridad
                 NOTZERO fConectarManguera ; la manguera está conectada
                 INK     colorNarrador                 
@@ -2585,7 +2605,7 @@ BAJAR   lBath2
 > EXAMINA   GENERADOR   AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "El generador no funciona pero de algún extraño modo, hay luz en el exterior de la casa. Podría ser energía residual."
@@ -2594,7 +2614,7 @@ BAJAR   lBath2
 > EXAMINA   PARED       AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Las paredes son blancas con un acabado rugoso.#n Puedes observar un grifo encastrado en una de ellas."
@@ -2603,7 +2623,7 @@ BAJAR   lBath2
 > EXAMINA   REJILLA     AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Parece haber algo dentro. El conducto de salida de agua de la rejilla está obturado.#n"
@@ -2622,7 +2642,7 @@ BAJAR   lBath2
 > CONECTAR  MANGUERA    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 INK     colorNarrador               
@@ -2635,7 +2655,7 @@ BAJAR   lBath2
                 NOUN2   REJILLA
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManguera
                 ZERO    fMangueraRejilla    ; Flag de que ha tenido que examinar rejilla antes
@@ -2651,7 +2671,7 @@ BAJAR   lBath2
                 NOUN2   REJILLA
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManguera
                 NOTZERO fMangueraRejilla    ; Flag de que ha tenido que examinar rejilla antes
@@ -2666,7 +2686,7 @@ BAJAR   lBath2
                 NOUN2   GRIFO
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManguera
                 ;NOTZERO fMangueraRejilla 
@@ -2683,7 +2703,7 @@ BAJAR   lBath2
                 NOUN2   GRIFO
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManguera
                 ;NOTZERO fMangueraRejilla 
@@ -2696,7 +2716,7 @@ BAJAR   lBath2
 > ABRIR     GRIFO       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 ZERO    fManguera                   ; No encontró la manguera
                 INK     colorNarrador                           
@@ -2713,7 +2733,7 @@ BAJAR   lBath2
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 NOTZERO fManguera                   ; Si encontró la manguera
                 ZERO    fMangueraRejilla            ; No puso la manguera en la rejilla
@@ -2733,7 +2753,7 @@ BAJAR   lBath2
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 NOTZERO fManguera                   ; Si encontró la manguera
                 ZERO    fMangueraRejilla            ; Si puso la manguera en la rejilla
@@ -2760,7 +2780,7 @@ BAJAR   lBath2
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 NOTZERO fManguera                   ; Si encontró la manguera
                 NOTZERO fMangueraRejilla            ; Si puso la manguera en la rejilla
@@ -2778,7 +2798,7 @@ BAJAR   lBath2
 > ABRIR     GRIFO       AT lCochera                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 NOTZERO fManguera                   ; Si encontró la manguera
                 NOTZERO fMangueraRejilla            ; Si puso la manquera en la rejilla
@@ -2798,7 +2818,7 @@ BAJAR   lBath2
 ;> CERRAR    GRIFO       AT lCochera
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
 ;                CLEAR   fDarkF          ; Desactivamos la oscuridad
 ;                NOTZERO fCerrarGrifo
 ;                CLEAR   fCerrarGrifo
@@ -2811,7 +2831,7 @@ BAJAR   lBath2
 ;> CERRAR    GRIFO       AT lCochera
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
 ;                CLEAR   fDarkF          ; Desactivamos la oscuridad
 ;                NOTZERO fCerrarGrifo
 ;                INK     colorNarrador               
@@ -2822,7 +2842,7 @@ BAJAR   lBath2
 > ABRIR     REJILLA    AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "La rejilla se encuentra atascada y no se puede abrir."
@@ -2831,18 +2851,18 @@ BAJAR   lBath2
 > O         _           AT lCochera
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "La puerta de la cochera se encuentra cerrada y no se abrirá.#n"     
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Meridianamente claro."
                 DONE
 
 > E         _           AT lCochera ; Si salimos por la puerta, la puerta se bloquea con un flag y no podemos volver a entrar.
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ;ZERO    fCerrarGrifo
                 INK     colorNarrador               
@@ -2855,7 +2875,7 @@ BAJAR   lBath2
 ;> E         _           AT lCochera
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
-;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+;                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
 ;                CLEAR   fDarkF          ; Desactivamos la oscuridad                
 ;                NOTZERO fCerrarGrifo
 ;                INK     colorNarrador               
@@ -2887,7 +2907,7 @@ BAJAR   lBath2
 > ABRIR     PUERTA      AT lExteriorChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 XMESSAGE "Abres la puerta del chamizo y entras.#k#b#n"
@@ -2895,7 +2915,7 @@ BAJAR   lBath2
                 GOTO    lChamizo              
                 INK     colorNene
                 XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t y me temo que ya no podemos entrar en la casa para cogerla.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Vaya, cuánto lo siento.#k#b"                
                 INK     colorNarrador               
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
@@ -2917,7 +2937,7 @@ BAJAR   lBath2
 > MIRAR        _        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Has entrado al chamizo. Un lugar infecto y húmedo, donde se guardaban los oxidados utensilios de jardinería y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#nAl fondo del chamizo puedes observar un armario metálico."
@@ -2926,7 +2946,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "El suelo es de tierra y despide un indescriptible aroma profundo y penetrante. Cuánto más te acercas a el, más intenso es el olor."
@@ -2935,7 +2955,7 @@ BAJAR   lBath2
 > EXAMINA   TIERRA      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Alargas la mano y coges un puñadito de tierra. El olor es nauseabundo."
@@ -2945,11 +2965,11 @@ BAJAR   lBath2
 > EXAMINA   ARMARIO     AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja#n"
@@ -2963,7 +2983,7 @@ BAJAR   lBath2
 > EXAMINA   TRASTOS      AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Trastos inservibles que no merecen tu atención."
@@ -2974,7 +2994,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 DONE
@@ -2985,7 +3005,7 @@ BAJAR   lBath2
 > USAR      PALA        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPala
                 NOTZERO fUsarPala
@@ -2997,7 +3017,7 @@ BAJAR   lBath2
 > USAR      PALA        AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPala
                 NOTZERO fJugar
@@ -3007,7 +3027,7 @@ BAJAR   lBath2
                 XMESSAGE "Comienzas a cavar y enseguida encuentras tres bolsas negras que contienen restos humanos en su interior.#n"       
                 INK     colorNene
                 XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 ; CAGADA
                 XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque estoy seguro que me van a hacer montones de preguntas."  
                 ZERO fDesenterrar
@@ -3023,7 +3043,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPala
                 ZERO    fJugar
@@ -3050,7 +3070,7 @@ BAJAR   lBath2
 
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveChamizo
                 INK     colorNarrador               
@@ -3068,7 +3088,7 @@ BAJAR   lBath2
 > ABRIR         PUERTA  AT lChamizo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 INK     colorNarrador               
@@ -3083,7 +3103,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 CARRIED oHacha
@@ -3106,7 +3126,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 CARRIED oHacha
@@ -3115,7 +3135,7 @@ BAJAR   lBath2
                 NOTZERO fLeerDiario
                 INK     colorNarrador
                 XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK     colorNene 
                 XMESSAGE "Te espero aquí.#k#n#b"
@@ -3124,7 +3144,7 @@ BAJAR   lBath2
                 CLS
                 INK colorPadre  
                 XMESSAGE "Hijo, ¿qué ha ocurrido aquí?#k#n"
-                INK colorMarcos 
+                INK     colorMarcos 
                 XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
                 XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
                 XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#k#n"
@@ -3135,19 +3155,19 @@ BAJAR   lBath2
                 XMESSAGE "Yo sé que en aquel momento esos críos necesitaban algo de nosotros y también sé que se enfadaron muchísimo cuando al verlos, salimos corriendo de allí, de hecho, la niña, al vernos salir corriendo, nos amenazó cuando salíamos por la puerta.#k#n"
                 XMESSAGE "Lo que verdaderamente lamento ha sido avisarte con tan poco tiempo; no te imaginas las broncas que he tenido con tu madre, hasta que se me ocurrió la idea de que tú me acompañases, porque ella se negaba rotundamente a que yo fuese solo. Tu madre finalmente transigió porque las discusiones eran cada vez más fuertes entre nosotros y yo tenía muy claro que debía volver esta noche a la casa.#k#n"
                 XMESSAGE "Yo estuve esperándote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
                 INK colorPadre
                 XMESSAGE "Vaya, lamento que no leyeses el mensaje que te escribí, no era mi intención dejarte solo y esperaba que hubieses venido enseguida a casa de tu hermana, que es donde nos encontrábamos.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes qué era lo que estaba ocurriendo.#k#n"
                 INK colorPadre
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo, no queríamos preocuparte.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Está bien, no pasa nada.#k#n"
                 INK colorPadre
                 XMESSAGE "Está amaneciendo hijo, venga, vamos a casa que tu madre debe estar preocupadísima.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "De acuerdo, vayámonos.#k#b"
                 INK     colorNarrador
                 ;XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: ¡SUBLIME!#n#nHas terminado la aventura completando los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n Deja ya de jugar con videojuegos de otra época, sal a la calle a que te dé el aire y ¡ventila la habitación! ¡Que huele a choto!#k"
@@ -3163,7 +3183,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 CARRIED oHacha
@@ -3172,7 +3192,7 @@ BAJAR   lBath2
                 ZERO    fLeerDiario     ; No hemos leído el diario de la criada
                 INK     colorNarrador
                 XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK     colorNene 
                 XMESSAGE "Te espero aquí.#k#n#b"
@@ -3180,7 +3200,7 @@ BAJAR   lBath2
                 XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos aparece también tu padre.#k#n"
                 INK colorPadre  
                 XMESSAGE "Hijo, qué ha ocurrido aquí?#k#n"
-                INK colorMarcos 
+                INK     colorMarcos 
                 XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
                 XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
                 XMESSAGE "¡Me he encontrado con todos ellos en la casa!, de hecho hasta he hablado con uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos. Encontré a un niño fantasma en el patio y me ha acompañado por toda la casa. Gracias a el he podido salir de ella y encontrar también los restos de la familia en el chamizo.#k#n"
@@ -3190,19 +3210,19 @@ BAJAR   lBath2
                 XMESSAGE "Yo sé que en aquel momento esos críos necesitaban algo de nosotros y también sé que se enfadaron muchísimo cuando al verlos, salimos corriendo de allí, de hecho, la niña, al vernos salir corriendo, nos amenazó cuando salíamos por la puerta.#k#n"
                 XMESSAGE "Lo que verdaderamente lamento ha sido avisarte con tan poco tiempo; no te imaginas las broncas que he tenido con tu madre, hasta que se me ocurrió la idea de que tú me acompañases, porque ella se negaba rotundamente a que yo fuese solo. Tu madre finalmente transigió porque las discusiones eran cada vez más fuertes entre nosotros y yo tenía muy claro que debía volver esta noche a la casa.#k#n"
                 XMESSAGE "Yo estuve esperándote en la entrada de la finca hasta que comenzó a caer el sol y ya no pude esperarte más, de hecho, te dejé una nota en la puerta de casa, pero veo que no la has leído.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
                 INK colorPadre
                 XMESSAGE "Vaya, lamento que no leyeses el mensaje que te escribí, no era mi intención dejarte solo y esperaba que hubieses venido enseguida a casa de tu hermana, que es donde nos encontrábamos.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Pues he estado a un pelo de que me lleven por delante, ya me podías haber contado antes qué era lo que estaba ocurriendo.#k#n"
                 INK colorPadre
                 XMESSAGE "No tengo nada que decir, lo siento mucho hijo, no queríamos preocuparte.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "Está bien, no pasa nada.#k#n"
                 INK colorPadre
                 XMESSAGE "Está amaneciendo hijo, venga, vamos a casa que tu madre debe estar preocupadísima.#k#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "De acuerdo, vayámonos.#k#b"
                 INK     colorNarrador
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: BUENA.#n#nHas terminado la aventura completando los enigmas, pero no has conocido la historia que lo envuelve. Felicidades.#n#n#k Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#n"
@@ -3216,7 +3236,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 CARRIED oHacha
@@ -3233,7 +3253,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveChamizo
                 ZERO    fDesenterrar
@@ -3247,7 +3267,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveChamizo
                 NOTCARR oHacha
@@ -3282,10 +3302,10 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oHacha
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "No tengo nada que pueda servir para romper ese travesaño."                
                 INK     colorNarrador
                 DONE
@@ -3294,7 +3314,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia
                 XMESSAGE "No podemos volver por ahí."
@@ -3322,7 +3342,7 @@ BAJAR   lBath2
 > EXAMINA	ASEO 		AT lAseo                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
             	XMESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla.#n"
@@ -3333,7 +3353,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador
                 XMESSAGE "El suelo está lleno de cristales."
@@ -3342,7 +3362,7 @@ BAJAR   lBath2
 > EXAMINA   INTERRUPTOR AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador
                 XMESSAGE "Es un interruptor."
@@ -3353,7 +3373,7 @@ BAJAR   lBath2
 > USAR		INTERRUPTOR AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fUsarInterruptor
                 SET     fUsarInterruptor
@@ -3362,7 +3382,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
                 XMESSAGE "Pulsas el interruptor y ves una fotografía#g#fD#t en el suelo, pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Argggg! ¡Santa madre de la hostia puta! ¡Está todo lleno de cristales!#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¡Dios! ¡Casi me cago encima! Otra como esta y me quedo muñeco... me pregunto si habrá un puto desfibrilador en esta santa casa.#n"
@@ -3393,7 +3413,7 @@ BAJAR   lBath2
 > USAR		INTERRUPTOR AT lAseo
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarInterruptor
                 INK     colorConsciencia               ; Color de tu consciencia
@@ -3414,7 +3434,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 GOTO    lDespensa
@@ -3432,7 +3452,7 @@ BAJAR   lBath2
 > EXAMINA  PAREDES      AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Son frías y húmedas."
@@ -3442,7 +3462,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Puedes ver el fregadero, un aparador con cajones y la vieja lavadora.#n"
@@ -3453,7 +3473,7 @@ BAJAR   lBath2
 > EXAMINA	FREGADERO   AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ;ISAT    oLlavePatio 252
                 INK     colorNarrador               
@@ -3463,7 +3483,7 @@ BAJAR   lBath2
 > EXAMINA	SUMIDERO    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Te alzas en el fregadero para poder acceder mejor al sumidero. Vas introduciendo la mano poco a poco; es un proceso delicado: si lo que hay allí atascado se cae en el fondo, puedes darlo por perdido.#n"
@@ -3483,7 +3503,7 @@ BAJAR   lBath2
 > EXAMINA   CUCHARAS     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿Nunca has visto una cuchara?"
@@ -3492,16 +3512,16 @@ BAJAR   lBath2
 > COGER     CUCHARAS    AT  lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No pienso ir cargado con unas cucharas."
                 DONE
 
 > EXAMINA   TRITURADOR   AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad               
                 ZERO    fTriturador     ; flag para controlar si lo examina dos veces
                 SET     fTriturador
@@ -3528,7 +3548,7 @@ BAJAR   lBath2
 > EXAMINA	APARADOR    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es un típico aparador de cocina hecho en madera con una portezuela y varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
@@ -3538,27 +3558,27 @@ BAJAR   lBath2
 > ABRIR     APARADOR     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Está vacío. Me resuelta muy raro.#n"          
                 DONE
 
 > EXAMINA	CAJONES     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Son de madera.#n"
                 DONE
 
 > ABRIR     CAJONES     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es curioso, solo hay cucharas. ¿Dónde está lo que falta?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Joder, no sé si quiero saberlo."
@@ -3567,7 +3587,7 @@ BAJAR   lBath2
 > EXAMINA	COJONES     AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "No es momento de examinar tus genitales."
@@ -3577,11 +3597,11 @@ BAJAR   lBath2
 > EXAMINA	LAVADORA    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Dentro encuentras un cuchillo grande de carnicero cubierto de...#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡¡¡Sangre!!!#n#n¿Pero qué puñetas hace eso ahí dentro?#n"
                 INK     colorConsciencia               ; Color de tu consciencia 
                 XMESSAGE "Tampoco sé si quiero saberlo."
@@ -3591,9 +3611,9 @@ BAJAR   lBath2
 > COGER		CUCHILLO    AT lCocina
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No pienso tocar eso ni con un palo.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Cagao."
@@ -3611,13 +3631,13 @@ BAJAR   lBath2
 > ABRIR 	ALACENA     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Está vacío por completo, pero te vienen recuerdos de esos botes de mermelada para los desayunos, el bote de Colacao, el vaso de Nocilla y las latas de fabada para cuando a tu madre no le apetecía cocinar.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Y colocaba las galletas encima de ella, fuera de nuestro alcance.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Me reiría mucho si encontrase alguna galleta escondida arriba del todo."
                 DONE
 
@@ -3626,7 +3646,7 @@ BAJAR   lBath2
 > EMPUJAR   ALACENA     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad         
                 INK     colorNarrador               
                 XMESSAGE "Das un fuerte empujón a la alacena.#nNo ocurre nada."             
@@ -3635,7 +3655,7 @@ BAJAR   lBath2
 > ROMPER    ALACENA     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿Quieres darle un disgusto a tu madre?"
@@ -3652,7 +3672,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 GOTO    lCocina
@@ -3664,10 +3684,10 @@ BAJAR   lBath2
 > EXAMINA	ESCALERAS   AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad           
                 ZERO    fEscalon   
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Lo cierto es que siento curiosidad. Si esto cruje será por algo.#n"
                 XMESSAGE "Voy a ver; pues sí, hay un escalón que parece tener cierta holgura y se mueve un poco."
                 DONE
@@ -3677,7 +3697,7 @@ BAJAR   lBath2
 > EXAMINA   ESCALON      AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
                 INK     colorConsciencia               ; Color de tu consciencia
@@ -3690,7 +3710,7 @@ BAJAR   lBath2
 > MOVER		ESCALON      AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fEscalon
                 SET     fEscalon
@@ -3704,7 +3724,7 @@ BAJAR   lBath2
 > MOVER		ESCALON     AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
                 INK     colorNarrador               
@@ -3715,7 +3735,7 @@ BAJAR   lBath2
 > EXAMINA	CAJA        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -3725,7 +3745,7 @@ BAJAR   lBath2
 > COGER		CAJA        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -3735,7 +3755,7 @@ BAJAR   lBath2
 > ROMPER    CAJA        AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
@@ -3745,7 +3765,7 @@ BAJAR   lBath2
 > ABRIR		CAJA        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveCaja
@@ -3757,7 +3777,7 @@ BAJAR   lBath2
 > ABRIR		CAJA        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveCaja
@@ -3769,7 +3789,7 @@ BAJAR   lBath2
 > ABRIR		CAJA        AT lEscaleras                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveCaja
@@ -3781,7 +3801,7 @@ BAJAR   lBath2
                 INK     colorSistema              ; Color del sistema
                 GET     oSecretKey1
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#g#f<#t#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Tratemos de averiguarlo."
@@ -3792,7 +3812,7 @@ BAJAR   lBath2
 > R         _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
                 INK     colorNarrador               
@@ -3805,14 +3825,14 @@ BAJAR   lBath2
 > PONER		ESCALON      AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?                
                 NOTZERO fEscalon
                 CLEAR   fEscalon
                 ZERO    fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Has puesto el escalón en su sitio.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Me ha parecido una buena decisión, porque seguro que si no lo hago, me parto el cuello cayendo por las escaleras.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "No te quepa la menor duda.#n"             
@@ -3821,9 +3841,9 @@ BAJAR   lBath2
 > BAJAR     BARANDILLA  AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
-                INK colorMarcos               
+                INK     colorMarcos               
                 XMESSAGE "No pienso subir mi culo a la barandilla y desplazarme hacia abajo."
                 DONE 
 
@@ -3836,7 +3856,7 @@ BAJAR   lBath2
 > BAJAR     _           AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fEscalon
                 CLS                     ; Limpiamos la pantalla
@@ -3848,7 +3868,7 @@ BAJAR   lBath2
 > BAJAR     _          AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad 
                 CLS                     ; Limpiamos la pantalla     
                 NOTZERO fEscalon
@@ -3866,7 +3886,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario             
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?             
                 NOTZERO fEscalon
                 INK     colorNarrador               
                 XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
@@ -3887,7 +3907,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fEscalon                
                 CLS                     ; Limpiamos la pantalla
@@ -3911,7 +3931,7 @@ BAJAR   lBath2
 > CARGAR    CASSETTE    AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     10              ; Color especial
                 XMESSAGE "Found: Graciosito#n#n"
@@ -3926,7 +3946,7 @@ BAJAR   lBath2
 > EXAMINA	CHIMENEA    AT lSalon
 				NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es una antigua cocina gallega con una hoguera en el centro y una chimenea encima. Está acotada por un cassette de hierro fundido."
@@ -3937,10 +3957,10 @@ BAJAR   lBath2
 > EXAMINA	VITRINA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fUsarTarjeta                
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Pero, ¿qué coño? ¡La vitrina está vacía! ¿Dónde están las cosas? ¿Se las habrán llevado mis padres?#n"
                 INK     colorNarrador               
                 XMESSAGE "Examinas con detenimiento el interior de la vitrina y descubres que al fondo de uno de los estantes, hay una pequeña ranura que es del tamaño de una tarjeta de crédito.#n"
@@ -3953,7 +3973,7 @@ BAJAR   lBath2
 > EXAMINA	VITRINA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarTarjeta               
                 INK     colorNarrador               
@@ -3965,7 +3985,7 @@ BAJAR   lBath2
 > EXAMINA   RANURA      AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿Que parte de que es del tamaño de una tarjeta de crédito no has entendido?"
@@ -3976,19 +3996,19 @@ BAJAR   lBath2
 > USAR 		TARJETA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oSecretKey1
                 ZERO    fUsarTarjeta
                 SET     fUsarTarjeta
                 INK     colorNarrador               
                 XMESSAGE "Introduces la tarjeta de seguridad#g#f<#t que encontraste en la caja oculta de las escaleras y suena un chasquido. Es como si se hubiera desbloqueado un mecanismo.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¡Joder! ¡La tarjeta se ha atascado!#n"
                 INK     colorConsciencia
                 XMESSAGE "¡Olvida la tarjeta! ¡Que la den por...! Podrías probar a mover la vitrina.#n"
                 DESTROY oSecretKey1               
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Claro, tú no hagas nada.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Yo solo soy tu conciencia. Venga, mueve la vitrina, ¡gañan!"
@@ -4000,11 +4020,11 @@ BAJAR   lBath2
 > USAR 		TARJETA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oSecretKey1
                 NOTZERO fUsarTarjeta
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Eh! ¡El cajero se ha tragado la tarjeta!#n"
                 DESTROY oSecretKey1
                 INK     colorConsciencia
@@ -4015,14 +4035,14 @@ BAJAR   lBath2
 > MOVER 	VITRINA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarTarjeta
                 INK     colorNarrador               
                 XMESSAGE "Desplazas la vitrina apenas un metro con enorme facilidad. Ese pestillo era un mecanismo de fijación del mueble para que no se pudiera desplazar.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Joder... ¡alucina con lo que tienes delante!#n#n¡Es un acceso a una habitación que desconocías que existiera! ¡no conoces la casa de tus padres!#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Pues ya veo que no.#n#k#b"
                 INK     colorNarrador               
                 XMESSAGE "Entras a través de la vitrina.#k"
@@ -4034,7 +4054,7 @@ BAJAR   lBath2
 > MOVER     VITRINA     AT lSalon
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz 
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fUsarTarjeta
                 INK     colorNarrador               
@@ -4044,7 +4064,7 @@ BAJAR   lBath2
 > E         _           AT lSalon 
                 ;NOTZERO fControlLuz
                 ;NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CARRIED oLlavePatio
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 CLS                     ; Limpiamos la pantalla                
@@ -4056,7 +4076,7 @@ BAJAR   lBath2
 > E         _           AT lSalon
                 ;NOTZERO fControlLuz
                 ;NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTCARR oLlavePatio
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
@@ -4077,7 +4097,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es una habitación lúgubre y cerrada... Si alguien ha vivido aquí, lo ha hecho sin duda en unas condiciones inhumanas.#n#n Miras a tu alrededor y descubres marcas en el suelo, como si alguien hubiese arrastrado algún mueble.#k#n Parece que algo se mueve encima del colchón."
@@ -4087,11 +4107,11 @@ BAJAR   lBath2
 > EXAMINA   BANCO       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Abres el banco y en su interior encuentras ropa de mujer e infantil.#n"
-                INK colorMarcos
+                INK     colorMarcos
                 XMESSAGE "¿Esto qué es?#n"
                 INK     colorSistema
                 ISAT    oLlaveBodega 252
@@ -4105,7 +4125,7 @@ BAJAR   lBath2
 > EXAMINA   COLCHON     AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Te aproximas al colchón para examinarlo y aparece una cucaraña del tamaño de un puño.#k#n#nTe asustas y ya no quieres acercarte más.#n"
@@ -4117,7 +4137,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "En el suelo ves unas marcas. Parece que han arrastrado un mueble."   
@@ -4127,7 +4147,7 @@ BAJAR   lBath2
 > MOVER     BANCO       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Arrastras el banco y dejas al descubierto una loseta que se encuentra despegada del suelo."
@@ -4137,11 +4157,11 @@ BAJAR   lBath2
 > MOVER     LOSETA       AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Quitas la loseta y descubres que debajo hay un hueco que contiene un cuaderno escondido.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Un diario? ¿Quién se toma tantas molestias en esconder un diario?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¿A qué esperas para leerlo?#n"
@@ -4156,7 +4176,7 @@ BAJAR   lBath2
 > EXAMINA   ORINAL      AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Parece que aquí ha vivido gente."
@@ -4165,7 +4185,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es una cama pequeña y vieja que conserva tan solo la estructura y el colchón."
@@ -4176,7 +4196,7 @@ BAJAR   lBath2
 > N         _           AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Vuelves al salón y la vitrina vuelve a colocarse sola en su sitio, cerrando de nuevo el acceso a la habitación de la criada.#k"
@@ -4200,7 +4220,7 @@ BAJAR   lBath2
 > O         _           AT lPatio                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lSalon
@@ -4218,7 +4238,7 @@ BAJAR   lBath2
 > EXAMINA   MURO        AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Se trata de un muro de mampostería de granito con unión de mortero bastardo de cemento blanco, cal morena y arena roja con un rejuntado de cemento gris y arena de río."
@@ -4228,7 +4248,7 @@ BAJAR   lBath2
 > SALTAR    MURO        AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Sin más dilación, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n#n"
@@ -4245,13 +4265,13 @@ BAJAR   lBath2
 > MIRAR     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fPatio
                 SET     fPatio
                 INK     colorNarrador               
                 XMESSAGE "Escuchas como si estuvieran unos críos jugando.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Qué cojones? ¡Veo unos críos jugando!#n"
                 INK     colorNarrador               
                 XMESSAGE "Uno de ellos para en seco, gira la cabeza y te mira. Se acerca despacio y te quedas inmovilizado; no sabes cómo reaccionar.#n"
@@ -4260,11 +4280,11 @@ BAJAR   lBath2
                 XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¡Joder!, ¿este crío es real? Ya no veo al otro crío.#k#n"
-                INK colorMarcos               ; Color del protagonista 
+                INK     colorMarcos               ; Color del protagonista 
                 XMESSAGE "Juguemos un poco, supongo.#n"
                 INK     colorNene
                 XMESSAGE "Quiero jugar a la pelota#g#f:;#t.#n"
-                INK colorMarcos               ; Color del protagonista 
+                INK     colorMarcos               ; Color del protagonista 
                 XMESSAGE "No tengo ninguna pelota#g#f:;#t.#n"
                 INK     colorNene
                 XMESSAGE "En la casa seguro que hay una pelota#g#f:;#t, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
@@ -4275,7 +4295,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fPatio              
                 INK     colorNarrador               
@@ -4286,9 +4306,9 @@ BAJAR   lBath2
 > HABLAR    _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Hola. ¿No sabes dónde están tus padres? ¿Qué haces aquí?#n"
                 INK     colorNene
                 XMESSAGE "Jugando al pilla-pilla. Pero nos gustaría jugar a la pelota#g#f:;#t. ¡Juega conmigo!"               
@@ -4298,7 +4318,7 @@ BAJAR   lBath2
 > JUGAR     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPelota
                 SET     fJugar
@@ -4306,18 +4326,18 @@ BAJAR   lBath2
                 XMESSAGE "Le das la pelota#g#f:;#t que llevas contigo al crío y se le dibuja una sonrisa en la cara.#n"
                 INK     colorNene
                 XMESSAGE "Muchas gracias por devolverme mi pelota#g#f:;#t, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
                 INK     colorNene  ; Color del niño
                 XMESSAGE "Mi hermana no abrirá la puerta; está muy enfadada, aun así, no es la única salida de la casa.#n"
-                INK colorMarcos               ; Color de tu consciencia
+                INK     colorMarcos               ; Color de tu consciencia
                 XMESSAGE "De acuerdo, pues vayámonos."
                 DONE
 
 > JUGAR     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oPelota
                 INK     colorNene
@@ -4327,7 +4347,7 @@ BAJAR   lBath2
 > EXAMINA   LUNA        AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "La luna es un globo que se le escapó a un niño bobo."
@@ -4339,7 +4359,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Fijándote muy bien, descubres que del objeto emana una sutil neblina justo por encima de la cama. Al NORTE está el baño."
@@ -4348,7 +4368,7 @@ BAJAR   lBath2
 > EXAMINA 	CAMA        AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es de hierro. Hay un objeto sobre ella."
@@ -4358,7 +4378,7 @@ BAJAR   lBath2
 > COGER     OBJETO      AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fFotoPeluche
                 SET     fFotoPeluche
@@ -4373,7 +4393,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "La foto salta con violencia de tu manos para caer de nuevo en la cama. Notas como una fuerza sobrenatural te arrastra fuera de la habitación. Tras de ti, la puerta se cierra con un portazo contundente.#k#n"
                 CLS                     ; Limpiamos la pantalla
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Pero qué hostias está pasando aquí? ¡Esto es una puta locura!#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "No tengo la menor idea, pero ya no puedes entrar en la habitación.#n"
@@ -4395,7 +4415,7 @@ BAJAR   lBath2
 > N         _           AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 GOTO    lBath1
                 CLS                     ; Limpiamos la pantalla
@@ -4406,7 +4426,7 @@ BAJAR   lBath2
 > S         _           AT lRoom1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 GOTO    lPasillo1
                 CLS                     ; Limpiamos la pantalla
@@ -4419,7 +4439,7 @@ BAJAR   lBath2
 > S         _           AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 GOTO    lRoom1
@@ -4429,7 +4449,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Hay una tina, que es una especie de bañera antigua y un respiradero que tiene una mancha de color amarillento."
@@ -4438,7 +4458,7 @@ BAJAR   lBath2
 > EXAMINA   BANO        AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Estás jugando desde un MSX que no tiene eñe, ¿verdad? jajaja."
@@ -4447,7 +4467,7 @@ BAJAR   lBath2
 > EXAMINA   BAÑO        AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Estás jugando desde un emulador o un MSX que afortunadamente tiene eñe, ¿verdad? jajaja."
@@ -4457,7 +4477,7 @@ BAJAR   lBath2
 > EXAMINA   MANCHA      AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Tocas la mancha y te deja un tacto grasiento en los dedos, tus sospechas se despejan. Parece aceite."
@@ -4466,7 +4486,7 @@ BAJAR   lBath2
 > EXAMINA   TINA        AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "No hay nada interesante aquí."
@@ -4475,7 +4495,7 @@ BAJAR   lBath2
 > EXAMINA   RESPIRADERO AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "Es un respiradero metálico, encastrado en el techo. De él sale un potente chorro de aire frío y denso que parece susurrarte algún ominoso mensaje amenazador. Un inesperado escalofrío sobrecogedor recorre tu espina dorsal. También puedes ver que tiene una mancha que se ha filtrado a la pared."
@@ -4486,7 +4506,7 @@ BAJAR   lBath2
 > EMPUJAR   RESPIRADERO  AT lBath1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fAceite
                 SET     fAceite
@@ -4504,7 +4524,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "Jamás habías visto una alcoba tan ausente de vida como esta."
@@ -4513,7 +4533,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManchaSangre
                 SET     fManchaSangre
@@ -4526,7 +4546,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fManchaSangre
                 INK     colorNarrador               
@@ -4536,7 +4556,7 @@ BAJAR   lBath2
 > N         _           AT lRoom2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 GOTO    lPasillo2
                 CLS                     ; Limpiamos la pantalla
@@ -4560,7 +4580,7 @@ BAJAR   lBath2
 > S         _           AT lRoom2                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
@@ -4573,7 +4593,7 @@ BAJAR   lBath2
 > N         _           AT lBath2                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
@@ -4584,7 +4604,7 @@ BAJAR   lBath2
 > EXAMINA   PILA		AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "No ves nada interesante."
@@ -4594,7 +4614,7 @@ BAJAR   lBath2
 > EXAMINA   TINA        AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "No ves nada interesante."
@@ -4603,7 +4623,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fBajarRetrete
                 INK     colorNarrador               
@@ -4613,7 +4633,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad   
                 NOTZERO fBajarRetrete   
                 NOTCARR oHacha          
@@ -4626,7 +4646,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad   
                 NOTZERO fBajarRetrete 
                 CARRIED oHacha            
@@ -4637,31 +4657,31 @@ BAJAR   lBath2
 > EXAMINA   CISTERNA    AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "¡No llegas desde aquí!#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Igual si me subo al retrete podría echar un vistazo a esa cisterna."   
                 DONE
 
 > EXAMINA   RETRETE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fBajarRetrete
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No sé por qué, pero tengo ganas de usarlo."
                 DONE
 
 > CAGAR     _           AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fBajarRetrete
-                INK colorMarcos               
+                INK     colorMarcos               
                 ;XMESSAGE "¿En serio? ¿Ahora? No creo que sea el momento."
                 XMESSAGE "Un momento...#k#b"
                 XMESSAGE "Un momentoooo....#k#b"
@@ -4676,7 +4696,7 @@ BAJAR   lBath2
 > SUBIR     RETRETE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fBajarRetrete
                 CLS                     ; Limpiamos la pantalla
@@ -4689,7 +4709,7 @@ BAJAR   lBath2
 > SUBIR     RETRETE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fBajarRetrete
                 CLS                     ; Limpiamos la pantalla
@@ -4701,11 +4721,11 @@ BAJAR   lBath2
 > USAR      RETRETE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Un fluido viscoso y rojo inunda las paredes del retrete. La cisterna deja de funcionar, pues ya no escuchas el ruido de llenado del depósito.#n#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡HUELE A SANGRE!"
                 DONE
 
@@ -4713,9 +4733,9 @@ BAJAR   lBath2
 > BEBER     SANGRE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Eso lo haría si fuera otra clase de juego, si. En este no lo veo adecuado."                
                 DONE
 
@@ -4723,7 +4743,7 @@ BAJAR   lBath2
 > EXAMINA   SANGRE      AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¡No pienso tocar esa porquería!"
@@ -4734,17 +4754,17 @@ BAJAR   lBath2
 > EXAMINA   RETRETE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fBajarRetrete
                 NOTCARR oHacha
                 INK     colorNarrador               
                 XMESSAGE "Hay un hacha#g#f%&'#t clavada en el suelo, entre los restos del retrete destrozado.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hostia! Conozco este hacha#g#f%&'#t, es el hacha#g#f%&'#t de mi padre. No hay duda alguna, es el hacha#g#f%&'#t que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n"
 				INK     colorConsciencia               ; Color de tu consciencia
                 MESSAGE "No quisiera ser inoportuno, pero a ver cómo vas a justificar a tus padres este destrozo.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Uff, es verdad.#n"
                 INK     colorSistema              ; Color del sistema
                 ISAT    oHacha 252
@@ -4755,7 +4775,7 @@ BAJAR   lBath2
 > EXAMINA   RETRETE     AT lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fBajarRetrete
                 CARRIED oHacha
@@ -4778,7 +4798,7 @@ BAJAR   lBath2
 > R         _           AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fBajarRetrete
                 INK     colorNarrador               
@@ -4789,7 +4809,7 @@ BAJAR   lBath2
 > BAJAR     RETRETE     AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fBajarRetrete
                 SET     fBajarRetrete
@@ -4797,7 +4817,7 @@ BAJAR   lBath2
                 GOTO    lBath2                
                 INK     colorNarrador               
                 XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegada a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Qué hostias ha sido eso? ¡Por un pelo no me decapitan! Parece que sigo entero...#k#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Está claro que no somos bienvenidos en esta casa."
@@ -4807,7 +4827,7 @@ BAJAR   lBath2
 > ABRIR     CISTERNA    AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?                
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fAbrirCisterna
                 SET     fAbrirCisterna
@@ -4826,7 +4846,7 @@ BAJAR   lBath2
 > ABRIR     CISTERNA    AT lRetrete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?                
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fAbrirCisterna
                 CARRIED oPaleta
@@ -4840,7 +4860,7 @@ BAJAR   lBath2
 > R         _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -4850,7 +4870,7 @@ BAJAR   lBath2
 > N         _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador                  
                 GOTO    lBath3
@@ -4861,7 +4881,7 @@ BAJAR   lBath2
 > S         _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador                             
                 GOTO    lPasillo3
@@ -4872,7 +4892,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?            
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fFlashBack
                 SET     fFlashBack
@@ -4885,7 +4905,7 @@ BAJAR   lBath2
 > EXAMINA	CABECERO    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -4895,7 +4915,7 @@ BAJAR   lBath2
 > EXAMINA	CABECERO    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -4905,19 +4925,19 @@ BAJAR   lBath2
 > EXAMINA	PARED       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "El temple de la pintura hace que respiren las paredes.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Parece que el gotelé aquí sigue de moda! ¡Y lo sufrido que es!" 
                 DONE
 
 > EXAMINA	PARED       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -4927,7 +4947,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -4937,7 +4957,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 EQ      fNenaMala 5
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -4948,7 +4968,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 NOTZERO fFotoPeluche
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -4959,7 +4979,7 @@ BAJAR   lBath2
                 INK     colorSistema              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Oh, qué osito#g#f##t tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Es blandito y conserva un aroma a perfume fresco, dan ganas de achucharlo."
@@ -4968,7 +4988,7 @@ BAJAR   lBath2
 > EXAMINA   CAMA        AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 ZERO    fFotoPeluche
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -4979,14 +4999,14 @@ BAJAR   lBath2
                 INK     colorSistema              ; Color del sistema
                 GET     oPeluche
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es un osito de peluche#g#f##t muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida."
                 DONE            
 
 > EXAMINA   ALFOMBRA    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -4996,7 +5016,7 @@ BAJAR   lBath2
 > EXAMINA   ALFOMBRA    AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -5008,7 +5028,7 @@ BAJAR   lBath2
 > EXAMINA   MESITA      AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -5018,19 +5038,19 @@ BAJAR   lBath2
 > EXAMINA   MESITA      AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "La mesita ha desaparecido. En su lugar hay una lámpara de pie.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Me he dado un buen golpe en la cabeza, no entiendo nada...#n#nLas cosas no están en su sitio ni son las mismas."
                 DONE
 
 > EXAMINA   LAMPARA     AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -5040,7 +5060,7 @@ BAJAR   lBath2
 > EXAMINA   LAMPARA     AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -5050,7 +5070,7 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 ZERO    fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
@@ -5060,12 +5080,12 @@ BAJAR   lBath2
 > EXAMINA   SUELO       AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fFlashBack
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "El suelo es de terrazo; es el suelo clásico de las casas antiguas.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No reconozco este lugar en absoluto."
                 DONE
 
@@ -5074,7 +5094,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde.#n"
@@ -5085,20 +5105,20 @@ BAJAR   lBath2
 > EXAMINA   AGUA        AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?            
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Te acercas con curiosidad hacia el agua y la acaricias con la punta de los dedos. Te llevas los dedos hacia la boca.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No me lo puedo creer, ¡el agua es salada!"
                 DONE     
 
 > EXAMINA   MOSAICO     AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario            
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?            
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es curioso, que hace miles de años, existiera el Pixel Art usando teselas.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Pues claro, ¿no te acuerdas? Yo lo recuerdo como si fuera ayer. Estuvimos allí."
@@ -5107,7 +5127,7 @@ BAJAR   lBath2
 > EXAMINA   TERMA       AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fTerma
                 SET     fTerma                
@@ -5118,7 +5138,7 @@ BAJAR   lBath2
 > EXAMINA   TERMA       AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario                
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?                
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fTerma
                 ZERO    fFinTerma
@@ -5136,12 +5156,12 @@ BAJAR   lBath2
 > EXAMINA   TERMA       AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fTerma
                 NOTZERO fFinTerma                
                 CARRIED oLlaveCaja
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡NO ME JODAS! ¿DONDE ESTAS? ¡He visto una puta mano!#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "Sea quien fuere quien estuviese ahí, ha desaparecido... vayámonos de aquí... ¡YA!"
@@ -5150,11 +5170,11 @@ BAJAR   lBath2
 > EXAMINA   MURETE      AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Es un murete que luce el mosaico del Dios Apolo.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Y yo venerando al Dios del sol con una cerilla en la mano.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¡Eres todo un devoto!"
@@ -5170,7 +5190,7 @@ BAJAR   lBath2
 > S			_           AT lBath3                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla                
                 INK     colorNarrador               
@@ -5195,7 +5215,7 @@ BAJAR   lBath2
 > BAJAR     _           AT lPasillo1                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla                
                 INK     colorNarrador               
@@ -5214,7 +5234,7 @@ BAJAR   lBath2
 > E     	_           AT lPasillo1
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
@@ -5232,7 +5252,7 @@ BAJAR   lBath2
 > N			_           AT lPasillo1                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fRoom1
                 CLS                     ; Limpiamos la pantalla                
@@ -5285,7 +5305,7 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fNenaMala
                 CLS                     ; Limpiamos la pantalla
@@ -5297,7 +5317,7 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 5
                 CLS                     ; Limpiamos la pantalla
@@ -5309,7 +5329,7 @@ BAJAR   lBath2
 > E			_           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fNenaMala
                 CLS                     ; Limpiamos la pantalla
@@ -5321,7 +5341,7 @@ BAJAR   lBath2
 > E			_           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 5
                 CLS                     ; Limpiamos la pantalla
@@ -5333,7 +5353,7 @@ BAJAR   lBath2
 > O			_           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fNenaMala
                 CLS                     ; Limpiamos la pantalla
@@ -5345,7 +5365,7 @@ BAJAR   lBath2
 > O			_           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 5
                 CLS                     ; Limpiamos la pantalla
@@ -5361,12 +5381,12 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255   ; Hemos entrado en Room3
                 ZERO    fFotoPeluche    ; no hemos visto la foto
                 CARRIED oPeluche        ; llevamos el peluche encima
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5385,12 +5405,12 @@ BAJAR   lBath2
 > E         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255; Hemos entrado en Room3
                 ZERO    fFotoPeluche ;no hemos visto la foto
                 CARRIED oPeluche ; llevamos el peluche encima
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5409,12 +5429,12 @@ BAJAR   lBath2
 > O         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255; Hemos entrado en Room3
                 ZERO    fFotoPeluche ;no hemos visto la foto
                 CARRIED oPeluche ; llevamos el peluche encima
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5436,12 +5456,12 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255 
                 ZERO    fFotoPeluche ;No has visto la foto
                 NOTCARR oPeluche ;No has cogido el peluche
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5463,12 +5483,12 @@ BAJAR   lBath2
 > E         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 ZERO    fFotoPeluche
                 NOTCARR oPeluche
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5490,12 +5510,12 @@ BAJAR   lBath2
 > O         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 ZERO    fFotoPeluche
                 NOTCARR oPeluche
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5523,13 +5543,13 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fFotoPeluche    ; Hemos visto la foto
                 CARRIED oPeluche        ; Tenemos el peluche
                 ZERO    fAceite         ; no tenemos el aceite
                 EQ      fNenaMala 255   ;hemos entrado en ROOM3
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5549,13 +5569,13 @@ BAJAR   lBath2
 > E         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fFotoPeluche ; Hemos visto la foto
                 CARRIED oPeluche ; Tenemos el peluche
                 ZERO    fAceite ; no tenemos el aceite
                 EQ      fNenaMala 255 ;hemos entrado en ROOM3
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5575,13 +5595,13 @@ BAJAR   lBath2
 > O         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fFotoPeluche ; Hemos visto la foto
                 CARRIED oPeluche ; Tenemos el peluche
                 ZERO    fAceite ; no tenemos el aceite
                 EQ      fNenaMala 255 ;hemos entrado en ROOM3
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5607,13 +5627,13 @@ BAJAR   lBath2
 > E         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 NOTZERO fFotoPeluche
                 CARRIED oPeluche
                 NOTZERO fAceite
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5622,7 +5642,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK     colorConsciencia               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
                 DESTROY oPeluche	
@@ -5636,13 +5656,13 @@ BAJAR   lBath2
 > O         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 NOTZERO fFotoPeluche
                 CARRIED oPeluche
                 NOTZERO fAceite
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5651,7 +5671,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK     colorConsciencia               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
                 DESTROY oPeluche
@@ -5665,13 +5685,13 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 NOTZERO fFotoPeluche
                 CARRIED oPeluche
                 NOTZERO fAceite
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW  0
                 XPICTURE 230            ; Cría en el pasillo
@@ -5680,7 +5700,7 @@ BAJAR   lBath2
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
                 INK     colorConsciencia               ; Color del protagonista
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
                 DESTROY oPeluche
@@ -5697,12 +5717,12 @@ BAJAR   lBath2
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 NOTZERO fFotoPeluche
                 NOTCARR oPeluche
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK colorNena
                 XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
@@ -5715,12 +5735,12 @@ BAJAR   lBath2
 > E         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 NOTZERO fFotoPeluche
                 NOTCARR oPeluche
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK colorNena
                 XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
@@ -5733,12 +5753,12 @@ BAJAR   lBath2
 > O         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 NOTZERO fFotoPeluche
                 NOTCARR oPeluche
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK colorNena
                 XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
@@ -5765,7 +5785,7 @@ BAJAR   lBath2
 > N         _           AT lPasillo3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fNenaMala
                 SET     fNenaMala
@@ -5778,7 +5798,7 @@ BAJAR   lBath2
 > N         _           AT lPasillo3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 5
                 INK     colorNarrador               
@@ -5790,7 +5810,7 @@ BAJAR   lBath2
 > N         _           AT lPasillo3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 EQ      fNenaMala 255
                 INK     colorNarrador               
@@ -5809,7 +5829,7 @@ BAJAR   lBath2
 > O			_           AT lPasillo3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
@@ -5823,11 +5843,11 @@ BAJAR   lBath2
                 NOTZERO fUsarInterruptor    ; Ya ha usado el interruptor
                 INK     colorNarrador               
 				XMESSAGE "Parece ser una fotografía#g#fD#t familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿De dónde habrá salido esta fotografía#g#fD#t y quienes son?#k#b#n"
                 INK     colorNarrador               
                 XMESSAGE "Un manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.#n"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Qué cojones está pasando?#n"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "¡Eso digo yo!"
@@ -5837,37 +5857,37 @@ BAJAR   lBath2
 ; Examinar objetos que llevo encima
 
 > EXAMINA   CERILLAS
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 INK     colorNarrador               
                 XMESSAGE "Es una caja de cerillas#g#f+,#t de palo largo, típicas para encender los fogones de la cocina y velas."
                 DONE
 
 > EXAMINA   ROPA
-                WORN oRopa       ; Llevamos el objeto en nuestro inventario
+                WORN oRopa       ; Llevamos el objeto en nuestro inventario?
                 INK     colorNarrador               
                 XMESSAGE "Llevas puesto una camiseta marrón claro junto con unos pantalones vaqueros azules. En los pies, unas zapatillas de deporte."
                 DONE
 
 > EXAMINA   PALA
-                CARRIED oPala       ; Llevamos el objeto en nuestro inventario
+                CARRIED oPala       ; Llevamos el objeto en nuestro inventario?
                 INK     colorNarrador               
                 XMESSAGE "Una pala de obrero."
                 DONE
 
 > EXAMINA   HACHA
-                CARRIED oHacha       ; Llevamos el objeto en nuestro inventario
+                CARRIED oHacha       ; Llevamos el objeto en nuestro inventario?
                 INK     colorNarrador               
                 XMESSAGE "Es un hacha de mano bien afilada."
                 DONE
 
 > EXAMINA   PELOTA
-                CARRIED oPelota       ; Llevamos el objeto en nuestro inventario
+                CARRIED oPelota       ; Llevamos el objeto en nuestro inventario?
                 INK     colorNarrador               
                 XMESSAGE "Es una pelota."
                 DONE
 
 > EXAMINA   PALETA
-                CARRIED oPaleta       ; Llevamos el objeto en nuestro inventario
+                CARRIED oPaleta       ; Llevamos el objeto en nuestro inventario?
                 INK     colorNarrador               
                 XMESSAGE "Es una paleta de pintor."
                 DONE
@@ -5974,7 +5994,7 @@ BAJAR   lBath2
                 XMESSAGE "INK 1"
                 INK     colorConsciencia               ; Color de tu consciencia
                 XMESSAGE "INK 2"
-                INK colorMarcos               ; Color del protagonista
+                INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "INK 3"
                 INK colorMuerte
                 XMESSAGE "INK 4"
@@ -6125,7 +6145,7 @@ BAJAR   lBath2
 > ENCENDER  CERILLA
 > PRENDER   CERILLA
 > USAR 		CERILLA                
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 LET     fApagarCerilla 0
 				ZERO    fUsarCerilla
                 SET     fUsarCerilla
@@ -6161,7 +6181,7 @@ BAJAR   lBath2
 > ENCENDER  CERILLA
 > PRENDER   CERILLA
 > USAR      CERILLA
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fUsarCerilla
                 INK     colorSistema              ; Color del sistema
                 XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
@@ -6177,7 +6197,7 @@ BAJAR   lBath2
                 DONE       
 
 > APAGAR    CERILLA
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fApagarCerilla
                 INK     colorNarrador              ; Color del sistema
                 XMESSAGE "Ya has apagado la cerilla#g#f4#t."
@@ -6187,7 +6207,7 @@ BAJAR   lBath2
 > LEER      DIARIO      
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oDiario
                 ZERO    fLeerDiario
