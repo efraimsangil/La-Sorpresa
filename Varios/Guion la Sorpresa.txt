@@ -1,0 +1,201 @@
+Los efectos de sonido para el juego
+Y:\Musica\FX
+F:\Proyectos\DAAD\La Sorpresa\Desarrollo\Audios
+
+Guión La Sorpresa
+
+Por qué hay fantasmas en la casa?
+- allí viva la criada de un terrateniente  que este mantenia  en cautiverio.  Vivía con sus hijos en secreto,  
+aislada y no tenía contacto con el exterior... A medida que los hijos fueron creciendo empezaron a
+ suponer un problema y JUSTO esa misma noche fue cuando ocurrió la tragedia
+el terrateniente llevó a la cochera a la madre y a los dos niños y a la niña y
+ los descuartizó con el hacha que luego Marcos Recoge... 
+enterrando los restos bajo el suelo del cobertizo
+con esto el terrateniente se quitó el problema de encima para no despertar más sospechas en el pueblo
+
+
+1- Los padres compran la casa sin saber nada
+2- Se enteran de la leyenda con el paso de los años
+3- Cada 25 años en la fecha acordada hay una manifestacion de los habitantes muertos
+4- Hace 25 años, los padres fueron amenazados por las presencias de la casa
+Eso justifica que al ir Marcos a la casa los padres no estén.
+Los padres mantienen esto en secreto hace 25 años porque Marcos era un crío
+
+madre  benevolente- dos hijos --> el hijo majete de la pelota y la niña hijaputa
+
+HILO CONDUCTOR
+
+En el aseo te toca los cojones la niña
+En la bañera está la madre que te quiere ayudar dandote las llaves
+En el pasillo de los dormitorios está la hija que no quiere que llegues al
+último dormitorio porque piensa que tu también vas a hacer daño a la madre
+
+Los padres han vivido en la vivienda familiar hasta que Marcos se emancipó.
+
+El terrateniente para eliminar todas las pistas sobre la criada,
+ clausura la habitación del salón que era el antiguo dormitorio de la criada e 
+ instala un mecanismo secreto para impedir la entrada.
+ Por eso dentro de la habitación se encuentra un diario escondido debajo de la losa 
+ que soporta el banco donde  se relatan las sospechas que tiene la criada
+  sobre el terrateniente y sus intenciones.
+ La habitación de la criada tiene una cama muy pequeña, un orinal, un lavabo tocador
+ y un banco arcón de madera (dentro del arcón no hay nada) Usar espátula
+ para levantar la losa del suelo , que está suelta.
+
+ Esto explica que el cuarto de servicio no se encuentre con el resto
+ de los dormitorios.
+
+ Debemos impedir la salida al exterior por el garaje y eliminar la llave.
+
+ En cuanto al chamizo, el travesaño tiene una pestaña de hierro que atraviesa la puerta
+ y por el otro lado se ancla un candado, por eso hay que romper el travesaño para
+ salir desde dentro, o bien abrir el candado desde fuera con las llaves.
+
+
+FALTA POR HACER
+- Orientar los dormitorios en disposición N-S-N
+- Descripción del gabinete con sus trampas
+- Descripción y descubrimiento de los cadaveres del chamizo
+- Descripción de los dormitorios
+- Interacción con la niña del pasillo (cuando cogemos el hacha es cuando aparece
+- Colocar lata de aceite en el aparador de la cocina al abrir la portezuela.
+- Interactuar con el botellero de la bodega.
+la niña que piensa que somos malvados por portar el mismo hacha del asesinato
+de la madre)
+- Indicar un generador en la cochera y al examinarlo
+decir que está apagado el motor por falta de gasoil.
+- En la bodega colocaremos un alambique sobre una alfombra, la trampilla secreta está debajo. (examinar alambique, examinar alfombra...blabla)
+Si pasamos del gabinete al chamizo, en el gabinete hay una pala
+ (FINAL CON RECOMPENSA)
+Si pasamos de los exteriores al chamizo, no podemos desenterrar los cadaveres.
+- Controlar el flag JUGAR en el garaje. Si tu has jugado con el niño, implica
+que el niño está contigo y es cuando puedes escribir que ha sido asesinado ahi
+y te descubre la llave...blabla
+
+
+
+https://www.deepl.com/translator
+
+
+Descripción de los finales.
+
+FINAL MEJOR DE TODOS 
+- Hemos jugado con el niño y ya no tenemos la pelota Flag JUGAR,
+ pero el niño nos acompaña
+ - Hemos cogido la lata de aceite de Bath 1 para abrir la trampilla de la bodega
+- Hemos entrado por el gabinete y Tenemos la pala
+-Si desenterramos cadaveres el niño se ve en paz y desaparece porque
+hemos resuelto el crimen
+- Cogemos el coche y vamos al cuartelillo, el final
+es en la casa con la guardia y con tus padres
+
+- FINAL BUENO
+
+FINAL BUENO
+- Entramos en la casa
+- Subimos a la planta superior
+- Cogemos la tarjeta de la llave metalica que nos abre el cuarto de la criada
+- Hemos cogido la lata de aceite de Bath 1 para abrir la trampilla de la bodega
+- Entramos al cuarto de la criada, leemos diario y anotamos código y cogemos
+llave de la bodega
+- Abrimos en la bodega el portón del gabinete con el código tras
+ quitar la alfombra, cogemos la pala.
+- cogemos las llaves del coche
+- Rompemos con el hacha el travesaño para salir del chamizo.
+- Cogemos el coche, vamos al cuartelillo y el final es de nuevo en la casa.
+- La guardia viene con tus padres, da testimonio de los fiambres y fin.
+- Te preguntas quien era el niño del patio. No has jugado con el y no
+has resuelto su problema.
+
+
+
+FINAL MALO
+
+- Al jugar con la pelota se activa el Flag de JUGAR
+
+- si salimos por el garaje (la puerta al cerrarse se bloquea), el niño reconoce
+ el lugar donde ha sido asesinado y recuerda que el terrateniente le arrastró
+ hasta el chamizo y te descubre las llaves del chamizo sobre la puerta del garaje.
+  dejó las llaves encima de la puerta. 
+  
+Coges las llaves del Chamizo
+- Coges las llaves del coche del interior del chamizo
+ - NO TIENES LA PALA PARA DESENTERRAR A LOS CADAVERES.
+- Te piras en el coche con el niño.
+NO ENCUENTRAS LOS CADAVERES Y NO RESUELVES EL CRIMEN
+
+FINAL PEOR
+
+- Entramos en la casa
+- Subimos a la planta superior
+- Cogemos la tarjeta de la llave metalica que nos abre el cuarto de la criada y la
+paleta que se encuentra en la cisterna del WC del segundo dormitorio
+- Entramos al cuarto de la criada, NO ENCONTRAMOS NADA MÁS QUE LA LLAVE DE LA BODEGA
+- Entramos en la bodega y con la paleta rascamos la mancha para entrar al garaje
+- Cogemos la pelota
+- Jugamos con el crío  (FLAG JUGAR)que nos desbloquea la entrada principal 
+- El crio si salimos por la puerta principal nos recuerda un escondite donde
+se refugiaba cuando el padre venia agresivo. En dicha estancia hay RAMITAS
+y con eso podemos hacer una hoguera. Viene la guardia con tus padres
+y LA CASA SE QUEMA
+- NO TENEMOS LA LLAVE DEL CHAMIZO, NO HEMOS ENTRADO NI POR DENTRO NI POR fuera
+- NO RESOLVEMOS EL CRIMEN
+- NO AYUDAMOS AL NIÑO A DESCANSAR EN PAZ
+- FINAL
+
+
+
+FZorra  (ZERO-NOTZERO)
+FPeluche (ZERO-NOTZERO)
+CARRIED Opeluche (NOTCARRIED oPeluche)
+
+011 Fzorra Zero   ............... No entrar en Room3
+
+100 Fzorra NOTZero-Fpeluche Zero-Carried Opeluche  NO PISTA
+101 Fzorra NOTZero-Fpeluche Zero- NOT CARRIED Opeluche MUERTE
+110 Fzorra NOTZero-Fpeluche NOTZero-Carried Opeluche PISTA
+111 Fzorra NOTZero-Fpeluche NOTZero-NOT CARRIED Opeluche MUERTE
+
+
+
+
+
+DIARIO DE LA criada
+
+La última fecha es del 9 de Enero de 1957
+
+
+Me contratan para servir en esta casa. El señor me dice que la anterior criada era muy católica y se ha ido de misionera al congo.
+
+El señor es muy estricto conmigo y muy exigente y serio.
+
+Hoy he estado limpiando la bodega y he descubierto un acceso a un lugar horrible. Ese lugar estaba lleno de sangre por todas partes y he encontrado ropa interior y restos de ropa desgarrada y ensangrentada. Creo no haber tocado nada.
+; pisada de sangre en el gabinete
+
+El señor me ha castigado con el cinturón y me ha dicho que jamás vuelva a entrar en ese lugar.
+
+; Sucesivos maltratos y castigos corporales 
+
+El señor me ha encontrado en mitad de la carretera intentando escapar, me ha metido al coche y me ha encerrado en el lugar horrible, donde me ha profanado y la tortura...etc...
+
+A partir de ahí, en sucesivas ocasiones el tio ya enajenado la viola y la tortura hasta que se le empieza a notar el embarazo, entonces la esconde en la habitación tras la vitrina y la mantiene recluida hasta el parto.
+
+Tiene gemelos, un niño y una niña.
+
+Conforme pasan los primeros meses, el terrateniente (que son sus hijos a fin de cuentas) se ablanda un poco 
+y comienza a dar libertades a la madre y a los niños dejandolos pulular por la casa.
+
+La criada por miedo a que les pase nada a los hijos, se mantiene callada hasta que con seis años la madre
+manda al niño al pueblo a escondidas para denunciar el caso (el niño solía jugar a esconderse tras los cipreses)
+
+El terrateniente que es un vivo, no encuentra al niño y se carga a la madre y a la hija
+
+y sale a buscar al niño y lo encuentra, se lo trae y se lo carga (esta es la razón por la queel niño
+en la cochera sabe que ahí han matado a la madre y a la hermana y también es la razón por la cuartelillo
+sabe donde estan las llaves del chamizo)
+
+El terrateniente OBLIGA al niño a cargar con los restos de la madre y la hermana al chamizo y a enterrarlas
+por eso sabe donde están enterradas.
+
+
+

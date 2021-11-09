@@ -1,0 +1,106 @@
+[burgos]
+coger telefono
+abrir armario
+este
+
+[coche]
+este
+
+[exterior de la casa]
+este
+
+[porche]
+mirar
+coger gnomo
+tirar gnomo
+abrir puerta
+
+[recibidor]
+abrir cajon
+	caja de cerillas
+prender cerilla
+sur
+
+[cocina]
+ex sumidero
+	llave del patio
+norte
+
+[escaleras]
+subir
+	* hacemos todo lo de arriba
+mover escalon
+abrir caja
+	tarjeta de seguridad
+bajar
+
+[pasillo 1]
+norte
+
+[alcoba 1]
+norte
+
+[baño 1]
+ex respiradero
+abrir respiradero
+	lata de aceite
+coger objeto
+	fotografia (osito)
+	
+[pasillo 2]
+sur
+
+[alcoba 2]
+sur
+norte
+
+
+[baño 2]	
+subir cisterna
+norte
+
+[cisterna]
+abrir cisterna
+coger paleta
+bajar
+coger hacha
+
+[pasillo 3]
+norte
+
+[alcoba 3]
+norte
+mirar 
+ex cama
+	osito de peluche
+sur
+
+[baño 3]
+ex terma
+ex terma
+	llave pequeña
+	
+[salon]
+ex vitrina
+introducir tarjeta
+mover vitrina
+ex banco
+	llave de la bodega
+mover banco		(he movido el banco, se fue la luz y no tuve tiempo de leer el mensaje, por lo que he tenido que mover banco de nuevo para leerlo, y no tiene sentido, porque no se puede mover el banco dos veces)
+mover loseta
+	diario
+norte
+
+[bodega]
+ex mancha
+usar paleta
+abrir puerta
+
+[cochera]
+ex suelo
+	manguera
+conectar manguera
+
+
+	
+	

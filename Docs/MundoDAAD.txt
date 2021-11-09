@@ -1,0 +1,235 @@
+cat daad.dsf |grep "> "|cut -d '>' -f2 > acciones.txt
+00 06 * * * /home/pi/mibackup.sh
+
+Debugger NatyPC
+https://github.com/nataliapc/msx2daad/blob/master/include/daad.h
+
+MIRAR: Siempre que puedas, utilizalo para obtener más detalles de la localización donde estás
+EXAMINAR: Para obtener más detalles sobre lo que sea
+SUBIR:
+BAJAR:
+N:
+S:
+E:
+O:
+SALIDAS: Para obtener las salidas disponibles desde donde estás
+COGER:
+USAR:
+TIRAR:
+LANZAR:
+ROMPER:
+ABRIR:
+ESCUCHAR:
+GOLPEAR:
+MOVER:
+PONER:
+ENCENDER:
+PRENDER:
+
+
+Cosas que le faltan a la aventura:
+- Quitar la imagen cuando se apague la cerilla
+- Un personaje autónomo (espectro) en el pasillo
+	- Niño al que debes lanzar la pelota, luego te la devuelve y puedes pasar
+- La parte final de coger el coche, no arranca y necesitas las pinzas y la batería. Te llevaría al FINAL 1.
+DONE La parte del patio, que es donde hay una visión de los crios jugando a la pelota. Un crio te dice "Estoy solo, quieres jugar conmigo?". Si le das la pelota, te abre la puerta principal. Y no tienes problemas con el coche. (flag) Pero el niño se va contigo. FINAL 2
+- La parte de coger el coche y pirarte a casa de tu BRO y es el FINAL. Que es doble.
+
+woolstone
+the barge inn
+
+
+php.exe C:\DAAD\scrconv.php Spider.png C:\DAAD\example.conf.php
+
+
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\004.S07' 128 raw
+
+PS D:\GitHub\La-Sorpresa\DSK_SC8> C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 8_6 ES .\DAAD.json
+PS D:\GitHub\La-Sorpresa\DSK_SC8> C:\DAAD\dsk2rom.exe -afc 0 ..\..\sorpresaSC8.dsk ../../sorpresaSC8.rom
+
+
+
+Modo DEBUG
+PS D:\GitHub\La-Sorpresa\DSK_SC8> & 'C:\Program Files\openMSX\openmsx.exe' -script .\info_daad.tcl -diska .\sorpresa.dsk
+& 'C:\Program Files\openMSX\openmsx.exe' -machine Philips_NMS_8250 -script .\info_daad.tcl -carta .\sordebug.rom
+F10: toggle_info_daad
+
+
+SC7
+PS D:\GitHub\La-Sorpresa\DSK_SC7> C:\DAAD\drf.exe msx2 4_8 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 4_8 ES .\DAAD.json
+PS D:\GitHub\La-Sorpresa\DSK_SC7> C:\DAAD\dsk2rom.exe -afc 0 ..\..\sorpresaSC7.dsk ../../sorpresaSC7.rom
+
+DSK_EN
+PS D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 8_6 EN .\DAAD.json
+PS D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\dsk2rom.exe -afc 0 ..\..\Surprise.dsk ..\..\Surprise.rom
+
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\007.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\008.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\009.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\010.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\011.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\012.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\013.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\014.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\015.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\016.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\017.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\018.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\019.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\020.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\021.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\022.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\023.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\024.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\025.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\026.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\027.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\028.S07' 128 raw
+php c:\daad\imgwizard.php c '..\Imagenes\SC7\029.S07' 128 raw
+
+
+
+
+
+https://github.com/nataliapc/msx2daad/wiki/MSX2DAAD-Wiki%3A-Understanding-DSF-file-format
+
+https://homebrewery.naturalcrit.com/edit/SJg-J9g32S
+
+F:\Proyectos\La Sorpresa\Fonts\fontmaker
+Se retoca el fichero font_0.png y font_1.png
+
+El segundo lleva la parte gráfica.
+
+D:\msx2daad\fontmaker>font.bat
+
+NatyPC, [02.02.20 11:37]
+en los textos activas el juego superior con #g y lo desactivas con #t
+#g de juego "G"rafico de caracteres y #t de "T"exto
+
+
+DAAD
+
+https://forum.lazarus.freepascal.org/index.php?topic=13500.0
+
+MALUVA
+Es un módulo del DAAD, una extensión externa
+
+ngpaws
+Next Generation Proffesional Adventure Writing System (engine)
+
+undaad
+Es un descompilador de juegos DAAD
+
+EAAD
+Editor de ficheros SCE
+
+DRC
+es un remake del compilador para DAAD
+compila DRC y obtiens un json que luego genera un DDB
+drf msx mygame.dsf
+drb msx en mygame.json final.ddb
+php drb.php msx en mygame.json final.ddb
+
+SC2DAAD
+Conversor de SC2 a MS2
+
+DSF
+Fichero fuente de juegos DAAD 
+similar al SCE
+
+Editor de mapas ONLINE
+http://trizbort.io/app/index.html#
+
+Triz2DAAD
+https://pypi.org/project/triz2DAAD/1.0.3b3/
+https://pypi.org/project/triz2DAAD/#description
+Compilador de mapas creados con trizbort
+
+https://github.com/efraimsangil/DAAD-game-
+http://msx.jannone.org/conv/
+https://github.com/balkenbrij/sc8
+https://gilsoftpawreservoir.wordpress.com/category/the-paws-professional-adventure-writing-system/
+
+Links
+https://github.com/daad-adventure-writer/daad
+https://github.com/daad-adventure-writer/DRC
+https://github.com/daad-adventure-writer/MALUVA
+https://github.com/daad-adventure-writer/undaad
+https://github.com/daad-adventure-writer/EAAD
+https://github.com/nataliapc/msx2daad
+https://github.com/nataliapc/msx2daad/wiki
+
+Fuentes de audio
+http://www.sonidosmp3gratis.com/abrir-puerta-6
+
+Tutoriales
+https://medium.com/@uto_dev/a-daad-tutorial-for-beginners-1-b2568ec4df05
+
+efraim@DESKTOP-EK2SF70:/mnt/d/msx2daad_v1.0/triz2DAAD-1.0.1$ python3 triz2DAAD.py -dsf ../Samples/Sorpresa.json Sorpresa
+
+
+https://medium.com/@uto_dev/a-daad-tutorial-for-beginners-1-b2568ec4df05
+
+D:\msx2daad_v1.0\Samples> ./drf msx2 8_6 .\BLANK_ES.DSF
+
+D:\msx2daad_v1.0\Samples> php .\drb.php msx en .\BLANK_ES.json
+
+MSX Screen Converter
+http://msx.jannone.org/conv/
+https://github.com/jannone/msx-screen-converter
+
+D:\GitHub\La-Sorpresa\DSK_SC8
+
+PS C:\daad\dsk> ../drf msx2 8_6 .\DAAD.DSF -no-semantic
+PS C:\daad\dsk> php ../drb.php MSX2 8_6 ES .\DAAD.json
+
+Linux
+./drf msx2 8_6 BLANK_ES.DSF
+./php drb.php MSX2 8_6 ES BLANK_ES.json
+
+Windows
+C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic
+php c:\daad\drb.php MSX2 8_6 ES .\DAAD.json
+C:\DAAD\dsk2rom.exe -f6c 2 ..\..\sorpresa2880.dsk ../../sorpresa.rom
+
+Fontmaker
+D:\msx2daad\fontmaker>php imgwizard.php c FONT_0.SC8 32 PLETTER
+
+SC12
+php c:\daad\imgwizard.php ca '..\Imagenes\SC12\001.SCC' 001.SCA 96
+
+SC8/SC7
+php imgwizard.php c LOC1.SC8 96 raw
+
+Para los SC7 necesito también el fichero .PAL siendo el 0 negro y el 15 blanco.
+
+Generar un .ROM
+copy /b dsk2rom.rom+sorpresa.dsk sorpresa.rom
+
+
+D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 8_6 EN .\DAAD.json
+D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\dsk2rom.exe -afc 0 ..\..\Surprise.dsk ..\..\Surprise.rom
+ 
+D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 8_6 ES .\DAAD.json
+D:\GitHub\La-Sorpresa\DSk> C:\DAAD\dsk2rom.exe -afc 0 ..\..\sorpresa.dsk ..\..\sorpresa.rom
+
+
+
+
+C:\DAAD\dsk2rom.exe -afc 0 ..\..\sorpresa.dsk ../../sorpresa.rom
+---------
+convierte.sh
+iconv -f UTF-8 -t ISO-8859-1 BLANK_ES.json > DAAD.json
+rm BLANK_ES.json
+mv DAAD.json BLANK_ES.json
+
+CopyToBack
+[pinto disk en Phys]
+PicToBack
+[cargo imagen en Back]
+CopyToPhys
+PicToPhys
+
+PRINT 25 ; muestra el valor de 25
+
+34652986503 jose Angel Morente
