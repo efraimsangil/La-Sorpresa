@@ -348,6 +348,8 @@ TECHO           216    noun     ; lBurgos
 YESO            217    noun     ; lBodega
 RAMPA           218    noun     ; lExteriorCochera
 CIPRESES        219    noun     ; lExtCasa
+LISTONES        220    noun     ; lExteriorChamizo
+MUSGO           221    noun     ; lExteriorChamizo
 
 ;                               Verbos
 COGER           20      verb
@@ -492,7 +494,7 @@ LUEGO           2       conjugation
 /29 "Ya llevas puesto _.#n"
 /30 "S";Un solo carácter en mayúsculas. Inicial de Sí
 /31 "N"  ;Un solo carácter en mayúsculas. Inicial de No
-/32 "Hay más..."
+/32 "..."
 /33 ">"
 /34 "" ;*Libre
 /35 "#nEl tiempo pasa..."
@@ -580,9 +582,9 @@ LUEGO           2       conjugation
 /0 ""
 /1 "Burgos.#n#n      10 de Enero de 1987.#k#b  Eres Marcos. Un tipo serio, con carácter. Trabajas en la construcción y eres un gran profesional; meticuloso, trabajador y responsable. No eres una persona muy sociable y con los años, te has convertido inevitablemente en un misántropo empedernido, haciendo de ti un individuo ermitaño, parco en palabras, inexpresivo y hostil en ocasiones.#k#b  Sueles hablar mucho contigo mismo y tienes una conciencia tan desarrollada, que incluso te has acostumbrado a mantener conversaciones con ella en voz alta y por ese motivo la gente te percibe como un bicho raro.#k#b  Hoy es sábado y aparentemente no tienes planes, excepto disfrutar de tus 48 horas de libertad condicional; así denominas a los fines de semana.#k#bSon las 12:30PM#n#n  Es un frío día de invierno y aún sigues en la cama medio despierto, remoloneando. Los madrugones de la semana te pesan cada día más y te sientes incapaz de salir de tu nido calentito bajo la manta de franela.#k#b  Te giras en la cama con la firme intención de dormir un poco más, pero en ese mismo instante suena el teléfono que hay en la mesilla. Alguien decidió por ti que debes despertarte definitivamente."
 /2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes la fatiga en tus músculos tras el largo viaje.#k#b"
-/3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y el conjunto tiene un cierto aire imponente, casi abrumador.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE el porche, que es el acceso principal de la casa."
+/3 " Te encuentras en los aledaños de la hacienda familiar. Contemplas los últimos atisbos de claridad que dan paso a la noche cerrada. El viento helador silba a través de los cipreses que acotan la finca y el conjunto tiene un cierto aire imponente, abrumador.#k#b  La casa dispone de dos plantas y desde aquí puedes divisar al NORTE el viejo chamizo, al SUR la cochera y al ESTE el porche, que es el acceso principal de la casa."
 /4 " La cochera tiene una pequeña rampa de hormigón y una puerta metálica galvanizada pintada de color crema."
-/5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#n#n  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
+/5 " Estás en el exterior del chamizo. Es un lugar donde nunca da el sol.#n#n  Las paredes de cemento están cubiertas de musgo y da la sensación de que ya no pueden absorber más humedad. Solo de pensarlo, se te entumecen todos los huesos.#k#b  El chamizo tiene una puerta muy vieja, hecha de listones de madera con un color verdoso. Está completamente descascarillada y ajada por la temperie."
 /6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de miles de mosquitos sedientos de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
 /7 " Te encuentras en el recibidor, despojado de todo detalle y ambientado tan solo con el sutil resplandor de las luces del exterior. Es descorazonador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que SUBEN a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado. Parece que en la casa no hay nadie."
 /8 " La luna llena gobierna la noche y su claridad se derrama por el patio, rodeado por un extenso muro gris que se erige imponente como el adarve protector de la hacienda inexpugnable."
@@ -1316,23 +1318,36 @@ BAJAR   lBath2
                 DONE
 
 ; Durante el juego, para hacerlo más fácil, cuando examinas un objeto, lo coges, aunque también puedes usar el verbo COGER si eres un jugador experimentado.
+
+> EXAMINA   FELPUDO
+> EXAMINA   GNOMO
 > EXAMINA 	PLANTA
-> COGER 	MACETA
-> EXAMINA	MACETA		AT lPorche
-                NOTZERO fPorche
+> EXAMINA	MACETA 
+> COGER     FELPUDO
+> COGER     GNOMO 
+> COGER     PLANTA
+> COGER 	MACETA  AT lPorche
+	            ZERO    fPorche                
+                INK     colorNarrador               
+                XMESSAGE "No veo nada de eso. Prueba a MIRAR antes para observar lo que te rodea."
+                DONE
+
+> COGER     PLANTA
+> COGER 	MACETA AT lPorche
+           	    NOTZERO fPorche
                 INK     colorSistema              ; Color del sistema
                 GET     oMaceta         ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK     colorNarrador               
-                XMESSAGE "La maceta#g#f!#t aún contiene tierra y lo que en sus buenos tiempos fue posiblemente una planta, que ahora está más seca que la mojama."
+                INK colorConsciencia
+                XMESSAGE "Insignificante maceta."
                 DONE
 
-> EXAMINA 	PLANTA
-> COGER 	MACETA
-> EXAMINA	MACETA		AT lPorche
-                ZERO    fPorche                
+
+> EXAMINA   PLANTA
+> EXAMINA  	MACETA   AT lPorche
+		        NOTZERO fPorche
                 INK     colorNarrador               
-                XMESSAGE "No veo nada de eso. Prueba a MIRAR antes para observar lo que te rodea."
+                XMESSAGE "La maceta#g#f!#t aún contiene tierra y lo que en sus buenos tiempos fue posiblemente una planta, que ahora está más seca que la mojama."
                 DONE
 
 ; Como hay un bug con el COGER TODO del motor de DAAD, hemos creado una acción en esta localización para que sólo devuelva un mensaje.
@@ -1351,7 +1366,7 @@ BAJAR   lBath2
 > EXAMINA 	FELPUDO		AT lPorche
                 NOTZERO fPorche
                 INK     colorNarrador               
-	            XMESSAGE "Es un clásico felpudo de esparto con el mensaje 'WELCOME HOME' #g#fVWXY#t. Tus padres no compraron el que ponía 'BIENVENIDOS' porque les recordaba a cierto cantante de rock al que tenían bastante manía."
+	            XMESSAGE "Es un clásico felpudo de esparto con el mensaje 'WELCOME HOME'#g#fVWXY#t. Tus padres no compraron el que ponía 'BIENVENIDOS' porque les recordaba a cierto cantante de rock al que tenían bastante manía."
                 DONE
 
 > EXAMINA 	FELPUDO		AT lPorche
@@ -1415,7 +1430,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
 	            XMESSAGE "Aunque no es algo que hagas a menudo, obtienes un malévolo placer al tirar la maceta contra el suelo, pero después de varios rebotes vuelve a quedarse justo donde estaba.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "¡Sublime! Y además, ¡está intacta! ¿De qué estará hecha?#n"
+                XMESSAGE "¡Sublime! Y además, ¡está intacta! ¿De qué estará hecha?"
                 INK     colorSistema              ; Color del sistema
                 DROP    oMaceta
                 XMESSAGE "#n"
@@ -1585,13 +1600,15 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque antes notaba que las llevaba encima.#k#n"
-                INK     colorMarcos
-                XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
+                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche, so melón?, porque antes notaba que las llevaba encima.#k#n"
+                INK     colorMarcos                   ; Color del protagonista
+                XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche.#n"
+                INK colorSistema            ; Color del sistema
+                XMESSAGE"Has perdido las llaves del coche.#g#fIJ#t#k#n"
                 DESTROY oMaceta         ; Destruimos el objeto sin que se entere el jugador
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
-                INK     colorNarrador               
+                INK     colorNarrador                 ; Color del narrador
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
@@ -1613,9 +1630,11 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     colorConsciencia               ; Color de tu consciencia
-                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche#g#fIJ#t, so melón?, porque no las siento encima.#k#n"
-                INK     colorMarcos
-                XMESSAGE "¡Justo lo que necesitaba! ¡Sin forma de salir de esta casa y ahora también sin mis llaves del coche#g#fIJ#t#k"
+                XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche, so melón?, porque antes notaba que las llevaba encima.#k#n"
+                INK     colorMarcos                   ; Color del protagonista
+                XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche.#n"
+                INK colorSistema                     ; Color del sistema
+                XMESSAGE"Has perdido las llaves del coche.#g#fIJ#t#k#n"
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK     colorNarrador               
@@ -2909,6 +2928,7 @@ BAJAR   lBath2
 
 ; Estamos en locExtChamizo
 
+> EXAMINA   LISTONES
 > EXAMINA   PUERTA      AT lExteriorChamizo             
                 INK     colorNarrador               
                 XMESSAGE "El chamizo tiene una puerta muy vieja hecha de listones de madera pintados de verde; está completamente descascarillada y ajada por la temperie."
@@ -2951,6 +2971,7 @@ BAJAR   lBath2
                 XMESSAGE "Es un chamizo de color teja. Cuerpo terroso y rústico con bouquet corchado y decrépito. Sabor maduro, con notas a madera y a óxido. Robusto y astilloso en boca.#n"
                 DONE
 
+> EXAMINA   MUSGO
 > EXAMINA   PAREDES      AT lExteriorChamizo             
                 INK     colorConsciencia            
                 XMESSAGE "Uhm... Musgo... Me ha dicho un colega que si lo secas y lo picas, esto se fuma y te pegas unos viajes de flipar.#n"
