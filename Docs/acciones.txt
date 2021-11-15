@@ -1,501 +1,589 @@
-TRUCOS
-LUMOS MAXIMA			fTurnosConLuz	99
-
-
-
- USAR		MUEBLE      
- ABRIR		ARMARIO 
- EXAMINA	ARMARIO     AT lMadrid
- 
- EXAMINA 	CAMA		AT lMadrid
- EXAMINA 	MANTA		AT lMadrid
- EXAMINA 	MESILLA		AT lMadrid      
- EXAMINA 	MESILLA		AT lMadrid      
- ENCENDER	LAMPARA     AT lMadrid
- APAGAR		LAMPARA     AT lMadrid
- EXAMINA	LAMPARA     AT lMadrid
- EXAMINA 	TELEFONO    AT lMadrid
- 
- CONTESTAR	TELEFONO
- DESCOLGAR	TELEFONO
- COGER 		TELEFONO    AT lMadrid  ; la primera vez que se use esta acción, activamos el flag que nos indica que contestó al teléfono, además, usamos el teléfono como FLAG no como objeto, porque no te lo vas a llevar a ningún sitio.
- CONTESTAR	TELEFONO
- DESCOLGAR	TELEFONO
- COGER		TELEFONO    AT lMadrid      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.
- EXAMINA	HABITACION
- MIRAR		_			AT lMadrid    
- EXAMINA	HABITACION
- MIRAR		_			AT lMadrid 
- DORMIR		_			AT lMadrid      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
- DORMIR		_			AT lMadrid      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
- DORMIR		_			AT lMadrid
- DORMIR		_			AT lMadrid
- COLGAR		TELEFONO    AT lMadrid
- E			_			AT lMadrid      ; Si no ha usado el teléfono, no le dejamos ir al Este
- E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
- E			_			AT lMadrid      ; Si ha usado el teléfono le dejamos ir al Este
- ESCUCHAR	METALICA
- ESCUCHAR	METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
- E			_			AT lCoche
- EXAMINA	_           AT lCoche
- MIRAR		_           AT lCoche
+ ABRIR     ARMARIO 
+ EXAMINA   ARMARIO		AT lBurgos
+ ABRIR     ARMARIO 
+ EXAMINA   ARMARIO		AT lBurgos
+ ABRIR     ARMARIO 
+ EXAMINA   ARMARIO		AT lBurgos
+ EXAMINA 	CAMA		AT lBurgos
+ EXAMINA 	MANTA		AT lBurgos
+ EXAMINA 	SUELO		AT lBurgos
+ EXAMINA 	TECHO		AT lBurgos
+ EXAMINA 	PARED		AT lBurgos
+ EXAMINA   MESITA
+ EXAMINA   MESITA
+ ENCENDER  LAMPARA		AT lBurgos
+ APAGAR    LAMPARA		AT lBurgos
+ EXAMINA   LAMPARA		AT lBurgos
+ EXAMINA 	TELEFONO    AT lBurgos
+ CONTESTAR TELEFONO
+ DESCOLGAR TELEFONO
+ EXAMINA   HABITACION
+ MIRAR		_			AT lBurgos 
+ DORMIR	_				AT lBurgos
+ DORMIR	_				AT lBurgos
+ COLGAR    TELEFONO    	AT lBurgos
+ ESCUCHAR METALICA
+ E			_			AT lCoche              
+ EXAMINA   _          	AT lCoche
+ MIRAR     _          	AT lCoche
+ EXAMINA   CIPRESES   	AT lExtCasa
  E			_           AT lExtCasa   
  E			_           AT lExtCasa     
  N			_           AT lExtCasa                
- S			_           AT lExtCasa
- O			_           AT lExtCasa
- O			_           AT lExtCasa
- O			_           AT lExtCasa
- MIRAR		_           AT lExtCasa
- EXAMINA	FOCOS        AT lPorche                
- EXAMINA	FOCOS        AT lPorche
- O			_           AT lPorche                
+ S			_           AT lExtCasa            
+ O         _          	AT lExtCasa
+ O         _          	AT lExtCasa
+ O         _          	AT lExtCasa
+ MIRAR     _          	AT lExtCasa
+ ROMPER    FOCOS      	AT lPorche
+ EXAMINA   FOCOS      	AT lPorche
+ EXAMINA   FOCOS      	AT lPorche
+ O         _          	AT lPorche                
  E			_           AT lPorche
- MIRAR		_			AT lPorche
+ MIRAR     _			AT lPorche
+ EXAMINA   FELPUDO
+ EXAMINA   GNOMO
  EXAMINA 	PLANTA
- COGER		MACETA
- EXAMINA	MACETA		AT lPorche
- COGER		TODO		AT lPorche
+ EXAMINA	MACETA 
+ COGER     FELPUDO
+ COGER     GNOMO 
+ COGER     PLANTA
+ COGER 	MACETA  AT lPorche
+ COGER     PLANTA
+ COGER 	MACETA AT lPorche
+ EXAMINA   PLANTA
+ EXAMINA  	MACETA   AT lPorche
+ COGER 	TODO		AT lPorche
+ COGER 	TODO		AT lPorche
  EXAMINA 	FELPUDO		AT lPorche
- LEVANTAR   FELPUDO
- MOVER      FELPUDO
- TIRAR      FELPUDO
- EMPUJAR    FELPUDO
- COGER 		FELPUDO     AT lPorche
- COGER 		FELPUDO     AT lPorche
- COGER     	CIEMPIES    AT lPorche
- EXAMINA	CIEMPIES    AT lPorche
- ROMPER  	MACETA
- TIRAR 		MACETA      AT lPorche
- DEJAR 		MACETA      AT lPorche
- COGER 		GNOMO
- EXAMINA 	GNOMO		AT lPorche                
+ EXAMINA 	FELPUDO		AT lPorche
+ LEVANTAR  FELPUDO
+ MOVER     FELPUDO
+ TIRAR     FELPUDO
+ EMPUJAR   FELPUDO
+ COGER 	FELPUDO     AT lPorche
+ COGER 	FELPUDO     AT lPorche
+ ROMPER 	FELPUDO     AT lPorche               
+ PISAR     CIEMPIES
+ APLASTAR  CIEMPIES    AT lPorche
+ COGER     CIEMPIES    AT lPorche
+ EXAMINA   CIEMPIES    AT lPorche
+ ROMPER    MACETA
+ TIRAR 	MACETA      AT lPorche
+ ROMPER    MACETA
+ TIRAR 	MACETA      AT lPorche
+ DEJAR 	MACETA      AT lPorche
+ COGER 	GNOMO
+ EXAMINA 	GNOMO		AT lPorche          
  ROMPER 	GNOMO		AT lPorche
- ABRIR 		GNOMO		AT lPorche
+ ABRIR 	GNOMO		AT lPorche
  LANZAR 	GNOMO
  TIRAR		GNOMO		AT lPorche
+ LANZAR    GNOMO
  TIRAR		GNOMO		AT lPorche
- EXAMINA   	SUELO       AT lPorche
- EXAMINA   	PORCHE      AT lPorche
+ EXAMINA   SUELO       AT lPorche
+ EXAMINA   SUELO       AT lPorche
+ ESCUCHAR	METALICA
+ ESCUCHAR	METALLICA	AT lPorche
+ EXAMINA   PORCHE      AT lPorche
  EXAMINA	PUERTA		AT lPorche
- LLAMAR    	TIMBRE
- USAR      	TIMBRE
- EXAMINA   	TIMBRE      AT lPorche
+ EXAMINA   TIMBRE      AT lPorche
+ PULSAR    TIMBRE
+ LLAMAR    TIMBRE
+ USAR      TIMBRE      AT lPorche
+ PULSAR    TIMBRE
+ LLAMAR    TIMBRE
+ USAR      TIMBRE      AT lPorche
  GOLPEAR	PUERTA		AT lPorche
+ E         _
+ ENTRAR    _
+ EMPUJAR   PUERTA
  USAR 		PUERTA
  USAR 		LLAVE
- ABRIR 		PUERTA		AT lPorche
- E         	_
- ENTRAR    	_
- ABRIR 		PUERTA		AT lPorche
- E         	_
- ENTRAR    	_
+ ABRIR 	PUERTA		AT lPorche
+ E         _
+ ENTRAR    _
+ EMPUJAR   PUERTA
+ USAR 		PUERTA
+ USAR 		LLAVE
+ ABRIR 	PUERTA		AT lPorche
+ E         _
+ ENTRAR    _
+ EMPUJAR   PUERTA
+ USAR 		PUERTA
+ USAR 		LLAVE
  ABRIR		PUERTA		AT lPorche
- SUBIR      _           AT lRecibidor
- SUBIR      _           AT lRecibidor
- S          _           AT lRecibidor ; No podemos entrar en la cocina sin LUZ
- S          _           AT lRecibidor ; Tenemos LUZ y nos metemos en la cocina
- E          _           AT lRecibidor
- E          _           AT lRecibidor
- N          _           AT lRecibidor                
- N          _           AT lRecibidor                
- N          _           AT lRecibidor
- O          _           AT lRecibidor
- JUGAR     	CONSOLA     AT lRecibidor
- EXAMINAR 	RECIBIDOR
- MIRAR		_           AT lRecibidor
+ SALIR     _           AT lRecibidor
+ SUBIR     _           AT lRecibidor
+ SUBIR     _           AT lRecibidor
+ S         _           AT lRecibidor ; No podemos entrar en la cocina sin LUZ
+ S         _           AT lRecibidor ; Tenemos LUZ y nos metemos en la cocina
+ E         _           AT lRecibidor
+ E         _           AT lRecibidor
+ N         _           AT lRecibidor                
+ N         _           AT lRecibidor                
+ N         _           AT lRecibidor
+ O         _           AT lRecibidor
+ JUGAR     CONSOLA     AT lRecibidor
+ EXAMINAR  RECIBIDOR
+ MIRAR     _           AT lRecibidor
  EXAMINA	CONSOLA     AT lRecibidor
  EXAMINA	CONSOLA     AT lRecibidor
  EXAMINA	CONSOLA     AT lRecibidor
- EXAMINA    CAJON        AT lRecibidor
+ EXAMINA   CAJON        AT lRecibidor
  ABRIR		CAJON       AT lRecibidor
- ABRIR		CAJON 		AT lRecibidor
- EXAMINA    CAJON       AT lRecibidor
- BAJAR		_       AT lRecibidor
+ ABRIR		CAJON
+ EXAMINA   CAJON       AT lRecibidor
+ BAJAR         _       AT lRecibidor
  BAJAR		_  			AT lRecibidor
  BAJAR		_  			AT lRecibidor
- SUBIR      _           AT lBodega
- MIRAR      _           AT lBodega
- EXAMINA    PARED       AT lBodega
- EXAMINA    ALAMBIQUE   AT lBodega
- MOVER      ALAMBIQUE   AT lBodega
- EXAMINA    BOTELLERO   AT lBodega
- EXAMINA    MANCHA      AT lBodega
- EXAMINA    TRAMPILLA   AT lBodega
- EXAMINA    CANDADO     AT lBodega
- ENGRASAR   CANDADO     AT lBodega
- ENGRASAR   CANDADO     AT lBodega
- USAR       CANDADO
- ABRIR      CANDADO     AT lBodega
- USAR       CANDADO
- ABRIR      CANDADO     AT lBodega
- USAR       CANDADO
- ABRIR      CANDADO     AT lBodega
- USAR       PALETA      AT lBodega
- USAR       PALETA      AT lBodega
- EXAMINA	PUERTA      AT lBodega
- USAR		PUERTA
- ABRIR 		PUERTA      AT lBodega
- USAR       PUERTA
- ABRIR 		PUERTA      AT lBodega
- USAR       PUERTA
- ABRIR 		PUERTA      AT lBodega
- USAR       TRAMPILLA 
- ABRIR      TRAMPILLA   AT lBodega
- USAR       TRAMPILLA 
- ABRIR      TRAMPILLA   AT lBodega
- USAR       TRAMPILLA 
- ABRIR      TRAMPILLA   AT lBodega
- USAR       TRAMPILLA 
- ABRIR      TRAMPILLA   AT lBodega
- USAR       TRAMPILLA 
- ABRIR      TRAMPILLA   AT lBodega
- USAR       TRAMPILLA 
- ABRIR      TRAMPILLA   AT lBodega
- MIRAR      _           AT lGabinete
- EXAMINA    CAMILLA     AT lGabinete
- EXAMINA    CAMILLA     AT lGabinete
- EXAMINA    CADENAS     AT lGabinete
- EXAMINA    CADENAS     AT lGabinete
- EXAMINA    MESA        AT lGabinete
- EXAMINA    MESA        AT lGabinete
- EXAMINA    SUELO       AT lGabinete
- EXAMINA    SUELO       AT lGabinete
- N          _            AT lGabinete
- N          _            AT lGabinete
- N          _            AT lGabinete
- MIRAR      _           AT lExteriorCochera
- EXAMINA    PUERTA
- ABRIR      PUERTA      AT lExteriorCochera
- EXAMINA    PUERTA
- ABRIR      PUERTA      AT lExteriorCochera
- EXAMINA    PUERTA
- ABRIR      PUERTA      AT lExteriorCochera
- EXAMINA    PUERTA
- ABRIR      PUERTA      AT lExteriorCochera
- N          _            AT lExteriorCochera
- MIRAR      _           AT lCochera
- MIRAR      _           AT lCochera
- EXAMINA    PUERTA      AT lCochera
- EXAMINA    SUELO       AT lCochera
- EXAMINA    SUELO       AT lCochera
- EXAMINA    GRIFO       AT lCochera
- EXAMINA    GRIFO       AT lCochera
- EXAMINA    GENERADOR   AT lCochera
- EXAMINA    PARED       AT lCochera
- EXAMINA    REJILLA     AT lCochera
- USAR       MANGUERA    AT lCochera
- USAR       MANGUERA    AT lCochera
- USAR       MANGUERA    AT lCochera
- CONECTAR   MANGUERA    AT lCochera
- CONECTAR   MANGUERA    AT lCochera
- USAR       GRIFO
- ABRIR      GRIFO       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
- USAR       GRIFO
- ABRIR      GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
- USAR       GRIFO
- ABRIR      GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
- USAR       GRIFO
- ABRIR      GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
- USAR       GRIFO
- ABRIR      GRIFO       AT lCochera                                
- CERRAR     GRIFO       AT lCochera
- MOVER      REJILLA
- ABRIR      REJILLA    AT lCochera
- O          _           AT lCochera
- E          _           AT lCochera ; Si salimos por la puerta, la puerta se bloquea con un flag y no podemos volver a entrar.
- E          _           AT lCochera
- EXAMINA    PUERTA      AT lExteriorChamizo             
- ENTRAR     _
- ABRIR      PUERTA      AT lExteriorChamizo
- ENTRAR     _
- ABRIR      PUERTA      AT lExteriorChamizo
- ENTRAR		_         
- ABRIR      PUERTA   AT lExteriorChamizo
- S          _           AT lExteriorChamizo       
- MIRAR		_        AT lChamizo
- EXAMIN		SUELO       AT lChamizo
- EXAMINA    TIERRA      AT lChamizo
- ABRIR      ARMARIO
- EXAMINA    ARMARIO     AT lChamizo
- EXAMINA    TRASTOS      AT lChamizo
- EXAMINA    CHAMIZO
- MIRAR		_           AT lChamizo                 ; Cogemos las llaves del coche
- USAR       PALA        AT lChamizo
- USAR       PALA        AT lChamizo
- USAR       PALA        AT lChamizo
- O			_
- ABRIR		PUERTA  AT lChamizo
- O			_
- ABRIR		PUERTA  AT lChamizo
- USAR       HACHA 
- ROMPER     TRAVESA     AT lChamizo
- USAR       HACHA 
- ROMPER     TRAVESA     AT lChamizo
- USAR       HACHA 
- ROMPER     TRAVESA     AT lChamizo
- USAR       HACHA 
- ROMPER     TRAVESA     AT lChamizo
- ROMPER     TRAVESA     AT lChamizo
- ROMPER     TRAVESA     AT lChamizo
- ROMPER     TRAVESA     AT lChamizo
- ENTRAR     GABINETE    AT lChamizo
- EXAMINA    ASEO
- MIRAR      _           AT lAseo
- S          _           AT lAseo
+ SUBIR     _           AT lBodega
+ MIRAR     _           AT lBodega
+ MIRAR     _           AT lBodega
+ EXAMINA   PARED       AT lBodega
+ EXAMINA   ALAMBIQUE   AT lBodega
+ MOVER     ALAMBIQUE   AT lBodega
+ EXAMINA   BOTELLERO   AT lBodega
+ EXAMINA   MANCHA      AT lBodega
+ EXAMINA   TRAMPILLA   AT lBodega
+ EXAMINA   CANDADO     AT lBodega
+ ENGRASAR  CANDADO     AT lBodega
+ ENGRASAR  CANDADO     AT lBodega
+ USAR      CANDADO
+ ABRIR     CANDADO     AT lBodega
+ USAR      CANDADO
+ ABRIR     CANDADO     AT lBodega
+ USAR      CANDADO
+ ABRIR     CANDADO     AT lBodega
+ UTILIZAR  PALETA
+ USAR      PALETA      AT lBodega
+ QUITAR    YESO      AT lBodega
+ UTILIZAR  PALETA
+ USAR      PALETA      AT lBodega
+ QUITAR    YESO      AT lBodega
+ EXAMINA 	PUERTA      AT lBodega
+ ENTRAR    _
+ EMPUJAR   PUERTA
+ USAR 		PUERTA
+ ABRIR 	PUERTA      AT lBodega
+ ENTRAR    _
+ EMPUJAR   PUERTA
+ USAR      PUERTA
+ ABRIR 	PUERTA      AT lBodega
+ ENTRAR    _
+ EMPUJAR   PUERTA
+ USAR      PUERTA
+ ABRIR 	PUERTA      AT lBodega
+ USAR      TRAMPILLA 
+ ABRIR     TRAMPILLA   AT lBodega
+ USAR      TRAMPILLA 
+ ABRIR     TRAMPILLA   AT lBodega
+ USAR      TRAMPILLA 
+ ABRIR     TRAMPILLA   AT lBodega
+ USAR      TRAMPILLA 
+ ABRIR     TRAMPILLA   AT lBodega
+ USAR      TRAMPILLA 
+ ABRIR     TRAMPILLA   AT lBodega
+ USAR      TRAMPILLA 
+ ABRIR     TRAMPILLA   AT lBodega
+ MIRAR     _           AT lGabinete
+ EXAMINA   CAMILLA     AT lGabinete
+ EXAMINA   CAMILLA     AT lGabinete
+ EXAMINA   CADENAS     AT lGabinete
+ EXAMINA   CADENAS     AT lGabinete
+ EXAMINA   MESA        AT lGabinete
+ EXAMINA   MESA        AT lGabinete
+ EXAMINA   SUELO       AT lGabinete
+ EXAMINA   SUELO       AT lGabinete
+ N        _            AT lGabinete
+ N        _            AT lGabinete
+ N        _            AT lGabinete
+ MIRAR     _           AT lExteriorCochera
+ EXAMINA   PUERTA      AT lExteriorCochera
+ ABRIR     PUERTA      AT lExteriorCochera
+ ABRIR     PUERTA      AT lExteriorCochera
+ ABRIR     PUERTA      AT lExteriorCochera
+ ABRIR     PUERTA      AT lExteriorCochera
+ EXAMINA   RAMPA      AT lExteriorCochera
+ N        _            AT lExteriorCochera
+ MIRAR     _           AT lCochera
+ MIRAR     _           AT lCochera
+ EXAMINA   PUERTA      AT lCochera
+ EXAMINA   SUELO       AT lCochera
+ EXAMINA   SUELO       AT lCochera
+ EXAMINA   GRIFO       AT lCochera
+ EXAMINA   GRIFO       AT lCochera
+ EXAMINA   GENERADOR   AT lCochera
+ EXAMINA   PARED       AT lCochera
+ EXAMINA   REJILLA     AT lCochera
+ USAR      MANGUERA
+ COLOCAR   MANGUERA
+ ENCHUFAR  MANGUERA
+ ACOPLAR   MANGUERA
+ CONECTAR  MANGUERA    AT lCochera
+ USAR      MANGUERA
+ COLOCAR   MANGUERA    AT lCochera
+ USAR      MANGUERA
+ COLOCAR   MANGUERA    AT lCochera
+ ENCHUFAR  MANGUERA
+ ACOPLAR   MANGUERA
+ CONECTAR  MANGUERA    AT lCochera
+ ENCHUFAR  MANGUERA
+ ACOPLAR   MANGUERA
+ CONECTAR  MANGUERA    AT lCochera
+ USAR      GRIFO
+ ABRIR     GRIFO       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
+ USAR      GRIFO
+ ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
+ USAR      GRIFO
+ ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
+ USAR      GRIFO
+ ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
+ USAR      GRIFO
+ ABRIR     GRIFO       AT lCochera                                
+ CERRAR    GRIFO       AT lCochera
+ CERRAR    GRIFO       AT lCochera
+ MOVER     REJILLA
+ ABRIR     REJILLA    AT lCochera
+ O         _           AT lCochera
+ E         _           AT lCochera ; Si salimos por la puerta, la puerta se bloquea con un flag y no podemos volver a entrar.
+ E         _           AT lCochera
+ EXAMINA   LISTONES
+ EXAMINA   PUERTA      AT lExteriorChamizo             
+ ABRIR     PUERTA      AT lExteriorChamizo
+ ABRIR     PUERTA      AT lExteriorChamizo                
+ ABRIR     PUERTA      AT lExteriorChamizo
+ EXAMINA   CHAMIZO      AT lExteriorChamizo             
+ EXAMINA   MUSGO
+ EXAMINA   PAREDES      AT lExteriorChamizo             
+ S         _           AT lExteriorChamizo       
+ MIRAR        _        AT lChamizo
+ EXAMINA   SUELO       AT lChamizo
+ EXAMINA   TIERRA      AT lChamizo
+ ABRIR     ARMARIO
+ EXAMINA   ARMARIO     AT lChamizo
+ EXAMINA   TRASTOS      AT lChamizo
+ EXAMINA   CHAMIZO
+ MIRAR     _           AT lChamizo                 ; Cogemos las llaves del coche
+ CAVAR     _
+ USAR      PALA        AT lChamizo
+ CAVAR     _
+ USAR      PALA        AT lChamizo
+ CAVAR     _
+ USAR      PALA        AT lChamizo
+ O            _
+ ABRIR         PUERTA  AT lChamizo
+ O             _
+ ABRIR         PUERTA  AT lChamizo
+ USAR      HACHA 
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ USAR      HACHA
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ USAR      HACHA 
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ USAR      HACHA 
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ USAR      HACHA
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ USAR      HACHA
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ USAR      HACHA
+ CORTA     TRAVESA
+ ROMPER    TRAVESA     AT lChamizo
+ ENTRAR    GABINETE    AT lChamizo
+ EXAMINA   ASEO
+ MIRAR     _           AT lAseo
+ S         _           AT lAseo
  EXAMINA	ASEO 		AT lAseo                                
- EXAMINA    SUELO       AT lAseo
- EXAMINA    INTERRUPTOR AT lAseo
- PULSAR     INTERRUPTOR
- ACCIONAR   INTERRUPTOR
+ EXAMINA   SUELO       AT lAseo
+ EXAMINA   INTERRUPTOR AT lAseo
+ PULSAR    INTERRUPTOR
+ ACCIONAR  INTERRUPTOR
  USAR		INTERRUPTOR AT lAseo
- PULSAR     INTERRUPTOR
- ACCIONAR   INTERRUPTOR
+ PULSAR    INTERRUPTOR
+ ACCIONAR  INTERRUPTOR
  USAR		INTERRUPTOR AT lAseo
- E          _           AT lCocina 
- E          _           AT lCocina ; Tenemos LUZ y nos metemos en el almacén
- N          _           AT lCocina 
- EXAMINA    PAREDES      AT lCocina
- EXAMINA    COCINA
- MIRAR      _           AT lCocina
+ E         _           AT lCocina 
+ N         _           AT lCocina 
+ EXAMINA  PAREDES      AT lCocina
+ EXAMINA   COCINA
+ MIRAR     _           AT lCocina
  EXAMINA	FREGADERO   AT lCocina
  EXAMINA	SUMIDERO    AT lCocina
- EXAMINA    CUCHARAS     AT lCocina
- COGER      CUCHARAS    AT  lCocina
- EXAMINA    TRITURADOR   AT lCocina
- EXAMINA    TRITURADOR   AT lCocina
- EXAMINA    MUEBLE
+ EXAMINA   CUCHARAS     AT lCocina
+ COGER     CUCHARAS    AT  lCocina
+ EXAMINA   TRITURADOR   AT lCocina
+ EXAMINA   TRITURADOR   AT lCocina
+ EXAMINA   MUEBLE
  EXAMINA	APARADOR    AT lCocina
- ABRIR      CAJONES     AT lCocina
+ ABRIR     APARADOR     AT lCocina
  EXAMINA	CAJONES     AT lCocina
+ ABRIR     CAJONES     AT lCocina
  EXAMINA	COJONES     AT lCocina
- ABRIR      LAVADORA
+ ABRIR     LAVADORA
  EXAMINA	LAVADORA    AT lCocina
- EXAMINA    CUCHILLO
+ EXAMINA   CUCHILLO
  COGER		CUCHILLO    AT lCocina
- EXAMINA    DESPENSA
- MIRAR      _           AT lDespensa
- EXAMINA    ALACENA
- ABRIR 		ALACENA     AT lDespensa
- TIRAR      ALACENA
- EMPUJAR    ALACENA     AT lDespensa
- ROMPER     ALACENA     AT lDespensa
- O          _           AT lDespensa 
- O          _           AT lDespensa
+ EXAMINA   DESPENSA
+ MIRAR     _           AT lDespensa
+ EXAMINA   ALACENA
+ ABRIR 	ALACENA     AT lDespensa
+ TIRAR     ALACENA
+ EMPUJAR   ALACENA     AT lDespensa
+ ROMPER    ALACENA     AT lDespensa
+ O         _           AT lDespensa 
+ O         _           AT lDespensa
  EXAMINA	ESCALERAS   AT lEscaleras                
- EXAMINA    ESCALON     AT lEscaleras                
- EXAMINA    ESCALON      AT lEscaleras                
- QUITAR     ESCALON
+ EXAMINA   ESCALON      AT lEscaleras                
+ QUITAR    TABLON
+ MOVER     TABLON
+ QUITAR    ESCALON
  MOVER		ESCALON      AT lEscaleras
- QUITAR     ESCALON
+ QUITAR    TABLON
+ MOVER     TABLON
+ QUITAR    ESCALON
  MOVER		ESCALON     AT lEscaleras
- EXAMINA    CANDADO
+ EXAMINA   CANDADO
  EXAMINA	CAJA        AT lEscaleras                
  COGER		CAJA        AT lEscaleras                
- ROMPER     CAJA        AT lEscaleras
+ ROMPER    CAJA        AT lEscaleras
  ABRIR		CAJA        AT lEscaleras                
  ABRIR		CAJA        AT lEscaleras                
  ABRIR		CAJA        AT lEscaleras                
- EXAMINA    ESCALERAS
- MIRAR      _
- R          _           AT lEscaleras
+ EXAMINA   ESCALERAS
+ MIRAR     _
+ R         _           AT lEscaleras
  COLOCAR	ESCALON
  PONER		ESCALON      AT lEscaleras
- BAJAR      BARANDILLA  AT lEscaleras
- BAJAR      _           AT lEscaleras
- BAJAR      _           AT lEscaleras
- BAJAR      _          AT lEscaleras
- SUBIR      _          AT lEscaleras
- SUBIR      _           AT lEscaleras
- SUBIR      _           AT lEscaleras
- EXAMINA    SALON
- MIRAR      _           AT lSalon
- CARGAR     CASSETTE    AT lSalon
- EXAMINA    CASSETTE
- EXAMINA    LAREIRA
+ BAJAR     BARANDILLA  AT lEscaleras
+ BAJAR     _           AT lEscaleras
+ BAJAR     _           AT lEscaleras
+ BAJAR     _          AT lEscaleras
+ SUBIR     _          AT lEscaleras
+ SUBIR     _           AT lEscaleras
+ SUBIR     _           AT lEscaleras
+ EXAMINA   SALON
+ MIRAR     _           AT lSalon
+ USAR      CASSETTE
+ ESCUCHAR  CASSETTE
+ CARGAR    CASSETTE    AT lSalon
+ EXAMINA   CASSETTE
+ EXAMINA   LAREIRA
  EXAMINA	CHIMENEA    AT lSalon
- EXAMINA    MUEBLE
- ABRIR      VITRINA
+ EXAMINA   MUEBLE
+ ABRIR     VITRINA
  EXAMINA	VITRINA     AT lSalon
- EXAMINA    MUEBLE
- ABRIR      VITRINA
+ EXAMINA   MUEBLE
+ ABRIR     VITRINA
  EXAMINA	VITRINA     AT lSalon
- EXAMINA    RANURA      AT lSalon
- USAR		TARJETA     AT lSalon
- USAR		TARJETA     AT lSalon
- EMPUJAR    VITRINA
- MOVER 		VITRINA     AT lSalon
- MOVER		VITRINA     AT lSalon
- E          _           AT lSalon 
- E          _           AT lSalon
- E          _           AT lSalon
- E          _           AT lSalon
- O          _           AT lSalon                
- MIRAR      _           AT lCriada
- ABRIR      BANCO
- EXAMINA    BANCO       AT lCriada
- ABRIR      COLCHON
- EXAMINA    COLCHON     AT lCriada
- EXAMINA    SUELO       AT lCriada
- EMPUJAR    BANCO
- MOVER      BANCO       AT lCriada
- QUITAR     LOSETA
- MOVER      LOSETA       AT lCriada
- EXAMINA    ORINAL      AT lCriada
- EXAMINA    CAMA        AT lCriada
- N          _           AT lCriada
- N          _           AT lCriada
- O          _           AT lPatio
- EXAMINA    MURO        AT lPatio
- TREPAR     MURO
- SALTAR     MURO        AT lPatio
- EXAMINA    PATIO
- MIRAR      _           AT lPatio
- MIRAR      _           AT lPatio
- EXAMINA    PATIO
- HABLAR     _           AT lPatio
- LANZAR     PELOTA
- JUGAR      _           AT lPatio
- JUGAR      _           AT lPatio
- EXAMINA    LUNA        AT lPatio
- EXAMINA    ALCOBA
- MIRAR      _           AT lRoom1
+ EXAMINA   RANURA      AT lSalon
+ METER     TARJETA
+ INTRODUCIR TARJETA
+ USAR 		TARJETA     AT lSalon
+ METER     TARJETA
+ INTRODUCIR TARJETA
+ USAR 		TARJETA     AT lSalon
+ EMPUJAR   VITRINA
+ MOVER 	VITRINA     AT lSalon
+ MOVER     VITRINA     AT lSalon
+ E         _           AT lSalon 
+ E         _           AT lSalon
+ O         _           AT lSalon                
+ MIRAR     _           AT lCriada
+ ABRIR     BANCO
+ EXAMINA   BANCO       AT lCriada
+ ABRIR     COLCHON
+ EXAMINA   COLCHON     AT lCriada
+ EXAMINA   SUELO       AT lCriada
+ EMPUJAR   BANCO
+ MOVER     BANCO       AT lCriada
+ QUITAR    LOSETA
+ MOVER     LOSETA       AT lCriada
+ EXAMINA   ORINAL      AT lCriada
+ EXAMINA   CAMA        AT lCriada
+ N         _           AT lCriada
+ N         _           AT lCriada
+ O         _           AT lPatio                
+ O         _           AT lPatio
+ EXAMINA   MURO        AT lPatio
+ TREPAR    MURO
+ SALTAR    MURO        AT lPatio
+ EXAMINA   PATIO
+ MIRAR     _           AT lPatio
+ MIRAR     _           AT lPatio
+ EXAMINA   PATIO
+ HABLAR    _           AT lPatio
+ LANZAR    PELOTA
+ JUGAR     _           AT lPatio
+ JUGAR     _           AT lPatio
+ EXAMINA   LUNA        AT lPatio
+ EXAMINA   ALCOBA
+ MIRAR     _           AT lRoom1
  EXAMINA 	CAMA        AT lRoom1
- EXAMINA    OBJETO
- COGER      OBJETO      AT lRoom1
- N          _           AT lRoom1
- S          _           AT lRoom1
- S          _           AT lBath1
- MIRAR      _           AT lBath1
- EXAMINA    BANO        AT lBath1
- EXAMINA    BAÑO        AT lBath1
- EXAMINA    PARED
- EXAMINA    MANCHA      AT lBath1
- EXAMINA    TINA        AT lBath1
- EXAMINA    RESPIRADERO AT lBath1
- ABRIR      RESPIRADERO
- TIRAR      RESPIRADERO
- EMPUJAR    RESPIRADERO  AT lBath1
- EXAMINA    ALCOBA
- MIRAR      _           AT lRoom2
- EXAMINA    CAMA        AT lRoom2
- N          _           AT lRoom2
- N          _           AT lRoom2 
- S          _           AT lRoom2 
- S          _           AT lRoom2                
- N          _           AT lBath2                
- EXAMINA    PILA		AT lBath2
- EXAMINA    TINA        AT lBath2
- MIRAR      _           AT lBath2
- MIRAR      _           AT lBath2
- MIRAR      _           AT lBath2
- EXAMINA    CISTERNA    AT lBath2
- EXAMINA    RETRETE     AT lBath2
- CAGAR      _           AT lBath2
- SUBIR      _
- SUBIR      RETRETE     AT lBath2
- SUBIR      _
- SUBIR      RETRETE     AT lBath2
- USAR       CISTERNA
- USAR       RETRETE     AT lBath2
- BEBER      SANGRE     AT lBath2
- EXAMINA    FLUIDO
- EXAMINA    SANGRE      AT lBath2
- COGER      HACHA
- EXAMINA    SUELO
- EXAMINA    RETRETE     AT lBath2
- EXAMINA    RETRETE     AT lBath2
- EXAMINA    RETRETE
- MIRAR      _           AT lRetrete
- R          _           AT lRetrete
- BAJAR      _
- BAJAR      RETRETE     AT lRetrete
- EXAMINA    CISTERNA
- ABRIR      CISTERNA    AT lRetrete
- EXAMINA    CISTERNA
- ABRIR      CISTERNA    AT lRetrete
- R          _           AT lRoom3
- N          _           AT lRoom3
- S          _           AT lRoom3
- MIRAR      _           AT lRoom3
+ EXAMINA   OBJETO
+ COGER     OBJETO      AT lRoom1
+ N         _           AT lRoom1
+ S         _           AT lRoom1
+ S         _           AT lBath1
+ MIRAR     _           AT lBath1
+ EXAMINA   BANO        AT lBath1
+ EXAMINA   PARED
+ EXAMINA   MANCHA      AT lBath1
+ EXAMINA   TINA        AT lBath1
+ EXAMINA   RESPIRADERO AT lBath1
+ ABRIR     RESPIRADERO
+ TIRAR     RESPIRADERO
+ EMPUJAR   RESPIRADERO  AT lBath1
+ EXAMINA   ALCOBA
+ MIRAR     _           AT lRoom2
+ EXAMINA   CAMA        AT lRoom2
+ EXAMINA   CAMA        AT lRoom2
+ N         _           AT lRoom2
+ N         _           AT lRoom2 
+ S         _           AT lRoom2 
+ S         _           AT lRoom2                
+ N         _           AT lBath2                
+ EXAMINA   PILA		AT lBath2
+ EXAMINA   TINA        AT lBath2
+ MIRAR     _           AT lBath2
+ MIRAR     _           AT lBath2
+ MIRAR     _           AT lBath2
+ EXAMINA   CISTERNA    AT lBath2
+ EXAMINA   RETRETE     AT lBath2
+ CAGAR     _           AT lBath2
+ SUBIR     _
+ SUBIR     RETRETE     AT lBath2
+ SUBIR     _
+ SUBIR     RETRETE     AT lBath2
+ USAR      CISTERNA
+ USAR      RETRETE     AT lBath2
+ BEBER     SANGRE     AT lBath2
+ EXAMINA   FLUIDO
+ EXAMINA   SANGRE      AT lBath2
+ COGER     HACHA
+ EXAMINA   SUELO
+ EXAMINA   RETRETE     AT lBath2
+ EXAMINA   RETRETE     AT lBath2
+ EXAMINA   RETRETE
+ MIRAR     _           AT lRetrete
+ R         _           AT lRetrete
+ BAJAR     _
+ BAJAR     RETRETE     AT lRetrete
+ EXAMINA   CISTERNA
+ ABRIR     CISTERNA    AT lRetrete
+ EXAMINA   CISTERNA
+ ABRIR     CISTERNA    AT lRetrete
+ R         _           AT lRoom3
+ N         _           AT lRoom3
+ S         _           AT lRoom3
+ MIRAR     _           AT lRoom3
  EXAMINA	CABECERO    AT lRoom3
  EXAMINA	CABECERO    AT lRoom3
  EXAMINA	PARED       AT lRoom3
  EXAMINA	PARED       AT lRoom3
- EXAMINA    CAMA        AT lRoom3
- EXAMINA    CAMA        AT lRoom3
- EXAMINA    CAMA        AT lRoom3
- EXAMINA    CAMA        AT lRoom3
- EXAMINA    ALFOMBRA    AT lRoom3
- EXAMINA    ALFOMBRA    AT lRoom3
- EXAMINA    MESITA      AT lRoom3
- EXAMINA    MESITA      AT lRoom3
- EXAMINA    LAMPARA     AT lRoom3
- EXAMINA    LAMPARA     AT lRoom3
- EXAMINA    SUELO       AT lRoom3
- EXAMINA    SUELO       AT lRoom3
- MIRAR      _           AT lBath3
- EXAMINA    AGUA        AT lBath3
- EXAMINA    MOSAICO     AT lBath3
- EXAMINA    TERMA       AT lBath3
- EXAMINA    TERMA       AT lBath3
- EXAMINA    TERMA       AT lBath3
- EXAMINA    MURETE      AT lBath3
+ EXAMINA   CAMA        AT lRoom3
+ EXAMINA   CAMA        AT lRoom3
+ EXAMINA   CAMA        AT lRoom3
+ EXAMINA   CAMA        AT lRoom3
+ EXAMINA   ALFOMBRA    AT lRoom3
+ EXAMINA   ALFOMBRA    AT lRoom3
+ EXAMINA   MESITA      AT lRoom3
+ EXAMINA   MESITA      AT lRoom3
+ EXAMINA   LAMPARA     AT lRoom3
+ EXAMINA   LAMPARA     AT lRoom3
+ EXAMINA   SUELO       AT lRoom3
+ EXAMINA   SUELO       AT lRoom3
+ MIRAR     _           AT lBath3
+ EXAMINA   AGUA        AT lBath3
+ EXAMINA   MOSAICO     AT lBath3
+ EXAMINA   TERMA       AT lBath3
+ EXAMINA   TERMA       AT lBath3
+ EXAMINA   TERMA       AT lBath3
+ EXAMINA   MURETE      AT lBath3
  S			_           AT lBath3                
  S			_           AT lBath3                
- EXAMINA    PASILLO
- MIRAR      _           AT lPasillo1
- BAJAR      _           AT lPasillo1
- BAJAR      _           AT lPasillo1                
- E     		_           AT lPasillo1 
- E     		_           AT lPasillo1
+ EXAMINA   PASILLO
+ MIRAR     _           AT lPasillo1
+ BAJAR     _           AT lPasillo1
+ BAJAR     _           AT lPasillo1                
+ E     	_           AT lPasillo1 
+ E     	_           AT lPasillo1
  N			_           AT lPasillo1                
  N			_           AT lPasillo1                
  N			_           AT lPasillo1                
- EXAMINA	PASILLO
- MIRAR      _           AT lPasillo2
+ EXAMINA   PASILLO
+ MIRAR     _           AT lPasillo2
  E			_           AT lPasillo2
- S          _           AT lPasillo2
+ S         _           AT lPasillo2
  O			_           AT lPasillo2
- S          _           AT lPasillo2
- S          _           AT lPasillo2
+ S         _           AT lPasillo2
+ S         _           AT lPasillo2
  E			_           AT lPasillo2
  E			_           AT lPasillo2
  O			_           AT lPasillo2
  O			_           AT lPasillo2
- S          _           AT lPasillo2
- E          _           AT lPasillo2
- O          _           AT lPasillo2
- S          _           AT lPasillo2
- E          _           AT lPasillo2
- O          _           AT lPasillo2
- S          _           AT lPasillo2
- E          _           AT lPasillo2
- O          _           AT lPasillo2
- E          _           AT lPasillo2
- O          _           AT lPasillo2
- S          _           AT lPasillo2
- S          _           AT lPasillo2
- E          _           AT lPasillo2
- O          _           AT lPasillo2
- EXAMINA	PASILLO
- MIRAR      _           AT lPasillo3
+ S         _           AT lPasillo2
+ E         _           AT lPasillo2
+ O         _           AT lPasillo2
+ S         _           AT lPasillo2
+ E         _           AT lPasillo2
+ O         _           AT lPasillo2
+ S         _           AT lPasillo2
+ E         _           AT lPasillo2
+ O         _           AT lPasillo2
+ E         _           AT lPasillo2
+ O         _           AT lPasillo2
+ S         _           AT lPasillo2
+ S         _           AT lPasillo2
+ E         _           AT lPasillo2
+ O         _           AT lPasillo2
+ EXAMINA   PASILLO
+ MIRAR     _           AT lPasillo3
  N			_           AT lPasillo3
- N          _           AT lPasillo3
- N          _           AT lPasillo3
- N          _           AT lPasillo3
+ N         _           AT lPasillo3
+ N         _           AT lPasillo3
+ N         _           AT lPasillo3
  O			_           AT lPasillo3
  O			_           AT lPasillo3
- 
- De uso general, que se puede usar en CUALQUIER localización
- 
- USAR       COJONES
  EXAMINA	FOTOGRAFIA
- EXAMINA    CERILLAS
- LLAMAR     BOMBERO
- PRENDER    CERILLA
- USAR       CERILLA
- APAGAR     CERILLA
- EXAMINA    DIARIO
- LEER       DIARIO      
- 
+ EXAMINA   CERILLAS
+ EXAMINA   ROPA
+ EXAMINA   PALA
+ EXAMINA   HACHA
+ EXAMINA   PELOTA
+ EXAMINA   PALETA
+ LLAMAR    BOMBERO
+ USAR      CHUPETE     AT lBurgos
+ USAR      MUEBLE      
+ AYUDA     MAGIA
+ AYUDA     OSITO                
+ USAR      MAGIA
+ APAGAR    CERILLA
+ ENCENDER  CERILLA
+ PRENDER   CERILLA
+ USAR 		CERILLA                
+ ENCENDER  CERILLA
+ PRENDER   CERILLA     
+ USAR		CERILLA 
+ ENCENDER  CERILLA
+ PRENDER   CERILLA
+ USAR      CERILLA
+ APAGAR    CERILLA
+ EXAMINA   DIARIO
+ LEER      DIARIO      
+ SALID     _   INK     colorNarrador               
+ COGER   TODO  DOALL   HERE                
+ COGER     _   AUTOG
+ COGER    _    PLACE @52 CARRIED
+ DEJAR   TODO  DOALL   CARRIED
+ DEJAR     _   AUTOD
+ QUITAR  TODO  DOALL   WORN
+ QUITAR    _   AUTOR
+ PONER   TODO  DOALL   CARRIED
+ PONER     _   AUTOW
