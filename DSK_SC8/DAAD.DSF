@@ -25,7 +25,7 @@
 ;INK 14      Voz del niño fantasma
 ;INK 15      Mensajes del sistema
 
-#define     colorConsciencia    2
+#define     colorconciencia    2
 #define     colorMarcos         3
 #define     colorMuerte         4
 #define     colorNena           6
@@ -84,54 +84,56 @@
 
 ;                               Flags de usuario
 ; NOTA: Describir en el código todos los flags
-#define fLeerDiario         64      ; Control que activamos cuando leemos el diario
-#define fPuertaCochera      65      ; NOTA: Lo vamos a usar?
+#define fLeerDiario         64      ; Control que activamos cuando leemos el diario.
+#define fPuertaCochera      65      ; NOTA: Lo vamos a usar?.
 #define fDesenterrar        66      ; Flag que controla si se llegó a desenterrar los cuerpos, de modo que te condiciona el tipo de final al que puedes llegar.
-#define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lBurgos
-#define fNoUsarTelefono     68      ; Control para sacar al jugador del juego si decide DORMIR
+#define fUsarTelefono       67      ; Control para saber si se ha usado/cogido el teléfono en lBurgos.
+#define fInsisteDormir     68      ; Control para sacar al jugador del juego si decide DORMIR.
 #define fFinTerma           69      ; 
-#define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos
-#define fPorche             71      ; Flag que controla ciertas acciones repetidas en lPorche
-#define fTurnosConLuz       72      ; Control del número de turnos con Luz
-#define fControlLuz         73      ; Control de la luz de la cerilla 
-#define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces
-#define fCajon              75      ; Control para el cajón de la consola en lRecibidor
-#define fConsola            76      ; Control para EXAMINAR CONSOLA en lRecibidor y mostrar varios mensajes
-#define fEscalon            77      ; Control del TABLON suelto de lEscaleras
-#define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo
-#define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama
-#define fUsarPala           80      ; Control para que no usemos la pala dos veces
-#define fJugar              81      ; Control para saber si se jugó con el niño en lPatio (Crucial para uno de los finales)
-#define fTriturador         82      ; Control para matar al jugador si decide EXAMINAR por segunda vez el TRITURADOR en lCocina
-#define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche
-#define fPatio              84      ; Control para jugar con el crío en lPatio
-#define fGnomoRoto          85      ; Control para cuando rompes el Gnomo en lPorche
-#define fInsistePuerta      86      ; Control para abrir la puerta de la cochera en ExteriorCochera
-#define fInsisteMuchoPuerta 87      ; Control para abrir la puerta de la cochera en ExteriorCochera
-#define fUsarTarjeta        88      ; Control de USAR TARJETA en la VITRINA en lSalon
-#define fVasAMorir          89      ; Control para matar al jugador en lGabinete
-#define fUsarCerilla        90      ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado
-#define fUsarAceite         91      ; Control de ENGRASAR CANDADO en lBodega para poder abrirlo
-#define fManguera           92      ; Control para comprobar que encuentra y usa la manguera en lCochera
-#define fMangueraRejilla    93      ; Control para comprobar que pone la manguera en la rejilla en lCochera
-#define fConectarManguera   94      ; Control para comprobar conecta la manguera en el grifo en lCochera
-#define fCerrarGrifo        95      ; Control para comprobar que cierra el grifo de agua en lCochera
-#define fBajarRetrete       96      ; Control de la destrucción del retrete cuando bajas del mismo en lBath2
-#define fFlashBack          97      ; Control del cambio de realidad en lRoom3. Tenemos distintas descripciones al tener dicho flag
-#define fTerma              98      ; Controla EXAMINAR dos veces la TERMA en lBath3
-#define fFotoPeluche        99      ; Si has visto o no la foto en lRoom1
+#define fCogerFelpudo       70      ; Controla la posibilidad de COGER FELPUDO dos veces y tener dos mensajes distintos.
+#define fPorche             71      ; Flag que controla ciertas acciones repetidas en lPorche.
+#define fTurnosConLuz       72      ; Control del número de turnos con Luz.
+#define fControlLuz         73      ; Control de la luz de la cerilla .
+#define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces.
+#define fCajon              75      ; Control para el cajón de la consola en lRecibidor.
+#define fConsola            76      ; Control para EXAMINAR CONSOLA en lRecibidor y mostrar varios mensajes.
+#define fEscalon            77      ; Control del TABLON suelto de lEscaleras.
+#define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo.
+#define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama.
+#define fUsarPala           80      ; Control para que no usemos la pala dos veces.
+#define fJugar              81      ; Control para saber si se jugó con el niño en lPatio (Crucial para uno de los finales).
+#define fTriturador         82      ; Control para matar al jugador si decide EXAMINAR por segunda vez el TRITURADOR en lCocina.
+#define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche.
+#define fPatio              84      ; Control para jugar con el crío en lPatio.
+#define fGnomoRoto          85      ; Control para cuando rompes el Gnomo en lPorche.
+#define fInsistePuerta      86      ; Control para abrir la puerta de la cochera en ExteriorCochera.
+#define fInsisteMuchoPuerta 87      ; Control para abrir la puerta de la cochera en ExteriorCochera.
+#define fUsarTarjeta        88      ; Control de USAR TARJETA en la VITRINA en lSalon.
+#define fVasAMorir          89      ; Control para matar al jugador en lGabinete.
+#define fUsarCerilla        90      ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado.
+#define fUsarAceite         91      ; Control de ENGRASAR CANDADO en lBodega para poder abrirlo.
+#define fManguera           92      ; Control para comprobar que encuentra y usa la manguera en lCochera.
+#define fMangueraRejilla    93      ; Control para comprobar que pone la manguera en la rejilla en lCochera.
+#define fConectarManguera   94      ; Control para comprobar conecta la manguera en el grifo en lCochera.
+#define fCerrarGrifo        95      ; Control para comprobar que cierra el grifo de agua en lCochera.
+#define fBajarRetrete       96      ; Control de la destrucción del retrete cuando bajas del mismo en lBath2.
+#define fFlashBack          97      ; Control del cambio de realidad en lRoom3. Tenemos distintas descripciones al tener dicho flag.
+#define fTerma              98      ; Controla EXAMINAR dos veces la TERMA en lBath3.
+#define fFotoPeluche        99      ; Si has visto o no la foto en lRoom1.
 ; Los flags 100 y 101 se usan en un proceso que se encarga de mostrarnos las salidas cuando usamos SALID en el juego
-#define fMoverAlambique     102     ; Controla si se movió o no el ALAMBIQUE en lBodega para acceder a la TRAMPILLA
-#define fNenaMala           103     ; Controla que hayamos entrado en lRoom3 y activamos la aparación de la cría en lPasillo2
-#define fAceite             104     ; Has entrado en BATH1 y examinado la cisterna
-#define fCodigoDiario       105     ; Código necesario para abrir la trampilla de lBodega
+#define fMoverAlambique     102     ; Controla si se movió o no el ALAMBIQUE en lBodega para acceder a la TRAMPILLA.
+#define fNenaMala           103     ; Controla que hayamos entrado en lRoom3 y activamos la aparación de la cría en lPasillo2.
+#define fAceite             104     ; Has entrado en BATH1 y examinado la cisterna.
+#define fCodigoDiario       105     ; Código necesario para abrir la trampilla de lBodega.
 #define fQuitarMancha       106     
 #define fCombinacion        107     ; Flag para controlar si tenemos la combinación del candado que hay para acceder al gabinete. Dicha combinación nos la da la niña si le damos el peluche bueno.
 #define fApagarCerilla      108     ; Flag para dejar al jugador que apague la cerilla de modo intencionado. Le vendrá bien en el Gabinete.
-#define fVasAPalmar         109     ; Flag para controlar si prende cerilla en lAseo matamos al protagonista
-#define fManchaSangre       110     ; Flag para lRoom2 y que no aparezca la mancha de sangre cuando examinas dos veces
-#define fLevantado          111     ; Flag para lBurgos y controlamos que se haya levantado de la cama
-#define fTimbre             112     ; Flag para controlar que pulsa dos veces el timbre y cambiamos el texto de salida
+#define fVasAPalmar         109     ; Flag para controlar si prende cerilla en lAseo matamos al protagonista.
+#define fManchaSangre       110     ; Flag para lRoom2 y que no aparezca la mancha de sangre cuando examinas dos veces.
+#define fLevantado          111     ; Flag para lBurgos y controlamos que se haya levantado de la cama.
+#define fTimbre             112     ; Flag para controlar que pulsa dos veces el timbre y cambiamos el texto de salida.
+#define fInsistelevanta     113     ; Flag para controlar que Marcos intente levantarse de la cama antes de coger el teléfono.
+#define fAbrirarmario       114     ; Flag que controla que el armario de LocBurgos esté abierto o no.
 
 ;                               Localizaciones
 #define lIntro              0
@@ -419,6 +421,8 @@ ACOPLAR         67      verb
 ENCHUFAR        68      verb
 PISAR           69      verb
 APLASTAR        70      verb
+INCORPORAR      71      verb
+ACOSTARSE       72      verb
 
 ;                               Adjetivos
 PEQUE           2       adjective
@@ -877,30 +881,124 @@ BAJAR   lBath2
 
 ; Estamos en locBurgos
 
-> ABRIR     ARMARIO 
+> LEVANTAR    _
+> INCORPORAR  _       AT lBurgos
+            ZERO fLevantado
+            ZERO fInsistelevanta
+            SET fInsistelevanta 
+            INK colorconciencia
+            XMESSAGE"¿Sin coger el teléfono? No hay huevos."
+            DONE           
+
+> LEVANTAR    _
+> INCORPORAR  _       AT lBurgos
+            ZERO fLevantado
+            NOTZERO fInsistelevanta
+            INK     colorNarrador      
+            XMESSAGE "Tu cerebro da la orden de incorporarte de la cama, pero por alguna razón que se escapa a todo conocimiento neurológico, tu cuerpo no responde como esperabas.#k#n "
+            INK     colorconciencia
+            XMESSAGE "El teléfono me está taladrando los tímpanos. ¡Haz el favor de cogerlo ya!#k#n"
+            INK colorMarcos
+            XMESSAGE "Jooo.. Cinco minutitos más, porfa. Solo cinco minutos, lo prometo."
+            DONE           
+
+> LEVANTAR    _
+> INCORPORAR  _       AT lBurgos
+            NOTZERO fLevantado
+            INK     colorconciencia  
+            XMESSAGE "Ya estás levantado, colega. ¡Espabila!"
+            DONE 
+
+> ABRIR   ARMARIO     AT lBurgos
+                ZERO fLevantado
+                ZERO fAbrirarmario
+                INK colorconciencia
+                XMESSAGE "¿Podemos abrir el armario desde la cama? ¡Usa la fuerza Luke!"
+                DONE
+
+> ABRIR   ARMARIO     AT lBurgos
+                NOTZERO fLevantado
+                ZERO fAbrirarmario
+                SET  fAbrirarmario
+                INK colorNarrador
+                XMESSAGE "Abres el armario."
+                DONE
+
+> ABRIR   ARMARIO     AT lBurgos
+                NOTZERO fLevantado
+                NOTZERO fAbrirarmario
+                INK colorNarrador
+                XMESSAGE "El armario ya está abierto."
+                DONE
+
+> CERRAR   ARMARIO     AT lBurgos
+                ZERO fLevantado
+                ZERO fAbrirarmario
+                INK colorconciencia
+                XMESSAGE "Debiste haberte apuntado a ese curso por correo de telequinesis del profesor Stafa."
+                DONE
+
+> CERRAR   ARMARIO     AT lBurgos
+                NOTZERO fLevantado
+                ZERO fAbrirarmario
+                INK colorNarrador
+                XMESSAGE "El armario está cerrado."
+                DONE
+
+> CERRAR   ARMARIO     AT lBurgos
+                NOTZERO fLevantado
+                NOTZERO fAbrirarmario
+                CLEAR   fAbrirarmario
+                INK colorNarrador
+                XMESSAGE "Cierras el armario.#n"
+                INK colorconciencia
+                XMESSAGE "Mejor cerrado, no sea que se vaya el olor a naftalina que tanto te gusta."
+                DONE
+
 > EXAMINA   ARMARIO     AT lBurgos
                 ZERO    fLevantado
                 INK     colorNarrador               
                 XMESSAGE "Estás super cómodo en la cama y no te apetece levantarte. El teléfono sigue sonando."
                 DONE
 
-> ABRIR     ARMARIO 
 > EXAMINA   ARMARIO     AT lBurgos
                 NOTZERO fLevantado
-                INK     colorSistema
+                ZERO    fAbrirarmario
+                INK     colorNarrador
+                XMESSAGE "Es un armario empotrado de dos cuerpos chapado en madera de cerezo."
+                DONE
+
+> EXAMINA   ARMARIO     AT lBurgos
+                NOTZERO fLevantado
+                NOTZERO fAbrirarmario
+                INK     colorNarrador
+                XMESSAGE "Entre todos tus enseres, encuentras la ropa que pensabas ponerte hoy."
+                DONE
+
+> PONER     ROPA
+> COGER     ROPA
+> EXAMINA   ARMARIO     AT lBurgos
+                WORN    oRopa          ; Lleva puesto el objeto
+                INK     colorconciencia               
+                XMESSAGE "Ya te has vestido, no vamos a cambiar de ropa otra vez. Esto no es un juego de cambiar de ropita a tu avatar."
+                DONE
+
+> PONER   ROPA
+> COGER   ROPA     AT lBurgos
+                ZERO fAbrirarmario
+                INK colorNarrador
+                XMESSAGE "No encuentro lo que estás buscando. "
+                DONE
+
+> PONER   ROPA
+> COGER   ROPA     AT lBurgos
+                NOTZERO fAbrirarmario
                 ISAT    oRopa 252       ; El objeto no está en ninguna parte (de momento no es visible)
                 CREATE  oRopa           ; Creamos el objeto de su ropa
                 GET     oRopa           ; Lo cogemos
                 XMESSAGE "#n"           ; Como GET no hace salto de línea, hemos de forzarlo y así el mensaje de has cogido el objeto, deja dos líneas de espacio por debajo para cuando digo te has puesto la ropa.
                 WEAR    oRopa           ; Para vestirse con dicho objeto
                 INK     colorNarrador
-                DONE
-
-> ABRIR     ARMARIO 
-> EXAMINA   ARMARIO     AT lBurgos
-                WORN    oRopa          ; Lleva puesto el objeto
-                INK     colorConsciencia               
-                XMESSAGE "Ya te has vestido, no vamos a cambiar de ropa otra vez. Esto no es un juego de cambiar de ropita a tu avatar."
                 DONE
 
 > EXAMINA 	CAMA		AT lBurgos
@@ -919,7 +1017,7 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA 	TECHO		AT lBurgos
-                INK     colorConsciencia               
+                INK     colorconciencia               
                 XMESSAGE "¿Estás buscando arañas?"
                 DONE
 
@@ -933,17 +1031,80 @@ BAJAR   lBath2
 > EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y NO ha usado el teléfono
                 ZERO    fUsarTelefono   ; Controlamos si NO ha usado el teléfono
                 INK     colorNarrador               
-                XMESSAGE "Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n"
-                XMESSAGE "Hay un teléfono sobre ella y no deja de sonar.#n"      
-                INK     colorConsciencia
+                XMESSAGE "Es una mesilla de noche de madera de pino con un cajón y una lámpara encima cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos.#n"
+                XMESSAGE "También hay un teléfono sobre ella y no deja de sonar.#n"      
+                INK     colorconciencia
                 XMESSAGE "¡Vago! ¿No piensas cogerlo? ¿Y si es importante?#n#n¿Y si son los de TELEJUEGOS para avisarte de que vuelven a tener existencias del Nemesis de MSX?"        
                 DONE
 
 > EXAMINA   MESITA
 > EXAMINA 	MESILLA		AT lBurgos      ; Examina la mesilla y SI ha usado el teléfono
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, cambiamos el mensaje de salida
-                INK     colorNarrador               
-                XMESSAGE "Es una mesilla de noche de madera de pino, con una lámpara cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos. Está muy limpia y sin rayaduras o arañazos.#n"
+                INK     colorNarrador         
+                XMESSAGE "Es una mesilla de noche de madera de pino con un cajón y una lámpara encima cuya pantalla es tan pequeña que deja pasar toda la luz y no la puedes mirar directamente porque hace daño a los ojos.#n"
+                DONE
+
+> ABRIR 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla             
+                ZERO fcajon             ; En este caso controlamos que el cajón está cerrado
+                SET  fcajon
+                INK     colorNarrador 
+                XMESSAGE "Abres el cajón.#n"
+                DONE
+
+> ABRIR 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla
+                NOTZERO fcajon             ; En este caso controlamos que el cajón está cerrado
+                INK     colorNarrador 
+                XMESSAGE "El cajón ya está abierto.#n"
+                DONE  
+
+> CERRAR 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla
+                ZERO fcajon             ; En este caso controlamos que el cajón está cerrado
+                INK     colorNarrador 
+                XMESSAGE "El cajón ya está cerrado.#n"
+                DONE  
+
+> CERRAR 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla
+                NOTZERO fcajon             ; En este caso controlamos que el cajón está cerrado
+                CLEAR   fcajon
+                INK     colorNarrador 
+                XMESSAGE "Cierras el cajón.#n"
+                DONE  
+
+> EXAMINA 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla
+                ZERO fcajon             ; En este caso controlamos que el cajón está cerrado
+                INK     colorNarrador 
+                XMESSAGE "El cajón está cerrado.#n"
+                DONE
+
+> EXAMINA 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla
+                NOTZERO fcajon          ; Controlamos que esté abierto el cajón
+                CARRIED oLlaveCoche     ; Comprobamos que lleva las llaves del coche
+                INK     colorNarrador              
+                XMESSAGE "No hay nada que resulte interesante.#n"
+                DONE
+
+> EXAMINA 	CAJON		AT lBurgos      ; Examina el cajón de la mesilla
+                NOTZERO fcajon          ; Controlamos que esté abierto el cajón
+                NOTCARR oLlaveCoche     ; Comprobamos que no lleva las llaves del coche
+                INK     colorNarrador              
+                XMESSAGE "De entre todas las cosas que tienes en el cajón destacan las llaves de tu coche.#n"
+                DONE
+
+> COGER   LLAVES     AT lBurgos
+                NOTZERO fcajon
+                NOTCARR oLlaveCoche
+                ISAT    oLlaveCoche 252
+                CREATE  oLlaveCoche
+                GET     oLlaveCoche
+                XMESSAGE "#n"           ; Como GET no hace salto de línea, hemos de forzarlo y así el mensaje de has cogido el objeto, deja dos líneas de espacio por debajo para cuando digo que has cogido las llaves del coche.
+                INK     colorNarrador
+                DONE
+
+> COGER   LLAVES     AT lBurgos
+                NOTZERO fcajon
+                CARRIED oLlaveCoche
+                INK     colorNarrador
+                XMESSAGE "Ya has cogido las llaves del coche#g#fIJ#t#n"
                 DONE
 
 ; NOTA: Enciendo el LED
@@ -964,7 +1125,7 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA 	TELEFONO    AT lBurgos
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡Venga ya!, nadie EXAMINA el teléfono. Lo coge, lo descuelga, contesta, pero jamás lo examina. ¡No eres un Doctor!"
                 DONE
 
@@ -996,61 +1157,98 @@ BAJAR   lBath2
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Hasta luego, padre.#n"
                 INK     colorNarrador  
-                XMESSAGE "Te desperezas un poco y te incorporas de la cama.#n"
+                XMESSAGE "Te desperezas un poco y te incorporas de la cama."
                 DONE              
 
 > CONTESTAR TELEFONO
 > DESCOLGAR TELEFONO
 > COGER     TELEFONO    AT lBurgos      ; Si lanzamos esta acción por segunda vez, como el flag cambió en la línea anterior, entra por aquí y le mostramos un mensaje nuevo.                
                 NOTZERO fUsarTelefono   ; Aquí controlamos que si ya cogió el teléfono, cambiamos el mensaje de salida
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche al ESTE."
                 DONE
 
 > EXAMINA   HABITACION
 > MIRAR		_			AT lBurgos 
                 ;ZERO    fUsarTelefono   ; Si ya ha cogido el teléfono le cambiamos el mensaje de salida
-                INK     colorNarrador               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu conciencia
                 XMESSAGE "Tu dormitorio es grande, pero la decoración es minimalista; una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación.#n#n Como persona pragmática que eres, usas la habitación para dormir y los ornamentos son algo prescindible."
                 DONE
 
 ; Esta acción, si la usa dos veces, sacamos del juego al jugador y termina la partida.
+
+> ACOSTARSE _
 > DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y no ha cogido el teléfono
+                ZERO    fLevantado
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
-                ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
-                SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
-                INK     colorConsciencia               ; Color de tu consciencia
+                ZERO    fInsisteDormir ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
+                SET     fInsisteDormir ; Activamos el flag, ahora vale 255
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "El teléfono sigue sonando. ¿No piensas cogerlo? ¿Vas a seguir durmiendo?"             
                 DONE
-
+> ACOSTARSE _
 > DORMIR	_			AT lBurgos      ; Primer aviso al ejecutar DORMIR y ha cogido el teléfono
+                ZERO    fLevantado
                 NOTZERO fUsarTelefono   ; Ha cogido el teléfono
-                ZERO    fNoUsarTelefono ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
-                SET     fNoUsarTelefono ; Activamos el flag, ahora vale 255
-                INK     colorConsciencia               ; Color de tu consciencia
+                ZERO    fInsisteDormir ; Este flag lo usamos para sacarle del juego si ejecutar DORMIR dos veces
+                SET     fInsisteDormir ; Activamos el flag, ahora vale 255
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿En serio quieres seguir durmiendo?"    
                 DONE
-
+> ACOSTARSE _
 > DORMIR	_			AT lBurgos
+                ZERO    fLevantado      ; No estamos levantados
                 ZERO    fUsarTelefono   ; No ha cogido el teléfono
-                NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
+                NOTZERO fInsisteDormir ; Ya usó DORMIR una vez
                 INK     colorNarrador               
-                XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en Simago.#n"
+                XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en Simago.#k#n"
                 INK     colorSistema
                 END
-
+> ACOSTARSE _
 > DORMIR	_			AT lBurgos
+                ZERO    fLevantado     ; No estamos levantados
                 NOTZERO fUsarTelefono   ; Ha usado el teléfono
-                NOTZERO fNoUsarTelefono ; Ya usó DORMIR una vez
+                NOTZERO fInsisteDormir ; Ya usó DORMIR una vez
                 INK     colorNarrador               
-                XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en Simago.#n"
+                XMESSAGE "Eres un tío listo. Nada en este mundo va a romper tu momento de paz y tranquilidad. Además, ya tenías planeado el día: ducha, café, leer las noticias y luego probar los nuevos juegos de MSX que compraste en Simago.#k#n"
                 INK     colorSistema
                 END
-
+> ACOSTARSE _
+> DORMIR	_			AT lBurgos
+                NOTZERO fLevantado  ; Estamos levantados
+                ZERO fInsisteDormir ; Es la primera vez que queremos dormir
+                SET  fInsisteDormir ; Se activa el Flag fInsisteDormir
+                INK     colorconciencia               
+                XMESSAGE "¿Te has levantado y quieres acostarte de nuevo?. Como no salgas de casa hoy, tu padre no te lo perdona.#n"
+                DONE        
+> ACOSTARSE _
+> DORMIR	_			AT lBurgos
+                NOTZERO fLevantado     ; Estamos levantados
+                NOTZERO fInsisteDormir ; Ya usó DORMIR una vez
+                WORN    oRopa          ; Estás vestido
+                INK     colorNarrador               
+                XMESSAGE "Vuelves a dejar la ropa en el armario y te metes en la cama.#n"
+                DESTROY oRopa
+                INK colorconciencia
+                XMESSAGE "Dulces sueños princeso.#k#n"
+                INK     colorSistema
+                END   
+> ACOSTARSE _
+> DORMIR	_			AT lBurgos
+                NOTZERO fLevantado     ; Estamos levantados
+                NOTZERO fInsisteDormir ; Ya usó DORMIR una vez
+                NOTWORN oRopa         ; No estás vestido
+                INK     colorNarrador               
+                XMESSAGE "La pereza te puede y te metes de nuevo en la cama. Has decidido que hoy no estás para nadie.#n"
+                INK colorconciencia
+                XMESSAGE "A dormir como un ceporro. He dicho.#k#n"
+                INK     colorSistema
+                END  
+ 
 ; Es un complemento por si el jugador se le ocurre usarla.
 > COLGAR    TELEFONO    AT lBurgos
                 NOTZERO fUsarTelefono   ; Si ha usado el teléfono, puede COLGARLO
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Cuelgas el teléfono."
                 DONE          
 
@@ -1058,29 +1256,32 @@ BAJAR   lBath2
 
 > E			_			AT lBurgos      ; Si no ha usado el teléfono, no le dejamos ir al Este
                 ZERO    fUsarTelefono   ; No ha usado el teléfono
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿No crees que deberías atender al teléfono?"
                 DONE
 
 > E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
                 NOTWORN oRopa           ; No lleva puesto el objeto
-                NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 INK     colorNarrador               
                 XMESSAGE "No puedes salir de casa en pelotas. Debes vestirte antes."
                 DONE
 
 > E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
+                WORN    oRopa
+                NOTCARR oLlaveCoche
+                INK     colorNarrador               
+                XMESSAGE "No vas a llegar muy lejos sin las llaves del coche."
+                DONE
+
+> E			_			AT lBurgos      ; Si ha usado el teléfono le dejamos ir al Este
+                CARRIED oLlaveCoche    ; Si llevamos las llaves del coche
                 WORN    oRopa          ; Lleva puesto el objeto
-                NOTZERO fUsarTelefono   ; Ha usado el teléfono
                 WINDOW  0
                 XPICTURE 203            ; El protagonista saliendo de casa
                 WINDOW  1
                 INK     colorNarrador               
                 XMESSAGE "Te apresuras a salir de casa: sabes que a tu padre no le gusta que le hagan esperar.#n"
-                ISAT    oLlaveCoche 252
-                CREATE  oLlaveCoche
-                GET     oLlaveCoche
-                XMESSAGE "#n#nCierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
+                XMESSAGE "Cierras la puerta de casa y vas directo al garaje del edificio.#k#b"                
                 GOTO    lCoche          ; Vamos a la localización
                 WINDOW  0
                 XPICTURE 002            ; Foto dentro del coche 
@@ -1096,7 +1297,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE " Con el ánimo lastimero, de repente percibes una distracción; el camino tiene una preciosa arboleda a los lados cuyo ramaje se estrecha por las copas de los árboles, que producen un efecto de túnel sombrío y siniestro que siempre te dio respeto cuando eras un chiquillo.#k#b"
                 XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco asomar de entre la bruma.#k#b Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad.#k#n#b"
-                DESTROY oLlaveCoche
+                CLEAR   fcajon          ; Como vamos a usar esta variable para la consola, la reiniciamos.
                 GOTO    lExtCasa        ; Vamos a la localización
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -1106,7 +1307,7 @@ BAJAR   lBath2
 ;> ESCUCHAR METALICA
 ;> ESCUCHAR METALLICA	AT lCoche       ; Esto es una broma. El jugador escuchará una pieza de música clásica.
 ;	            XPLAY "l2t255o4cdegffaggo5co4bo5co4gecdefgagfedeco3bo4cdo3gbo4dfedeo4cdegffaggo5co4bo5co4gecdefgfedco3go4co3bo4l1c"
-;                INK     colorConsciencia
+;                INK     colorconciencia
 ;                XMESSAGE "Creo que me he confundido de música, perdón... sigue al ESTE y olvidemos este asunto."
 ;                DONE
 
@@ -1118,7 +1319,7 @@ BAJAR   lBath2
 ;				DONE
 
 ;> EXAMINA   _           AT lCoche
-;                INK     colorConsciencia               ; Color de tu consciencia
+;                INK     colorconciencia               ; Color de tu conciencia
 ;                XMESSAGE "Estás conduciendo, no creo que sea buena idea examinar nada ahora mismo."
 ;                DONE
 
@@ -1133,7 +1334,7 @@ BAJAR   lBath2
 > EXAMINA   CIPRESES    AT lExtCasa
                 INK     colorNarrador               ; Color del narrador
                 XMESSAGE "El frío y la humedad te agarrotan las articulaciones.#n"
-                INK     colorConsciencia            ; Color de la consciencia
+                INK     colorconciencia            ; Color de la conciencia
                 XMESSAGE "Si continúas aquí por mucho tiempo te dará una hipotermia, pero se te va a quedar un cutis divino. #n#n"
                 DONE
 
@@ -1170,7 +1371,7 @@ BAJAR   lBath2
 
 > O         _           AT lExtCasa
                 NOTCARR oLlaveCoche     ; NO lleva en el inventario las llaves del coche
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Acabas de llegar y ya te quieres ir?#n#n¡Ni de broma!"
                 DONE
 
@@ -1192,11 +1393,11 @@ BAJAR   lBath2
 > O         _           AT lExtCasa
                 CARRIED oLlaveCoche     ; Llevas en el inventario las llaves del coche
                 ZERO    fJugar          ; No llegaste a jugar con el crío el patio
-                INK     colorNarrador               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu conciencia
                 XMESSAGE "Arrancas el coche y dejas atrás la hacienda y te detienes justo antes de salir del pueblo.#k#n"
                 INK     colorMarcos
                 XMESSAGE "Te has quedado como las vacas que ven pasar el tren, ¿eh?. Te has gastado la lana en un videojuego y te lo has terminado como pollo sin cabeza, me da la sensación de que no te has enterado de nada de la historia.#k#b"
-                INK     colorNarrador               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu conciencia
                 XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n CALIFICACION: Negado absoluto.#n#n Has terminado el juego sin resolver los enigmas fundamentales, pero es que ni te has acercado, oye.#k#n Te recomendamos encarecidamente que le des otra oportunidad al juego y le dediques un poco más de atención.#k"
                 INK     colorSistema              ; Para que el texto de Quieres volver a intentarlo aparezca en blanco. 
                 END
@@ -1223,7 +1424,7 @@ BAJAR   lBath2
                 XMESSAGE "Arrancas el coche a toda velocidad y sale de la finca derrapando.#nTe alejas de la casa y detienes el coche a unos cientos de metros.#k#n"
                 INK     colorMarcos 
                 XMESSAGE "Han matado a mis padres... La casa está llena de fantasmas sádicos... No tengo ni idea de qué pintan ahí... He salido vivo de milagro...#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Nunca te perdonarás lo que les ha pasado a tus padres, ¡NUNCA!#k#b#n"
                 INK     colorNarrador
                 XMESSAGE "Retomas tu camino hacia la salida del pueblo y te cruzas con un coche que te resulta familiar. Te toca el claxon.#k#n"
@@ -1260,7 +1461,7 @@ BAJAR   lBath2
 ; Controlamos si se ejecuta dos veces la misma acción. La segunda vez matamos al jugador.
 
 > ROMPER    FOCOS       AT lPorche
-                INK     colorConsciencia               
+                INK     colorconciencia               
                 XMESSAGE "Eso es un acto de vandalismo. No pienso hacerlo."
                 DONE
 
@@ -1269,7 +1470,7 @@ BAJAR   lBath2
                 SET     fFoco           ; Se activa flag para que si vuelve a repetir esta acción, matamos al jugador
                 INK     colorNarrador               
                 XMESSAGE "Tus retinas se resienten profundamente.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Yo no haría eso de nuevo."   ; Siempre que vamos a matar el jugador por repetir una acción dos veces, recibe un aviso
                 DONE
 
@@ -1297,7 +1498,7 @@ BAJAR   lBath2
                 NOTCARR oLlavePorche
                 INK     colorNarrador               
                 XMESSAGE "No puedes entrar la casa. La puerta está cerrada y necesitas la llave.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Recuerdas cuando tus padres salían a pasear por el bosque?, solían esconder una llave en algún sitio."
                 DONE
 
@@ -1313,7 +1514,7 @@ BAJAR   lBath2
                 SET     fPorche
                 INK     colorNarrador               
                 XMESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta#g#f!#t, un felpudo#g#fVWXY#t y un gnomo de jardín#g#f9#t.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Los vamos examinando poco a poco o tienes mucha prisa por entrar en la casa?"
                 DONE
 
@@ -1338,7 +1539,7 @@ BAJAR   lBath2
                 INK     colorSistema              ; Color del sistema
                 GET     oMaceta         ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK colorConsciencia
+                INK colorconciencia
                 XMESSAGE "Insignificante maceta."
                 DONE
 
@@ -1353,13 +1554,13 @@ BAJAR   lBath2
 ; Como hay un bug con el COGER TODO del motor de DAAD, hemos creado una acción en esta localización para que sólo devuelva un mensaje.
 > COGER 	TODO		AT lPorche
                 NOTZERO fPorche
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
 	            XMESSAGE "Igual es mejor que vayas poco a poco. No puedes coger tantas cosas a la vez. No estás en un concurso de la tele."
                 DONE
 
 > COGER 	TODO		AT lPorche
                 ZERO    fPorche
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
 	            XMESSAGE "¿Coger el qué? ¡Si no has mirado nada!"
                 DONE
 
@@ -1386,25 +1587,25 @@ BAJAR   lBath2
                 SET     fCogerFelpudo
                 INK     colorNarrador               
 	            XMESSAGE "Debajo del felpudo#g#fVWXY#t no hay nada especial, a excepción de un ciempiés que sale por patas al verse descubierto.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Vamos a dejar el felpudo#g#fVWXY#t en su sitio y dejar de importunar a la fauna del lugar."
                 DONE
 
 > COGER 	FELPUDO     AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
 	            XMESSAGE "¿En serio, otra vez? La llave de la casa no va a aparecer sola. Sigue buscando."
                 DONE       
 
 > ROMPER 	FELPUDO     AT lPorche               
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
 	            XMESSAGE "No me parece buena idea. No pienso hacerlo."
                 DONE      
 
 > PISAR     CIEMPIES
 > APLASTAR  CIEMPIES    AT lPorche
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Me niego rotundamente a realizar semejante acto."
                 DONE
 
@@ -1413,14 +1614,14 @@ BAJAR   lBath2
                 NOTZERO fCogerFelpudo
                 INK     colorNarrador               
                 XMESSAGE "Te agachas para coger el ciempiés, que te esquiva con habilidad y se esconde en una rendija.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Tu crees que esto era necesario?"
                 DONE
 
 > EXAMINA   CIEMPIES    AT lPorche
                 NOTZERO fPorche
                 NOTZERO fCogerFelpudo
-                INK     colorConsciencia               
+                INK     colorconciencia               
                 XMESSAGE "Es repugnante."
                 DONE        
 
@@ -1429,7 +1630,7 @@ BAJAR   lBath2
                 CARRIED oMaceta         ; Llevamos el objeto en el inventario
                 INK     colorNarrador               
 	            XMESSAGE "Aunque no es algo que hagas a menudo, obtienes un malévolo placer al tirar la maceta contra el suelo, pero después de varios rebotes vuelve a quedarse justo donde estaba.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡Sublime! Y además, ¡está intacta! ¿De qué estará hecha?"
                 INK     colorSistema              ; Color del sistema
                 DROP    oMaceta
@@ -1447,7 +1648,7 @@ BAJAR   lBath2
                 CARRIED oMaceta         ; Llevamos el objeto en el inventario, si no fuera así, no se ejecuta
                 INK     colorNarrador               
 	            XMESSAGE "Dejas la maceta#g#f!#t en su sitio con cuidado."
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Que buen hijo eres, si te viera tu madre, estaría orgullosa de su retoño. Y ahora al grano, ¿vas a conseguir entrar en la casa o llamamos a los bomberos?#n"
                 INK     colorSistema              ; Color del sistema
                 DROP    oMaceta         ; Soltamos el objeto, podríamos cogerlo de nuevo
@@ -1463,13 +1664,13 @@ BAJAR   lBath2
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 XMESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa. #nLo examinas con atención; parece estar hecho de escayola ya que pesa poco, posiblemente esté hueco por dentro.#n"
                 XMESSAGE "Lo agitas en el aire y algo pequeño golpea las paredes internas. Encuentras en la zona de los pies la abertura por la cual se introdujo el objeto, pero ahora está sellada.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No puedes abrirlo, a no ser que..."
                 DONE
 
 > ROMPER 	GNOMO		AT lPorche
                 CARRIED oGnomo          ; Tenemos el objeto en el inventario
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Con las manos no puedes romperlo pero, ¿y si lo tiras al suelo?"
                 DONE
 
@@ -1490,7 +1691,7 @@ BAJAR   lBath2
                 INK     colorSistema              ; Color del sistema
                 GET     oLlavePorche    ; Cogemos el objeto
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Ahora bien, cuando sepa tu madre que has roto el gnomo... ¡¡¡vas a flipar!!!#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Mi madre apreciaba mucho el gnomo."
@@ -1509,13 +1710,13 @@ BAJAR   lBath2
 ; Si rompió el gnomo y examina el suelo, obtendrá este mensaje
 > EXAMINA   SUELO       AT lPorche
                 NOTZERO fGnomoRoto      ; Comprueba si el gnomo se destruyó
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "El suelo está repleto de pequeños trozos de ceramica. Después de tantos años, tus padres van a echar de menos al gnomo."
                 DONE
 ; Si no rompió el gnomo y examina el suelo, tenemos este otro mensaje
 > EXAMINA   SUELO       AT lPorche
                 ZERO    fGnomoRoto      ; Comprueba si el gnomo se destruyó
-                INK     colorNarrador               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu conciencia
                 XMESSAGE "No hay nada destacable en el suelo."
                 DONE
 
@@ -1524,7 +1725,7 @@ BAJAR   lBath2
 	            XPLAY "T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
                 XPLAY "T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
                 XPLAY "T110O5G8E4.D32E32D4"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Creo que me he confundido de música, perdón... intenta abrir la puerta y olvidemos este asunto."
                 DONE
 
@@ -1539,7 +1740,7 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA   TIMBRE      AT lPorche
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Es un interruptor que cuando lo pulsas, dentro de la casa suena un sonido indicando, que alguien está en la puerta y desea entrar o hablar con alguien que se encuentre dentro de la casa."
                 DONE
 
@@ -1548,7 +1749,7 @@ BAJAR   lBath2
 > USAR      TIMBRE      AT lPorche
                 ZERO    fTimbre
                 SET     fTimbre
-                INK     colorNarrador               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu conciencia
                 XMESSAGE "El timbre está roto, no suena nada dentro de la casa."
                 DONE
 
@@ -1556,11 +1757,11 @@ BAJAR   lBath2
 > LLAMAR    TIMBRE
 > USAR      TIMBRE      AT lPorche
                 NOTZERO fTimbre
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No entendiste que el timbre estaba roto, ¿verdad?"
                 DONE
 > GOLPEAR	PUERTA		AT lPorche
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Nadie responde a tu llamada."
                 DONE
 
@@ -1573,7 +1774,7 @@ BAJAR   lBath2
                 NOTCARR oLlavePorche    ; No tenemos las llaves del Porche
                 INK     colorNarrador               
                 XMESSAGE "No puedes entrar en la casa porque la puerta está cerrada con llave.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Pero te viene a la memoria que, cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio. ¿Lo recuerdas?"
                 DONE
 
@@ -1586,6 +1787,7 @@ BAJAR   lBath2
 > USAR 		LLAVE
 > ABRIR 	PUERTA		AT lPorche
                 CLS                     ; Limpiamos la pantalla
+                DESTROY oLlaveCoche     ; Perdemos las llaves del coche
                 CARRIED oMaceta         ; Tiene la maceta en el inventario
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 INK     colorNarrador               
@@ -1599,7 +1801,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche, so melón?, porque antes notaba que las llevaba encima.#k#n"
                 INK     colorMarcos                   ; Color del protagonista
                 XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche.#n"
@@ -1629,7 +1831,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Jajaja, con lo que te ha costado encontrar la maldita llave. ¡Gnomo de mierda! Hablando de llaves, ¿dónde has dejado las llaves del coche, so melón?, porque antes notaba que las llevaba encima.#k#n"
                 INK     colorMarcos                   ; Color del protagonista
                 XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche.#n"
@@ -1742,7 +1944,7 @@ BAJAR   lBath2
 
 ; MP3 de Intro del Super Mario
 > JUGAR     CONSOLA     AT lRecibidor
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Espera que voy a por el Super Mario Bros..."
                 DONE
 
@@ -1778,7 +1980,7 @@ BAJAR   lBath2
                 ZERO    fCajon          ; No hemos abierto el cajón
                 INK     colorNarrador               
                 XMESSAGE "Es un cajón de madera con un tirador de hierro.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Si cierras los ojos y lo deseas con mucha fuerza, igual se abre sólo."
                 DONE
 
@@ -1797,7 +1999,7 @@ BAJAR   lBath2
 > ABRIR		CAJON
 > EXAMINA   CAJON       AT lRecibidor
                 NOTZERO fCajon          ; El cajón ya lo abrimos
-                INK     colorNarrador               ; Color de tu consciencia
+                INK     colorNarrador               ; Color de tu conciencia
                 XMESSAGE "Ya no hay nada interesante en el cajón."
                 DONE
 
@@ -1896,7 +2098,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Se trata de un viejo botellero realizado en madera que tiene una capacidad de unas cincuenta botellas. Está vacío.#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Una pena que no quede alguna botellita de vino."
                 DONE                
 
@@ -2146,7 +2348,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorNene
                 XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala#g#f()*#t para poder desenterrarnos.#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "¡Entendido! Hay que buscar una pala#g#f()*#t.#k#n"
                 INK     colorMarcos
                 XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#k#n"
@@ -2254,7 +2456,7 @@ BAJAR   lBath2
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k#n"
                 INK     colorNene              ;Voz del crío
                 XMESSAGE "Presiento que mi madre está aquí dentro... Lo mejor es no entretenerse y procurar que no nos vea.#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Debemos ser cautelosos.#k"                
                 CLS
                 INK     colorNarrador
@@ -2507,7 +2709,7 @@ BAJAR   lBath2
                 SET     fInsisteMuchoPuerta
                 INK     colorNarrador
                 XMESSAGE "La puerta sigue cerrada.#n"
-                INK     colorConsciencia ; Voz de la conciencia
+                INK     colorconciencia ; Voz de la conciencia
                 XMESSAGE "No insistas más."             
                 DONE  
 
@@ -2515,7 +2717,7 @@ BAJAR   lBath2
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 ZERO    fJugar
-                INK     colorConsciencia               ; Voz de la conciencia
+                INK     colorconciencia               ; Voz de la conciencia
                 XMESSAGE "¡QUE LA PUERTA ESTA CERRADA CAGÜEN ROS! ¡DEJA YA DE INSISTIR!#n"   
                 INK     colorNarrador
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
@@ -2531,7 +2733,7 @@ BAJAR   lBath2
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
                 NOTZERO fJugar
-                INK     colorConsciencia               ; Voz de la conciencia
+                INK     colorconciencia               ; Voz de la conciencia
                 XMESSAGE "¡QUE LA PUERTA ESTA CERRADA CAGÜEN ROS! ¡DEJA YA DE INSISTIR!#n"   
                 INK     colorNarrador
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
@@ -2671,7 +2873,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Parece haber algo dentro. El conducto de salida de agua de la rejilla está obturado.#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 MESSAGE "Seguro que hay alguna forma de hacer salir lo que hay en su interior."
                 DONE
 
@@ -2806,7 +3008,7 @@ BAJAR   lBath2
                 XMESSAGE "Abres el grifo y el agua comienza a salir con una presión muy fuerte.#k#n"
                 XMESSAGE "La manguera#g#f-.#t se vuelve completamente ingobernable y te cruza la cara de un latigazo con tal fuerza que te desploma en el suelo inconsciente. #k#n"
                 XMESSAGE "Un gran charco de sangre se drena a través de la rejilla, el nivel de agua sube, la rejilla se abre y aparece un objeto.#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "...#n"
                 INK     colorSistema
                 ISAT    oPelota 252
@@ -2855,7 +3057,7 @@ BAJAR   lBath2
                 INK     colorSistema              ; Color del sistema
                 GET     oPelota
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE"¿Nos echamos un partidito?"                
                 DONE
 
@@ -2868,7 +3070,7 @@ BAJAR   lBath2
 ;                CLEAR   fCerrarGrifo
 ;                INK     colorNarrador               
 ;                XMESSAGE "Has cerrado el grifo.#n"
-;                INK     colorConsciencia
+;                INK     colorconciencia
 ;                XMESSAGE "Evitando una catástrofe..."
 ;                DONE
 
@@ -2967,13 +3169,13 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA   CHAMIZO      AT lExteriorChamizo             
-                INK     colorConsciencia            
+                INK     colorconciencia            
                 XMESSAGE "Es un chamizo de color teja. Cuerpo terroso y rústico con bouquet corchado y decrépito. Sabor maduro, con notas a madera y a óxido. Robusto y astilloso en boca.#n"
                 DONE
 
 > EXAMINA   MUSGO
 > EXAMINA   PAREDES      AT lExteriorChamizo             
-                INK     colorConsciencia            
+                INK     colorconciencia            
                 XMESSAGE "Uhm... Musgo... Me ha dicho un colega que si lo secas y lo picas, esto se fuma y te pegas unos viajes de flipar.#n"
                 DONE
 > S         _           AT lExteriorChamizo       
@@ -3026,7 +3228,7 @@ BAJAR   lBath2
                 XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja#n"
                 INK     colorSistema
                 ISAT    oLlaveCoche 252
@@ -3109,7 +3311,7 @@ BAJAR   lBath2
                 DESTROY oPala
                 DESTROY oLataDeAceite
                 CLEAR   fCombinacion
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Tío, a quien se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
                 INK     colorSistema
                 XMESSAGE "Por decisión unánime del equipo de desarrollo, se te amonesta devolviéndote a la bodega y quitándote los objetos necesarios para no permitirte entrar de nuevo por la trampilla. Te recomendamos que pruebes otro de los finales disponibles, majete.#k"
@@ -3297,7 +3499,7 @@ BAJAR   lBath2
                 CARRIED oHacha
                 NOTCARR oLlaveCoche
                 NOTZERO fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Si pretendes ir corriendo a llamar a la policía... Antes de romper nada... Tengo la sensación de que no vamos a llegar muy lejos sin algo que nos hace falta para poder salir de esta casa. ¡Brrrum! ¡Brrrum!#k"
                 DONE
 
@@ -3312,7 +3514,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveChamizo
                 ZERO    fDesenterrar
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "La puerta está abierta, no necesitamos romper nada."
                 DONE
 
@@ -3328,19 +3530,19 @@ BAJAR   lBath2
                 NOTCARR oHacha
                 INK     colorNarrador
                 XMESSAGE "No tienes forma de romper el travesaño.#n"
-                INK     colorConsciencia               ; Color de la conciencia
+                INK     colorconciencia               ; Color de la conciencia
                 XMESSAGE "Uh oh... Parece que nos hemos quedado encerrados amigo. Y no me vale con que digas que estas aventuras conversacionales están mal diseñadas porque puedes coger el armario metálico y echarlo sobre la puerta... ¿quieres probar? pues venga vamos...#k#n"
                 INK     colorNarrador
                 XMESSAGE "Pones todo tu empeño en separar el armario metálico de la pared...#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Venga, que hasta ahí vas bien, campeón.#k#n"
                 INK     colorNarrador
                 XMESSAGE "Consigues arrastrar el armario dos metros y lo colocas justo enfrente de la puerta.#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Bien bien... Cuánto esmero, estoy sorprendido.#k#n"
                 INK     colorNarrador
                 XMESSAGE "Te dispones a coger impulso echándote hacia atrás unos pasos...#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Venga, coge impulso que la puerta es maciza de narices.#k#n"
                 INK     colorNarrador
                 XMESSAGE "Con toda tu energía corres a embestir el armario y te pegas de lleno con él, el armario es arrastrado a toda velocidad hacia la puerta y el impacto es tremendo, no obstante un armario de chapa galvanizada poco puede hacer ante una puerta maciza, lo que si ocurre es que la chapa se deforma y el estante superior atraviesa la chapa trasera del armario y te cercena la cabeza como quien corta una barra de mantequilla.#k#n#n"
@@ -3371,7 +3573,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "No podemos volver por ahí."
                 INK     colorNarrador
                 DONE
@@ -3400,7 +3602,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
             	XMESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Olvídate del aseo y sal de aquí."
                 DONE
 
@@ -3438,7 +3640,7 @@ BAJAR   lBath2
                 XMESSAGE "Pulsas el interruptor y ves una fotografía#g#fD#t en el suelo, pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Argggg! ¡Santa madre de la hostia puta! ¡Está todo lleno de cristales!#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡Dios! ¡Casi me cago encima! Otra como esta y me quedo muñeco... me pregunto si habrá un puto desfibrilador en esta santa casa.#n"
                 CLEAR   fUsarCerilla               
                 CLEAR   fTurnosConLuz 
@@ -3458,7 +3660,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorNarrador               
                 XMESSAGE "Al cogerla has sentido como si algo muy frío te tocara la mano. Se te han puesto los pelos como escarpias y tu corazón se desboca.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 ; FIX del texto
                 XMESSAGE "Podrías encender algo para iluminarte y ver qué te ha tocado, o mejor salimos del aseo porque creo que es una idea malísima."
                 INK     colorNarrador
@@ -3474,7 +3676,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fUsarInterruptor
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Obviamente no funciona. ¿Hasta dónde llegan tus conocimientos de electricidad? Si no hay bombilla, no puede haber luz."
                 INK     colorNarrador
                 DONE
@@ -3547,7 +3749,7 @@ BAJAR   lBath2
                 XMESSAGE "Te alzas en el fregadero para poder acceder mejor al sumidero. Vas introduciendo la mano poco a poco; es un proceso delicado: si lo que hay allí atascado se cae en el fondo, puedes darlo por perdido.#n"
                 XMESSAGE "Con la punta de los dedos consigues cogerlo y según comienzas a sacar la mano, sientes que se pone el marcha el triturador del fregadero.#n"
                 XMESSAGE "Por el susto y la excitación sacas tu mano a toda velocidad y el objeto que tenías cogido por los dedos sale despedido, con la suerte de que consigues capturarlo al vuelo.#k#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "¿En serio acabo de jugarme la vida metiendo la mano en un triturador?#n"
                 XMESSAGE "Por cierto, lo que has cogido es una llave#g#f6#t.#n"
                 CREATE  oLlavePatio
@@ -3563,7 +3765,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Nunca has visto una cuchara?"
                 DONE
 
@@ -3583,7 +3785,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad               
                 ZERO    fTriturador     ; flag para controlar si lo examina dos veces
                 SET     fTriturador
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No creo que sea una buena idea."
                 DONE
 
@@ -3638,7 +3840,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es curioso, solo hay cucharas. ¿Dónde está lo que falta?#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Joder, no sé si quiero saberlo."
                 DONE
 
@@ -3647,7 +3849,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No es momento de examinar tus genitales."
                 DONE
 
@@ -3661,7 +3863,7 @@ BAJAR   lBath2
                 XMESSAGE "Dentro encuentras un cuchillo grande de carnicero cubierto de...#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡¡¡Sangre!!!#n#n¿Pero qué puñetas hace eso ahí dentro?#n"
-                INK     colorConsciencia               ; Color de tu consciencia 
+                INK     colorconciencia               ; Color de tu conciencia 
                 XMESSAGE "Tampoco sé si quiero saberlo."
                 DONE
 
@@ -3673,7 +3875,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "No pienso tocar eso ni con un palo.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Cagao."
                 DONE
 
@@ -3693,7 +3895,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Está vacío por completo, pero te vienen recuerdos de esos botes de mermelada para los desayunos, el bote de Colacao, el vaso de Nocilla y las latas de fabada para cuando a tu madre no le apetecía cocinar.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Y colocaba las galletas encima de ella, fuera de nuestro alcance.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Me reiría mucho si encontrase alguna galleta escondida arriba del todo."
@@ -3715,7 +3917,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Quieres darle un disgusto a tu madre?"
                 DONE
 
@@ -3758,7 +3960,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fEscalon
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Has quitado el escalón y ahora hay un hueco. Eso podría ser una trampa mortal."
                 DONE
 
@@ -3816,7 +4018,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿No te sientes lo suficientemente culpable con haber roto el gnomo de tu madre, verdad?"
                 DONE
 
@@ -3861,7 +4063,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#g#f<#t#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Tratemos de averiguarlo."
                 DONE
 
@@ -3875,7 +4077,7 @@ BAJAR   lBath2
                 NOTZERO fEscalon
                 INK     colorNarrador               
                 XMESSAGE "Estás en las escaleras. Hay un escalón apoyado en la barandilla y en el hueco, puedes ver una caja metálica.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Cuanto más lo escucho más me gusta. ¡¡¡Grupazo!!! En mi casa conservo aún el vaso de AND BEER FOR ALL."
                 DONE
 
@@ -3892,7 +4094,7 @@ BAJAR   lBath2
                 XMESSAGE "Has puesto el escalón en su sitio.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Me ha parecido una buena decisión, porque seguro que si no lo hago, me parto el cuello cayendo por las escaleras.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No te quepa la menor duda.#n"             
                 DONE                
 
@@ -4022,7 +4224,7 @@ BAJAR   lBath2
                 XMESSAGE "Pero, ¿qué coño? ¡La vitrina está vacía! ¿Dónde están las cosas? ¿Se las habrán llevado mis padres?#n"
                 INK     colorNarrador               
                 XMESSAGE "Examinas con detenimiento el interior de la vitrina y descubres que al fondo de uno de los estantes, hay una pequeña ranura que es del tamaño de una tarjeta de crédito.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 MESSAGE "Pues venga, genio, igual tienes un objeto para interactuar con esa ranura o tocará buscarlo."
                 DONE
 
@@ -4036,7 +4238,7 @@ BAJAR   lBath2
                 NOTZERO fUsarTarjeta               
                 INK     colorNarrador               
                 XMESSAGE "Parece que un mecanismo ha liberado la vitrina.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Quizás podrías intentar moverla."                
                 DONE
 
@@ -4045,7 +4247,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Que parte de que es del tamaño de una tarjeta de crédito no has entendido?"
                 DONE
 
@@ -4063,12 +4265,12 @@ BAJAR   lBath2
                 XMESSAGE "Introduces la tarjeta de seguridad#g#f<#t que encontraste en la caja oculta de las escaleras y suena un chasquido. Es como si se hubiera desbloqueado un mecanismo.#n"
                 INK     colorMarcos
                 XMESSAGE "¡Joder! ¡La tarjeta se ha atascado!#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "¡Olvida la tarjeta! ¡Que la den por...! Podrías probar a mover la vitrina.#n"
                 DESTROY oSecretKey1               
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Claro, tú no hagas nada.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Yo solo soy tu conciencia. Venga, mueve la vitrina, ¡gañan!"
                 INK     colorNarrador
                 DONE
@@ -4085,7 +4287,7 @@ BAJAR   lBath2
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Eh! ¡El cajero se ha tragado la tarjeta!#n"
                 DESTROY oSecretKey1
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "Ya estamos celebrando el Festival del Humor...."
                 DONE
 
@@ -4098,7 +4300,7 @@ BAJAR   lBath2
                 NOTZERO fUsarTarjeta
                 INK     colorNarrador               
                 XMESSAGE "Desplazas la vitrina apenas un metro con enorme facilidad. Ese pestillo era un mecanismo de fijación del mueble para que no se pudiera desplazar.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Joder... ¡alucina con lo que tienes delante!#n#n¡Es un acceso a una habitación que desconocías que existiera! ¡no conoces la casa de tus padres!#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Pues ya veo que no.#n#k#b"
@@ -4187,7 +4389,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Te aproximas al colchón para examinarlo y aparece una cucaraña del tamaño de un puño.#k#n#nTe asustas y ya no quieres acercarte más.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Cuando crees haberlo visto todo...#n¡Llega la CUCARAÑA!"
                 ; MP3 con la canción de la cucaracha.
                 DONE
@@ -4221,7 +4423,7 @@ BAJAR   lBath2
                 XMESSAGE "Quitas la loseta y descubres que debajo hay un hueco que contiene un cuaderno escondido.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Un diario? ¿Quién se toma tantas molestias en esconder un diario?#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿A qué esperas para leerlo?#n"
                 INK     colorSistema              ; Color del sistema
                 ISAT    oDiario 252
@@ -4336,7 +4538,7 @@ BAJAR   lBath2
                 XMESSAGE "Se aproxima a ti y se detiene frente a ti.#n"
                 INK     colorNene
                 XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡Joder!, ¿este crío es real? Ya no veo al otro crío.#k#n"
                 INK     colorMarcos               ; Color del protagonista 
                 XMESSAGE "Juguemos un poco, supongo.#n"
@@ -4346,7 +4548,7 @@ BAJAR   lBath2
                 XMESSAGE "No tengo ninguna pelota#g#f:;#t.#n"
                 INK     colorNene
                 XMESSAGE "En la casa seguro que hay una pelota#g#f:;#t, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No sé si es buena idea jugar con un... ¿fantasma? Por otro lado, igual nos echa una mano. ¿Le echamos un par o escribimos FIN y acabamos con esta agonía?"
                 DONE
 
@@ -4388,7 +4590,7 @@ BAJAR   lBath2
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
                 INK     colorNene  ; Color del niño
                 XMESSAGE "Mi hermana no abrirá la puerta; está muy enfadada, aun así, no es la única salida de la casa.#n"
-                INK     colorMarcos               ; Color de tu consciencia
+                INK     colorMarcos               ; Color de tu conciencia
                 XMESSAGE "De acuerdo, pues vayámonos."
                 DONE
 
@@ -4453,7 +4655,7 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Pero qué hostias está pasando aquí? ¡Esto es una puta locura!#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No tengo la menor idea, pero ya no puedes entrar en la habitación.#n"
                 INK     colorNarrador               
                 XMESSAGE "Se ha bloqueado la puerta.#n"   
@@ -4518,7 +4720,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Estás jugando desde un MSX que no tiene eñe, ¿verdad? jajaja."
                 DONE
 
@@ -4527,7 +4729,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Estás jugando desde un emulador o un MSX que afortunadamente tiene eñe, ¿verdad? jajaja."
                 DONE
 
@@ -4597,7 +4799,7 @@ BAJAR   lBath2
                 SET     fManchaSangre
                 INK     colorNarrador               
                 XMESSAGE "La cama está almidonada y está dura como una piedra.#k#n Observas el colchón durante unos instantes y ves que empieza a formarse en él una mancha de sangre en el lateral.#k#n La mancha crece hasta formar un charco húmedo.#n"
-                INK     colorConsciencia               ; Color de la conciencia
+                INK     colorconciencia               ; Color de la conciencia
                 XMESSAGE "Has visto muchas películas de miedo y siempre que pasa eso, se está recreando un acontecimiento del pasado."
                 DONE 
 
@@ -4746,7 +4948,7 @@ BAJAR   lBath2
                 XMESSAGE "Ya casi estoy.#k#b"
                 XMESSAGE "Hmmmmm...#k#b"
                 XMESSAGE "YA. Ufff, gracias.#k#n" 
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "La leyenda urbana resulta ser cierta y la cerilla (que no sabes cómo lograste mantener encendida durante la compleja operación) se lleva los hediondos efluvios en un santiamén. Aquí no ha pasado nada."
                 DONE
 
@@ -4803,7 +5005,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡No pienso tocar esa porquería!"
                 DONE
 
@@ -4820,7 +5022,7 @@ BAJAR   lBath2
                 XMESSAGE "Hay un hacha#g#f%&'#t clavada en el suelo, entre los restos del retrete destrozado.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Hostia! Conozco este hacha#g#f%&'#t, es el hacha#g#f%&'#t de mi padre. No hay duda alguna, es el hacha#g#f%&'#t que usaba para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n"
-				INK     colorConsciencia               ; Color de tu consciencia
+				INK     colorconciencia               ; Color de tu conciencia
                 MESSAGE "No quisiera ser inoportuno, pero a ver cómo vas a justificar a tus padres este destrozo.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Uff, es verdad.#n"
@@ -4837,7 +5039,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fBajarRetrete
                 CARRIED oHacha
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "El retrete ahora se parece más a una placa turca."
                 DONE
      
@@ -4847,7 +5049,7 @@ BAJAR   lBath2
 > MIRAR     _           AT lRetrete
                 INK     colorNarrador               
                 XMESSAGE "Es un retrete...#n"
-                INK     colorConsciencia
+                INK     colorconciencia
                 XMESSAGE "...con un energúmeno encima....Si te viera tu madre...#n"
                 INK     colorNarrador               
                 XMESSAGE "Tienes frente a ti la cisterna."
@@ -4877,7 +5079,7 @@ BAJAR   lBath2
                 XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegada a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Qué hostias ha sido eso? ¡Por un pelo no me decapitan! Parece que sigo entero...#k#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Está claro que no somos bienvenidos en esta casa."
                 DONE
 
@@ -4956,7 +5158,7 @@ BAJAR   lBath2
                 SET     fFlashBack
                 INK     colorNarrador               
                 XMESSAGE "Una presencia te invade y te tira al suelo... quedas inconsciente por unos instantes y cuando despiertas....#k#n#nEs el mismo lugar... pero estás desconcertado... Todo el contenido de la habitación está ahí, pero es... distinto.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "La estancia parece haber retrocedido treinta años en el tiempo. ¿Qué ha pasado?"
                 DONE
 
@@ -5039,7 +5241,7 @@ BAJAR   lBath2
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Oh, qué osito#g#f##t tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Es blandito y conserva un aroma a perfume fresco, dan ganas de achucharlo."
                 DONE      
 ;NO hemos visto la foto, el peluche está mugriento
@@ -5079,7 +5281,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Hay una alfombra persa con flecos muy antigua a los pies de la cama. Tiene tonalidades rojas, ocres y amarillas.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Esta alfombra debe tener un siglo por lo menos."
                 DONE
 
@@ -5156,7 +5358,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 INK     colorNarrador               
                 XMESSAGE "Una terma con mosáico es sin duda el capricho más extravagante que se permitió el propietario primigenio de esta casa; aún no dejas de sorprenderte cada vez que la contemplas.#k La terma se encuentra a continuación de un murete que luce el mosaico del dios Apolo.#n#n  En este momento y por alguna razón desconocida, está llena de agua hasta el borde.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Yo examinaría con determinación esa terma."
                 DONE
 
@@ -5178,7 +5380,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es curioso, que hace miles de años, existiera el Pixel Art usando teselas.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Pues claro, ¿no te acuerdas? Yo lo recuerdo como si fuera ayer. Estuvimos allí."
                 DONE     
 
@@ -5221,7 +5423,7 @@ BAJAR   lBath2
                 CARRIED oLlaveCaja
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡NO ME JODAS! ¿DONDE ESTAS? ¡He visto una puta mano!#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Sea quien fuere quien estuviese ahí, ha desaparecido... vayámonos de aquí... ¡YA!"
                 DONE   
 
@@ -5234,7 +5436,7 @@ BAJAR   lBath2
                 XMESSAGE "Es un murete que luce el mosaico del Dios Apolo.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Y yo venerando al Dios del sol con una cerilla en la mano.#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡Eres todo un devoto!"
                 DONE
 
@@ -5614,7 +5816,7 @@ BAJAR   lBath2
                 WINDOW  1
                 INK colorNena
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
-                INK     colorConsciencia               ; Color de la conciencia
+                INK     colorconciencia               ; Color de la conciencia
                 XMESSAGE "Debes investigar eso.#k"  
                 DESTROY oPeluche	
                 LET     fNenaMala 5
@@ -5640,7 +5842,7 @@ BAJAR   lBath2
                 WINDOW  1
                 INK colorNena
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
-                INK     colorConsciencia               ; Color de la conciencia
+                INK     colorconciencia               ; Color de la conciencia
                 XMESSAGE "Debes investigar eso.#k" 
                 DESTROY oPeluche	
                 LET     fNenaMala 5
@@ -5666,7 +5868,7 @@ BAJAR   lBath2
                 WINDOW  1
                 INK colorNena
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; busca bien en el baño que hay en la habitación pegada a las escaleras, lo que encuentres te ayudará a salir de la casa.#k#n"
-                INK     colorConsciencia               ; Color de la conciencia
+                INK     colorconciencia               ; Color de la conciencia
                 XMESSAGE "Debes investigar eso.#k" 
                 DESTROY oPeluche	
                 LET     fNenaMala 5
@@ -5698,8 +5900,8 @@ BAJAR   lBath2
                 WINDOW  1
                 INK colorNena
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
-                INK     colorConsciencia               ; Color del protagonista
-                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
+                INK     colorconciencia               ; Color del protagonista
+                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu conciencia
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
@@ -5727,8 +5929,8 @@ BAJAR   lBath2
                 WINDOW  1
                 INK colorNena
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
-                INK     colorConsciencia               ; Color del protagonista
-                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
+                INK     colorconciencia               ; Color del protagonista
+                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu conciencia
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
@@ -5756,8 +5958,8 @@ BAJAR   lBath2
                 WINDOW  1
                 INK colorNena
                 XMESSAGE "¡Mi Peposo! Muchas gracias, lo he echado mucho de menos. Por haberme devuelto a mi oso, te ayudaré; Esa lata de aceite#g#fFG#t que llevas la podrás usar en la bodega, pero te hace falta algo más; memoriza esta combinación que te doy.#k#n"
-                INK     colorConsciencia               ; Color del protagonista
-                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu consciencia
+                INK     colorconciencia               ; Color del protagonista
+                XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu conciencia
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
                 SET     fCombinacion
@@ -5907,7 +6109,7 @@ BAJAR   lBath2
                 XMESSAGE "Un manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Qué cojones está pasando?#n"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¡Eso digo yo!"
 				DESTROY oFotografia1
 				DONE
@@ -5952,7 +6154,7 @@ BAJAR   lBath2
 
 ; Cheats
 > LLAMAR    BOMBERO
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "¿Con qué los vas a llamar? ¿con señales de humo?"
                 DONE
 
@@ -5996,7 +6198,7 @@ BAJAR   lBath2
 > USAR      MUEBLE      
                 INK     1
                 XMESSAGE "INK 1"
-                INK     colorConsciencia               ; Color de tu consciencia
+                INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "INK 2"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "INK 3"
