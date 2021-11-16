@@ -96,7 +96,7 @@
 #define fControlLuz         73      ; Control de la luz de la cerilla .
 #define fAbrirCisterna      74      ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces.
 #define fCajon              75      ; Control para el cajón de la consola en lRecibidor.
-#define fConsola            76      ; Control para EXAMINAR CONSOLA en lRecibidor y mostrar varios mensajes.
+#define fBombilla           76      ; Control para la bombilla del aseo.
 #define fEscalon            77      ; Control del TABLON suelto de lEscaleras.
 #define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo.
 #define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama.
@@ -179,7 +179,7 @@
 #define oGnomo              8       ; lPorche
 #define oCerillas           9       ; lRecibidor
 #define oEscalon            10      ; No se usa
-#define oSecretKey1         11      ; lEscaleras
+#define oTarjetaLlave         11      ; lEscaleras
 #define oLlaveCaja          12      ; lBath3
 #define oDiario             13      ; lCriada
 #define oPeluche            14      ; lRoom3
@@ -1382,7 +1382,7 @@ BAJAR   lBath2
 ; CONDICIONES NECESARIAS
 
 ;- oCerillas
-;- oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja
+;- oLlaveBodega <--- oTarjetaLlave <-- oLlaveCaja
 ;- ZERO fJugar
 ;- oLatadeAceite
 ;- oHacha
@@ -1798,7 +1798,7 @@ BAJAR   lBath2
                 WINDOW  1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
+                XMESSAGE "¿Hola? ¿Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     colorconciencia               ; Color de tu conciencia
@@ -1820,6 +1820,7 @@ BAJAR   lBath2
 > USAR 		PUERTA
 > USAR 		LLAVE
 > ABRIR		PUERTA		AT lPorche
+                DESTROY oLlaveCoche     ; Perdemos las llaves del coche
                 CARRIED oLlavePorche    ; Tiene las llaves de la casa en el inventario
                 NOTCARR oMaceta                
                 INK     colorNarrador
@@ -1828,7 +1829,7 @@ BAJAR   lBath2
                 WINDOW  1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¿Hola? Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
+                XMESSAGE "¿Hola? ¿Hay alguien en casa?#nNo quiero bromitas porque si no, me voy a cabrear... ¡y lo sabéis!#k#n#b"
                 INK     colorNarrador               
                 XMESSAGE "No responde nadie. La puerta se cierra tras de ti con un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 INK     colorconciencia               ; Color de tu conciencia
@@ -1836,7 +1837,7 @@ BAJAR   lBath2
                 INK     colorMarcos                   ; Color del protagonista
                 XMESSAGE "¡Justo lo que necesitaba! ¡No puedo salir de esta casa y ahora también sin mis llaves del coche.#n"
                 INK colorSistema                     ; Color del sistema
-                XMESSAGE"Has perdido las llaves del coche.#g#fIJ#t#k#n"
+                XMESSAGE"Has perdido las llaves del coche.#g#fIJ#t#k#n"   
                 CLS                     ; Limpiamos la pantalla
                 GOTO    lRecibidor
                 INK     colorNarrador               
@@ -1937,9 +1938,17 @@ BAJAR   lBath2
                 DONE
 
 > O         _           AT lRecibidor
-                ZERO    fJugar          ; No has jugado con el crío del patio
                 INK     colorNarrador               
                 XMESSAGE "La puerta está bloqueada, no se puede abrir."
+                DONE
+
+> TIRAR     PUERTA
+> EMPUJAR   PUERTA               
+> ABRIR     PUERTA
+> ROMPER    PUERTA
+> EXAMINA   PUERTA      AT lRecibidor
+                INK     colorNarrador
+                XMESSAGE "La puerta está bloqueada y tus insustanciales esfuerzos por salir son inútiles."
                 DONE
 
 ; MP3 de Intro del Super Mario
@@ -1956,24 +1965,8 @@ BAJAR   lBath2
 
 ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón. Siempre usamos flags para esto. Además, tenemos un flag para controlar si abrió el cajón y otro para la consola.
 > EXAMINA	CONSOLA     AT lRecibidor
-                ZERO    fConsola        ; Es la primera vez que ejecuta dicha acción
-                SET     fConsola        ; Activo un flag
                 INK     colorNarrador               
                 XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
-                DONE
-
-> EXAMINA	CONSOLA     AT lRecibidor
-                NOTZERO fConsola        ; Ya examinó la consola    
-                ZERO    fCajon          ; No hemos abierto el cajón
-                INK     colorNarrador               
-                XMESSAGE "La consola sigue siendo preciosa. ¿Abres el cajón y seguimos?"
-                DONE
-
-> EXAMINA	CONSOLA     AT lRecibidor
-                NOTZERO fConsola        ; Ya examinó la consola    
-                NOTZERO fCajon          ; Hemos abierto el cajón
-                INK     colorNarrador               
-                XMESSAGE "La consola sigue siendo preciosa. Ya no hay más que mirar aquí."
                 DONE
 
 > EXAMINA   CAJON        AT lRecibidor
@@ -1984,23 +1977,48 @@ BAJAR   lBath2
                 XMESSAGE "Si cierras los ojos y lo deseas con mucha fuerza, igual se abre sólo."
                 DONE
 
+> EXAMINA   CAJON       AT lRecibidor
+                NOTZERO fCajon          ; El cajón ya lo abrimos
+                INK     colorNarrador               ; Color de tu conciencia
+                XMESSAGE "El cajón ha reventado contra el suelo."
+                DONE
+
 > ABRIR		CAJON       AT lRecibidor
+                ZERO    fCajon    ; La consola contiene el cajón.
+                SET     fCajon    ; Controlamos que el cajón reviente contra la pared.
+                INK     colorNarrador       
+                XMESSAGE "Te dispones a abrir el cajón y cuando te acercas, este sale despedido hacia a ti, con la gran suerte de que te da tiempo a esquivarlo.#n#n El cajón revienta contra la pared en mil pedazos.#n"
+                DONE
+
+> ABRIR		CAJON       AT lRecibidor
+                NOTZERO    fCajon ; La consola ya no contiene el cajón.
+                INK     colorNarrador       
+                XMESSAGE "Puedes contemplar el hueco del cajón en la consola, pero no hay nada que abrir.#n"
+                DONE
+
+> EXAMINAR  SUELO       AT lRecibidor
+                ZERO    fcajon    
+                INK     colorNarrador               
+                XMESSAGE "Aquí hace falta pasar el TENN con bioalcohol... El algodón no engaña.#n" 
+                DONE
+
+> EXAMINAR  SUELO       AT lRecibidor
+                CARRIED oCerillas
+                NOTZERO fcajon          
+                INK     colorNarrador               
+                XMESSAGE "Ya has cogido las cerillas, y aquí no queda nada de interés.#n" 
+                DONE
+
+> EXAMINAR  SUELO       AT lRecibidor
+                NOTCARR oCerillas
+                NOTZERO fcajon
                 ISAT    oCerillas 252             
                 INK     colorNarrador               
-                XMESSAGE "Abres el cajón y encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
+                XMESSAGE "Entre las astillas del cajón reventado, encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
                 CREATE  oCerillas       ; Creamos el objeto
                 INK     colorSistema              ; Color del sistema
                 GET     oCerillas       ; Cogemos el objeto
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
-                ZERO    fCajon          ; Si es 0
-                SET     fCajon          ; Ponemos el flag a 255. Hemos abierto el cajón
-                DONE
-
-> ABRIR		CAJON
-> EXAMINA   CAJON       AT lRecibidor
-                NOTZERO fCajon          ; El cajón ya lo abrimos
-                INK     colorNarrador               ; Color de tu conciencia
-                XMESSAGE "Ya no hay nada interesante en el cajón."
                 DONE
 
 > BAJAR         _       AT lRecibidor
@@ -2492,7 +2510,7 @@ BAJAR   lBath2
 ;oLataDeAceite
 ;fCombinacion
 ;oLlaveBodega
-;oSecretKey1
+;oTarjetaLlave
 ;oLlaveCaja
 
 ; Damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
@@ -3580,10 +3598,24 @@ BAJAR   lBath2
 
 ; Estamos en locAseo
 
-> EXAMINA   ASEO
 > MIRAR     _           AT lAseo
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fBombilla
                 INK     colorNarrador               
-                XMESSAGE "Hay un interruptor en la pared."             
+                XMESSAGE "Recorres con la lumbre de la cerilla las paredes del aseo y descubres que hay un interruptor en una de ellas."             
+                DONE
+
+> MIRAR     _           AT lAseo
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO    fBombilla
+                INK     colorNarrador               
+                XMESSAGE "Recorres con la lumbre de la cerilla las paredes del aseo y descubres que hay un interruptor en una de ellas.#n El suelo se encuentra lleno de cristales."             
                 DONE
 
 > S         _           AT lAseo
@@ -3607,6 +3639,17 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA   SUELO       AT lAseo
+                ZERO    fBombilla       ; La bombilla aún no ha explotado
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorNarrador
+                XMESSAGE "Te agachas para examinar el suelo y lo tocas. Al llevarte la mano a la nariz, percibes un olor muy intenso y nauseabundo a azufre."
+                DONE
+
+> EXAMINA   SUELO       AT lAseo
+                NOTZERO fBombilla       ;la bombilla ha explotado
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
@@ -3627,6 +3670,7 @@ BAJAR   lBath2
 > PULSAR    INTERRUPTOR
 > ACCIONAR  INTERRUPTOR
 > USAR		INTERRUPTOR AT lAseo
+                SET     fBombilla
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
@@ -4029,7 +4073,7 @@ BAJAR   lBath2
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveCaja
-                NOTCARR oSecretKey1
+                NOTCARR oTarjetaLlave
                 INK     colorNarrador               
                 XMESSAGE "No tienes la llave para poder abrirla."
                 DONE
@@ -4041,7 +4085,7 @@ BAJAR   lBath2
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTCARR oLlaveCaja
-                CARRIED oSecretKey1
+                CARRIED oTarjetaLlave
                 INK     colorNarrador               
                 XMESSAGE "Ya tienes la tarjeta de seguridad#g#f<#t."
                 DONE
@@ -4053,13 +4097,13 @@ BAJAR   lBath2
                 NOTZERO fEscalon
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oLlaveCaja
-                ISAT    oSecretKey1 252
-                CREATE  oSecretKey1
+                ISAT    oTarjetaLlave 252
+                CREATE  oTarjetaLlave
                 INK     colorNarrador               
                 XMESSAGE "Has conseguido abrir la caja pero la llave se ha partido y no se puede quitar.#n"
                 DESTROY oLlaveCaja
                 INK     colorSistema              ; Color del sistema
-                GET     oSecretKey1
+                GET     oTarjetaLlave
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#g#f<#t#n"
@@ -4258,16 +4302,16 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                CARRIED oSecretKey1
+                CARRIED oTarjetaLlave     ; Llevamos la tarjeta llave
                 ZERO    fUsarTarjeta
-                SET     fUsarTarjeta
+                SET     fUsarTarjeta      ; Usamos la tarjeta llave
                 INK     colorNarrador               
                 XMESSAGE "Introduces la tarjeta de seguridad#g#f<#t que encontraste en la caja oculta de las escaleras y suena un chasquido. Es como si se hubiera desbloqueado un mecanismo.#n"
                 INK     colorMarcos
                 XMESSAGE "¡Joder! ¡La tarjeta se ha atascado!#n"
                 INK     colorconciencia
                 XMESSAGE "¡Olvida la tarjeta! ¡Que la den por...! Podrías probar a mover la vitrina.#n"
-                DESTROY oSecretKey1               
+                DESTROY oTarjetaLlave               
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Claro, tú no hagas nada.#n"
                 INK     colorconciencia               ; Color de tu conciencia
@@ -4282,11 +4326,11 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTCARR oSecretKey1
-                NOTZERO fUsarTarjeta
+                NOTCARR oTarjetaLlave     ; No llevamos la tarjeta llave
+                NOTZERO fUsarTarjeta      ; Hemos utilizado la tarjeta llave
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡Eh! ¡El cajero se ha tragado la tarjeta!#n"
-                DESTROY oSecretKey1
+                DESTROY oTarjetaLlave
                 INK     colorconciencia
                 XMESSAGE "Ya estamos celebrando el Festival del Humor...."
                 DONE
@@ -4297,7 +4341,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                NOTZERO fUsarTarjeta
+                NOTZERO fUsarTarjeta    ; Hemos utilizado la tarjeta llave
                 INK     colorNarrador               
                 XMESSAGE "Desplazas la vitrina apenas un metro con enorme facilidad. Ese pestillo era un mecanismo de fijación del mueble para que no se pudiera desplazar.#n"
                 INK     colorconciencia               ; Color de tu conciencia
@@ -4316,7 +4360,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz 
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fUsarTarjeta
+                ZERO    fUsarTarjeta    ; No hemos usado la tarjeta llave
                 INK     colorNarrador               
                 XMESSAGE "La vitrina no de mueve ni un milímetro."
                 DONE
@@ -4325,7 +4369,7 @@ BAJAR   lBath2
                 ;NOTZERO fControlLuz
                 ;NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                CARRIED oLlavePatio
+                CARRIED oLlavePatio     ; Llevamos la llave del patio
                 CLEAR   fDarkF          ; Desactivamos la oscuridad                
                 CLS                     ; Limpiamos la pantalla                
                 GOTO    lPatio
@@ -4337,7 +4381,7 @@ BAJAR   lBath2
                 ;NOTZERO fControlLuz
                 ;NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTCARR oLlavePatio
+                NOTCARR oLlavePatio     ; No llevamos la llave del patio
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CLS                     ; Limpiamos la pantalla
                 INK     colorNarrador               
@@ -6104,7 +6148,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
 				XMESSAGE "Parece ser una fotografía#g#fD#t familiar... Está enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un niño y una niña, pero no reconoces a nadie. ¿De quien será esta foto y que hace aquí?#n"
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¿De dónde habrá salido esta fotografía#g#fD#t y quienes son?#k#b#n"
+                XMESSAGE "¿De dónde habrá salido esta fotografía y quienes son?#k#b#n"
                 INK     colorNarrador               
                 XMESSAGE "Un manchurrón negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.#n"
                 INK     colorMarcos               ; Color del protagonista
