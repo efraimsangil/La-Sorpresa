@@ -972,7 +972,7 @@ BAJAR   lBath2
                 NOTZERO fLevantado
                 NOTZERO fAbrirarmario
                 INK     colorNarrador
-                XMESSAGE "Entre todos tus enseres, encuentras la ropa que pensabas ponerte hoy."
+                XMESSAGE "Observas con atención las prendas que hay en su interior y escoges la ropa que vas a ponerte hoy."
                 DONE
 
 > PONER     ROPA
@@ -1087,7 +1087,7 @@ BAJAR   lBath2
                 NOTZERO fcajon          ; Controlamos que esté abierto el cajón
                 NOTCARR oLlaveCoche     ; Comprobamos que no lleva las llaves del coche
                 INK     colorNarrador              
-                XMESSAGE "De entre todas las cosas que tienes en el cajón destacan las llaves de tu coche.#n"
+                XMESSAGE "Rebuscando entre las cosas que tienes en el cajón destacan las llaves de tu coche.#n"
                 DONE
 
 > COGER   LLAVES     AT lBurgos
@@ -3243,7 +3243,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
-                XMESSAGE "Entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
+                XMESSAGE "De entre todos los trastos del armario, puedes ver las llaves de tu coche#g#fIJ#t.#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE"¿Pero, cómo han llegado hasta aquí?#n"
                 INK     colorconciencia               ; Color de tu conciencia
@@ -4227,7 +4227,7 @@ BAJAR   lBath2
 > EXAMINA   SALON
 > MIRAR     _           AT lSalon
                 INK     colorNarrador               
-                XMESSAGE "De entre toda la estancia, destaca una vitrina grande y acristalada que a día de hoy se encuentra desprovista de todo utensilio."
+                XMESSAGE "Observas lo que hay a tu alrededor y llama tu atención una vitrina grande y acristalada."
                 DONE
                 
 > USAR      CASSETTE
