@@ -893,17 +893,19 @@ BAJAR   lBath2
 
 ; Estamos en locBurgos
 
-> BUSCAR    PELOTA      AT lPatio
+> BUSCAR    PELOTA      AT lBurgos
                 INK     colorSistema
                 XMESSAGE "¡Acabas de empezar y ya estás intentando hackear la aventura!, pues ya que eres tan listo, te la voy a dar.#n"
                 INK     colorSistema
                 ISAT    oPelota 252
                 CREATE  oPelota
                 GET     oPelota
-                XMESSAGE "#n#n#b#k"    
-                XMESSAGE colorconciencia
-                XMESSAGE "¿Para qué quieres este objeto aquí?. Paso de seguirte el rollo con tus jueguecitos."
+                XMESSAGE "#k#b#n#n"    
+                INK     colorconciencia
+                XMESSAGE "¿Para qué quieres este objeto aquí?. Paso de seguirte el rollo con tus jueguecitos. Te quito la pelota."
                 DESTROY oPelota
+                INK     colorSistema
+                XMESSAGE "#nYa no tienes la pelota."
                 DONE
 > LEVANTAR    _
 > INCORPORAR  _       AT lBurgos
