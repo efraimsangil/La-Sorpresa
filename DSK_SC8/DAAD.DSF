@@ -98,13 +98,13 @@
 #define fCajon              75      ; Control para el cajón de la consola en lRecibidor.
 #define fBombilla           76      ; Control para la bombilla del aseo.
 #define fEscalon            77      ; Control del TABLON suelto de lEscaleras.
-#define fUsarInterruptor    78      ; Control del INTERRUPTIOR en lAseo.
+#define fUsarInterruptor    78      ; Control del INTERRUPTOR en lAseo.
 #define fRoom1              79      ; Control para no dejar entrar al jugador a lRoom1 si EXAMINO o COGIO el objeto de la cama.
 #define fUsarPala           80      ; Control para que no usemos la pala dos veces.
 #define fJugar              81      ; Control para saber si se jugó con el niño en lPatio (Crucial para uno de los finales).
 #define fTriturador         82      ; Control para matar al jugador si decide EXAMINAR por segunda vez el TRITURADOR en lCocina.
 #define fFoco               83      ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche.
-#define fPatio              84      ; Control para jugar con el crío en lPatio.
+#define fPatio              84      ; Control determinar si el crío ha aparecido ya en el patio.
 #define fGnomoRoto          85      ; Control para cuando rompes el Gnomo en lPorche.
 #define fInsistePuerta      86      ; Control para abrir la puerta de la cochera en ExteriorCochera.
 #define fInsisteMuchoPuerta 87      ; Control para abrir la puerta de la cochera en ExteriorCochera.
@@ -134,6 +134,10 @@
 #define fTimbre             112     ; Flag para controlar que pulsa dos veces el timbre y cambiamos el texto de salida.
 #define fInsistelevanta     113     ; Flag para controlar que Marcos intente levantarse de la cama antes de coger el teléfono.
 #define fAbrirarmario       114     ; Flag que controla que el armario de LocBurgos esté abierto o no.
+#define fAbrirLavadora      115     ; Flag que controla que la lavadora esté abierta en LocCocina
+#define fControlSumidero    116     ; Flag que controla el detalle del fregadero y el que encontremos o no la llave del patio en el sumidero en LocCocina
+#define fComeGalleta        117     ; Flag que controla la intención de comerte la galleta en cualquier lugar una vez la llevas contigo.
+
 
 ;                               Localizaciones
 #define lIntro              0
@@ -192,6 +196,7 @@
 #define oLlaveCoche         21      ; lChamizo
 #define oLataDeAceite       22      ; lBath1
 #define oManguera           23      ; lCochera
+#define oGalleta            24      ; lDespensa
 
 ;------------------------------------------------------------------------------
 /VOC                            ;Vocabulario
@@ -218,6 +223,7 @@ SALID   12      verb
 X       12      verb
 ENTRAR  13      verb
 SALIR   14      verb
+
 
 ;                       Nombres <20 indica que se pueden usar como verbos
 ;                               <50 indica nombre propio (no admite lo, la...)
@@ -352,6 +358,9 @@ RAMPA           218    noun     ; lExteriorCochera
 CIPRESES        219    noun     ; lExtCasa
 LISTONES        220    noun     ; lExteriorChamizo
 MUSGO           221    noun     ; lExteriorChamizo
+GALLETA         222    noun     ; lDespensa
+CRIO            223    noun     ; lPatio
+FANTASMA        224    noun     ; lPatio
 
 ;                               Verbos
 COGER           20      verb
@@ -377,7 +386,8 @@ DECIR           31      verb
 PREGUNT         31      verb
 HABLAR          31      verb
 JUGAR           32      verb
-
+COMER           33      verb
+OLER            34      verb
 
 ;verbos jugador
 USAR            33      verb
@@ -423,6 +433,7 @@ PISAR           69      verb
 APLASTAR        70      verb
 INCORPORAR      71      verb
 ACOSTARSE       72      verb
+BUSCAR          73      verb
 
 ;                               Adjetivos
 PEQUE           2       adjective
@@ -577,7 +588,8 @@ LUEGO           2       conjugation
 /20 "una llave de la bodega#g#f1#t"  
 /21 "llaves del coche#g#fIJ#t"
 /22 "una lata de aceite#g#fFG#t"
-/23 "una manguera#g#fKL#t"
+/23 "una manguera#g#f-.#t"
+/24 "una galleta#g#f"#t"
 ;/23 "una manguera#g#f-#t "
 ;------------------------------------------------------------------------------
 /LTX                            ;Location Texts
@@ -593,7 +605,7 @@ LUEGO           2       conjugation
 /7 " Te encuentras en el recibidor, despojado de todo detalle y ambientado tan solo con el sutil resplandor de las luces del exterior. Es descorazonador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que SUBEN a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado. Parece que en la casa no hay nadie."
 /8 " La luna llena gobierna la noche y su claridad se derrama por el patio, rodeado por un extenso muro gris que se erige imponente como el adarve protector de la hacienda inexpugnable."
 /9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo." 
-/10 " Estás en la cocina. Lo que ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una desalentadora sensación de frío que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con una portezuela y varios cajones, una alacena para la comida al ESTE y la vieja lavadora, que con más de veinte años, aún sigue dando servicio." 
+/10 " Estás en la cocina. Lo que ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una desalentadora sensación de frío que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con varios cajones, una alacena para la comida al ESTE y la vieja lavadora, que con más de veinte años, aún sigue dando servicio." 
 /11 " La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#n  La estancia es amplia y está presidida por una gran lareira de piedra. Tu padre le instaló un cassette de forja porque ya nadie cocinaba sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De ella nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#n  Puedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#n  Desde aquí se accede a un amplio patio trasero al ESTE."
 /12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más bajitas, parece que una escalera imponente otorgaba un estatus de opulencia.#n  Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
 /13 " Estás en la despensa. Puedes ver la alacena que usaban tus padres para guardar latas de comida y algún que otro utensilio de cocina."
@@ -727,7 +739,7 @@ BAJAR   lBath2
 /21     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV5       _
 /22     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LATA        _
 /23     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MANGUERA    _
-
+/24     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GALLETA     _
 ;------------------------------------------------------------------------------
 /PRO 0                          ;Bucle principal de localidades
 
@@ -881,6 +893,18 @@ BAJAR   lBath2
 
 ; Estamos en locBurgos
 
+> BUSCAR    PELOTA      AT lPatio
+                INK     colorSistema
+                XMESSAGE "¡Acabas de empezar y ya estás intentando hackear la aventura!, pues ya que eres tan listo, te la voy a dar.#n"
+                INK     colorSistema
+                ISAT    oPelota 252
+                CREATE  oPelota
+                GET     oPelota
+                XMESSAGE "#n#n#b#k"    
+                XMESSAGE colorconciencia
+                XMESSAGE "¿Para qué quieres este objeto aquí?. Paso de seguirte el rollo con tus jueguecitos."
+                DESTROY oPelota
+                DONE
 > LEVANTAR    _
 > INCORPORAR  _       AT lBurgos
             ZERO fLevantado
@@ -2790,7 +2814,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK     colorNarrador
-                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#fKL#t tirada en el suelo que está conectada al grifo.#n"
+                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#f-.#t tirada en el suelo que está conectada al grifo.#n"
                 INK     colorMarcos
                 XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
                 INK     colorNarrador
@@ -2853,7 +2877,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fConectarManguera  ; la manguera está desconectada
                 INK     colorNarrador               
-                XMESSAGE "El grifo tiene un adaptador para conectar una manguera#g#fKL#t."
+                XMESSAGE "El grifo tiene un adaptador para conectar una manguera#g#f-.#t."
                 DONE
 
 > EXAMINA   GRIFO       AT lCochera
@@ -2863,7 +2887,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF            ; Desactivamos la oscuridad
                 NOTZERO fConectarManguera ; la manguera está conectada
                 INK     colorNarrador                 
-                XMESSAGE "El grifo tiene una manguera#g#fKL#t conectada."
+                XMESSAGE "El grifo tiene una manguera#g#f-.#t conectada."
                 DONE
 
 > EXAMINA   GENERADOR   AT lCochera
@@ -2910,7 +2934,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 INK     colorNarrador               
-                XMESSAGE "No tienes ninguna manguera#g#fKL#t."
+                XMESSAGE "No tienes ninguna manguera#g#f-.#t."
                 DONE
 
 > USAR      MANGUERA
@@ -3775,6 +3799,7 @@ BAJAR   lBath2
                 DONE
 
 > EXAMINA	FREGADERO   AT lCocina
+                ZERO    fControlSumidero
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
@@ -3784,7 +3809,20 @@ BAJAR   lBath2
                 XMESSAGE "El fregadero está vacío, tiene un sumidero grande tipo americano. Algo parece estar atascado dentro."
                 DONE
 
+> EXAMINA	FREGADERO   AT lCocina
+                NOTZERO fControlSumidero
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ;ISAT    oLlavePatio 252
+                INK     colorNarrador               
+                XMESSAGE "El fregadero está vacío, tiene un sumidero grande tipo americano."
+                DONE
+
 > EXAMINA	SUMIDERO    AT lCocina
+                ZERO    fControlSumidero
+                SET     fControlSumidero
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
@@ -3802,6 +3840,16 @@ BAJAR   lBath2
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorNarrador               
                 XMESSAGE "El triturador se ha parado."
+                DONE
+
+> EXAMINA	SUMIDERO    AT lCocina
+                NOTZERO fControlSumidero
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorconciencia               
+                XMESSAGE "Creo que ya has curioseado bastante por aquí. El triturador que hay justo debajo me ha dado un susto de muerte."
                 DONE
 
 > EXAMINA   CUCHARAS     AT lCocina
@@ -3855,7 +3903,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
-                XMESSAGE "Es un típico aparador de cocina hecho en madera con una portezuela y varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
+                XMESSAGE "Es un típico aparador de cocina hecho en madera con varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
                 DONE
 
 
@@ -3897,33 +3945,58 @@ BAJAR   lBath2
                 XMESSAGE "No es momento de examinar tus genitales."
                 DONE
 
-> ABRIR     LAVADORA
 > EXAMINA	LAVADORA    AT lCocina
+                ZERO    fAbrirLavadora
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
-                XMESSAGE "Dentro encuentras un cuchillo grande de carnicero cubierto de...#n"
-                INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¡¡¡Sangre!!!#n#n¿Pero qué puñetas hace eso ahí dentro?#n"
-                INK     colorconciencia               ; Color de tu conciencia 
-                XMESSAGE "Tampoco sé si quiero saberlo."
+                XMESSAGE "Es una lavadora antigua con los plásticos amarillentos, pero que hace muy bien su trabajo...#n"
+                INK     colorconciencia
+                XMESSAGE "Como los jubilados tardíos, obsoletos pero efectivos."
                 DONE
 
-> EXAMINA   CUCHILLO
-> COGER		CUCHILLO    AT lCocina
+> EXAMINA	LAVADORA    AT lCocina
+                NOTZERO fAbrirLavadora
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorNarrador               
+                XMESSAGE "Inexplicablemente la lavadora está chorreando sangre desde su interior.#n"
+                INK     colorconciencia               ; Color de tu conciencia 
+                XMESSAGE "Tengo la intuición de que algo malo nos puede pasar aquí en la cocina si andamos curioseando."
+                DONE
+
+> ABRIR 	LAVADORA    AT lCocina
+                ZERO    fAbrirLavadora
+                SET     fAbrirLavadora
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorNarrador               
+                XMESSAGE "Abres la puerta de la lavadora.#k#n#n Por el tambor empieza a derramarse un reguero de sangre que comienza a cubrir el suelo a tus pies.#n"
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "No pienso tocar eso ni con un palo.#n"
-                INK     colorconciencia               ; Color de tu conciencia
-                XMESSAGE "Cagao."
+                XMESSAGE "¡¡¡Sangre!!!#n#n¿Pero qué está pasando aquí?#n"
+                INK     colorconciencia               ; Color de tu conciencia 
+                XMESSAGE "Tampoco sé si quiero saberlo."
+                DONE
+
+> CERRAR    LAVADORA
+> ABRIR 	LAVADORA    AT lCocina
+                NOTZERO fAbrirLavadora
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorNarrador               
+                XMESSAGE "El tambor sigue chorreando sangre."
                 DONE
 
 ; Estamos en locDespensa
+; Debemos implentar que cae una galleta y que en cualquier momento le vamos a matar por comersela. Hay que hacer icono de galleta y retocar todos estos condactos. Si se come la galleta hacemos el chiste con que en esta aventura no hay que comer nada y que para tocar las narices, nosotros ya tenemos las cerillas.
 
 > EXAMINA   DESPENSA
 > MIRAR     _           AT lDespensa
@@ -3938,9 +4011,9 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
-                XMESSAGE "Está vacío por completo, pero te vienen recuerdos de esos botes de mermelada para los desayunos, el bote de Colacao, el vaso de Nocilla y las latas de fabada para cuando a tu madre no le apetecía cocinar.#n"
+                XMESSAGE "Está vacía por completo, pero te vienen recuerdos de esos tarros de mermelada para los desayunos, el bote de Colacao, el vaso de Nocilla y las latas de fabada para cuando a tu madre no le apetecía cocinar.#k#n"
                 INK     colorconciencia               ; Color de tu conciencia
-                XMESSAGE "Y colocaba las galletas encima de ella, fuera de nuestro alcance.#n"
+                XMESSAGE "Y colocaba las galletas encima de ella, fuera de nuestro alcance.#k#n"
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Me reiría mucho si encontrase alguna galleta escondida arriba del todo."
                 DONE
@@ -3950,11 +4023,26 @@ BAJAR   lBath2
 > EMPUJAR   ALACENA     AT lDespensa
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
+                ISAT    oGalleta 252
+                CREATE  oGalleta
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad         
                 INK     colorNarrador               
-                XMESSAGE "Das un fuerte empujón a la alacena.#nNo ocurre nada."             
+                XMESSAGE "Das un fuerte empujón a la alacena. Cae una galleta#g#f"#t.#n"          
+                INK     colorconciencia
+                XMESSAGE "No salgo de mi asombro."   
                 DONE            
+
+> TREPAR    ALACENA     AT lDespensa
+                NOTZERO fControlLuz 
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorNarrador               ; Color del narrador
+                XMESSAGE "Los estantes no parecen tener la capacidad de soportar tu peso.#n"
+                INK     colorconciencia
+                XMESSAGE "¿Quién te crees que eres?... ¿El puto doctor Livingstone de expedición?. Aunque ya que te huelo las intenciones, estoy seguro de que hay otra manera de hacer lo que te propones, colega."
+                DONE
 
 > ROMPER    ALACENA     AT lDespensa
                 NOTZERO fControlLuz
@@ -3965,15 +4053,81 @@ BAJAR   lBath2
                 XMESSAGE "¿Quieres darle un disgusto a tu madre?"
                 DONE
 
+> COMER         GALLETA
+                ZERO    oGalleta        ; Primer intento para comerse la galleta.
+                SET     oGalleta        ; Activamos el flag para matar al jugador si insiste en comerse la galleta.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad   
+                INK     colorNarrador
+                XMESSAGE "La galleta está seca, huele rara y no tiene ninguna buena pinta.#n"
+                INK     colorconciencia
+                XMESSAGE " ¿Estás seguro de querer hacerlo?"       
+                DONE
+
+> COMER         GALLETA
+                NOTZERO    oGalleta     ; Segundo intento de comerse la galleta.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad   
+                INK     colorNarrador
+                XMESSAGE "Te comes la galleta#g#f"#t...#k#n"
+                INK     colorMarcos
+                XMESSAGE "Está muy dura.#k#n"
+                INK     colorNarrador
+                XMESSAGE "A los segundos de habértela comido, notas que algo no va bien...#k#n#n Sientes un repentino dolor abdominal, empiezas a marearte, notas una opresión fuerte en el pecho, se te cierra la garganta, se te enrojece la piel, tienes urticaria, picazón, palidez...#k#n#n" 
+                XMESSAGE "Te baja la presión arterial, tus vías respiratorias se estrechan, tu pulso es débil y acelerado, te brota una erupción cutánea, tienes náuseas y ganas de vomitar...#k#n#n Finalmente te derrumbas en el suelo entre estertores y vas a desmayarte, pero justo antes de hacerlo, miras hacia la parte superior de la alacena y ves como cuatro o cinco ratas se asoman curiosas a causa del ruido que ha producido tu caida.#k#n"
+                INK colorconciencia
+                XMESSAGE "Muy listo amigo. A quien se le ocurre comerse una galleta seca, olvidada durante años encima de la despensa.#k#n#b"
+                INK colorNarrador
+                XMESSAGE "Acabas de sufrir un shock anafiláctico.#n"
+                INK colorMuerte
+                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "#n"
+                INK     colorSistema     
+                XMESSAGE "Amigo jugador, solo te morirás de hambre en otras aventuras, aquí hacemos lo contrario. Para controlar mierdas con turnos, ya tenemos las cerillas.#n"
+                END                
+                DONE
+
+> OLER          GALLETA
+                INK     colorMarcos
+                XMESSAGE" Huele bastante a polvo y a otra cosa que no logro identificar."
+                DONE
+
+> EXAMINA       GALLETA
+                INK     colorNarrador
+                XMESSAGE "Es una galleta#g#f"#t casera como las que hacía tu madre."
+                DONE
+
+> COGER     GALLETA     AT lDespensa
+                INK     colorSistema
+                GET     oGalleta
+                DONE
+
 > O         _           AT lDespensa 
+           
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA     ; La cerilla se ha consumido
                 SET     fDarkF
                 INK     colorNarrador               
                 XMESSAGE "La cocina está muy oscura. Sin luz no se puede entrar."
                 DONE
+> O         _           AT lDespensa
+                CLS                     ; Limpiamos la pantalla
+                CARRIED oGalleta
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                INK     colorconciencia
+                XMESSAGE "¿En serio te vas a llevar una galleta asquerosa metida en el bolsillo? Me niego en rotundo."    
+                DONE
 
 > O         _           AT lDespensa
                 CLS                     ; Limpiamos la pantalla
+                NOTCARR oGalleta
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
@@ -3982,6 +4136,7 @@ BAJAR   lBath2
                 GOTO    lCocina
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
+
 
 ; Estamos en locEscaleras
 
@@ -4495,8 +4650,6 @@ BAJAR   lBath2
                 XMESSAGE "Es una cama pequeña y vieja que conserva tan solo la estructura y el colchón."
                 DONE
 
-; El control sobre leer diario estaba aquí, pero se ha hecho global, para poder leer el diario en cualquier momento una vez obtenido.
-
 > N         _           AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -4555,9 +4708,9 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
-                XMESSAGE "Sin más dilación, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n#n"
-                XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n#n"
-                XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n#n"
+                XMESSAGE "Sin más dilación, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n"
+                XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n"
+                XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#b#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
@@ -4579,7 +4732,7 @@ BAJAR   lBath2
                 XMESSAGE "¿Qué cojones? ¡Veo unos críos jugando!#n"
                 INK     colorNarrador               
                 XMESSAGE "Uno de ellos para en seco, gira la cabeza y te mira. Se acerca despacio y te quedas inmovilizado; no sabes cómo reaccionar.#n"
-                XMESSAGE "Se aproxima a ti y se detiene frente a ti.#n"
+                XMESSAGE "Ves que se aproxima y se detiene frente a ti.#n"
                 INK     colorNene
                 XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?#n"
                 INK     colorconciencia               ; Color de tu conciencia
@@ -4618,12 +4771,47 @@ BAJAR   lBath2
                 XMESSAGE "Jugando al pilla-pilla. Pero nos gustaría jugar a la pelota#g#f:;#t. ¡Juega conmigo!"               
                 DONE
 
+> EXAMINA   CRIO
+> EXAMINA   FANTASMA    AT lPatio
+
+                NOTZERO    fPatio       ; El crío ya ha hablado con nosotros.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad.
+                INK     colorNarrador
+                XMESSAGE "Enfrente de ti hay un niño de unos seis años, vestido con una camisa de tela muy dura y desgastada, pantalones cortos y unos zapatos negros con calcetines blancos que llegan hasta las rodillas.#n#n El crio tiene un semblante burlón y a simple vista parece amigable."
+                DONE
+
+> EXAMINA   CRIO
+> EXAMINA   FANTASMA    AT lPatio
+
+                ZERO fPatio             ; El crío aún no ha aparecido en la escena.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad.
+                INK     colorNarrador
+                XMESSAGE "Eso no es posible."
+                DONE
+
+> BUSCAR    PELOTA      AT lPatio
+                NOTZERO fPatio          ; Controlamos que el crío ya ha aparecido en escena.
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad.
+                NOTCARR oPelota
+                INK     colorNene
+                XMESSAGE "Si la pelota estuviera en el patio, estaríamos jugando con ella."
+                DONE
+
 > LANZAR    PELOTA
 > JUGAR     _           AT lPatio
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                CLEAR   fDarkF          ; Desactivamos la oscuridad.
                 CARRIED oPelota
                 SET     fJugar
                 INK     colorNarrador               
@@ -6294,7 +6482,8 @@ BAJAR   lBath2
                 MESSAGE  "llave de la bodega#g#f1#t" 
                 MESSAGE  "llaves del coche#g#fIJ#t"
                 MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#fKL#t"
+                MESSAGE  "una manguera#g#f-.#t"
+                MESSAGE  "una galleta#g#f"#t"
                 MESSAGE "#n"
                 INK 9
                 MESSAGE "Ropa de calle#g#f=#t"          
@@ -6317,7 +6506,8 @@ BAJAR   lBath2
                 MESSAGE  "llave de la bodega#g#f1#t" 
                 MESSAGE  "llaves del coche#g#fIJ#t"
                 MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#fKL#t"
+                MESSAGE  "una manguera#g#f-.#t"
+                MESSAGE  "una galleta#g#f"#t"
                 MESSAGE "#n"
                 INK colorMuerte                
                 MESSAGE "#g#fBHAS MUERTOC#t"
@@ -6370,7 +6560,7 @@ BAJAR   lBath2
                 GET     oPaleta
                 GET     oLlaveBodega
                 ;GET     oLlaveCoche
-                GOTO    lBodega
+                GOTO    lRecibidor
                 RESTART
                 DONE
 
@@ -6522,7 +6712,7 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego para que alguien lo encuentre algún día y se haga justicia.#k"
 
-                ; El resto de la historia, de cuando el niño ya con seis años escapa de la casa y le pilla el terrateniente en el pueblo, lo narrará el niño en el garaje.
+                ; El resto de la historia, de cuando el niño ya con seis años escapa de la casa y le pilla el terrateniente en el pueblo, lo narrará el niño en LocCochera.
                 ; la historia continua cuando el terrateniente descubre al niño intentando escapar, lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y con la ayuda de este, le da
                 ; un hacha y le pide que le ayude a trocear los cuerpos y le obliga a llevarlos al chamizo, cavar un hoyo grande y a continuación, después de depositar los restos en el hoyo, mata al niño
                 ; de un palazo en la cabeza y lo deja caer al hoyo.
