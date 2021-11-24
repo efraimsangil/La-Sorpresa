@@ -63,6 +63,19 @@ DSK_EN
 PS D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 8_6 EN .\DAAD.json
 PS D:\GitHub\La-Sorpresa\DSK_EN> C:\DAAD\dsk2rom.exe -afc 0 ..\..\Surprise.dsk ..\..\Surprise.rom
 
+[Proceso gráfico para SC8]
+
+Imagen de 256x212
+
+Photoshop > Viveza - Silver Efex pro 2 > 037 PinHole > Guardar como PNG
+
+MSX Viewer 5.1.3 > Abrir PNG > Error Diffusion > Steverson > 001.SC8
+
+Renombramos a S08 y lanzamos desde Power Shell: D:\GitHub\La-Sorpresa> php C:\DAAD\imgwizard.php c .\001.S08 96 raw
+
+
+
+
 php c:\daad\imgwizard.php c '..\Imagenes\SC7\007.S07' 128 raw
 php c:\daad\imgwizard.php c '..\Imagenes\SC7\008.S07' 128 raw
 php c:\daad\imgwizard.php c '..\Imagenes\SC7\009.S07' 128 raw

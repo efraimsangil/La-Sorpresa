@@ -111,7 +111,7 @@
 #define fUsarTarjeta        88      ; Control de USAR TARJETA en la VITRINA en lSalon.
 #define fVasAMorir          89      ; Control para matar al jugador en lGabinete.
 #define fUsarCerilla        90      ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado.
-#define fUsarAceite         91      ; Control de ENGRASAR CANDADO en lBodega para poder abrirlo.
+#define fEngrasar           91      ; Control de ENGRASAR CANDADO en lBodega para poder abrirlo.
 #define fManguera           92      ; Control para comprobar que encuentra y usa la manguera en lCochera.
 #define fMangueraRejilla    93      ; Control para comprobar que pone la manguera en la rejilla en lCochera.
 #define fConectarManguera   94      ; Control para comprobar conecta la manguera en el grifo en lCochera.
@@ -361,7 +361,7 @@ MUSGO           221    noun     ; lExteriorChamizo
 GALLETA         222    noun     ; lDespensa
 CRIO            223    noun     ; lPatio
 FANTASMA        224    noun     ; lPatio
-
+CUCARA          225    noun     ; lCriada . El nombre sería cucaraña, pero para no tener problemas con la ñ, lo vamos a declarar así. En el juego podremos escribir CUCARAÑA o CUCARANA, que el sistema lo va a reconocer. 
 ;                               Verbos
 COGER           20      verb
 DEJAR           21      verb
@@ -588,7 +588,7 @@ LUEGO           2       conjugation
 /20 "una llave de la bodega#g#f1#t"  
 /21 "llaves del coche#g#fIJ#t"
 /22 "una lata de aceite#g#fFG#t"
-/23 "una manguera#g#f-.#t"
+/23 "una manguera#g#fPQ#t"
 /24 "una galleta#g#f"#t"
 ;/23 "una manguera#g#f-#t "
 ;------------------------------------------------------------------------------
@@ -604,7 +604,7 @@ LUEGO           2       conjugation
 /6 " Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano. Era imposible estar allí, sin sufrir el feroz ataque de miles de mosquitos sedientos de sangre.#n#n  Frente a ti, está la puerta principal de la casa."
 /7 " Te encuentras en el recibidor, despojado de todo detalle y ambientado tan solo con el sutil resplandor de las luces del exterior. Es descorazonador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que SUBEN a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón y ABAJO está la bodega. Delante tuya, está la consola con la que has tropezado. Parece que en la casa no hay nadie."
 /8 " La luna llena gobierna la noche y su claridad se derrama por el patio, rodeado por un extenso muro gris que se erige imponente como el adarve protector de la hacienda inexpugnable."
-/9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En una de las paredes destaca un botellero de madera mohosa y puedes observar también, una mancha de gran tamaño en la pared y un alambique al fondo." 
+/9 " La bodega. Un lugar angosto y húmedo que despide un penetrante aroma a tierra excavada profunda.#n#n  En la estancia destacan un botellero de madera mohosa y puedes observar también un alambique al fondo.#n#n  Notas que algo llama tu atención en la pared contigua." 
 /10 " Estás en la cocina. Lo que ayer fue un lugar acogedor que te proporcionaba esa sensación tan cálida de hogar, hoy es una estancia donde te invade una desalentadora sensación de frío que proviene de la humedad que contienen las paredes.#n#n  Puedes ver el fregadero, un aparador con varios cajones, una alacena para la comida al ESTE y la vieja lavadora, que con más de veinte años, aún sigue dando servicio." 
 /11 " La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#n  La estancia es amplia y está presidida por una gran lareira de piedra. Tu padre le instaló un cassette de forja porque ya nadie cocinaba sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De ella nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#n  Puedes observar una gran vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#n  Desde aquí se accede a un amplio patio trasero al ESTE."
 /12 " Las escaleras que regentan la casa son muy antiguas y despiden cierto aroma viejo a aceite de linaza. Los peldaños son de madera, amplios y romos. Pese a que antiguamente las personas eran más bajitas, parece que una escalera imponente otorgaba un estatus de opulencia.#n  Notas un chasquido bajo tus pies; bajas la mirada y observas un escalón suelto."
@@ -893,7 +893,7 @@ BAJAR   lBath2
 
 ; Estamos en locBurgos
 
-> BUSCAR    PELOTA      AT lBurgos
+> BUSCAR    PELOTA      AT lBurgos       ; Este condacto está pensado para un jugador que repite en la aventura. La idea es proporcionarle pistas sobre objetos con los que interactuar que no haya descubierto en partidas anteriores, por ser complicados de encontrar.
                 INK     colorSistema
                 XMESSAGE "¡Acabas de empezar y ya estás intentando hackear la aventura!, pues ya que eres tan listo, te la voy a dar.#n"
                 INK     colorSistema
@@ -1245,7 +1245,7 @@ BAJAR   lBath2
                 ZERO fInsisteDormir ; Es la primera vez que queremos dormir
                 SET  fInsisteDormir ; Se activa el Flag fInsisteDormir
                 INK     colorconciencia               
-                XMESSAGE "¿Te has levantado y quieres acostarte de nuevo?. Como no salgas de casa hoy, tu padre no te lo perdona.#n"
+                XMESSAGE "¿Te has levantado y quieres acostarte de nuevo? Como no salgas de casa hoy, tu padre no te lo perdona.#n"
                 DONE        
 > ACOSTARSE _
 > DORMIR	_			AT lBurgos
@@ -1362,6 +1362,20 @@ BAJAR   lBath2
                 XMESSAGE "El frío y la humedad te agarrotan las articulaciones.#n"
                 INK     colorconciencia            ; Color de la conciencia
                 XMESSAGE "Si continúas aquí por mucho tiempo te dará una hipotermia, pero se te va a quedar un cutis divino. #n#n"
+                DONE
+
+> BUSCAR    PELOTA      AT lExtCasa ;para jugadores que repiten la aventura;
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                INK     colorconciencia
+                XMESSAGE "Si sigues mucho tiempo aquí con el frío que hace, vas a tener que buscar las tuyas propias."
+                DONE
+
+> BUSCAR    PELOTA      AT lExtCasa
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                INK     colorconciencia
+                XMESSAGE "Hace mucho frío para ponerse a buscar aquí."
                 DONE
 
 > E			_           AT lExtCasa   
@@ -1486,6 +1500,20 @@ BAJAR   lBath2
 ; Estamos en locPorche
 ; Controlamos si se ejecuta dos veces la misma acción. La segunda vez matamos al jugador.
 
+> BUSCAR    PELOTA      AT lPorche
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                INK     colorconciencia
+                XMESSAGE "Undefined User Function."
+                DONE
+
+> BUSCAR    PELOTA      AT lPorche
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                INK     colornarrador
+                XMESSAGE "Descubres que el porche hay muchas cosas interesantes, pero ninguna pelota."
+                DONE
+
 > ROMPER    FOCOS       AT lPorche
                 INK     colorconciencia               
                 XMESSAGE "Eso es un acto de vandalismo. No pienso hacerlo."
@@ -1500,18 +1528,19 @@ BAJAR   lBath2
                 XMESSAGE "Yo no haría eso de nuevo."   ; Siempre que vamos a matar el jugador por repetir una acción dos veces, recibe un aviso
                 DONE
 
+; Muerte del jugador
 > EXAMINA   FOCOS       AT lPorche
                 ; Si el flag de EXAMINA FOCOS está activo, mato al jugador
                 NOTZERO fFoco
                 INK     colorNarrador               
                 XMESSAGE "Insistes en volver a mirar y una atracción hipnótica te hace fijar la vista en los focos.#k#n"
-                XMESSAGE "Te fríes las retinas y caes inconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre mana a borbotones de la brecha.#k#n"
+                XMESSAGE "Te fríes las retinas y caes inconsciente al suelo.#k#n#n Te golpeas la cabeza contra la barandilla del porche y la sangre mana a borbotones de la brecha.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema               
-                END                
+                END        ; Termina el juego        
 
 > O         _           AT lPorche                
                 GOTO    lExtCasa
@@ -1874,6 +1903,38 @@ BAJAR   lBath2
 ; Ya estamos dentro de la casa, en el recibidor y no podemos salir al exterior por la puerta principal
 
 ; NOTA: Esta fotografía, si la examinas dentro del aseo, necesitas luz, pero si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
+> BUSCAR    PELOTA      AT lRecibidor
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Buscas por aquí... Buscas por allá... No encuentras nada... ¡Por el ojete te dan!"
+                DONE
+
+> BUSCAR    PELOTA      AT lRecibidor
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Buscas la pelota por el recibidor, pero no hay rastro de ella."
+                DONE
+
+; NOTA: Como esta es la única localización de todo el interior de la casa que tiene luz, tenemos que controlar la búsqueda de la pelota cuando aún no tenemos las cerillas.
+
+> BUSCAR    PELOTA      AT lRecibidor 
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTCARR oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Buscas por aquí... Buscas por allá... No encuentras nada... ¡Por el ojete te dan!"
+                DONE
 
 > SALIR     _           AT lRecibidor
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
@@ -2082,9 +2143,37 @@ BAJAR   lBath2
 
 ; /9 "La bodega. Un lugar angosto y húmedo que despide un aroma a tierra excavada profundo y penetrante.#n#nEn una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo.#n" 
 
+> BUSCAR    PELOTA      AT lBodega
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Abra cadabra... ¡Estás como una puta cabra!"
+                DONE
+
+> BUSCAR    PELOTA      AT lBodega
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Recorres con la mirada cada rincón infecto de la bodega."
+                INK     colorconciencia
+                XMESSAGE "Lo unico que vas a encontrar aquí es el tétanos."
+                DONE
+
 > SUBIR     _           AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador
-                XMESSAGE "Subimos al recibidor.#k"
+                XMESSAGE "Subes al recibidor.#k"
                 CLS
                 GOTO    lRecibidor
                 RESTART
@@ -2092,16 +2181,22 @@ BAJAR   lBath2
 ; Estas dos acciones de MIRAR están controladas por un flag que valdrá 0 o 255 dependiendo de si NO hizo uso de la paleta en la mancha o SI. NO=0 y SI=255
 > MIRAR     _           AT lBodega
                 NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fQuitarMancha   ; Flag para comprobar si usó la paleta en la mancha o no. En este caso comprobamos que NO ha usado la paleta en la mancha.
                 INK     colorNarrador               
-                XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño en la pared y un alambique al fondo."
+                XMESSAGE "Destacan un botellero de madera mohosa y también hay un alambique al fondo. En una de las paredes hay una gran mancha que la recubre."
                 DONE
 
 > MIRAR     _           AT lBodega
                 NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fQuitarMancha   ; Flag que indica que SI usó la paleta en la mancha porque ya no vale 0
                 INK     colorNarrador               
-                XMESSAGE "En una de las paredes destaca un botellero de madera mohosa y también puedes observar la puerta que has descubierto usando la paleta#g#fmn#t. Hay un alambique al fondo."
+                XMESSAGE "Destacan un botellero de madera mohosa y también hay un alambique al fondo. En la pared puedes observar la puerta que has descubierto rascando el yeso con la paleta#g#fmn#t."
                 DONE
 
 > EXAMINA   PARED       AT lBodega
@@ -2109,8 +2204,19 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fQuitarMancha
                 INK     colorNarrador               
                 XMESSAGE "Es una pared con una gran mancha."
+                DONE
+
+> EXAMINA   PARED       AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fQuitarMancha
+                INK     colorNarrador               
+                XMESSAGE "Has descubierto una puerta tras quitar el yeso de la pared."
                 DONE
 
 > EXAMINA   ALAMBIQUE   AT lBodega
@@ -2128,9 +2234,9 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fMoverAlambique ; Es un flag para controlar que hemos movido el Alambique
                 SET     fMoverAlambique ; Activamos dicho flag
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Mueves el alambique y al desplazarlo, puedes ver en el suelo una trampilla."
                 DONE
@@ -2161,8 +2267,8 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fMoverAlambique
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fMoverAlambique
                 INK     colorNarrador               
                 XMESSAGE "Es una trampilla de madera y metal que tiene un candado de combinación."
                 DONE
@@ -2171,20 +2277,43 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fMoverAlambique ; Ha movido el alambique
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                CLEAR   fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO fMoverAlambique ; Ha movido el alambique.
+                ZERO    fEngrasar       ; El candado no se ha engrasado aún.
                 XMESSAGE "El candado está en muy malas condiciones, parece oxidado y probablemente el mecanismo necesite un buen engrase."
+                DONE
+
+> EXAMINA   CANDADO     AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fMoverAlambique ; Ha movido el alambique
+                NOTZERO fEngrasar       ; Ya hemos engrasado el candado anteriormente.
+                ZERO    fCombinacion    ; Aún no hemos puesto la combinación al candado.
+                XMESSAGE "El candado está engrasado y parece que funciona el mecanismo de la combinación."
+                DONE
+
+> EXAMINA   CANDADO     AT lBodega
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fMoverAlambique ; Ha movido el alambique
+                NOTZERO fEngrasar       ; Ya hemos engrasado el candado anteriormente.
+                NOTZERO fCombinacion    ; Hemos puesto la combinación en el candado.
+                XMESSAGE "El candado está engrasado y tienes la combinación para poder abrirlo."
                 DONE
 
 > ENGRASAR  CANDADO     AT lBodega
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 CARRIED oLataDeAceite   ; Llevamos con nosotros la lata de aceite
-                ZERO    fUsarAceite     ; No hemos usado la lata de aceite
-                SET     fUsarAceite     ; Activamos el flag de haber usado la lata de aceite
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                ZERO    fEngrasar       ; flag que controla que hayamos engrasado el candado  
+                SET     fEngrasar       ; Engrasamos el candado
                 INK     colorNarrador
                 XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación.#n"
                 INK     colorNarrador
@@ -2196,9 +2325,9 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
                 NOTCARR oLataDeAceite   ; Hemos usado la lata de aceite
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador
                 XMESSAGE "No tienes nada con que engrasar el candado."
                 DONE 
@@ -2209,9 +2338,9 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fMoverAlambique ; Ha movido el alambique
-                ZERO    fUsarAceite     ; No hemos usado la lata de aceite
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fMoverAlambique ; Ha movido el alambique
+                ZERO    fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 INK     colorNarrador
                 XMESSAGE "El candado está oxidado y el mecanismo no funciona. Es recomendable engrasarlo."
                 DONE 
@@ -2221,14 +2350,15 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fMoverAlambique ; Ha movido el alambique
-                NOTZERO fUsarAceite     ; No hemos usado la lata de aceite
-                ZERO    fCombinacion    ; No tenemos la combinación del candado
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fMoverAlambique ; Ha movido el alambique
+                NOTZERO fEngrasar       ; flag que controla que hayamos engrasado el candado  
+                ZERO    fCombinacion    ; No tenemos la combinación del candado
                 INK     colorNarrador
                 XMESSAGE "El mecanismo del candado funciona, pero no conoces la combinación para abrirlo."
                 DONE
 ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación, el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
+
 > USAR      CANDADO
 > ABRIR     CANDADO     AT lBodega
                 NOTZERO fControlLuz
@@ -2236,8 +2366,9 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
-                NOTZERO fUsarAceite
+                NOTZERO fEngrasar       ; flag que controla que hayamos engrasado el candado    
                 NOTZERO fCombinacion    ; Tenemos la combinación del candado
+                INK     colornarrador
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
                 CLS
                 GOTO    lGabinete       ; Vamos a la localicación lGabinete
@@ -2250,16 +2381,16 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPaleta         ; Llevamos el objeto en nuestro inventario?
                 ZERO    fQuitarMancha   ; Flag para controlar el uso de la paleta
                 SET     fQuitarMancha   ; Activamos dicho flag
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡No me lo puedo creer!#n"
                 INK     colorNarrador               
                 XMESSAGE "Rascas la mancha con la paleta#g#fmn#t y descubres un contorno en la pared.#n"
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta#g#fmn#t. ¡Qué burro eres!"
+                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta. ¡Qué burro eres!"
                 DESTROY oPaleta         ; Destruimos el objeto porque no lo vamos a usar más
                 DONE
 
@@ -2271,16 +2402,16 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 CARRIED oPaleta         ; Llevamos el objeto en nuestro inventario?
                 ZERO    fQuitarMancha   ; Flag para controlar el uso de la paleta
                 SET     fQuitarMancha   ; Activamos dicho flag
-                CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "¡No me lo puedo creer!#n"
                 INK     colorNarrador               
                 XMESSAGE "Rascas la mancha con la paleta#g#fmn#t y descubres un contorno en la pared.#n"
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta#g#fmn#t. ¡Qué burro eres!"
+                XMESSAGE "¡Es una puerta! Y por cierto, hemos roto la paleta. ¡Qué burro eres!"
                 DESTROY oPaleta         ; Destruimos el objeto porque no lo vamos a usar más
                 DONE
 
@@ -2289,8 +2420,8 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fQuitarMancha   ; Ya usó la paleta
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fQuitarMancha   ; Ya usó la paleta
                 INK     colorNarrador               
                 XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
                 DONE
@@ -2301,8 +2432,8 @@ BAJAR   lBath2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fQuitarMancha   ; Ya usó la paleta
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fQuitarMancha   ; Ya usó la paleta
                 INK     colorNarrador               
                 XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
                 DONE
@@ -2442,7 +2573,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
-                ZERO    fUsarAceite
+                ZERO    fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 INK     colorNarrador
                 XMESSAGE "No puedes abrir la trampilla porque hay un candado puesto.#k"
                 DONE
@@ -2455,7 +2586,7 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fMoverAlambique ; Ha movido el alambique
-                NOTZERO fUsarAceite
+                NOTZERO fEngrasar       ; flag que controla que hayamos engrasado el candado      
                 ZERO    fCombinacion
                 INK     colorNarrador
                 XMESSAGE "El candado está engrasado y tiene mejor pinta, pero no conoces la combinación para abrirlo.#k"
@@ -2471,7 +2602,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fJugar
                 NOTZERO fMoverAlambique ; Ha movido el alambique
-                NOTZERO fUsarAceite
+                NOTZERO fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 NOTZERO fCombinacion
                 INK     colorNarrador
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
@@ -2494,7 +2625,7 @@ BAJAR   lBath2
                 NOTZERO fJugar          ; Aquí el crío nos da la pista de apagar la cerilla.
                 ZERO    fLeerDiario
                 NOTZERO fMoverAlambique ; Ha movido el alambique
-                NOTZERO fUsarAceite
+                NOTZERO fEngrasar       ; flag que controla que hayamos engrasado el candado     
                 NOTZERO fCombinacion
                 INK     colorNarrador
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k#n"
@@ -2520,7 +2651,7 @@ BAJAR   lBath2
                 NOTZERO fJugar          ; Aquí el crío nos da la pista de apagar la cerilla.
                 NOTZERO fLeerDiario
                 NOTZERO fMoverAlambique ; Ha movido el alambique
-                NOTZERO fUsarAceite
+                NOTZERO fEngrasar       ; flag que controla que hayamos engrasado el candado     
                 NOTZERO fCombinacion
                 INK     colorNarrador
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
@@ -2539,9 +2670,32 @@ BAJAR   lBath2
 ;oTarjetaLlave
 ;oLlaveCaja
 
+> BUSCAR    PELOTA      AT lGabinete
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Has llegado hasta aquí y sigues intentándolo... Admiro tu perseverancia, amigo."
+                DONE
+
+> BUSCAR    PELOTA      AT lGabinete
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Buscas la pelota por todo el gabinete, sin éxito."
+                DONE
+
 ; Damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
 ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo EXAMINAR en términos absolutos, nos lleva a morir.
 ; Para escapar es necesario quedarse sin turnos de cerilla, o apagar la cerilla (estar a oscuras) para que la criada no le vea y pueda salir
+
 
 > MIRAR     _           AT lGabinete
                 INK     colorNarrador               
@@ -2560,6 +2714,7 @@ BAJAR   lBath2
                 XMESSAGE "No hay sangre, los desgarros son limpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
                 DONE
 
+; Muerte del jugador
 > EXAMINA   CAMILLA     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2567,13 +2722,13 @@ BAJAR   lBath2
                 NOTZERO fVasAMorir
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
-                XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ.#n#n"
+                XMESSAGE "Te acercas a observar más de cerca y en ese mismo instante las cadenas se sueltan y la mujer te clava sus dedos helados y huesudos en el cuello con una fuerza sobrehumana.#k#n#n Sus largas uñas penetran en tu garganta y con un gesto brusco, te parte el cuello desde su interior, desgarrando los músculos y dejando al descubierto la tráquea...#k#n#n Ahora eres un dispensador humano de caramelos PEZ.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                DONE
+                END     ; Termina el juego.
 
 > EXAMINA   CADENAS     AT lGabinete
                 NOTZERO fControlLuz
@@ -2587,6 +2742,7 @@ BAJAR   lBath2
                 XMESSAGE "La piel de la mujer sufre laceraciones y ves la carne a través de los cortes. No hay sangre, los desgarros son limpios y no supuran... Parece que alguien o algo le está provocando los desgarros en ese mismo instante; la mujer chilla y jadea del dolor."
                 DONE
 
+; Muerte del jugador
 > EXAMINA   CADENAS     AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2600,7 +2756,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                END
+                END     ; Termina el juego
 
 > EXAMINA   MESA        AT lGabinete
                 NOTZERO fControlLuz
@@ -2613,6 +2769,7 @@ BAJAR   lBath2
                 XMESSAGE "A uno de los lados de la camilla, hay una mesa de chapa con una bandeja encima que contiene instrumental quirúrgico antiguo en unas condiciones poco higiénicas."
                 DONE
 
+; Muerte del jugador
 > EXAMINA   MESA        AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2622,13 +2779,13 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "Te acercas a la mesa.#k#n Notas un crujido metálico y ves como algo que se mueve delante de ti te clava un objeto punzante en el pecho.#k#n Son unas tijeras.#k#n"
                 INK     colorSistema 
-                XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#n#n"
+                XMESSAGE "Has cogido las tijeras.... o al menos las llevas puestas.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                END
+                END     ;Termina el juego.
 
 > EXAMINA   SUELO       AT lGabinete
                 NOTZERO fControlLuz
@@ -2641,6 +2798,7 @@ BAJAR   lBath2
                 XMESSAGE "El suelo es de azulejo blanco; está sucio y mugriento. Hay manchas de sangre por todas partes y tiene un tacto viscoso y húmedo."
                 DONE
 
+; Muerte del jugador
 > EXAMINA   SUELO       AT lGabinete
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2654,7 +2812,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                END
+                END     ; Termina el juego
 
 ; Aquí tenemos que estar a oscuras para salir, si no es así, el juego se termina.
 ; NOTA: Aquí controlamos fJugar y dependiendo de si llevamos al crío o no, el crío nos revela que ahí están sus restos mortales.
@@ -2713,6 +2871,7 @@ BAJAR   lBath2
                 GOTO    lChamizo
                 DONE
 
+; Muerte del jugador
 > N        _            AT lGabinete
                 NOTZERO fControlLuz     ; esto estaba en NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2725,9 +2884,24 @@ BAJAR   lBath2
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                END
+                END     ; Termina el juego
 
 ; Estamos en locExtCochera
+
+> BUSCAR    PELOTA      AT lExteriorCochera ;para jugadores que repiten la aventura;
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                INK     colorconciencia
+                XMESSAGE "Can't CONTINUE...Cachondo."
+                DONE
+
+> BUSCAR    PELOTA      AT lExteriorCochera
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                INK     colornarrador
+                XMESSAGE "Recorres la rampa desesperadamente buscando la pelota, pero no encuentras nada."
+                DONE
+
 
 > MIRAR     _           AT lExteriorCochera
                 INK    colorNarrador
@@ -2757,6 +2931,7 @@ BAJAR   lBath2
                 XMESSAGE "No insistas más."             
                 DONE  
 
+; Muerte del jugador
 > ABRIR     PUERTA      AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
@@ -2765,14 +2940,15 @@ BAJAR   lBath2
                 XMESSAGE "¡QUE LA PUERTA ESTA CERRADA CAGÜEN ROS! ¡DEJA YA DE INSISTIR!#n"   
                 INK     colorNarrador
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
-                XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n"
+                XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                END  
+                END     ; Termina el juego  
 
+; Muerte del jugador
 > ABRIR     PUERTA      AT lExteriorCochera
                 NOTZERO fInsistePuerta
                 NOTZERO fInsisteMuchoPuerta
@@ -2783,13 +2959,13 @@ BAJAR   lBath2
                 XMESSAGE "Tu conciencia te la juega... En ese momento viene a tu mente el recuerdo velado del día que tu padre te atropelló sacando el coche marcha atrás. Inconscientemente te apartas de la puerta, con tan mala suerte de que tropiezas y caes de lado con todo tu peso y en una mala posición sobre la rampa de hormigón.#k#n"
                 XMESSAGE "Tus costillas crujen como una bolsa de Ruffles... Una o varias de ellas (no lo sabremos hasta que veamos la radiografía) parecen haber perforado los pulmones y ahora mismo te pareces más a un zarajo de Cuenca que a un ser humano.#n"
                 INK     colorNene
-                XMESSAGE "Yo pensaba que ibas a ayudarme y mírate. Ahora tu espíritu se va a quedar aquí conmigo para siempre.#n"
+                XMESSAGE "Yo pensaba que ibas a ayudarme y mírate. Ahora tu espíritu se va a quedar aquí conmigo para siempre.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema
-                END  
+                END     ; Termina el juego  
 
 > EXAMINA   RAMPA      AT lExteriorCochera
                 INK    colorNarrador
@@ -2805,6 +2981,28 @@ BAJAR   lBath2
 
 ; Estamos en locCochera
 
+> BUSCAR    PELOTA      AT lCochera
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Uhm... Huelo a pelota aquí..."
+                DONE
+
+> BUSCAR    PELOTA      AT lCochera
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Escrutas minuciosamente cada rincón de la estancia y te percatas de que bajo la rejilla hay un objeto atascado."
+                DONE
+
 ; CONECTAR MANGUERA de modo que le ponemos en el GRIFO
 ; ABRIR GRIFO
 ; USAR MANGUERA se llena la rejilla de agua y flota la pelota, ya la puedes coger.
@@ -2816,7 +3014,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 NOTZERO fJugar
                 INK     colorNarrador
-                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#f-.#t tirada en el suelo que está conectada al grifo.#n"
+                XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta y una manguera#g#fPQ#t tirada en el suelo que está conectada al grifo.#n"
                 INK     colorMarcos
                 XMESSAGE "¡Yo no vuelvo a tocar eso!#k#n"
                 INK     colorNarrador
@@ -2854,12 +3052,12 @@ BAJAR   lBath2
                 ZERO    fManguera
                 SET     fManguera
                 ISAT    oManguera 252
-                CREATE  oManguera
                 INK     colorNarrador               
                 XMESSAGE "El suelo está revestido de una pintura roja muy densa. Encuentras algo en una de las esquinas.#n"               
+                CREATE  oManguera
                 INK     colorSistema
                 GET     oManguera
-                MESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
+                XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 DONE
 
 > EXAMINA   SUELO       AT lCochera
@@ -2879,7 +3077,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fConectarManguera  ; la manguera está desconectada
                 INK     colorNarrador               
-                XMESSAGE "El grifo tiene un adaptador para conectar una manguera#g#f-.#t."
+                XMESSAGE "El grifo tiene un adaptador para conectar una manguera.#g#fPQ#t"
                 DONE
 
 > EXAMINA   GRIFO       AT lCochera
@@ -2889,7 +3087,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF            ; Desactivamos la oscuridad
                 NOTZERO fConectarManguera ; la manguera está conectada
                 INK     colorNarrador                 
-                XMESSAGE "El grifo tiene una manguera#g#f-.#t conectada."
+                XMESSAGE "El grifo tiene una manguera#g#fPQ#t conectada."
                 DONE
 
 > EXAMINA   GENERADOR   AT lCochera
@@ -2936,7 +3134,7 @@ BAJAR   lBath2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 ZERO    fManguera
                 INK     colorNarrador               
-                XMESSAGE "No tienes ninguna manguera#g#f-.#t."
+                XMESSAGE "No tienes ninguna manguera.#g#fPQ#t"
                 DONE
 
 > USAR      MANGUERA
@@ -2951,7 +3149,7 @@ BAJAR   lBath2
                 ZERO    fMangueraRejilla    ; Flag de que ha tenido que examinar rejilla antes
                 SET     fMangueraRejilla
                 INK     colorNarrador               
-                XMESSAGE "Pones la manguera#g#f-.#t en la rejilla."
+                XMESSAGE "Pones la manguera#g#fPQ#t en la rejilla."
                 DESTROY oManguera
                 DONE
 
@@ -2966,13 +3164,13 @@ BAJAR   lBath2
                 NOTZERO fManguera
                 NOTZERO fMangueraRejilla    ; Flag de que ha tenido que examinar rejilla antes
                 INK     colorNarrador               
-                XMESSAGE "Ya está puesta la manguera#g#f-.#t en la rejilla."
+                XMESSAGE "Ya está puesta la manguera#g#fPQ#t en la rejilla."
                 DONE
 
 > ENCHUFAR  MANGUERA
 > ACOPLAR   MANGUERA
 > CONECTAR  MANGUERA    AT lCochera
-                PREP    EN
+                PREP    EN              ; Usamos la preposición EN para el condacto: COLOCAR MANGUERA EN GRIFO
                 NOUN2   GRIFO
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2983,13 +3181,47 @@ BAJAR   lBath2
                 ZERO    fConectarManguera
                 SET     fConectarManguera   ; Flag de que ha tenido que examinar el grifo antes
                 INK     colorNarrador               
-                XMESSAGE "Conectas la manguera#g#f-.#t al grifo."
+                XMESSAGE "Conectas la manguera#g#fPQ#t al grifo."
                 DONE
 
 > ENCHUFAR  MANGUERA
 > ACOPLAR   MANGUERA
 > CONECTAR  MANGUERA    AT lCochera
-                PREP    EN
+                PREP    A               ; Usamos la preposición A para el condacto: COLOCAR MANGUERA A GRIFO
+                NOUN2   GRIFO
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fManguera
+                ;NOTZERO fMangueraRejilla 
+                ZERO    fConectarManguera
+                SET     fConectarManguera   ; Flag de que ha tenido que examinar el grifo antes
+                INK     colorNarrador               
+                XMESSAGE "Conectas la manguera#g#fPQ#t al grifo."
+                DONE
+
+> ENCHUFAR  MANGUERA
+> ACOPLAR   MANGUERA
+> CONECTAR  MANGUERA    AT lCochera
+                PREP    CON             ; Usamos la preposición CON para el condacto: COLOCAR MANGUERA CON GRIFO
+                NOUN2   GRIFO
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fManguera
+                ;NOTZERO fMangueraRejilla 
+                ZERO    fConectarManguera
+                SET     fConectarManguera   ; Flag de que ha tenido que examinar el grifo antes
+                INK     colorNarrador               
+                XMESSAGE "Conectas la manguera#g#fPQ#t al grifo."
+                DONE
+
+> ENCHUFAR  MANGUERA
+> ACOPLAR   MANGUERA
+> CONECTAR  MANGUERA    AT lCochera
+                PREP    EN              ; Usamos la preposición EN para el condacto: COLOCAR MANGUERA EN GRIFO
                 NOUN2   GRIFO
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -2999,9 +3231,42 @@ BAJAR   lBath2
                 ;NOTZERO fMangueraRejilla 
                 NOTZERO fConectarManguera
                 INK     colorNarrador               
-                XMESSAGE "Ya esta puesta la manguera#g#f-.#t en el grifo."
+                XMESSAGE "Ya esta puesta la manguera#g#fPQ#t en el grifo."
                 DONE
 
+> ENCHUFAR  MANGUERA
+> ACOPLAR   MANGUERA
+> CONECTAR  MANGUERA    AT lCochera
+                PREP    A               ; Usamos la preposición A para el condacto: COLOCAR MANGUERA A GRIFO
+                NOUN2   GRIFO
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fManguera
+                ;NOTZERO fMangueraRejilla 
+                NOTZERO fConectarManguera
+                INK     colorNarrador               
+                XMESSAGE "Ya esta puesta la manguera#g#fPQ#t en el grifo."
+                DONE
+
+> ENCHUFAR  MANGUERA
+> ACOPLAR   MANGUERA
+> CONECTAR  MANGUERA    AT lCochera
+                PREP    CON             ; Usamos la preposición CON para el condacto: COLOCAR MANGUERA CON GRIFO
+                NOUN2   GRIFO
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTZERO fManguera
+                ;NOTZERO fMangueraRejilla 
+                NOTZERO fConectarManguera
+                INK     colorNarrador               
+                XMESSAGE "Ya esta puesta la manguera#g#fPQ#t en el grifo."
+                DONE
+
+;Muerte del jugador
 > USAR      GRIFO
 > ABRIR     GRIFO       AT lCochera     ; Mueres porque se inunda la Cochera y no se ha cogido la manguera, no se ha conectado al grifo y no se ha puesto la manguera en la rejilla
                 NOTZERO fControlLuz
@@ -3011,14 +3276,16 @@ BAJAR   lBath2
                 ZERO    fManguera                   ; No encontró la manguera
                 INK     colorNarrador                           
                 XMESSAGE "Abres el grifo.#k#n"
-                XMESSAGE "Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas.#n#n"
+                XMESSAGE "Comienza a salir agua a mucha presión y de inmediato la presión es tan fuerte que arranca el grifo y el caudal de agua te arrastra hacia la pared con fuerza.#n#n El impacto contra la pared te parte la columna y ahora no puedes moverte... Es tan solo cuestión de horas.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
+; Muerte del jugador
 > USAR      GRIFO
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
@@ -3029,16 +3296,17 @@ BAJAR   lBath2
                 ZERO    fMangueraRejilla            ; No puso la manguera en la rejilla
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     colorNarrador                           
-                XMESSAGE "Abres el grifo y comienza a salir agua a presión. No conectaste la manguera#g#f-.#t y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k#n"
+                XMESSAGE "Abres el grifo y comienza a salir agua a presión. No conectaste la manguera#g#fPQ#t y ahora te arrepientes un poco, porque no hay forma de parar el caudal.#k#n"
                 XMESSAGE "El grifo te revienta en la cara y te la destroza provocando una bonita hemorragia fatal.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END                
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego              
 
-
+; Muerte del jugador
 > USAR      GRIFO
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
@@ -3050,8 +3318,8 @@ BAJAR   lBath2
                 NOTZERO fConectarManguera           ; No conectó la manguera al grifo
                 INK     colorNarrador                           
                 XMESSAGE "Abres el grifo y el agua comienza a salir con una presión muy fuerte.#k#n"
-                XMESSAGE "La manguera#g#f-.#t se vuelve completamente ingobernable y te cruza la cara de un latigazo con tal fuerza que te desploma en el suelo inconsciente. #k#n"
-                XMESSAGE "Un gran charco de sangre se drena a través de la rejilla, el nivel de agua sube, la rejilla se abre y aparece un objeto.#n"
+                XMESSAGE "La manguera#g#fPQ#t se vuelve completamente ingobernable y te cruza la cara de un latigazo con tal fuerza que te desploma en el suelo inconsciente. #k#n"
+                XMESSAGE "Un gran charco de sangre se drena a través de la rejilla, el nivel de agua sube, la rejilla se abre y aparece un objeto.#k#n#n"
                 INK     colorconciencia
                 XMESSAGE "...#n"
                 INK     colorSistema
@@ -3063,9 +3331,11 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END 
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
+; Muerte del jugador
 > USAR      GRIFO
 > ABRIR     GRIFO       AT lCochera                 ; Mueres porque se inunda la Cochera
                 NOTZERO fControlLuz
@@ -3076,18 +3346,20 @@ BAJAR   lBath2
                 NOTZERO fMangueraRejilla            ; Si puso la manguera en la rejilla
                 ZERO    fConectarManguera           ; No conectó la manguera al grifo
                 INK     colorNarrador                           
-                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en continua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#n#n"
+                XMESSAGE "Abres el grifo y comienza a salir agua a borbotones. No hay forma de parar este desastre. El grifo ya no se cierra. Se está inundando la cochera a gran velocidad y el agua comienza a penetrar en el generador.#n#n#k Creo que tus zapatos empapados de agua no son el aislante más conveniente para unos cuantos miles de voltios en continua que te van a dejar en este preciso instante como una ración de boquerones a la andaluza...#n#n#k No hace falta ser cocinero para averiguar que estás frito.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END 
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
 > USAR      GRIFO
 > ABRIR     GRIFO       AT lCochera                                
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
+                NOTCARR oPelota
                 CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF                      ; Desactivamos la oscuridad
                 NOTZERO fManguera                   ; Si encontró la manguera
@@ -3105,6 +3377,28 @@ BAJAR   lBath2
                 XMESSAGE"¿Nos echamos un partidito?"                
                 DONE
 
+; Muerte del jugador
+> USAR      GRIFO
+> ABRIR     GRIFO       AT lCochera                                
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oPelota
+                CARRIED oCerillas                   ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF                      ; Desactivamos la oscuridad
+                NOTZERO fManguera                   ; Si encontró la manguera
+                NOTZERO fMangueraRejilla            ; Si puso la manquera en la rejilla
+                NOTZERO fConectarManguera           ; Si conectó la manguera al grifo
+                INK     colorNarrador                           
+                XMESSAGE "Vuelves a abrir el grifo. Como el desagüe está hasta arriba de agua, la presión tan fuerte hace que la manguera se desacople y se vuelva loca.#k#n#n  Recibes un latigazo en toda la cara que te salta los dientes y mientras caes al suelo derrumbado, la manguera se ensaña contigo como si estuviera viva. #k#n#n  Tantos son los latigazos que recibes que te deja más tierno que un pulpo a feira de las Rías Baixas...#k#n#n"  
+                INK colorMuerte
+                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "#n"
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
+     
+                DONE
 ;> CERRAR    GRIFO       AT lCochera
 ;                NOTZERO fControlLuz
 ;                NOTZERO fTurnosConLuz
@@ -3174,6 +3468,20 @@ BAJAR   lBath2
 
 ; Estamos en locExtChamizo
 
+> BUSCAR    PELOTA      AT lExteriorChamizo
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                INK     colorNarrador
+                XMESSAGE "No encuentro nada de eso, pero el musgo que recubre las paredes del chamizo parece muy fresco."
+                DONE
+
+> BUSCAR    PELOTA      AT lExteriorChamizo
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                INK     colornarrador
+                XMESSAGE "Pese a la pinta de abandonado que tiene el chamizo, rebuscas por cada hueco humedo, infecto y lleno de cosas oxidadas. No encuentras ninguna pelota."
+                DONE
+
 > EXAMINA   LISTONES
 > EXAMINA   PUERTA      AT lExteriorChamizo             
                 INK     colorNarrador               
@@ -3234,6 +3542,29 @@ BAJAR   lBath2
 ; NOTA Aquí el comportamiento del MIRAR te lleva a la muerte si lo haces dos veces.
 
 ; Controlar que una vez usas pala, no la uses de nuevo
+
+> BUSCAR    PELOTA      AT lChamizo
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Este lugar está sucio y huele a muerto.. No quiero buscar aquí."
+                DONE
+
+> BUSCAR    PELOTA      AT lChamizo
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Miras un poco por encima pero no tienes ningún interes por ponerte a buscar una pelota aquí."
+                DONE
+
 
 > MIRAR        _        AT lChamizo
                 NOTZERO fControlLuz
@@ -3562,6 +3893,7 @@ BAJAR   lBath2
                 XMESSAGE "La puerta está abierta, no necesitamos romper nada."
                 DONE
 
+; Muerte del jugador
 > USAR      HACHA
 > CORTA     TRAVESA
 > ROMPER    TRAVESA     AT lChamizo
@@ -3594,8 +3926,9 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
 > USAR      HACHA
 > CORTA     TRAVESA
@@ -3623,6 +3956,28 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locAseo
+
+> BUSCAR    PELOTA      AT lAseo
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Vámonos de aquí. ¡Ya!"
+                DONE
+
+> BUSCAR    PELOTA      AT lAseo
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "¡No quiero! Apenas consigo ver nada y hay algo en este lugar que me pone los pelos de punta."
+                DONE
 
 > MIRAR     _           AT lAseo
                 NOTZERO fControlLuz
@@ -3752,6 +4107,28 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locCocina
+
+> BUSCAR    PELOTA      AT lCocina
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorSistema
+                XMESSAGE "Aquí no hay ninguna pelota. ¿Qué tal si metes la mano en el fregadero a ver que pasa?"
+                DONE
+
+> BUSCAR    PELOTA      AT lCocina
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Aquí no hay rastro de la pelota."
+                DONE
 
 > E         _           AT lCocina 
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
@@ -3883,6 +4260,7 @@ BAJAR   lBath2
                 XMESSAGE "No creo que sea una buena idea."
                 DONE
 
+; Muerte del jugador
 > EXAMINA   TRITURADOR   AT lCocina
                 NOTZERO fTriturador  ; si no es cero, es que es la segunda vez que lo examina, así que lo mato por cotilla
                 INK     colorNarrador               
@@ -3896,7 +4274,7 @@ BAJAR   lBath2
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"         
                 INK     colorSistema              ; Color del sistema
-                END
+                END     ; Termina el juego
 
 > EXAMINA   MUEBLE
 > EXAMINA	APARADOR    AT lCocina
@@ -4000,6 +4378,28 @@ BAJAR   lBath2
 ; Estamos en locDespensa
 ; Debemos implentar que cae una galleta y que en cualquier momento le vamos a matar por comersela. Hay que hacer icono de galleta y retocar todos estos condactos. Si se come la galleta hacemos el chiste con que en esta aventura no hay que comer nada y que para tocar las narices, nosotros ya tenemos las cerillas.
 
+> BUSCAR    PELOTA      AT lDespensa
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorNarrador
+                XMESSAGE "Una pelota no, pero intuyes que hay algo escondido en la parte superior de la alacena."
+                DONE
+
+> BUSCAR    PELOTA      AT lDespensa
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Una pelota en una despensa es algo del todo inusual. No encuentras nada."
+                DONE
+
 > EXAMINA   DESPENSA
 > MIRAR     _           AT lDespensa
                 INK     colorNarrador               
@@ -4043,7 +4443,7 @@ BAJAR   lBath2
                 INK     colorNarrador               ; Color del narrador
                 XMESSAGE "Los estantes no parecen tener la capacidad de soportar tu peso.#n"
                 INK     colorconciencia
-                XMESSAGE "¿Quién te crees que eres?... ¿El puto doctor Livingstone de expedición?. Aunque ya que te huelo las intenciones, estoy seguro de que hay otra manera de hacer lo que te propones, colega."
+                XMESSAGE "¿Quién te crees que eres? ¿El puto doctor Livingstone de expedición? Aunque ya que te huelo las intenciones, estoy seguro de que hay otra manera de hacer lo que te propones, colega."
                 DONE
 
 > ROMPER    ALACENA     AT lDespensa
@@ -4068,6 +4468,7 @@ BAJAR   lBath2
                 XMESSAGE " ¿Estás seguro de querer hacerlo?"       
                 DONE
 
+; Muerte del jugador
 > COMER         GALLETA
                 NOTZERO    oGalleta     ; Segundo intento de comerse la galleta.
                 NOTZERO fControlLuz
@@ -4084,15 +4485,16 @@ BAJAR   lBath2
                 INK colorconciencia
                 XMESSAGE "Muy listo amigo. A quien se le ocurre comerse una galleta seca, olvidada durante años encima de la despensa.#k#n#b"
                 INK colorNarrador
-                XMESSAGE "Acabas de sufrir un shock anafiláctico.#n"
+                XMESSAGE "Acabas de sufrir un shock anafiláctico.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema     
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema             
                 XMESSAGE "Amigo jugador, solo te morirás de hambre en otras aventuras, aquí hacemos lo contrario. Para controlar mierdas con turnos, ya tenemos las cerillas.#n"
-                END                
-                DONE
+                END     ; Termina el juego                
+                
 
 > OLER          GALLETA
                 INK     colorMarcos
@@ -4141,6 +4543,28 @@ BAJAR   lBath2
 
 
 ; Estamos en locEscaleras
+
+> BUSCAR    PELOTA      AT lEscaleras
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Un escalón se mueve, ¿por qué no lo retiras?"
+                DONE
+
+> BUSCAR    PELOTA      AT lEscaleras
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "La luz es tenue y los escalones no están en muy buen estado. No es buena idea buscar una pelota aquí. Es peligroso."
+                DONE
 
 > EXAMINA	ESCALERAS   AT lEscaleras                
                 NOTZERO fControlLuz
@@ -4263,7 +4687,7 @@ BAJAR   lBath2
                 GET     oTarjetaLlave
                 XMESSAGE "#n"           ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK     colorMarcos               ; Color del protagonista
-                XMESSAGE "¿Que abrirá esa tarjeta de seguridad?#g#f<#t#n"
+                XMESSAGE "¿Qué abrirá esa tarjeta de seguridad?#g#f<#t#n"
                 INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "Tratemos de averiguarlo."
                 DONE
@@ -4326,6 +4750,7 @@ BAJAR   lBath2
                 RESTART                 ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE 
 
+; Muerte del jugador
 > BAJAR     _          AT lEscaleras
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -4334,14 +4759,16 @@ BAJAR   lBath2
                 CLS                     ; Limpiamos la pantalla     
                 NOTZERO fEscalon
                 INK     colorNarrador               
-                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
+                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
+; Muerte del jugador
 > SUBIR     _          AT lEscaleras
                 CLS                     ; Limpiamos la pantalla
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
@@ -4350,13 +4777,13 @@ BAJAR   lBath2
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?             
                 NOTZERO fEscalon
                 INK     colorNarrador               
-                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#n#n"
+                XMESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 INK     colorSistema               
-                END
+                END     ; Termina el juego
 
 > SUBIR     _           AT lEscaleras
                 ZERO    fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA                
@@ -4381,6 +4808,29 @@ BAJAR   lBath2
 ; NOTA: No puede haber restos humanos en la chimenea si los cuerpos fueron enterrados
 
 ;La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#nLa estancia es amplia y está presidida por una gran lareira de piedra con un cassette de forja. Tu padre lo instaló porque esta ya no se usaba para cocinar sobre sus ascuas y principalmente por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos tubos pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#nPuedes observar una vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#nDesde aquí se accede a un amplio patio trasero al este."
+
+> BUSCAR    PELOTA      AT lSalon
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Tus padres nunca te han dejado jugar en el salón. Ni a ti ni a nadie."
+                DONE
+
+> BUSCAR    PELOTA      AT lSalon
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Es del todo improbable encontrar una pelota aquí. Buscas y no encuentras nada."
+                DONE
+
 > EXAMINA   SALON
 > MIRAR     _           AT lSalon
                 INK     colorNarrador               
@@ -4555,6 +5005,49 @@ BAJAR   lBath2
 ;
 ; Estamos en locCriada
 
+> BUSCAR    PELOTA      AT lCriada
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "¿Por qué no buscas encima de la cama?"
+                DONE
+
+> BUSCAR    PELOTA      AT lcriada
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "¡PUAJ! ¡Una CUCARAÑA! ¡No quiero buscar pelotas aquí!"
+                DONE
+
+; Muerte del jugador
+> COMER     CUCARA      AT lcriada  ; Nos referimos a la CUCARAÑA. 
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Encuentras una Cucaraña sobre la cama e inexplicablemente sientes unos deseos incontrolables de llevártela a la boca...#k#n#n"
+                INK colorMarcos
+                XMESSAGE "MMMM...Tiene un exoesqueleto quitinoso muy crunchy.#k#n#n"
+                INK     colornarrador
+                XMESSAGE "Disfrutas cada bocado del neoartrópodo mutante y la fiesta en tu paladar parece no terminar nunca. #k#b#n De repente notas un sabor muy amargo...#k#b#n Acabas de masticar una de las glándulas de veneno y a los segundos la musculatura de tu cuerpo comienza a ponerse rígida. Se te contraen todos los músculos con una tensión tal que comienzas a adoptar una postura retorcida como un muñeco de ventrilocuo al que tiran en el baúl. #k#n#n"
+                INK colorMuerte
+                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "#n"
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
+                
+
 > MIRAR     _           AT lCriada
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -4703,6 +5196,7 @@ BAJAR   lBath2
                 XMESSAGE "Se trata de un muro de mampostería de granito con unión de mortero bastardo de cemento blanco, cal morena y arena roja con un rejuntado de cemento gris y arena de río."
                 DONE
 
+; Muerte del jugador
 > TREPAR    MURO
 > SALTAR    MURO        AT lPatio
                 NOTZERO fControlLuz
@@ -4712,13 +5206,14 @@ BAJAR   lBath2
                 INK     colorNarrador               
                 XMESSAGE "Sin más dilación, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza...#k#n"
                 XMESSAGE "Lamentablemente el arrojo que te caracteriza es absolutamente nulo....#k#n"
-                XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#b#n"
+                XMESSAGE "Lo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema               
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
 > EXAMINA   PATIO
 > MIRAR     _           AT lPatio
@@ -4726,6 +5221,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
+                NOTCARR oPelota         ; No llevamos la pelota con nosotros
                 ZERO    fPatio
                 SET     fPatio
                 INK     colorNarrador               
@@ -4747,6 +5243,38 @@ BAJAR   lBath2
                 XMESSAGE "No tengo ninguna pelota#g#f:;#t.#n"
                 INK     colorNene
                 XMESSAGE "En la casa seguro que hay una pelota#g#f:;#t, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
+                INK     colorconciencia               ; Color de tu conciencia
+                XMESSAGE "Ya tenemos trabajo que hacer... Tenemos que encontrar la dichosa pelotita."
+                DONE
+
+> EXAMINA   PATIO
+> MIRAR     _           AT lPatio
+                NOTZERO fControlLuz
+                NOTZERO fTurnosConLuz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
+                CLEAR   fDarkF          ; Desactivamos la oscuridad
+                CARRIED oPelota
+                ZERO    fPatio
+                SET     fPatio
+                INK     colorNarrador               
+                XMESSAGE "Escuchas como si estuvieran unos críos jugando.#n"
+                INK     colorMarcos               ; Color del protagonista
+                XMESSAGE "¿Qué cojones? ¡Veo unos críos jugando!#n"
+                INK     colorNarrador               
+                XMESSAGE "Uno de ellos para en seco, gira la cabeza y te mira. Se acerca despacio y te quedas inmovilizado; no sabes cómo reaccionar.#n"
+                XMESSAGE "Ves que se aproxima y se detiene frente a ti.#n"
+                INK     colorNene
+                XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?#n"
+                INK     colorconciencia               ; Color de tu conciencia
+                XMESSAGE "¡Joder!, ¿este crío es real? Ya no veo al otro crío.#k#n"
+                INK     colorMarcos               ; Color del protagonista 
+                XMESSAGE "Juguemos un poco, supongo.#n"
+                INK     colorNene
+                XMESSAGE "Quiero jugar a la pelota#g#f:;#t.#n"
+                INK     colorMarcos               ; Color del protagonista 
+                XMESSAGE "Yo tengo una pelota#g#f:;#t.#n"
+                INK     colorNene
+                XMESSAGE "¿Quieres jugar conmigo entonces?#n"
                 INK     colorconciencia               ; Color de tu conciencia
                 XMESSAGE "No sé si es buena idea jugar con un... ¿fantasma? Por otro lado, igual nos echa una mano. ¿Le echamos un par o escribimos FIN y acabamos con esta agonía?"
                 DONE
@@ -4797,13 +5325,25 @@ BAJAR   lBath2
                 XMESSAGE "Eso no es posible."
                 DONE
 
-> BUSCAR    PELOTA      AT lPatio
-                NOTZERO fPatio          ; Controlamos que el crío ya ha aparecido en escena.
-                NOTZERO fControlLuz
-                NOTZERO fTurnosConLuz
-                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                CLEAR   fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR oPelota
+
+> BUSCAR    PELOTA      AT lpatio
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Sin duda sería el lugar perfecto donde un niño dejaría olvidada una pelota... Pero tienes una suerte terrible."
+                DONE
+
+> BUSCAR    PELOTA      AT lpatio
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
                 INK     colorNene
                 XMESSAGE "Si la pelota estuviera en el patio, estaríamos jugando con ella."
                 DONE
@@ -4848,6 +5388,28 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locRoom1
+
+> BUSCAR    PELOTA      AT lRoom1
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Esa cama parece muy confortable... ¿Le prestas un poco de atención?"
+                DONE
+
+> BUSCAR    PELOTA      AT lRoom1
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Es un poco desesperante, pero no hay nada de eso aquí."
+                DONE
 
 > EXAMINA   ALCOBA
 > MIRAR     _           AT lRoom1
@@ -4929,6 +5491,28 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en el locBath1
+
+> BUSCAR    PELOTA      AT lBath1
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Como te fastidiaba tirar la pelota contra la pared desde el Water, calcular mal la trayectoria y tener que levantarte con los pantalones bajados a cogerla del suelo."
+                DONE
+
+> BUSCAR    PELOTA      AT lBath1
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "No hay rastro de la pelota por aquí."
+                DONE
 
 > S         _           AT lBath1
                 NOTZERO fControlLuz
@@ -5014,6 +5598,28 @@ BAJAR   lBath2
 
 ; Estamos en la locRoom2
 
+> BUSCAR    PELOTA      AT lRoom2
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "No se qué tienen las camas de esta casa que dan sueño. Ah no, espera..¡Es tu perseverancia que aburre a los muertos!"
+                DONE
+
+> BUSCAR    PELOTA      AT lRoom2
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Miras por todas partes, pero no encuentras la pelota."
+                DONE
+
 > EXAMINA   ALCOBA
 > MIRAR     _           AT lRoom2
                 NOTZERO fControlLuz
@@ -5083,6 +5689,29 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en el locBath2
+
+> BUSCAR    PELOTA      AT lBath2
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Puedes mirar dentro del Water. A ver si te ahogas, ¡cansino!"
+                DONE
+
+> BUSCAR    PELOTA      AT lBath2
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Es muy complicado encontrar una pelota en un lugar donde no se suele jugar con ella."
+                DONE
+
 
 > N         _           AT lBath2                
                 NOTZERO fControlLuz
@@ -5279,6 +5908,44 @@ BAJAR   lBath2
      
 ; Estamos en locRetrete
 
+> BUSCAR    PELOTA      AT lRetrete
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "¡Vamos!, ¡salta de cabeza y termina con esta agonía!"
+                DONE
+
+; Muerte del jugador
+> SALTAR        _       AT lRetrete
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Saltas con energía desde la taza del water y vas a parar de cabeza al lavabo.#n#k#b  Te partes el cuello con un chasquido seco y te quedas conejo.#k#n#n"
+                INK colorMuerte
+                MESSAGE "#g#fBHAS MUERTOC#t"
+                MESSAGE "#g#fbdefghijkldc#t"
+                MESSAGE "#n"
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
+
+> BUSCAR    PELOTA      AT lRetrete
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Buscas la pelota por los alrededores, pero no encuentras nada."
+                DONE
+
 > EXAMINA   RETRETE
 > MIRAR     _           AT lRetrete
                 INK     colorNarrador               
@@ -5349,13 +6016,35 @@ BAJAR   lBath2
                 DONE 
 
 ; Estamos en locRoom3
-; Se activa un flag en este room3 de modo que debes resolver el puzzle con la niña
 
+> BUSCAR    PELOTA      AT lRoom3
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "creo que por MIRAR un poco no pierdes nada."
+                DONE
+
+> BUSCAR    PELOTA      AT lRoom3
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "Aquí no está la pelota."
+                DONE
+
+; Se activa un flag en este room3 de modo que debes resolver el puzzle con la niña
 > R         _           AT lRoom3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?
-                NOTZERO fFlashBack
+                NOTZERO fFlashBack      ; Flag para controlar que aparezca la niña en lPasillo2
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
                 INK     colorNarrador               
                 XMESSAGE "Algo extraño ocurre aquí. Estás en el mismo lugar pero el mobiliario es completamente distinto... Los muebles son de otra época.#n#n Hay una cama muy grande y alta con cabecero y pie de forja. Donde estaba la mesilla ahora hay una lámpara victoriana de pie y una alfombra de la misma época."
@@ -5388,7 +6077,7 @@ BAJAR   lBath2
                 NOTZERO fTurnosConLuz
                 CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?            
                 CLEAR   fDarkF          ; Desactivamos la oscuridad
-                ZERO    fFlashBack
+                ZERO    fFlashBack      ; Flag para controlar que aparezca la niña en lPasillo2
                 SET     fFlashBack
                 INK     colorNarrador               
                 XMESSAGE "Una presencia te invade y te tira al suelo... quedas inconsciente por unos instantes y cuando despiertas....#k#n#nEs el mismo lugar... pero estás desconcertado... Todo el contenido de la habitación está ahí, pero es... distinto.#n"
@@ -5585,6 +6274,28 @@ BAJAR   lBath2
 
 ; Estamos en locBath3
 
+> BUSCAR    PELOTA      AT lBath3
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "No hay pelota aquí, pero parece que la terma está llena de agua."
+                DONE
+
+> BUSCAR    PELOTA      AT lBath3
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Buscas la pelota, pero no encuentras nada."
+                DONE
+
 > MIRAR     _           AT lBath3
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -5694,6 +6405,28 @@ BAJAR   lBath2
 
 ; Estamos en el locPasillo1
 
+> BUSCAR    PELOTA      AT lPasillo1
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "El pasillo es inmenso... Como mi paciencia."
+                DONE
+
+> BUSCAR    PELOTA      AT lPasillo1
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Buscas la pelota por el pasillo, pero no encuentras nada."
+                DONE
+
 > EXAMINA   PASILLO
 > MIRAR     _           AT lPasillo1
                 INK     colorNarrador               
@@ -5764,6 +6497,28 @@ BAJAR   lBath2
 ; Estamos en locPasillo2
 ; Tenemos una cría que se pasea por los pasillos y si no le das un objeto, te mata
 ; Una vez le das el objeto, la cría desaparece, no vuelve a salir
+
+> BUSCAR    PELOTA      AT lPasillo2
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "El pasillo es inmenso... Como mi paciencia."
+                DONE
+
+> BUSCAR    PELOTA      AT lPasillo2
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Buscas la pelota por el pasillo. Tus expectativas se ven frustradas."
+                DONE
 
 > EXAMINA   PASILLO
 > MIRAR     _           AT lPasillo2
@@ -5947,6 +6702,7 @@ BAJAR   lBath2
 ; No hemos visto la foto
 ; No llevamos el peluche
 ; Como no llevamos el peluche, la niña nos mata.
+; Muerte del jugador
 > S         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -5971,9 +6727,11 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
+; Muerte del jugador
 > E         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -5998,9 +6756,11 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
+; Muerte del jugador
 > O         _           AT lPasillo2
                 NOTZERO fControlLuz
                 NOTZERO fTurnosConLuz
@@ -6025,8 +6785,9 @@ BAJAR   lBath2
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
-                INK     colorSistema
-                END
+                XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
+                INK     colorSistema              ; Color del sistema
+                END     ; Termina el juego
 
 ; Hemos visto la foto
 ; Llevamos el peluche
@@ -6138,7 +6899,8 @@ BAJAR   lBath2
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu conciencia
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
-                SET     fCombinacion
+                ZERO    fCombinacion  ; Flag que nos sirve para abrir el candado de la trampilla de la bodega
+                SET     fCombinacion  ; Ahora podremos abrir el candado de la trampilla de la bodega
                 DESTROY oPeluche	
                 LET     fNenaMala 5
                 GOTO    lPasillo3
@@ -6167,6 +6929,7 @@ BAJAR   lBath2
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu conciencia
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
+                ZERO    fCombinacion
                 SET     fCombinacion
                 DESTROY oPeluche
                 LET     fNenaMala 5	
@@ -6196,6 +6959,7 @@ BAJAR   lBath2
                 XMESSAGE "Combinación memorizada. Debes investigar la bodega. Eso te mola, ¿eh?#k#n" ; Color de tu conciencia
                 INK     colorMarcos               ; Color del protagonista
                 XMESSAGE "Es algo que tenía pensado hacer, pero con unas tapas de queso, que si no, el vino cae mal al estómago.#k"
+                ZERO    fCombinacion
                 SET     fCombinacion
                 DESTROY oPeluche
                 LET     fNenaMala 5	
@@ -6263,6 +7027,29 @@ BAJAR   lBath2
                 DONE
 
 ; Estamos en locPasillo3
+
+> BUSCAR    PELOTA      AT lPasillo3
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No tenemos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorconciencia
+                XMESSAGE "El pasillo es inmenso... Como mi paciencia."
+                DONE
+
+> BUSCAR    PELOTA      AT lPasillo3
+                NOTZERO fPatio  ; Hemos hablado con el crío en el patio.
+                NOTCARR oPelota ; No llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colornarrador
+                XMESSAGE "Observas con atención el pasillo en busca de una pelota, no tienes suerte."
+                DONE
+
 > EXAMINA   PASILLO
 > MIRAR     _           AT lPasillo3
                 INK     colorNarrador               
@@ -6484,7 +7271,7 @@ BAJAR   lBath2
                 MESSAGE  "llave de la bodega#g#f1#t" 
                 MESSAGE  "llaves del coche#g#fIJ#t"
                 MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#f-.#t"
+                MESSAGE  "una manguera#g#fPQ#t"
                 MESSAGE  "una galleta#g#f"#t"
                 MESSAGE "#n"
                 INK 9
@@ -6508,7 +7295,7 @@ BAJAR   lBath2
                 MESSAGE  "llave de la bodega#g#f1#t" 
                 MESSAGE  "llaves del coche#g#fIJ#t"
                 MESSAGE  "una lata de aceite#g#fFG#t"
-                MESSAGE  "una manguera#g#f-.#t"
+                MESSAGE  "una manguera#g#fPQ#t"
                 MESSAGE  "una galleta#g#f"#t"
                 MESSAGE "#n"
                 INK colorMuerte                
@@ -6516,22 +7303,20 @@ BAJAR   lBath2
                 MESSAGE "#g#fbdefghijkldc#t"
                 INK 15                   
                 DONE
-
-> AYUDA     OSITO                
-                XMESSAGE "fControlLuz"
-                PRINT   73
+;Ayuda osito : 
+> AYUDA     OSITO   
+                XMESSAGE "fCombinacion"
+                PRINT   107
+                SET fCombinacion
+                XMESSAGE "SET fCombinacion"
+                PRINT   107
                 XMESSAGE "#n"
-                XMESSAGE "fUsarCerilla"
-                PRINT   90
+                XMESSAGE "fEngrasar"
+                PRINT   91
                 XMESSAGE "#n"
-                XMESSAGE "fTurnosConLuz"
-                PRINT   72
-                XMESSAGE "#n"
-                XMESSAGE "fVasAMorir"
-                PRINT   89
-                XMESSAGE "#n"
-                XMESSAGE "fDarkF"
-                PRINT   28
+                XMESSAGE "fmoverAlambique"
+                PRINT   102
+                
                 DONE
                 
 > USAR      MAGIA
@@ -6553,6 +7338,9 @@ BAJAR   lBath2
                 CREATE  oPaleta
                 CREATE  oLlaveBodega
                 ;CREATE  oLlaveCoche
+                ISAT    oLataDeAceite   252
+                CREATE  oLataDeAceite
+                GET     oLataDeAceite
                 GET     oCerillas
                 ;GET     oLlaveChamizo
                 GET     oLlavePorche
@@ -6561,6 +7349,8 @@ BAJAR   lBath2
                 ;GET     oPelota
                 GET     oPaleta
                 GET     oLlaveBodega
+                ZERO    fCombinacion
+                SET     fCombinacion
                 ;GET     oLlaveCoche
                 GOTO    lRecibidor
                 RESTART
@@ -6603,6 +7393,7 @@ BAJAR   lBath2
                 
                 RESTART
 
+; Muerte del jugador
 > ENCENDER  CERILLA
 > PRENDER   CERILLA     
 > USAR		CERILLA 
@@ -6610,14 +7401,14 @@ BAJAR   lBath2
                 NOTZERO fVasAPalmar
                 INK     colorNarrador               
                 XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
-                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#n#n"
+                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#k#n#n"
                 INK colorMuerte
                 MESSAGE "#g#fBHAS MUERTOC#t"
                 MESSAGE "#g#fbdefghijkldc#t"
                 MESSAGE "#n"
                 XMESSAGE "Para comenzar el juego desde dentro de la casa: USAR CHUPETE"
                 INK     colorSistema              ; Color del sistema
-                END
+                END     ; Termina el juego
 
 ; Controlamos el prender cerilla mientras ya tienes una encendida. Es una forma de evitar acumular turnos de luz. Si no existiera este control, por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría jugar durante muchos turnos sin tener que encender cerillas.
 > ENCENDER  CERILLA
@@ -6643,6 +7434,26 @@ BAJAR   lBath2
                 NOTZERO fApagarCerilla
                 INK     colorNarrador              ; Color del sistema
                 XMESSAGE "Ya has apagado la cerilla#g#f4#t."
+                DONE
+
+> BUSCAR    PELOTA   
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                CARRIED oPelota  ; Llevamos la pelota.
+                NOTCARR oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorNarrador
+                XMESSAGE "Ya llevas la pelota contigo#g#f:;#t."
+                DONE
+
+> BUSCAR    PELOTA   
+                ZERO    fPatio  ; No hemos hablado con el crío en el patio.
+                CARRIED oPelota  ; Llevamos la pelota.
+                NOTZERO fControlLuz     ; No es cero, luego tenemos luz
+                NOTZERO fTurnosConLuz   ; Comprobamos que tenemos turnos de luz
+                CARRIED oCerillas       ; Llevamos el objeto en nuestro inventario?       ; Llevamos en el inventario las cerillas
+                CLEAR   fDarkF          ; Desactivamos la oscuridad, la localización tiene luz porque ponemos el flag de oscuridad a 0
+                INK     colorNarrador
+                XMESSAGE "Ya llevas la pelota contigo#g#f:;#t."
                 DONE
 
 > EXAMINA   DIARIO
