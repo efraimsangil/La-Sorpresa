@@ -1,5 +1,4 @@
-FINAL PEOR: Te vas solo, has salido por el gabinete y no has jugado 
-con el niño y no has desenterrado los cadáveres.
+FINAL PEOR: Te vas solo, has salido por el gabinete y no has jugado con el niño y no has desenterrado los cadáveres.
 
 - oCerillas
 - oLlaveBodega <--- oSecretKey1 <-- oLlaveCaja

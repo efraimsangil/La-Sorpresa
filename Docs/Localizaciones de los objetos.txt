@@ -1,0 +1,26 @@
+;                               Objetos
+#define oRopa               0            ; lBurgos
+#define oLlaveChamizo       1            ; lCochera
+#define oLlaveCochera       2            ; No se usa
+#define oCableTelefono      3            ; No se usa
+#define oPala               4            ; lGabinete
+#define oLlavePorche        5            ; lPorche
+#define oFelpudo            6            ; lPorche
+#define oMaceta             7            ; lPorche
+#define oGnomo              8            ; lPorche
+#define oCerillas           9            ; lRecibidor
+#define oEscalon            10           ; No se usa
+#define oTarjetaLlave       11           ; lEscaleras
+#define oLlaveCaja          12           ; lBath3
+#define oDiario             13           ; lCriada
+#define oPeluche            14           ; lRoom3
+#define oLlavePatio         15           ; lCocina
+#define oFotografia1        16           ; lAseo
+#define oPelota             17           ; lCochera
+#define oPaleta             18           ; lRetrete
+#define oHacha              19           ; lBath2
+#define oLlaveBodega        20           ; lCriada
+#define oLlaveCoche         21           ; lChamizo
+#define oLataDeAceite       22           ; lBath1
+#define oManguera           23           ; lCochera
+#define oGalleta            24           ; lDespensa
