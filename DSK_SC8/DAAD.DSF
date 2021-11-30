@@ -140,7 +140,16 @@
 #define fComeGalleta        117          ; Flag que controla la intención de comerte la galleta en cualquier lugar una vez la llevas contigo.
 #define fRompeRetrete       118          ; Flag que controla que el Retrete se rompe cuando bajamos de el.
 #define fFlushCadena        119          ; Flag que controla que hayamos tirado de la cadena en las localizacione LocBath2 y LocRetrete.
-#define fVolverEntrar       120          ; Flag que controla que hemos salido de la casa y que podemos entrar por segunda vez por la puerta principal.
+#define fVolverEntrar       120          ; Flag que controla que hemos salido de la casa y que podemos
+                                         ; entrar por segunda vez por la puerta principal.
+#define fTengoPala          121          ; Flag que controla que ya hemos obtenido la pala al salir del gabinete la primera vez.
+#define fAbrirCandado       122          ; Flag que controla que ya hemos abierto el candado de la trampilla de LocBodega.
+#define fMecanismo1         123          ; Flag que controla que hayamos encontrado el mecanismo de apertura 
+                                         ; de la puerta en LocBodega.
+#define fMecanismo2         124          ; Flag que controla que hayamos persistido en la búsqueda del mecanismo de apertura
+                                         ; de la puerta en LocBodega.
+#define fMecanismo3         125          ; Flag que controla que hayamos persistido dos veces en la búsqueda del mecanismo
+                                         ; de apertura de la puerta en LocBodega, lo cual nos facilitará dicha apertura.
 
 ;                               Localizaciones
 #define lIntro              0
@@ -242,7 +251,7 @@ MESILLA         99     noun        ; lBurgos
 DIARIO          100    noun        ; lCriada
 LLAV1           101    noun        ; Es un objeto
 LLAV2           102    noun        ; Es un objeto
-TRAVESA         103    noun        ; lChamizo
+PASADOR         103    noun        ; lChamizo
 PALA            104    noun        ; lGabinete
 LLAV0           105    noun        ; Es un objeto
 FELPUDO         106    noun        ; lPorche
@@ -364,12 +373,10 @@ MUSGO           221    noun        ; lExteriorChamizo
 GALLETA         222    noun        ; lDespensa
 CRIO            223    noun        ; lPatio
 FANTASMA        224    noun        ; lPatio
-CUCARA          225    noun        ; lCriada . El nombre sería cucaraña, pero para no tener problemas con la ñ, lo vamos a declarar así.
-FBL             226    noun        
-FBH             227    noun
-FCL             228    noun
-FCH             229    noun
-                                   ;           En el juego podremos escribir CUCARAÑA o CUCARANA, que el sistema lo va a reconocer. 
+CUCARA          225    noun        ; lCriada . El nombre sería CUCARAÑA, pero para no tener problemas con la ñ, lo vamos a declarar así. 
+                                   ; En el juego podremos escribir CUCARAÑA o CUCARANA, que el sistema lo va a reconocer. 
+COMBIN          226    noun        ; lBodega. El nombre sería COMBINACION. Hace referencia a la combinación del candado que hay en la trampilla de LocBodega.
+MECANIS         227    noun        ; lBodega. El nombre sería MECANISMO. Hace referencia al mecanismo oculto de la puerta de LocBodega que da a LocCochera.
 
 ;                           Verbos
 COGER           20      verb
@@ -399,7 +406,7 @@ COMER           33      verb
 OLER            34      verb
 
 ;                           Verbos jugador
-USAR            33      verb
+USAR            33      verb             ; Para una mejor descripción de los verbos, consulta http://www.rae.es
 UTILIZAR        33      verb
 DORMIR          34      verb
 TIRAR           35      verb
@@ -443,6 +450,7 @@ APLASTAR        70      verb
 INCORPORAR      71      verb
 ACOSTARSE       72      verb
 BUSCAR          73      verb
+RASCAR          74      verb
 
 ;                                Adjetivos
 PEQUE           2       adjective
@@ -1919,6 +1927,11 @@ BAJAR   lBath2
                                          ; Tenemos un par de acciones para controlar si entra en la casa
                                          ; teniendo las llaves y si lleva encima la maceta o no.              
 
+                                         ; Para que se den estas condiciones y la niña nos ayude, hemos de haber entrado por
+                                         ; la trampilla con la combinación y para ello tenemos que haber dado el osito limpio, 
+                                         ; por lo cual nos está agradecida y nos ayudará. Hacemos la verificación de CARRIED oPala
+                                         ; y no de NOTZERO fVolverEntrar, porque así nos garantizamos que ha salido exclusivamente
+                                         ; por el gabinete y no por lCochera.
 > E         _
 > ENTRAR    _
 > EMPUJAR   PUERTA
@@ -1926,9 +1939,9 @@ BAJAR   lBath2
 > USAR 		LLAVE
 > ABRIR 	PUERTA	  AT lPorche
                 CLS                      ; Limpiamos la pantalla
+                CARRIED  oLlavePorche    ; Verificamos que portamos las llaves del porche.
                 DESTROY  oLlaveCoche     ; Perdemos las llaves del coche
                 CARRIED  oMaceta         ; Verificamos que portamos la maceta.
-                CARRIED  oLlavePorche    ; Verificamos que portamos las llaves del porche.
                 CARRIED  oPala           ; Verificamos que portamos la pala. 
                                          ; El hecho de portar la pala implica necesariamente que hemos salido de la casa
                                          ; por el chamizo y pretendemos volver a entrar en ella.
@@ -2001,7 +2014,7 @@ BAJAR   lBath2
                 NOTCARR  oMaceta                
                 CARRIED  oPala           ; Verificamos que portamos la pala. 
                                          ; El hecho de portar la pala implica necesariamente que hemos salido de la casa
-                                         ; por el chamizo y pretendemos volver a entrar en ella.
+                                         ; por el gabinete--> chamizo y pretendemos volver a entrar en ella.
                                         
                 INK      colorNarrador   ; Color del narrador. 
                 WINDOW   0
@@ -2343,15 +2356,14 @@ BAJAR   lBath2
                 GOTO    lRecibidor
                 RESTART
                 DONE
-                                         ; Estas dos acciones de MIRAR están controladas por un flag que valdrá 0 o 255
-                                         ; dependiendo de si NO hizo uso de la paleta en la mancha o SI. NO=0 y SI=255
-
+                                       
 > MIRAR     _         AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 ZERO     fQuitarMancha   ; Flag para comprobar si usó la paleta en la mancha o no. En este caso Verificamos que NO ha usado la paleta en la mancha.
+                ZERO     fMoverAlambique ; Verificar que aún no hemos movido el alambique.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Destacan un botellero de madera mohosa y también hay un alambique al fondo. En una de las paredes hay una gran mancha que la recubre."
                 DONE
@@ -2361,9 +2373,32 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fQuitarMancha   ; Flag para comprobar si usó la paleta en la mancha o no. En este caso Verificamos que NO ha usado la paleta en la mancha.
+                NOTZERO  fMoverAlambique ; Verificamos que hemos movido el alambique con anterioridad.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Destacan un botellero de madera mohosa, un alambique al fondo y una trampilla. En una de las paredes hay una gran mancha que la recubre."
+                DONE
+
+> MIRAR     _         AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   ; Flag que indica que SI usó la paleta en la mancha porque ya no vale 0
+                ZERO     fMoverAlambique ; Verificar que aún no hemos movido el alambique.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Destacan un botellero de madera mohosa y también hay un alambique al fondo. En la pared puedes observar la puerta que has descubierto rascando el yeso con la paleta#g#fmn#t."
+                DONE
+
+> MIRAR     _         AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   ; Flag que indica que SI usó la paleta en la mancha porque ya no vale 0
+                NOTZERO  fMoverAlambique ; Verificamos que hemos movido el alambique con anterioridad.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Destacan un botellero de madera mohosa, un alambique al fondo y una trampilla. En la pared puedes observar la puerta que has descubierto rascando el yeso con la paleta#g#fmn#t."
                 DONE
 
 > EXAMINA   PARED     AT lBodega
@@ -2386,15 +2421,48 @@ BAJAR   lBath2
                 XMESSAGE "Has descubierto una puerta tras quitar el yeso de la pared."
                 DONE
 
+> EXAMINA   MANCHA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fQuitarMancha   ; Verificamos que no hemos quitado la mancha todavía.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "La mancha parece ser de yeso.#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Igual tengo algo que me sirva para rascarlo y comprobar qué hay detrás."
+                DONE
+
+> EXAMINA   MANCHA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha anteriormente.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Tras haber quitado la mancha, ha quedado al descubierto una puerta.#n"
+                DONE
+
 > EXAMINA   ALAMBIQUE AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fMoverAlambique
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es un viejo alambique que por su estado, debió usarse bastante. Prestas atención y descubres que el alambique está situado justo encima de una trampilla.#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Seguro que se le dio buen uso a este cacharro."
+                DONE
+
+> EXAMINA   ALAMBIQUE AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Verificamos que ya hemos movido el alambique con anterioridad.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "El alambique está en un rincón y donde estaba anteriormente, queda al descubierto una trampilla.#n"
                 DONE
 
 > MOVER     ALAMBIQUE AT lBodega
@@ -2402,10 +2470,20 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fMoverAlambique ; Es un flag para controlar que hemos movido el Alambique
+                ZERO     fMoverAlambique ; Es un flag para controlar que hemos movido el Alambique.
                 SET      fMoverAlambique ; Activamos dicho flag
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Mueves el alambique y al desplazarlo, puedes ver en el suelo una trampilla."
+                DONE
+
+> MOVER     ALAMBIQUE AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Verificamos que ya hemos movido el alambique con anterioridad.
+                INK      colorConciencia ; El color de la conciencia de Marcos.    
+                XMESSAGE "No me apetece volver a empujar ese trasto."
                 DONE
 
 > EXAMINA   BOTELLERO AT lBodega
@@ -2419,136 +2497,6 @@ BAJAR   lBath2
                 XMESSAGE "Una pena que no quede alguna botellita de vino."
                 DONE                
 
-> EXAMINA   MANCHA    AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "La mancha parece ser de yeso.#n"
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Igual tengo algo que me sirva para quitarlo y comprobar qué hay detrás."
-                DONE
-
-> EXAMINA   TRAMPILLA AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es una trampilla de madera y metal que tiene un candado de combinación."
-                DONE
-
-> EXAMINA   CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad..
-                NOTZERO  fMoverAlambique ; Ha movido el alambique.
-                ZERO     fEngrasar       ; El candado no se ha engrasado aún.
-                XMESSAGE "El candado está en muy malas condiciones, parece oxidado y probablemente el mecanismo necesite un buen engrase."
-                DONE
-
-> EXAMINA   CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                NOTZERO  fEngrasar       ; Ya hemos engrasado el candado anteriormente.
-                ZERO     fCombinacion    ; Aún no hemos puesto la combinación al candado.
-                XMESSAGE "El candado está engrasado y parece que funciona el mecanismo de la combinación."
-                DONE
-
-> EXAMINA   CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                NOTZERO  fEngrasar       ; Ya hemos engrasado el candado anteriormente.
-                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.    ; Hemos puesto la combinación en el candado.
-                XMESSAGE "El candado está engrasado y tienes la combinación para poder abrirlo."
-                DONE
-
-> ENGRASAR  CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                CARRIED  oLataDeAceite   ; Llevamos con nosotros la lata de aceite
-                ZERO     fEngrasar       ; flag que controla que hayamos engrasado el candado  
-                SET      fEngrasar       ; Engrasamos el candado
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación.#n"
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Se ha vaciado la lata de aceite#g#fFG#t y la tiras."
-                DESTROY  oLataDeAceite
-                DONE
-
-> ENGRASAR  CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                NOTCARR  oLataDeAceite   ; Hemos usado la lata de aceite
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "No tienes nada con que engrasar el candado."
-                DONE 
-
-                                         ; Si hemos movido el alambique y No hemos usado el aceite, 
-                                         ;nos recomienda engrasar el candado. 
-
-> USAR      CANDADO
-> ABRIR     CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                ZERO     fEngrasar       ; flag que controla que hayamos engrasado el candado   
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "El candado está oxidado y el mecanismo no funciona. Es recomendable engrasarlo."
-                DONE 
-
-                                         ; Hemos movido el alambique y hemos engrasado el candado,
-                                         ; pero no tenemos la combinación
-
-> USAR      CANDADO
-> ABRIR     CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado  
-                ZERO     fCombinacion    ; No tenemos la combinación del candado
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "El mecanismo del candado funciona, pero no conoces la combinación para abrirlo."
-                DONE
-
-                                         ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación,
-                                         ; el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
-
-> USAR      CANDADO
-> ABRIR     CANDADO   AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado    
-                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.    ; Tenemos la combinación del candado
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
-                CLS
-                GOTO     lGabinete       ; Vamos a la localicación lGabinete
-                CLEAR    fVasAMorir      ; Ponemos a 0 El flag que indica que vas a morir si está a 1.  
-                RESTART
-                DONE
 
 > UTILIZAR  PALETA
 > USAR      PALETA    AT lBodega
@@ -2568,9 +2516,9 @@ BAJAR   lBath2
                 DESTROY  oPaleta         ; Destruimos el objeto porque no lo vamos a usar más
                 DONE
 
-                                         ; Esta es una de las pocas acciones complejas. Deben usar QUITAR YESO CON PALETA
-                                         ; EN ESTE MOMENTO NO LA TENEMOS INTEGRADA EN EL DESARROLLO
-
+> RASCAR    MANCHA
+> QUITAR    MANCHA
+> RASCAR    YESO    
 > QUITAR    YESO      AT lBodega
                 PREP     CON
                 NOUN2    PALETA
@@ -2601,6 +2549,7 @@ BAJAR   lBath2
                 XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
                 DONE
 
+> RASCAR    YESO 
 > QUITAR    YESO      AT lBodega
                 PREP     CON
                 NOUN2    PALETA
@@ -2613,25 +2562,129 @@ BAJAR   lBath2
                 XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible. La puedes usar.#n"
                 DONE
 
-                                         ;ALTERNATIVAS: dependiendo de la puerta que hayamos abierto, la respuesta será diferente:
-                                         ; podemos quitar la mancha de la pared y abrir la puerta de la cochera o bien 
-                                         ; retirar el alambique y descubrir la trampilla.
-
-                                         ;esto solamente pasa si hemos usado la paleta con la mancha
+     
+> EXAMINA 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fMecanismo1     ; Verificamos que no hemos descubierto el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido dos veces en buscar 
+                                         ; el mecanismo de apertura de la puerta
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Es una puerta metálica que comunica la bodega con otro lugar.#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "No tengo recuerdo alguno de esta puerta.#n"
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Esta puerta no tiene picaporte ni pestillo; debemos buscar algún tipo de mecanismo para abrirla."
+                DONE
 
 > EXAMINA 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos intentado buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido dos veces en buscar 
+                                         ; el mecanismo de apertura de la puerta.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es una puerta metálica que comunica la bodega con otro lugar.#n"
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "No tengo recuerdo alguno de esta puerta. Además, no tiene cerradura, luego seguro que se puede abrir."
+                INK      colorConciencia ; Color de la conciencia de Marcos.                
+                XMESSAGE "Algo me dice que no hemos buscado lo suficiente."
                 DONE
 
-                                         ; NOTA: Por aquí entramos la primera vez sin jugar con el niño para coger la pelota.
+> EXAMINA 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos intentado buscar el mecanismo de apertura de la puerta.
+                NOTZERO  fMecanismo2     ; Verificamos que hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido dos veces en buscar 
+                                         ; el mecanismo de apertura de la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
+                INK      colorNarrador   ; Color de la conciencia de Marcos.         
+                XMESSAGE "Es una puerta que se te resiste."
+                DONE
+
+> EXAMINA 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos intentado buscar el mecanismo de apertura de la puerta.
+                NOTZERO  fMecanismo2     ; Verificamos que hemos persistido en buscar el mecanismo de apertura de la puerta.
+                NOTZERO  fMecanismo3     ; Verificamos que hemos persistido dos veces en buscar el mecanismo
+                                         ; de apertura de la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Es una puerta metálica que comunica la bodega con otro lugar. Ya has desbloqueado el mecanismo que la mantenía cerrada."
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                DONE
+                                         ; La apertura de la puerta de LocBodega la controlan tres flags. 
+                                         ; fMecanismo1, fMecanismo2 y fMecanismo3, que controlan la insistencia
+                                         ; en BUSCAR MECANISMO para la apertura de la puerta. Tenemos que
+                                         ; buscar el mecanismo tres veces para que lo encuentre, así como podremos
+                                         ; examinar o intentar abrir la puerta durante esa secuencia, recibiendo
+                                         ; mensajes distintos. 
+
+> BUSCAR    MECANISMO AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fMecanismo1     ; Verificamos que no hemos descubierto el mecanismo de apertura de la puerta.
+                SET      fMecanismo1     ; Activamos el flag que controla que hayamos encontrado el mecanismo de apertura de la puerta.
+                INK      colorNarrador   ; Color del Narrador.    
+                XMESSAGE "Toqueteas un poco la puerta en busca de un mecanismo oculto, pero no encuentras nada."
+                DONE
+
+> BUSCAR    MECANISMO AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que no hemos descubierto el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                SET      fMecanismo2     ; Activamos el flag que controla que hayamos persistido en buscar 
+                                         ; el mecanismo de apertura de la puerta.
+                INK      colorNarrador   ; Color del Narrador.    
+                XMESSAGE "Recorres con los dedos la superficie de la puerta y parece no haber un mecanismo fácil de encontrar a simple vista.#n"
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Si estuvieras cacheando a un adolescente a la entrada de un concierto, seguro que te habría colado la cámara y un par de botellas de priva."
+                DONE
+
+> BUSCAR    MECANISMO AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos buscado el mecanismo de apertura de la puerta.
+                NOTZERO  fMecanismo2     ; Verificamos que hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido dos veces en buscar 
+                                         ; el mecanismo de apertura de la puerta.
+                SET      fMecanismo3     ; Activamos el flag que controla que hayamos persistido dos veces
+                                         ; en buscar el mecanismo de apertura de la puerta.
+                INK      colorNarrador   ; Color del Narrador.    
+                XMESSAGE "Te tomas unos minutos en palpar de nuevo la superficie de la puerta y el marco que la delimita.#n#n#k  Recorres cada centímetro como si te fuera la vida en ello...#n#k#b Acaricias suavemente pero con firmeza su contorno, presionando cada protuberancia con sumo cuidado, estudiando cada estría y asímetría de su figura... Súbitamente  encuentras un botón en un lateral de la misma. Lo presionas con sumo placer mientras te humedeces los labios.#n"
+                INK      colorConciencia
+                XMESSAGE "¡Touché!. Parece que hemos desbloqueado la apertura de la puerta... Y creo que también me he puesto un poco cachondo."
+                DONE
+
+> ENTRAR    _
+> EMPUJAR   PUERTA
+> USAR      PUERTA
+> ABRIR 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fQuitarMancha   ; Verificamos que aun no hemos quitado la mancha de la pared.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Aquí no hay ninguna puerta."               
+                DONE
 
 > ENTRAR    _
 > EMPUJAR   PUERTA
@@ -2641,10 +2694,61 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fMecanismo1     ; Verificamos que no hemos buscado el mecanismo de la apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
-                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k"
+                XMESSAGE "No puedes abrir la puerta. No hay picaporte por ningún lado." 
+                DONE
+
+> ENTRAR    _
+> EMPUJAR   PUERTA
+> USAR 		PUERTA
+> ABRIR 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos buscado el mecanismo de la apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "La puerta continúa cerrada." 
+                DONE
+
+> ENTRAR    _
+> EMPUJAR   PUERTA
+> USAR 		PUERTA
+> ABRIR 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos buscado el mecanismo de la apertura de la puerta.
+                NOTZERO  fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorConciencia ; Color de la conciencia de Marcos.                
+                XMESSAGE "Has abierto muchas puertas en tu vida. Esta no." 
+                DONE
+
+> ENTRAR    _
+> EMPUJAR   PUERTA
+> USAR 		PUERTA
+> ABRIR 	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo3     ; Verificamos que hemos persistido en encontrar el mecanismo de la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Como has desbloqueado el mecanismo de la puerta, la puedes abrir con facilidad.#n#k Entras en la cochera.#n#k"
                 CLS                      ; Limpiamos la pantalla
                 INK      colorNarrador   ; Color del narrador.                
                 GOTO     lCochera
@@ -2652,7 +2756,6 @@ BAJAR   lBath2
                 DONE
 
                                          ; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el niño en lugar de salir por la entrada ppal.
-
 
                                          ; En esta localización, vamos a simular una interacción en la siguiente localización, que es LocCochera. Esto lo hacemos porque no hay manera de el niño interactue con nosotros estando en la propia LocCochera, ya que las comprobaciones de los flags no se hacen en la Localización propiamente dicha, sino en los accesos a ella desde otras localizaciones.
 > ENTRAR    _
@@ -2663,15 +2766,18 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo3   ; Verificamos que hemos persistido en encontrar el mecanismo de la puerta.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
                 SET      fVolverEntrar   ; Activamos el flag por si fuesemos a volver a entrar por la puerta principal.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Abres la puerta con facilidad y puedes ver que al otro lado está la cochera.#k#n"
+                XMESSAGE "Como has desbloqueado el mecanismo de la puerta, la puedes abrir con facilidad.#n#k Entras en la cochera."
                 CLS                      ; Limpiamos la pantalla
-                INK      colorNarrador   ; Color del narrador.                
-                GOTO     lCochera
-                ;RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
+                WINDOW   0               
+                XPICTURE 028
+                WINDOW   1        
+                GOTO     lCochera 
+                INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil.#k#n#b"
                 INK      colorNene       ; Color del niño.      
                 XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#k#n"
@@ -2706,7 +2812,7 @@ BAJAR   lBath2
                 INK      colorNene       ; Color del niño.       
                 XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo, pero necesitas la pala#g#f()*#t para poder desenterrarnos.#k#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos
-                XMESSAGE "¡Entendido! Hay que buscar una pala#g#f()*#t.#k#n"
+                XMESSAGE "¡Entendido! Hay que buscar una pala.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#k#n"
                 INK      colorNene       ; Color del niño.       
@@ -2722,18 +2828,6 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-> ENTRAR    _
-> EMPUJAR   PUERTA
-> USAR      PUERTA
-> ABRIR 	PUERTA    AT lBodega
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fQuitarMancha
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Aquí no hay ninguna puerta."               
-                DONE
 
                                          ; El alambique no se ha movido,
                                          ; por tanto no se puede acceder a la trampilla. 
@@ -2744,7 +2838,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fMoverAlambique ; Ha movido el alambique
+                ZERO     fMoverAlambique ; Has movido el alambique.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "La trampilla se encuentra bajo un alambique, no se puede abrir."
                 DONE
@@ -2758,7 +2852,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
                 ZERO     fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "No puedes abrir la trampilla porque hay un candado puesto.#k"
@@ -2773,7 +2867,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado      
                 ZERO     fCombinacion
                 INK      colorNarrador   ; Color del narrador. 
@@ -2782,7 +2876,7 @@ BAJAR   lBath2
 
                                          ; el Alambique se ha movido,
                                          ; hemos engrasado el candado y conocemos la combinación
-                                         
+
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2790,24 +2884,32 @@ BAJAR   lBath2
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
+                ZERO     fAbrirCandado   ; Verificamos que el candado está cerrado.
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
+                XMESSAGE "El candado está cerrado.#k"
+                DONE
+
+> USAR      TRAMPILLA 
+> ABRIR     TRAMPILLA AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado   
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
+                NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Abres la trampilla.#k"
                 CLS
                 GOTO     lGabinete
                 CLEAR    fVasAMorir 
                 RESTART
                 DONE
-
-                                         ; NOTA: A partir de aquí, con Fjugar, el niño debería interactuar con nosotros y debería darnos
-                                         ; la pista de apagar la cerilla en el gabinete. También tiene que contarnos parte de la historia,
-                                         ; ya que pasando por aquí, vamos a resolver el juego sin pasar por el garaje, por tanto
-                                         ; no nos enteraríamos de la historia del juego.
-
-                                         ; Aquí llevamos al niño con nosotros pero no hemos leído el diario, el hecho de leer o no el diario,
-                                         ; debe ser un condicionante informativo. 
 
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
@@ -2816,8 +2918,7 @@ BAJAR   lBath2
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).          ; Aquí el niño nos da la pista de apagar la cerilla.
-                ;ZERO     fLeerDiario
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado     
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
                 INK      colorNarrador   ; Color del narrador. 
@@ -2833,27 +2934,170 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
-                                         ; Aquí llevamos al niño con nosotros y hemos leído el diario,
-                                         ; el hecho de leer o no el diario, debe ser un condicionante informativo. 
-
-> USAR      TRAMPILLA 
-> ABRIR     TRAMPILLA AT lBodega
+> EXAMINA   TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).          ; Aquí el niño nos da la pista de apagar la cerilla.
-                NOTZERO  fLeerDiario     ; Verificamos que hemos leido el diario.
-                NOTZERO  fMoverAlambique ; Ha movido el alambique
-                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado     
-                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k"
-                CLS
-                GOTO     lGabinete
-                CLEAR    fVasAMorir
-                RESTART
+                NOTZERO  fMoverAlambique
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Es una trampilla de madera y metal que tiene un candado de combinación."
                 DONE
+
+> EXAMINA   CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad..
+                NOTZERO  fMoverAlambique ; Has movido el alambique..
+                ZERO     fEngrasar       ; El candado no se ha engrasado aún.
+                XMESSAGE "El candado está en muy malas condiciones, parece oxidado y probablemente el mecanismo necesite un buen engrase."
+                DONE
+
+> EXAMINA   CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique..
+                NOTZERO  fEngrasar       ; Ya hemos engrasado el candado anteriormente.
+                ZERO     fCombinacion    ; Aún no hemos puesto la combinación al candado.
+                XMESSAGE "El candado está engrasado y parece que funciona el mecanismo de la combinación."
+                DONE
+
+> EXAMINA   CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique..
+                NOTZERO  fEngrasar       ; Ya hemos engrasado el candado anteriormente.
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.    
+                ZERO     fAbrirCandado   ; Verificamos que el candado está cerrado.
+                XMESSAGE "El candado está engrasado y conoces la combinación para poder abrirlo."
+                DONE
+
+> EXAMINA   CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique..
+                NOTZERO  fEngrasar       ; Ya hemos engrasado el candado anteriormente.
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.   
+                NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
+                XMESSAGE "El candado está abierto."
+                DONE
+
+> ENGRASAR  CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                CARRIED  oLataDeAceite   ; Llevamos con nosotros la lata de aceite
+                ZERO     fEngrasar       ; flag que controla que hayamos engrasado el candado  
+                SET      fEngrasar       ; Engrasamos el candado
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Has engrasado el candado y ya funciona el mecanismo de la combinación.#n"
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Se ha vaciado la lata de aceite#g#fFG#t y la tiras."
+                DESTROY  oLataDeAceite
+                DONE
+
+> ENGRASAR  CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTCARR  oLataDeAceite   ; Hemos usado la lata de aceite
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "No tienes nada con que engrasar el candado."
+                DONE 
+
+                                         ; Si hemos movido el alambique y No hemos usado el aceite, 
+                                         ;nos recomienda engrasar el candado. 
+
+> USAR      CANDADO
+> ABRIR     CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                ZERO     fEngrasar       ; flag que controla que hayamos engrasado el candado   
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "El candado está oxidado y el mecanismo no funciona. Es recomendable engrasarlo."
+                DONE 
+
+                                         ; Hemos movido el alambique y hemos engrasado el candado,
+                                         ; pero no tenemos la combinación
+
+> USAR      CANDADO
+> ABRIR     CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado  
+                ZERO     fCombinacion    ; No tenemos la combinación del candado
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "El mecanismo del candado funciona, pero no conoces la combinación para abrirlo."
+                DONE
+
+                                         ; Hemos movido el alambique y hemos engrasado el candado y tenemos la combinación,
+                                         ; el resultado es el mismo que el de abrir trampilla en las mismas condiciones.
+> USAR      CANDADO
+> ABRIR     CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado    
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.    
+                ZERO     fAbrirCandado   ; Verificamos que el candado está cerrado.
+                SET      fAbrirCandado   ; Activamos el Flag de la apertura del candado.
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Pones la combinación en el candado. Ahora puedes abrir la trampilla.#k"
+                DONE
+
+
+> PONER     COMBIN       AT lBodega
+                PREP     EN
+                NOUN2    CANDADO
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado    
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.    
+                ZERO     fAbrirCandado   ; Verificamos que el candado está cerrado.
+                SET      fAbrirCandado   ; Activamos el Flag de la apertura del candado.
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Pones la combinación en el candado. Ahora puedes abrir la trampilla.#k"
+                DONE
+
+> USAR      CANDADO
+> ABRIR     CANDADO   AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado    
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.    
+                NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "El candado ya está abierto. Puedes abrir la trampilla.#k"
+                DONE
+
+                                         ; Aquí llevamos al niño con nosotros y hemos leído el diario,
+                                         ; el hecho de leer o no el diario, debe ser un condicionante informativo. 
+
 ;---------------------------------------------------------------------------------------------------------------------
 ; Estamos en locGabinete
 
@@ -3014,13 +3258,15 @@ BAJAR   lBath2
                                          ; Aquí tenemos que estar a oscuras para salir, si no es así, el juego se termina.
                                          ; NOTA: Aquí controlamos fJugar y dependiendo de si llevamos al niño o no,
                                          ; el niño nos revela que ahí están sus restos mortales.
-                                         ; Recordamos que en todo caso, el juego termina al romper el travesaño.
+                                         ; Recordamos que en todo caso, el juego termina al romper el pasador.
 
 > N        _          AT lGabinete
                 ZERO     fControlLuz     ; esto estaba en NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 ZERO     fTurnosConLuz
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+                ZERO     fTengoPala      ; Verificamos que no hemos pasado por aquí antes y hemos cogido la pala.
+                SET      fTengoPala      ; Activamos el Flag que indica que hemos cogido la pala.
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 INK      colorSistema    ; El color del sistema
@@ -3048,7 +3294,33 @@ BAJAR   lBath2
                 ZERO     fControlLuz     ; esto estaba en NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 ZERO     fTurnosConLuz
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+                NOTZERO  fTengoPala      ; Verificamos que ya hemos pasado por aquí antes y nos han dado la pala.
+                INK      colorNarrador   ; Color del narrador.               
+                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                CLEAR    fVasAMorir      ; Ponemos a 0 El flag que indica que vas a morir si está a 1.
+                CLS
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
+                SET      fUsarCerilla
+                LET      fTurnosConLuz 10
+                SET      fControlLuz
+                CLEAR    fDark
+                CLS
+                WINDOW   0
+                XPICTURE 027
+                WINDOW   1
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n  El chamizo es un lugar infecto y húmedo, donde se guardaban los oxidados utensilios de jardinería y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable.#n#n  Al fondo del chamizo puedes observar un armario metálico."
+                GOTO     lChamizo
+                DONE
+
+> N        _          AT lGabinete
+                ZERO     fControlLuz     ; esto estaba en NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                ZERO     fTurnosConLuz
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota). El niño nos va a revelar que en el chamizo están sus restos.
+                ZERO     fTengoPala      ; Verificamos que no hemos pasado por aquí antes y hemos cogido la pala.
+                SET      fTengoPala      ; Activamos el Flag que indica que hemos cogido la pala.
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 INK      colorSistema    ; El color del sistema
@@ -3082,6 +3354,33 @@ BAJAR   lBath2
                 XMESSAGE "Muchas gracias, realmente necesito que se nos dé descanso, porque estamos atrapados en esta casa.#k#n"        
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "De acuerdo, haré cuanto esté en mi mano.#k"
+                GOTO     lChamizo
+                DONE
+
+> N        _          AT lGabinete
+                ZERO     fControlLuz     ; esto estaba en NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                ZERO     fTurnosConLuz
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota). El niño nos va a revelar que en el chamizo están sus restos.
+                NOTZERO  fTengoPala      ; Verificamos que no hemos pasado por aquí antes y hemos cogido la pala.
+                INK      colorNarrador   ; Color del narrador.               
+                XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
+                CLEAR    fVasAMorir      ; Ponemos a 0 El flag que indica que vas a morir si está a 1.
+                CLS
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
+                SET      fUsarCerilla
+                LET      fTurnosConLuz 10
+                SET      fControlLuz
+                CLEAR    fDark
+                CLS
+                WINDOW   0
+                XPICTURE 027
+                WINDOW   1
+                XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los oxidados utensilios de jardinería y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable."
+                XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
+                INK      colorNene       ; Color del niño.        
+                XMESSAGE "Ya hemos pasado por aquí y no me has hecho caso.#n Te pido por favor que cojas la pala y la uses en el suelo del chamizo.#n#k#n"
                 GOTO     lChamizo
                 DONE
 
@@ -3796,13 +4095,13 @@ BAJAR   lBath2
                 XMESSAGE "El suelo es de tierra y despide un indescriptible aroma profundo y penetrante. Cuánto más te acercas a el, más intenso es el olor."
                 DONE
 
-;> EXAMINA   PUERTA    AT lChamizo
-;                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-;                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-;                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-;                INK      colorNarrador   ; Color del narrador.                
-;                XMESSAGE "."
-;                DONE
+> EXAMINA   PUERTA    AT lChamizo
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde y tiene un pasador que la mantiene cerrada. "
+                DONE
 
 > EXAMINA   TIERRA    AT lChamizo
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -3868,6 +4167,31 @@ BAJAR   lBath2
 
 > CAVAR     _
 > USAR      PALA      AT lChamizo
+                CLS                      ; Limpiamos la pantalla .  
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                CARRIED  oPala           ; Portamos la pala.
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
+                ZERO     fUsarPala       ; Verificamos que no hemos utilizado la pala anteriormente.     
+                SET      fUsarPala       
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Comienzas a cavar y enseguida encuentras tres bolsas negras que contienen restos humanos en su interior.#n"       
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí están mis restos y los de mi familia, por favor, te pido que nos den una sepultura digna para poder descansar en paz.#n"
+                INK      colorMarcos     ; Color del protagonista.
+                ; CAGADA
+                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque estoy seguro que me van a hacer montones de preguntas."  
+                ZERO     fDesenterrar
+                SET      fDesenterrar
+                DONE
+
+> CAVAR     _
+> USAR      PALA      AT lChamizo
+                PREP     EN
+                NOUN2    SUELO
+                CLS                      ; Limpiamos la pantalla .  
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3895,6 +4219,35 @@ BAJAR   lBath2
 > CAVAR     _
 > USAR      PALA      AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                CARRIED  oPala           ; Verificamos que portamos la pala.
+                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+                ZERO     fUsarPala       ; Verificamos que no hemos utilizado la pala anteriormente.
+                SET      fUsarPala       ; Activamos el flag que controla que hemos usado la pala.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Tramposo, tramposo, tramposo....#n#n Tienes demasiada información o mucha suerte. Se supone que no deberías saber donde se usa la pala#g#f()*#t sin que hayan#n transcurrido ciertos acontecimientos, así que el equipo de desarrollo de esta aventura ha decidido amonestarte, quitándote algunos objetos que van a impedir que termines el juego de una determinada manera.#n"
+                DESTROY  oPala           ; Eliminamos la pala
+                DESTROY  oLataDeAceite   ; Eliminamos la lata de aceite
+                CLEAR    fCombinacion    ; Ponemos el Flag de la combinación a 0. En el juego, es como si ya no supiesemos la combinación.
+                INK      colorConciencia ; Color de la conciencia de Marcos
+                XMESSAGE "Tío, a quien se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
+                INK      colorSistema    ; El color del sistema
+                XMESSAGE "Por decisión unánime del equipo de desarrollo, se te amonesta devolviéndote a la bodega y quitándote los objetos necesarios para no permitirte entrar de nuevo por la trampilla. Te recomendamos que pruebes otro de los finales disponibles, majete.#k"
+                CLEAR    fMoverAlambique ; Colocamos el alambique en su lugar original poniendo el flag a 0.
+                INK      colorNarrador   ; Color del narrador. 
+                CLS 
+                GOTO     lBodega
+                RESTART
+                DONE
+
+> CAVAR     _
+> USAR      PALA      AT lChamizo
+                CLS                      ; Limpiamos la pantalla .    
+                PREP     EN
+                NOUN2    SUELO           
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3947,10 +4300,10 @@ BAJAR   lBath2
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo. 
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "La puerta está cerrada con un travesaño de madera."
+                XMESSAGE "La puerta está cerrada con un pasador de madera."
                 DONE
 
-> EXAMINA   TRAVESA     AT lChamizo
+> EXAMINA   PASADOR     AT lChamizo
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3958,10 +4311,10 @@ BAJAR   lBath2
                 CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo. 
                 CARRIED  oHacha          ; Verificamos que no portamos el hacha.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es un travesaño de madera que se desplaza al girar la llave dentro de la cerradura, desbloqueando la puerta.#n"
+                XMESSAGE "Es un pasador de madera que se desplaza al girar la llave dentro de la cerradura, desbloqueando la puerta.#n"
                 DONE
 
-> EXAMINA   TRAVESA     AT lChamizo
+> EXAMINA   PASADOR     AT lChamizo
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3969,10 +4322,10 @@ BAJAR   lBath2
                 CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo. 
                 NOTCARR  oHacha          ; Verificamos que no portamos el hacha.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es un travesaño de madera que se desplaza al girar la llave dentro de la cerradura, desbloqueando la puerta.#n"
+                XMESSAGE "Es un pasador de madera que se desplaza al girar la llave dentro de la cerradura, desbloqueando la puerta.#n"
                 DONE
 
-> EXAMINA   TRAVESA     AT lChamizo
+> EXAMINA   PASADOR     AT lChamizo
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3980,13 +4333,13 @@ BAJAR   lBath2
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
                 CARRIED  oHacha          ; Verificamos que portamos el hacha.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "El travesaño parece que puede moverse mediante el mecanismo que acciona la llave que abre la puerta, pero no tienes ninguna llave.#n"
+                XMESSAGE "El pasador parece que puede moverse mediante el mecanismo que acciona la llave que abre la puerta, pero no tienes ninguna llave.#n"
                 INK      colorConciencia ; El color de la conciencia de Marcos.
                 XMESSAGE "Vamos a tener que usar la fuerza bruta para salir de aquí."
                 DONE
 
 ; Muerte del jugador. 
-> EXAMINA   TRAVESA     AT lChamizo
+> EXAMINA   PASADOR     AT lChamizo
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3994,7 +4347,7 @@ BAJAR   lBath2
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
                 NOTCARR  oHacha          ; Verificamos que portamos el hacha.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "El travesaño parece que puede moverse mediante el mecanismo que acciona la llave que abre la puerta, pero no tienes ninguna llave, ni nada con qué romperlo#n"
+                XMESSAGE "El pasador parece que puede moverse mediante el mecanismo que acciona la llave que abre la puerta, pero no tienes ninguna llave, ni nada con qué romperlo#n"
                 INK      colorConciencia ; El color de la conciencia de Marcos.
                 XMESSAGE "Creo que no vamos a poder salir de aquí.#n#k#b"
                 INK      colorNarrador
@@ -4013,8 +4366,8 @@ BAJAR   lBath2
 ; NOTA : Aquí es donde se determinan los diferentes finales del juego dependiendo de si tenemos al niño, la pala o el hacha.
 
 > USAR      HACHA 
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .             
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4023,7 +4376,7 @@ BAJAR   lBath2
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.   
                 CARRIED  oHacha          ; Verificamos que portamos el hacha.          
                 ZERO     fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k"
+                XMESSAGE "Rompes el pasador de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k"
                 CLEAR    fUsarCerilla              
                 CLEAR    fTurnosConLuz 
                 SET      fDarkF
@@ -4034,8 +4387,9 @@ BAJAR   lBath2
                 DONE
 
 ; FINAL MEJOR, hemos entrado con el niño por el gabinete, hemos desenterrado
-; los cadáveres y tenemos el hacha para salir, no obstante es el mejor final, 
+; los cadáveres y tenemos el hacha para salir. Es el mejor final, 
 ; porque además hemos leído el diario de la criada.
+
 
 ; Condiciones necesarias:
 ;   CARRIED oHacha o bien CARRIED oLlaveChamizo (En este caso, portamos oLlaveChamizo)
@@ -4045,8 +4399,8 @@ BAJAR   lBath2
 
 > ABRIR     PUERTA
 > USAR      HACHA
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4058,7 +4412,7 @@ BAJAR   lBath2
                 NOTZERO  fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leido el diario.
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Como tienes la llave del chamizo, la introduces en la cerradura, la giras y el travesaño se desplaza liberando la apertura de la puerta.#k#n"
+                XMESSAGE "Como tienes la llave del chamizo, la introduces en la cerradura, la giras y el pasador se desplaza liberando la apertura de la puerta.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK      colorNene       ; Color del niño.
@@ -4110,8 +4464,8 @@ BAJAR   lBath2
 ;   NOTZERO fLeerDiario (Esta variable es la que diferencia el final MEJOR del final CASI MEJOR).
 
 > USAR      HACHA
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4123,7 +4477,7 @@ BAJAR   lBath2
                 NOTZERO  fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leido el diario.
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
+                XMESSAGE "Rompes el pasador de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK      colorNene       ; Color del niño.
@@ -4176,8 +4530,8 @@ BAJAR   lBath2
 ;   ZERO fLeerDiario (Esta variable es la que diferencia el final MEJOR del final CASI MEJOR).
 
 > USAR      HACHA 
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4189,7 +4543,7 @@ BAJAR   lBath2
                 NOTZERO  fDesenterrar     ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 ZERO     fLeerDiario      ; No hemos leído el diario de la criada
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Rompes el travesaño de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
+                XMESSAGE "Rompes el pasador de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK      colorNene       ; Color del niño. 
@@ -4242,8 +4596,8 @@ BAJAR   lBath2
 
 > ABRIR     PUERTA
 > USAR      HACHA 
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4255,7 +4609,7 @@ BAJAR   lBath2
                 NOTZERO  fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
                 ZERO     fLeerDiario     ; No hemos leído el diario de la criada
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Como tienes la llave del chamizo, la introduces en la cerradura, la giras y el travesaño se desplaza liberando la apertura de la puerta.#k#n"
+                XMESSAGE "Como tienes la llave del chamizo, la introduces en la cerradura, la giras y el pasador se desplaza liberando la apertura de la puerta.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
                 INK      colorNene       ; Color del niño. 
@@ -4295,8 +4649,8 @@ BAJAR   lBath2
                 END                       ; Termina el juego.
 
 > USAR      HACHA 
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4312,8 +4666,8 @@ BAJAR   lBath2
 
                                          ; podemos salir por la puerta, pero aún no hemos desenterrado los cadáveres.
 > USAR      HACHA
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4328,8 +4682,8 @@ BAJAR   lBath2
 
 ; Muerte del jugador
 > USAR      HACHA
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4338,7 +4692,7 @@ BAJAR   lBath2
                 NOTCARR oLlaveChamizo
                 NOTCARR oHacha
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "No tienes forma de romper el travesaño.#n"
+                XMESSAGE "No tienes forma de romper el pasador.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.          
                 XMESSAGE "Uh oh... Parece que nos hemos quedado encerrados amigo. Y no me vale con que digas que estas aventuras conversacionales están mal diseñadas porque puedes coger el armario metálico y echarlo sobre la puerta... ¿quieres probar? pues venga vamos...#k#n"
                 INK      colorNarrador   ; Color del narrador. 
@@ -4364,8 +4718,8 @@ BAJAR   lBath2
                 END                      ; Termina el juego.     
 
 > USAR      HACHA
-> CORTA     TRAVESA
-> ROMPER    TRAVESA   AT lChamizo
+> CORTA     PASADOR
+> ROMPER    PASADOR   AT lChamizo
                 CLS                      ; Limpiamos la pantalla .               
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -4373,7 +4727,7 @@ BAJAR   lBath2
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTCARR oHacha
                 INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "No tengo nada que pueda servir para romper ese travesaño."                
+                XMESSAGE "No tengo nada que pueda servir para romper ese pasador."                
                 INK      colorNarrador   ; Color del narrador. 
                 DONE
 
@@ -7810,17 +8164,15 @@ BAJAR   lBath2
                                          ; de variables para comprobar el funcionamiento de las mismas.
 
 > AYUDA     OSITO   
-                XMESSAGE "fCombinacion"
-                PRINT    107
-                SET      fCombinacion
-                XMESSAGE "SET fCombinacion"
-                PRINT    107
+                XMESSAGE "fMecanismo1"
+                PRINT    123           
                 XMESSAGE "#n"
-                XMESSAGE "fEngrasar"
-                PRINT    91
+                XMESSAGE "fMecanismo2"
+                PRINT    124
                 XMESSAGE "#n"
-                XMESSAGE "fmoverAlambique"
-                PRINT    102
+                XMESSAGE "fMecanismo3"
+                PRINT    125          
+                XMESSAGE "#n"
                 DONE
 
                                             ; USAR MAGIA: Cheat para los desarrolladores. Nos permite poner en el inventario
@@ -7835,17 +8187,44 @@ BAJAR   lBath2
                 CREATE   oCerillas
                 GET      oCerillas
 
-                ISAT     oLlaveCoche     252
-                CREATE   oLlaveCoche
-                GET      oLlaveCoche
+                ;ISAT     oLlaveCoche     252
+                ;CREATE   oLlaveCoche
+                ;GET      oLlaveCoche
 
-                ISAT     oLlaveChamizo   252
-                CREATE   oLlaveChamizo
-                GET      oLlaveChamizo
+                ;ISAT     oPelota         252
+                ;CREATE   oPelota
+                ;GET      oPelota
 
-                ISAT     oHacha          252
-                CREATE   oHacha
-                GET      oHacha
+                ;ISAT     oPaleta       252
+                ;CREATE   oPaleta
+                ;GET      oPaleta
+            
+                ;ISAT     oPala       252
+                ;CREATE   oPala
+                ;GET      oPala
+
+                ISAT     oLlaveBodega   252
+                CREATE   oLlaveBodega
+                GET      oLlaveBodega
+
+                ;ISAT     oLataDeAceite      252
+                ;CREATE   oLataDeAceite 
+                ;GET      oLataDeAceite 
+
+                ;ISAT    oLlaveChamizo   252
+                ;CREATE  oLlaveChamizo
+                ;GET     oLlaveChamizo
+
+                ;ISAT    oHacha          252
+                ;CREATE  oHacha
+                ;GET     oHacha
+            
+                ;SET      fJugar
+                ;SET      fCombinacion
+                ;SET      fEngrasar
+                SET      fQuitarMancha
+                ;SET      fMoverAlambique
+
 
                 ;ISAT    oLlavePorche    252
                 ;ISAT    oLlaveCaja      252
@@ -7853,126 +8232,26 @@ BAJAR   lBath2
                 ;ISAT    oPelota         252
                 ;ISAT    oPaleta         252
                 ;ISAT    oLlaveBodega    252
-                ;ISAT    oLataDeAceite   252
-                
-                
+                        
                 ;CREATE  oLlavePorche
                 ;CREATE  oLlaveCaja
                 ;CREATE  oLlavePatio
                 ;CREATE  oPelota
                 ;CREATE  oPaleta
                 ;CREATE  oLlaveBodega                     
-                ;CREATE  oLataDeAceite
-
-                ;GET     oLataDeAceite
+                          
                 ;GET     oLlavePorche
                 ;GET     oLlaveCaja
                 ;GET     oLlavePatio
                 ;GET     oPelota
                 ;GET     oPaleta
                 ;GET     oLlaveBodega
-                ;ZERO    fCombinacion
-                ;SET     fCombinacion
-         
+                    
                 
-                GOTO     lPorche
+                GOTO     lBodega
                 RESTART
                 DONE
 
->USAR        FBH
-                ISAT     oRopa           252                         
-                CREATE   oRopa
-                GET      oRopa
-
-                ISAT     oCerillas       252
-                CREATE   oCerillas
-                GET      oCerillas
-
-                ISAT     oLlaveCoche     252
-                CREATE   oLlaveCoche
-                GET      oLlaveCoche
-
-                ISAT     oHacha          252
-                CREATE   oHacha
-                GET      oHacha
-
-                SET      fLeerDiario
-                SET      Fjugar
-
-                GOTO     lGabinete
-                RESTART
-                DONE
-
->USAR         FBL
-                ISAT     oRopa           252                         
-                CREATE   oRopa
-                GET      oRopa
-
-                ISAT     oCerillas       252
-                CREATE   oCerillas
-                GET      oCerillas
-
-                ISAT     oLlaveCoche     252
-                CREATE   oLlaveCoche
-                GET      oLlaveCoche
-
-                ISAT     oLlaveChamizo   252
-                CREATE   oLlaveChamizo
-                GET      oLlaveChamizo
-
-                SET  fLeerDiario
-                SET  Fjugar
-
-                GOTO     lGabinete
-                RESTART
-                DONE
-
->USAR        FCH
-                ISAT     oRopa           252                         
-                CREATE   oRopa
-                GET      oRopa
-
-                ISAT     oCerillas       252
-                CREATE   oCerillas
-                GET      oCerillas
-
-                ISAT     oLlaveCoche     252
-                CREATE   oLlaveCoche
-                GET      oLlaveCoche
-
-                ISAT     oHacha          252
-                CREATE   oHacha
-                GET      oHacha
-
-                CLEAR  fLeerDiario
-                SET    Fjugar
-
-                GOTO     lGabinete
-                RESTART
-                DONE
->USAR        FCL                         
-                ISAT     oRopa           252                         
-                CREATE   oRopa
-                GET      oRopa
-
-                ISAT     oCerillas       252
-                CREATE   oCerillas
-                GET      oCerillas
-
-                ISAT     oLlaveCoche     252
-                CREATE   oLlaveCoche
-                GET      oLlaveCoche
-
-                ISAT     oLlaveChamizo   252
-                CREATE   oLlaveChamizo
-                GET      oLlaveChamizo
-
-                CLEAR  fLeerDiario
-                SET    fJugar
-
-                GOTO     lgabinete
-                RESTART
-                DONE
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                                          ; CONDACTOS GENERALES:
                                          ; Se pueden usar en cualquier momento de la aventura
