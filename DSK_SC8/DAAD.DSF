@@ -479,7 +479,6 @@ A               2       preposition
 DE              3       preposition
 EN              4       preposition
 POR             5       preposition
-;TRAVES          5      preposition
 BAJO            7       preposition
 JUNTO           8       preposition
 MENOS           13      preposition
@@ -765,7 +764,7 @@ BAJAR   lBath2
 > _         _   AT      0               ; Empezamos una partida
                 PROCESS 6               ; El proceso de inicialización
 
-> _         _   WINDOW  0               ; Ventana de gráficos
+> _         _   WINDOW  0                ; Se desactiva la imagen.               ; Ventana de gráficos
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO 0
                 ABSENT  0
@@ -774,7 +773,7 @@ BAJAR   lBath2
 > _         _   PICTURE @fPlayer        ; Si hay gráfico, cárgalo
                 DISPLAY @fDarkF         ; Muéstralo si no oscuro; si oscuro
 
-> _         _   WINDOW  1
+> _         _   WINDOW  1                ; Se activa la imagen.
                 NOTZERO fDarkF           ; Oscuro
                 SYSMESS 0
 
@@ -1949,9 +1948,9 @@ BAJAR   lBath2
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
                 INK      colorNarrador   ; Color del narrador. 
-                WINDOW   0
-                XPICTURE 007             ; El protagonista saliendo de casa
-                WINDOW   1
+                WINDOW   0               ; Se desactiva la imagen.
+                XPICTURE 007             ; El protagonista saliendo de casa.
+                WINDOW   1               ; Se activa la imagen.
             	XMESSAGE "Vuelves a entrar al recibidor.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "Hogar. Dulce hogar.#k#n"
@@ -1982,7 +1981,7 @@ BAJAR   lBath2
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#n"
                 INK      colorNarrador   ; Color del narrador. 
-                WINDOW   0
+                WINDOW   0               
                 XPICTURE 007             ; El protagonista saliendo de casa
                 WINDOW   1
             	XMESSAGE "Ya estás dentro de la casa. Hace frío.#nLa penumbra te ha hecho tropezar con el único mobiliario, que parece ser una consola.#n"
@@ -2080,23 +2079,23 @@ BAJAR   lBath2
                                          ; pero si enciendes una cerilla, mueres. Sólo se puede examinar fuera del aseo.
 
 > BUSCAR    PELOTA    AT lRecibidor
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Buscas por aquí... Buscas por allá... No encuentras nada... ¡Por el ojete te dan!"
                 DONE
 
 > BUSCAR    PELOTA    AT lRecibidor
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Buscas la pelota por el recibidor, pero no hay rastro de ella."
                 DONE
@@ -2105,10 +2104,10 @@ BAJAR   lBath2
                                          ; tenemos que controlar la búsqueda de la pelota cuando aún no tenemos las cerillas.
 
 > BUSCAR    PELOTA      AT lRecibidor 
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTCARR  oCerillas       ; Verificamos que no portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Buscas por aquí... Buscas por allá... No encuentras nada... ¡Por el ojete te dan!"
                 DONE
@@ -2322,23 +2321,23 @@ BAJAR   lBath2
 ; Estamos en locBodega
 
 > BUSCAR    PELOTA    AT lBodega
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Abra cadabra... ¡Estás como una puta cabra!"
                 DONE
 
 > BUSCAR    PELOTA    AT lBodega
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Recorres con la mirada cada rincón infecto de la bodega."
                 INK      colorConciencia ; Color de la conciencia de Marcos
@@ -2578,7 +2577,7 @@ BAJAR   lBath2
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "No tengo recuerdo alguno de esta puerta.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Esta puerta no tiene picaporte ni pestillo; debemos buscar algún tipo de mecanismo para abrirla."
+                XMESSAGE "Esta puerta no tiene picaporte ni pestillo; debemos BUSCAR algún tipo de mecanismo para abrirla."
                 DONE
 
 > EXAMINA 	PUERTA    AT lBodega
@@ -2592,7 +2591,7 @@ BAJAR   lBath2
                                          ; el mecanismo de apertura de la puerta.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
                 INK      colorConciencia ; Color de la conciencia de Marcos.                
-                XMESSAGE "Algo me dice que no hemos buscado lo suficiente."
+                XMESSAGE "Algo me dice que no hemos BUSCADO lo suficiente. ¿Lo pillas?"
                 DONE
 
 > EXAMINA 	PUERTA    AT lBodega
@@ -2669,12 +2668,13 @@ BAJAR   lBath2
                                          ; en buscar el mecanismo de apertura de la puerta.
                 INK      colorNarrador   ; Color del Narrador.    
                 XMESSAGE "Te tomas unos minutos en palpar de nuevo la superficie de la puerta y el marco que la delimita.#n#n#k  Recorres cada centímetro como si te fuera la vida en ello...#n#k#b Acaricias suavemente pero con firmeza su contorno, presionando cada protuberancia con sumo cuidado, estudiando cada estría y asímetría de su figura... Súbitamente  encuentras un botón en un lateral de la misma. Lo presionas con sumo placer mientras te humedeces los labios.#n"
-                INK      colorConciencia
+                INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "¡Touché!. Parece que hemos desbloqueado la apertura de la puerta... Y creo que también me he puesto un poco cachondo."
                 DONE
 
 > ENTRAR    _
 > EMPUJAR   PUERTA
+> TIRAR     PUERTA
 > USAR      PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2687,7 +2687,6 @@ BAJAR   lBath2
                 DONE
 
 > ENTRAR    _
-> EMPUJAR   PUERTA
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2704,7 +2703,6 @@ BAJAR   lBath2
                 DONE
 
 > ENTRAR    _
-> EMPUJAR   PUERTA
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2721,7 +2719,6 @@ BAJAR   lBath2
                 DONE
 
 > ENTRAR    _
-> EMPUJAR   PUERTA
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2738,6 +2735,7 @@ BAJAR   lBath2
                 DONE
 
 > ENTRAR    _
+> TIRAR     PUERTA
 > EMPUJAR   PUERTA
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
@@ -2757,8 +2755,7 @@ BAJAR   lBath2
 
                                          ; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el niño en lugar de salir por la entrada ppal.
 
-                                         ; En esta localización, vamos a simular una interacción en la siguiente localización, que es LocCochera. Esto lo hacemos porque no hay manera de el niño interactue con nosotros estando en la propia LocCochera, ya que las comprobaciones de los flags no se hacen en la Localización propiamente dicha, sino en los accesos a ella desde otras localizaciones.
-> ENTRAR    _
+> TIRAR     PUERTA
 > EMPUJAR   PUERTA
 > USAR      PUERTA
 > ABRIR 	PUERTA    AT lBodega
@@ -2828,10 +2825,99 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
+> TIRAR     	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fMecanismo1     ; Verificamos que no hemos buscado el mecanismo de la apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorConciencia ; Color de la conciencia de Marcos.             
+                XMESSAGE "Tiras y tiras y vuelves a tirar, la puerta en la bodega por saco te va a dar..." 
+                DONE
 
+> TIRAR     	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que no hemos buscado el mecanismo de la apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Introduces la punta de los dedos entre el marco y la puerta con la esperanza de que tus quebradizas uñas soporten la fuerza suficiente que hay que aplicar para mover la puerta.#n" 
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Joder.¡QUE DOLOR! Deja de hacer eso, ¡INMEDIATAMENTE!"
+                DONE
+
+> TIRAR     	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos buscado el mecanismo de la apertura de la puerta.
+                NOTZERO  fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorNarrador   ; Color del narrador.           
+                XMESSAGE "Intentas meter los dedos en el diminuto y estrecho hueco que hay entre la puerta y el cerco. No obtienes el resultado esperado." 
+                DONE
+
+> EMPUJAR    	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fMecanismo1     ; Verificamos que no hemos buscado el mecanismo de la apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Empujas la puerta embistiendo con el hombro, pero la puerta no se mueve y te sientes un poco dolorido.#n" 
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Pero mira que eres animal. ¡Te vas a hacer daño!"
+                DONE
+
+> EMPUJAR   	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que no hemos buscado el mecanismo de la apertura de la puerta.
+                ZERO     fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.    
+                INK      colorNarrador   ; Color del narrador.            
+                XMESSAGE "Das unos pasos hacia atrás. Miras con rotundidad la puerta. Escarbas con la pata el suelo de la bodega como hacen los toros. Resoplas por la nariz y coges velocidad para propinar una contundente embestida a la puerta.#k#n#n Del golpe tan fuerte, caes al suelo y te retuerces del dolor durante unos instantes.#k#n#n Pasados unos minutos, te incorporas. #k#n" 
+                INK      colorConciencia ; Color de la conciencia de Marcos.    
+                XMESSAGE "¡Ooooolééééé!. Vaya hostia... Escucha; para y estate tranquilo un rato, recupérate y deja de hacer el imbécil, que nos vamos a joder el hombro."
+                DONE
+
+> EMPUJAR   	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo1     ; Verificamos que hemos buscado el mecanismo de la apertura de la puerta.
+                NOTZERO  fMecanismo2     ; Verificamos que no hemos persistido en buscar el mecanismo de apertura de la puerta.
+                ZERO     fMecanismo3     ; Verificamos que no hemos persistido en buscar dos veces 
+                                         ; el mecanismo de apertura la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorConciencia ; Color de la conciencia de Marcos.                
+                XMESSAGE "La puerta no se va a abrir así y la tozudez es un síntoma de la edad." 
+                DONE
                                          ; El alambique no se ha movido,
                                          ; por tanto no se puede acceder a la trampilla. 
-
+> TIRAR     TRAMPILLA
+> EMPUJAR   TRAMPILLA
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2846,6 +2932,8 @@ BAJAR   lBath2
                                          ; El Alambique se ha movido, pero no se ha usado el aceite,
                                          ; no se puede entrar y no hace falta más control
 
+> TIRAR     TRAMPILLA
+> EMPUJAR   TRAMPILLA
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2861,6 +2949,8 @@ BAJAR   lBath2
                                          ; el Alambique se ha movido,
                                          ; pero no se ha usado el aceite y no tenemos la combinación
 
+> TIRAR     TRAMPILLA
+> EMPUJAR   TRAMPILLA
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2877,6 +2967,8 @@ BAJAR   lBath2
                                          ; el Alambique se ha movido,
                                          ; hemos engrasado el candado y conocemos la combinación
 
+> TIRAR     TRAMPILLA
+> EMPUJAR   TRAMPILLA
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2892,6 +2984,8 @@ BAJAR   lBath2
                 XMESSAGE "El candado está cerrado.#k"
                 DONE
 
+> TIRAR     TRAMPILLA
+> EMPUJAR   TRAMPILLA
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2911,13 +3005,28 @@ BAJAR   lBath2
                 RESTART
                 DONE
 
+> EMPUJAR   TRAMPILLA AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMoverAlambique ; Has movido el alambique.
+                NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado   
+                NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
+                NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "No puedes empujar la trampilla, se abre hacia afuera."    
+                DONE
+
+> TIRAR     TRAMPILLA
 > USAR      TRAMPILLA 
 > ABRIR     TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).          ; Aquí el niño nos da la pista de apagar la cerilla.
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).  
+                                         ; Aquí el niño nos da la pista de apagar la cerilla.
                 NOTZERO  fMoverAlambique ; Has movido el alambique.
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado     
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
@@ -2933,6 +3042,7 @@ BAJAR   lBath2
                 CLEAR    fVasAMorir
                 RESTART
                 DONE
+
 
 > EXAMINA   TRAMPILLA AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -3110,23 +3220,23 @@ BAJAR   lBath2
                                          ;oLlaveCaja
 
 > BUSCAR    PELOTA    AT lGabinete
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Has llegado hasta aquí y sigues intentándolo... Admiro tu perseverancia, amigo."
                 DONE
 
 > BUSCAR    PELOTA    AT lGabinete
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Buscas la pelota por todo el gabinete, sin éxito."
                 DONE
@@ -3494,23 +3604,23 @@ BAJAR   lBath2
 ; Estamos en locCochera
 
 > BUSCAR    PELOTA    AT lCochera
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Uhm... Huelo a pelota aquí..."
                 DONE
 
 > BUSCAR    PELOTA    AT lCochera
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Escrutas minuciosamente cada rincón de la estancia y te percatas de que bajo la rejilla hay un objeto atascado."
                 DONE
@@ -4055,23 +4165,23 @@ BAJAR   lBath2
                                          ; Controlar que una vez usas pala, no la uses de nuevo
 
 > BUSCAR    PELOTA    AT lChamizo
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Este lugar está sucio y huele a muerto.. No quiero buscar aquí."
                 DONE
 
 > BUSCAR    PELOTA    AT lChamizo
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Miras un poco por encima pero no tienes ningún interes por ponerte a buscar una pelota aquí."
                 DONE
@@ -4537,11 +4647,11 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR  oLlaveChamizo
-                CARRIED  oHacha
-                CARRIED  oLlaveCoche      ; Verificamos que Marcos tenga las llaves del coche.
-                NOTZERO  fDesenterrar     ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                ZERO     fLeerDiario      ; No hemos leído el diario de la criada
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                CARRIED  oHacha          ; Verificamos que llevamos el hacha.
+                CARRIED  oLlaveCoche     ; Verificamos que Marcos tenga las llaves del coche.
+                NOTZERO  fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
+                ZERO     fLeerDiario     ; Verificamos que no hemos leido el diario.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Rompes el pasador de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
@@ -4603,11 +4713,11 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                CARRIED  oLlaveChamizo
-                NOTCARR  oHacha
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                NOTCARR  oHacha          ; Verificamos que no portamos el hacha.
                 CARRIED  oLlaveCoche     ; Verificamos que Marcos tenga las llaves del coche.
                 NOTZERO  fDesenterrar    ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                ZERO     fLeerDiario     ; No hemos leído el diario de la criada
+                ZERO     fLeerDiario     ; Verificamos que no hemos leido el diario.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Como tienes la llave del chamizo, la introduces en la cerradura, la giras y el pasador se desplaza liberando la apertura de la puerta.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
@@ -4656,11 +4766,12 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR oLlaveChamizo
-                CARRIED oHacha
-                NOTCARR oLlaveCoche      ; Verificamos que Marcos no tenga las llaves del coche.
-                NOTZERO fDesenterrar     ; fDesenterrar = CARRIED oPala + NOTZERO fJugar
-                INK      colorConciencia ; Color de la conciencia de Marcos
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                CARRIED  oHacha          ; Verificamos que portamos el hacha.
+                NOTCARR  oLlaveCoche     ; Verificamos que Marcos no tenga las llaves del coche.
+                NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres.
+                                         ; fDesenterrar = CARRIED oPala + NOTZERO fJugar.
+                INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "Si pretendes ir corriendo a llamar a la policía... Antes de romper nada... Tengo la sensación de que no vamos a llegar muy lejos sin algo que nos hace falta para poder salir de esta casa. ¡Brrrum! ¡Brrrum!#k"
                 DONE
 
@@ -4673,9 +4784,10 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR oHacha
-                CARRIED oLlaveChamizo
-                ZERO    fDesenterrar
+                NOTCARR  oHacha          ; Verificamos que no portamos el hacha.
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                                         ; fDesenterrar = CARRIED oPala + NOTZERO fJugar.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "La puerta está abierta, no necesitamos romper nada."
                 DONE
@@ -4689,8 +4801,8 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR oLlaveChamizo
-                NOTCARR oHacha
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                NOTCARR  oHacha          ; Verificamos que no portamos el hacha. 
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "No tienes forma de romper el pasador.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.          
@@ -4725,7 +4837,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR oHacha
+                NOTCARR  oHacha          ; Verificamos que no portamos el hacha.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "No tengo nada que pueda servir para romper ese pasador."                
                 INK      colorNarrador   ; Color del narrador. 
@@ -4746,23 +4858,23 @@ BAJAR   lBath2
 ; Estamos en locAseo
 
 > BUSCAR    PELOTA    AT lAseo
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Vámonos de aquí. ¡Ya!"
                 DONE
 
 > BUSCAR    PELOTA    AT lAseo
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "¡No quiero! Apenas consigo ver nada y hay algo en este lugar que me pone los pelos de punta."
                 DONE
@@ -4863,9 +4975,9 @@ BAJAR   lBath2
                 XMESSAGE "Del susto se te ha apagado la cerilla.#k#n"
                 CLS                      ; Limpiamos la pantalla
                 ; Quitar la foto
-                WINDOW  0
+                WINDOW  0                ; Se desactiva la imagen.            
                 GFX     0 5
-                WINDOW  1
+                WINDOW  1                ; Se activa la imagen.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Aún a pesar del susto, y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía#g#fD#t.#n"
                 INK      colorSistema    ; El color del sistema.
@@ -4897,23 +5009,23 @@ BAJAR   lBath2
 ; Estamos en locCocina
 
 > BUSCAR    PELOTA    AT lCocina
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
-                INK      colorSistema    ; El color del sistema
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
+                INK      colorSistema    ; El color del sistema.
                 XMESSAGE "Aquí no hay ninguna pelota. ¿Qué tal si metes la mano en el fregadero a ver que pasa?"
                 DONE
 
 > BUSCAR    PELOTA    AT lCocina
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Aquí no hay rastro de la pelota."
                 DONE
@@ -5171,23 +5283,23 @@ BAJAR   lBath2
                                          ; ya tenemos las cerillas.
 
 > BUSCAR    PELOTA    AT lDespensa
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Una pelota no, pero intuyes que hay algo escondido en la parte superior de la alacena."
                 DONE
 
 > BUSCAR    PELOTA    AT lDespensa
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Una pelota en una despensa es algo del todo inusual. No encuentras nada."
                 DONE
@@ -5339,23 +5451,23 @@ BAJAR   lBath2
 ; Estamos en locEscaleras
 
 > BUSCAR    PELOTA    AT lEscaleras
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Un escalón se mueve, ¿por qué no lo retiras?"
                 DONE
 
 > BUSCAR    PELOTA    AT lEscaleras
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "La luz es tenue y los escalones no están en muy buen estado. No es buena idea buscar una pelota aquí. Es peligroso."
                 DONE
@@ -5601,23 +5713,23 @@ BAJAR   lBath2
 ; Estamos en locSalon
                                      
 > BUSCAR    PELOTA    AT lSalon
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Tus padres nunca te han dejado jugar en el salón. Ni a ti ni a nadie."
                 DONE
 
 > BUSCAR    PELOTA    AT lSalon
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es del todo improbable encontrar una pelota aquí. Buscas y no encuentras nada."
                 DONE
@@ -5797,23 +5909,23 @@ BAJAR   lBath2
 ; Estamos en locCriada
 
 > BUSCAR    PELOTA    AT lCriada
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "¿Por qué no buscas encima de la cama?"
                 DONE
 
 > BUSCAR    PELOTA    AT lCriada
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "¡PUAJ! ¡Una CUCARAÑA! ¡No quiero buscar pelotas aquí!"
                 DONE
@@ -6118,23 +6230,23 @@ BAJAR   lBath2
 
 
 > BUSCAR    PELOTA    AT lPatio
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Sin duda sería el lugar perfecto donde un niño dejaría olvidada una pelota... Pero tienes una suerte terrible."
                 DONE
 
 > BUSCAR    PELOTA    AT lPatio
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNene       ; Color del niño.
                 XMESSAGE "Si la pelota estuviera en el patio, estaríamos jugando con ella."
                 DONE
@@ -6181,23 +6293,23 @@ BAJAR   lBath2
 ; Estamos en locRoom1
 
 > BUSCAR    PELOTA    AT lRoom1
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Esa cama parece muy confortable... ¿Le prestas un poco de atención?"
                 DONE
 
 > BUSCAR    PELOTA    AT lRoom1
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es un poco desesperante, pero no hay nada de eso aquí."
                 DONE
@@ -6284,23 +6396,23 @@ BAJAR   lBath2
 ; Estamos en el locBath1
 
 > BUSCAR    PELOTA    AT lBath1
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Como te fastidiaba tirar la pelota contra la pared desde el Water, calcular mal la trayectoria y tener que levantarte con los pantalones bajados a cogerla del suelo."
                 DONE
 
 > BUSCAR    PELOTA    AT lBath1
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "No hay rastro de la pelota por aquí."
                 DONE
@@ -6390,23 +6502,23 @@ BAJAR   lBath2
 ; Estamos en la locRoom2
 
 > BUSCAR    PELOTA    AT lRoom2
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "No se qué tienen las camas de esta casa que dan sueño. Ah no, espera..¡Es tu perseverancia que aburre a los muertos!"
                 DONE
 
 > BUSCAR    PELOTA    AT lRoom2
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Miras por todas partes, pero no encuentras la pelota."
                 DONE
@@ -6482,23 +6594,23 @@ BAJAR   lBath2
 ; Estamos en el locBath2
 
 > BUSCAR    PELOTA    AT lBath2
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Puedes mirar dentro del Water. A ver si te ahogas, ¡cansino!"
                 DONE
 
 > BUSCAR    PELOTA    AT lBath2
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es muy complicado encontrar una pelota en un lugar donde no se suele jugar con ella."
                 DONE
@@ -6738,12 +6850,12 @@ BAJAR   lBath2
 ; Estamos en locRetrete
 
 > BUSCAR    PELOTA    AT lRetrete
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "¡Vamos!, ¡salta de cabeza y termina con esta agonía!"
                 DONE
@@ -6765,12 +6877,12 @@ BAJAR   lBath2
                 END                      ; Termina el juego.
 
 > BUSCAR    PELOTA    AT lRetrete
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Buscas la pelota por los alrededores, pero no encuentras nada."
                 DONE
@@ -6884,23 +6996,23 @@ BAJAR   lBath2
 ; Estamos en locRoom3
 
 > BUSCAR    PELOTA    AT lRoom3
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "creo que por MIRAR un poco no pierdes nada."
                 DONE
 
 > BUSCAR    PELOTA    AT lRoom3
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "Aquí no está la pelota."
                 DONE
@@ -7141,23 +7253,23 @@ BAJAR   lBath2
 ; Estamos en locBath3
 
 > BUSCAR    PELOTA    AT lBath3
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "No hay pelota aquí, pero parece que la terma está llena de agua."
                 DONE
 
 > BUSCAR    PELOTA  AT lBath3
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Buscas la pelota, pero no encuentras nada."
                 DONE
@@ -7272,23 +7384,23 @@ BAJAR   lBath2
 ; Estamos en el locPasillo1
 
 > BUSCAR    PELOTA    AT lPasillo1
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad. La localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "El pasillo es inmenso... Como mi paciencia."
                 DONE
 
 > BUSCAR    PELOTA    AT lPasillo1
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad. La localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Buscas la pelota por el pasillo, pero no encuentras nada."
                 DONE
@@ -7366,23 +7478,23 @@ BAJAR   lBath2
                                          ; Una vez le das el objeto, la cría desaparece, no vuelve a salir
 
 > BUSCAR    PELOTA    AT lPasillo2
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "El pasillo es inmenso... Como mi paciencia."
                 DONE
 
 > BUSCAR    PELOTA      AT lPasillo2
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Buscas la pelota por el pasillo. Tus expectativas se ven frustradas."
                 DONE
@@ -7900,23 +8012,23 @@ BAJAR   lBath2
 ; Estamos en locPasillo3
 
 > BUSCAR    PELOTA    AT lPasillo3
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No tenemos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No tenemos la pelota.
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "El pasillo es inmenso... Como mi paciencia."
                 DONE
 
 > BUSCAR    PELOTA    AT lPasillo3
-                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
-                NOTCARR  oPelota         ; No llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                NOTZERO  fPatio          ; Hemos hablado con el niño en el patio.
+                NOTCARR  oPelota         ; No llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Observas con atención el pasillo en busca de una pelota, no tienes suerte."
                 DONE
@@ -8164,14 +8276,14 @@ BAJAR   lBath2
                                          ; de variables para comprobar el funcionamiento de las mismas.
 
 > AYUDA     OSITO   
-                XMESSAGE "fMecanismo1"
-                PRINT    123           
+                XMESSAGE "fTurnosConLuz"
+                PRINT    72           
                 XMESSAGE "#n"
-                XMESSAGE "fMecanismo2"
-                PRINT    124
+                XMESSAGE "fControlLuz"
+                PRINT    73
                 XMESSAGE "#n"
-                XMESSAGE "fMecanismo3"
-                PRINT    125          
+                XMESSAGE "fDarkF"
+                PRINT    28           
                 XMESSAGE "#n"
                 DONE
 
@@ -8246,9 +8358,8 @@ BAJAR   lBath2
                 ;GET     oPelota
                 ;GET     oPaleta
                 ;GET     oLlaveBodega
-                    
-                
-                GOTO     lBodega
+                                   
+                GOTO     lRecibidor
                 RESTART
                 DONE
 
@@ -8324,9 +8435,9 @@ BAJAR   lBath2
 
 > _         _                
                 NOTZERO  fDarkF
-                ;WINDOW  0
+                ;WINDOW  0               ; Se desactiva la imagen.
                 ;GFX     0 5
-                ;WINDOW  1
+                ;WINDOW  1                ; Se activa la imagen.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No puedes ver nada. Está muy oscuro."
                 DONE       
@@ -8339,21 +8450,21 @@ BAJAR   lBath2
                 DONE
 
 > BUSCAR    PELOTA   
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                CARRIED  oPelota         ; Llevamos la pelota.
                 NOTCARR  oCerillas       ; Verificamos que no portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                CARRIED  oPelota         ; Llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Ya llevas la pelota contigo#g#f:;#t."
                 DONE
 
 > BUSCAR    PELOTA   
-                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
-                CARRIED  oPelota         ; Llevamos la pelota.
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.      ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.    ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad., la localización tiene luz porque ponemos el flag de oscuridad a 0.
+                ZERO     fPatio          ; No hemos hablado con el niño en el patio.
+                CARRIED  oPelota         ; Llevamos la pelota.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Ya llevas la pelota contigo#g#f:;#t."
                 DONE
@@ -8364,9 +8475,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                CARRIED  oDiario
-                ZERO     fLeerDiario
-                SET      fLeerDiario
+                CARRIED  oDiario         ; Verificamos que portamos el diario.
+                ZERO     fLeerDiario     ; Verificamos que no hemos leido el diario.
+                SET      fLeerDiario     ; Activamos el flag que controla que hemos leido el diario.
                 INK      13
                 XMESSAGE "9 de Agosto de 1949.#n"
                 INK      colorNarrador   ; Color del narrador.                
@@ -8499,7 +8610,7 @@ BAJAR   lBath2
 
 /PRO 6 ; Inicialización
 
-> _         _   WINDOW  0                ; Window para imágenes
+> _         _   WINDOW  0                ; Gestión de gráficos: Se desactiva la imagen.            
                 WINAT   0       0
                 WINSIZE 13      127      ; 14 filas de alto * 8 pixels por fila = 112 pixels
                 XPICTURE 200             ; Pantalla de Portada del juego
@@ -8511,7 +8622,7 @@ BAJAR   lBath2
                 ;DISPLAY 0
 
 
-> _         _   WINDOW  1                ; Window para los textos
+> _         _   WINDOW  1                ; Gestión de gráficos: Se activa la imagen.             
                 WINAT   13      0
                 WINSIZE 25      127      ; Tamaño máximo
                 CLS                      ; Limpiamos la pantalla
