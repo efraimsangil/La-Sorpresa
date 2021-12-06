@@ -4,6 +4,9 @@ https://www.electroschematics.com/pcb-design-software/
 
 https://www.upwork.com/
 
+
+MSX_Programacion/msx2daad/MundoDAAD.txt:PS D:\GitHub\La-Sorpresa\DSK_SC8> C:\DAAD\drf.exe msx2 8_6 .\DAAD.DSF -no-semantic;php c:\daad\drb.php MSX2 8_6 ES .\DAAD.json
+
 Fuentes del Illustrator (Portada)
 pc-de-la-torre.png
 

@@ -24,3 +24,35 @@
 #define oLataDeAceite       22           ; lBath1
 #define oManguera           23           ; lCochera
 #define oGalleta            24           ; lDespensa
+
+;                               Localizaciones
+#define lIntro              0
+#define lBurgos             1
+#define lCoche              2
+#define lExtCasa            3
+#define lExteriorCochera    4
+#define lExteriorChamizo    5
+#define lPorche             6
+#define lRecibidor          7
+#define lPatio              8
+#define lBodega             9
+#define lCocina             10
+#define lSalon              11
+#define lEscaleras          12
+#define lDespensa           13
+#define lAseo               14
+#define lCriada             15
+#define lPasillo1           16
+#define lPasillo2           17
+#define lPasillo3           18
+#define lRoom1              19
+#define lBath1              20
+#define lRoom2              21
+#define lBath2              22
+#define lRoom3              23
+#define lBath3              24
+#define lGabinete           25
+#define lEscondrijo         26
+#define lChamizo            27
+#define lCochera            28
+#define lRetrete            29

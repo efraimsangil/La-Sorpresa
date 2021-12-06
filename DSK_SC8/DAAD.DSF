@@ -44,7 +44,7 @@
 #define gfxClearPhys    5
 #define gfxClearBack    6
 
-;                               System flags 0-63
+;                               System flags 0-63 ; SHORTCUT:defineflags
 #define fDark               0
 #define fObjectsCarried     1
 
@@ -106,8 +106,8 @@
 #define fFoco               83           ; Control para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche.
 #define fPatio              84           ; Control determinar si el niño ha aparecido ya en el patio.
 #define fGnomoRoto          85           ; Control para cuando rompes el Gnomo en lPorche.
-#define fInsistePuerta      86           ; Control para abrir la puerta de la cochera en ExteriorCochera.
-#define fInsisteMuchoPuerta 87           ; Control para abrir la puerta de la cochera en ExteriorCochera.
+#define fInsistePuerta      86           ; Control para abrir la puerta de la cochera en lExteriorCochera.
+#define fInsisteMuchoPuerta 87           ; Control para abrir la puerta de la cochera en lExteriorCochera.
 #define fUsarTarjeta        88           ; Control de USAR TARJETA en la VITRINA en lSalon.
 #define fVasAMorir          89           ; Control para matar al jugador en lGabinete.
 #define fUsarCerilla        90           ; Control del uso de la cerillas, si ya tienes una encendida o apagarla de modo intencionado.
@@ -120,7 +120,8 @@
 #define fFlashBack          97           ; Control del cambio de realidad en lRoom3. Tenemos distintas descripciones al tener dicho flag.
 #define fTerma              98           ; Controla EXAMINAR dos veces la TERMA en lBath3.
 #define fFotoPeluche        99           ; Si has visto o no la foto en lRoom1.
-                                         ; Los flags 100 y 101 se usan en un proceso que se encarga de mostrarnos las salidas cuando usamos SALID en el juego
+                                         ; Los flags 100 y 101 se usan en un proceso que se encarga de mostrarnos las salidas
+                                         ; cuando usamos SALID en el juego.
 #define fMoverAlambique     102          ; Controla si se movió o no el ALAMBIQUE en lBodega para acceder a la TRAMPILLA.
 #define fNenaMala           103          ; Controla que hayamos entrado en lRoom3 y activamos la aparación de la cría en lPasillo2.
 #define fAceite             104          ; Has entrado en BATH1 y examinado la cisterna.
@@ -135,22 +136,22 @@
 #define fTimbre             112          ; Flag para controlar que pulsa dos veces el timbre y cambiamos el texto de salida.
 #define fInsistelevanta     113          ; Flag para controlar que Marcos intente levantarse de la cama antes de coger el teléfono.
 #define fAbrirarmario       114          ; Flag que controla que el armario de LocBurgos esté abierto o no.
-#define fAbrirLavadora      115          ; Flag que controla que la lavadora esté abierta en LocCocina
-#define fControlSumidero    116          ; Flag que controla el detalle del fregadero y el que encontremos o no la llave del patio en el sumidero en LocCocina
+#define fAbrirLavadora      115          ; Flag que controla que la lavadora esté abierta en lCocina
+#define fControlSumidero    116          ; Flag que controla el detalle del fregadero y el que encontremos o no la llave del patio en el sumidero en lCocina
 #define fComeGalleta        117          ; Flag que controla la intención de comerte la galleta en cualquier lugar una vez la llevas contigo.
 #define fRompeRetrete       118          ; Flag que controla que el Retrete se rompe cuando bajamos de el.
-#define fFlushCadena        119          ; Flag que controla que hayamos tirado de la cadena en las localizacione LocBath2 y LocRetrete.
+#define fFlushCadena        119          ; Flag que controla que hayamos tirado de la cadena en las localizaciones lBath2 y lRetrete.
 #define fVolverEntrar       120          ; Flag que controla que hemos salido de la casa y que podemos
                                          ; entrar por segunda vez por la puerta principal.
 #define fTengoPala          121          ; Flag que controla que ya hemos obtenido la pala al salir del gabinete la primera vez.
-#define fAbrirCandado       122          ; Flag que controla que ya hemos abierto el candado de la trampilla de LocBodega.
+#define fAbrirCandado       122          ; Flag que controla que ya hemos abierto el candado de la trampilla de lBodega.
 #define fMecanismo1         123          ; Flag que controla que hayamos encontrado el mecanismo de apertura 
-                                         ; de la puerta en LocBodega.
+                                         ; de la puerta en lBodega.
 #define fMecanismo2         124          ; Flag que controla que hayamos persistido en la búsqueda del mecanismo de apertura
-                                         ; de la puerta en LocBodega.
+                                         ; de la puerta en lBodega.
 #define fMecanismo3         125          ; Flag que controla que hayamos persistido dos veces en la búsqueda del mecanismo
-                                         ; de apertura de la puerta en LocBodega, lo cual nos facilitará dicha apertura.
-
+                                         ; de apertura de la puerta en lBodega, lo cual nos facilitará dicha apertura.
+#define fCogeLlaveCaja      126          ; Flag que controla que ya hemos cogido la llave de la caja pequeña en lBath3.
 ;                               Localizaciones
 #define lIntro              0
 #define lBurgos             1
@@ -183,7 +184,7 @@
 #define lCochera            28
 #define lRetrete            29
 
-;                               Objetos
+;                               Objetos  ; SHORTCUT: defineobjetos
 #define oRopa               0            ; lBurgos
 #define oLlaveChamizo       1            ; lCochera
 #define oLlaveCochera       2            ; No se usa
@@ -245,7 +246,7 @@ TODO    20      noun
 TODOS   20      noun
 TODAS   20      noun
 
-;                               Objetos
+;                               Objetos  SHORTCUT: definenoun
 CONSOLA         98     noun        ; lRecibidor
 MESILLA         99     noun        ; lBurgos
 DIARIO          100    noun        ; lCriada
@@ -375,10 +376,10 @@ CRIO            223    noun        ; lPatio
 FANTASMA        224    noun        ; lPatio
 CUCARA          225    noun        ; lCriada . El nombre sería CUCARAÑA, pero para no tener problemas con la ñ, lo vamos a declarar así. 
                                    ; En el juego podremos escribir CUCARAÑA o CUCARANA, que el sistema lo va a reconocer. 
-COMBIN          226    noun        ; lBodega. El nombre sería COMBINACION. Hace referencia a la combinación del candado que hay en la trampilla de LocBodega.
-MECANIS         227    noun        ; lBodega. El nombre sería MECANISMO. Hace referencia al mecanismo oculto de la puerta de LocBodega que da a LocCochera.
+COMBIN          226    noun        ; lBodega. El nombre sería COMBINACION. Hace referencia a la combinación del candado que hay en la trampilla de lBodega.
+MECANIS         227    noun        ; lBodega. El nombre sería MECANISMO. Hace referencia al mecanismo oculto de la puerta de lBodega que da a lCochera.
 
-;                           Verbos
+;                           Verbos  SHORTCUT: defineverb
 COGER           20      verb
 DEJAR           21      verb
 SOLTAR          21      verb
@@ -733,31 +734,31 @@ BAJAR   lBath2
 /OBJ ;                              Objetos
 ;obj  starts  weight    c w  5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0    noun   adjective
 ;num    at
-/0      252     1       _ Y  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    ROPA        _
+/0      252     0       _ Y  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    ROPA        _
 /1      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV1       _
 /2      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV2       _
-/3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV3       _
-/4      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CABLE       _
+/3      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV3       _
+/4      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CABLE       _
 /5      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV0       _
-/6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
-/7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
-/8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
+/6      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
+/7      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
+/8      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
 /9      252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CERILLAS    _
-/10     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TABLON      _
+/10     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TABLON      _
 /11     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    SKEY1       _
-/12     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KCAJA       _
-/13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV4       _
-/14     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PELUCHE     _
+/12     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KCAJA       _
+/13     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV4       _
+/14     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PELUCHE     _
 /15     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV5       _
-/16     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FOTOGRAFIA  _
-/17     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PELOTA      _
-/18     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PALETA      _
-/19     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    HACHA       _
-/20     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV4       _
-/21     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV5       _
-/22     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LATA        _
-/23     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MANGUERA    _
-/24     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GALLETA     _
+/16     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FOTOGRAFIA  _
+/17     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PELOTA      _
+/18     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PALETA      _
+/19     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    HACHA       _
+/20     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV4       _
+/21     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV5       _
+/22     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LATA        _
+/23     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MANGUERA    _
+/24     252     0       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GALLETA     _
 ;------------------------------------------------------------------------------
 /PRO 0                          ;Bucle principal de localidades
 
@@ -850,14 +851,14 @@ BAJAR   lBath2
                                         ; cosas de las localidades que no sean fijas
 
 > _         _   NEWLINE
-                ZERO    fDarkF          ; No está oscuro
-                PROCESS 7
+                ZERO     fDarkF          ; No está oscuro
+                PROCESS  7
                 LISTOBJ
 
-                                        ; Este es un control de luz de las localizaciones comprendidas entre 9 y 29
+                                         ; Este es un control de luz de las localizaciones comprendidas entre 9 y 29
 > _         _
-                GT      38 8            ; Si la localización es mayor de 8
-                LT      38 30           ; Si la localización es menor de 30
+                GT       38 8            ; Si la localización es mayor de 8
+                LT       38 30           ; Si la localización es menor de 30
                 ZERO     fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
                 SET      fDarkF          ; Activamos la oscuridad
                 INK      colorSistema    ; Color del sistema
@@ -865,27 +866,27 @@ BAJAR   lBath2
                 XMESSAGE "Estás a oscuras."
 
 ;------------------------------------------------------------------------------
-/PRO 4                                  ; Antiguo proceso 2 del PAW
+/PRO 4                                   ; Antiguo proceso 2 del PAW
 
-                                        ; Por cada turno, descontamos un turno de luz
+                                         ; Por cada turno, descontamos un turno de luz
 > _         _
-                GT      fTurnosConLuz 0
-                MINUS   fTurnosConLuz 1
+                GT       fTurnosConLuz 0
+                MINUS    fTurnosConLuz 1
 
-                                        ; Si los turnos de luz es igual a 1, activamos la oscuridad 
-                                        ; y mostramos el mensaje de que se consumió la cerilla.
+                                         ; Si los turnos de luz es igual a 1, activamos la oscuridad 
+                                         ; y mostramos el mensaje de que se consumió la cerilla.
 > _         _
-                                        ; Hay que quitar la IMAGEN de la localización y dejarlo todo en negro
-                GT      38 9
-                LT      38 30
-                LT      fTurnosConLuz 1
+                                         ; Hay que quitar la IMAGEN de la localización y dejarlo todo en negro
+                GT       38 8
+                LT       38 30
+                LT       fTurnosConLuz 1
                 SET      fDarkF
-                CLEAR   fTurnosConLuz
-                CLEAR   fControlLuz
+                CLEAR    fTurnosConLuz
+                CLEAR    fControlLuz
                 XMESSAGE "#k"
                 CLS
-                GFX     0 5
-                CLEAR   fUsarCerilla
+                GFX      0 5
+                CLEAR    fUsarCerilla
                 XMESSAGE "Se ha consumido la cerilla."
                 
 > _         _
@@ -1888,7 +1889,7 @@ BAJAR   lBath2
 ; 1 = Entramos en la casa por primera vez. Es el comienzo del juego.
 ; 2 = Entramos en la casa por segunda vez con el niño. La intención es que salga por el gabinete con la pala para desenterrar los cadáveres. *Se bloquea el acceso desde la cochera al exterior.
 ; 3 = Entramos en la casa por segunda vez con la pala. La niña sale a nuestro encuentro y nos pide que hablemos con su hermano (NOTZERO fJugar) y así poder terminar saliendo por la cochera, ir al chamizo y desenterrar los cuerpos. Se bloquea la trampilla.
-; 4 = Entramos en la casa por segunda vez con la pala y con el niño. La niña aparece, los niños tienen una conversación entre ellos donde terminan pidiéndonos ayuda para resolver el crimen pero nos piden que ANTES busquemos el diario donde se relata todo.(fLeerDiario). Si al volver al recibidor (BAJAR) desde LocEscalera , tenemos un NOTZERO fLeerDiario, Los niños aparecen de nuevo y nos llevan al chamizo, desenterramos los cuerpos con la pala y finalizamos la aventura de la mejor manera posible.
+; 4 = Entramos en la casa por segunda vez con la pala y con el niño. La niña aparece, los niños tienen una conversación entre ellos donde terminan pidiéndonos ayuda para resolver el crimen pero nos piden que ANTES busquemos el diario donde se relata todo.(fLeerDiario). Si al volver al recibidor (BAJAR) desde lEscaleras , tenemos un NOTZERO fLeerDiario, Los niños aparecen de nuevo y nos llevan al chamizo, desenterramos los cuerpos con la pala y finalizamos la aventura de la mejor manera posible.
 ; 5 = Igual que 1 pero dejando la maceta al entrar.
 ; 6 = Igual que 2 pero dejando la maceta al entrar.
 ; 7 = Igual que 3 pero dejando la maceta al entrar.
@@ -1902,7 +1903,7 @@ BAJAR   lBath2
 ; Incluir un flag a la salida del gabinete y de la cochera para controlar que vamos a entrar una segunda vez en la casa  (fVolverEntrar)
 
 ;Indicar un control de CARRIED/NOTCARR oPala o bien CARRIED/NOTCARR oLlaveChamizo > ABRIR 	PUERTA    AT lBodega, para que el niño si llevamos la pala o la llave del chamizo, no nos deje salir por allí de nuevo.
-;Indicar un control de CARRIED/NOTCARR oPala en > ABRIR 	TRAMPILLA    AT lBodega para mantener la trampilla cerrada si ya hemos pasado antes por allí. Esto nos obliga a encontrar la pelota y a jugar con el niño para que nos saque por LocCochera con la llave del Chamizo.
+;Indicar un control de CARRIED/NOTCARR oPala en > ABRIR 	TRAMPILLA    AT lBodega para mantener la trampilla cerrada si ya hemos pasado antes por allí. Esto nos obliga a encontrar la pelota y a jugar con el niño para que nos saque por lCochera con la llave del Chamizo.
 ; Indicar un control de ZERO/NOTZERO fLeerDiario en > BAJAR    AT lEscaleras para que los niños hablen contigo si en el recibidor tenemos La pala, hemos jugado con el niño y hemos leido el diario. Aqui los niños te llevan al chamizo y se termina la aventura una vez desentierras los cuerpos.
 
 ; En 2 y 6, estamos obligados a salir por el chamizo con la pala. Leamos o no el diario.
@@ -2464,6 +2465,7 @@ BAJAR   lBath2
                 XMESSAGE "El alambique está en un rincón y donde estaba anteriormente, queda al descubierto una trampilla.#n"
                 DONE
 
+> EMPUJAR   ALAMBIQUE
 > MOVER     ALAMBIQUE AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -2475,6 +2477,8 @@ BAJAR   lBath2
                 XMESSAGE "Mueves el alambique y al desplazarlo, puedes ver en el suelo una trampilla."
                 DONE
 
+> TIRAR     ALAMBIQUE
+> EMPUJAR   ALAMBIQUE
 > MOVER     ALAMBIQUE AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
@@ -2622,7 +2626,7 @@ BAJAR   lBath2
                 XMESSAGE "Es una puerta metálica que comunica la bodega con otro lugar. Ya has desbloqueado el mecanismo que la mantenía cerrada."
                 INK      colorConciencia ; Color de la conciencia de Marcos.
                 DONE
-                                         ; La apertura de la puerta de LocBodega la controlan tres flags. 
+                                         ; La apertura de la puerta de lBodega la controlan tres flags. 
                                          ; fMecanismo1, fMecanismo2 y fMecanismo3, que controlan la insistencia
                                          ; en BUSCAR MECANISMO para la apertura de la puerta. Tenemos que
                                          ; buscar el mecanismo tres veces para que lo encuentre, así como podremos
@@ -2667,12 +2671,11 @@ BAJAR   lBath2
                 SET      fMecanismo3     ; Activamos el flag que controla que hayamos persistido dos veces
                                          ; en buscar el mecanismo de apertura de la puerta.
                 INK      colorNarrador   ; Color del Narrador.    
-                XMESSAGE "Te tomas unos minutos en palpar de nuevo la superficie de la puerta y el marco que la delimita.#n#n#k  Recorres cada centímetro como si te fuera la vida en ello...#n#k#b Acaricias suavemente pero con firmeza su contorno, presionando cada protuberancia con sumo cuidado, estudiando cada estría y asímetría de su figura... Súbitamente  encuentras un botón en un lateral de la misma. Lo presionas con sumo placer mientras te humedeces los labios.#n"
+                XMESSAGE "Te tomas unos minutos en palpar de nuevo la superficie de la puerta y el cerco que la delimita.#n#n#k  Recorres cada centímetro como si te fuera la vida en ello...#n#k#b Acaricias suavemente pero con firmeza su contorno, presionando cada protuberancia con sumo cuidado, estudiando cada estría y asímetría de su figura... Súbitamente  encuentras un botón en un lateral de la misma. Lo presionas con sumo placer mientras te humedeces los labios.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "¡Touché!. Parece que hemos desbloqueado la apertura de la puerta... Y creo que también me he puesto un poco cachondo."
                 DONE
 
-> ENTRAR    _
 > EMPUJAR   PUERTA
 > TIRAR     PUERTA
 > USAR      PUERTA
@@ -2686,7 +2689,6 @@ BAJAR   lBath2
                 XMESSAGE "Aquí no hay ninguna puerta."               
                 DONE
 
-> ENTRAR    _
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2702,7 +2704,6 @@ BAJAR   lBath2
                 XMESSAGE "No puedes abrir la puerta. No hay picaporte por ningún lado." 
                 DONE
 
-> ENTRAR    _
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2718,7 +2719,6 @@ BAJAR   lBath2
                 XMESSAGE "La puerta continúa cerrada." 
                 DONE
 
-> ENTRAR    _
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2734,9 +2734,7 @@ BAJAR   lBath2
                 XMESSAGE "Has abierto muchas puertas en tu vida. Esta no." 
                 DONE
 
-> ENTRAR    _
 > TIRAR     PUERTA
-> EMPUJAR   PUERTA
 > USAR 		PUERTA
 > ABRIR 	PUERTA    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -2753,8 +2751,19 @@ BAJAR   lBath2
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
 
+> EMPUJAR   	PUERTA    AT lBodega
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fMecanismo3     ; Verificamos que hemos persistido en encontrar el mecanismo de la puerta.
+                NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "La puerta se abre hacia adentro.#n#k"
+                DONE    
+                                     
                                          ; NOTA: Aquí se puede dar la circunstancia de volver a pasar con el niño en lugar de salir por la entrada ppal.
-
+    
 > TIRAR     PUERTA
 > EMPUJAR   PUERTA
 > USAR      PUERTA
@@ -2763,10 +2772,11 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fMecanismo3   ; Verificamos que hemos persistido en encontrar el mecanismo de la puerta.
+                NOTZERO  fMecanismo3     ; Verificamos que hemos persistido en encontrar el mecanismo de la puerta.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
                 SET      fVolverEntrar   ; Activamos el flag por si fuesemos a volver a entrar por la puerta principal.
+                                         ; Lo activamos aquí porque al ir con el niño (NOTZERO fJugar), este nos va a sacar a LocExtCochera directamente
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Como has desbloqueado el mecanismo de la puerta, la puedes abrir con facilidad.#n#k Entras en la cochera."
                 CLS                      ; Limpiamos la pantalla
@@ -2850,9 +2860,9 @@ BAJAR   lBath2
                                          ; el mecanismo de apertura la puerta.
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Introduces la punta de los dedos entre el marco y la puerta con la esperanza de que tus quebradizas uñas soporten la fuerza suficiente que hay que aplicar para mover la puerta.#n" 
+                XMESSAGE "Introduces la punta de los dedos entre el cerco y la puerta con la esperanza de que tus quebradizas uñas soporten la fuerza suficiente que hay que aplicar para mover la puerta.#k#n" 
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Joder.¡QUE DOLOR! Deja de hacer eso, ¡INMEDIATAMENTE!"
+                XMESSAGE "¡Joder! ¡QUE DOLOR! Deja de hacer eso, ¡INMEDIATAMENTE!"
                 DONE
 
 > TIRAR     	PUERTA    AT lBodega
@@ -2898,7 +2908,7 @@ BAJAR   lBath2
                 INK      colorNarrador   ; Color del narrador.            
                 XMESSAGE "Das unos pasos hacia atrás. Miras con rotundidad la puerta. Escarbas con la pata el suelo de la bodega como hacen los toros. Resoplas por la nariz y coges velocidad para propinar una contundente embestida a la puerta.#k#n#n Del golpe tan fuerte, caes al suelo y te retuerces del dolor durante unos instantes.#k#n#n Pasados unos minutos, te incorporas. #k#n" 
                 INK      colorConciencia ; Color de la conciencia de Marcos.    
-                XMESSAGE "¡Ooooolééééé!. Vaya hostia... Escucha; para y estate tranquilo un rato, recupérate y deja de hacer el imbécil, que nos vamos a joder el hombro."
+                XMESSAGE "¡Ooooolééééé!. Vaya hostia... Escucha. Deja ya de enredar. Recupérate y deja de hacer el imbécil, que nos vamos a joder el hombro."
                 DONE
 
 > EMPUJAR   	PUERTA    AT lBodega
@@ -2975,7 +2985,6 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
                 NOTZERO  fMoverAlambique ; Has movido el alambique.
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
@@ -2997,8 +3006,10 @@ BAJAR   lBath2
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
                 NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
+                SET      fVolverEntrar   ; Activamos el flag que controla que vamos a entrar por segunda vez a la casa
+                                         ; si conseguimos salir vivos del gabinete y resolvemos el chamizo.
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Abres la trampilla.#k"
+                XMESSAGE "Abres la trampilla.#k#n Te sientas en el suelo con los pies dentro y te dejas caer; la altura es considerable. #n#n Es imposible volver a subir.#k#b"
                 CLS
                 GOTO     lGabinete
                 CLEAR    fVasAMorir 
@@ -3030,6 +3041,9 @@ BAJAR   lBath2
                 NOTZERO  fMoverAlambique ; Has movido el alambique.
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado     
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
+                NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
+                SET      fVolverEntrar   ; Activamos el flag que controla que vamos a entrar por segunda vez a la casa
+                                         ; si conseguimos salir vivos del gabinete y resolvemos el chamizo.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k#n"
                 INK      colorNene       ; Color del niño.       
@@ -3038,6 +3052,7 @@ BAJAR   lBath2
                 XMESSAGE "Debemos ser cautelosos.#k"                
                 CLS
                 INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Abres la trampilla.#k#n Te sientas en el suelo con los pies dentro y te dejas caer; la altura es considerable. #n#n Es imposible volver a subir.#k#b"
                 GOTO     lGabinete
                 CLEAR    fVasAMorir
                 RESTART
@@ -5477,7 +5492,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.           
-                ZERO     fEscalon   
+                ZERO     fEscalon        ; Verificamos que el escalón está puesto.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Lo cierto es que siento curiosidad. Si esto cruje será por algo.#n"
                 XMESSAGE "Voy a ver; pues sí, hay un escalón que parece tener cierta holgura y se mueve un poco."
@@ -5490,7 +5505,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "Has quitado el escalón y ahora hay un hueco. Eso podría ser una trampa mortal."
                 DONE
@@ -5503,8 +5518,8 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fEscalon
-                SET      fEscalon
+                ZERO     fEscalon        ; Verificamos que el escalón está puesto.
+                SET      fEscalon        ; Activamos el flag que controla quitar el escalón.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Mueves el escalón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro. Has dejado el hueco abierto y eso no es muy seguro."
                 DONE
@@ -5517,7 +5532,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El escalón no se mueve más."
                 DONE
@@ -5527,7 +5542,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La caja tiene un candado de seguridad. Necesitas una llave pequeña."
@@ -5537,7 +5552,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La caja está anclada dentro del hueco del escalón, no se puede coger."
@@ -5547,7 +5562,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "¿No te sientes lo suficientemente culpable con haber roto el gnomo de tu madre, verdad?"
@@ -5557,7 +5572,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTCARR  oLlaveCaja
                 NOTCARR  oTarjetaLlave
@@ -5569,19 +5584,19 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTCARR  oLlaveCaja
                 CARRIED  oTarjetaLlave
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Ya tienes la tarjeta de seguridad#g#f<#t."
+                XMESSAGE "No puedes volver a abrir la caja porque has partido la llave dentro.#n Además, ya has cogido la tarjeta de seguridad#g#f<#t."
                 DONE
 
 > ABRIR		CAJA      AT lEscaleras                
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 CARRIED  oLlaveCaja
                 ISAT     oTarjetaLlave 252
@@ -5605,7 +5620,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Estás en las escaleras. Hay un escalón apoyado en la barandilla y en el hueco, puedes ver una caja metálica.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
@@ -5617,9 +5632,9 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.                
-                NOTZERO  fEscalon
-                CLEAR    fEscalon
-                ZERO     fEscalon
+                NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
+                CLEAR    fEscalon        ; Ponemos a cero el flag que controla que el escalón está quitado
+                ZERO     fEscalon        ; Verificamos que el escalón no está puesto.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Has puesto el escalón en su sitio.#n"
@@ -6141,11 +6156,11 @@ BAJAR   lBath2
                 INK      colorMarcos     ; Color del protagonista. 
                 XMESSAGE "Juguemos un poco, supongo.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "Quiero jugar a la pelota#g#f:;#t.#n"
+                XMESSAGE "Quiero jugar a la pelota.#n"
                 INK      colorMarcos     ; Color del protagonista. 
-                XMESSAGE "No tengo ninguna pelota#g#f:;#t.#n"
+                XMESSAGE "No tengo ninguna pelota.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "En la casa seguro que hay una pelota#g#f:;#t, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
+                XMESSAGE "En la casa seguro que hay una pelota, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "Ya tenemos trabajo que hacer... Tenemos que encontrar la dichosa pelotita."
                 DONE
@@ -6173,9 +6188,9 @@ BAJAR   lBath2
                 INK      colorMarcos     ; Color del protagonista. 
                 XMESSAGE "Juguemos un poco, supongo.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "Quiero jugar a la pelota#g#f:;#t.#n"
+                XMESSAGE "Quiero jugar a la pelota.#n"
                 INK      colorMarcos     ; Color del protagonista. 
-                XMESSAGE "Yo tengo una pelota#g#f:;#t.#n"
+                XMESSAGE "Yo tengo una pelota.#n"
                 INK      colorNene       ; Color del niño.
                 XMESSAGE "¿Quieres jugar conmigo entonces?#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
@@ -6201,7 +6216,7 @@ BAJAR   lBath2
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Hola. ¿No sabes dónde están tus padres? ¿Qué haces aquí?#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "Jugando al pilla-pilla. Pero nos gustaría jugar a la pelota#g#f:;#t. ¡Juega conmigo!"               
+                XMESSAGE "Jugando al pilla-pilla. Pero nos gustaría jugar a la pelota. ¡Juega conmigo!"               
                 DONE
 
 > EXAMINA   CRIO
@@ -6262,7 +6277,7 @@ BAJAR   lBath2
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Le das la pelota#g#f:;#t que llevas contigo al niño y se le dibuja una sonrisa en la cara.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "Muchas gracias por devolverme mi pelota#g#f:;#t, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
+                XMESSAGE "Muchas gracias por devolverme mi pelota, la echaba tanto de menos... Puedo ayudarte si voy contigo. ¿Podemos irnos ya?#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
                 INK      colorNene       ; Color del niño.  
@@ -6278,7 +6293,7 @@ BAJAR   lBath2
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTCARR  oPelota
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "No has traído mi pelota#g#f:;#t, ¿me la buscas?"
+                XMESSAGE "No has traído mi pelota, ¿me la buscas?"
                 DONE
 
 > EXAMINA   LUNA      AT lPatio
@@ -6339,8 +6354,8 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fFotoPeluche
-                SET      fFotoPeluche
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1.
+                SET      fFotoPeluche    ; Activamos el flag que nos permite comprobar que hemos visto la foto del osito de peluche.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es un precioso marco de madera tallada que contiene una fotografía#g#fD#t de una niña y un niño.#n#nLa niña sostiene en la mano un osito de peluche#g#f##t.#k#n"
                 CLS                      ; Limpiamos la pantalla
@@ -7045,7 +7060,7 @@ BAJAR   lBath2
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                              
-                GOTO    lPasillo3
+                GOTO     lPasillo3
                 CLS                      ; Limpiamos la pantalla
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra
                 DONE
@@ -7055,8 +7070,8 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.            
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fFlashBack      ; Flag para controlar que aparezca la niña en lPasillo2
-                SET      fFlashBack
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
+                SET      fFlashBack      ; Activamos el flag que controla que aparecerá la niña en lPasillo2.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Una presencia te invade y te tira al suelo... quedas inconsciente por unos instantes y cuando despiertas....#k#n#nEs el mismo lugar... pero estás desconcertado... Todo el contenido de la habitación está ahí, pero es... distinto.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
@@ -7067,8 +7082,8 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Se trata de un cabecero de madera muy básico, no hay detalles a destacar."
                 DONE
@@ -7077,8 +7092,8 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Donde estaba el cabecero de madera ahora hay uno de latón antiguo con piezas repujadas dibujando unas complejas filigranas."
                 DONE
@@ -7087,8 +7102,8 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El temple de la pintura hace que respiren las paredes.#n"
                 INK      colorMarcos     ; Color del protagonista.
@@ -7099,8 +7114,8 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Las paredes son blancas y rugosas pintadas en cal, están muy frías y desnudas."
                 DONE
@@ -7109,8 +7124,8 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Se trata de una cama de matrimonio moderna."
                 DONE
@@ -7119,26 +7134,39 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
-                EQ       fNenaMala 5
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
+                EQ       fNenaMala 5     ; Verificamos que la niña ya se ha llevado el osito y no aparecerá más.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Quieres otro peluche,¿eh? ¡A la feria a disparar palillos!"
                 DONE
+
+> EXAMINA   CAMA      AT lRoom3
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                CARRIED  oPeluche        ; Portamos el peluche.
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Debajo de la cama hay treinta años de pelusas menos que hoy."
+                DONE
+
 ; Hemos visto la foto, por tanto el peluche está limpio
 > EXAMINA   CAMA      AT lRoom3
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
-                NOTZERO  fFotoPeluche
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto de lRoom1.
                 ISAT     oPeluche    252
-                CREATE   oPeluche
+                CREATE   oPeluche        ; Creamos el osito de peluche.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama. Se trata de un osito de peluche#g#f##t.#n"
                 INK      colorSistema    ; El color del sistema.
-                GET      oPeluche
+                GET      oPeluche        ; Cogemos el osito de peluche.
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Oh, qué osito tan suave. Parece el mismo peluche que llevaba la niña en la foto.#n"
@@ -7150,15 +7178,16 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
-                ZERO     fFotoPeluche
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto de lRoom1.
                 ISAT     oPeluche    252
-                CREATE   oPeluche
+                CREATE   oPeluche        ; Creamos el osito de peluche.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un un osito de peluche#g#f##t.#n"
+                XMESSAGE "Prestas atención a algo que sobresale de las faldas de la cama.#k#n#n Introduces la mano y encuentras un osito de peluche#g#f##t.#n"
                 INK      colorSistema    ; El color del sistema.
-                GET      oPeluche
+                GET      oPeluche        ; Cogemos el osito de peluche.
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Es un osito de peluche muy viejo; está mugriento y sucio. No me suena haber visto este peluche en mi vida."
@@ -7168,7 +7197,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Hay una alfombra grande y azul a los pies de la cama."
@@ -7178,7 +7207,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Hay una alfombra persa con flecos muy antigua a los pies de la cama. Tiene tonalidades rojas, ocres y amarillas.#n"
@@ -7190,7 +7219,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es una mesita de noche rústica que hay justo en uno de los lados de la cama."
@@ -7200,7 +7229,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La mesita ha desaparecido. En su lugar hay una lámpara de pie.#n"
@@ -7212,7 +7241,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Hay una lámpara justo encima de la cama, recuerdas que se encendía con una pera, pero ahora que has cogido maña con las cerillas, no te vas a poner a revolver la cama de tus padres."
@@ -7222,7 +7251,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Al lado de la cama puedes contemplar una lámpara de pie de estilo victoriano.#n#nLa base es de mármol con filigrana negra con pie grabado y la pantalla está recargada con unas cuentas doradas y negras que cuelgan de ella."
@@ -7232,7 +7261,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                ZERO     fFlashBack
+                ZERO     fFlashBack      ; Verificamos que no ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El suelo es de gres porcelánico esmaltado de color blanco."
@@ -7242,7 +7271,7 @@ BAJAR   lBath2
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                NOTZERO  fFlashBack
+                NOTZERO  fFlashBack      ; Verificamos que ya ha habido flashback.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El suelo es de terrazo; es el suelo clásico de las casas antiguas.#n"
@@ -7312,8 +7341,8 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fTerma
-                SET      fTerma                
+                ZERO     fTerma          ; Verificamos no hemos examinado nunca la terma.
+                SET      fTerma          ; Activamos el flag que nos indica que examinamos la terma por primera vez.       
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Percibes el ruido del agua moverse, será posible que...#n#nEstás muy cerca, pero no lo suficiente. Quizás deberías echar otro vistazo para asegurarte."
                 DONE     
@@ -7323,17 +7352,32 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.                
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fTerma
-                ZERO     fFinTerma
+                NOTZERO  fTerma          ; Verificamos que hemos examinado la terma por primera vez.
+                ZERO     fFinTerma       ; Verificamos que no hemos examinado la terma por segunda vez.
+                SET      fFinTerma       ; Activamos el flag que nos indica que hemos examinado la terma
+                                         ; por segunda vez.
+                ZERO     fCogeLlaveCaja  ; Verificamos que no hemos cogido la llave de la caja.
+                SET      fCogeLlaveCaja  ; Activamos el flag que controla que hemos cogido la llave de la caja.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
                 ISAT     oLlaveCaja 252
-                CREATE   oLlaveCaja
+                CREATE   oLlaveCaja      ; Se crea la llave de la caja.
                 INK      colorSistema    ; El color del sistema.
-                GET      oLlaveCaja
+                GET      oLlaveCaja      ; Cogemos la llave de la caja.
                 XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
-                ZERO     fFinTerma
+                DONE  
+
+> EXAMINA   TERMA   AT lBath3
+                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
+                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.                
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                NOTZERO  fTerma          ; Verificamos que hemos examinado la terma por primera vez.
+                NOTZERO  fCogeLlaveCaja  ; Verificamos que ya hemos cogido la llave una primera vez.
+                ZERO     fFinTerma       ; Verificamos que no hemos examinado la terma por segunda vez.
                 SET      fFinTerma
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "La mujer ya no está aquí.#n"          
                 DONE  
 
 > EXAMINA   TERMA   AT lBath3
@@ -7341,9 +7385,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fTerma
-                NOTZERO  fFinTerma                
-                CARRIED  oLlaveCaja
+                NOTZERO  fTerma          ; Verificamos que hemos examinado la terma por primera vez.
+                NOTZERO  fFinTerma       ; Verificamos que hemos examinado la terma por segunda vez.               
+                CARRIED  oLlaveCaja      ; Verificamos que llevamos la llave de la caja.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡NO ME JODAS! ¿DóNDE ESTAS? ¡He visto una puta mano!#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
@@ -7365,7 +7409,7 @@ BAJAR   lBath2
 
 > S			_       AT lBath3                
                 ZERO     fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
-                SET      fDarkF
+                SET      fDarkF          ; Activamos la oscuridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No puedes moverte a ciegas. Utiliza algo para iluminarte."
                 DONE
@@ -7547,7 +7591,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 5
+                EQ       fNenaMala 5     ; Verificamos que la niña ya se ha llevado el osito y no aparecerá más.
                 CLS                      ; Limpiamos la pantalla
                 INK      colorNarrador   ; Color del narrador.                
                 GOTO     lRoom2
@@ -7571,7 +7615,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 5
+                EQ       fNenaMala 5     ; Verificamos que la niña ya se ha llevado el osito y no aparecerá más.
                 CLS                      ; Limpiamos la pantalla
                 INK      colorNarrador   ; Color del narrador.                
                 GOTO     lPasillo3                
@@ -7610,9 +7654,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255   ; Hemos entrado en Room3
-                ZERO     fFotoPeluche    ; no hemos visto la foto
-                CARRIED  oPeluche        ; llevamos el peluche encima
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7621,7 +7665,12 @@ BAJAR   lBath2
                 INK      colorNena       ; Color de la niña.
                 XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
                 DESTROY  oPeluche	
-                LET      fNenaMala 5
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lRoom2
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
@@ -7634,9 +7683,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255   ; Hemos entrado en Room3
-                ZERO     fFotoPeluche    ;no hemos visto la foto
-                CARRIED  oPeluche        ; llevamos el peluche encima
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7645,7 +7694,12 @@ BAJAR   lBath2
                 INK      colorNena       ; Color de la niña.
                 XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
                 DESTROY  oPeluche	
-                LET      fNenaMala 5 
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lPasillo3
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
@@ -7658,9 +7712,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255   ; Hemos entrado en Room3
-                ZERO     fFotoPeluche    ;no hemos visto la foto
-                CARRIED  oPeluche        ; llevamos el peluche encima
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7669,7 +7723,12 @@ BAJAR   lBath2
                 INK      colorNena       ; Color de la niña.
                 XMESSAGE "¡DAME MI OSITO!¡ES MIO!#k#n"
                 DESTROY  oPeluche	
-                LET      fNenaMala 5
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lPasillo1
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k"
@@ -7687,9 +7746,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255 
-                ZERO     fFotoPeluche    ;No has visto la foto
-                NOTCARR  oPeluche        ;No has cogido el peluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7716,9 +7775,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                ZERO     fFotoPeluche
-                NOTCARR  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7745,9 +7804,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                ZERO     fFotoPeluche
-                NOTCARR  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto con el peluche en lRoom1.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7779,10 +7838,10 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fFotoPeluche    ; Hemos visto la foto
-                CARRIED  oPeluche        ; Tenemos el peluche
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 ZERO     fAceite         ; no tenemos el aceite
-                EQ       fNenaMala 255   ; hemos entrado en ROOM3
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7793,7 +7852,12 @@ BAJAR   lBath2
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "Debes investigar eso.#k"  
                 DESTROY  oPeluche	
-                LET      fNenaMala 5
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lRoom2
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla
@@ -7805,10 +7869,10 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fFotoPeluche    ; Hemos visto la foto
-                CARRIED  oPeluche        ; Tenemos el peluche
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 ZERO     fAceite         ; no tenemos el aceite
-                EQ       fNenaMala 255   ; hemos entrado en ROOM3
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7819,7 +7883,12 @@ BAJAR   lBath2
                 INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "Debes investigar eso.#k" 
                 DESTROY  oPeluche	
-                LET      fNenaMala 5
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lPasillo3
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla
@@ -7831,10 +7900,10 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fFotoPeluche    ; Hemos visto la foto
-                CARRIED  oPeluche        ; Tenemos el peluche
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 ZERO     fAceite         ; no tenemos el aceite
-                EQ       fNenaMala 255   ; hemos entrado en ROOM3
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 WINDOW   0
@@ -7845,7 +7914,12 @@ BAJAR   lBath2
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "Debes investigar eso.#k" 
                 DESTROY  oPeluche	
-                LET      fNenaMala 5
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lPasillo1
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla
@@ -7863,9 +7937,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                NOTZERO  fFotoPeluche
-                CARRIED  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 NOTZERO  fAceite
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
@@ -7884,7 +7958,12 @@ BAJAR   lBath2
                 ZERO     fCombinacion    ; Flag que nos sirve para abrir el candado de la trampilla de la bodega
                 SET      fCombinacion    ; Ahora podremos abrir el candado de la trampilla de la bodega
                 DESTROY  oPeluche	
-                LET      fNenaMala 5
+                LET      fNenaMala 5     ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lPasillo3
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla
@@ -7896,9 +7975,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                NOTZERO  fFotoPeluche
-                CARRIED  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 NOTZERO  fAceite
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
@@ -7914,7 +7993,12 @@ BAJAR   lBath2
                 ZERO     fCombinacion
                 SET      fCombinacion
                 DESTROY  oPeluche
-                LET      fNenaMala 5	
+                LET      fNenaMala 5	 ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lPasillo1
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla
@@ -7926,9 +8010,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                NOTZERO  fFotoPeluche
-                CARRIED  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                CARRIED  oPeluche        ; Verificamos que portamos el osito de peluche.
                 NOTZERO  fAceite
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
@@ -7944,7 +8028,12 @@ BAJAR   lBath2
                 ZERO     fCombinacion
                 SET      fCombinacion
                 DESTROY  oPeluche
-                LET      fNenaMala 5	
+                LET      fNenaMala 5	 ; Colocamos el valor a Flag nenamala que indica que se ha llevado el osito.
+                                         ; y ya no va a aparecer más. 
+                                         ; Este flag tiene tres variables. 
+                                         ; 0: No existen requisitos para que aparezca la niña.
+                                         ; 5: La niña se lleva el osito y ya no aparecerá más.
+                                         ; 255: La niña está por aparecer en el pasillo.
                 GOTO     lRoom2
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla
@@ -7960,9 +8049,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                NOTZERO  fFotoPeluche
-                NOTCARR  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK      colorNena       ; Color de la niña.
@@ -7978,9 +8067,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                NOTZERO  fFotoPeluche
-                NOTCARR  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK      colorNena       ; Color de la niña.
@@ -7996,9 +8085,9 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
-                NOTZERO  fFotoPeluche
-                NOTCARR  oPeluche
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
+                NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1.
+                NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
                 INK      colorNena       ; Color de la niña.
@@ -8064,7 +8153,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 5
+                EQ       fNenaMala 5     ; Verificamos que la niña ya se ha llevado el osito y no aparecerá más.
                 INK      colorNarrador   ; Color del narrador.                
                 GOTO     lRoom3
                 CLS                      ; Limpiamos la pantalla
@@ -8076,7 +8165,7 @@ BAJAR   lBath2
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                EQ       fNenaMala 255
+                EQ       fNenaMala 255   ; Verificamos que el flag está en el valor que permite aparecer a la niña en el pasillo.
                 INK      colorNarrador   ; Color del narrador.                
                 GOTO     lRoom3
                 CLS                      ; Limpiamos la pantalla
@@ -8275,7 +8364,7 @@ BAJAR   lBath2
                                          ; AYUDA OSITO: Cheat para los desarrolladores. Nos permite hacer una lectura 
                                          ; de variables para comprobar el funcionamiento de las mismas.
 
-> AYUDA     OSITO   
+> AYUDA     OSITO                        ; SHORTCUT:ayudaosito
                 XMESSAGE "fTurnosConLuz"
                 PRINT    72           
                 XMESSAGE "#n"
@@ -8284,13 +8373,25 @@ BAJAR   lBath2
                 XMESSAGE "#n"
                 XMESSAGE "fDarkF"
                 PRINT    28           
+                XMESSAGE "#k#n"
+                XMESSAGE "fMoverAlambique"
+                PRINT    102           
+                XMESSAGE "#n"
+                XMESSAGE "fEngrasar"
+                PRINT     91           
+                XMESSAGE "#n"
+                XMESSAGE "fCombinacion"
+                PRINT    107           
+                XMESSAGE "#n"
+                XMESSAGE "fAbrirCandado"
+                PRINT    122           
                 XMESSAGE "#n"
                 DONE
 
-                                            ; USAR MAGIA: Cheat para los desarrolladores. Nos permite poner en el inventario
-                                            ; objetos para avanzar en la aventura sin tener que realizarla.
-
-> USAR      MAGIA  
+                                         ; USAR MAGIA: Cheat para los desarrolladores. Nos permite poner en el inventario
+                                         ; objetos para avanzar en la aventura sin tener que realizarla.
+ 
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
                 ISAT     oRopa           252                         
                 CREATE   oRopa
                 GET      oRopa
@@ -8299,66 +8400,59 @@ BAJAR   lBath2
                 CREATE   oCerillas
                 GET      oCerillas
 
-                ;ISAT     oLlaveCoche     252
-                ;CREATE   oLlaveCoche
-                ;GET      oLlaveCoche
-
-                ;ISAT     oPelota         252
-                ;CREATE   oPelota
-                ;GET      oPelota
-
-                ;ISAT     oPaleta       252
-                ;CREATE   oPaleta
-                ;GET      oPaleta
-            
-                ;ISAT     oPala       252
-                ;CREATE   oPala
-                ;GET      oPala
-
-                ISAT     oLlaveBodega   252
+                ISAT     oLlaveBodega    252
                 CREATE   oLlaveBodega
                 GET      oLlaveBodega
 
-                ;ISAT     oLataDeAceite      252
+                ISAT     oLlaveCoche     252
+                CREATE   oLlaveCoche
+                GET      oLlaveCoche
+                
+                ISAT     oLlavePorche    252
+                CREATE   oLlavePorche
+                GET      oLlavePorche
+                               
+                ISAT     oLlaveCaja      252
+                CREATE   oLlaveCaja
+                GET      oLlaveCaja
+
+                ISAT     oLlavePatio     252
+                CREATE   oLlavePatio
+                GET      oLlavePatio
+
+                ISAT    oLlaveChamizo    252
+                CREATE  oLlaveChamizo
+                GET     oLlaveChamizo
+
+                ;ISAT     oPelota        252
+                ;CREATE   oPelota
+                ;GET      oPelota
+
+                ;ISAT     oPaleta        252
+                ;CREATE   oPaleta
+                ;GET      oPaleta
+            
+                ISAT     oPala           252
+                CREATE   oPala
+                GET      oPala
+            
+                ;ISAT     oLataDeAceite  252
                 ;CREATE   oLataDeAceite 
                 ;GET      oLataDeAceite 
 
-                ;ISAT    oLlaveChamizo   252
-                ;CREATE  oLlaveChamizo
-                ;GET     oLlaveChamizo
-
-                ;ISAT    oHacha          252
-                ;CREATE  oHacha
-                ;GET     oHacha
-            
-                ;SET      fJugar
-                ;SET      fCombinacion
-                ;SET      fEngrasar
+                ISAT    oHacha           252
+                CREATE  oHacha
+                GET     oHacha
+                
+                
+                
+                SET      fJugar
+                SET      fCombinacion
+                SET      fEngrasar
                 SET      fQuitarMancha
-                ;SET      fMoverAlambique
-
-
-                ;ISAT    oLlavePorche    252
-                ;ISAT    oLlaveCaja      252
-                ;ISAT    oLlavePatio     252
-                ;ISAT    oPelota         252
-                ;ISAT    oPaleta         252
-                ;ISAT    oLlaveBodega    252
-                        
-                ;CREATE  oLlavePorche
-                ;CREATE  oLlaveCaja
-                ;CREATE  oLlavePatio
-                ;CREATE  oPelota
-                ;CREATE  oPaleta
-                ;CREATE  oLlaveBodega                     
-                          
-                ;GET     oLlavePorche
-                ;GET     oLlaveCaja
-                ;GET     oLlavePatio
-                ;GET     oPelota
-                ;GET     oPaleta
-                ;GET     oLlaveBodega
-                                   
+                SET      fMoverAlambique
+                SET      fVolverEntrar
+                                               
                 GOTO     lRecibidor
                 RESTART
                 DONE
@@ -8539,7 +8633,7 @@ BAJAR   lBath2
                 XMESSAGE "El señor ha venido a mi cuarto y casi me sorprende con el diario en la mano, he decidido esconderlo para que nunca lo encuentre, porque me puede matar si lo hace. Ruego para que alguien lo encuentre algún día y se haga justicia.#k"
 
                                          ; El resto de la historia, de cuando el niño ya con seis años escapa de la casa y
-                                         ; le pilla el terrateniente en el pueblo, lo narrará el niño en LocCochera.
+                                         ; le pilla el terrateniente en el pueblo, lo narrará el niño en lCochera.
                                          ; la historia continua cuando el terrateniente descubre al niño intentando escapar, 
                                          ; lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y 
                                          ; con la ayuda de este, le da un hacha y le pide que le ayude a trocear los cuerpos
@@ -8569,7 +8663,10 @@ BAJAR   lBath2
 ;                INK      colorNarrador   ; Color del narrador.                
 
 ;> DEJAR   TODO  DOALL   CARRIED
-> DEJAR     _   AUTOD
+> DEJAR     _   
+                INK      colorConciencia
+                XMESSAGE "Mamá nos ha enseñado que las cosas no se tiran al suelo.#n"
+                INK      colorSistema
                 DONE
 
 ;> QUITAR  TODO  DOALL   WORN
@@ -8639,8 +8736,8 @@ BAJAR   lBath2
                 SKIP    -2
 
 > _         _   RESET                    ; Objetos a su loc. inicial / Flag 1
-                LET     fStrength 10
-                LET     fMaxCarr  10     ; Num de objetos que puedes llevar encima
+                LET     fStrength 20
+                LET     fMaxCarr  20     ; Num de objetos que puedes llevar encima
                 SET     fCPronounNoun
                 SET     fCPronounAdject
                 GOTO    1                ; Primera localidad del juego
