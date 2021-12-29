@@ -41,6 +41,9 @@ the barge inn
 
 php.exe C:\DAAD\scrconv.php Spider.png C:\DAAD\example.conf.php
 
+La portada y los créditos son 212
+php c:\daad\imgwizard.php c '..\Imagenes\SC8\004.S07' 212 raw
+
 
 php c:\daad\imgwizard.php c '..\Imagenes\SC7\004.S07' 128 raw
 
