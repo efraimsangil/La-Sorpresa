@@ -3068,7 +3068,7 @@ S       lRecibidor
                 INK      colorNene       ; Color del niño.      
                 XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "¿Has venido siguiéndome?#k#n"
+                XMESSAGE "¿Has venido siguiéndome?#k#n"     ; pixa: No tiene sentido esa frase, porque el crío en el patio ya dijo que nos seguía porque se aburría. Cosa que tampoco tiene sentido, porque YA estaba jugando al llegar nosotros y luego además a jugado a la pelota.
                 INK      colorNene       ; Color del niño.       
                 XMESSAGE "!Sí! Te has portado bien conmigo y yo te acompaño para ayudarte.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
@@ -3102,7 +3102,7 @@ S       lRecibidor
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Muy bien, pues yo te ayudaré a resolver el crimen.#k#n"
                 INK      colorNene       ; Color del niño.       
-                XMESSAGE "Te acompaño. Mi hermana tiene cerrada la puerta principal, pero podemos salir por aquí.#k#n"
+                XMESSAGE "Te acompaño. Mi hermana tiene cerrada la puerta principal, pero podemos salir por aquí.#k#n" ;pixa: Tampoco tiene sentido si el crío nos saca fuera de la cochera y resulta que debemos entrar por la puerta principal.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "El niño abre la portón de la cochera y sales hacia el exterior. Desde ahora podrás abrir el portón desde el exterior.#k"
                 CLEAR    fUsarCerilla               
@@ -3214,7 +3214,7 @@ S       lRecibidor
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado   
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
                 NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
-                SET      fVolverEntrar   ; Activamos el flag que controla que vamos a entrar por segunda vez a la casa
+                ; SET      fVolverEntrar   ; Activamos el flag que controla que vamos a entrar por segunda vez a la casa
                                          ; si conseguimos salir vivos del gabinete y resolvemos el chamizo.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Abres la trampilla.#k#n Te sientas en el suelo con los pies dentro y te dejas caer; la altura es considerable. #n#n Es imposible volver a subir.#k#b"
@@ -3244,7 +3244,7 @@ S       lRecibidor
                 NOTZERO  fEngrasar       ; flag que controla que hayamos engrasado el candado     
                 NOTZERO  fCombinacion    ; Verificamos que conocemos la combinación que abre el candado.
                 NOTZERO  fAbrirCandado   ; Verificamos que el candado está abierto.
-                SET      fVolverEntrar   ; Activamos el flag que controla que vamos a entrar por segunda vez a la casa
+                ; SET      fVolverEntrar   ; Activamos el flag que controla que vamos a entrar por segunda vez a la casa
                                          ; si conseguimos salir vivos del gabinete y resolvemos el chamizo.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Pones la combinación en el candado y abres la trampilla.#k#n"
@@ -3639,7 +3639,7 @@ S       lRecibidor
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n El chamizo es un lugar infecto y húmedo, donde se guardaban los oxidados utensilios de jardinería y algunas herramientas, pero ya no hay nada de eso aquí. El suelo es de tierra compactada y está muy sucio; Hay un olor a humedad y a cerrado muy desagradable."
                 XMESSAGE "#nAl fondo del chamizo puedes observar un armario metálico.#k#n"
                 INK      colorNene       ; Color del niño.        
-                XMESSAGE "Ya hemos pasado por aquí y no me has hecho caso.#n Te pido por favor que cojas la pala y la uses en el suelo del chamizo.#n#k#n"
+                XMESSAGE "Ya hemos pasado por aquí y no me has hecho caso.#n#n Te pido por favor que cojas la pala y la uses en el suelo del chamizo."
                 GOTO     lChamizo        ; Vamos a lChamizo.
                 DONE
 
@@ -3772,7 +3772,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "El niño aparece a tu lado.#k#n" 
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "Aquí mataron a mi madre y a mi hermana. Yo me había escapado y el me encontró por el camino.#n Me trajo aquí y me obligó a llevar los cuerpos al chamizo. Recuerdo que había una llave escondida sobre el portón de la cochera."
+                XMESSAGE "Aquí mataron a mi madre y a mi hermana. Yo me había escapado y el me encontró por el camino.#n Me trajo aquí y me obligó a llevar los cuerpos al chamizo. Recuerdo que había una llave escondida sobre el portón de la cochera." ; pixa: esa llave debería poderse encontrar sin el crío?
                 INK      colorSistema    ; El color del sistema
                 DONE
 
@@ -4055,6 +4055,7 @@ S       lRecibidor
 > ABRIR     PUERTA    AT lExteriorChamizo
                 PROCESS  9               ; Proceso que controla que tenemos las cerillas encendidas.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
+                INK      colorNarrador   ; Color del narrador.    
                 XMESSAGE "Abres la puerta del chamizo y entras.#k#b#n"
                 WINDOW   0
                 XPICTURE 030
@@ -6194,11 +6195,10 @@ S       lRecibidor
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "No sé si es buena idea. Además, no podemos irnos, la puerta principal está atascada.#n"
                 INK      colorNene       ; Color del niño.  
-                XMESSAGE "Mi hermana no abrirá la puerta; está muy enfadada, aun así, no es la única salida de la casa.#n"
+                XMESSAGE "Mi hermana no abrirá la puerta; está muy enfadada, aun así, no es la única salida de la casa.#n" ;pixa: Esto tampoco tiene sentido si luego podemos entrar desde lExtPorche
                 INK      colorMarcos     ; Color del protagonista.              
                 XMESSAGE "Pues encontraré otra salida. Gracias."
                 DONE
-
 
 > JUGAR     _         AT lPatio
                 NOTCARR  oPelota
@@ -6291,7 +6291,7 @@ S       lRecibidor
                 XMESSAGE "Tiene moqueta."
                 DONE
 
-> EXAMINA   PARED  AT  lRoom1
+> EXAMINA   PARED     AT lRoom1
                 PROCESS  9               ; Proceso que controla que tenemos las cerillas encendidas.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Examinas las paredes pero nada llama tu atención."
@@ -6656,7 +6656,7 @@ S       lRecibidor
                 NOTZERO fRompeRetrete
                 CLS                      ; Limpiamos la pantalla.
                 WINDOW   0
-                XPICTURE 206
+                XPICTURE 208
                 WINDOW   1   
                 INK      colorNarrador   ; Color del narrador.         
                 XMESSAGE "Estás en el cuarto de baño. Es pequeño y dejó de ser completo hace un rato. Ahora dispone de una tina antigua, una pila y un retrete destrozado."
@@ -6915,7 +6915,7 @@ S       lRecibidor
 
 > ENCENDER CERILLA
 > PRENDER  CERILLA
-> USAR     CERILLA     AT lBath2               
+> USAR     CERILLA    AT lBath2               
                 NOTZERO  fRompeRetrete
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fApagarCerilla 
@@ -7066,7 +7066,7 @@ S       lRecibidor
                 WINDOW   0
                 XPICTURE 208
                 WINDOW   1
-                GOTO    lBath2                
+                GOTO     lBath2                
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Cuando te dispones a bajar del retrete, resbalas y te caes de espaldas. Justo cuando tu cabeza impacta contra el suelo, un hacha#g#f%&'#t vuela a toda velocidad pegada a ti e impacta con fuerza en el retrete destrozándolo por completo.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
@@ -7771,12 +7771,15 @@ S       lRecibidor
                 NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW   0
+                XPICTURE 230             ; Cría en el pasillo
+                WINDOW   1
                 INK      colorNena       ; Color de la niña.
                 XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k#n"
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "La niña desaparece.#k#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Marcos, estás ahí? Tu también te has asustado?#k"
+                XMESSAGE "Marcos, ¿estás ahí? ¿Tu también te has asustado?#k"
                 INK      colorNarrador   ; Color del narrador.
                 GOTO     lPasillo3
                 CLS                      ; Limpiamos la pantalla.
@@ -7928,10 +7931,15 @@ S       lRecibidor
                 NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW   0
+                XPICTURE 230             ; Cría en el pasillo
+                WINDOW   1
                 INK      colorNena       ; Color de la niña.
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k#n"
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "La niña desaparece.#k#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Marcos, estás ahí? Tu también te has asustado?#k"                 
+                XMESSAGE "Marcos, ¿estás ahí? ¿Tu también te has asustado?#k" 
                 GOTO     lPasillo3
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla.
@@ -7992,7 +8000,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.
                 XMESSAGE "La niña te arrebata el osito de peluche#g#f##t y desaparece.#k#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Marcos, estás ahí? Tu también te has asustado?#k"
+                XMESSAGE "Marcos, ¿estás ahí? ¿Tu también te has asustado?#k" 
                 INK      colorNarrador   ; Color del narrador.
                 CLS                      ; Limpiamos la pantalla.
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
@@ -8103,14 +8111,17 @@ S       lRecibidor
                 NOTCARR  oPeluche        ; Verificamos que no portamos el osito de peluche.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "¡Hay una niña en el pasillo!#k#n"
+                WINDOW   0
+                XPICTURE 230             ; Cría en el pasillo
+                WINDOW   1
                 INK      colorNena       ; Color de la niña.
-                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k"
+                XMESSAGE "¡QUIERO MI OSITO! ¡TRAEMELO YA!#k#n"
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "La niña te da un fuerte empujón y vuelves al final del pasillo.#k#n"                
                 INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "Menudo susto me ha dado la cría de los... #k"
                 INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Creo que quiere algo que se encuentra en la última habitación.#k#n"                
+                XMESSAGE "Creo que quiere algo que se encuentra en la última habitación. Habrá que mirar mejor.#k#n"                
                 GOTO     lPasillo3
                 INK      colorNarrador   ; Color del narrador.                
                 CLS                      ; Limpiamos la pantalla.
@@ -8611,6 +8622,8 @@ S       lRecibidor
                 CREATE   oRopa           ; Creamos el objeto de su ropa
                 GET      oRopa           ; Lo cogemos
                 WEAR     oRopa           ; Para vestirse con dicho objeto
+                CREATE   oLlavePorche   
+                GET      oLlavePorche
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "#n#nAhora te llevaré al recibidor de la casa para ganar tiempo.#k"
                 CLS
@@ -8838,7 +8851,7 @@ S       lRecibidor
                 CLEAR    fApagarCerilla 
 				ZERO     fUsarCerilla
                 SET      fUsarCerilla
-                LET      fTurnosConLuz 255; Numero de turnos hasta que te quedas sin luz
+                LET      fTurnosConLuz 200; Numero de turnos hasta que te quedas sin luz
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 ZERO     fVasAPalmar
                 SET      fControlLuz     ; Ponemos a 255 el flag
@@ -9451,7 +9464,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Le das la pelota#g#f:;#t que llevas contigo al niño y se le dibuja una sonrisa en la cara.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "Muchas gracias por devolverme mi pelota, la echaba tanto de menos... ¿Te importa si te acompaño? Me aburro un poco aquí.#n"
+                XMESSAGE "Muchas gracias por devolverme mi pelota, la echaba tanto de menos... ¿Te importa si te acompaño? Me aburro un poco aquí.#n" ;pixa
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Supongo que no hay inconveniente.#n"
                 DONE
