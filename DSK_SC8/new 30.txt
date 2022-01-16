@@ -1,0 +1,43 @@
+
+Tenemos un grupo de Telegram para los testers.
+Por si no me tienes en el Telegram: https://t.me/EfraimSangil
+
+BUGS
+
+- Control de la luz (si no hay luz, no puedes ejecutar ninguna acción que no sea PRENDER CERILLA)
+- Caja de la escalera (no había control de que estaba abierta/cerrada)
+- Jugar con el crio en el patio (infinitas veces)
+
+BUGS Día 15/01/2022
+- locPorche: corregido el problema de MIRAR y no se veía el Gnomo de jardín (Juan Morales)
+- locBurgos: corrención en la conversación por teléfono de Marcos con su padre. Hablaba la niña y no se indicaba que fuera una niña. (VRMotor)
+- locBurgos: corregido el control de encendido y apagado de la lámpara de la mesita de noche de Marcos. (VRMotor)
+- locBurgos: añadido un EXAMINAR LLAVES para cuando las has cogido. (VRMotor)
+- locBurgos: corregido el problema con el armario. (VRMotor)
+- Añadida la funcionalidad de RAMSAVE y RAMLOAD, para ir guardando la partida.
+- locRecibidor: Corregido el texto de: No deberías bajar las escaleras sin luz. (Anto)
+- No es posible meter comandos con tíldes. Es una limitación del PARSER.
+- locBodega: Corregido un problema con el crío en esta localización. No doy detalles por spoiler (Daniel Roman)
+- locDespensa: Corregido el problema de EMPUJAR ALACENA varias veces.(VRMotor)
+
+
+
+BUGS Día 16/01/2022
+- Corregido el comando R, que te vuelve a mostrar la descripción de la localización en la que te encuentres. (VRMotor)
+- locEntrada: ABRIR PUERTA ya no te lleva al recibidor. Porque de hecho es un pasillo. La puerta es para salir a locPorche.(VRMotor)
+- locRecibidor: Deshabilitado ABRIR PUERTA, ya que no existe puerta alguna.(VRMotor)
+- Puedes examinar la llave que llevas contigo durante el juego.(VRMotor)
+- locEntrada: Corregido el texto: Se trata de una lámpara antigua de bronce con una tulipa de cerámica. (VRMotor)
+- locCocina: Corregido el problema de ABRIR/CERRAR CAJONES.(VRMotor)
+
+Daneel Constantí
+"Porche:
+- Una vez he roto el gnomo y tengo la llave puedo hacer "mirar loquesea" y siempre me dice la descripción general. Es una tontería pero si pongo "mirar tetas" me describe todo el porche de nuevo. El texto del felpudo me sale en el mismo color que el de salidas disponible. ¿Esto está bien?
+
+Recibidor:
+- Ex consola: Cuando el cajón ha salido despedido y se hace añicos, ¿tiene sentido que te vuelva a explicar que hay un cajón y que tus padres guardan siempre ahí unas cerillas o se debería explicar que antes tenía un cajón que ahora está en el suelo?
+
+Cocina: Al intentar abrir los cajones del aparador no da ningún tipo de respuesta. ¿Debería debir "no puedo hacer eso" o algo parecido? Si justo después dices "ex" no hace nada.
+
+Sergi
+En el porche cuando coges la meceta y haces ineventario tienes la maceta, pero cuando haces mirar te la presenta en la escenario. En cambio al gnomo. Es solo una observación, supongo que será intencionado 😊

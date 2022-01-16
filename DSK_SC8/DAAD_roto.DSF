@@ -238,10 +238,6 @@
 #define fRompePasador       132          ; Flag que controla que hemos roto el pasador en lChamizo.
 #define fLeerCombinacion    133          ; Flag que controla que hemos examinado oLata para leer la combinación.
 #define fLlamarTelefono     134          ; Flag que controla que no llamamos por teléfono dos veces.
-#define fCajaEscalera       135          ; Flag que controla que ya abrimos la caja de la escalera.
-#define fEncenderLampara    136          ; Flag que controla si encendemos/apagamos la lámpara de locBurgos.
-#define fCajonesCocina      137          ; Flag que controla si abrimos/cerramos los cajones en locCocina
-#define fEmpujarAlacena     138          ; Flag que controla si empujamos por segunda vez la Alacena en locDespensa
 
  ;                             Definición de las localizaciones
  ;_____________________________________________________________________________________________________
@@ -501,6 +497,7 @@ DEJAR           21      verb
 SOLTAR          21      verb
 QUITAR          22      verb
 PONER           23      verb
+R               24      verb
 M               24      verb
 MIRAR           24      verb
 REDES           24      verb
@@ -518,11 +515,13 @@ DECIR           31      verb
 PREGUNT         31      verb
 HABLAR          31      verb
 JUGAR           32      verb
+COMER           33      verb
 OLER            34      verb
 
 ;                           Verbos jugador
 USAR            33      verb             ; Para una mejor descripción de los verbos, consulta http://www.rae.es
 UTILIZAR        33      verb
+DORMIR          34      verb
 TIRAR           35      verb
 ESCUCHAR        36      verb
 ENCENDER        37      verb
@@ -582,9 +581,6 @@ ORINAR          89      verb
 PICAR           90      verb
 MATAR           91      verb
 STATUS          92      verb
-DORMIR          93      verb
-COMER           94      verb
-R               95      verb
 
 ;                                Adjetivos
 PEQUE           2       adjective
@@ -1155,12 +1151,6 @@ S       lRecibidor
                 INK      colorSistema    ; El color del sistema.   
                 XMESSAGE "#nYa no tienes la pelota."
                 DONE
-
-> OLER      _         AT lBurgos
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE"Me encanta el olor a naftalina por las mañanas."
-                DONE
-
 > LEVANTAR    _
 > INCORPORAR  _       AT lBurgos
                 ZERO     fLevantado      ; Verificamos que Marcos sigue en la cama.
@@ -1249,7 +1239,6 @@ S       lRecibidor
                 DONE
 
 > EXAMINA   ARMARIO   AT lBurgos
-                NOTWORN  oRopa           ; Verificamos que Marcos está vestido.
                 NOTZERO  fLevantado      ; Verificamos que Marcos está levantado.          
                 NOTZERO  fAbrirarmario   ; Verificamos que el armario está abierto.
                 INK      colorNarrador   ; Color del narrador.
@@ -1330,59 +1319,53 @@ S       lRecibidor
                 DONE
 
 > ABRIR 	CAJON	  AT lBurgos                    
-                ZERO     fCajon          ; Verificamos que el cajón está cerrado.
-                SET      fCajon          ; Abrimos el cajón.
+                ZERO     fcajon          ; Verificamos que el cajón está cerrado.
+                SET      fcajon          ; Abrimos el cajón.
                 INK      colorNarrador   ; Color del narrador.    
                 XMESSAGE "Abres el cajón."
                 DONE
 
 > ABRIR 	CAJON     AT lBurgos       
-                NOTZERO  fCajon          ; Verificamos que el cajón está abierto.
+                NOTZERO  fcajon          ; Verificamos que el cajón está abierto.
                 INK      colorNarrador   ; Color del narrador.        
                 XMESSAGE "El cajón ya está abierto."
                 DONE  
 
 > CERRAR 	CAJON 	  AT lBurgos       
-                ZERO     fCajon          ; Verificamos que el cajón está cerrado.
+                ZERO     fcajon          ; Verificamos que el cajón está cerrado.
                 INK      colorNarrador   ; Color del narrador.     
                 XMESSAGE "El cajón ya está cerrado."
                 DONE  
 
 > CERRAR 	CAJON	  AT lBurgos       
-                NOTZERO  fCajon          ; Verificamos que el cajón está abierto.
-                CLEAR    fCajon          ; Cerramos el cajón (ponemos el flag a 0).
+                NOTZERO  fcajon          ; Verificamos que el cajón está abierto.
+                CLEAR    fcajon          ; Cerramos el cajón (ponemos el flag a 0).
                 INK      colorNarrador   ; Color del narrador.       
                 XMESSAGE "Cierras el cajón."
                 DONE  
 
 > EXAMINA 	CAJON	  AT lBurgos      
-                ZERO     fCajon          ; Verificamos que el cajón está cerrado.
+                ZERO     fcajon          ; Verificamos que el cajón está cerrado.
                 INK      colorNarrador   ; Color del narrador.      
                 XMESSAGE "El cajón está cerrado."
                 DONE
 
 > EXAMINA 	CAJON	  AT lBurgos      
-                NOTZERO  fCajon          ; Verificamos que el cajón está abierto.
+                NOTZERO  fcajon          ; Verificamos que el cajón está abierto.
                 CARRIED  oLlaveCoche     ; Verificamos que portamos las llaves del coche.
                 INK      colorNarrador   ; Color del narrador.                    
                 XMESSAGE "No hay nada que resulte interesante."
                 DONE
 
 > EXAMINA 	CAJON	  AT lBurgos      
-                NOTZERO  fCajon          ; Verificamos que el cajón está abierto.
+                NOTZERO  fcajon          ; Verificamos que el cajón está abierto.
                 NOTCARR  oLlaveCoche     ; Verificamos que no portamos las llaves del coche.
                 INK      colorNarrador   ; Color del narrador.              
                 XMESSAGE "Rebuscando entre las cosas que tienes en el cajón destacan las llaves de tu coche."
                 DONE
 
-> EXAMINA 	LLAVES	  AT lBurgos      
-                CARRIED  oLlaveCoche     ; Verificamos que no portamos las llaves del coche.
-                INK      colorNarrador   ; Color del narrador.              
-                XMESSAGE "Efectivamente son las llaves de tu coche, ese increíble Volkswagen Polo que tienes en el garaje."
-                DONE
-
 > COGER   LLAVES      AT lBurgos         
-                NOTZERO  fCajon          ; Verificamos que el cajón está abierto.
+                NOTZERO  fcajon          ; Verificamos que el cajón está abierto.
                 NOTCARR  oLlaveCoche     ; Verificamos que no portamos las llaves del coche.
                 INK      colorSistema    ; Color del sistema.
                 ISAT     oLlaveCoche 252
@@ -1394,36 +1377,20 @@ S       lRecibidor
                 DONE
 
 > COGER   LLAVES      AT lBurgos
-                NOTZERO  fCajon          ; Verificamos que esté abierto el cajón.
+                NOTZERO  fcajon          ; Verificamos que esté abierto el cajón.
                 CARRIED  oLlaveCoche     ; Verificamos que portamos las llaves del coche.
                 INK      colorNarrador   ; Color del narrador.      
                 XMESSAGE "Ya has cogido las llaves del coche#g#fIJ#t"
                 DONE
 
 > ENCENDER  LAMPARA   AT lBurgos
-                ZERO     fEncenderLampara
-                SET      fEncenderLampara
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Enciendes la lámpara."
                 DONE
 
 > APAGAR    LAMPARA   AT lBurgos
-                NOTZERO  fEncenderLampara
-                CLEAR    fEncenderLampara
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Apagas la lámpara."
-                DONE
-
-> ENCENDER  LAMPARA   AT lBurgos
-                NOTZERO  fEncenderLampara
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "La lámpara ya está encendida."
-                DONE
-
-> APAGAR    LAMPARA   AT lBurgos
-                ZERO     fEncenderLampara
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "La lámpara ya está apagada."
                 DONE
 
 > EXAMINA   LAMPARA   AT lBurgos
@@ -1481,9 +1448,7 @@ S       lRecibidor
 				INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Lo que no entiendo es que después de lo que habéis vivido esta noche, cojas, y me llames por teléfono en vez de salir de la casa cuanto antes.#n"
 				INK      colorPadre      ; Color del padre.
-                XMESSAGE "No pienso dejar mi casa por que haya un fantasma con ganas de joder la marrana. #n¡Es mi casa!#n#k#b"
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Se escucha la voz de una niña a través del teléfono que dice:"
+                XMESSAGE "No pienso dejar mi casa por que haya un fantasma con ganas de joder la marrana. #n¡Es mi casa!#n#k#b"                
 				INK      colorNena       ; Color de la niña.
                 XMESSAGE "¡De eso nada, esta casa es nuestra! #n#n¡Fuera de aquí!#n#k#b"
 				INK      colorNarrador   ; Color del narrador.               
@@ -1538,6 +1503,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Tu dormitorio es grande, pero la decoración es minimalista; una cama, una mesilla con una lámpara y un armario empotrado en la pared es todo lo que tiene de interesante la habitación."
                 DONE
+
                 
                                          ; DORMIR/ACOSTARSE. si la usa dos veces, sacamos del juego al jugador y termina la partida.
 > ACOSTARSE _
@@ -1664,7 +1630,7 @@ S       lRecibidor
                 XPICTURE 232             ; Foto del Can de Urco
                 WINDOW   1
                 XMESSAGE " Cuando se levantaba niebla, el paraje te resultaba inquietante y tu imaginación te jugaba malas pasadas. La santa compaña, los aires de difunto... Una profunda sugestión desde niño te permite imaginar la silueta del can de Urco asomar de entre la bruma.#k#b Quizás esta tierra de procesiones, ritos y romerías de penitentes dejase una huella profunda en tu personalidad.#k#n#b"
-                CLEAR    fCajon          ; Como vamos a usar esta variable para la consola, la reiniciamos.
+                CLEAR    fcajon          ; Como vamos a usar esta variable para la consola, la reiniciamos.
                 GOTO     lExtCasa        ; Vamos a la lExtCasa.
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra..
                 DONE
@@ -1690,9 +1656,9 @@ S       lRecibidor
 
 > EXAMINA   CIPRESES  AT lExtCasa
                 INK      colorNarrador   ; Color del narrador.               
-                XMESSAGE "Son árboles enormes y majestuosos, pueden tener una larga vida, y resisten perfectamente el frío, la humedad, las heladas, el viento y la sequía..#n"
+                XMESSAGE "El frío y la humedad te agarrotan las articulaciones.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Si continúas aquí por mucho tiempo te dará una hipotermia, pero se te va a quedar un cutis divino.#n#n"
+                XMESSAGE "Si continúas aquí por mucho tiempo te dará una hipotermia, pero se te va a quedar un cutis divino. #n#n"
                 DONE
 
 > EXAMINA   SUELO     AT lExtCasa
@@ -1764,7 +1730,7 @@ S       lRecibidor
 
 > MIRAR     _         AT lExtCasa
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "La casa es espectacular; está hecha por completo de piedra de las canteras de Folgoso de Caurel que tuvieron que transportarse a mano, sufriendo muchas 'baixas de persoal'...#k#n#n#b Eso te contaron tus padres, aunque puede ser que tus padres ya la compraran construida y no tuviesen la más remota idea de como se construyó.#n"
+                XMESSAGE "La casa es espectacular; está hecha por completo de piedra de las canteras de Folgoso de Caurel que tuvieron que transportarse a mano, sufriendo muchas 'baixas de persoal'...#k#n#n#b. Eso te contaron tus padres, aunque puede ser que tus padres ya la compraran construida y no tuviesen la más remota idea de como se construyó.#n"
                 XMESSAGE "La casa tiene en su interior una gran lareira que en invierno no tiene tregua, quemando la leña que recogen tu padres del bosque.#k#bTiene un buen porche, al que solías salir en verano a comer o cenar.#n"
                 XMESSAGE "No ves el coche de tus padres por los alrededores.#n"
                 DONE
@@ -1789,13 +1755,13 @@ S       lRecibidor
 
 > BUSCAR    LLAVE     AT lPorche
                 INK      colorNarrador   ; Color del narrador.             
-                NOTCARR  oLlavePorche    ; Verificamos que no portamos la llave de la puerta.
+                NOTCARR  oLlaveporche    ; Verificamos que no portamos la llave de la puerta.
                 XMESSAGE "Puede ser muy conveniente que examines los elementos que hay a tu alrededor."
                 DONE
 
 > BUSCAR    LLAVE     AT lPorche
                 INK      colorNarrador   ; Color del narrador.             
-                CARRIED  oLlavePorche    ; Verificamos que portamos la llave de la puerta.
+                CARRIED  oLlaveporche    ; Verificamos que portamos la llave de la puerta.
                 XMESSAGE "Ahora mismo la tienes en la mano."
                 DONE
 
@@ -1860,51 +1826,18 @@ S       lRecibidor
 > MIRAR     _      AT lPorche
                 NOTZERO  fPorche         ; Verificamos que hemos realizado la acción de MIRAR  
                 NOTCARR  oMaceta
-                NOTCARR  oGnomo
-                ZERO     fGnomoRoto      ; Activamos el flag para controlar que se destruyó el gnomo.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta#g#f!#t, un felpudo#g#fVWXY#t y un gnomo de jardín#g#f9#t.#n"
+                XMESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta#g#f!#t, un felpudo#g#fVWXY#t.#n"
                 DONE                
 
 > MIRAR     _      AT lPorche
                 NOTZERO  fPorche         ; Verificamos que hemos realizado la acción de MIRAR  
                 CARRIED  oMaceta
-                NOTCARR  oGnomo
-                ZERO     fGnomoRoto      ; Activamos el flag para controlar que se destruyó el gnomo.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "A tu alrededor puedes ver en el suelo un felpudo#g#fVWXY#t y un gnomo de jardín#g#f9#t. Llevas contigo una vieja maceta#g#f!#t#n"
+                XMESSAGE "A tu alrededor puedes ver en el suelo un felpudo#g#fVWXY#t, porque llevas la maceta contigo.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "¿Para qué queremos la maceta, Marcos?"
                 DONE
-
-> MIRAR     _      AT lPorche
-                NOTZERO  fPorche         ; Verificamos que hemos realizado la acción de MIRAR  
-                NOTCARR  oMaceta
-                CARRIED  oGnomo
-                ZERO     fGnomoRoto      ; Activamos el flag para controlar que se destruyó el gnomo.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta#g#f!#t, un felpudo#g#fVWXY#t. Llevas contigo un gnomo de jardín#g#f9#t.#n"
-                INK      colorConciencia ; Color de la conciencia de Marcos.             
-                XMESSAGE "¿Piensas hacer algo con él, Marcos?"
-                DONE 
-
-> MIRAR     _      AT lPorche
-                NOTZERO  fPorche         ; Verificamos que hemos realizado la acción de MIRAR  
-                CARRIED  oMaceta
-                CARRIED  oGnomo
-                ZERO     fGnomoRoto      ; Activamos el flag para controlar que se destruyó el gnomo.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "A tu alrededor puedes ver en el suelo un felpudo#g#fVWXY#t. Llevas contigo un gnomo de jardín#g#f9#t y una vieja maceta#g#f!#t.#n"
-                DONE  
-
-> MIRAR     _      AT lPorche
-                NOTZERO  fPorche         ; Verificamos que hemos realizado la acción de MIRAR  
-                NOTZERO  fGnomoRoto      ; Activamos el flag para controlar que se destruyó el gnomo.
-                INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Deja ya de mirar y tanto mirar. Entremos en la casa, que se me enfrían las...#n"
-                INK      colorMarcos     ; Color del protagonista.           
-                XMESSAGE "Vale vale, ya paro." 
-                DONE                  
 
 ; Durante el juego, para hacerlo más fácil, cuando examinas un objeto, lo coges, aunque también puedes usar el verbo COGER si eres un jugador experimentado.
 
@@ -2297,7 +2230,7 @@ S       lRecibidor
                 CARRIED  oMaceta         ; Verificamos que portamos la maceta.
                 DESTROY  oLlaveCoche     ; Perdemos las llaves del coche.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Dejas la maceta#g#f!#t en su sitio.#k#n"
+                XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#k#n"
                 INK      colorSistema    ; El color del sistema.
                 DROP     oMaceta         ; Dejamos la maceta.
                 XMESSAGE "#k"
@@ -2359,7 +2292,7 @@ S       lRecibidor
                 NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
                 CARRIED  oMaceta         ; Verificamos que portamos la maceta.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Dejas la maceta#g#f!#t en su sitio.#k#n"
+                XMESSAGE "Dejas de la maceta#g#f!#t en su sitio.#k#n"
                 INK      colorSistema    ; El color del sistema.
                 DROP     oMaceta         ; Dejamos la maceta.
                 XMESSAGE "#k"
@@ -2398,7 +2331,7 @@ S       lRecibidor
 
 > EXAMINAR  LAMPARA  AT lEntrada
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Se trata de una lámpara antigua de bronce con una tulipa de cerámica."
+                XMESSAGE "Se trata de una lámpara antigua de bronce una tulipa de cerámica."
                 DONE
 
 > EXAMINAR  TULIPA  AT lEntrada
@@ -2411,6 +2344,7 @@ S       lRecibidor
                 XMESSAGE "Aunque es poco común encontrar un pasillo tras la puerta principal de una casa, este tiene la función de no dejar escapar el calor en invierno. También impide que vean el interior de la casa las personas desde la entrada.#n  En el diseño original había una puerta al fondo del pasillo, pero tus padres la quitaron porque al ser el recibidor tan estrecho, la puerta era algo muy molesto."
                 DONE
 
+> ABRIR     PUERTA
 > E         _         AT lEntrada                                
                 CLS                      ; Limpiamos la pantalla.
                 INK      colorNarrador   ; Color del narrador.                
@@ -2420,7 +2354,6 @@ S       lRecibidor
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
-> ABRIR     PUERTA
 > SALIR     _
 > O         _         AT lEntrada
                 INK      colorNarrador   ; Color del narrador.                
@@ -2465,14 +2398,14 @@ S       lRecibidor
                 XMESSAGE "Buscas por aquí... Buscas por allá... No encuentras nada... ¡Por el ojete te dan!"
                 DONE
 
-; > TIRAR     PUERTA
-; > EMPUJAR   PUERTA               
-; > ABRIR     PUERTA
-; > ROMPER    PUERTA
-; > EXAMINA   PUERTA    AT lRecibidor
-;                 INK      colorNarrador   ; Color del narrador. 
-;                 XMESSAGE "La puerta está bloqueada y tus insustanciales esfuerzos por salir son inútiles."
-;                 DONE
+> TIRAR     PUERTA
+> EMPUJAR   PUERTA               
+> ABRIR     PUERTA
+> ROMPER    PUERTA
+> EXAMINA   PUERTA    AT lRecibidor
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "La puerta está bloqueada y tus insustanciales esfuerzos por salir son inútiles."
+                DONE
 
                                          ; MP3 de Intro del Super Mario
 > JUGAR     CONSOLA   AT lRecibidor
@@ -2482,16 +2415,8 @@ S       lRecibidor
 
 > EXAMINAR  RECIBIDOR
 > MIRAR     _         AT lRecibidor
-                ZERO     fCajon
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, BAJANDO está la bodega y SUBIENDO están las habitaciones. Hay una consola de madera a tu lado; tiene un cajón."
-                DONE
-
-> EXAMINAR  RECIBIDOR
-> MIRAR     _         AT lRecibidor
-                NOTZERO  fCajon
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, BAJANDO está la bodega y SUBIENDO están las habitaciones. Hay una consola de madera a tu lado; el cajón ya no existe."
                 DONE
 
                                          ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón.
@@ -2499,16 +2424,9 @@ S       lRecibidor
                                          ; si abrió el cajón y otro para la consola.
 
 > EXAMINA	CONSOLA   AT lRecibidor
-                ZERO     fCajon          ; No hemos abierto el cajón
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
                 DONE
-
-> EXAMINA	CONSOLA   AT lRecibidor
-                NOTZERO  fCajon          ; No hemos abierto el cajón
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "FUE una preciosa consola de madera con patas de hierro forjado hasta que destrozaste el cajón."
-                DONE                
                                   
 > EXAMINA   CAJON      AT lRecibidor
                 ZERO     fCajon          ; No hemos abierto el cajón
@@ -2526,7 +2444,7 @@ S       lRecibidor
 
 > ABRIR		CAJON     AT lRecibidor
                 ZERO     fCajon          ; La consola contiene el cajón.
-                SET      fCajon          ; Controlamos que el cajón reviente contra la pared. Es un flag que puede tener dos variables, ya que lo utilizaremos también para controlar la apertura de la cocina. La tabla de resultados están en "tablacajones"
+                LET      fCajon 1        ; Controlamos que el cajón reviente contra la pared. Es un flag que puede tener dos variables, ya que lo utilizaremos también para controlar la apertura de la cocina. La tabla de resultados están en "tablacajones"
                 INK      colorNarrador   ; Color del narrador.        
                 XMESSAGE "Te dispones a abrir el cajón y cuando te acercas, este sale despedido hacia a ti, con la gran suerte de que te da tiempo a esquivarlo.#n#n El cajón revienta contra la pared en mil pedazos y los restos caen al suelo."
                 DONE
@@ -2538,12 +2456,11 @@ S       lRecibidor
                 DONE
 
 > EXAMINAR  SUELO     AT lRecibidor
-                ZERO     fCajon          ; La consola tiene el cajón puesto.
+                ZERO     fcajon          ; La consola tiene el cajón puesto.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Aquí hace falta pasar el TENN con bioalcohol... El algodón no engaña." 
                 DONE
 
-> EXAMINAR  RESTOS
 > EXAMINAR  SUELO     AT lRecibidor
                 CARRIED  oCerillas
                 NOTZERO  fCajon          ; La consola ya no contiene el cajón.         
@@ -2553,7 +2470,7 @@ S       lRecibidor
 > EXAMINAR  RESTOS
 > EXAMINAR  SUELO     AT lRecibidor
                 NOTCARR  oCerillas
-                NOTZERO  fCajon          ; La consola ya no contiene el cajón.
+                NOTZERO  fcajon          ; La consola ya no contiene el cajón.
                 ISAT     oCerillas 252   ; El objeto no está en ninguna parte y por tanto no es visible          
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Entre las astillas del cajón reventado, encuentras una caja de cerillas#g#f+,#t de cocina XXL.#n"
@@ -2641,6 +2558,7 @@ S       lRecibidor
                 XMESSAGE "Después del susto que me he pegado... ¡yo ahí no entro!"
                 DONE
 
+> ABRIR PUERTA
 > O         _         AT lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 ZERO     fVolverEntrar   ; verificamos que es la primera vez que entramos en la casa
@@ -2650,6 +2568,8 @@ S       lRecibidor
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
+
+> ABRIR PUERTA
 > O         _         AT lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 NOTZERO  fVolverEntrar   ; verificamos que es la primera vez que entramos en la casa
@@ -2681,7 +2601,7 @@ S       lRecibidor
 > BAJAR         _     AT lRecibidor
                 ZERO     fControlLuz     ; Si es 0, es que necesitamos PRENDER CERILLA
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No deberías bajar las escaleras sin luz.#n"
+                XMESSAGE "No deberías las escaleras sin luz.#n"
                 INK      colorEspecial   ; Color especial.
                 XMESSAGE "¿Estás seguro? (S/N)#k"
                 INKEY
@@ -3189,7 +3109,7 @@ S       lRecibidor
 > ABRIR     PESTILLO
 > CORRER    PESTILLO
 > QUITAR    PESTILLO
-> MOVER     PESTILLO    AT lBodega
+> MOVER   	PESTILLO    AT lBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
@@ -3320,7 +3240,7 @@ S       lRecibidor
                 INK      colorNene       ; Color del niño.       
                 XMESSAGE "Te acompaño.#k#n"
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "El niño abre el portón de la cochera y sales hacia el exterior. Desde ahora podrás abrir el portón desde el interior de la cochera.#k"
+                XMESSAGE "El niño abre el portón de la cochera y sales hacia el exterior. Desde ahora podrás abrir el portón desde el interior.#k"
                 CLEAR    fUsarCerilla               
                 CLEAR    fTurnosConLuz 
 	            SET      fDarkF          ; Activamos el flag de la oscuridad, es decir, ponemos esa localización a oscuras.
@@ -3351,9 +3271,39 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Acabas de entrar en la cochera, un lugar donde como era de esperar, no hay ningún coche. Huele a gasoil y a aceite, pero sorprendentemente la estancia se encuentra impoluta, aunque tienes una visibilidad muy reducida. Es un lugar de paredes blancas y suelo revestido de pintura epóxica roja con una rejilla en centro. En la pared puedes contemplar un grifo y también hay un generador de gasoil.#k#n#b"
                 INK      colorNene       ; Color del niño.      
-                XMESSAGE "Ya hemos pasado por aquí. Esto es innecesario. Salgamos fuera.#k#n"                
+                XMESSAGE "¡Aquí ocurrió todo! Lo recuerdo perfectamente.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Me has dicho que aquí ha ocurrido algo. ¿A qué te refieres?#k#n"
+                INK      colorNene       ; Color del niño.       
+                XMESSAGE "Un día yo escapé de la casa en busca de ayuda, porque el señor nos pegaba a mi madre, a mi hermana y a mí, pero el señor me descubrió camino del pueblo y me trajo aquí. #k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "¿Y qué pasó entonces?#k#n"
+                INK      colorNene       ; Color del niño.       
+                XMESSAGE "Pues que aquí estaban mi madre y mi hermana muertas. Las había matado y los cuerpos estaban en el suelo. El señor me obligó a mirar mientras los descuartizaba con un hacha#g#f%&'#t y cuando terminó, me obligó a ayudarle a llevarlos al chamizo.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Cuánto lamento que hayas tenido que presenciar esa atrocidad. En cuanto a tu madre y a tu hermana... En el corredor de la casa me encontré a una niña que casi acaba conmigo y había alguien más en la última habitación.#k#n"
+                INK      colorNene       ; Color del niño.       
+                                         ; Corregir en la versión en inglés
+                XMESSAGE "Sí, son mi madre y mi hermana. Mi hermana está muy enfadada porque vio como mataban a mamá antes que a ella. De vez en cuando, y no entiendo el porqué, aparecemos en la casa. Supongo que no descansaremos en paz hasta que alguien descubra los cuerpos.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "¿Has dicho que llevasteis los cuerpos al chamizo?#k#n"
+                INK      colorNene       ; Color del niño.       
+                XMESSAGE "Si. Allí los enterramos con una pala#g#f()*#t y fue donde el señor me mató al terminar de un palazo en la cabeza... Lo que me recuerda que las llaves del chamizo#g#f2#t se encuentran escondidas en algún lugar de esta cochera, aguarda un momento...#k#n"
                 INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "El niño abre la portón de la cochera y sales hacia el exterior. Desde ahora podrás ABRIR el PORTON desde el interior de la cochera.#k"
+                XMESSAGE "Observas como el niño se dirige hacia la puerta de la cochera, se eleva sobre el suelo y coge algo del cerco superior de la puerta.#k#n"
+                INK      colorSistema    ; El color del sistema
+                ISAT     oLlaveChamizo 252 ; El objeto no está en ninguna parte y por tanto no es visible.
+                CREATE   oLlaveChamizo     ; Creamos el objeto LlaveChamizo.
+                GET      oLlaveChamizo     ; Cogemos el objeto de forma automática.
+                XMESSAGE "#n"            ; Como GET no hace salto de linea, hemos de forzarlo.
+                INK      colorNene       ; Color del niño.       
+                XMESSAGE "Aquí las tienes. Ahora podemos ir al chamizo y desenterrarnos con la pala#g#f()*#t que llevas encima.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Estupendo, vamos rumbo al chamizo.#k#n"
+                INK      colorNene       ; Color del niño.       
+                XMESSAGE "Te acompaño.#k#n"
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "El niño abre la portón de la cochera y sales hacia el exterior. Desde ahora podrás abrir el portón desde el interior.#k"
                 CLEAR    fUsarCerilla               
                 CLEAR    fTurnosConLuz 
 	            SET      fDarkF          ; Activamos el flag de la oscuridad, es decir, ponemos esa localización a oscuras.
@@ -4604,7 +4554,7 @@ S       lRecibidor
 > EXAMINA   MUSGO
 > EXAMINA   PAREDES   AT lExteriorChamizo             
                 INK      colorConciencia ; Color de la conciencia de Marcos.           
-                XMESSAGE "Esas paredes... Uhm... Musgo... Me ha dicho un colega que si lo secas y lo picas, esto se fuma y te pegas unos viajes de flipar.#n"
+                XMESSAGE "Uhm... Musgo... Me ha dicho un colega que si lo secas y lo picas, esto se fuma y te pegas unos viajes de flipar.#n"
                 DONE
 
 > EXAMINA   SUELO   AT lExteriorChamizo             
@@ -4845,12 +4795,15 @@ S       lRecibidor
                 CLEAR    fCombinacion    ; Ponemos el Flag de la combinación cero. En el juego, es como si ya no supiesemos la combinación.
                 CLEAR    fMoverAlambique ; Colocamos el alambique en su lugar original poniendo el flag a 0.
                 INK      colorNarrador   ; Color del narrador.                
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Comienzas a cavar y enseguida encuentras tres bolsas negras que contienen restos humanos en su interior.#k#n"       
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque estoy seguro que me van a hacer montones de preguntas."  
-                ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
-                SET      fDesenterrar    ; Desenterramos los cadáveres (Flag que determina uno de los finales.
+                XMESSAGE "Tramposo, tramposo, tramposo....#n#n Tienes demasiada información o mucha suerte. Se supone que no deberías saber donde se usa la pala#g#f()*#t sin que hayan#n transcurrido ciertos acontecimientos, así que el equipo de desarrollo de esta aventura ha decidido amonestarte, quitándote algunos objetos que van a impedir que termines el juego de una determinada manera.#n"
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Tío, a quien se le ocurre... En fin, creo que nos podremos apañar para salir de aquí.#k#n"
+                INK      colorSistema    ; El color del sistema
+                XMESSAGE "Por decisión unánime del equipo de desarrollo, se te amonesta devolviéndote a la bodega y quitándote los objetos necesarios para no permitirte entrar de nuevo por la trampilla. Te recomendamos que pruebes otro de los finales disponibles, majete.#k"
+                INK      colorNarrador   ; Color del narrador. 
+                CLS 
+                GOTO     lBodega         ; Vamos a lBodega.
+                RESTART
                 DONE
 
 
@@ -4928,31 +4881,6 @@ S       lRecibidor
                 GOTO     lExteriorChamizo ; Vamos a lExteriorChamizo.
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
-
-> USAR      HACHA 
-> CORTA     PASADOR
-> ROMPER    PASADOR   AT lChamizo
-                CLS                      ; Limpiamos la pantalla.            
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.   
-                CARRIED  oHacha          ; Verificamos que portamos el hacha.          
-                NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
-                INK      colorNarrador   ; Color del narrador. 
-                XMESSAGE "Rompes el pasador de la puerta con el hacha#g#f%&'#t y sales al exterior de la casa.#k#n"
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Tenemos que coger el coche y marcharnos.#k#b"                
-                CLEAR    fUsarCerilla              
-                CLEAR    fTurnosConLuz 
-	            SET      fDarkF          ; Activamos el flag de la oscuridad, es decir, ponemos esa localización a oscuras.
-                CLEAR    fControlLuz
-                SET      fVolverEntrar
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lExteriorChamizo ; Vamos a lExteriorChamizo.
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
-                DONE                
 ;_____________________________________________________
         ; FINAL DE LA AVENTURA
         ;
@@ -5720,8 +5648,8 @@ S       lRecibidor
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fCajonesCocina
-                SET      fCajonesCocina  ; Colocamos el valor al flag que controla la apertura del cajón del recibidor y de la cocina, la tabla de valores se puede consultar en "tablacajones".
+                EQ       fcajon 1        ; Verificamos que el valor del flag que controla la apertura del cajón del recibidor y de la cocina tenga el valor correcto. La tabla de valores se puede consultar en "tablacajones".
+                LET      fcajon 2        ; Colocamos el valor al flag que controla la apertura del cajón del recibidor y de la cocina, la tabla de valores se puede consultar en "tablacajones".
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Qué curioso, solo hay cucharas. ¿Dónde está lo que falta?#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
@@ -5733,7 +5661,7 @@ S       lRecibidor
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fCajonesCocina
+                EQ       fcajon 2        ; Verificamos que el valor del Flag que controla la apertura del cajón del recibidor y de la cocina tenga el valor correcto. La tabla de valores se puede consultar en "tablacajones"
                 INK      colorNarrador   ; Color del Narrador.
                 XMESSAGE "Los cajones ya están abiertos."
                 DONE
@@ -5743,8 +5671,8 @@ S       lRecibidor
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fCajonesCocina
-                CLEAR    fCajonesCocina  ; Colocamos el valor al flag que controla la apertura del cajón del recibidor y de la cocina, la tabla de valores se puede consultar en "tablacajones".
+                EQ       fcajon 2        ; Verificamos que el valor del flag que controla la apertura del cajón del recibidor y de la cocina tenga el valor correcto. La tabla de valores se puede consultar en "tablacajones".
+                LET      fcajon 1        ; Colocamos el valor al flag que controla la apertura del cajón del recibidor y de la cocina, la tabla de valores se puede consultar en "tablacajones".
                 INK      colorNarrador   ; Color del Narrador.
                 XMESSAGE "Cierras los cajones."
                 DONE
@@ -5754,19 +5682,18 @@ S       lRecibidor
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fCajonesCocina
+                EQ       fcajon 1        ; Colocamos el valor al flag que controla la apertura del cajón del recibidor y de la cocina, la tabla de valores se puede consultar en "tablacajones".
                 INK      colorNarrador   ; Color del Narrador.
                 XMESSAGE "Los cajones están cerrados."
                 DONE
 
-> ABRIR     COJONES
 > EXAMINA	COJONES   AT lCocina
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                INK      colorNarrador   ; Color del Narrador.
-                XMESSAGE "Parece que has cometido un pequeño error a la hora de escribir la palabra cajones."
+                INK      colorConciencia ; Color de la conciencia de Marcos.             
+                XMESSAGE "No es momento de examinar tus genitales."
                 DONE
 
 > EXAMINA	LAVADORA  AT lCocina
@@ -5928,29 +5855,13 @@ S       lRecibidor
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad. 
-                ZERO     fEmpujarAlacena
-                SET      fEmpujarAlacena  
                 ISAT     oGalleta 252    ; El objeto no está en ninguna parte y por tanto no es visible
                 CREATE   oGalleta         
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Das un fuerte empujón a la alacena. Cae una galleta#g#f"#t.#n"          
                 INK      colorConciencia ; Color de la conciencia de Marcos
                 XMESSAGE "No salgo de mi asombro."   
-                DONE
-
-> MOVER     ALACENA
-> TIRAR     ALACENA
-> EMPUJAR   ALACENA   AT lDespensa
-                NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
-                NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CLEAR    fDarkF          ; Desactivamos la oscuridad. 
-                NOTZERO  fEmpujarAlacena
-                INK      colorConciencia ; Color de la conciencia de Marcos
-                XMESSAGE "Marcos, en serio, esto no es una máquina expendedora de galletas.#n"          
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Si si, pero ya sabes... tenía que probar."   
-                DONE                      
+                DONE            
 
 > TREPAR    ALACENA   AT lDespensa
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -6200,13 +6111,12 @@ S       lRecibidor
                 DONE           
 
 > EXAMINA   CANDADO
-> EXAMINA	CAJA      AT lEscaleras
+> EXAMINA	CAJA      AT lEscaleras                
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                NOTZERO  fCajaEscalera   ; Verificamos que ya abrirmos la caja anteriormente
-                ; CARRIED  oTarjetaLlave   ; Verificamos que portamos la tarjeta llave.
+                CARRIED  oTarjetaLlave   ; Verificamos que portamos la tarjeta llave.
                 NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La caja tiene una llave partida dentro. No hay nada de interés."
@@ -6218,8 +6128,7 @@ S       lRecibidor
                 NOTZERO  fTurnosConLuz   ; Verificamos que tenemos turnos de luz.
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-                ZERO     fCajaEscalera   ; Verificamos que no hemos abierto la caja anteriormente
-                ; NOTCARR  oTarjetaLlave   ; Verificamos que no portamos la tarjeta llave.
+                NOTCARR  oTarjetaLlave   ; Verificamos que no portamos la tarjeta llave.
                 NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La caja tiene un candado de seguridad. Necesitas una llave pequeña."
@@ -6252,7 +6161,7 @@ S       lRecibidor
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
                 NOTCARR  oLlaveCaja      ; Verificamos que no portamos la llave de la caja.
-                ; NOTCARR  oTarjetaLlave   ; Verificamos que no portamos la tarjeta de seguridad.
+                NOTCARR  oTarjetaLlave   ; Verificamos que no portamos la tarjeta de seguridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No tienes la llave para poder abrirla."
                 DONE
@@ -6263,9 +6172,8 @@ S       lRecibidor
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
-                NOTZERO  fCajaEscalera   ; Verificamos que ya abrirmos la caja anteriormente
-                ; NOTCARR  oLlaveCaja      ; Verificamos que no portamos la llave de la caja.
-                ; CARRIED  oTarjetaLlave   ; Verificamos que portamos la tarjeta de seguridad.
+                NOTCARR  oLlaveCaja      ; Verificamos que no portamos la llave de la caja.
+                CARRIED  oTarjetaLlave   ; Verificamos que portamos la tarjeta de seguridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No puedes volver a abrir la caja porque has partido la llave dentro.#n#n Además, ya has cogido la tarjeta de seguridad#g#f<#t."
                 DONE
@@ -6276,8 +6184,6 @@ S       lRecibidor
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
-                ZERO     fCajaEscalera   ; Verificamos que no hemos abierto la caja anteriormente
-                SET      fCajaEscalera   ; Activamos el flag de que hemos abierto la caja
                 CARRIED  oLlaveCaja      ; Verificamos que portamos la llave de la caja.
                 ISAT     oTarjetaLlave 252 ; El objeto no está en ninguna parte y por tanto no es visible
                 CREATE   oTarjetaLlave   ; Creamos la tarjeta llave que se usa en la vitrina
@@ -6299,8 +6205,8 @@ S       lRecibidor
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
                 NOTZERO  fEscalon        ; Verificamos que el escalón no está puesto.
-                ; NOTCARR  oLlaveCaja      ; Verificamos que no portamos la llave de la caja.
-                ; CARRIED  oTarjetaLlave   ; Verificamos que portamos la tarjeta de seguridad.
+                NOTCARR  oLlaveCaja      ; Verificamos que no portamos la llave de la caja.
+                CARRIED  oTarjetaLlave   ; Verificamos que portamos la tarjeta de seguridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Cierras la caja."
                 DONE
@@ -7084,7 +6990,7 @@ S       lRecibidor
                 XMESSAGE "Uno de ellos para en seco, gira la cabeza y te mira. Se acerca despacio y te quedas inmóvil; no sabes cómo reaccionar.#n"
                 XMESSAGE "Ves que se aproxima y se detiene frente a ti.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?"
+                XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "¡Joder!, ¿este niño es real? Ya no veo al otro niño.#k#n"
                 INK      colorMarcos     ; Color del protagonista. 
@@ -7105,6 +7011,7 @@ S       lRecibidor
 
 > EXAMINA   PATIO
 > MIRAR     _         AT lPatio
+
                 CARRIED  oPelota         ; Verificamos que portamos la pelota.
                 ZERO     fPatio          ; Verificamos que no hemos hablado con el niño en el patio.
                 SET      fPatio          ; Activamos el flag que implica que hemos hablado con el niño.          
@@ -7118,7 +7025,7 @@ S       lRecibidor
                 XMESSAGE "Uno de ellos para en seco, gira la cabeza y te mira. Se acerca despacio y te quedas inmovilizado; no sabes cómo reaccionar.#n"
                 XMESSAGE "Ves que se aproxima y se detiene frente a ti.#n"
                 INK      colorNene       ; Color del niño.
-                XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?"
+                XMESSAGE "No encuentro a mis padres. ¿Quieres jugar?#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "¡Joder!, ¿este niño es real? Ya no veo al otro niño.#k#n"
                 INK      colorMarcos     ; Color del protagonista. 
@@ -7139,9 +7046,9 @@ S       lRecibidor
 
 > EXAMINA   PATIO
 > MIRAR     _         AT lPatio
+
                 CARRIED  oPelota         ; Verificamos que portamos la pelota.
                 NOTZERO  fPatio          ; Verificamos que hemos hablado con el niño en el patio.
-                ZERO     fJugar
                 INK      colorNene       ; Color del niño.
                 XMESSAGE "¡Qué bien! ¡Has vuelto con mi pelota! ¿Quieres jugar conmigo entonces?#n"
                 INK      colorEspecial   ; Color especial.
@@ -7149,18 +7056,10 @@ S       lRecibidor
                 INKEY
                 PROCESS  12              ; Proceso que controla los finales
                 DONE
-
-> EXAMINA   PATIO
-> MIRAR     _         AT lPatio
-                CARRIED  oPelota         ; Verificamos que portamos la pelota.
-                NOTZERO  fPatio          ; Verificamos que hemos hablado con el niño en el patio.
-                NOTZERO  fJugar
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No veo nada interesante aquí."
-                DONE                
                 
 > EXAMINA   PATIO
 > MIRAR     _         AT lPatio
+
                 NOTCARR  oPelota         ; Verificamos que no portamos la pelota.
                 NOTZERO  fPatio          ; Verificamos que no hemos hablado con el niño en el patio.
                 INK      colorNene       ; Color del niño.
@@ -7168,6 +7067,7 @@ S       lRecibidor
                 DONE
 
 > MIRAR     _         AT lPatio
+
                 NOTZERO  fPatio          ; Verificamos que no hemos hablado con el niño en el patio.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El niño sigue en el patio esperando a que juegues con él."
@@ -7175,6 +7075,7 @@ S       lRecibidor
 
 ; NOTA: DESARROLLAR UN POCO EL PODER HABLAR CON EL NIÑO
 > HABLAR    _         AT lPatio
+
                 NOTZERO  fPatio          ; Verificamos que no hemos hablado con el niño en el patio.
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Hola. ¿No sabes dónde están tus padres? ¿Qué haces aquí?#n"
@@ -7183,14 +7084,16 @@ S       lRecibidor
                 DONE
 
 > EXAMINA   CRIO
-> EXAMINA   FANTASMA  AT lPatio                
+> EXAMINA   FANTASMA  AT lPatio
+                
                 NOTZERO  fPatio          ; El niño ya ha hablado con nosotros.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Enfrente de ti hay un niño de unos seis años, vestido con una camisa de tela muy dura y desgastada, pantalones cortos y unos zapatos negros con calcetines blancos que llegan hasta las rodillas.#n#n El crio tiene un semblante burlón y a simple vista parece amigable."
                 DONE
 
 > EXAMINA   CRIO
-> EXAMINA   FANTASMA  AT lPatio               
+> EXAMINA   FANTASMA  AT lPatio
+               
                 ZERO     fPatio          ; El niño aún no ha aparecido en la escena.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Eso no es posible."
@@ -7212,10 +7115,10 @@ S       lRecibidor
                 DONE
 
 > LANZAR    PELOTA
-> JUGAR     _         AT lPatio                
+> JUGAR     _         AT lPatio
+                
                 ZERO     fFotoPeluche    ; Verificamos que no hemos visto la foto del peluche en lRoom1 y por tanto la niña está enfadada.
                 CARRIED  oPelota         ; Verificamos que portamos la pelota.
-                ZERO     fJugar
                 SET      fJugar          ; Activamos el flag que indica que hemos jugado con el niño.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Le das la pelota#g#f:;#t que llevas contigo al niño y se le dibuja una sonrisa en la cara.#n"
@@ -7230,10 +7133,10 @@ S       lRecibidor
                 DONE
 
 > LANZAR    PELOTA
-> JUGAR     _         AT lPatio                
+> JUGAR     _         AT lPatio
+                
                 NOTZERO  fFotoPeluche    ; Verificamos que hemos visto la foto del peluche en lRoom1 y por tanto la niña está enfadada.
                 CARRIED  oPelota         ; Verificamos que portamos la pelota.
-                ZERO     fJugar
                 SET      fJugar          ; Activamos el flag que indica que hemos jugado con el niño.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Le das la pelota#g#f:;#t que llevas contigo al niño y se le dibuja una sonrisa en la cara.#n"
@@ -7245,15 +7148,6 @@ S       lRecibidor
                 XMESSAGE "No podemos salir por la puerta principal. Mi hermana la ha bloqueado y hasta que salga el sol no se anula el efecto, lo siento mucho. Se puede entrar desde el exterior, pero no salir desde dentro. #n" ;
                 INK      colorMarcos     ; Color del protagonista.              
                 XMESSAGE "Pues encontraré otra salida. Gracias."
-                DONE
-
-> LANZAR    PELOTA
-> JUGAR     _         AT lPatio                
-                NOTZERO  fJugar
-                INK      colorNene       ; Color del niño.
-                XMESSAGE "Creo que ya hemos jugado demasiado. ¿Nos vamos?#n"
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Sí, claro. A ver si encuentro una salida.#n"               
                 DONE
 
 > JUGAR     _         AT lPatio
@@ -7665,35 +7559,6 @@ S       lRecibidor
                 XMESSAGE "La lata de aceite, aparte de estar pringosa, parece que tiene algo escrito.#n"
                 DONE
 
-; > ABRIR   RESPIRADERO
-; > TIRAR   RESPIRADERO AT lBath1
-;                 PROCESS  9               ; Proceso que controla que tenemos las cerillas encendidas.
-;                 NOTZERO  fEngrasar       ; Verificamos que no hemos usado la lata engrasando el candado.
-;                 NOTCARR  oLataDeAceite   ; Verificamos que no portamos la lata de aceite.
-;                 ZERO     fAbrirRespir    ; Verificamos que el respiradero está cerrado.
-;                 SET      fAbrirRespir    ; Activamos el flag que controla la apertura del respiradero.
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "Abres el respiradero. No hay nada en su interior."            
-;                 DONE
-
-; > ABRIR   RESPIRADERO
-; > TIRAR   RESPIRADERO AT lBath1
-;                 PROCESS  9               ; Proceso que controla que tenemos las cerillas encendidas.
-;                 CARRIED  oLataDeAceite   ; Verificamos que  portamos la lata de aceite.
-;                 ZERO     fAbrirRespir    ; Verificamos que el respiradero está cerrado.
-;                 SET      fAbrirRespir    ; Activamos el flag que controla la apertura del respiradero.
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "El respiradero está abierto. Aquí no hay nada más de interés."
-;                 DONE
-
-; > ABRIR   RESPIRADERO
-; > TIRAR   RESPIRADERO AT lBath1
-;                 PROCESS  9               ; Proceso que controla que tenemos las cerillas encendidas.
-;                 NOTZERO  fAbrirRespir    ; Verificamos que el respiradero está abierto.
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "Abres el respiradero. No hay nada en su interior."            
-;                 DONE
-
 > ABRIR   RESPIRADERO
 > TIRAR   RESPIRADERO AT lBath1
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
@@ -7715,14 +7580,6 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Con el golpe que se ha dado en el suelo la tapa del respiradero, cuando intentas cerrarlo, compruebas que no encaja bien la tapa. El respiradero se queda abierto."
                 DONE
-
-; > EMPUJAR RESPIRADERO
-; > CERRAR  RESPIRADERO AT lBath1
-;                 PROCESS  9               ; Proceso que controla que tenemos las cerillas encendidas.
-;                 ZERO     fAbrirRespir    ; Verificamos que el respiradero está cerrado.
-;                 INK      colorConciencia ; Color de la conciencia de Marcos.            
-;                 XMESSAGE "El respiradero está cerrado. Podríamos estar así todo el día si quieres..."
-;                 DONE
 
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -9668,7 +9525,7 @@ S       lRecibidor
 > EXAMINA   PASILLO
 > MIRAR     _         AT lPasillo3
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Estás en el final del pasillo y tienes una puerta hacia el NORTE. También puedes volver al OESTE."
+                XMESSAGE "Estás en el final del pasillo y tienes una puerta hacia el NORTE. También puedes volver al ESTE."
                 DONE
 
 > EXAMINA   SUELO     AT lPasillo3
@@ -9800,12 +9657,6 @@ S       lRecibidor
                                          ; Se pueden usar en cualquier momento de la aventura
                                          ; independientemente de su localización.
 
-> EXAMINA   LLAVE 
-                CARRIED  oLlavePorche               ; Verificamos que llevamos puesta la ropa.
-                INK      colorNarrador       ; Color del narrador.                
-                XMESSAGE "Es una llave de lo más corriente."
-                DONE
-
 > QUITAR    ROPA 
                 WORN     oRopa               ; Verificamos que llevamos puesta la ropa.
                 INK      colorNarrador       ; Color del narrador.                
@@ -9899,6 +9750,50 @@ S       lRecibidor
 > DORMIR    _
                 INK      colorConciencia   ; Color de la conciencia de Marcos.                
                 XMESSAGE "...ZZZZzzzZZZZzz...Gronf Gronf..."
+                DONE
+
+> TUMBARSE  _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "Haces el ademán de tumbarte en el suelo, pero tu conciencia no puede tolerar que te ensucies la ropa."
+                DONE
+
+> CORRER    _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "Preparados... Listos... YA!."
+                DONE
+
+> TOCARSE   _
+> MASTURBARSE _  
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "Con sumo cuidado te colocas la ropa interior por dentro de los pantalones."
+                DONE
+
+> LAMER     _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "¡SLURRRRRP!."
+                DONE
+
+> SUCCIONAR _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "Te pones a ello de forma apasionada, pero te es inevitable pensar que te has llevado peores cosas a la boca."
+                DONE
+
+> ACARICIAR _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "Platero es pequeño, peludo, suave; tan blando por fuera, que se diría todo de algodón."
+                DONE
+
+> REGURGITAR _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "Carraspeas un poco, y con un par de arcadas, sueltas la egagrópila."
+                DONE
+
+> CHILLAR   _          
+> GRITAR    _
+                INK      colorNarrador   ; Color del narrador.                 
+                XMESSAGE "¡¡ENTRE LA INTEEEEENSA BRUMA DEL CASTILLO, SE VE SU FIGURA APARECEEEERRR!!#k#n#n ¡¡ PUENTEEEE JINETEEEE Y LA LUUUUNAAAA!! ¡¡CON OJOS ATENTOS DE MUJEEEEERRR!!#k#n"
+                INK      colorconciencia ; Color de la conciencia de Marcos
+                XMESSAGE "No hay ningún looocooooo... #k#nsólo es leyendaaaaa... #k#ntodo lo cuentan... #k#nen la tabernaaaa..."
                 DONE
                
 ; Examinar objetos que llevo encima
@@ -10177,96 +10072,96 @@ S       lRecibidor
                                          ; USAR MUEBLE: Control para los desarrolladores que nos permite ver en pantalla
                                          ; los diferentes colores que se pueden utilizar en el juego.
 
-; > USAR      MUEBLE      
-;                 INK      1
-;                 XMESSAGE "INK 1"
-;                 INK      colorConciencia ; Color de la conciencia de Marcos.             
-;                 XMESSAGE "INK 2"
-;                 INK      colorMarcos     ; Color del protagonista.
-;                 XMESSAGE "INK 3"
-;                 INK      colorMuerte     ; Color del anuncio de una muerte.
-;                 XMESSAGE "INK 4"
-;                 INK      5
-;                 XMESSAGE "INK 5"
-;                 INK      colorNena       ; Color de la niña.
-;                 XMESSAGE "INK 6"
-;                 INK      7
-;                 XMESSAGE "INK 7"
-;                 INK      8
-;                 XMESSAGE "INK 8"
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "INK 9"
-;                 INK      10              ; Color especial.
-;                 XMESSAGE "Color especial"
-;                 INK      11
-;                 XMESSAGE "INK 11"
-;                 INK      colorPadre
-;                 XMESSAGE "INK 12"
-;                 INK      13
-;                 XMESSAGE "INK 13"
-;                 INK      colorNene       ; Color del niño.
-;                 XMESSAGE "INK 14"
-;                 INK      colorSistema    ; El color del sistema.
-;                 XMESSAGE "INK 15"
-;                 DONE
+> USAR      MUEBLE      
+                INK      1
+                XMESSAGE "INK 1"
+                INK      colorConciencia ; Color de la conciencia de Marcos.             
+                XMESSAGE "INK 2"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "INK 3"
+                INK      colorMuerte     ; Color del anuncio de una muerte.
+                XMESSAGE "INK 4"
+                INK      5
+                XMESSAGE "INK 5"
+                INK      colorNena       ; Color de la niña.
+                XMESSAGE "INK 6"
+                INK      7
+                XMESSAGE "INK 7"
+                INK      8
+                XMESSAGE "INK 8"
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "INK 9"
+                INK      10              ; Color especial.
+                XMESSAGE "Color especial"
+                INK      11
+                XMESSAGE "INK 11"
+                INK      colorPadre
+                XMESSAGE "INK 12"
+                INK      13
+                XMESSAGE "INK 13"
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "INK 14"
+                INK      colorSistema    ; El color del sistema.
+                XMESSAGE "INK 15"
+                DONE
 
                                          ; AYUDA MAGIA: Control para los desarrolladores que describe el tipo de icono 
                                          ; conjuntamente con su gráfico, para determinar que se han dibujado correctamente.
 
-; > AYUDA     MAGIA
-;                 INK 15
-;                 MESSAGE  "Ropa de calle#g#f=#t"          
-;                 MESSAGE  "llave del chamizo#g#f2#t"
-;                 MESSAGE  "una pala#g#f()*#t"
-;                 MESSAGE  "una llave de la entrada principal#g#f7#t"
-;                 MESSAGE  "un felpudo#g#fVWXY#t"
-;                 MESSAGE  "una maceta#g#f!#t"
-;                 MESSAGE  "un gnomo#g#f9#t"
-;                 MESSAGE  "una caja de cerillas#g#f+,#t"
-;                 MESSAGE  "una tarjeta de seguridad#g#f<#t"
-;                 MESSAGE  "llave de una caja pequeña#g#f3#t"
-;                 MESSAGE  "un diario#g#f$#t"
-;                 MESSAGE  "un osito de peluche#g#f##t"
-;                 MESSAGE  "llave del patio#g#f6#t"
-;                 MESSAGE  "una fotografía#g#fD#t"
-;                 MESSAGE  "una pelota#g#f:;#t"
-;                 MESSAGE  "una paleta#g#fmn#t"
-;                 MESSAGE  "un hacha#g#f%&'#t"
-;                 MESSAGE  "llave de la bodega#g#f1#t" 
-;                 MESSAGE  "llaves del coche#g#fIJ#t"
-;                 MESSAGE  "una lata de aceite#g#fFG#t"
-;                 MESSAGE  "una manguera#g#fPQ#t"
-;                 MESSAGE  "una galleta#g#f"#t"
-;                 MESSAGE  "#n"
-;                 INK 9
-;                 MESSAGE  "Ropa de calle#g#f=#t"          
-;                 MESSAGE  "llave del chamizo#g#f2#t"
-;                 MESSAGE  "una pala#g#f()*#t"
-;                 MESSAGE  "una llave de la entrada principal#g#f7#t"
-;                 MESSAGE  "un felpudo#g#fVWXY#t"
-;                 MESSAGE  "una maceta#g#f!#t"
-;                 MESSAGE  "un Gnomo#g#f9#t"
-;                 MESSAGE  "una caja de cerillas#g#f+,#t"
-;                 MESSAGE  "una tarjeta de seguridad#g#f<#t"
-;                 MESSAGE  "llave de una caja pequeña#g#f3#t"
-;                 MESSAGE  "un diario#g#f$#t"
-;                 MESSAGE  "un osito de peluche#g#f##t"
-;                 MESSAGE  "llave del patio#g#f6#t"
-;                 MESSAGE  "una fotografía#g#fD#t"
-;                 MESSAGE  "una pelota#g#f:;#t"
-;                 MESSAGE  "una paleta#g#fmn#t"
-;                 MESSAGE  "un hacha#g#f%&'#t"
-;                 MESSAGE  "llave de la bodega#g#f1#t" 
-;                 MESSAGE  "llaves del coche#g#fIJ#t"
-;                 MESSAGE  "una lata de aceite#g#fFG#t"
-;                 MESSAGE  "una manguera#g#fPQ#t"
-;                 MESSAGE  "una galleta#g#f"#t"
-;                 MESSAGE  "#n"
-;                 INK      colorMuerte     ; Color del anuncio de una muerte.                
-;                 MESSAGE  "#g#fBHAS MUERTOC#t"
-;                 MESSAGE  "#g#fbdefghijkldc#t"
-;                 INK 15                   
-;                 DONE
+> AYUDA     MAGIA
+                INK 15
+                MESSAGE  "Ropa de calle#g#f=#t"          
+                MESSAGE  "llave del chamizo#g#f2#t"
+                MESSAGE  "una pala#g#f()*#t"
+                MESSAGE  "una llave de la entrada principal#g#f7#t"
+                MESSAGE  "un felpudo#g#fVWXY#t"
+                MESSAGE  "una maceta#g#f!#t"
+                MESSAGE  "un gnomo#g#f9#t"
+                MESSAGE  "una caja de cerillas#g#f+,#t"
+                MESSAGE  "una tarjeta de seguridad#g#f<#t"
+                MESSAGE  "llave de una caja pequeña#g#f3#t"
+                MESSAGE  "un diario#g#f$#t"
+                MESSAGE  "un osito de peluche#g#f##t"
+                MESSAGE  "llave del patio#g#f6#t"
+                MESSAGE  "una fotografía#g#fD#t"
+                MESSAGE  "una pelota#g#f:;#t"
+                MESSAGE  "una paleta#g#fmn#t"
+                MESSAGE  "un hacha#g#f%&'#t"
+                MESSAGE  "llave de la bodega#g#f1#t" 
+                MESSAGE  "llaves del coche#g#fIJ#t"
+                MESSAGE  "una lata de aceite#g#fFG#t"
+                MESSAGE  "una manguera#g#fPQ#t"
+                MESSAGE  "una galleta#g#f"#t"
+                MESSAGE  "#n"
+                INK 9
+                MESSAGE  "Ropa de calle#g#f=#t"          
+                MESSAGE  "llave del chamizo#g#f2#t"
+                MESSAGE  "una pala#g#f()*#t"
+                MESSAGE  "una llave de la entrada principal#g#f7#t"
+                MESSAGE  "un felpudo#g#fVWXY#t"
+                MESSAGE  "una maceta#g#f!#t"
+                MESSAGE  "un Gnomo#g#f9#t"
+                MESSAGE  "una caja de cerillas#g#f+,#t"
+                MESSAGE  "una tarjeta de seguridad#g#f<#t"
+                MESSAGE  "llave de una caja pequeña#g#f3#t"
+                MESSAGE  "un diario#g#f$#t"
+                MESSAGE  "un osito de peluche#g#f##t"
+                MESSAGE  "llave del patio#g#f6#t"
+                MESSAGE  "una fotografía#g#fD#t"
+                MESSAGE  "una pelota#g#f:;#t"
+                MESSAGE  "una paleta#g#fmn#t"
+                MESSAGE  "un hacha#g#f%&'#t"
+                MESSAGE  "llave de la bodega#g#f1#t" 
+                MESSAGE  "llaves del coche#g#fIJ#t"
+                MESSAGE  "una lata de aceite#g#fFG#t"
+                MESSAGE  "una manguera#g#fPQ#t"
+                MESSAGE  "una galleta#g#f"#t"
+                MESSAGE  "#n"
+                INK      colorMuerte     ; Color del anuncio de una muerte.                
+                MESSAGE  "#g#fBHAS MUERTOC#t"
+                MESSAGE  "#g#fbdefghijkldc#t"
+                INK 15                   
+                DONE
 
                                          ; AYUDA OSITO: Cheat para los desarrolladores. Nos permite hacer una lectura 
                                          ; de variables para comprobar el funcionamiento de las mismas.
@@ -10383,119 +10278,119 @@ S       lRecibidor
                 RESTART
                 DONE
 
-; > USAR      GUSILUZ                      ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    MARCOS
-;                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-;                 CLEAR    fApagarCerilla 
-; 				ZERO     fUsarCerilla
-;                 SET      fUsarCerilla
-;                 LET      fTurnosConLuz 200; Numero de turnos hasta que te quedas sin luz
-;                 CLEAR    fDarkF          ; Desactivamos la oscuridad.
-;                 ZERO     fVasAPalmar
-;                 SET      fControlLuz     ; Ponemos a 255 el flag
-;                 WINDOW   0
-;                 PICTURE  0
-;                 WINDOW   1              
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
-;                 RESTART
-;                 DONE
+> USAR      GUSILUZ                      ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    MARCOS
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CLEAR    fApagarCerilla 
+				ZERO     fUsarCerilla
+                SET      fUsarCerilla
+                LET      fTurnosConLuz 200; Numero de turnos hasta que te quedas sin luz
+                CLEAR    fDarkF          ; Desactivamos la oscuridad.
+                ZERO     fVasAPalmar
+                SET      fControlLuz     ; Ponemos a 255 el flag
+                WINDOW   0
+                PICTURE  0
+                WINDOW   1              
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Enciendes una cerilla#g#f4#t y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#n#k#b"
+                RESTART
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    CRIO
-;                 SET      fJugar
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    CRIO
+                SET      fJugar
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     SIN
-;                 NOUN2    CRIO
-;                 CLEAR    fJugar
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    CRIO
+                CLEAR    fJugar
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    PUERTA        
-;                 SET      fVolverEntrar
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    PUERTA        
+                SET      fVolverEntrar
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     SIN
-;                 NOUN2    PUERTA
-;                 CLEAR    fVolverEntrar
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    PUERTA
+                CLEAR    fVolverEntrar
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    DIARIO        
-;                 SET      fLeerDiario
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    DIARIO        
+                SET      fLeerDiario
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     SIN
-;                 NOUN2    DIARIO
-;                 CLEAR    fLeerDiario
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    DIARIO
+                CLEAR    fLeerDiario
+                DONE
     
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    PALA
-;                 ISAT     oPala           252
-;                 CREATE   oPala
-;                 GET      oPala
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    PALA
+                ISAT     oPala           252
+                CREATE   oPala
+                GET      oPala
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     SIN
-;                 NOUN2    PALA
-;                 DESTROY  oPala
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    PALA
+                DESTROY  oPala
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     SIN
-;                 NOUN2    LATA
-;                 DESTROY  oLataDeAceite
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    LATA
+                DESTROY  oLataDeAceite
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     EN
-;                 NOUN2    PORCHE
-;                 GOTO     lPorche
-;                 RESTART
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     EN
+                NOUN2    PORCHE
+                GOTO     lPorche
+                RESTART
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     EN
-;                 NOUN2    BODEGA
-;                 PRINT    fControlLuz
-;                 XMESSAGE " fControlLuz#n"
-;                 PRINT    fDarkF
-;                 XMESSAGE " fDarkF#n"
-;                 PRINT    fTurnosConLuz
-;                 XMESSAGE " fTurnosConLuz#n"
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     EN
+                NOUN2    BODEGA
+                PRINT    fControlLuz
+                XMESSAGE " fControlLuz#n"
+                PRINT    fDarkF
+                XMESSAGE " fDarkF#n"
+                PRINT    fTurnosConLuz
+                XMESSAGE " fTurnosConLuz#n"
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     EN
-;                 NOUN2    RECIBIDOR
-;                 GOTO     lRecibidor
-;                 RESTART
-;                 DONE
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     EN
+                NOUN2    RECIBIDOR
+                GOTO     lRecibidor
+                RESTART
+                DONE
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    MESA
-;                 XMESSAGE "fJugar"
-;                 PRINT    81
-;                 XMESSAGE "#n"
-;                 XMESSAGE "fVolverEntrar"
-;                 PRINT    120
-;                 XMESSAGE "#n"
-;                 XMESSAGE "fInkeyKey1"
-;                 PRINT    fInkeyKey1
-;                 XMESSAGE "#n"
-;                 DONE  
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    MESA
+                XMESSAGE "fJugar"
+                PRINT    81
+                XMESSAGE "#n"
+                XMESSAGE "fVolverEntrar"
+                PRINT    120
+                XMESSAGE "#n"
+                XMESSAGE "fInkeyKey1"
+                PRINT    fInkeyKey1
+                XMESSAGE "#n"
+                DONE  
 
 ;________________________________________________________________________________________________________________________________________________________________________________________________
 ;                                      CONDACTOS DE LA PLANTILLA
@@ -10554,15 +10449,13 @@ S       lRecibidor
 ; > LD        _   LOAD 0
 ;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
-> RAMSA     _   RAMSAVE                  ; Guarda en la memoria la partida
-                INK      colorNarrador   ; Color del narrador.                
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+; > RAMSA     _   RAMSAVE                  ; Guarda en la memoria la partida
+;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
-> RAMLO     _   RAMLOAD 255              ; Reload all flags
-                GFX 0 5
-                CLS
-                INK      colorNarrador   ; Color del narrador.                
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+; > RAMLO     _   RAMLOAD 255              ; Reload all flags
+;                 GFX 0 5
+;                 CLS
+;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 > MIRAR     _   RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
