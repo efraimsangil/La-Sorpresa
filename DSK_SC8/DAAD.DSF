@@ -2409,22 +2409,28 @@ S       lRecibidor
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 ; Estamos en locEntrada 
 
-> EXAMINAR  RADIADOR  AT lEntrada
+> BUSCAR    PELOTA      AT lEntrada             
+                NOTCARR  oPelota         ; No tenemos la pelota.
+                INK      colorConciencia ; Color de la conciencia de Marcos
+                XMESSAGE "Por mucho que busco que no encuentro."
+                DONE
+
+> EXAMINAR  RADIADOR    AT lEntrada
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es un viejo radiador de hierro."
                 DONE
 
-> EXAMINAR  LAMPARA  AT lEntrada
+> EXAMINAR  LAMPARA     AT lEntrada
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Se trata de una lámpara antigua de bronce con una tulipa de cerámica."
                 DONE
 
-> EXAMINAR  TULIPA  AT lEntrada
+> EXAMINAR  TULIPA      AT lEntrada
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es horrorosa, como todas las lámparas de este estilo."
                 DONE
 
-> MIRAR     _         AT lEntrada
+> MIRAR     _           AT lEntrada
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Aunque es poco común encontrar un pasillo tras la puerta principal de una casa, este tiene la función de no dejar escapar el calor en invierno. También impide que vean el interior de la casa las personas desde la entrada.#n  En el diseño original había una puerta al fondo del pasillo, pero tus padres la quitaron porque al ser el recibidor tan estrecho, la puerta era algo muy molesto."
                 DONE
@@ -2719,6 +2725,12 @@ S       lRecibidor
                 DONE   
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 ; Estamos en locHallBodega
+
+> BUSCAR    PELOTA      AT lHallBodega             
+                NOTCARR  oPelota         ; No tenemos la pelota.
+                INK      colorConciencia ; Color de la conciencia de Marcos
+                XMESSAGE "¿Dónde estará la pelotita?."
+                DONE
 
 > EXAMINAR  ESCALERAS AT lHallBodega
                 NOTZERO  fControlLuz     ; No es cero, luego tenemos luz.
