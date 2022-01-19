@@ -29,15 +29,51 @@ BUGS Día 16/01/2022
 - Puedes examinar la llave que llevas contigo durante el juego.(VRMotor)
 - locEntrada: Corregido el texto: Se trata de una lámpara antigua de bronce con una tulipa de cerámica. (VRMotor)
 - locCocina: Corregido el problema de ABRIR/CERRAR CAJONES.(VRMotor)
+- locPorche: Corregido MIRAR después de romper Gnomo.(Daneel Constantí)
+- locRecibidor: Corregido el control de EX CONSOLA dos veces.(Daneel Constantí)
+- locCocina: Corregido el problema de abrir/cerrar lavadora. (VRMotor)
+- locCocina: Corregido el problema de abrir/cerrar aparador. (VRMotor)
 
-Daneel Constantí
-"Porche:
-- Una vez he roto el gnomo y tengo la llave puedo hacer "mirar loquesea" y siempre me dice la descripción general. Es una tontería pero si pongo "mirar tetas" me describe todo el porche de nuevo. El texto del felpudo me sale en el mismo color que el de salidas disponible. ¿Esto está bien?
+BUGS Día 17/01/2022
+- locRecibidor: corregido problema a la hora de EXAMINAR FOTOGRAFIA al salir de locAseo.(VRMotor)
+- locPatio: corregido si apagas la cerilla en locPatio, no se va la imagen.(VRMotor)
+- locRoom1: corregido el texto del objeto sobre la cama.(VRMotor)
+- locRoom1: corregido el problema con MIRAR una vez cogido el objeto.(VRMotor)
 
-Recibidor:
-- Ex consola: Cuando el cajón ha salido despedido y se hace añicos, ¿tiene sentido que te vuelva a explicar que hay un cajón y que tus padres guardan siempre ahí unas cerillas o se debería explicar que antes tenía un cajón que ahora está en el suelo?
+BUGS Día 18/01/2022
+- locRoom3: corregido problema en el texto que describe la terma.(VRMotor)
+- locPasillo2: corregido el color del texto cuando habla la conciencia.(VRMotor)
+- locPorche: corregido el poder lanzar: COGER CIEMPIES dos veces.
 
-Cocina: Al intentar abrir los cajones del aparador no da ningún tipo de respuesta. ¿Debería debir "no puedo hacer eso" o algo parecido? Si justo después dices "ex" no hace nada.
+BUGS Día 19/01/2022
+- locEscalera: corregido el problema de EX HUECO sin haber movido el escalón.(VRMotor)
+- locBodega: corregido el problema de TIRAR ALAMBIQUE por primera vez.(VRMotor)
+- locBodega: corregido el problema del pestillo en la puerta.(VRMotor)
 
-Sergi
-En el porche cuando coges la meceta y haces ineventario tienes la maceta, pero cuando haces mirar te la presenta en la escenario. En cambio al gnomo. Es solo una observación, supongo que será intencionado 😊
+
+
+desde locGabinete a locChamizo se jode la luz
+
+
+- Indicar que existe el manual al comenzar el juego
+- Crear una pantalla con el manual del juego. Los comandos básicos.
+- Cuando entras por segunda vez a la casa y la cría te habla, que te de la pista de que esta allí para ayudarte a descubrir los misterios y que cada vez que lo necesites, puedes ir a hablar con ella.
+
+
+
+
+VR
+DAPCVR
+Adventures Graphical Designer for VR		ADGVR
+Designer Graphical Adventures for VR		DGAVR
+Graphic adventure designer for VR			GADVR
+Creator of adventure games for VR			CAGVR
+Engine for the creation of adventure games  ECAGVR
+Adventure game engine for VR                AGEVR
+Interactive Adventure game engine for VR    IAGEVR
+Adventure Game Creator for VR               AGCVR
+Creador de Aventuras Interactivas para VR   CAIVR
+
+GECAGVR
+
+

@@ -1,0 +1,71 @@
+
+OLER      _           AT lBurgos
+LEVANTAR    _
+INCORPORAR  _         AT lBurgos
+LEVANTAR    _
+INCORPORAR  _         AT lBurgos
+LEVANTAR    _
+INCORPORAR  _         AT lBurgos
+ABRIR     ARMARIO     AT lBurgos
+ABRIR     ARMARIO     AT lBurgos
+ABRIR     ARMARIO     AT lBurgos
+CERRAR    ARMARIO     AT lBurgos
+CERRAR    ARMARIO     AT lBurgos
+CERRAR    ARMARIO     AT lBurgos
+EXAMINA   ARMARIO     AT lBurgos
+EXAMINA   ARMARIO     AT lBurgos
+EXAMINA   ARMARIO     AT lBurgos
+PONER     ROPA
+COGER     ROPA
+EXAMINA   ARMARIO     AT lBurgos
+PONER     ROPA
+COGER     ROPA        AT lBurgos
+PONER     ROPA
+COGER     ROPA        AT lBurgos
+EXAMINA   CAMA        AT lBurgos 
+EXAMINA   MANTA       AT lBurgos
+EXAMINA   SUELO       AT lBurgos
+EXAMINA   TECHO       AT lBurgos
+EXAMINA   PARED       AT lBurgos
+EXAMINA   MESITA
+EXAMINA   MESITA
+ABRIR     CAJON       AT lBurgos                    
+ABRIR     CAJON       AT lBurgos       
+CERRAR    CAJON       AT lBurgos       
+CERRAR    CAJON       AT lBurgos       
+EXAMINA   CAJON       AT lBurgos      
+EXAMINA   CAJON       AT lBurgos      
+EXAMINA   CAJON       AT lBurgos      
+EXAMINA   LLAVES      AT lBurgos      
+COGER     LLAVES      AT lBurgos         
+COGER     LLAVES      AT lBurgos
+ENCENDER  LAMPARA     AT lBurgos
+APAGAR    LAMPARA     AT lBurgos
+ENCENDER  LAMPARA     AT lBurgos
+APAGAR    LAMPARA     AT lBurgos
+EXAMINA   LAMPARA     AT lBurgos
+EXAMINA   TELEFONO    AT lBurgos
+CONTESTAR TELEFONO
+DESCOLGAR TELEFONO
+COGER     TELEFONO    AT lBurgos    
+CONTESTAR TELEFONO
+DESCOLGAR TELEFONO
+USAR      TELEFONO
+LLAMAR    TELEFONO    AT lBurgos  
+USAR      TELEFONO
+LLAMAR    TELEFONO    AT lBurgos  
+EXAMINA   HABITACION
+MIRAR     _           AT lBurgos 
+ACOSTARSE _
+ACOSTARSE _
+ACOSTARSE _
+DORMIR	_           AT lBurgos
+ACOSTARSE _
+DORMIR	_           AT lBurgos
+ACOSTARSE _
+DORMIR	_           AT lBurgos
+ACOSTARSE _
+DORMIR    _           AT lBurgos
+ACOSTARSE _
+DORMIR    _           AT lBurgos
+COLGAR    TELEFONO    AT lBurgos
