@@ -49,10 +49,23 @@ BUGS Día 19/01/2022
 - locEscalera: corregido el problema de EX HUECO sin haber movido el escalón.(VRMotor)
 - locBodega: corregido el problema de TIRAR ALAMBIQUE por primera vez.(VRMotor)
 - locBodega: corregido el problema del pestillo en la puerta.(VRMotor)
+- locEntrada: corregido BUSCAR PELOTA. (Anto)
+- locHallBodega: corregido BUSCAR PELOTA. (Anto)
 
+BUGS Día 20/01/2022
+- locSalon: corregido problema de USAR TARJETA sin abrir vitrina.(VRMotor)
+- locEntrada: corregido el problema de que la niña no aparece cuando entras desde el exterior.(VRMotor)
 
+BUGS Día 21/01/2022
+- Corregido el texto cuando enciendes una cerilla.(VRMotor)
+- locDespensa: corregido el problema con la galleta.(VRMotor)
+- locCochera: corregido el problema de una acción que NO te mataba y ahora si.(VRMotor)
+- locCriada: corregido texto y añadido sinónim ARRASTRAR.(VRMotor)
+- locEscalera: corregido texto EX HUECO.(VRMotor)
+- Eliminadas las acciones RAMSAVE y RAMLOAD. No hay memoria para poder hacer uso de esto.
+- locChamizo: corregido el hecho de perder la pala al cavar.(VRMotor)
+- locChamizo: corregido el problema al romper el pasador, que saliendo al exterior, no te deja entrar de nuevo.(VRMotor)
 
-desde locGabinete a locChamizo se jode la luz
 
 
 - Indicar que existe el manual al comenzar el juego
@@ -69,7 +82,7 @@ Designer Graphical Adventures for VR		DGAVR
 Graphic adventure designer for VR			GADVR
 Creator of adventure games for VR			CAGVR
 Engine for the creation of adventure games  ECAGVR
-Adventure game engine for VR                AGEVR
+VR-AGE (VR Adventure Game Engine)
 Interactive Adventure game engine for VR    IAGEVR
 Adventure Game Creator for VR               AGCVR
 Creador de Aventuras Interactivas para VR   CAIVR
