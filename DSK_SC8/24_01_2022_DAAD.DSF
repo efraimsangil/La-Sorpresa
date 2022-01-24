@@ -724,7 +724,7 @@ LUEGO           2       conjugation
 /0 "ropa de calle#g#f=#t"          
 /1 "llave del chamizo#g#f2#t"
 /2 "llave de la cochera"    ; No se usa
-/3 "cerilla encendida#g#f4#t"
+/3 "cerilla encendida"
 /4 "una pala#g#f()*#t"
 /5 "una llave de la entrada principal#g#f7#t"
 /6 "un felpudo#g#fVWXY#t"
@@ -4212,34 +4212,104 @@ S       lRecibidor
                 XMESSAGE "El chamizo tiene una puerta muy vieja hecha de listones de madera pintados de verde; está completamente descascarillada y ajada por estar a la intertemperie."
                 DONE
 
-; TABLA DE APERTURA DE PUERTA
-;  oLlaveChamizo  | fRompePasador |  fJugar | 
-;        0               0              x                
-;_____________________________________________________
-;        1               n              0                                 
-;        1               n              1 
-;_____________________________________________________
-;        n               1              0      
-;        n               1              1      
-
-
-
-> ABRIR     PUERTA    AT lExteriorChamizo                 
-                NOTCARR  oLighton
+; Acciones habiendo jugado con el crío
+> ABRIR     PUERTA    AT lExteriorChamizo ; Necesariamente hemos salido por la cochera, ya que es la única manera de conseguir la llave del chamizo.
+                CARRIED  oLighton
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                NOTCARR  oPala           ; Verificamos que no portamos la pala.
+                NOTZERO  fJugar
+                INK      colorNarrador   ; Color del narrador.    
+                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"
+                WINDOW   0
+                XPICTURE 030
+                WINDOW   1
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.      
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t.#n"                
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "El chamizo está muy oscuro."
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
-; 0 0 x
-> ABRIR     PUERTA    AT lExteriorChamizo
+> ABRIR     PUERTA    AT lExteriorChamizo ; Necesariamente hemos salido por la cochera, ya que es la única manera de conseguir la llave del chamizo.
                 CARRIED  oLighton
+                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+                NOTCARR  oPala           ; Verificamos que no portamos la pala.
+                NOTZERO  fJugar
+                INK      colorNarrador   ; Color del narrador.    
+                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"
+                WINDOW   0
+                XPICTURE 030
+                WINDOW   1
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.      
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t.#n"                
+                INK      colorNarrador   ; Color del narrador.                
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                DONE
+
+> ABRIR     PUERTA    AT lExteriorChamizo ; Hemos salido por la cochera, hemos vuelto a entrar en la casa y hemos salido por el gabinete.
+                CARRIED  oLighton
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                CARRIED  oPala           ; Verificamos que portamos la pala.
+                NOTZERO  fJugar
+                INK      colorNarrador   ; Color del narrador.    
+                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"
+                WINDOW   0
+                XPICTURE 030
+                WINDOW   1
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.      
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura. Necesito que exhumes los cuerpos.#n"                
+                INK      colorNarrador   ; Color del narrador.                
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                DONE
+
+> ABRIR     PUERTA    AT lExteriorChamizo ; Hemos salido por la cochera, hemos vuelto a entrar en la casa y hemos salido por el gabinete.
+                CARRIED  oLighton
+                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+                CARRIED  oPala           ; Verificamos que portamos la pala.
+                NOTZERO  fJugar
+                INK      colorNarrador   ; Color del narrador.    
+                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"
+                WINDOW   0
+                XPICTURE 030
+                WINDOW   1
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.      
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura. Necesito que exhumes los cuerpos.#n"                
+                INK      colorNarrador   ; Color del narrador.                
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                DONE
+
+> ABRIR     PUERTA    AT lExteriorChamizo
+                ; CARRIED  oLighton
                 ZERO     fRompePasador   ; Verificamos que el pasador no está roto.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "La puerta está cerrada con llave."
+                DONE
+
+> ABRIR     PUERTA    AT lExteriorChamizo
+                ; CARRIED  oLighton
                 NOTCARR  oLlaveChamizo
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La puerta está cerrada con llave."
                 DONE
 
-; 1 n 0       
+> ABRIR     PUERTA    AT lExteriorChamizo
+                CARRIED  oLighton
+                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+                ZERO     fJugar
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.     
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                DONE
+
 > ABRIR     PUERTA    AT lExteriorChamizo
                 CARRIED  oLighton
                 CARRIED  oLlaveChamizo
@@ -4251,42 +4321,18 @@ S       lRecibidor
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
-; 1 n 1
-> ABRIR     PUERTA    AT lExteriorChamizo ; Necesariamente hemos salido por la cochera, ya que es la única manera de conseguir la llave del chamizo.
-                CARRIED  oLighton
-                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
-                NOTZERO  fJugar
-                INK      colorNarrador   ; Color del narrador.    
-                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"              
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lChamizo        ; Vamos a lChamizo.                   
+> ABRIR     PUERTA    AT lExteriorChamizo                
+                NOTCARR  oLighton
+                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
                 INK      colorNarrador   ; Color del narrador.                
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                XMESSAGE "El chamizo está muy oscuro."
                 DONE
 
-; n 1 0
-> ABRIR     PUERTA    AT lExteriorChamizo ; Necesariamente hemos salido por la cochera, ya que es la única manera de conseguir la llave del chamizo.
-                CARRIED  oLighton
-                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
-                ZERO     fJugar
-                INK      colorNarrador   ; Color del narrador.    
-                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"               
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lChamizo        ; Vamos a lChamizo.                           
+> ABRIR     PUERTA    AT lExteriorChamizo                
+                NOTCARR  oLighton
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
                 INK      colorNarrador   ; Color del narrador.                
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
-                DONE
-; n 1 1
-> ABRIR     PUERTA    AT lExteriorChamizo ; Hemos salido por la cochera, hemos vuelto a entrar en la casa y hemos salido por el gabinete.
-                CARRIED  oLighton
-                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
-                NOTZERO  fJugar
-                INK      colorNarrador   ; Color del narrador.    
-                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"               
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lChamizo        ; Vamos a lChamizo.                         
-                INK      colorNarrador   ; Color del narrador.                
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                XMESSAGE "El chamizo está muy oscuro."
                 DONE
 
 > EXAMINA   CHAMIZO   AT lExteriorChamizo             
@@ -4338,37 +4384,29 @@ S       lRecibidor
                 XMESSAGE "Las paredes tienen un recubrimiento de mortero pintado con cal, que se cae a trozos debido la humedad."                
                 DONE
 
-; 0 0
 > EXAMINA   PUERTA    AT lChamizo                
                 CARRIED  oLighton
-                NOTCARR  oLlaveChamizo
-                ZERO     fRompePasador
+                NOTCARR  oLlaveChamizo                
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde y tiene un pasador de madera echado, de modo que la mantiene cerrada. "
+                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde y tiene un pasador echado, de modo que la mantiene cerrada. "
                 DONE
-; 0 1
-> EXAMINA   PUERTA    AT lChamizo
-                CARRIED  oLighton
-                NOTCARR  oLlaveChamizo         
-                NOTZERO  fRompePasador
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde. El pasador está destrozado, puedes abrir la puerta."
-                DONE 
 
-; 1 0
 > EXAMINA   PUERTA    AT lChamizo                
                 CARRIED  oLighton
-                CARRIED  oLlaveChamizo
                 ZERO     fRompePasador
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde y tiene un pasador de madera echado, de modo que la mantiene cerrada."
+                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde y tiene un pasador echado, de modo que la mantiene cerrada. "
                 DONE
-
-; 1 1    
 
 > EXAMINA   PUERTA    AT lChamizo
                 CARRIED  oLighton
-                CARRIED  oLlaveChamizo
+                CARRIED  oLlaveChamizo                
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde. El pasador está abierto, puedes abrir la puerta."
+                DONE     
+
+> EXAMINA   PUERTA    AT lChamizo
+                CARRIED  oLighton
                 NOTZERO  fRompePasador                
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es una puerta muy vieja hecha de listones de madera. Está pintada de verde. El pasador está destrozado, puedes abrir la puerta."
@@ -4378,8 +4416,13 @@ S       lRecibidor
 
 > EXAMINA   PASADOR   AT lChamizo
                 CARRIED  oLighton
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Es un pasador de madera que se desplaza al girar la llave dentro de la cerradura, desbloqueando la puerta.#n"
+                DONE
+
+> EXAMINA   PASADOR   AT lChamizo
+                CARRIED  oLighton
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
-                ZERO     fRompePasador
                 CARRIED  oHacha          ; Verificamos que portamos el hacha.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El pasador parece que puede moverse mediante el mecanismo que acciona la llave que abre la puerta, pero no tienes ninguna llave.#n"
@@ -4391,7 +4434,6 @@ S       lRecibidor
 > EXAMINA   PASADOR   AT lChamizo
                 CARRIED  oLighton
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
-                ZERO     fRompePasador
                 NOTCARR  oHacha          ; Verificamos que no portamos el hacha. 
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "No tienes forma de romper el pasador.#n"
@@ -6876,7 +6918,7 @@ S       lRecibidor
                 PICTURE  0
                 WINDOW   1               
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "#n#nY gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
+                XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
                 GFX      0 5
                 WINDOW   0               ; Desactivamos la imagen.
                 XPICTURE 208             ; Foto de lRoom3 tras el flashback.
@@ -7222,7 +7264,7 @@ S       lRecibidor
                 PICTURE  0
                 WINDOW   1               
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "#n#nY gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
+                XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
                 GFX      0 5
                 WINDOW   0               ; Desactivamos la imagen.
                 XPICTURE 247             ; Foto de lRoom3 tras el flashback.
@@ -8326,7 +8368,7 @@ S       lRecibidor
                 PICTURE  0
                 WINDOW   1              
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "#n#nY gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
+                XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
                 RESTART
 
 ; Muerte del jugador
@@ -8743,8 +8785,8 @@ S       lRecibidor
                 ; CREATE  oLlaveChamizo
                 ; GET     oLlaveChamizo
 
-                ; CREATE   oHacha
-                ; GET      oHacha
+                CREATE   oHacha
+                GET      oHacha
                            
                 ; SET      fJugar
                 ; SET      fLeerDiario
@@ -8807,67 +8849,55 @@ S       lRecibidor
                 XMESSAGE "No puedes ver nada. Está muy oscuro."
                 DONE
                 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    CRIO
-                SET      fJugar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    CRIO
+;                 SET      fJugar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    CRIO
-                CLEAR    fJugar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    CRIO
+;                 CLEAR    fJugar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    PUERTA        
-                SET      fVolverEntrar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    PUERTA        
+;                 SET      fVolverEntrar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    PUERTA
-                CLEAR    fVolverEntrar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    PUERTA
+;                 CLEAR    fVolverEntrar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    DIARIO        
-                SET      fLeerDiario
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    DIARIO        
+;                 SET      fLeerDiario
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    DIARIO
-                CLEAR    fLeerDiario
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    DIARIO
+;                 CLEAR    fLeerDiario
+;                 DONE
     
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    PALA
-                CREATE   oPala
-                GET      oPala
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    PALA
+;                 ISAT     oPala           252
+;                 CREATE   oPala
+;                 GET      oPala
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    PALA
-                DESTROY  oPala
-                DONE
-
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    HACHA
-                CREATE   oPala
-                GET      oPala
-                DONE
-
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    HACHA
-                DESTROY  oPala
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    PALA
+;                 DESTROY  oPala
+;                 DONE
 
 ; > USAR      MAGIA                        ; SHORTCUT: usarmagia
 ;                 PREP     SIN
@@ -8875,12 +8905,12 @@ S       lRecibidor
 ;                 DESTROY  oLataDeAceite
 ;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    PORCHE
-                GOTO     lPorche
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    PORCHE
+;                 GOTO     lPorche
+;                 RESTART
+;                 DONE
 
 ; > USAR      MAGIA                        ; SHORTCUT: usarmagia
 ;                 PREP     EN
@@ -8893,33 +8923,27 @@ S       lRecibidor
 ;                 XMESSAGE " fTurnosConLuz#n"
 ;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    RECIBIDOR
-                GOTO     lRecibidor
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    RECIBIDOR
+;                 GOTO     lRecibidor
+;                 RESTART
+;                 DONE
 
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     CON
                 NOUN2    MESA
-                XMESSAGE "fRompePasador" 
-                PRINT    132
+                XMESSAGE "fJugar"
+                PRINT    81
                 XMESSAGE "#n"
-                PRINT    fRompePasador
+                XMESSAGE "fVolverEntrar"
+                PRINT    120
                 XMESSAGE "#n"
-;                 XMESSAGE "oLighton"
-; ;               PRINT    3
-;                 PRINT    oLighton
-;                 XMESSAGE "#n"
-;                 XMESSAGE "fTurnosConLuz"
-; ;               PRINT    72
-;                 PRINT    fTurnosConLuz
-;                 XMESSAGE "#n"
-;                 XMESSAGE "oLlaveChamizo"
-;                 PRINT    oLlaveChamizo
-;                 XMESSAGE "#n"
+                XMESSAGE "fInkeyKey1"
+                PRINT    fInkeyKey1
+                XMESSAGE "#n"
                 DONE  
+
 ;________________________________________________________________________________________________________________________________________________________________________________________________
 ;                                      CONDACTOS DE LA PLANTILLA
 
