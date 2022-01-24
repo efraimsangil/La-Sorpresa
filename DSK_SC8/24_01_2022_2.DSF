@@ -2583,7 +2583,7 @@ S       lRecibidor
 
 > EXAMINAR  PARED     AT lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "La pared está forrada con un papel pintado horroroso." 
+                XMESSAGE "La pared está forrada con un papel pintado horroroso.#n" 
                 DONE
 
 > S         _         AT lRecibidor      ; No podemos entrar en la cocina sin LUZ
@@ -2882,7 +2882,7 @@ S       lRecibidor
                 CARRIED  oLighton
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha anteriormente.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Tras haber quitado la mancha, ha quedado al descubierto una puerta."
+                XMESSAGE "Tras haber quitado la mancha, ha quedado al descubierto una puerta.#n"
                 DONE
 
 > EXAMINAR  ALAMBIQUE AT lBodega
@@ -2972,7 +2972,7 @@ S       lRecibidor
                 CARRIED  oLighton
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   ; Ya usó la paleta
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible."
+                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible.#n"
                 DONE
 
 > RASCAR    YESO 
@@ -2982,7 +2982,7 @@ S       lRecibidor
                 CARRIED  oLighton
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha.   ; Ya usó la paleta
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible."
+                XMESSAGE "Has roto la paleta#g#fmn#t, pero la puerta está visible.#n"
                 DONE
 
 > CERRAR    PESTILLO
@@ -3005,7 +3005,7 @@ S       lRecibidor
                 ZERO     fEncuentraPestillo ; Verificamos que hemos encontrado el pestillo.
                 ; ZERO     fPestillo       ; Verificamos que no hemos quitado el pestillo de la puerta.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No encuentro ningún pestillo."
+                XMESSAGE "No encuentro ningún pestillo.#n"
                 DONE
 
 > EXAMINA   PESTILLO  AT lBodega
@@ -3034,7 +3034,7 @@ S       lRecibidor
                 ZERO     fEncuentraPestillo ; Verificamos que hemos encontrado el pestillo.
                 ; ZERO     fPestillo       ; Verificamos que no hemos quitado el pestillo de la puerta.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No encuentro ningún pestillo."
+                XMESSAGE "No encuentro ningún pestillo.#n"
                 DONE
 
 > ABRIR     PESTILLO
@@ -3047,7 +3047,7 @@ S       lRecibidor
                 ZERO     fPestillo       ; Verificamos que no hemos quitado el pestillo de la puerta.
                 SET      fPestillo       ; Quitamos el pestillo de la puerta.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Quitas el pestillo y ahora puedes abrir la puerta."
+                XMESSAGE "Quitas el pestillo y ahora puedes abrir la puerta.#n"
                 DONE
 
 > ABRIR     PESTILLO
@@ -3058,7 +3058,7 @@ S       lRecibidor
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha de la pared.
                 NOTZERO  fPestillo       ; Verificamos que no hemos quitado el pestillo de la puerta.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "El pestillo ya está quitado."
+                XMESSAGE "El pestillo ya está quitado.#n"
                 DONE
 
 > CERRAR    PESTILLO
@@ -3068,7 +3068,7 @@ S       lRecibidor
                 NOTZERO  fPestillo       ; Verificamos que no hemos quitado el pestillo de la puerta.
                 CLEAR    fPestillo       ; Ponemos el pestillo.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Pones el pestillo."
+                XMESSAGE "Pones el pestillo.#n"
                 DONE
 
 > CERRAR    PESTILLO
@@ -3077,7 +3077,7 @@ S       lRecibidor
                 NOTZERO  fQuitarMancha   ; Verificamos que hemos quitado la mancha de la pared.
                 ZERO     fPestillo       ; Verificamos que no hemos quitado el pestillo de la puerta.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "El pestillo está puesto."
+                XMESSAGE "El pestillo está puesto.#n"
                 DONE
 
 > TIRAR     PUERTA
@@ -3085,9 +3085,10 @@ S       lRecibidor
 > ABRIR     PUERTA    AT lBodega
                 NOTCARR  oLighton
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No puedes entrar sin algo de luz. No ves nada."
+                XMESSAGE "No puedes entrar sin algo de luz. No ves nada.#n"
                 DONE
 
+;pixa: aquí casca algo
 > EXAMINA   PUERTA
 > EMPUJAR   PUERTA
 > TIRAR     PUERTA
@@ -3395,7 +3396,7 @@ S       lRecibidor
 > ABRIR     TRAMPILLA AT lBodega
                 NOTCARR  oLighton
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No puedes entrar por la trampilla. No ves nada."
+                XMESSAGE "No puedes entrar por la trampilla. No ves nada.#n"
                 DONE
 
 > TIRAR     TRAMPILLA
@@ -3725,7 +3726,8 @@ S       lRecibidor
 
 > N        _          AT lGabinete
                 NOTCARR  oLighton
-                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.            
+                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+;pixa: Hay que controlar esto                
                 NOTCARR  oPala
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
@@ -3753,7 +3755,8 @@ S       lRecibidor
 
 > N        _          AT lGabinete
                 NOTCARR  oLighton
-                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.                          
+                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+;pixa: Hay que controlar esto                                
                 CARRIED  oPala
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
@@ -3776,7 +3779,8 @@ S       lRecibidor
 
 > N        _          AT lGabinete
                 NOTCARR  oLighton
-                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota). El niño nos va a revelar que en el chamizo están sus restos.              
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota). El niño nos va a revelar que en el chamizo están sus restos.
+;pixa: Hay que controlar esto                
                 NOTCARR  oPala
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla. Hay una pala#g#f()*#t atrancada en la puerta, pero la coges sin problema.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
@@ -3807,7 +3811,8 @@ S       lRecibidor
 
 > N        _          AT lGabinete
                 NOTCARR  oLighton
-                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota). El niño nos va a revelar que en el chamizo están sus restos.              
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota). El niño nos va a revelar que en el chamizo están sus restos.
+;pixa: Hay que controlar esto                
                 CARRIED  oPala
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla.#n Abres la puerta y sales de este horrible lugar.#k#n"
@@ -6858,10 +6863,7 @@ S       lRecibidor
                 XMESSAGE "El retrete ahora se parece más a una placa turca."
                 DONE
 
-                                         ; Este encender cerilla sustituye al RESTART con el texto original, 
-                                         ; ya que una vez que se rompe el retrete, el texto de la localización
-                                         ; debe contemplarlo y si no colocamos el mensaje personalizado,
-                                         ; por defecto aparecerá la descripcion de los Location Texts.
+;pixa
 > ENCENDER CERILLA
 > PRENDER  CERILLA
 > USAR     CERILLA    AT lBath2
@@ -8288,7 +8290,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es una paleta de pintor."
                 DONE
-
+;pixa buena
 > APAGAR    CERILLA
                 GT       38 10                  ; El flag 38 indica la localización actual del jugador, Si está entre la 10 y la 30, es decir, verificamos
                 LT       38 31                  ; que estemos en localizaciones que estén a oscuras.
@@ -9652,7 +9654,7 @@ S       lRecibidor
                 XMESSAGE "¡Muy bien! Ahora que estás dentro del coche, te pones chulito con la niña.#k#b"
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Arrancas el coche a toda velocidad y sales de la finca derrapando.#n#nTe alejas de la casa y te diriges a la casa de tus padres en la ciudad.#k#b"
-                GFX      0 5    
+                GFX      0 5    ;pixa: poner algunas fotos nuevas
                 INK      colorMarcos     ; Color del protagonista. 
                 XMESSAGE "Hemos escapado de milagro. Un crío que me persigue por haber jugado con él a la pelota, #k#nuna cría que casi nos mata, #k#nun diario que habla de una críada y sus dos hijos, #k#nuna habitación secreta, #k#nuna puerta secreta en la bodega... #k#n¡Joder! ¡Menudas navidades!#k#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos
@@ -9978,6 +9980,10 @@ S       lRecibidor
                 XMESSAGE "#nHas completado el 100% de la historia.#n"
                 INK      colorSistema    ; El color del sistema.
                 ; DONE  
+
+; SI NO HA LLEGADO A SALIR DE LA CASA, SE GRATIFICA AL JUGADOR CON UN MENSAJE.
+
+; pixa : Buscar una fotografía con marcos abrazando a sus padres.
 
 >_          _   ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
                 ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.    
