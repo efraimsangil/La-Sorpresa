@@ -243,6 +243,7 @@
 #define fCajonesCocina      137          ; Flag que controla si abrimos/cerramos los cajones en lCocina
 #define fEmpujarAlacena     138          ; Flag que controla si empujamos por segunda vez la Alacena en lDespensa
 #define fCogerCiempies      139          ; Flag que controla coger el cienpies por segunda vez en lPorche
+#define fHistoria           140          ; Flag que indica que sabemos una parte importante de la historia de la familia que vivió en la casa.
 
  ;                             Definición de las localizaciones
  ;_____________________________________________________________________________________________________
@@ -3169,6 +3170,7 @@ S       lRecibidor
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
                 ZERO     fVolverEntrar   ; Activamos el flag por si fuesemos a volver a entrar por la puerta principal.
                 SET      fVolverEntrar   ; Activamos el flag por si fuesemos a volver a entrar por la puerta principal.
+                SET      fHistoria       ; Activamos el flag para indicar que hemos descubierto una parte muy importante de la historia de la familia que murió en la casa.
                                          ; Lo activamos aquí porque al ir con el niño (NOTZERO fJugar), este nos va a sacar a LocExtCochera directamente
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Entras en la cochera.#k#b"
@@ -3737,17 +3739,7 @@ S       lRecibidor
                 CLEAR    fVasAMorir      ; Ponemos a 0 el valor del flag que usamos para matar al jugador si hace determinadas acciones.
                 CLS
                 INK      colorNarrador   ; Color del narrador. 
-                ; XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"              
-                ; LET      fTurnosConLuz 12; Número de turnos hasta que te quedas sin luz
-                ; CREATE   oLighton
-                ; GET      oLighton
-                ; CLS
-                ; WINDOW   0
-                ; XPICTURE 030
-                ; WINDOW   1
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n"
-                INK     colorNena
-                XMESSAGE "1" 
                 GOTO     lChamizo        ; Vamos a lChamizo.
                 DONE
 
@@ -3758,19 +3750,8 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla.#n#n Abres la puerta y sales de este horrible lugar.#k#n"
                 CLEAR    fVasAMorir      ; Ponemos a 0 el valor del flag que usamos para matar al jugador si hace determinadas acciones.
-                ; CLS
-                ; INK      colorNarrador   ; Color del narrador. 
-                ; XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
-                ; LET      fTurnosConLuz 12; Número de turnos hasta que te quedas sin luz
-                ; CREATE   oLighton
-                ; GET      oLighton
                 CLS
-                ; WINDOW   0
-                ; XPICTURE 030
-                ; WINDOW   1
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n"
-                INK     colorNena
-                XMESSAGE "2"
                 GOTO     lChamizo        ; Vamos a lChamizo.
                 DONE
 
@@ -3786,22 +3767,11 @@ S       lRecibidor
                 GET      oPala
                 XMESSAGE "#k"
                 CLEAR    fVasAMorir      ; Ponemos a 0 el valor del flag que usamos para matar al jugador si hace determinadas acciones.
-                ; CLS
-                ; INK      colorNarrador   ; Color del narrador. 
-                ; XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
-                ; LET      fTurnosConLuz 12; Número de turnos hasta que te quedas sin luz
-                ; CREATE   oLighton
-                ; GET      oLighton
                 CLS
-                ; WINDOW   0
-                ; XPICTURE 030
-                ; WINDOW   1
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n"
                 ; XMESSAGE "#nAl fondo del chamizo puedes observar una estantería metálica.#k#n"
                 INK      colorNene       ; Color del niño.        
                 XMESSAGE "Te pido por favor que cojas la pala y caves en el suelo del chamizo."
-                INK     colorNena
-                XMESSAGE "3"
                 GOTO     lChamizo        ; Vamos a lChamizo.
                 DONE
 
@@ -3811,23 +3781,11 @@ S       lRecibidor
                 CARRIED  oPala
                 INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Gracias a que estás a oscuras, consigues acercarte a la puerta sin ser visto por la presencia que hay encima de la camilla.#n Abres la puerta y sales de este horrible lugar.#k#n"
-                CLEAR    fVasAMorir      ; Ponemos a 0 el valor del flag que usamos para matar al jugador si hace determinadas acciones.
-                ; CLS
-                ; INK      colorNarrador   ; Color del narrador. 
-                ; XMESSAGE "#n#g#f4#t Y gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
-                ; LET      fTurnosConLuz 12; Número de turnos hasta que te quedas sin luz
-                ; CREATE   oLighton
-                ; GET      oLighton
-                CLS
-                ; WINDOW   0
-                ; XPICTURE 030
-                ; WINDOW   1
+                CLEAR    fVasAMorir      ; Ponemos a 0 el valor del flag que usamos para matar al jugador si hace determinadas acciones.            
+                CLS             
                 XMESSAGE "Has entrado al chamizo a través de un panel corredizo de la pared que, justo cuando sales, vuelve a colocarse solo en su sitio.#n#n"
-                ; XMESSAGE "#nAl fondo del chamizo puedes observar una estantería metálica.#k#n"
                 INK      colorNene       ; Color del niño.        
-                XMESSAGE "Te pido por favor que cojas la pala y caves en el suelo del chamizo."
-                ; INK     colorNena
-                ; XMESSAGE "4"
+                XMESSAGE "Te pido por favor que cojas la pala y caves en el suelo del chamizo."              
                 GOTO     lChamizo        ; Vamos a lChamizo.
                 DONE
 
@@ -4382,7 +4340,18 @@ S       lRecibidor
                 XMESSAGE "Vamos a tener que usar la fuerza bruta para salir de aquí."
                 DONE
 
+> EXAMINA   PASADOR   AT lChamizo
+                CARRIED  oLighton
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                NOTZERO  fRompePasador
+                CARRIED  oHacha          ; Verificamos que portamos el hacha.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Has destrozado el pasador. Ahora esa puerta se abre con facilidad.#n"
+                DONE
+
 ; Muerte del jugador. 
+> ABRIR     PUERTA
+> ROMPER    PASADOR
 > EXAMINA   PASADOR   AT lChamizo
                 CARRIED  oLighton
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
@@ -4536,9 +4505,9 @@ S       lRecibidor
 				ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
                 SET      fDesenterrar    ; Desenterramos los cadáveres (Flag que determina uno de los finales.				
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Comienzas a cavar y tras un buen rato, encuentras tres bolsas negras que contienen restos humanos en su interior.#k#n"       
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque estoy seguro que me van a hacer montones de preguntas."                  
+                XMESSAGE "Comienzas a cavar y tras un buen rato, encuentras tres bolsas negras que contienen restos humanos en su interior."       
+                ;INK      colorMarcos     ; Color del protagonista.
+                ;XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque estoy seguro que me van a hacer montones de preguntas."                  
                 DONE
 
 ; NOTA: Comprobar si al pulsar X en Chamizo, sale el Gabinete para poder volver.
@@ -4556,7 +4525,6 @@ S       lRecibidor
                 ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La puerta está abierta. Sales al exterior del chamizo.#k"
-                ; CLEAR    fTurnosConLuz 
                 CLS                      ; Limpiamos la pantalla.
                 GOTO     lExteriorChamizo ; Vamos a lExteriorChamizo.
                 RESTART
@@ -4568,7 +4536,6 @@ S       lRecibidor
                 ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La puerta está abierta. Sales al exterior del chamizo.#k"
-                ; CLEAR    fTurnosConLuz 
                 CLS                      ; Limpiamos la pantalla.
                 GOTO     lExteriorChamizo ; Vamos a lExteriorChamizo.
                 RESTART
@@ -4593,7 +4560,7 @@ S       lRecibidor
                 NOTCARR  oLlaveCoche     ; Verificamos que Marcos no tenga las llaves del coche.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres.                                          
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!#k"
+                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!"
                 DONE
 
 > O             _
@@ -4603,7 +4570,7 @@ S       lRecibidor
                 NOTCARR  oLlaveCoche     ; Verificamos que Marcos no tenga las llaves del coche.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres.                                          
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!#k"
+                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!"
                 DONE
 
 > O             _
@@ -5107,7 +5074,7 @@ S       lRecibidor
 
 > EXAMINA   GALLETA   AT lDespensa
                 CARRIED  oLighton
-                CARRIED  oGalleta        ; Verificamos que no portamos la galleta.
+                NOTZERO  fEmpujarAlacena
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es una galleta#g#f"#t casera como las que hacía tu madre."
                 DONE
@@ -8732,8 +8699,8 @@ S       lRecibidor
                 CREATE   oPaleta
                 GET      oPaleta
             
-                ; CREATE   oPala
-                ; GET      oPala
+                CREATE   oPala
+                GET      oPala
             
                 ; CREATE   oLataDeAceite 
                 ; GET      oLataDeAceite 
@@ -8749,18 +8716,18 @@ S       lRecibidor
 
                 SET      fCombinacion
                 SET      fEngrasar
-                ; SET      fQuitarMancha
+                SET      fQuitarMancha
                 SET      fMoverAlambique
-                SET      fVolverEntrar
+                ; SET      fVolverEntrar
                 SET      fAbrirCandado
                 SET      fRompeRetrete
                 SET      fCajon
                 SET      fUsarTarjeta
                 ; SET      fRompePasador
 
-                GOTO     lBodega
+                ; GOTO     lBodega
                 ; GOTO     lRecibidor
-                ; GOTO     lChamizo
+                GOTO     lChamizo
                 ; GOTO     lCriada
                 ; GOTO     lPorche
                 RESTART
@@ -8857,14 +8824,26 @@ S       lRecibidor
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     CON
                 NOUN2    HACHA
-                CREATE   oPala
-                GET      oPala
+                CREATE   oHacha
+                GET      oHacha
                 DONE
 
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     SIN
                 NOUN2    HACHA
-                DESTROY  oPala
+                DESTROY  oHacha
+                DONE
+
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    PELOTA
+                SET      fHistoria
+                DONE
+
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    PELOTA
+                CLEAR    fHistoria
                 DONE
 
 ; > USAR      MAGIA                        ; SHORTCUT: usarmagia
@@ -9172,7 +9151,7 @@ S       lRecibidor
                 XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso.#k#n#n He de suponer que algo sucedió entre medias, la cosa se liaría, porque la familia acabó muerta y enterrada en el Chamizo. No se sabe muy bien quien ha sido ni por qué.#n"
                 INK      colorPadre
                 XMESSAGE "Me dejas helado, hijo... Anoche, vivimos una situación muy rara en la habitación y tuvimos que salir corriendo de la habitación. Fue cuando te llamé mientras tu madre hacía las maletas a toda prisa.#k#n"
-                XMESSAGE "Mientras tanto, cogí el teléfono llamarte y fue cuando se cortó inesperadamente, y escuchamos la voz de una niña diciendo que nos fuéramos de su casa. No aguantamos ni un minuto más allí y no fuimos.#k#n#nDe hecho, te dejé una nota en la puerta de casa, pero supongo que no la leiste.#k#n"
+				XMESSAGE "Mientras tanto, cogí el teléfono para llamarte y mientras hablábamos, escuchamos la voz de una niña diciendo que nos fuéramos de su casa y ese fue el momento en que se cortó inesperadamente la llamada. No aguantamos ni un minuto más allí y no fuimos.#k#n#nDe hecho, te dejé una nota en la puerta de casa, pero supongo que no la leiste.#k#n"				
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
                 INK      colorPadre
@@ -9188,9 +9167,7 @@ S       lRecibidor
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "De acuerdo, vayámonos.#k#b"
                 INK      colorEspecial   ; Color especial.
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n Has terminado resolviendo los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. #n "
-                XMESSAGE "Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#b Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1.#n"
-                XMESSAGE "MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR. Y por cierto, si tienes un MSXVR, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#n#n¡Nos vemos en próximas aventuras!#n"
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n Has terminado resolviendo algunos de los enigmas y has conocido parte de la historia que lo envuelve.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. Aunque te recomendamos que trates de resolver todos los enigmas para conocer la historia completa."                
                 PROCESS  13
 
 ; 1 0 
@@ -9214,7 +9191,7 @@ S       lRecibidor
                 XMESSAGE "Cuando he venido a veros, me he encontrado con las presencias que me comentaste por teléfono, de hecho hasta he hablado con el fantasma de un niño, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos y me ha contado muchas cosas.#k#b"
                 INK      colorPadre
                 XMESSAGE "Me dejas helado, hijo... Anoche, vivimos una situación muy rara en la habitación y tuvimos que salir corriendo de la habitación. Fue cuando te llamé mientras tu madre hacía las maletas a toda prisa.#k#n"
-                XMESSAGE "Mientras tanto, cogí el teléfono llamarte y fue cuando se cortó inesperadamente, y escuchamos la voz de una niña diciendo que nos fuéramos de su casa. No aguantamos ni un minuto más allí y no fuimos.#k#n#nDe hecho, te dejé una nota en la puerta de casa, pero supongo que no la leiste.#k#n"
+                XMESSAGE "Mientras tanto, cogí el teléfono para llamarte y mientras hablábamos, escuchamos la voz de una niña diciendo que nos fuéramos de su casa y ese fue el momento en que se cortó inesperadamente la llamada. No aguantamos ni un minuto más allí y no fuimos.#k#n#nDe hecho, te dejé una nota en la puerta de casa, pero supongo que no la leiste.#k#n"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
                 INK      colorPadre
@@ -9234,10 +9211,59 @@ S       lRecibidor
                 PROCESS  13
             
 
-; 1 1    
+; 1 1    CON fHistoria
 >_          _   
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño.
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
+                NOTZERO  fHistoria
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Sales al exterior de la casa.#k#b"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Ahora mismo voy a avisar a la policía para que levanten atestado de los cuerpos.#k#n"
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Te espero aquí.#k#b"
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Transcurrida una hora, regresas a la casa con la policía y al cabo de unos minutos aparece también tu padre.#k#n"
+                CLS
+                INK      colorPadre  
+                XMESSAGE "Hijo, ¿qué ha ocurrido aquí?#k#n"
+                INK      colorMarcos     ; Color del protagonista. 
+                XMESSAGE "Si te lo cuento no te lo vas a creer y no quiero decirlo en alto para que los agentes no nos escuchen, pero ¡en esta casa hay fantasmas! Son fantasmas que estuvieron viviendo aquí y que nunca encontrarían su descanso hasta que no se descubrieran sus cuerpos, que estaban aquí, en el chamizo... Habíais comprado una casa donde se cometieron unos crímenes atroces.#n"
+                XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
+                XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#k#n"
+                XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, bueno, para ser exactos, con la familia que murió. De hecho hasta he hablado con el fantasma de uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos.#k#n"
+                XMESSAGE "Además, ¡el niño me contó con pelos y señales todo!. Me contó que trató de escaparse, que lo encontró el dueño y lo llevó a la cochera, donde ya estaban la madre y hermana muertas, tendidas en el suelo. Obligó al crío a descuartizar a su familia y enterrarla, para finalmente, rebicir una un palazo en la cabeza por parte del dueño y acabar muerto igualmente.#k#n"
+                XMESSAGE "También he encontrado un diario escrito de puño y letra por la criada que vivió aquí con otros detalles de la historia. Se lo voy a entregar a la policía que les sirva en su investigación. En el diario de la criada, es donde se narran las vivencias de la criada con el dueño.#k#n"
+                INK      colorPadre
+                XMESSAGE "Me dejas helado, hijo... Anoche, vivimos una situación muy rara en la habitación y tuvimos que salir corriendo de la habitación. Fue cuando te llamé mientras tu madre hacía las maletas a toda prisa.#k#n"
+                XMESSAGE "Mientras tanto, cogí el teléfono para llamarte y mientras hablábamos, escuchamos la voz de una niña diciendo que nos fuéramos de su casa y ese fue el momento en que se cortó inesperadamente la llamada. No aguantamos ni un minuto más allí y no fuimos.#k#n#nDe hecho, te dejé una nota en la puerta de casa, pero supongo que no la leiste. No sabíamos nada en absoluto de todo esto que me estás contando.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Yo llegué tarde, es cierto, pero no vi ninguna nota al llegar. El caso es que me extrañó mucho que no estuviese tu coche en la entrada ni hubiese señales de vida en la casa; así que entré para investigar y resulta que me quedé encerrado dentro y ya no pude salir.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Por cierto, hay una habitación secreta detrás la vitrina del salón.#k#n"
+                INK      colorPadre
+                XMESSAGE "¿En serio? No conozco ni mi propia casa, me parece increíble. Sobre la nota que te dejamos, lamento que no la leyeses. Te decía que nos habíamos vuelto a la ciudad.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Bueno, ha sido toda una aventura sobrevivir dentro de la casa y salir ileso. Si la hubiera leído me habría perdido todas estas emociones y jamás hubieramos sabido nada al respecto de la casa y su historia.#k#n"
+                INK      colorPadre
+                XMESSAGE "Pues casi pagas un alto precio por conocer dicha historia.#k#n"   
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Bueno, ha sido toda una experiencia.#k#n"                
+                INK      colorPadre
+                XMESSAGE "Está amaneciendo. Venga, vamos a casa. Tu madre debe estar preocupadísima.#k#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "De acuerdo, vayámonos.#k#b"
+                INK      colorEspecial   ; Color especial.
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n Has terminado resolviendo los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. #n "
+                XMESSAGE "Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#b Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1.#n"
+                XMESSAGE "MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR. Y por cierto, si tienes un MSXVR, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#n#n¡Nos vemos en próximas aventuras!#n"
+                PROCESS  13
+
+; 1 1    SIN fHistoria
+>_          _   
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño.
+                NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
+                ZERO     fHistoria
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Sales al exterior de la casa.#k#b"
                 INK      colorMarcos     ; Color del protagonista.
@@ -9275,11 +9301,11 @@ S       lRecibidor
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "De acuerdo, vayámonos.#k#b"
                 INK      colorEspecial   ; Color especial.
-                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n Has terminado resolviendo los enigmas y has conocido la historia que lo envuelve. Felicidades.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. #n "
+                XMESSAGE "HAS COMPLETADO LA AVENTURA#n#n Has terminado resolviendo algunos de los enigmas y has conocido parte de la historia que lo envuelve. Felicidades.#k#n#n Esperamos que te haya gustado el juego y hayas pasado un rato agradable con él. #n "
                 XMESSAGE "Como recompensa a esta hazaña heroica, te daremos un valioso consejo:#k#b Recuerda descargarte MSX1PACK para disfrutar de una compilación imprescindible de títulos de MSX1.#n"
                 XMESSAGE "MSX1PACK es compatible con sistemas originales con MegaFlashRom, Carnivore, FlashJacks y algunas placas FPGA como ZXUNO, Mística o MiSTer y también con MSXVR. Y por cierto, si tienes un MSXVR, el equipo de desarrollo recomienda encarecidamente comprar el KMARE, por sus estupendas músicas que ha compuesto uno de los miembros de este equipo.#n#n¡Nos vemos en próximas aventuras!#n"
                 PROCESS  13
-                
+
           
 /PRO 10                                  ; Pantalla de muerte del jugador con foto de lápida
 
@@ -9935,6 +9961,20 @@ S       lRecibidor
                 NOTZERO  fJugar    
                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
                 ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
+                INK      colorNarrador   ; Color del narrador.
+                WINDOW   0
+                XPICTURE 219             ; Foto de Terrorificamente muertos.
+                WINDOW   1
+                XMESSAGE "#nHas completado un 43.1% de la historia.#n"
+                INK      colorSistema    ; El color del sistema.
+                DONE
+
+>_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
+                NOTZERO  fJugar    
+                ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
+                NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
                 INK      colorNarrador   ; Color del narrador.
                 WINDOW   0
                 XPICTURE 219             ; Foto de Terrorificamente muertos.
@@ -9947,18 +9987,19 @@ S       lRecibidor
                 NOTZERO  fJugar    
                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres. 
+                NOTZERO  fHistoria
                 INK      colorNarrador   ; Color del narrador.           
                 WINDOW   0
                 XPICTURE 228             ; Foto de los Gremlins.
                 WINDOW   1     
                 XMESSAGE "#nHas completado un 63.6% de la historia.#n"
                 INK      colorSistema    ; El color del sistema.
-                ; DONE
 
 >_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
                 NOTZERO  fJugar    
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
                 ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
                 INK      colorNarrador   ; Color del narrador.
                 WINDOW   0
                 XPICTURE 214             ; Foto Robocop aflijido.
@@ -9966,11 +10007,25 @@ S       lRecibidor
                 XMESSAGE "#nHas completado un 84.3% de la historia.#n"
                 INK      colorSistema    ; El color del sistema.
                 ; DONE
-                
+
+>_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
+                NOTZERO  fJugar    
+                NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
+                NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
+                INK      colorNarrador   ; Color del narrador.
+                WINDOW   0
+                XPICTURE 214             ; Foto Robocop aflijido.
+                WINDOW   1
+                XMESSAGE "#nHas completado un 84.3% de la historia.#n"
+                INK      colorSistema    ; El color del sistema.
+                ; DONE
+
 >_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
                 NOTZERO  fJugar    
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres. 
+                NOTZERO  fHistoria
                 INK      colorNarrador   ; Color del narrador.
                 WINDOW   0
                 XPICTURE 222             ; Foto de Arnold en Predator.
@@ -10031,6 +10086,7 @@ S       lRecibidor
                 NOTZERO  fJugar    
                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
                 ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
                 WINDOW   0
                 XPICTURE 210             ; Foto del Volkswagen Polo.
                 WINDOW   1
@@ -10039,22 +10095,24 @@ S       lRecibidor
                 INK      colorSistema    ; El color del sistema.
                 ; DONE
 
-; >_          _   ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
-;                 NOTZERO  fJugar    
-;                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
-;                 NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
-;                 WINDOW   0
-;                 XPICTURE 210             ; Foto del Volkswagen Polo.
-;                 WINDOW   1
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "#nHas completado un 43.1% de la historia.#n"
-;                 INK      colorSistema    ; El color del sistema.
+>_          _   ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
+                NOTZERO  fJugar    
+                ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
+                NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
+                WINDOW   0
+                XPICTURE 210             ; Foto del Volkswagen Polo.
+                WINDOW   1
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "#nHas completado un 43.1% de la historia.#n"
+                INK      colorSistema    ; El color del sistema.
                 ; DONE
 
 >_          _   ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
                 NOTZERO  fJugar    
                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
                 ZERO     fDesenterrar    ; Verificamos que nohemos desenterrado los cadáveres. 
+                NOTZERO  fHistoria
                 INK      colorNarrador   ; Color del narrador.       
                 WINDOW   0
                 XPICTURE 224             ; Foto del He-man.
@@ -10067,6 +10125,7 @@ S       lRecibidor
                 NOTZERO  fJugar    
                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres. 
+                NOTZERO  fHistoria
                 INK      colorNarrador   ; Color del narrador.       
                 WINDOW   0
                 XPICTURE 224             ; Foto del He-man.
@@ -10079,18 +10138,31 @@ S       lRecibidor
                 NOTZERO  fJugar    
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
                 ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
                 INK      colorNarrador   ; Color del narrador.
                 WINDOW   0
                 XPICTURE 213             ; Foto Robocop saliendo de la pared.
                 WINDOW   1
                 XMESSAGE "#nHas completado un 84.3% de la historia.#n"
                 INK      colorSistema    ; El color del sistema.
-                ; DONE
                 
 >_          _   ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
                 NOTZERO  fJugar    
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
+                NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                ZERO     fHistoria
+                INK      colorNarrador   ; Color del narrador.
+                WINDOW   0
+                XPICTURE 213             ; Foto Robocop saliendo de la pared.
+                WINDOW   1
+                XMESSAGE "#nHas completado un 84.3% de la historia.#n"
+                INK      colorSistema    ; El color del sistema.
+
+>_          _   ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
+                NOTZERO  fJugar    
+                NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres. 
+                NOTZERO  fHistoria
                 WINDOW   0
                 XPICTURE 210             ; Foto Miyagi.
                 WINDOW   1
