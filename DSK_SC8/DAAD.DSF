@@ -8949,11 +8949,11 @@ S       lRecibidor
 
 > FIN       _   DONE                    
 
-; > SV        _   SAVE 0                  
-;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+> SV        _   SAVE 2                  
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
-; > LD        _   LOAD 0
-;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+> LD        _   LOAD 2
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 
 

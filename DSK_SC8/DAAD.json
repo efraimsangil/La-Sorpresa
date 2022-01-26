@@ -79079,6 +79079,46 @@
 					]
 			},
 			{
+				"Entry":"SAVE _",
+				"Verb":26,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":25,
+						"Condact":"SAVE",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"LD _",
+				"Verb":27,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":26,
+						"Condact":"LOAD",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					}
+					]
+			},
+			{
 				"Entry":"M _",
 				"Verb":24,
 				"Noun":255,
