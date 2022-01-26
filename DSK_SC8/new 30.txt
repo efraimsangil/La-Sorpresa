@@ -66,6 +66,17 @@ BUGS Día 21/01/2022
 - locChamizo: corregido el hecho de perder la pala al cavar.(VRMotor)
 - locChamizo: corregido el problema al romper el pasador, que saliendo al exterior, no te deja entrar de nuevo.(VRMotor)
 
+BUGS Día 22/01/2022
+- locChamizo: he reconstruido todo porque había un NIDO de bugs ahí dentro.
+- locCriada: corregido EX ROPA.(Anto)
+- locSalon: corregido el mensaje cuando ******* por segunda vez.(Anto)
+
+BUGS Día 23/01/2022
+- Se ha realizado un cambio en el mapa del juego. Desde el Hall vas al Oeste a la Cochera.
+
+BUGS Día 26/01/2022
+- Correcciones en textos para mantener la línea argumental.(VRMotor)
+
 
 
 - Indicar que existe el manual al comenzar el juego

@@ -1,0 +1,34 @@
+
+USAR MAGIA CON OBJETO	Nos proporciona ciertos objetos y nos lleva a locRecibidor. Además se activan ciertos flags.
+	Objetos: oRopa, oCerillas, oLlavePorche, oLlavePatio
+	Flags: fCombinacion, fEngrasar, fQuitarMancha, fMoverAlambique, fAbrirCandado, fRompeRetrete, fCajon, fUsartarjeta
+	Gracias a tener estos flags, no necesitas hacer el puzzle en la Bodega para abrir la trampilla o colarte a la Cochera.
+	
+	
+
+USAR MAGIA CON CRIO		 + fJugar
+USAR MAGIA SIN CRIO		 - fJugar
+USAR MAGIA CON PUERTA    + fVolverEntrar
+USAR MAGIA SIN PUERTA    - fVolverEntrar
+USAR MAGIA CON DIARIO    + fLeerDiario
+USAR MAGIA SIN DIARIO    - fLeerDiario
+USAR MAGIA CON PALA		 + oPala
+USAR MAGIA SIN PALA		 - oPala
+USAR MAGIA CON HACHA     + oHacha
+USAR MAGIA SIN HACHA     - oHacha
+USAR MAGIA CON PELOTA    + fHistoria			Esto es haber entrado en la Cochera con el crío, que te lo cuenta todo.
+USAR MAGIA SIN PELOTA    - fHistoria
+USAR MAGIA CON BOTELLERO + oLlaveBodega
+USAR MAGIA SIN BOTELLERO - oLlaveBodega
+USAR MAGIA CON CHAMIZO   + oLlaveChamizo
+USAR MAGIA SIN CHAMIZO   - oLlaveChamizo
+USAR MAGIA CON COCHE     + oLlaveCoche
+USAR MAGIA SIN COCHE     - oLlaveCoche
+
+Para movernos a algunas localizaciones:
+USAR MAGIA EN PORCHE		Vamos a lPorche
+USAR MAGIA EN RECIBIDOR     Vamos a lRecibidor
+USAR MAGIA EN CASA          Vamos a lExtCasa
+USAR MAGIA EN CHAMIZO       Vamos a lChamizo
+USAR MAGIA EN BODEGA        Vamos a lBodega
+
