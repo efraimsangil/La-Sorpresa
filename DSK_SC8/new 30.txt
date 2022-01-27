@@ -77,6 +77,27 @@ BUGS Día 23/01/2022
 BUGS Día 26/01/2022
 - Correcciones en textos para mantener la línea argumental.(VRMotor)
 
+BUGS arreglados
+---------------
+4. Sin Diario , Con Niño , Pasando por Cochera , Sin Cavar , Me Marchó en el Coche 👍PERO ES EL ÚNICO FINAL QUE NO MUESTRA PORCENTAJE 
+7. Sin Diario , Sin Niño , Cavando , 0% 👍PERO SI DESPUÉS DE CAVAR SALIMOS SIN TENER LAS LLAVES DEL COCHE , LS CONCIENCIA NOS DICE QUE SI PENSAMOS IR A BUSCAR A LA POLICIA SIN EL COCHE ( Y LA CAGA , POR QUE EN ESTE FINAL NO SE DICE NADA DE IR A BUSCAR A NADIE , NI SIQUIERA SE DICE AL DESENTERRAR LOS CUERPOS)
+10. Con Diario , Con Niño , Sin Pasar por Cochera , Cavando 84,3% EN ESTE FINAL EN UN PUNTO DICE "EL RESTO ME LO CONTÓ EL NIÑO" , EN LAS CONDICIONES DE LLEGAR AQUÍ EL NIÑO SOLO NOD HA DICHO QUE QUIERE UNA PELOTA , QUE SU HERMANA BLOQUEA LA PUERTA DE LA ENTRADA , QUE LE PARECE QUE SU MADRE ESTÁ EN EL GABINETE , QUE CAVEMOS , Y QUE ESOS SON LOS RESTOS DE SU FAMILIA Y PRACTICANTE TODO YA LO CUENTA MARCOS ANTES DE DECIR " EL NIÑO ME CONTÓ EL RESTO "
+11. Con Diario , Sin Niño , Cavando , 21,4% 👍EL FINAL ESTA OK , ECHO DE MENOS QUE AL CAVAR DIGA "EN CUANTO SALGA DE AQUÍ BUSCARE A LA POLICIA " , PORQUE ES LO QUE HACE
+12. Con Diario , Sin Niño , Sin Cavar , Me Marchó en el Coche , 21,4% PONE : "ARRANCAS EL COCHE , EL NIÑO SE MANIFIESTA " Y EL NIÑO NO DICE NADA ( EN OTRAS OCASIONES DICE : "AQUÍ ME DESPIDO DE TI") , YA NO ES QUE PONGA EL NIÑO SE MANIFIESTA Y NO SALGA NADA , IGUAL ES MEJOR QUE NO SALGA LO DEL NIÑO SE MANIFIESTA ( HEMOS JUGADO SIN EL , AUNQUE HEMOS PODIDO VERLE EN EL PATIO , O AL LEER DIARIO )
+
+
+
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!"
+
+
+
+
+
+
+
+
+
 
 
 - Indicar que existe el manual al comenzar el juego

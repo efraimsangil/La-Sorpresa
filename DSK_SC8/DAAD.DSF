@@ -4523,7 +4523,7 @@ S       lRecibidor
                 NOTCARR  oLlaveCoche     ; Verificamos que Marcos no tenga las llaves del coche.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres.                                          
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!"
+                XMESSAGE "Antes de salir... examinemos este lugar con detenimiento."
                 DONE
 
 > O             _
@@ -4533,7 +4533,7 @@ S       lRecibidor
                 NOTCARR  oLlaveCoche     ; Verificamos que Marcos no tenga las llaves del coche.
                 NOTZERO  fDesenterrar    ; Verificamos que hemos desenterrado los cadáveres.                                          
                 INK      colorConciencia ; Color de la conciencia de Marcos.
-                XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!"
+                XMESSAGE "Antes de salir... examinemos este lugar con detenimiento."
                 DONE
 
 > O             _
@@ -7160,6 +7160,7 @@ S       lRecibidor
 
 
 ; Se activa un flag en este room3 de modo que debes resolver el puzzle con la niña
+> R         _
 > MIRAR     _         AT lRoom3
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 NOTZERO  fFlashBack      ; Flag para controlar que aparezca la niña en lPasillo2
@@ -8242,6 +8243,15 @@ S       lRecibidor
 > ENCENDER  CERILLA
 > PRENDER   CERILLA
 > USAR 		CERILLA                
+                NOTCARR  oCerillas       ; Verificamos que portamos las cerillas.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "No llevas cerillas contigo."
+                DONE
+                
+
+> ENCENDER  CERILLA
+> PRENDER   CERILLA
+> USAR 		CERILLA                
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.              
                 LET      fTurnosConLuz 12; Numero de turnos hasta que te quedas sin luz
                 ZERO     fVasAPalmar
@@ -8698,19 +8708,19 @@ S       lRecibidor
 ;                 XMESSAGE "Activando el modo GUSILUZ. Ahora eres un ser de luz casi interminable.#k#b"
 ;                 RESTART
 
-; > RAMSA     _   RAMSAVE                  ; Guarda en la memoria la partida
-                ; INK      colorNarrador   ; Color del narrador.
-                ; XMESSAGE "Has grabado la partida."
-                ; RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+> RAMSA     _   RAMSAVE                  ; Guarda en la memoria la partida
+                INK      colorNarrador   ; Color del narrador.
+                XMESSAGE "Has grabado la partida."
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 
-; > RAMLO     _   RAMLOAD 255              ; Reload all flags
-                ; WINDOW  0               ; Se desactiva la imagen.
-                ; GFX     0 5
-                ; WINDOW  1 
-                ; CLS
-                ; INK      colorNarrador   ; Color del narrador.                
-                ; RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+> RAMLO     _   RAMLOAD 255              ; Reload all flags
+                WINDOW  0               ; Se desactiva la imagen.
+                GFX     0 5
+                WINDOW  1 
+                CLS
+                INK      colorNarrador   ; Color del narrador.                
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 > _         _                
                 NOTZERO  fDarkF
@@ -9281,7 +9291,7 @@ S       lRecibidor
                 XMESSAGE "La policía está esperando al forense para que dé testimonio del levantamiento de los cadáveres.#k#n"
                 XMESSAGE "Resulta que el dueño de esta casa acogió a una criada joven como interna a cambio de ayudar económicamente sus padres; abusó de ella y tuvo un par de gemelos fruto de ese abuso. La cosa se complicó tanto que el dueño de la casa acabó con la vida de todos ellos y los enterró justo en el chamizo, pero es que la cosa no termina ahí.#k#n"
                 XMESSAGE "Ocurre que hoy cuando he venido a veros, me he encontrado con todos ellos, bueno, para ser exactos, con la familia que murió. De hecho hasta he hablado con el fantasma de uno de los niños, quien por cierto, ha sido el que me ha desvelado el paradero de los cuerpos.#n"
-                XMESSAGE "También he encontrado un diario escrito de puño y letra por la criada que vivió aquí y que voy a entregar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurrió el abuso. El resto me lo contó el niño que me acompañó por toda la casa. ¡Lo encontré en el patio!#k#n"
+                XMESSAGE "También he encontrado un diario escrito de puño y letra por la criada que vivió aquí y que voy a entregar a la policía para que den fe de los acontecimientos, donde se narran los hechos hasta que ocurrió el abuso.#k#n"
                 INK      colorPadre      ; Color del padre.
                 XMESSAGE "Me dejas helado, hijo... Anoche, vivimos una situación muy rara en la habitación y tuvimos que salir corriendo de la habitación. Fue cuando te llamé mientras tu madre hacía las maletas a toda prisa.#k#n"
                 XMESSAGE "Mientras tanto, cogí el teléfono llamarte y fue cuando se cortó inesperadamente, y escuchamos la voz de una niña diciendo que nos fuéramos de su casa. No aguantamos ni un minuto más allí y no fuimos.#k#n#nDe hecho, te dejé una nota en la puerta de casa, pero supongo que no la leiste.#k#n"
@@ -9566,7 +9576,7 @@ S       lRecibidor
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
                 CLS
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "#bArrancas el coche y justo cuando vas salir de la hacienda, el niño se manifiesta:#k#n"               
+                XMESSAGE "#bArrancas el coche.#k#n"               
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Me voy a localizar a mis padres para explicarles lo que ha ocurrido. También necesito saber que se encuentran bien.#k#n"
                 INK      colorNarrador   ; Color del narrador.  
@@ -9967,13 +9977,26 @@ S       lRecibidor
 >_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
                 NOTZERO  fJugar    
                 ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
+                ZERO     fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
+                NOTZERO  fHistoria
+                INK      colorNarrador   ; Color del narrador.
+                WINDOW   0
+                XPICTURE 219             ; Foto de Terrorificamente muertos.
+                WINDOW   1
+                XMESSAGE "#nHas completado un 43.1% de la historia.#n"
+                INK      colorSistema    ; El color del sistema.
+                DONE
+
+>_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
+                NOTZERO  fJugar    
+                ZERO     fLeerDiario     ; Verificamos que no hemos leído el diario.
                 NOTZERO  fDesenterrar    ; Verificamos que no hemos desenterrado los cadáveres.
                 ZERO     fHistoria
                 INK      colorNarrador   ; Color del narrador.
                 WINDOW   0
                 XPICTURE 219             ; Foto de Terrorificamente muertos.
                 WINDOW   1
-                XMESSAGE "#nHas completado un 43.1% de la historia.#n"
+                XMESSAGE "#nHas completado un 63.6% de la historia.#n"
                 INK      colorSistema    ; El color del sistema.
                 DONE
 
