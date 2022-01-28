@@ -481,7 +481,7 @@
 		{"symbol":"COLORMARCOS", "Value":3},
 		{"symbol":"COLORCONCIENCIA", "Value":2},
 		{"symbol":"TIMEOUT", "Value":87},
-		{"symbol":"DAY", "Value":27},
+		{"symbol":"DAY", "Value":28},
 		{"symbol":"MONTH", "Value":1},
 		{"symbol":"YEARLOW", "Value":22},
 		{"symbol":"YEARHIGH", "Value":20},
@@ -1082,7 +1082,7 @@
 	},
 	{
 		"FromLoc":7,
-		"ToLoc":6,
+		"ToLoc":28,
 		"Direction":5
 	},
 	{
@@ -1302,7 +1302,7 @@
 	},
 	{
 		"FromLoc":30,
-		"ToLoc":28,
+		"ToLoc":6,
 		"Direction":5
 	},
 	{
@@ -2511,7 +2511,7 @@
 	},
 	{
 		"Value":150,
-		"Text":"No no, ya paro. Sigamos.\u000d"
+		"Text":"Vale vale, ya paro. Sigamos.\u000d"
 	},
 	{
 		"Value":151,
@@ -5719,7 +5719,7 @@
 	},
 	{
 		"Value":952,
-		"Text":"Adem\u0015s, \u0011el ni\u001Ao me cont\u0018 con pelos y se\u001Aales todo!. Me cont\u0018 que trat\u0018 de escaparse, que lo encontr\u0018 el due\u001Ao y lo llev\u0018 a la cochera, donde ya estaban la madre y hermana muertas, tendidas en el suelo. El cr\u0017o presenci\u0018 todo, para finalmente, rebicir una un palazo en la cabeza por parte del due\u001Ao y acabar muerto y enterrado igualmente.\u000c\u000d\u000d"
+		"Text":"Adem\u0015s, \u0011el ni\u001Ao me cont\u0018 con pelos y se\u001Aales todo!. Me cont\u0018 que trat\u0018 de escaparse, que lo encontr\u0018 el due\u001Ao y lo llev\u0018 a la cochera, donde ya estaban la madre y hermana muertas, tendidas en el suelo. El cr\u0017o presenci\u0018 todo, para finalmente, rebicir un palazo en la cabeza por parte del due\u001Ao y acabar muerto y enterrado igualmente.\u000c\u000d\u000d"
 	},
 	{
 		"Value":953,
@@ -5955,7 +5955,7 @@
 	},
 	{
 		"Value":1011,
-		"Text":"\u0012Les ha pasado algo a mis padres? Esos ni\u001Aos se parecen a los descritos en el diario que he le\u0017do.\u000c\u000d\u000d"
+		"Text":"\u0012Les ha pasado algo a mis padres?\u000c\u000d\u000d"
 	},
 	{
 		"Value":1012,
@@ -33794,8 +33794,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":102,
 						"NumParams":1
@@ -33842,8 +33842,8 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
+						"Opcode":12,
+						"Condact":"NOTZERO",
 						"Indirection1":0,
 						"Param1":102,
 						"NumParams":1
@@ -43415,7 +43415,7 @@
 						"Opcode":8,
 						"Condact":"CARRIED",
 						"Indirection1":0,
-						"Param1":1,
+						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -43478,7 +43478,7 @@
 						"Opcode":8,
 						"Condact":"CARRIED",
 						"Indirection1":0,
-						"Param1":1,
+						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -73784,13 +73784,6 @@
 						"Condact":"XMES",
 						"Indirection1":0,
 						"Param1":837,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":79,
 						"NumParams":1
 					},
 					{
