@@ -1084,14 +1084,14 @@ S       lRecibidor
                 LISTOBJ
 
                                          ; Este es un control de luz de las localizaciones comprendidas entre 9 y 30
-> _         _
-                GT       38 10           ; Si la localización es mayor de 9  (a partir de la 10)
-                LT       38 32           ; Si la localización es menor de 31 (de 30 hacia abajo)
-                NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
-                ZERO     fTurnosConLuz   ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
-                INK      colorSistema    ; Color del sistema
-                XMESSAGE "#n"
-                XMESSAGE "Estás a oscuras."
+; > _         _
+;                 GT       38 10           ; Si la localización es mayor de 9  (a partir de la 10)
+;                 LT       38 32           ; Si la localización es menor de 31 (de 30 hacia abajo)
+;                 NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
+;                 ZERO     fTurnosConLuz   ; Si es 0, es que necesitamos PRENDER CERILLA , El flag vale 0 si no se ejecutó la acción USAR CERILLA
+;                 INK      colorSistema    ; Color del sistema
+;                 XMESSAGE "#n"
+;                 XMESSAGE "Estás a oscuras."
 
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 /PRO 4                                   ; Antiguo proceso 2 del PAW
@@ -1110,6 +1110,7 @@ S       lRecibidor
                 LT       fTurnosConLuz 1
                 DESTROY  oLighton        ; Destruimos la cerilla encendida.
                 CLEAR    fTurnosConLuz
+				SET      fDarkF  		 ; Activamos la oscuridad.
                 XMESSAGE "#k"
                 CLS
                 GFX      0 5
@@ -2390,6 +2391,12 @@ S       lRecibidor
                 PROCESS 14               ; Control de BUSCAR PELOTA  
                 DONE
 
+> EXAMINAR  SUELO       AT lEntrada
+                ZERO     fCajon          ; La consola tiene el cajón puesto.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Una pasada con la aspiradora no le haría daño a este suelo." 
+                DONE
+
 > EXAMINAR  RADIADOR    AT lEntrada
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Es un viejo radiador de hierro."
@@ -2410,7 +2417,7 @@ S       lRecibidor
                 XMESSAGE "Aunque es poco común encontrar un pasillo tras la puerta principal de una casa, este tiene la función de no dejar escapar el calor en invierno. También impide que vean el interior de la casa las personas desde la entrada.#n  En el diseño original había una puerta al fondo del pasillo, pero tus padres la quitaron porque al ser el recibidor tan estrecho, la puerta era algo muy molesto."
                 DONE
 
-> E         _         AT lEntrada                                
+> E         _           AT lEntrada                                
                 CLS                      ; Limpiamos la pantalla.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Entras en el recibidor.#n#k"
@@ -2421,7 +2428,7 @@ S       lRecibidor
 
 > ABRIR     PUERTA
 > SALIR     _
-> O         _         AT lEntrada
+> O         _           AT lEntrada
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La puerta está bloqueada, no se puede abrir."
                 DONE
@@ -2430,7 +2437,7 @@ S       lRecibidor
 ;Estamos en locRecibidor
                                          ; Ya estamos dentro de la casa, en el recibidor y no podemos salir al exterior por la puerta principal
 
-> BUSCAR    PELOTA    AT lRecibidor
+> BUSCAR    PELOTA      AT lRecibidor
                 PROCESS 14               ; Control de BUSCAR PELOTA
                 DONE
 
@@ -2447,20 +2454,20 @@ S       lRecibidor
 ;                 DONE
 
                                          ; MP3 de Intro del Super Mario
-> JUGAR     CONSOLA   AT lRecibidor
+> JUGAR     CONSOLA     AT lRecibidor
                 INK      colorConciencia ; Color de la conciencia de Marcos.   
                 XMESSAGE "Espera que vaya a por el Super Mario Bros..."
                 DONE
 
 > EXAMINAR  RECIBIDOR
-> MIRAR     _         AT lRecibidor
+> MIRAR     _           AT lRecibidor
                 ZERO     fCajon          ; Verificamos que el cajón está cerrado.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, BAJANDO está la bodega y SUBIENDO están las habitaciones. Hay una consola de madera a tu lado; tiene un cajón."
                 DONE
 
 > EXAMINAR  RECIBIDOR
-> MIRAR     _         AT lRecibidor
+> MIRAR     _           AT lRecibidor
                 NOTZERO  fCajon          ; Verificamos que esté abierto el cajón.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, BAJANDO está la bodega y SUBIENDO están las habitaciones. Hay una consola de madera a tu lado; el cajón ya no existe."
@@ -2470,13 +2477,13 @@ S       lRecibidor
                                          ; Siempre usamos flags para esto. Además, tenemos un flag para controlar 
                                          ; si abrió el cajón y otro para la consola.
 
-> EXAMINA	CONSOLA   AT lRecibidor
+> EXAMINA	CONSOLA     AT lRecibidor
                 ZERO     fCajon          ; Verificamos que el cajón está cerrado.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
                 DONE
 
-> EXAMINA	CONSOLA   AT lRecibidor
+> EXAMINA	CONSOLA     AT lRecibidor
                 NOTZERO  fCajon          ; Verificamos que esté abierto el cajón.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "ERA una preciosa consola de madera con patas de hierro forjado hasta que destrozaste el cajón."
@@ -4113,79 +4120,163 @@ S       lRecibidor
                 DONE
 
 ; TABLA DE APERTURA DE PUERTA
-;  oLlaveChamizo  | fRompePasador |  fJugar | 
-;        0               0              x                
-;_____________________________________________________
-;        1               n              0                                 
-;        1               n              1 
-;_____________________________________________________
-;        n               1              0      
-;        n               1              1      
+;  oLighOn | oLlaveChamizo  | fRompePasador |  fJugar | 
+;     0           0               0              0          La puerta está cerrada con llave          
+;     0           0               0              1          La puerta está cerrada con llave
+;     0           0               1              0          El chamizo está muy oscuro
+;     0           0               1              1          El chamizo está muy oscuro
+;     0           1               0              0          El chamizo está muy oscuro
+;     0           1               0              1          El chamizo está muy oscuro
+;     0           1               1              0          El chamizo está muy oscuro
+;     0           1               1              1          El chamizo está muy oscuro
+;     1           0               0              0          La puerta está cerrada con llave
+;     1           0               0              1          La puerta está cerrada con llave
+;     1           0               1              0          Entras al Chamizo
+;     1           0               1              1          Entras al Chamizo y el niño dice algo
+;     1           1               0              0          Entras al Chamizo
+;     1           1               0              1          Entras al Chamizo y el niño dice algo
+;     1           1               1              0          Entras al Chamizo
+;     1           1               1              1          Entras al Chamizo y el niño dice algo
 
 
+; pixa: Probar ABRIR PUERTA desde lExtChamizo
 
+; 0 0 0 0 / 0 0 0 1
 > ABRIR     PUERTA    AT lExteriorChamizo                 
                 NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "El chamizo está muy oscuro."
-                DONE
-
-; 0 0 x
-> ABRIR     PUERTA    AT lExteriorChamizo
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                ZERO     fRompePasador   ; Verificamos que el pasador no está roto.
                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
-                INK      colorNarrador   ; Color del narrador.                
+                ZERO     fRompePasador   ; Verificamos que el pasador NO está roto.
+                INK      colorNarrador   ; Color del narrador.        
                 XMESSAGE "La puerta está cerrada con llave."
                 DONE
 
-; 1 n 0       
-> ABRIR     PUERTA    AT lExteriorChamizo
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+; 0 0 1 0 / 0 0 1 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+                INK      colorNarrador   ; Color del narrador.        
+                XMESSAGE "El chamizo está muy oscuro."
+                DONE
+
+; 0 1 0 0 / 0 1 0 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
                 CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                ZERO     fRompePasador   ; Verificamos que el pasador está roto.
+                INK      colorNarrador   ; Color del narrador.        
+                XMESSAGE "El chamizo está muy oscuro."
+                DONE
+
+; 0 1 1 0 / 0 1 1 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+                INK      colorNarrador   ; Color del narrador.        
+                XMESSAGE "El chamizo está muy oscuro."
+                DONE
+
+; 1 0 0 0 / 1 0 0 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                ZERO     fRompePasador   ; Verificamos que el pasador no está roto.
+                INK      colorNarrador   ; Color del narrador.        
+                XMESSAGE "La puerta está cerrada con llave."
+                DONE
+
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                 NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                ZERO     fRompePasador   ; Verificamos que el pasador NO está roto.
+                INK      colorNarrador   ; Color del narrador.        
+                XMESSAGE "La puerta está cerrada con llave."
+                DONE
+
+; 1 0 1 0   
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                NOTZERO  fRompePasador   ; Verificamos que el pasador SI está roto.
                 ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Entras al chamizo.#k#b"
+                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"               
                 CLS                      ; Limpiamos la pantalla.
                 GOTO     lChamizo        ; Vamos a lChamizo.     
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
-; 1 n 1
-> ABRIR     PUERTA    AT lExteriorChamizo ; Necesariamente hemos salido por la cochera, ya que es la única manera de conseguir la llave del chamizo.
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+; 1 0 1 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                NOTCARR  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                NOTZERO  fRompePasador   ; Verificamos que el pasador SI está roto.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
-                INK      colorNarrador   ; Color del narrador.    
-                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"              
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lChamizo        ; Vamos a lChamizo.                   
                 INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"               
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.     
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t.#n"                
+                INK      colorNarrador   ; Color del narrador.
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
-; n 1 0
-> ABRIR     PUERTA    AT lExteriorChamizo ; Necesariamente hemos salido por la cochera, ya que es la única manera de conseguir la llave del chamizo.
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+; 1 1 0 0
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                CARRIED  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                ZERO     fRompePasador   ; Verificamos que el pasador NO está roto.
                 ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
-                INK      colorNarrador   ; Color del narrador.    
-                XMESSAGE "Como el pasador está roto, empujas la puerta del chamizo y entras.#k#b"               
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lChamizo        ; Vamos a lChamizo.                           
                 INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Abres la puerta del chamizo con la llave y entras.#k#b"              
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.     
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
-; n 1 1
-> ABRIR     PUERTA    AT lExteriorChamizo ; Hemos salido por la cochera, hemos vuelto a entrar en la casa y hemos salido por el gabinete.
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                NOTZERO  fRompePasador   ; Verificamos que el pasador está roto.
+
+; 1 1 0 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                ZERO     fRompePasador   ; Verificamos que el pasador NO está roto.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
-                INK      colorNarrador   ; Color del narrador.    
-                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"               
-                CLS                      ; Limpiamos la pantalla.
-                GOTO     lChamizo        ; Vamos a lChamizo.                         
                 INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Abres la puerta del chamizo con la llave y entras.#k#b"              
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.     
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t.#n"                
+                INK      colorNarrador   ; Color del narrador.
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                DONE
+
+; 1 1 1 0
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                CARRIED  oLlaveChamizo   ; Verificamos que no portamos la llave del chamizo.
+                NOTZERO  fRompePasador   ; Verificamos que el pasador SI está roto.
+                ZERO     fJugar          ; Verificamos que no hemos jugado con el niño.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"              
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.     
+                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+                DONE
+; 1 1 1 1
+> ABRIR     PUERTA    AT lExteriorChamizo                 
+                CARRIED  oLighton        ; Verificamos que portamos una cerilla encendida.
+                CARRIED  oLlaveChamizo   ; Verificamos que portamos la llave del chamizo.
+                NOTZERO  fRompePasador   ; Verificamos que el pasador SI está roto.
+                NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Abres la puerta del chamizo y entras.#k#b"              
+                CLS                      ; Limpiamos la pantalla.
+                GOTO     lChamizo        ; Vamos a lChamizo.     
+                INK      colorNene       ; Color del niño.
+                XMESSAGE "Aquí, bajo el suelo, se encuentra nuestra sepultura, pero no podrás desenterrarnos sin una pala#g#f()*#t.#n"                
+                INK      colorNarrador   ; Color del narrador.
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
 
@@ -4651,6 +4742,7 @@ S       lRecibidor
                 INK      colorConciencia ; Color de la conciencia de Marcos.             
                 XMESSAGE "¡Dios! ¡Casi me cago encima! Otra como esta y me quedo muñeco... me pregunto si habrá un puto desfibrilador en esta santa casa.#n"
 	            SET      fDarkF          ; Activamos el flag de la oscuridad, es decir, ponemos esa localización a oscuras.
+                DESTROY  oLighton
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Del susto se te ha apagado la cerilla.#k#n"
                 CLS                      ; Limpiamos la pantalla.
@@ -4690,13 +4782,13 @@ S       lRecibidor
                 PROCESS 14               ; Control de BUSCAR PELOTA
                 DONE
 
-> EXAMINA  SUELO      AT lCocina
+> EXAMINA   SUELO      AT lCocina
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Plaqueta marrón, muy sufrida."
                 DONE
 
-> EXAMINA  PAREDES    AT lCocina
+> EXAMINA   PAREDES    AT lCocina
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Son frías y húmedas."
@@ -4993,6 +5085,7 @@ S       lRecibidor
 > BUSCAR    GALLETA   AT lDespensa
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.   
                 NOTCARR  oGalleta        ; Verificamos que no portamos la galleta.
+                ZERO     fEmpujarAlacena ; Verificamos que no hemos empujado la alacena.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "De haber alguna galleta, estaría sobre la alacena.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.       
@@ -5001,10 +5094,20 @@ S       lRecibidor
 
 > BUSCAR    GALLETA   AT lDespensa
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.   
+                NOTCARR  oGalleta        ; Verificamos que no portamos la galleta.
+                NOTZERO  fEmpujarAlacena ; Verificamos que hemos empujado la alacena.
+                INK      colorNarrador   ; Color del narrador. 
+                XMESSAGE "Puedes ver una galleta en el suelo."
+                DONE
+
+> BUSCAR    GALLETA   AT lDespensa
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.   
                 CARRIED  oGalleta        ; Verificamos que portamos la galleta.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Tienes la galleta en la mano."
                 DONE
+
+
 
 > COMER     GALLETA  AT  lDespensa
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.   
@@ -6495,20 +6598,20 @@ S       lRecibidor
                 PROCESS 14               ; Control de BUSCAR PELOTA
                 DONE
 
-> EXAMINA   SUELO	     AT lBath2
+> EXAMINA   SUELO	  AT lBath2
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.                
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No ves nada interesante."
                 DONE 
 
-> EXAMINA   PARED	     AT lBath2
+> EXAMINA   PARED	  AT lBath2
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.                
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Es de plaqueta blanca. Nada interesante."
                 DONE
 
 
-> EXAMINA   PILA		AT lBath2
+> EXAMINA   PILA	  AT lBath2
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.                
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No ves nada interesante."
@@ -6783,6 +6886,7 @@ S       lRecibidor
                 LET      fTurnosConLuz 12; Número de turnos hasta que te quedas sin luz
                 CREATE   oLighton         ; Creamos el objeto Cerilla Encendida.
                 GET      oLighton
+				CLEAR    fDarkF    		 ; Desactivamos la oscuridad				
                 WINDOW   0
                 PICTURE  0
                 WINDOW   1               
@@ -7129,6 +7233,7 @@ S       lRecibidor
                 ZERO     fVasAPalmar     ; Verificamos que no esta activado el flag que matará al jugador si enciendo una cerilla
                 CREATE   oLighton         ; Creamos el objeto Cerilla Encendida.
                 GET      oLighton
+				CLEAR    fDarkF    		 ; Desactivamos la oscuridad				
                 WINDOW   0
                 PICTURE  0
                 WINDOW   1               
@@ -8049,7 +8154,7 @@ S       lRecibidor
                                          ; CONDACTOS GENERALES:
                                          ; Se pueden usar en cualquier momento de la aventura
                                          ; independientemente de su localización.
-
+				
 > EXAMINA   LLAVE 
                 CARRIED  oLlavePorche    ; Verificamos que portamos la llave de la puerta principal.
                 INK      colorNarrador   ; Color del narrador.                
@@ -8099,7 +8204,7 @@ S       lRecibidor
 
 > EXAMINA   TECHO  
                 GT       38 9            ; El flag 38 indica la localización actual del jugador, Si está entre la 10 y la 30, es decir, verificamos
-                LT       38 31           ;            que estemos en localizaciones que estén a oscuras.
+                LT       38 32           ;            que estemos en localizaciones que estén a oscuras.
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.   
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Los minutos pasan mirando al techo..."
@@ -8107,9 +8212,9 @@ S       lRecibidor
 
 > EXAMINA   TECHO  
                 GT       38 0            ; El flag 38 indica la localización actual del jugador, Si está entre la 0 y la 9, es decir, verificamos
-                LT       38 10           ;            que estemos en localizaciones que no necesiten control de luz por no estar a oscuras. 
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Los minutos pasan mirando al techo..."
+                LT       38 11           ; que estemos en localizaciones que no necesiten control de luz por no estar a oscuras. 
+                INK      colorConciencia ; Color de la conciencia de Marcos.             
+                XMESSAGE "¿Qué estamos buscando, Marcos? ¡No mires arriba!"
                 DONE
 
                                          ; EXAMINA PUERTA: Tenemos la ventaja de poder examinar las puertas en cada localizacion con este condacto general,
@@ -8203,11 +8308,21 @@ S       lRecibidor
                 DONE
 
 > APAGAR    CERILLA
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+				NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.				
+                ;DESTROY  oLighton        ; Destruimos la cerilla encendida.
+				;CLEAR    fTurnosConLuz 
+                INK      colorNarrador   ; Color del narrador.             
+                XMESSAGE "Ya has apagado la cerilla#g#f4#t."
+                DONE
+				
+> APAGAR    CERILLA
                 GT       38 10           ; El flag 38 indica la localización actual del jugador, Si está entre la 10 y la 30, es decir, verificamos
-                LT       38 31           ; que estemos en localizaciones que estén a oscuras.
+                LT       38 32           ; que estemos en localizaciones que estén a oscuras.
 				CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 DESTROY  oLighton        ; Destruimos la cerilla encendida.
 				CLEAR    fTurnosConLuz 
+				SET      fDarkF    
                 WINDOW   0
                 GFX      0 5
                 WINDOW   1
@@ -8220,7 +8335,8 @@ S       lRecibidor
                 LT       38 11           ;            que estemos en localizaciones que no necesiten control de luz por no estar a oscuras. 
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
                 DESTROY  oLighton        ; Destruimos la cerilla encendida.
-				CLEAR    fTurnosConLuz 		
+				CLEAR    fTurnosConLuz 	
+				;SET      fDarkF    		 ; Activamos la oscuridad		
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "Has apagado la cerilla#g#f4#t."
                 DONE                
@@ -8232,7 +8348,15 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "No llevas cerillas contigo."
                 DONE
-                
+
+> ENCENDER  CERILLA
+> PRENDER   CERILLA
+> USAR      CERILLA
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                INK      colorSistema    ; El color del sistema.
+                XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
+                DONE                
 
 > ENCENDER  CERILLA
 > PRENDER   CERILLA
@@ -8240,8 +8364,9 @@ S       lRecibidor
                 CARRIED  oCerillas       ; Verificamos que portamos las cerillas.              
                 LET      fTurnosConLuz 12; Numero de turnos hasta que te quedas sin luz
                 ZERO     fVasAPalmar     ; Verificamos que no esta activado el flag que matará al jugador si enciendo una cerilla
-                CREATE   oLighton         ; Creamos el objeto Cerilla Encendida.
+                CREATE   oLighton        ; Creamos el objeto Cerilla Encendida.
                 GET      oLighton
+				CLEAR    fDarkF    		 ; Desactivamos la oscuridad
                 WINDOW   0
                 PICTURE  0
                 WINDOW   1              
@@ -8268,22 +8393,10 @@ S       lRecibidor
                                          ; por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría 
                                          ; jugar durante muchos turnos sin tener que encender cerillas.
 
-> ENCENDER  CERILLA
-> PRENDER   CERILLA
-> USAR      CERILLA
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                INK      colorSistema    ; El color del sistema.
-                XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
-                DONE
 
-> APAGAR    CERILLA
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                DESTROY  oLighton        ; Destruimos la cerilla encendida.
-				CLEAR    fTurnosConLuz 
-                INK      colorNarrador   ; Color del narrador.             
-                XMESSAGE "Ya has apagado la cerilla#g#f4#t."
-                DONE
+
+; pixa: Probar
+
 
 > BUSCAR    PELOTA   
                 PROCESS 14               ; Control de BUSCAR PELOTA
@@ -8373,6 +8486,14 @@ S       lRecibidor
                                          ; y lo deja caer al hoyo.
                 DONE
 
+> _         _                
+                NOTZERO  fDarkF
+                ;WINDOW  0               ; Se desactiva la imagen.
+                ;GFX     0 5
+                ;WINDOW  1                ; Se activa la imagen.
+                INK      colorNarrador   ; Color del narrador.
+                XMESSAGE "No puedes ver nada. Está muy oscuro."
+                DONE
 ;________________________________________________________________________________________________________________________________________________________________________________________________
                                          ; CHEATS Y ATAJOS 
 
@@ -8695,15 +8816,6 @@ S       lRecibidor
                 CLS
                 INK      colorNarrador   ; Color del narrador.                
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
-
-> _         _                
-                NOTZERO  fDarkF
-                ;WINDOW  0               ; Se desactiva la imagen.
-                ;GFX     0 5
-                ;WINDOW  1                ; Se activa la imagen.
-                INK      colorNarrador   ; Color del narrador.
-                XMESSAGE "No puedes ver nada. Está muy oscuro."
-                DONE
                 
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     CON
@@ -8817,7 +8929,20 @@ S       lRecibidor
                 NOUN2    COCHE
                 DESTROY  oLlaveCoche
                 DONE
-                               
+
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    PATIO
+                CREATE   oLlavePatio     ; Creamos las llaves del Patio.
+                GET      oLlavePatio 
+                DONE
+
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     SIN
+                NOUN2    PATIO
+                DESTROY  oLlavePatio
+                DONE                             
+
 
 ; > USAR      MAGIA                        ; SHORTCUT: usarmagia
 ;                 PREP     SIN
@@ -8862,26 +8987,30 @@ S       lRecibidor
 
 
 
-; > USAR      MAGIA                        ; SHORTCUT: usarmagia
-;                 PREP     CON
-;                 NOUN2    MESA
-;                 XMESSAGE "fRompePasador" 
-;                 PRINT    132
-;                 XMESSAGE "#n"
-;                 PRINT    fRompePasador
-;                 XMESSAGE "#n"
-;                 XMESSAGE "oLighton"
-; ;               PRINT    3
-;                 PRINT    oLighton
-;                 XMESSAGE "#n"
-;                 XMESSAGE "fTurnosConLuz"
-; ;               PRINT    72
-;                 PRINT    fTurnosConLuz
-;                 XMESSAGE "#n"
-;                 XMESSAGE "oLlaveChamizo"
-;                 PRINT    oLlaveChamizo
-;                 XMESSAGE "#n"
-                ; DONE  
+> USAR      MAGIA                        ; SHORTCUT: usarmagia
+                PREP     CON
+                NOUN2    MESA
+                ; XMESSAGE "fRompePasador" 
+                ; PRINT    132
+                ; XMESSAGE "#n"
+                ; PRINT    fRompePasador
+                XMESSAGE "#n"
+                XMESSAGE "oLighton"
+                ; PRINT    3
+                PRINT    oLighton
+                XMESSAGE "#n"
+                XMESSAGE "fTurnosConLuz"
+                ; PRINT    72
+                PRINT    fTurnosConLuz
+                XMESSAGE "#n"
+                XMESSAGE "fDarkF"
+                ; PRINT    28
+                PRINT    fDarkF
+                ; XMESSAGE "#n"
+                ; XMESSAGE "oLlaveChamizo"
+                ; PRINT    oLlaveChamizo
+                XMESSAGE "#n"
+                DONE  
 ;________________________________________________________________________________________________________________________________________________________________________________________________
 ;                                      CONDACTOS DE LA PLANTILLA
 

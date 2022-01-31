@@ -24,6 +24,8 @@ USAR MAGIA CON CHAMIZO   + oLlaveChamizo
 USAR MAGIA SIN CHAMIZO   - oLlaveChamizo
 USAR MAGIA CON COCHE     + oLlaveCoche
 USAR MAGIA SIN COCHE     - oLlaveCoche
+USAR MAGIA CON PATIO     + oLlavePatio
+USAR MAGIA SIN PATIO     - oLlavePatio
 
 Para movernos a algunas localizaciones:
 USAR MAGIA EN PORCHE		Vamos a lPorche

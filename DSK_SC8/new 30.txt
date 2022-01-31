@@ -90,8 +90,13 @@ BUGS arreglados
                 INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "Si pretendes ir corriendo a llamar a la policía... andando... antes de salir... examinemos este lugar con detenimiento, porque tengo la sensación de que no vamos a llegar muy lejos sin ello. ¡Brrrum! ¡Brrrum!"
 
+BUGS Día 30/01/2022
+- Problemas para abrir la puerta del Chamizo desde lExtChamizo.(VRMotor)
+- Problemas con la iluminación. Se podía ejecutar M o R estando a oscuras.(VRMotor)
 
-
+BUGS Día 31/01/2022
+- Problemas con la iluminación.(VRMotor)
+- lDespensa: corregido el problema de BUSCAR GALLETA y pulsar R, estando la galleta en el suelo.(VRMotor)
 
 
 
