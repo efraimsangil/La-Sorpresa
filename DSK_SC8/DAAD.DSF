@@ -750,7 +750,7 @@ LUEGO           2       conjugation
 /0 ""
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 ; lBurgos Loc nº1
-/1 "Burgos.#n#n Sábado 26 de Diciembre de 1987. 6:00am.#k#b Tu nombre es Marcos, tienes cuarenta años y ahora mismo estás dormido profundamente; la cena de Nochebuena con los amigos se extendió hasta tarde y llevas tan solo un par de horas en la cama. Vives una vida normal, trabajas mucho y el poco tiempo que tienes lo pasas con tu gente.#k#b Ahora mismo estás soñando con esa compañera del trabajo que lleva tan solo un par de meses en la empresa y que se ha convertido en tu ilusión por despertarte por las mañanas, coger tu flamante Volkswagen Polo, rascarle la capa de hielo y morirte de frío hasta que la calefacción empieza a funcionar mientras llegas al trabajo.#k#b En tu gran momento de ensoñación pseudo erótica, suena el teléfono que tienes en la mesilla y la consciencia vuelve a tomar tierra. Tuerces el gesto de manera perezosa y aprietas los párpados con fuerza mientras gruñes.#k#b El teléfono no para de sonar.#k#b Abres los ojos y te estiras un poco. Parece que alguien ha decidido por ti que debes despertarte definitivamente." 
+/1 "Burgos.#n#n Sábado 26 de Diciembre de 1987. 6:00am.#k#b Tu nombre es Marcos, tienes cuarenta años y ahora mismo estás dormido profundamente; la cena de Navidad con los amigos se extendió hasta tarde y llevas tan solo un par de horas en la cama. Vives una vida normal, trabajas mucho y el poco tiempo que tienes lo pasas con tu gente.#k#b Ahora mismo estás soñando con esa compañera del trabajo que lleva tan solo un par de meses en la empresa y que se ha convertido en tu ilusión por despertarte por las mañanas, coger tu flamante Volkswagen Polo, rascarle la capa de hielo y morirte de frío hasta que la calefacción empieza a funcionar mientras llegas al trabajo.#k#b En tu gran momento de ensoñación pseudo erótica, suena el teléfono que tienes en la mesilla y la consciencia vuelve a tomar tierra. Tuerces el gesto de manera perezosa y aprietas los párpados con fuerza mientras gruñes.#k#b El teléfono no para de sonar.#k#b Abres los ojos y te estiras un poco. Parece que alguien ha decidido por ti que debes despertarte definitivamente." 
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 ; lCoche Loc nº2
 /2 " Sales de casa y coges tu coche rumbo a la Sierra del Caurel; es una excursión larga, pero te gusta conducir y la carretera te permite desconectar de tu día a día.#n#n  Pasadas unas horas de cristales empañados y carreteras mal asfaltadas, reconoces el paso del cruce que conduce al pueblo donde tus padres tienen la casa.#k#b  Queda poco para llegar, el agotamiento comienza a hacer mella en ti y sientes la fatiga en tus músculos tras el largo viaje.#k#b"
@@ -1148,10 +1148,10 @@ S       lRecibidor
                 CREATE   oPelota         ; Creamos el objeto Pelota.
                 GET      oPelota         ; Cogemos la pelota.
                 XMESSAGE "#k#b"          ; Esperamos la pulsación de una tecla y limpiamos la pantalla.
-                INK      colorConciencia ; Color de la conciencia de Marcos. 
+                INK      colorSistema ; Color de la conciencia de Marcos. 
                 XMESSAGE "¿Para qué quieres este objeto aquí?. Paso de seguirte el rollo con tus jueguecitos.#n#nTe quito la pelota."
                 DESTROY  oPelota         ; Destruimos el objeto pelota.
-                INK      colorSistema    ; Color del sistema.
+                ; INK      colorSistema    ; Color del sistema.
                 XMESSAGE "#nYa no tienes la pelota."
                 DONE
 
@@ -1458,7 +1458,7 @@ S       lRecibidor
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Hola, papá. Pues hace dos horas que me he acostado, pero dime, ¿que es lo que ocurre?#n"
                 INK      colorPadre      ; Color del padre.
-                XMESSAGE "Vinimos hace un par de días a la sierra para pasar la nochebuena y en la casa hay fantasmas o espíritus errantes, hijo.#k#b"
+                XMESSAGE "Vinimos hace un par de días a la sierra para pasar las navidades y en la casa hay fantasmas o espíritus errantes, hijo.#k#b"
                 INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Papá, es muy temprano para hacer bromas. Si no tienes inconveniente, me vuelvo a dormir.#n"
                 INK      colorPadre      ; Color del padre.
@@ -5229,6 +5229,12 @@ S       lRecibidor
                 XMESSAGE "Está suelto y parece que se mueve."
                 DONE
 
+> COGER TABLON       AT lEscaleras    
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                INK      colorConciencia ; Color de la conciencia de Marcos.             
+                XMESSAGE "No pienso coger eso, no es una buena idea."
+                DONE
+
 > QUITAR    TABLON
 > MOVER     TABLON
 > QUITAR    PELDA
@@ -6372,7 +6378,7 @@ S       lRecibidor
 
 > S         _         AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                INK      colorNarrador   ; Color del narrador.                
+                INK      colorNarrador   ; Color del narrador.
                 GOTO     lRoom1
                 CLS                      ; Limpiamos la pantalla.
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
@@ -6395,33 +6401,33 @@ S       lRecibidor
                 XMESSAGE "Estás jugando desde un emulador o un MSX que afortunadamente tiene eñe, ¿verdad? jajaja."
                 DONE
 
-> EXAMINA   SUELO     AT lBath1
+> EXAMINA   SUELO       AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El suelo es de gres porcelánico de color blanco."
                 DONE
 
 > EXAMINA   PARED
-> EXAMINA   MANCHA    AT lBath1
+> EXAMINA   MANCHA      AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Tocas la mancha y te deja un tacto grasiento en los dedos, tus sospechas se despejan. Parece aceite."
                 DONE
 
-> EXAMINA   LAVABO       AT lBath1
+> EXAMINA   LAVABO      AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.             
                 XMESSAGE "Es un lavabo de loza a juego con el retrete y la tina."
                 DONE
 
-> EXAMINA   RETRETE      AT lBath1
+> EXAMINA   RETRETE     AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.             
                 XMESSAGE "Es un retrete de loza blanca."
                 DONE
 
-> USAR RETRETE
-> CAGAR     _         AT lBath1
+> USAR      RETRETE
+> CAGAR     _           AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 ZERO     fCagar          ; Verificamos que no hemos cagado anteriormente.
                 SET      fCagar          ; Flag que indica que hemos cagado.
@@ -6435,7 +6441,7 @@ S       lRecibidor
                 XMESSAGE "La leyenda urbana resulta ser cierta y la cerilla (que no sabes cómo lograste mantener encendida durante la compleja operación) se lleva los hediondos efluvios en un santiamén. Aquí no ha pasado nada."
                 DONE
 
-> USAR RETRETE
+> USAR      RETRETE
 > CAGAR     _         AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 NOTZERO  fCagar          ; Verificamos que hemos cagado anteriormente.
@@ -6446,7 +6452,6 @@ S       lRecibidor
 > MEAR       _
 > ORINAR     _        AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                ZERO     fRompeRetrete   ; Verificamos que no hemos bajado del retrete.
                 ZERO     fMear           ; Verificamos que no hemos orinado anteriormente.
                 SET      fMear           ; Flag que indica que hemos orinado.
                 INK      colorMarcos     ; Color del protagonista.               
@@ -6458,8 +6463,7 @@ S       lRecibidor
 > MEAR      _
 > ORINAR    _         AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                ZERO     fRompeRetrete   ; Verificamos que no hemos bajado del retrete.
-                NOTZERO  fCagar          ; Verificamos que hemos cagado anteriormente.
+                NOTZERO  fMear           ; Verificamos que hemos orinado anteriormente.
                 INK      colorConciencia ; Color de la conciencia de Marcos.               
                 XMESSAGE "A partir de los 40 toca la primera revisión de la próstata, hasta entonces no me interesan tus problemas."
                 DONE
@@ -6477,8 +6481,8 @@ S       lRecibidor
                 XMESSAGE "Es un respiradero metálico, encastrado en el techo. De él sale un potente chorro de aire frío y denso que parece susurrarte algún ominoso mensaje amenazador. Un inesperado escalofrío sobrecogedor recorre tu espina dorsal. También puedes ver que tiene una mancha que se ha filtrado a la pared."
                 DONE
 
-> ABRIR   RESPIRADERO
-> TIRAR   RESPIRADERO AT lBath1
+> ABRIR     RESPIRADERO
+> TIRAR     RESPIRADERO AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 ZERO     fEngrasar       ; Verificamos que no hemos engrasado el candado.
                 NOTCARR  oLataDeAceite   ; Verificamos que no portamos la lata de aceite.
@@ -6495,16 +6499,16 @@ S       lRecibidor
                 XMESSAGE "La lata de aceite, aparte de estar pringosa, parece que tiene algo escrito."
                 DONE
 
-> ABRIR   RESPIRADERO
-> TIRAR   RESPIRADERO AT lBath1
+> ABRIR     RESPIRADERO
+> TIRAR     RESPIRADERO AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 NOTZERO  fAbrirRespir    ; Verificamos que el respiradero está abierto.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El respiradero está abierto. Aquí no hay nada más de interés."
                 DONE
 
-> EMPUJAR RESPIRADERO
-> CERRAR  RESPIRADERO AT lBath1
+> EMPUJAR   RESPIRADERO
+> CERRAR    RESPIRADERO AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 NOTZERO  fAbrirRespir    ; Verificamos que el respiradero está abierto.
                 INK      colorNarrador   ; Color del narrador.                
@@ -6681,12 +6685,56 @@ S       lRecibidor
                 XMESSAGE "El retrete está destrozado."
                 DONE
 
-> USAR RETRETE 
+> USAR      CADENA
+> TIRAR     CADENA
+> USAR      CISTERNA     AT lBath2  
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                ZERO     fRompeRetrete   ; Verificamos que el retrete no se ha roto aún..
+                NOTZERO  fFlushCadena    ; Verificamos que hemos tirado anteriormente de la cadena.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Tiras de la cadena y ya no encuentras sorpresas acerca del contenido de la cisterna."
+                DONE
+                    
+> USAR      RETRETE
 > CAGAR     _         AT lBath2
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                ZERO     fRompeRetrete   ; Verificamos que no hemos bajado del retrete.
+                NOTZERO  fCagar          ; Verificamos que hemos cagado anteriormente.
+                INK      colorMarcos     ; Color del protagonista.               
+                XMESSAGE "No tengo ganas... Ya he soltado un buen leño hace un rato."
+                DONE
+
+> MEAR      _
+> CAGAR     _
+> USAR      RETRETE
+> USAR      CADENA
+> SUBIR     _
+> SUBIR     RETRETE   AT lBath2
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                NOTZERO  fRompeRetrete   ; Verificamos que el retrete se ha roto al bajar.            
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Ya no existe el retrete. Está hecho añicos."
+                DONE
+
+> USAR      CADENA
+> TIRAR     CADENA
+> USAR      CISTERNA     AT lBath2  
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                ZERO     fRompeRetrete   ; Verificamos que el retrete no se ha roto aún..
                 ZERO     fFlushCadena    ; Verificamos que no hemos tirado anteriormente de la cadena.
                 SET      fFlushCadena    ; Flag que indica que hemos tirado por primera vez de la cadena.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Un fluido viscoso y rojo inunda las paredes del retrete.#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "¡HUELE A SANGRE!"
+                DONE
+
+> USAR      RETRETE 
+> CAGAR     _         AT lBath2
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 ZERO     fRompeRetrete   ; Verificamos que no hemos bajado del retrete.
+                ZERO     fFlushCadena    ; Verificamos que no hemos tirado anteriormente de la cadena.
+                SET      fFlushCadena    ; Flag que indica que hemos tirado por primera vez de la cadena.                
                 ZERO     fCagar          ; Verificamos que no hemos cagado anteriormente.
                 SET      fCagar          ; Flag que indica que hemos cagado.
                 INK      colorMarcos     ; Color del protagonista.               
@@ -6703,7 +6751,7 @@ S       lRecibidor
                 XMESSAGE "¡HUELE A SANGRE!"
                 DONE
 
-> USAR RETRETE
+> USAR      RETRETE
 > CAGAR     _         AT lBath2
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 NOTZERO  fFlushCadena    ; Verificamos que hemos tirado anteriormente de la cadena.
@@ -6720,15 +6768,6 @@ S       lRecibidor
                 XMESSAGE "La leyenda urbana resulta ser cierta y la cerilla (que no sabes cómo lograste mantener encendida durante la compleja operación) se lleva los hediondos efluvios en un santiamén. Aquí no ha pasado nada.#n"
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Terminas y tiras de la cadena."
-                DONE
-    
-> USAR RETRETE
-> CAGAR     _         AT lBath2
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                ZERO     fRompeRetrete   ; Verificamos que no hemos bajado del retrete.
-                NOTZERO  fCagar          ; Verificamos que hemos cagado anteriormente.
-                INK      colorMarcos     ; Color del protagonista.               
-                XMESSAGE "No tengo ganas... Ya he soltado un buen leño hace un rato."
                 DONE
 
 > MEAR       _
@@ -6792,36 +6831,6 @@ S       lRecibidor
                 XMESSAGE "Bajas la tapa del retrete y te subes a él.#k#b"
                 GOTO     lRetrete
                 RESTART
-                DONE
-
-> SUBIR     _
-> SUBIR     RETRETE   AT lBath2
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                NOTZERO  fRompeRetrete   ; Verificamos que el retrete se ha roto al bajar.            
-                CLS                      ; Limpiamos la pantalla.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Ya no existe el retrete. Está hecho añicos."
-                DONE
-
-> USAR      CADENA
-> TIRAR     CADENA
-> USAR      CISTERNA     AT lBath2  
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                ZERO     fFlushCadena    ; Verificamos que no hemos tirado anteriormente de la cadena.
-                SET      fFlushCadena    ; Flag que indica que hemos tirado por primera vez de la cadena.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Un fluido viscoso y rojo inunda las paredes del retrete.#n"
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "¡HUELE A SANGRE!"
-                DONE
-
-> USAR      CADENA
-> TIRAR     CADENA
-> USAR      CISTERNA     AT lBath2  
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                NOTZERO  fFlushCadena    ; Verificamos que hemos tirado anteriormente de la cadena.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Tiras de la cadena y ya no encuentras sorpresas acerca del contenido de la cisterna."
                 DONE
 
 > BEBER     SANGRE   AT lBath2
@@ -8803,19 +8812,19 @@ S       lRecibidor
 ;                 XMESSAGE "Activando el modo GUSILUZ. Ahora eres un ser de luz casi interminable.#k#b"
 ;                 RESTART
 
-> RAMSA     _   RAMSAVE                  ; Guarda en la memoria la partida
-                INK      colorNarrador   ; Color del narrador.
-                XMESSAGE "Has grabado la partida."
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+; > RAMSA     _   RAMSAVE                  ; Guarda en la memoria la partida
+;                 INK      colorNarrador   ; Color del narrador.
+;                 XMESSAGE "Has grabado la partida."
+;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 
-> RAMLO     _   RAMLOAD 255              ; Reload all flags
-                WINDOW  0               ; Se desactiva la imagen.
-                GFX     0 5
-                WINDOW  1 
-                CLS
-                INK      colorNarrador   ; Color del narrador.                
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+; > RAMLO     _   RAMLOAD 255              ; Reload all flags
+;                 WINDOW  0               ; Se desactiva la imagen.
+;                 GFX     0 5
+;                 WINDOW  1 
+;                 CLS
+;                 INK      colorNarrador   ; Color del narrador.                
+;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     CON
@@ -8990,22 +8999,23 @@ S       lRecibidor
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     CON
                 NOUN2    MESA
-                ; XMESSAGE "fRompePasador" 
-                ; PRINT    132
+                XMESSAGE "fFlushCadena" 
+                PRINT    fFlushCadena
+                XMESSAGE "#n"
+                XMESSAGE "fCagar" 
+                PRINT    fCagar
+                XMESSAGE "#n"
+                XMESSAGE "fMear" 
+                PRINT    fMear
+                ; XMESSAGE "#n"                
+                ; XMESSAGE "oLighton"
+                ; PRINT    oLighton
                 ; XMESSAGE "#n"
-                ; PRINT    fRompePasador
-                XMESSAGE "#n"
-                XMESSAGE "oLighton"
-                ; PRINT    3
-                PRINT    oLighton
-                XMESSAGE "#n"
-                XMESSAGE "fTurnosConLuz"
-                ; PRINT    72
-                PRINT    fTurnosConLuz
-                XMESSAGE "#n"
-                XMESSAGE "fDarkF"
-                ; PRINT    28
-                PRINT    fDarkF
+                ; XMESSAGE "fTurnosConLuz"
+                ; PRINT    fTurnosConLuz
+                ; XMESSAGE "#n"
+                ; XMESSAGE "fDarkF"
+                ; PRINT    fDarkF
                 ; XMESSAGE "#n"
                 ; XMESSAGE "oLlaveChamizo"
                 ; PRINT    oLlaveChamizo
@@ -9062,11 +9072,11 @@ S       lRecibidor
 
 > FIN       _   DONE                    
 
-> SV        _   SAVE 2                  
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+; > SV        _   SAVE 2                  
+;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
-> LD        _   LOAD 2
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
+; > LD        _   LOAD 2
+;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 
 

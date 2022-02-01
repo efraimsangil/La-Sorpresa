@@ -98,8 +98,9 @@ BUGS Día 31/01/2022
 - Problemas con la iluminación.(VRMotor)
 - lDespensa: corregido el problema de BUSCAR GALLETA y pulsar R, estando la galleta en el suelo.(VRMotor)
 
-
-
+BUGS Día 01/02/2022
+- Resuelto un problema complejo cuando USAS RETRETE, MEAS O CAGAS en lBath1 y luego repites las acciones en lBath2 e incluso en lBath2 lanzas USAR CADENA. Era un lío tremendo. Ahora tiene sentido. Si MEAS/CAGAS en cualquiera de ellos, ya no te dejará hacer más. TIRAR CADENA por primera vez, te dirá que HUELE A SANGRE. Si lo haces por segunda vez, está todo limpio.(VRMotor)
+- lEscaleras: No deja COGER TABLON (VRMotor)
 
 
 
