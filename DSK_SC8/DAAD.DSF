@@ -779,7 +779,7 @@ LUEGO           2       conjugation
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 
 ; lRecibidor Loc nº10
-/10 " Te encuentras en el recibidor, despojado de todo detalle y ambientado tan solo con el sutil resplandor de las luces del exterior. Es descorazonador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que SUBEN a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón , ABAJO está la bodega y volverás a la entrada de la casa al OESTE. Delante tuya, está la consola con la que has tropezado. Parece que en la casa no hay nadie."
+/10 " Te encuentras en el recibidor, despojado de todo detalle y ambientado tan solo con el sutil resplandor de las luces del exterior. Es descorazonador y no invita a entrar en sus dependencias.#n#n  Puedes ver las escaleras que SUBEN a la planta superior, el aseo al NORTE, la cocina al SUR, al ESTE el salón , ABAJO está la bodega y volverás a la entrada de la casa al OESTE. Delante de ti, está la consola con la que has tropezado. Parece que en la casa no hay nadie."
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 ; lHallBodega  Loc nº11
 /11 "El hall que precede a la bodega es pequeño, sobrio. También puedes ver una reja justo enfrente de ti."
