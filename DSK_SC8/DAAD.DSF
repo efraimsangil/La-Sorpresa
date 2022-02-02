@@ -239,6 +239,7 @@
 #define fEmpujarAlacena     138          ; Flag que controla si empujamos por segunda vez la Alacena en lDespensa
 #define fCogerCiempies      139          ; Flag que controla coger el cienpies por segunda vez en lPorche
 #define fHistoria           140          ; Flag que indica que sabemos una parte importante de la historia de la familia que vivió en la casa. Esto se produce cuando habiendo jugado con el niño, desde lBodega vamos a lCochera y el niño nos cuenta todo.
+#define fControlVitrina     140          ; Flag que indica que abrimos la vitrina al menos una vez.
 
  ;                             Definición de las localizaciones
  ;_____________________________________________________________________________________________________
@@ -1454,9 +1455,9 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del teléfono; no obstante, tanteas con las manos en la mesilla y descuelgas.#k#b"
                 INK      colorPadre      ; Color del padre.
-                XMESSAGE "Marcos, hijo. Menos mal que estás en casa. Estamos en la sierra tu madre y yo. Te he despertado, pero no vas a creer lo que nos ha pasado a tu madre y a mi esta noche.#k#b"
+                XMESSAGE "Marcos, hijo. Menos mal que estás en casa. Estamos en la sierra tu madre y yo. Te he despertado, pero no vas a creer lo que nos ha pasado a tu madre y a mí esta noche.#k#b"
                 INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Hola, papá. Pues hace dos horas que me he acostado, pero dime, ¿que es lo que ocurre?#n"
+                XMESSAGE "Hola, papá. Pues hace dos horas que me he acostado, pero dime, ¿qué es lo que ocurre?#n"
                 INK      colorPadre      ; Color del padre.
                 XMESSAGE "Vinimos hace un par de días a la sierra para pasar las navidades y en la casa hay fantasmas o espíritus errantes, hijo.#k#b"
                 INK      colorMarcos     ; Color del protagonista.
@@ -1464,9 +1465,9 @@ S       lRecibidor
                 INK      colorPadre      ; Color del padre.
                 XMESSAGE "¡Pero qué broma ni qué gaitas, Marcos! ¡De verdad que te digo que en esta casa hay algo! ¡No hemos podido dormir en toda la noche!#k#b"
                 INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Qué me estás diciendo, papá... ¿De que me estás hablando?#n"
+                XMESSAGE "Qué me estás diciendo, papá... ¿De qué me estás hablando?#n"
                 INK      colorPadre      ; Color del padre.
-                XMESSAGE "Después de la cena, nos fuimos a acostar y ya de madrugada, noté que hacía mucho frío en la habitación. Fuí a salir de la cama para ponernos otra manta encima y no me vas a creer cuando te diga que la cama se había elevado sobre el suelo y me pegué un golpe tremendo.#k#b"
+                XMESSAGE "Después de la cena, nos fuimos a acostar y ya de madrugada, noté que hacía mucho frío en la habitación. Fui a salir de la cama para ponernos otra manta encima y no me vas a creer cuando te diga que la cama se había elevado sobre el suelo y me pegué un golpe tremendo.#k#b"
                 XMESSAGE "Encendí la luz y la cama empezó a descender, pero la habitación era otra completamente distinta. Todo había cambiado, era todo muy antiguo. A tu madre casi le da un infarto, porque ya sabes que ella tiene un sueño muy profundo y se sobresaltó cuando la desperté.#k#b"
                 XMESSAGE "La cogí de la mano y en ese momento la cama comenzó a vibrar. Salimos corriendo y casi nos matamos por las escaleras y aquí estamos en el salón.#n#n Estamos muy nerviosos y no sabemos qué hacer. Tu madre me ha dicho que te llamara.#k#b"
                 INK      colorMarcos     ; Color del protagonista.
@@ -1488,11 +1489,11 @@ S       lRecibidor
 				INK      colorNarrador   ; Color del narrador.               
                 XMESSAGE "Suena un ruido metálico a través del auricular del teléfono y se cuelga la llamada.#n"
 				INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "¿Papa? ¿Hola? ¿Pero que diablos está pasando en esa casa?#k#b"
+                XMESSAGE "¿Papa? ¿Hola? ¿Pero qué diablos está pasando en esa casa?#k#b"
 				INK      colorNarrador   ; Color del narrador.               
-                XMESSAGE "Te quedas un poco preocupado, pero tu eres un hombre muy calmado. Así que decides despejarte un poco tomando un cafe y una buena ducha. Eso siempre viene bien después de haber transnochado. Una vez tranquilizado, te sientas en la cama.#k#b"
+                XMESSAGE "Te quedas un poco preocupado, pero tu eres un hombre muy calmado. Así que decides despejarte un poco tomando un café y una buena ducha. Eso siempre viene bien después de haber transnochado. Una vez tranquilizado, te sientas en la cama.#k#b"
 				INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Bueno, pensemos un poco. ¿Ahora que hago?#n"
+                XMESSAGE "Bueno, pensemos un poco. Y ahora, ¿qué hago?#n"
 				INK      colorConciencia ; Color de la conciencia de Marcos. 
                 XMESSAGE "Marcos, soy tu conciencia. Deja de darle vueltas a la cabeza y vete a la sierra a ver qué ha pasado con tus padres.#k#b"
 				INK      colorMarcos     ; Color del protagonista.
@@ -3473,11 +3474,11 @@ S       lRecibidor
 
                                          ; Si hemos movido el alambique y tenemos el aceite, 
                                          ; nos da la pista de que nos falta un objeto. 
-
+> USAR      CANDADO
 > ABRIR     CANDADO
 > ENGRASAR  CANDADO   AT lBodega
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                NOTZERO  fMoverAlambique ; Verificamos que ya hemos movido el alambique con anterioridad.
+                ZERO     fMoverAlambique ; Verificamos que no hemos movido el alambique con anterioridad.
                 INK      colorNarrador   ; Color del narrador. 
                 XMESSAGE "No veo ningún candado."
                 DONE 
@@ -5179,11 +5180,9 @@ S       lRecibidor
 > EXAMINA	ESCALERAS AT lEscaleras                
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.           
                 ZERO     fEscalon        ; Verificamos que el tablón está puesto.
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Lo cierto es que siento curiosidad. Si esto cruje será por algo.#n"
-                XMESSAGE "Voy a ver; pues sí, hay un tablón que parece tener cierta holgura y se mueve un poco."
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "Hay un tablón que parece tener cierta holgura y se mueve un poco."
                 DONE
-
                                          ; Con flags, controlamos si se ha movido el tablón o se pone de nuevo en su sitio
 
 > EXAMINA   ESCALERAS    AT lEscaleras
@@ -5629,14 +5628,17 @@ S       lRecibidor
                 XMESSAGE "¡Eh! ¡El cajero se ha tragado la tarjeta!#n"
                 DESTROY  oTarjetaLlave   ; Destruimos el objeto Tarjeta Llave.            
                 INK      colorConciencia ; Color de la conciencia de Marcos
-                XMESSAGE "A veces pasa, sí."
+                XMESSAGE "A veces pasa, sí. Recuerdas en esa vez que la usamos en..."
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "¡Shhhh! ¡No me lo recuerdes!#n"
                 DONE
 
 > EMPUJAR   VITRINA
 > MOVER 	VITRINA   AT lSalon
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
                 NOTZERO  fUsarTarjeta    ; Verificamos que hemos utilizado la tarjeta llave.
+                ZERO     fControlVitrina ; Verificamos que es la primera vez que abre la vitrina.
+                SET      fControlVitrina ; Flag que indica que es la primera vez que abre la vitrina.
                 ZERO     fMueveVitrina   ; Verificamos que la vitrina está en su sitio.
                 SET      fMueveVitrina   ; Flag que indica que hemos movido la vitrina.
                 INK      colorNarrador   ; Color del narrador.                
@@ -5656,26 +5658,7 @@ S       lRecibidor
 > MOVER 	VITRINA   AT lSalon
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 NOTZERO  fUsarTarjeta    ; Verificamos que hemos utilizado la tarjeta llave.
-                ZERO     fMueveVitrina   ; Verificamos que la vitrina está en su sitio.
-                SET      fMueveVitrina   ; Activamos el flag que mueve la vitrina.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Desplazas la vitrina apenas un metro con enorme facilidad.#n"
-                INK      colorConciencia ; Color de la conciencia de Marcos.             
-                XMESSAGE "Me sigue sorprendiendo lo de la sala secreta.#k#n"
-                INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "Desde luego que sí.#k#b"
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Entras a través de la vitrina.#k"
-                CLS
-                GOTO     lCriada         ; Vamos a lCriada.
-                RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
-                DONE
-
-> EMPUJAR   VITRINA
-> MOVER 	VITRINA   AT lSalon
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
-                NOTZERO  fUsarTarjeta    ; Verificamos que hemos utilizado la tarjeta llave.
+                NOTZERO  fControlVitrina ; Verificamos que es la primera vez que abre la vitrina.
                 ZERO     fMueveVitrina   ; Verificamos que la vitrina está en su sitio.
                 SET      fMueveVitrina   ; Activamos el flag que mueve la vitrina.
                 INK      colorNarrador   ; Color del narrador.                
@@ -7524,16 +7507,19 @@ S       lRecibidor
 
 > EXAMINA   PASILLO
 > MIRAR     _         AT lPasillo2
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Una puerta conduce hacia el SUR. El corredor continúa de ESTE a OESTE."
                 DONE
 
 > EXAMINA   SUELO     AT lPasillo2
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "El suelo es de moqueta gris."
                 DONE
 
 > EXAMINA   PARED     AT lPasillo2
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Las paredes de papel pintado en un pasillo tan estrecho, dan una sensación un poco agobiante."
                 DONE
@@ -8288,8 +8274,8 @@ S       lRecibidor
 
 > EXAMINA   ROPA
                 WORN     oRopa           ; Verificamos que Marcos está vestido.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Llevas puesto una camiseta marrón claro junto con unos pantalones vaqueros azules. En los pies, unas zapatillas de deporte."
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Me sienta de maravilla."
                 DONE
 
 > EXAMINA   PALA
@@ -8737,26 +8723,26 @@ S       lRecibidor
                                          ; USAR MAGIA: Cheat para los desarrolladores. Nos permite poner en el inventario
                                          ; objetos para avanzar en la aventura sin tener que realizarla.
  
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    OBJETO
-                CREATE   oRopa           ; Creamos el objeto de su ropa.
-                GET      oRopa
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    OBJETO
+;                 CREATE   oRopa           ; Creamos el objeto de su ropa.
+;                 GET      oRopa
 
-                CREATE   oCerillas       ; Creamos el objeto caja de cerillas
-                GET      oCerillas               
+;                 CREATE   oCerillas       ; Creamos el objeto caja de cerillas
+;                 GET      oCerillas               
 
                 ; CREATE   oLlaveCoche
                 ; GET      oLlaveCoche
                 
-                CREATE   oLlavePorche    ; Creamos las llaves del Porche.
-                GET      oLlavePorche
+                ; CREATE   oLlavePorche    ; Creamos las llaves del Porche.
+                ; GET      oLlavePorche
                                
                 ; CREATE   oLlaveCaja
                 ; GET      oLlaveCaja
 
-                CREATE   oLlavePatio     ; Creamos el objeto llave del patio.
-                GET      oLlavePatio               
+                ; CREATE   oLlavePatio     ; Creamos el objeto llave del patio.
+                ; GET      oLlavePatio               
 
                 ; CREATE  oTarjetaLlave
                 ; GET     oTarjetaLlave
@@ -8779,25 +8765,25 @@ S       lRecibidor
                 ; SET      fJugar
                 ; SET      fLeerDiario
 
-                SET      fCombinacion
-                SET      fEngrasar
-                SET      fQuitarMancha
-                SET      fMoverAlambique
+                ; SET      fCombinacion
+                ; SET      fEngrasar
+                ; SET      fQuitarMancha
+                ; SET      fMoverAlambique
                 ;SET      fVolverEntrar   ; Flag que indica que hemos salido de la casa.
-                SET      fAbrirCandado
-                SET      fRompeRetrete   ; Flag que indica que hemos bajado del retrete.
-                SET      fCajon
-                SET      fUsarTarjeta
+                ; SET      fAbrirCandado
+                ; SET      fRompeRetrete   ; Flag que indica que hemos bajado del retrete.
+                ; SET      fCajon
+                ; SET      fUsarTarjeta
                 ; SET      fRompePasador
 
                 ; GOTO     lBodega
-                GOTO     lRecibidor
+                ; GOTO     lRecibidor
                 ; GOTO     lChamizo
                 ; GOTO     lCriada
                 ; GOTO     lPorche
                 ; GOTO     lExtCasa
-                RESTART
-                DONE
+                ; RESTART
+                ; DONE
 
 ; > USAR      GUSILUZ                      ; SHORTCUT: usarmagia
 ;                 PREP     CON
@@ -8818,6 +8804,7 @@ S       lRecibidor
 ;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
 
 
+
 ; > RAMLO     _   RAMLOAD 255              ; Reload all flags
 ;                 WINDOW  0               ; Se desactiva la imagen.
 ;                 GFX     0 5
@@ -8826,131 +8813,131 @@ S       lRecibidor
 ;                 INK      colorNarrador   ; Color del narrador.                
 ;                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    CRIO
-                SET      fJugar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    CRIO
+;                 SET      fJugar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    CRIO
-                CLEAR    fJugar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    CRIO
+;                 CLEAR    fJugar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    PUERTA        
-                SET      fVolverEntrar   ; Flag que indica que hemos salido de la casa.
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    PUERTA        
+;                 SET      fVolverEntrar   ; Flag que indica que hemos salido de la casa.
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    PUERTA
-                CLEAR    fVolverEntrar
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    PUERTA
+;                 CLEAR    fVolverEntrar
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    DIARIO        
-                SET      fLeerDiario
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    DIARIO        
+;                 SET      fLeerDiario
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    DIARIO
-                CLEAR    fLeerDiario
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    DIARIO
+;                 CLEAR    fLeerDiario
+;                 DONE
     
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    PALA
-                CREATE   oPala           ; Creamos el objeto pala.
-                GET      oPala
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    PALA
+;                 CREATE   oPala           ; Creamos el objeto pala.
+;                 GET      oPala
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    PALA
-                DESTROY  oPala
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    PALA
+;                 DESTROY  oPala
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    HACHA
-                CREATE   oHacha
-                GET      oHacha
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    HACHA
+;                 CREATE   oHacha
+;                 GET      oHacha
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    HACHA
-                DESTROY  oHacha
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    HACHA
+;                 DESTROY  oHacha
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    PELOTA
-                SET      fHistoria       ; Activamos el flag para indicar que hemos descubierto una parte muy importante de la historia de la familia que murió en la casa.
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    PELOTA
+;                 SET      fHistoria       ; Activamos el flag para indicar que hemos descubierto una parte muy importante de la historia de la familia que murió en la casa.
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    PELOTA
-                CLEAR    fHistoria
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    PELOTA
+;                 CLEAR    fHistoria
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    BOTELLERO
-                CREATE   oLlaveBodega     ; Creamos la llave de la bodega.
-                GET      oLlaveBodega
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    BOTELLERO
+;                 CREATE   oLlaveBodega     ; Creamos la llave de la bodega.
+;                 GET      oLlaveBodega
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    BOTELLERO
-                DESTROY  oLlaveBodega
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    BOTELLERO
+;                 DESTROY  oLlaveBodega
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    CHAMIZO
-                CREATE   oLlaveChamizo     ; Creamos el objeto LlaveChamizo.
-                GET      oLlaveChamizo
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    CHAMIZO
+;                 CREATE   oLlaveChamizo     ; Creamos el objeto LlaveChamizo.
+;                 GET      oLlaveChamizo
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    CHAMIZO
-                DESTROY  oLlaveChamizo
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    CHAMIZO
+;                 DESTROY  oLlaveChamizo
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    COCHE
-                CREATE   oLlaveCoche     ; Creamos las llaves del coche.
-                GET      oLlaveCoche 
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    COCHE
+;                 CREATE   oLlaveCoche     ; Creamos las llaves del coche.
+;                 GET      oLlaveCoche 
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    COCHE
-                DESTROY  oLlaveCoche
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    COCHE
+;                 DESTROY  oLlaveCoche
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    PATIO
-                CREATE   oLlavePatio     ; Creamos las llaves del Patio.
-                GET      oLlavePatio 
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    PATIO
+;                 CREATE   oLlavePatio     ; Creamos las llaves del Patio.
+;                 GET      oLlavePatio 
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     SIN
-                NOUN2    PATIO
-                DESTROY  oLlavePatio
-                DONE                             
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     SIN
+;                 NOUN2    PATIO
+;                 DESTROY  oLlavePatio
+;                 DONE                             
 
 
 ; > USAR      MAGIA                        ; SHORTCUT: usarmagia
@@ -8959,68 +8946,68 @@ S       lRecibidor
 ;                 DESTROY  oLataDeAceite
 ;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    PORCHE
-                GOTO     lPorche
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    PORCHE
+;                 GOTO     lPorche
+;                 RESTART
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    RECIBIDOR
-                GOTO     lRecibidor
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    RECIBIDOR
+;                 GOTO     lRecibidor
+;                 RESTART
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    CASA
-                GOTO     lExtCasa
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    CASA
+;                 GOTO     lExtCasa
+;                 RESTART
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    CHAMIZO
-                GOTO     lChamizo
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    CHAMIZO
+;                 GOTO     lChamizo
+;                 RESTART
+;                 DONE
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     EN
-                NOUN2    BODEGA
-                GOTO     lBodega
-                RESTART
-                DONE
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     EN
+;                 NOUN2    BODEGA
+;                 GOTO     lBodega
+;                 RESTART
+;                 DONE
 
 
 
-> USAR      MAGIA                        ; SHORTCUT: usarmagia
-                PREP     CON
-                NOUN2    MESA
-                XMESSAGE "fFlushCadena" 
-                PRINT    fFlushCadena
-                XMESSAGE "#n"
-                XMESSAGE "fCagar" 
-                PRINT    fCagar
-                XMESSAGE "#n"
-                XMESSAGE "fMear" 
-                PRINT    fMear
-                ; XMESSAGE "#n"                
-                ; XMESSAGE "oLighton"
-                ; PRINT    oLighton
-                ; XMESSAGE "#n"
-                ; XMESSAGE "fTurnosConLuz"
-                ; PRINT    fTurnosConLuz
-                ; XMESSAGE "#n"
-                ; XMESSAGE "fDarkF"
-                ; PRINT    fDarkF
-                ; XMESSAGE "#n"
-                ; XMESSAGE "oLlaveChamizo"
-                ; PRINT    oLlaveChamizo
-                XMESSAGE "#n"
-                DONE  
+; > USAR      MAGIA                        ; SHORTCUT: usarmagia
+;                 PREP     CON
+;                 NOUN2    MESA
+;                 XMESSAGE "fFlushCadena" 
+;                 PRINT    fFlushCadena
+;                 XMESSAGE "#n"
+;                 XMESSAGE "fCagar" 
+;                 PRINT    fCagar
+;                 XMESSAGE "#n"
+;                 XMESSAGE "fMear" 
+;                 PRINT    fMear
+;                 ; XMESSAGE "#n"                
+;                 ; XMESSAGE "oLighton"
+;                 ; PRINT    oLighton
+;                 ; XMESSAGE "#n"
+;                 ; XMESSAGE "fTurnosConLuz"
+;                 ; PRINT    fTurnosConLuz
+;                 ; XMESSAGE "#n"
+;                 ; XMESSAGE "fDarkF"
+;                 ; PRINT    fDarkF
+;                 ; XMESSAGE "#n"
+;                 ; XMESSAGE "oLlaveChamizo"
+;                 ; PRINT    oLlaveChamizo
+;                 XMESSAGE "#n"
+;                 DONE  
 ;________________________________________________________________________________________________________________________________________________________________________________________________
 ;                                      CONDACTOS DE LA PLANTILLA
 
