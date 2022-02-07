@@ -239,8 +239,8 @@
 #define fEmpujarAlacena     138          ; Flag que controla si empujamos por segunda vez la Alacena en lDespensa
 #define fCogerCiempies      139          ; Flag que controla coger el cienpies por segunda vez en lPorche
 #define fHistoria           140          ; Flag que indica que sabemos una parte importante de la historia de la familia que vivió en la casa. Esto se produce cuando habiendo jugado con el niño, desde lBodega vamos a lCochera y el niño nos cuenta todo.
-#define fControlVitrina     140          ; Flag que indica que abrimos la vitrina al menos una vez.
-#define fExaminaAgua        141          ; Flag que indica que hemos examinado el agua al menos una vez.
+#define fControlVitrina     141          ; Flag que indica que abrimos la vitrina al menos una vez.
+#define fExaminaAgua        142          ; Flag que indica que hemos examinado el agua al menos una vez.
 
  ;                             Definición de las localizaciones
  ;_____________________________________________________________________________________________________
@@ -664,7 +664,7 @@ LUEGO           2       conjugation
 /23 "No llevas eso puesto."
 /24 "No puedes. Tienes puesto _."
 /25 "Ya tienes _."
-/26 "Aquí no hay nada de eso."
+/26 "No creo que sea necesario."
 /27 "No puedes llevar nada más."
 /28 "No tienes eso.#n"
 /29 "Ya llevas puesto _.#n"
@@ -1499,7 +1499,7 @@ S       lRecibidor
 				INK      colorMarcos     ; Color del protagonista.
                 XMESSAGE "Lo que no entiendo es que después de lo que habéis vivido esta noche, cojas, y me llames por teléfono en vez de salir de la casa cuanto antes.#n"
 				INK      colorPadre      ; Color del padre.
-                XMESSAGE "No pienso dejar mi casa por que haya un fantasma con ganas de joder la marrana. #n¡Es mi casa!#k#b"
+                XMESSAGE "Realmente no pensaba dejar mi casa por que haya un fantasma con ganas de joder la marrana. #n¡Es mi casa!#k#b"
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Se escucha la voz de una niña a través del teléfono que dice:#n#n"
 				INK		 colorNena       ; Color de la niña.
@@ -2534,6 +2534,8 @@ S       lRecibidor
 > ABRIR		CAJON     AT lRecibidor
                 ZERO     fCajon          ; La consola contiene el cajón.
                 SET      fCajon          ; Controlamos que el cajón reviente contra la pared. Es un flag que puede tener dos variables, ya que lo utilizaremos también para controlar la apertura de la cocina. La tabla de resultados están en "tablacajones"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "Voy a coger las llaves de la casa para comprobar que todo está en orden.#n"
                 INK      colorNarrador   ; Color del narrador.        
                 XMESSAGE "Te dispones a abrir el cajón y cuando te acercas, este sale despedido hacia a ti, con la gran suerte de que te da tiempo a esquivarlo.#n#n El cajón revienta contra la pared en mil pedazos y los restos caen al suelo."
                 DONE
@@ -2557,6 +2559,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Ya has cogido las cerillas, y aquí no queda nada de interés." 
                 DONE
+
 > EXAMINAR  RESTOS
 > EXAMINAR  SUELO     AT lRecibidor
                 NOTCARR  oCerillas       ; Verificamos que no portamos las cerillas.
@@ -2567,6 +2570,10 @@ S       lRecibidor
                 CREATE   oCerillas       ; Creamos el objeto caja de cerillas
                 INK      colorSistema    ; Color del sistema.
                 GET      oCerillas       ; Cogemos el objeto
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "#nEsto es realmente raro, no había ninguna llave en el cajón y no las veo entre los restos.#n"
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Vamos a revisar la casa a ver si logramos encontrar las llaves."                
                 DONE
 
 > EXAMINAR  PARED     AT lRecibidor
@@ -2893,7 +2900,7 @@ S       lRecibidor
                 ZERO     fMoverAlambique ; Verificar que aún no hemos movido el alambique.
                 SET      fMoverAlambique ; Flag que activa que hemos movido el alambique.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Mueves el alambique y al desplazarlo, puedes ver en el suelo una trampilla."
+                XMESSAGE "Mueves el alambique y al desplazarlo, dejas al descubierto la trampilla."
                 DONE
 
 > TIRAR     ALAMBIQUE
@@ -6323,7 +6330,12 @@ S       lRecibidor
 > EXAMINA   MANCHA      AT lBath1
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Tocas la mancha y te deja un tacto grasiento en los dedos, tus sospechas se despejan. Parece aceite."
+                XMESSAGE "Notas una mancha amarillenta que no sabes que es. La tocas y te deja un tacto grasiento en los dedos, tus sospechas se despejan. Parece aceite.#n"
+                INK      colorMarcos     ; Color del protagonista.
+                XMESSAGE "¿De dónde saldrá este aceite?#n"
+                INK      colorConciencia ; Color de la conciencia de Marcos.
+                XMESSAGE "Algo o alguien pierde aceite en esta casa."
+
                 DONE
 
 > EXAMINA   LAVABO      AT lBath1
@@ -6407,8 +6419,16 @@ S       lRecibidor
                 CREATE   oLataDeAceite   ; Creamos la lata de aceite.
                 GET      oLataDeAceite   ; Cogemos la lata de aceite
                 XMESSAGE "#n" 
+                INK      colorMarcos     ; Color del protagonista.           
+                XMESSAGE "¿Cómo cojones ha llegado una lata de aceite hasta aquí?#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.   
-                XMESSAGE "La lata de aceite, aparte de estar pringosa, parece que tiene algo escrito."
+                XMESSAGE "¡Ni idea! Al menos tenemos claro que la pérdida de aceite...#n"
+                INK      colorMarcos     ; Color del protagonista.  
+                XMESSAGE "Calla, calla...#n"
+                INK      colorConciencia ; Color de la conciencia de Marcos.   
+                XMESSAGE "Esta lata, además de estar pringosa, parece que tiene algo escrito.#n"
+                INK      colorMarcos     ; Color del protagonista.  
+                XMESSAGE "Algo o alguien está jugando con nosotros.#n"
                 DONE
 
 > ABRIR     RESPIRADERO
@@ -7299,7 +7319,7 @@ S       lRecibidor
                 ZERO     fCogeLlaveCaja  ; Verificamos que no hemos cogido la llave de la caja.
                 SET      fCogeLlaveCaja  ; Flag que indica que hemos cogido la llave de la caja.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene unas llaves#g#f3#t en la mano. La mujer las deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
+                XMESSAGE "Decides acercarte con cautela a la terma, asombrado por el ruido que escuchas.#k#n#nA medida que te aproximas, notas que el agua chapotea sobre las paredes de la terma.#k#n#nDel murete asoma el brazo de una mujer que sostiene una llave#g#f3#t en la mano. La mujer la deja caer al suelo e inmediatamente retira el brazo del murete.#k#n#nTe asomas a la terma y no hay nadie.#n"
                 ISAT     oLlaveCaja 252  ; El objeto no está en ninguna parte y por tanto no es visible.
                 CREATE   oLlaveCaja      ; Se crea la llave de la caja.
                 INK      colorSistema    ; El color del sistema.
@@ -7307,7 +7327,6 @@ S       lRecibidor
                 XMESSAGE "#n"            ; Como GET no hace salto de línea, hemos de forzarlo.
                 INK      colorConciencia ; Color de la conciencia de Marcos.   
                 XMESSAGE "Acabamos de vivir una experiencia paranormal, ¿verdad?"   
-                INK      colorNarrador   ; Color del narrador.                
                 DONE  
 
 > EXAMINA   TERMA   AT lBath3
@@ -8091,7 +8110,13 @@ S       lRecibidor
                                          ; CONDACTOS GENERALES:
                                          ; Se pueden usar en cualquier momento de la aventura
                                          ; independientemente de su localización.
-				
+
+> _         _                
+                NOTZERO  fDarkF             
+                INK      colorNarrador   ; Color del narrador.
+                XMESSAGE "No puedes ver nada. Está muy oscuro."
+                DONE
+
 > EXAMINA   LLAVE 
                 CARRIED  oLlavePorche    ; Verificamos que portamos la llave de la puerta principal.
                 INK      colorNarrador   ; Color del narrador.                
@@ -8286,12 +8311,6 @@ S       lRecibidor
                                          ; jugar durante muchos turnos sin tener que encender cerillas.
 
 
-
-> EX        _
-            INK      colorNarrador   ; Color del narrador.                
-            XMESSAGE "No hay nada interesante."
-            DONE
-
 > METER     _
 > SACAR     _
             INK      colorNarrador   ; Color del narrador.                
@@ -8396,14 +8415,6 @@ S       lRecibidor
                                          ; y lo deja caer al hoyo.
                 DONE
 
-> _         _                
-                NOTZERO  fDarkF
-                ;WINDOW  0               ; Se desactiva la imagen.
-                ;GFX     0 5
-                ;WINDOW  1                ; Se activa la imagen.
-                INK      colorNarrador   ; Color del narrador.
-                XMESSAGE "No puedes ver nada. Está muy oscuro."
-                DONE
 ;________________________________________________________________________________________________________________________________________________________________________________________________
                                          ; CHEATS Y ATAJOS 
 
@@ -8665,8 +8676,8 @@ S       lRecibidor
                 ; CREATE   oPelota
                 ; GET      oPelota
 
-                ; CREATE   oPaleta
-                ; GET      oPaleta
+                CREATE   oPaleta
+                GET      oPaleta
             
                 ; CREATE   oPala
                 ; GET      oPala
@@ -8680,9 +8691,9 @@ S       lRecibidor
                 ; SET      fJugar
                 ; SET      fLeerDiario
 
-                SET      fCombinacion
+                ; SET      fCombinacion
                 ; SET      fEngrasar
-                SET      fQuitarMancha
+                ; SET      fQuitarMancha
                 ; SET      fMoverAlambique
                 ; SET      fVolverEntrar   ; Flag que indica que hemos salido de la casa.
                 ; SET      fAbrirCandado
@@ -8947,7 +8958,7 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Observas la lata de aceite#g#fFG#t y ...#n"
                 INK      colorconciencia ; Color de la conciencia de Marcos
-                XMESSAGE "Shhh, frenaaaaaaaaaa, que el numerito ya lo tengo memorizado.#n"               
+                XMESSAGE "Shhh, frenaaaaaaaaaa, que el numerito ya lo tengo memorizado."               
                 DONE                
 
 > EXAMINA   CERILLAS
@@ -8994,6 +9005,10 @@ S       lRecibidor
                 XMESSAGE "Es una paleta de pintor."
                 DONE
 
+> EX        _
+            INK      colorNarrador   ; Color del narrador.                
+            XMESSAGE "No hay nada interesante."
+            DONE
 ;__________________________________________________________________
 ;                                      CONDACTOS DE LA PLANTILLA
 
