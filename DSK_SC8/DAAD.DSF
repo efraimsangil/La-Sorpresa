@@ -149,7 +149,7 @@
 
 ;                               Flags de usuario
 
-#define fLeerDiario         64           ; Control que activamos cuando leemos el diario.
+#define fLeerDiario         64           ; Flag que se activa leemos el diario.
 #define fCagar              65           ; Control que regula nuestro tránsito intestinal, impidiendonos defecar dos veces.
 #define fDesenterrar        66           ; Flag que controla si se llegó a desenterrar los cuerpos, de modo que te condiciona el tipo de final al que puedes llegar.
 #define fUsarTelefono       67           ; Control para saber si se ha usado/cogido el teléfono en lBurgos.
@@ -160,29 +160,12 @@
 #define fTurnosConLuz       72           ; Control del número de turnos con Luz.
 #define fControlLuz         73           ; Control de la luz de la cerilla .
 #define fAbrirCisterna      74           ; Controla en lRetrete que no puedas ABRIR CISTERNA dos veces.
-#define fCajon              75           ; Control para la apertura de cajones en lBurgos, en lRecibidor y en lCocina.
-                                        
-                ;        TABLA DE CONTROL DE CAJONES en lBurgos   SHORTCUT:tablacajones
-                ;        ---------------------------------------------------------------------------
-                ;        VARIABLES     CONTROL                                       VALOR NUMÉRICO
-                ;         00           Cerrado                                               0
-                ;         01           Abierto                                               255
-                ;        ---------------------------------------------------------------------------
-                ;        TABLA DE CONTROL DE CAJONES en lBurgos
-                ;        ---------------------------------------------------------------------------
-                ;        VARIABLES     CONTROL                                       VALOR NUMÉRICO
-                ;         00           Cerrado lRecibidor / Cerrado lCocina                  0
-                ;         01           Cerrado lRecibidor / Abierto lCocina    (Esta condición nunca se cumple)
-                ;         10           Abierto lRecibidor / Cerrado lCocina                  1 
-                ;         11           Abierto lRecibidor / Abierto lCocina                  2                 
-                ;         --------------------------------------------------------------------------
-
+#define fCajon              75           ; Control para la apertura de cajones en lBurgos, en lRecibidor y en lCocina.             
 #define fBombilla           76           ; Flag de la bombilla en lAseo.
 #define fEscalon            77           ; Flag del TABLON suelto de lEscaleras.
 #define fUsarInterruptor    78           ; Flag del INTERRUPTOR en lAseo.
-#define fBloqueoRoom1       79           ; No se usa
 #define fUsarPala           80           ; Flag para que no usemos la pala dos veces.
-#define fJugar              81           ; Flag para saber si se jugó con el niño en lPatio (Crucial para uno de los finales).
+#define fJugar              81           ; Flag para saber si se jugó con el niño en lPatio (Es fundamental para conocer parte de la historia).
 #define fTriturador         82           ; Flag para matar al jugador si decide EXAMINAR por segunda vez el TRITURADOR en lCocina.
 #define fFoco               83           ; Flag para matar al jugador si decido EXAMINAR FOCOS por segunda vez en lPorche.
 #define fPatio              84           ; Flag para determinar si el niño ha aparecido ya en el patio.
@@ -190,11 +173,9 @@
 #define fInsistePuerta      86           ; Flag para abrir la puerta de la cochera en lExteriorCochera.
 #define fInsisteMuchoPuerta 87           ; Flag para abrir la puerta de la cochera en lExteriorCochera.
 #define fUsarTarjeta        88           ; Flag de USAR TARJETA en la VITRINA en lSalon.
-#define fVasAMorir          89           ; Flag para matar al jugador en lGabinete.
-#define fUsarCerilla        90           ; No se usa
+#define fVasAMorir          89           ; Flag para matar al jugador en varias localizaciones.
 #define fEngrasar           91           ; Flag de ENGRASAR CANDADO en lBodega para poder abrirlo.
 #define fConectManguera     94           ; Flag para comprobar que conectamos la manguera en el la rejilla en lCochera.
-#define fCerrarGrifo        95           ; No se usa
 #define fBajarRetrete       96           ; Flag de la destrucción del retrete cuando bajas del mismo en lBath2.
 #define fFlashBack          97           ; Flag del cambio de realidad en lRoom3. Tenemos distintas descripciones al tener dicho flag.
 #define fTerma              98           ; Flag que controla EXAMINAR dos veces la TERMA en lBath3.
@@ -208,7 +189,6 @@
 #define fQuitarMancha       106          ; Flag para controlar que hemos quitado la mancha de yeso de la pared en lBodega.
 #define fCombinacion        107          ; Flag para controlar si tenemos la combinación del candado que hay para acceder al gabinete.
                                          ; Dicha combinación nos la da la niña si le damos el peluche bueno.
-#define fApagarCerilla      108          ; No se usa
 #define fVasAPalmar         109          ; Flag para controlar si prende cerilla en lAseo matamos al protagonista.
 #define fLevantado          111          ; Flag para lBurgos y controlamos que se haya levantado de la cama.
 #define fTimbre             112          ; Flag para controlar que pulsa dos veces el timbre y cambiamos el texto de salida.
@@ -219,7 +199,6 @@
 #define fRompeRetrete       118          ; Flag que controla que el Retrete se rompe cuando bajamos de el.
 #define fFlushCadena        119          ; Flag que controla que hayamos tirado de la cadena en las localizaciones lBath2 y lRetrete.
 #define fVolverEntrar       120          ; Flag que controla que hemos salido de la casa y que podemos entrar por segunda vez por la puerta principal.
-#define fTengoPala          121          ; No se usa
 #define fAbrirCandado       122          ; Flag que controla que ya hemos abierto el candado de la trampilla de lBodega.
 #define fPestillo           123          ; Flag que controla que hayamos encontrado el pestillo de apertura de la puerta en lBodega.
 #define fCogeLlaveCaja      124          ; Flag que controla que ya hemos cogido la llave de la caja pequeña en lBath3.
@@ -285,30 +264,30 @@
 #define lAseo               31
 
 ;                               Objetos  ; SHORTCUT: defineobjetos
-#define oRopa               0            ; lBurgos      Este objeto es fundamental para poder salir de lBurgos
-#define oLlaveChamizo       1            ; lCochera
+#define oRopa               0            ; lBurgos      Este objeto es fundamental para poder salir de lBurgos.
+#define oLlaveChamizo       1            ; lCochera     Este objeto te permite abrir la puerta del Chamizo.
 #define oLlaveCochera       2            ; No se usa
-#define oLighton            3            ; Cerilla Encendida
-#define oPala               4            ; lGabinete
-#define oLlavePorche        5            ; lPorche
-#define oFelpudo            6            ; lPorche
-#define oMaceta             7            ; lPorche
+#define oLighton            3            ; Este objeto es que indica que tenemos una Cerilla Encendida.
+#define oPala               4            ; lGabinete    Objeto fundamental para acabar bien el juego, ya que con ella desenterramos los cuerpos en el Chamizo.
+#define oLlavePorche        5            ; lPorche      Este objeto se encuentra dentro del Gnomo, que debemos TIRAR al suelo y nos permite entrar en la casa.
+#define oFelpudo            6            ; lPorche      Objeto de relleno.
+#define oMaceta             7            ; lPorche      Objeto de relleno.
 #define oGnomo              8            ; lPorche      Este objeto es fundamental para entrar en la casa por primera vez. Hay que romperlo para obtener la llave de entrada de la casa.
-#define oCerillas           9            ; lRecibidor
+#define oCerillas           9            ; lRecibidor   Objeto fundamental para poder moverse por la casa.
 #define oEscalon            10           ; No se usa
-#define oTarjetaLlave       11           ; lEscaleras
-#define oLlaveCaja          12           ; lBath3
-#define oDiario             13           ; lCriada
-#define oPeluche            14           ; lRoom3
-#define oLlavePatio         15           ; lCocina
-#define oFotografia1        16           ; lAseo
-#define oPelota             17           ; lCochera
-#define oPaleta             18           ; lRetrete
-#define oHacha              19           ; lBath2
-#define oLlaveBodega        20           ; lCriada
-#define oLlaveCoche         21           ; lChamizo
-#define oLataDeAceite       22           ; lBath1
-#define oGalleta            23           ; lDespensa
+#define oTarjetaLlave       11           ; lEscaleras   Este objeto se usa en la vitrina del Salon.
+#define oLlaveCaja          12           ; lBath3       Este objeto abre la caja oculta en el escalón suelto de la escalera.
+#define oDiario             13           ; lCriada      Objeto fundamental para conocer la historia.
+#define oPeluche            14           ; lRoom3       Es un objeto que usamos para dárselo a la niña en el pasillo y te deje pasar. Está ligado con el Flag fPeluche de lRoom1.
+#define oLlavePatio         15           ; lCocina      Es un objeto fundamental, ya que te permite conocer al niño.
+#define oFotografia1        16           ; lAseo        Es un objeto de relleno.
+#define oPelota             17           ; lCochera     Es un objeto fundamental para poder ir al Patio y jugar con el niño.
+#define oPaleta             18           ; lRetrete     Este objeto es para descubrir la puerta oculta en la Bodega y que te lleva a la Cochera.
+#define oHacha              19           ; lBath2       Es un objeto que te permite salir del Chamizo en caso de entrar sin la llave del Chamizo.
+#define oLlaveBodega        20           ; lCriada      Es un objeto fundamental para poder llegar a la Bodega / Cochera.
+#define oLlaveCoche         21           ; lChamizo     Es un objeto que nos permite acabar el juego cogiendo el coche.
+#define oLataDeAceite       22           ; lBath1       Es un objeto que se usa con el candado de la trampilla en la Bodega. Además, contiene la clave del candado.
+#define oGalleta            23           ; lDespensa    Este objeto es una trampa para el jugador. Si se la come, muere.
 
 
 ;------------------------------------------------------------------------------
@@ -393,7 +372,6 @@ PARED           139    noun        ; lBodega, lCochera, lCocina, lRoom3
 CHIMENEA        140    noun        ; lSalon
 CERROJO         141    noun        ; lHallBodega
 REJA            142    noun        ; lHallBodega
-CABLE           143    noun        ; No se usa.
 APARADOR        144    noun        ; lCocina
 LLAV4           145    noun        ; Es un objeto
 LLAV5           146    noun        ; Es un objeto
@@ -2463,25 +2441,15 @@ S       lRecibidor
 
 ;_______________________________________________________________________________________________________________________________________________________________________________________________
 ;Estamos en locRecibidor
-                                         ; Ya estamos dentro de la casa, en el recibidor y no podemos salir al exterior por la puerta principal
+    ; Ya estamos dentro de la casa, en el recibidor y no podemos salir al exterior por la puerta principal.
 
+    ; NOTA: Como esta es la única localización de todo el interior de la casa que tiene luz,
+    ; controlamos la búsqueda de la pelota cuando aún no tenemos las cerillas. No es necesario, pero nosotros somos así de prudentes.
 > BUSCAR    PELOTA      AT lRecibidor
                 PROCESS 14               ; Control de BUSCAR PELOTA
-                DONE
+                DONE    
 
-                                         ; NOTA: Como esta es la única localización de todo el interior de la casa que tiene luz,
-                                         ; tenemos que controlar la búsqueda de la pelota cuando aún no tenemos las cerillas.
-
-; > TIRAR     PUERTA
-; > EMPUJAR   PUERTA               
-; > ABRIR     PUERTA
-; > ROMPER    PUERTA
-; > EXAMINA   PUERTA    AT lRecibidor
-;                 INK      colorNarrador   ; Color del narrador. 
-;                 XMESSAGE "La puerta está bloqueada y tus insustanciales esfuerzos por salir son inútiles."
-;                 DONE
-
-                                         ; MP3 de Intro del Super Mario
+    ; MP3 de Intro del Super Mario (Versión Cartucho)
 > JUGAR     CONSOLA     AT lRecibidor
                 INK      colorConciencia ; Color de la conciencia de Marcos.   
                 XMESSAGE "Espera que vaya a por el Super Mario Bros..."
@@ -2501,14 +2469,13 @@ S       lRecibidor
                 XMESSAGE "Es un recibidor amplio y desde esta posición puedes ver el aseo que se encuentra al NORTE, al ESTE contemplas el salón, al SUR tienes la cocina, BAJANDO está la bodega y SUBIENDO están las habitaciones. Hay una consola de madera a tu lado; el cajón ya no existe."
                 DONE
 
-                                         ; Doble control para tener mensajes distintos al interactuar con la consola y el cajón.
-                                         ; Siempre usamos flags para esto. Además, tenemos un flag para controlar 
-                                         ; si abrió el cajón y otro para la consola.
+    ; Usamos un Flag, fCajon, para comprobar que existe o no, porque al abrirlo, se destruye el cajón, de modo que si interactúas
+    ; con la consola o cajón, debemos saber si se ha destruido o no, para cambiar los mensajes de salida.
 
 > EXAMINA	CONSOLA     AT lRecibidor
                 ZERO     fCajon          ; Verificamos que el cajón está cerrado.
                 INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz."
+                XMESSAGE "Es una preciosa consola de madera con patas de hierro forjado. Tu madre la heredó de su familia. Tus padres siempre guardan en el cajón alguna luminaria para cuando se va la luz y todos los juegos de llaves de la casa."
                 DONE
 
 > EXAMINA	CONSOLA     AT lRecibidor
@@ -2571,7 +2538,7 @@ S       lRecibidor
                 INK      colorSistema    ; Color del sistema.
                 GET      oCerillas       ; Cogemos el objeto
                 INK      colorMarcos     ; Color del protagonista.
-                XMESSAGE "#nEsto es realmente raro, no había ninguna llave en el cajón y no las veo entre los restos.#n"
+                XMESSAGE "#n#nEsto es realmente raro, no había ninguna llave en el cajón y no las veo entre los restos.#n"
                 INK      colorConciencia ; Color de la conciencia de Marcos.
                 XMESSAGE "Vamos a revisar la casa a ver si logramos encontrar las llaves."                
                 DONE
@@ -8111,6 +8078,58 @@ S       lRecibidor
                                          ; Se pueden usar en cualquier momento de la aventura
                                          ; independientemente de su localización.
 
+> ENCENDER  CERILLA
+> PRENDER   CERILLA
+> USAR 		CERILLA                
+                NOTCARR  oCerillas       ; Verificamos que no portamos las cerillas.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "No llevas cerillas contigo."
+                DONE
+
+> ENCENDER  CERILLA
+> PRENDER   CERILLA
+> USAR      CERILLA
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
+                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
+                INK      colorSistema    ; El color del sistema.
+                XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
+                DONE                
+
+> ENCENDER  CERILLA
+> PRENDER   CERILLA
+> USAR 		CERILLA                
+                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.              
+                LET      fTurnosConLuz 12; Numero de turnos hasta que te quedas sin luz
+                ZERO     fVasAPalmar     ; Verificamos que no esta activado el flag que matará al jugador si enciendo una cerilla
+                CREATE   oLighton        ; Creamos el objeto Cerilla Encendida.
+                GET      oLighton
+				CLEAR    fDarkF    		 ; Desactivamos la oscuridad
+                WINDOW   0
+                PICTURE  0
+                WINDOW   1              
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "#n#nY gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
+                RESTART
+
+; Muerte del jugador
+> ENCENDER  CERILLA
+> PRENDER   CERILLA     
+> USAR		CERILLA 
+                CLS                      ; Limpiamos la pantalla.              
+                NOTZERO  fVasAPalmar     ; Esta condición se va a cumplir exclusivamente en lAseo, pero tenemos que colocarla aquí
+                                         ; ya que el condacto usar cerilla es un condacto general. Al salir de lAseo, hacemos un CLEAR del flag.
+                INK      colorNarrador   ; Color del narrador.                
+                XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
+                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#k#n"
+                PROCESS  11              ; Muerte del jugador.
+                DONE
+
+
+                                         ; Controlamos el prender cerilla mientras ya tienes una encendida.
+                                         ; Es una forma de evitar acumular turnos de luz. Si no existiera este control,
+                                         ; por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría 
+                                         ; jugar durante muchos turnos sin tener que encender cerillas.
+
 > _         _                
                 NOTZERO  fDarkF             
                 INK      colorNarrador   ; Color del narrador.
@@ -8258,57 +8277,6 @@ S       lRecibidor
                 XMESSAGE "Has apagado la cerilla#g#f4#t."
                 DONE                
 
-> ENCENDER  CERILLA
-> PRENDER   CERILLA
-> USAR 		CERILLA                
-                NOTCARR  oCerillas       ; Verificamos que no portamos las cerillas.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No llevas cerillas contigo."
-                DONE
-
-> ENCENDER  CERILLA
-> PRENDER   CERILLA
-> USAR      CERILLA
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.
-                CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-                INK      colorSistema    ; El color del sistema.
-                XMESSAGE "Ya tienes una cerilla#g#f4#t encendida."
-                DONE                
-
-> ENCENDER  CERILLA
-> PRENDER   CERILLA
-> USAR 		CERILLA                
-                CARRIED  oCerillas       ; Verificamos que portamos las cerillas.              
-                LET      fTurnosConLuz 12; Numero de turnos hasta que te quedas sin luz
-                ZERO     fVasAPalmar     ; Verificamos que no esta activado el flag que matará al jugador si enciendo una cerilla
-                CREATE   oLighton        ; Creamos el objeto Cerilla Encendida.
-                GET      oLighton
-				CLEAR    fDarkF    		 ; Desactivamos la oscuridad
-                WINDOW   0
-                PICTURE  0
-                WINDOW   1              
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "#n#nY gracias a ello, ya puedes moverte, examinar o mirar en lugares oscuros.#k#b"
-                RESTART
-
-; Muerte del jugador
-> ENCENDER  CERILLA
-> PRENDER   CERILLA     
-> USAR		CERILLA 
-                CLS                      ; Limpiamos la pantalla.              
-                NOTZERO  fVasAPalmar     ; Esta condición se va a cumplir exclusivamente en lAseo, pero tenemos que colocarla aquí
-                                         ; ya que el condacto usar cerilla es un condacto general. Al salir de lAseo, hacemos un CLEAR del flag.
-                INK      colorNarrador   ; Color del narrador.                
-                XMESSAGE "No debiste hacer eso. Una niña aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.#n"
-                XMESSAGE "Caes al suelo como un muñeco. Lo último que percibes es el sonido de tu sangre gorgotear.#k#n"
-                PROCESS  11              ; Muerte del jugador.
-                DONE
-
-
-                                         ; Controlamos el prender cerilla mientras ya tienes una encendida.
-                                         ; Es una forma de evitar acumular turnos de luz. Si no existiera este control,
-                                         ; por cada PRENDER CERILLA, aumentaría el número de turnos de luz y se podría 
-                                         ; jugar durante muchos turnos sin tener que encender cerillas.
 
 
 > METER     _

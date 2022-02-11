@@ -232,7 +232,6 @@
 		{"symbol":"_VOC_LLAV5", "Value":146},
 		{"symbol":"_VOC_LLAV4", "Value":145},
 		{"symbol":"_VOC_APARA", "Value":144},
-		{"symbol":"_VOC_CABLE", "Value":143},
 		{"symbol":"_VOC_REJA", "Value":142},
 		{"symbol":"_VOC_CERRO", "Value":141},
 		{"symbol":"_VOC_CHIME", "Value":140},
@@ -383,7 +382,6 @@
 		{"symbol":"FCOGELLAVECAJA", "Value":124},
 		{"symbol":"FPESTILLO", "Value":123},
 		{"symbol":"FABRIRCANDADO", "Value":122},
-		{"symbol":"FTENGOPALA", "Value":121},
 		{"symbol":"FVOLVERENTRAR", "Value":120},
 		{"symbol":"FFLUSHCADENA", "Value":119},
 		{"symbol":"FROMPERETRETE", "Value":118},
@@ -394,7 +392,6 @@
 		{"symbol":"FTIMBRE", "Value":112},
 		{"symbol":"FLEVANTADO", "Value":111},
 		{"symbol":"FVASAPALMAR", "Value":109},
-		{"symbol":"FAPAGARCERILLA", "Value":108},
 		{"symbol":"FCOMBINACION", "Value":107},
 		{"symbol":"FQUITARMANCHA", "Value":106},
 		{"symbol":"FCODIGODIARIO", "Value":105},
@@ -405,10 +402,8 @@
 		{"symbol":"FTERMA", "Value":98},
 		{"symbol":"FFLASHBACK", "Value":97},
 		{"symbol":"FBAJARRETRETE", "Value":96},
-		{"symbol":"FCERRARGRIFO", "Value":95},
 		{"symbol":"FCONECTMANGUERA", "Value":94},
 		{"symbol":"FENGRASAR", "Value":91},
-		{"symbol":"FUSARCERILLA", "Value":90},
 		{"symbol":"FVASAMORIR", "Value":89},
 		{"symbol":"FUSARTARJETA", "Value":88},
 		{"symbol":"FINSISTEMUCHOPUERTA", "Value":87},
@@ -419,7 +414,6 @@
 		{"symbol":"FTRITURADOR", "Value":82},
 		{"symbol":"FJUGAR", "Value":81},
 		{"symbol":"FUSARPALA", "Value":80},
-		{"symbol":"FBLOQUEOROOM1", "Value":79},
 		{"symbol":"FUSARINTERRUPTOR", "Value":78},
 		{"symbol":"FESCALON", "Value":77},
 		{"symbol":"FBOMBILLA", "Value":76},
@@ -488,7 +482,7 @@
 		{"symbol":"COLORMARCOS", "Value":3},
 		{"symbol":"COLORCONCIENCIA", "Value":2},
 		{"symbol":"TIMEOUT", "Value":87},
-		{"symbol":"DAY", "Value":7},
+		{"symbol":"DAY", "Value":11},
 		{"symbol":"MONTH", "Value":2},
 		{"symbol":"YEARLOW", "Value":22},
 		{"symbol":"YEARHIGH", "Value":20},
@@ -547,7 +541,6 @@
 		{"VocWord":"BOTEL", "Value":182,"VocType":2 },
 		{"VocWord":"BUSCA", "Value":73,"VocType":0 },
 		{"VocWord":"CABEC", "Value":210,"VocType":2 },
-		{"VocWord":"CABLE", "Value":143,"VocType":2 },
 		{"VocWord":"CADEN", "Value":176,"VocType":2 },
 		{"VocWord":"CAGAR", "Value":62,"VocType":0 },
 		{"VocWord":"CAJA", "Value":118,"VocType":2 },
@@ -2747,7 +2740,7 @@
 	},
 	{
 		"Value":206,
-		"Text":"Es una preciosa consola de madera con patas de hierro forjado. Tu madre la hered\u0018 de su familia. Tus padres siempre guardan en el caj\u0018n alguna luminaria para cuando se va la luz.\u000d"
+		"Text":"Es una preciosa consola de madera con patas de hierro forjado. Tu madre la hered\u0018 de su familia. Tus padres siempre guardan en el caj\u0018n alguna luminaria para cuando se va la luz y todos los juegos de llaves de la casa.\u000d"
 	},
 	{
 		"Value":207,
@@ -2791,7 +2784,7 @@
 	},
 	{
 		"Value":217,
-		"Text":"\u000dEsto es realmente raro, no hab\u0017a ninguna llave en el caj\u0018n y no las veo entre los restos.\u000d\u000d"
+		"Text":"\u000d\u000dEsto es realmente raro, no hab\u0017a ninguna llave en el caj\u0018n y no las veo entre los restos.\u000d\u000d"
 	},
 	{
 		"Value":218,
@@ -5391,91 +5384,91 @@
 	},
 	{
 		"Value":867,
-		"Text":"No puedes ver nada. Est\u0015 muy oscuro.\u000d"
-	},
-	{
-		"Value":868,
-		"Text":"Es una llave de lo m\u0015s corriente.\u000d"
-	},
-	{
-		"Value":869,
-		"Text":"Es un osito de peluche.\u000d"
-	},
-	{
-		"Value":870,
-		"Text":"\u0012De qu\u0016 est\u0015s hablando, Marcos?\u000d"
-	},
-	{
-		"Value":871,
-		"Text":"No es necesario que nos deleites con tus atributos, gracias.\u000d"
-	},
-	{
-		"Value":872,
-		"Text":"Parece ser una fotograf\u0017a\u000e\u007fD\u000f familiar... Est\u0015 enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un ni\u001Ao y una ni\u001Aa, pero no reconoces a nadie. \u0012De quien ser\u0015 esta foto y que hace aqu\u0017?\u000d\u000d"
-	},
-	{
-		"Value":873,
-		"Text":"\u0012De d\u0018nde habr\u0015 salido esta fotograf\u0017a y quienes son?\u000c\u000b\u000d"
-	},
-	{
-		"Value":874,
-		"Text":"Un manchurr\u0018n negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.\u000d\u000d"
-	},
-	{
-		"Value":875,
-		"Text":"\u0012Qu\u0016 cojones est\u0015 pasando?\u000d\u000d"
-	},
-	{
-		"Value":876,
-		"Text":"\u0011Eso digo yo!\u000d"
-	},
-	{
-		"Value":877,
-		"Text":"Los minutos pasan mirando al techo...\u000d"
-	},
-	{
-		"Value":878,
-		"Text":"\u0012Qu\u0016 estamos buscando, Marcos? \u0011No mires arriba!\u000d"
-	},
-	{
-		"Value":879,
-		"Text":"Es una puerta.\u000d\u000d"
-	},
-	{
-		"Value":880,
-		"Text":"En este juego a veces se abren y a veces no. Otras veces las abres y se cierran solas... \u000d Parece un comportamiento err\u0015tico, pero tras \u0016l, hay dise\u001Aado todo un complejo artificio.\u000d"
-	},
-	{
-		"Value":881,
-		"Text":"En este juego a veces se abren y a veces no. Otras veces las abres y se cierran solas... \u000d Parece un comportamiento err\u0015tico, pero tras el, hay dise\u001Aado todo un complejo artificio.\u000d"
-	},
-	{
-		"Value":882,
-		"Text":"...ZZZZzzzZZZZzz...Gronf Gronf...\u000d"
-	},
-	{
-		"Value":883,
-		"Text":"Ya has apagado la cerilla\u000e\u007f4\u000f.\u000d"
-	},
-	{
-		"Value":884,
-		"Text":"Has apagado la cerilla\u000e\u007f4\u000f.\u000d"
-	},
-	{
-		"Value":885,
 		"Text":"No llevas cerillas contigo.\u000d"
 	},
 	{
-		"Value":886,
+		"Value":868,
 		"Text":"Ya tienes una cerilla\u000e\u007f4\u000f encendida.\u000d"
 	},
 	{
-		"Value":887,
+		"Value":869,
 		"Text":"No debiste hacer eso. Una ni\u001Aa aparece delante de ti y te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza.\u000d\u000d"
 	},
 	{
-		"Value":888,
+		"Value":870,
 		"Text":"Caes al suelo como un mu\u001Aeco. Lo \u0019ltimo que percibes es el sonido de tu sangre gorgotear.\u000c\u000d\u000d"
+	},
+	{
+		"Value":871,
+		"Text":"No puedes ver nada. Est\u0015 muy oscuro.\u000d"
+	},
+	{
+		"Value":872,
+		"Text":"Es una llave de lo m\u0015s corriente.\u000d"
+	},
+	{
+		"Value":873,
+		"Text":"Es un osito de peluche.\u000d"
+	},
+	{
+		"Value":874,
+		"Text":"\u0012De qu\u0016 est\u0015s hablando, Marcos?\u000d"
+	},
+	{
+		"Value":875,
+		"Text":"No es necesario que nos deleites con tus atributos, gracias.\u000d"
+	},
+	{
+		"Value":876,
+		"Text":"Parece ser una fotograf\u0017a\u000e\u007fD\u000f familiar... Est\u0015 enmarcada en un precioso marco de madera tallada. Hay tres personas en la foto; una mujer, un ni\u001Ao y una ni\u001Aa, pero no reconoces a nadie. \u0012De quien ser\u0015 esta foto y que hace aqu\u0017?\u000d\u000d"
+	},
+	{
+		"Value":877,
+		"Text":"\u0012De d\u0018nde habr\u0015 salido esta fotograf\u0017a y quienes son?\u000c\u000b\u000d"
+	},
+	{
+		"Value":878,
+		"Text":"Un manchurr\u0018n negro comienza a formarse en el centro de la foto. Se prende fuego y la sueltas. La foto se consume en el suelo pasto de las llamas.\u000d\u000d"
+	},
+	{
+		"Value":879,
+		"Text":"\u0012Qu\u0016 cojones est\u0015 pasando?\u000d\u000d"
+	},
+	{
+		"Value":880,
+		"Text":"\u0011Eso digo yo!\u000d"
+	},
+	{
+		"Value":881,
+		"Text":"Los minutos pasan mirando al techo...\u000d"
+	},
+	{
+		"Value":882,
+		"Text":"\u0012Qu\u0016 estamos buscando, Marcos? \u0011No mires arriba!\u000d"
+	},
+	{
+		"Value":883,
+		"Text":"Es una puerta.\u000d\u000d"
+	},
+	{
+		"Value":884,
+		"Text":"En este juego a veces se abren y a veces no. Otras veces las abres y se cierran solas... \u000d Parece un comportamiento err\u0015tico, pero tras \u0016l, hay dise\u001Aado todo un complejo artificio.\u000d"
+	},
+	{
+		"Value":885,
+		"Text":"En este juego a veces se abren y a veces no. Otras veces las abres y se cierran solas... \u000d Parece un comportamiento err\u0015tico, pero tras el, hay dise\u001Aado todo un complejo artificio.\u000d"
+	},
+	{
+		"Value":886,
+		"Text":"...ZZZZzzzZZZZzz...Gronf Gronf...\u000d"
+	},
+	{
+		"Value":887,
+		"Text":"Ya has apagado la cerilla\u000e\u007f4\u000f.\u000d"
+	},
+	{
+		"Value":888,
+		"Text":"Has apagado la cerilla\u000e\u007f4\u000f.\u000d"
 	},
 	{
 		"Value":889,
@@ -74348,6 +74341,663 @@
 					]
 			},
 			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":867,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":867,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR CERIL",
+				"Verb":33,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":867,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":15,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":868,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":15,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":868,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR CERIL",
+				"Verb":33,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":15,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":868,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":72,
+						"Param2":12,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":40,
+						"Condact":"GET",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":84,
+						"Condact":"PICTURE",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":766,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":72,
+						"Param2":12,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":40,
+						"Condact":"GET",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":84,
+						"Condact":"PICTURE",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":766,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR CERIL",
+				"Verb":33,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":51,
+						"Condact":"LET",
+						"Indirection1":0,
+						"Param1":72,
+						"Param2":12,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":40,
+						"Condact":"GET",
+						"Indirection1":0,
+						"Param1":3,
+						"NumParams":1
+					},
+					{
+						"Opcode":48,
+						"Condact":"CLEAR",
+						"Indirection1":0,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":84,
+						"Condact":"PICTURE",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":78,
+						"Condact":"WINDOW",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":766,
+						"NumParams":1
+					},
+					{
+						"Opcode":117,
+						"Condact":"RESTART",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":869,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":870,
+						"NumParams":1
+					},
+					{
+						"Opcode":75,
+						"Condact":"PROCESS",
+						"Indirection1":0,
+						"Param1":11,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ENCEN CERIL",
+				"Verb":37,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":869,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":870,
+						"NumParams":1
+					},
+					{
+						"Opcode":75,
+						"Condact":"PROCESS",
+						"Indirection1":0,
+						"Param1":11,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR CERIL",
+				"Verb":33,
+				"Noun":113,
+				"condacts":
+					[
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":109,
+						"NumParams":1
+					},
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":869,
+						"NumParams":1
+					},
+					{
+						"Opcode":128,
+						"Condact":"XMES",
+						"Indirection1":0,
+						"Param1":870,
+						"NumParams":1
+					},
+					{
+						"Opcode":75,
+						"Condact":"PROCESS",
+						"Indirection1":0,
+						"Param1":11,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
 				"Entry":"_ _",
 				"Verb":255,
 				"Noun":255,
@@ -74371,7 +75021,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":867,
+						"Param1":871,
 						"NumParams":1
 					},
 					{
@@ -74405,7 +75055,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":868,
+						"Param1":872,
 						"NumParams":1
 					},
 					{
@@ -74446,7 +75096,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":869,
+						"Param1":873,
 						"NumParams":1
 					},
 					{
@@ -74487,7 +75137,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":870,
+						"Param1":874,
 						"NumParams":1
 					},
 					{
@@ -74521,7 +75171,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":871,
+						"Param1":875,
 						"NumParams":1
 					},
 					{
@@ -74578,7 +75228,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":872,
+						"Param1":876,
 						"NumParams":1
 					},
 					{
@@ -74592,7 +75242,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":873,
+						"Param1":877,
 						"NumParams":1
 					},
 					{
@@ -74606,7 +75256,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":874,
+						"Param1":878,
 						"NumParams":1
 					},
 					{
@@ -74620,7 +75270,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":875,
+						"Param1":879,
 						"NumParams":1
 					},
 					{
@@ -74634,7 +75284,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":876,
+						"Param1":880,
 						"NumParams":1
 					},
 					{
@@ -74698,7 +75348,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":872,
+						"Param1":876,
 						"NumParams":1
 					},
 					{
@@ -74712,7 +75362,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":873,
+						"Param1":877,
 						"NumParams":1
 					},
 					{
@@ -74726,7 +75376,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":874,
+						"Param1":878,
 						"NumParams":1
 					},
 					{
@@ -74740,7 +75390,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":875,
+						"Param1":879,
 						"NumParams":1
 					},
 					{
@@ -74754,7 +75404,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":876,
+						"Param1":880,
 						"NumParams":1
 					},
 					{
@@ -74811,7 +75461,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":872,
+						"Param1":876,
 						"NumParams":1
 					},
 					{
@@ -74825,7 +75475,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":873,
+						"Param1":877,
 						"NumParams":1
 					},
 					{
@@ -74839,7 +75489,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":874,
+						"Param1":878,
 						"NumParams":1
 					},
 					{
@@ -74853,7 +75503,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":875,
+						"Param1":879,
 						"NumParams":1
 					},
 					{
@@ -74867,7 +75517,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":876,
+						"Param1":880,
 						"NumParams":1
 					},
 					{
@@ -74924,7 +75574,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":872,
+						"Param1":876,
 						"NumParams":1
 					},
 					{
@@ -74938,7 +75588,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":873,
+						"Param1":877,
 						"NumParams":1
 					},
 					{
@@ -74952,7 +75602,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":874,
+						"Param1":878,
 						"NumParams":1
 					},
 					{
@@ -74966,7 +75616,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":875,
+						"Param1":879,
 						"NumParams":1
 					},
 					{
@@ -74980,7 +75630,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":876,
+						"Param1":880,
 						"NumParams":1
 					},
 					{
@@ -75037,7 +75687,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":877,
+						"Param1":881,
 						"NumParams":1
 					},
 					{
@@ -75080,7 +75730,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":878,
+						"Param1":882,
 						"NumParams":1
 					},
 					{
@@ -75130,7 +75780,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":879,
+						"Param1":883,
 						"NumParams":1
 					},
 					{
@@ -75144,7 +75794,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":880,
+						"Param1":884,
 						"NumParams":1
 					},
 					{
@@ -75187,7 +75837,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":879,
+						"Param1":883,
 						"NumParams":1
 					},
 					{
@@ -75201,7 +75851,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":881,
+						"Param1":885,
 						"NumParams":1
 					},
 					{
@@ -75228,7 +75878,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":882,
+						"Param1":886,
 						"NumParams":1
 					},
 					{
@@ -75269,7 +75919,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":883,
+						"Param1":887,
 						"NumParams":1
 					},
 					{
@@ -75362,7 +76012,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":884,
+						"Param1":888,
 						"NumParams":1
 					},
 					{
@@ -75426,664 +76076,7 @@
 						"Opcode":128,
 						"Condact":"XMES",
 						"Indirection1":0,
-						"Param1":884,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":9,
-						"Condact":"NOTCARR",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":885,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":9,
-						"Condact":"NOTCARR",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":885,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"USAR CERIL",
-				"Verb":33,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":9,
-						"Condact":"NOTCARR",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":885,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":15,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":886,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":15,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":886,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"USAR CERIL",
-				"Verb":33,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":15,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":886,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":72,
-						"Param2":12,
-						"NumParams":2
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":44,
-						"Condact":"CREATE",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":40,
-						"Condact":"GET",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":84,
-						"Condact":"PICTURE",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":766,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":72,
-						"Param2":12,
-						"NumParams":2
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":44,
-						"Condact":"CREATE",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":40,
-						"Condact":"GET",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":84,
-						"Condact":"PICTURE",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":766,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"USAR CERIL",
-				"Verb":33,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":8,
-						"Condact":"CARRIED",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":51,
-						"Condact":"LET",
-						"Indirection1":0,
-						"Param1":72,
-						"Param2":12,
-						"NumParams":2
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":44,
-						"Condact":"CREATE",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":40,
-						"Condact":"GET",
-						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":48,
-						"Condact":"CLEAR",
-						"Indirection1":0,
-						"Param1":28,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":84,
-						"Condact":"PICTURE",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":78,
-						"Condact":"WINDOW",
-						"Indirection1":0,
-						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":766,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":887,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
 						"Param1":888,
-						"NumParams":1
-					},
-					{
-						"Opcode":75,
-						"Condact":"PROCESS",
-						"Indirection1":0,
-						"Param1":11,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"ENCEN CERIL",
-				"Verb":37,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":887,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":888,
-						"NumParams":1
-					},
-					{
-						"Opcode":75,
-						"Condact":"PROCESS",
-						"Indirection1":0,
-						"Param1":11,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"USAR CERIL",
-				"Verb":33,
-				"Noun":113,
-				"condacts":
-					[
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
-					},
-					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":109,
-						"NumParams":1
-					},
-					{
-						"Opcode":66,
-						"Condact":"INK",
-						"Indirection1":0,
-						"Param1":9,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":887,
-						"NumParams":1
-					},
-					{
-						"Opcode":128,
-						"Condact":"XMES",
-						"Indirection1":0,
-						"Param1":888,
-						"NumParams":1
-					},
-					{
-						"Opcode":75,
-						"Condact":"PROCESS",
-						"Indirection1":0,
-						"Param1":11,
 						"NumParams":1
 					},
 					{
