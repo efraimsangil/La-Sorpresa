@@ -1802,7 +1802,7 @@ S       lRecibidor
 
 ; Muerte del jugador
 > EXAMINA   FOCOS       AT lPorche
-                ; Si el flag de EXAMINA FOCOS está activo, mato al jugador
+                ; Si el flag de EXAMINA FOCOS está activo, matamos al jugador
                 NOTZERO  fFoco           ; Verificamos que los focos ya se han examinado con anterioridad.
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Insistes en volver a mirar y una atracción hipnótica te hace fijar la vista en los focos.#k#n"
@@ -1877,7 +1877,8 @@ S       lRecibidor
                 XMESSAGE "Vale vale, ya paro." 
                 DONE                  
 
-; Durante el juego, para hacerlo más fácil, cuando examinas un objeto, lo coges, aunque también puedes usar el verbo COGER si eres un jugador experimentado.
+; Durante el juego, para hacerlo más fácil, cuando examinas un objeto, en ocasiones, lo coges, 
+; aunque también puedes usar el verbo COGER si eres un jugador experimentado.
 
 > COGER     PLANTA
 > COGER 	MACETA    AT lPorche
@@ -2143,7 +2144,8 @@ S       lRecibidor
                 SET      fGnomoRoto      ; Activamos el flag para controlar que se destruyó el gnomo.
                 DONE	
 
-; Esto es por si al jugador le da por tirar este objeto sin haberlo cogido. No es necesario, pero seguro que se ejecuta después de jugar varias veces y el jugador quiere hacer las cosas rápido.
+; Esto es por si al jugador le da por tirar este objeto sin haberlo cogido. 
+; No es necesario, pero seguro que se ejecuta después de jugar varias veces y el jugador quiere hacer las cosas rápido.
 > LANZAR    GNOMO
 > TIRAR		GNOMO	   AT lPorche
                 NOTCARR  oGnomo          ; Verificamos que no portamos el gnomo.
@@ -2264,15 +2266,14 @@ S       lRecibidor
                 XMESSAGE "¿Recuerdas que tus padres siempre hablaron de una llave de emergencia? Tiene que estar en alguna parte."
                 DONE
 
-; Tenemos un par de acciones para controlar si entra en la casa
-; teniendo las llaves y si lleva encima la maceta o no.              
+; Tenemos un par de acciones para controlar si entra en la casa teniendo las llaves y si lleva con él la maceta o no.              
 
 > E         _                                
 > ENTRAR    _                            
 > EMPUJAR   PUERTA                       
 > USAR 		PUERTA                       
 > USAR 		LLAVE
-> ABRIR 	PUERTA	  AT lPorche         ; LA PRIMERA VEZ QUE ENTRAMOS EN lENTRADA CON LA MACETA.
+> ABRIR 	PUERTA	  AT lPorche         ; LA PRIMERA VEZ QUE ENTRAMOS EN lEntrada CON LA MACETA.
                 CLS                      ; Limpiamos la pantalla.
                 CARRIED  oLlavePorche    ; Verificamos que portamos la llave de la puerta principal.
                 ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos en la casa.
@@ -2335,7 +2336,7 @@ S       lRecibidor
 > EMPUJAR   PUERTA                      
 > USAR 		PUERTA                       
 > USAR 		LLAVE
-> ABRIR 	PUERTA	  AT lPorche         ; LA SEGUNDA VEZ QUE ENTRAMOS EN lENTRADA CON LA MACETA.
+> ABRIR 	PUERTA	  AT lPorche         ; LA SEGUNDA VEZ QUE ENTRAMOS EN lEntrada CON LA MACETA.
                 CLS                      ; Limpiamos la pantalla.
                 CARRIED  oLlavePorche    ; Verificamos que portamos la llave de la puerta principal.
                 NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
@@ -2358,7 +2359,7 @@ S       lRecibidor
 > EMPUJAR   PUERTA                       
 > USAR 		PUERTA                       
 > USAR 		LLAVE
-> ABRIR 	PUERTA	  AT lPorche         ; LA SEGUNDA VEZ QUE ENTRAMOS EN lENTRADA SIN LA MACETA.
+> ABRIR 	PUERTA	  AT lPorche         ; LA SEGUNDA VEZ QUE ENTRAMOS EN lEntrada SIN LA MACETA.
                 CLS                      ; Limpiamos la pantalla.
                 CARRIED  oLlavePorche    ; Verificamos que portamos la llave de la puerta principal.
                 NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
@@ -9960,7 +9961,6 @@ S       lRecibidor
                 XMESSAGE "#nHas completado un 84.3% de la historia.#n"
                 INK      colorSistema    ; El color del sistema.
 
-;pixa: PROBAR
 >_          _   NOTZERO  fVolverEntrar   ; Verificamos que es la segunda vez que entramos en la casa.
                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
                 NOTZERO  fLeerDiario     ; Verificamos que hemos leído el diario de la criada.
