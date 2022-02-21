@@ -3234,11 +3234,11 @@ S       lRecibidor
                 DONE
 
 
-                                         ; Damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
-                                         ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo
-                                         ; EXAMINAR en términos absolutos, nos lleva a morir.
-                                         ; Para escapar es necesario quedarse sin turnos de cerilla,
-                                         ; o apagar la cerilla (estar a oscuras) para que la criada no le vea y pueda salir.
+    ; Damos la pista de que la situación es peligrosa y que es mejor pasar a oscuras para que nadie nos vea.
+    ; Cualquier examinar nos permite tener una descripción del objeto, PERO recibimos un aviso de que un segundo
+    ; EXAMINAR en términos absolutos, nos lleva a morir.
+    ; Para escapar es necesario quedarse sin turnos de cerilla,
+    ; o apagar la cerilla (estar a oscuras) para que la criada no le vea y pueda salir.
 
 
 > MIRAR     _         AT lGabinete
@@ -3331,11 +3331,12 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "La pared está revestida de cal. Huele a humedad."
                 DONE
-;___________________________________________________________________________________________________________________________________________________________________________________________________
-                                         ; A continuación tenemos que estar a oscuras para salir, si no es así, el juego se termina.
-                                         ; NOTA: Aquí controlamos fJugar y dependiendo de si llevamos al niño o no,
-                                         ; el niño nos revela que ahí están sus restos mortales.
-                                         ; Recordamos que en todo caso, el juego termina al romper el pasador.
+;_______________________________________________________________________________________________________________________________
+    ; A continuación tenemos que estar a oscuras para salir, si no es así, el juego se termina.
+    ; NOTA: Aquí controlamos fJugar y dependiendo de si llevamos al niño o no,
+    ; el niño nos revela que ahí están sus restos mortales.
+    ; Recordamos que en todo caso, el juego termina al romper el pasador o abrir la puerta con la llave habiendo desenterrado los
+    ; cuerpos con anterioridad.
 
 > N        _          AT lGabinete
                 NOTCARR  oLighton        ; Verificamos que NO portamos una cerilla encendida.
@@ -3493,18 +3494,6 @@ S       lRecibidor
     ; CONECTAR MANGUERA de modo que le ponemos en el GRIFO
     ; ABRIR GRIFO
     ; USAR MANGUERA se llena la rejilla de agua y flota la pelota, ya la puedes coger.
-
-; > MIRAR     _         AT lCochera
-;                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-;                 NOTZERO  fJugar          ; Verificamos que hemos jugado con el niño (jugar + pelota).
-;                 INK      colorNarrador   ; Color del narrador. 
-;                 XMESSAGE "Encuentras un estropicio en la cochera... Está toda llena de agua; tiene la rejilla abierta.#n"               
-;                 INK      colorNarrador   ; Color del narrador. 
-;                 XMESSAGE "El niño aparece a tu lado.#k#n" 
-;                 INK      colorNene       ; Color del niño.
-;                 XMESSAGE "Aquí mataron a mi madre y a mi hermana. Yo me había escapado y el me encontró por el camino.#n Me trajo aquí y me obligó a llevar los cuerpos al chamizo. Recuerdo que había una llave escondida sobre el portón de la cochera." 
-;                 INK      colorSistema    ; El color del sistema.
-;                 DONE
 
 > MIRAR     _         AT lCochera
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
@@ -3755,13 +3744,6 @@ S       lRecibidor
                 GOTO     lBodega         ; Vamos a lBodega. 
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
-
-; > ABRIR     PORTON    AT lCochera        
-;                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
-;                 ZERO     fVolverEntrar   ; Verificamos que es la primera vez que entramos a la casa.
-;                 INK      colorNarrador   ; Color del narrador.                
-;                 XMESSAGE "Te resulta imposible abrir el portón."             
-;                 DONE
 
 > ABRIR     PORTON    AT lCochera        
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
@@ -4246,7 +4228,6 @@ S       lRecibidor
                 ;XMESSAGE "En cuanto pueda salir, avisaré a mis padres y a la policía, aunque estoy seguro que me van a hacer montones de preguntas."                  
                 DONE
 
-; NOTA: Comprobar si al pulsar X en Chamizo, sale el Gabinete para poder volver.
 > ENTRAR    GABINETE  AT lChamizo
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
                 INK      colorConciencia ; Color de la conciencia de Marcos
@@ -5869,7 +5850,6 @@ S       lRecibidor
                 XMESSAGE "El niño sigue en el patio esperando a que juegues con él."
                 DONE
 
-; NOTA: DESARROLLAR UN POCO EL PODER HABLAR CON EL NIÑO
 > HABLAR    _         AT lPatio
                 NOTZERO  fPatio          ; Verificamos que no hemos hablado con el niño en el patio.
                 INK      colorMarcos     ; Color del protagonista.
@@ -7028,9 +7008,6 @@ S       lRecibidor
                 XMESSAGE "La estancia parece haber retrocedido treinta años en el tiempo. ¿Qué ha pasado?#k"
                 DONE
 
-
-
-; Se activa un flag en este room3 de modo que debes resolver el puzzle con la niña
 > R         _
 > MIRAR     _         AT lRoom3
                 CARRIED  oLighton		 ; Verificamos que portamos una cerilla encendida.
@@ -7295,8 +7272,8 @@ S       lRecibidor
 
 ; Estamos en locPasillo2
 
-                                         ; Cabe destacar en esta localización el flag "fNenaMala"
-                                         ; Una vez le das el objeto, la cría desaparece, no vuelve a salir
+    ; Cabe destacar en esta localización el flag "fNenaMala"
+    ; Una vez le das el objeto, la cría desaparece, no vuelve a salir en el pasillo
 
 > BUSCAR    PELOTA    AT lPasillo2
                 PROCESS 14               ; Control de BUSCAR PELOTA
@@ -7941,11 +7918,11 @@ S       lRecibidor
                 GOTO     lPasillo2
                 RESTART                  ; Recargamos y mostramos al jugador la descripción de la localización en la que se encuentra.
                 DONE
-;_______________________________________________________________________________________________________________________________________________________________________________________________
+;_________________________________________________________________________________________________________________________________________
                                     
-                                         ; CONDACTOS GENERALES:
-                                         ; Se pueden usar en cualquier momento de la aventura
-                                         ; independientemente de su localización.
+    ; CONDACTOS GENERALES:
+    ; Se pueden usar en cualquier momento de la aventura
+    ; independientemente de su localización.
 
 > ENCENDER  CERILLA
 > PRENDER   CERILLA
@@ -8242,17 +8219,17 @@ S       lRecibidor
                 INK      colorNarrador   ; Color del narrador.                
                 XMESSAGE "Mi hijo ha descubierto la combinación del candado que abre la trampilla. El señor ha entrado por ahí. Aunque ignoro hacia donde conduce, tan solo sospecharlo me aterroriza.#k#n"
 
-                                         ; El resto de la historia, de cuando el niño escapa de la casa y
-                                         ; le pilla el terrateniente en el pueblo, lo narrará el niño en lCochera.
-                                         ; la historia continua cuando el terrateniente descubre al niño intentando escapar, 
-                                         ; lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y 
-                                         ; con la ayuda de este, le da un hacha y le pide que le ayude a trocear los cuerpos
-                                         ; y le obliga a llevarlos al chamizo, cavar un hoyo grande y a continuación,
-                                         ; después de depositar los restos en el hoyo, mata al niño de un palazo en la cabeza
-                                         ; y lo deja caer al hoyo.
+                                        ; El resto de la historia, de cuando el niño escapa de la casa y
+                                        ; le pilla el terrateniente en el pueblo, lo narrará el niño en lCochera.
+                                        ; la historia continúa cuando el terrateniente descubre al niño intentando escapar, 
+                                        ; lo lleva a casa y a continuación mata a la criada y a la hija delante del niño, y 
+                                        ; con la ayuda de este, le da un hacha y le pide que le ayude a trocear los cuerpos
+                                        ; y le obliga a llevarlos al chamizo, cavar un hoyo grande y a continuación,
+                                        ; después de depositar los restos en el hoyo, mata al niño de un palazo en la cabeza
+                                        ; y lo deja caer al hoyo.
                 DONE
 
-;________________________________________________________________________________________________________________________________________________________________________________________________
+;_________________________________________________________________________________________________________________________________
                                          ; CHEATS Y ATAJOS 
 
 
@@ -8276,8 +8253,8 @@ S       lRecibidor
                 RESTART
                 DONE
 
-                                         ; USAR MUEBLE: Control para los desarrolladores que nos permite ver en pantalla
-                                         ; los diferentes colores que se pueden utilizar en el juego.
+    ; USAR MUEBLE: Control para los desarrolladores que nos permite ver en pantalla
+    ; los diferentes colores que se pueden utilizar en el juego.
 
 ; > USAR      MUEBLE      
 ;                 INK      1
@@ -8312,8 +8289,8 @@ S       lRecibidor
 ;                 XMESSAGE "INK 15"
 ;                 DONE
 
-                                         ; AYUDA MAGIA: Control para los desarrolladores que describe el tipo de icono 
-                                         ; conjuntamente con su gráfico, para determinar que se han dibujado correctamente.
+    ; AYUDA MAGIA: Control para los desarrolladores que describe el tipo de icono 
+    ; conjuntamente con su gráfico, para determinar que se han dibujado correctamente.
 
 ; > AYUDA     MAGIA
 ;                 INK 15
@@ -8370,8 +8347,7 @@ S       lRecibidor
 ;                 INK 15                   
 ;                 DONE
 
-                                         ; AYUDA OSITO: Cheat para los desarrolladores. Nos permite hacer una lectura 
-                                         ; de variables para comprobar el funcionamiento de las mismas.
+    ; AYUDA OSITO: Cheat para los desarrolladores. Nos permite visualizar ciertas fotos que usamos en el juego. 
 
 ; > AYUDA     OSITO                        ; SHORTCUT:ayudaosito
                 ; WINDOW   0
@@ -8483,8 +8459,8 @@ S       lRecibidor
 
         
                 
-                                         ; USAR MAGIA: Cheat para los desarrolladores. Nos permite poner en el inventario
-                                         ; objetos para avanzar en la aventura sin tener que realizarla.
+    ; USAR MAGIA: Cheat para los desarrolladores. Nos permite poner en el inventario
+    ; objetos y activar flags, para avanzar en la aventura sin tener que jugarla completa para realizar nuestras pruebas.
  
 > USAR      MAGIA                        ; SHORTCUT: usarmagia
                 PREP     CON
@@ -9062,7 +9038,7 @@ S       lRecibidor
 ; 6) 2a vez con pala, niño y diario             
                  ; --> La niña nos lleva al chamizo, desenterramos cadáveres y fin de juego.
 
-/PRO 9                                   ; Proceso que controla que llevamos encendida una cerilla.
+/PRO 9
 
 ; 0 0 
 >_          _   
