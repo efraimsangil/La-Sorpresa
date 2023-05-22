@@ -1,2 +1,2 @@
 # La Sorpresa
- Nuevo juego conversacional
+ Juego conversacional para MSX2 creado con la herramienta DAAD
